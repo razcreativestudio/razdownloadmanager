@@ -83,7 +83,11 @@ pub fn select(id: &str, ctx: &egui::Context) -> Vec<String> {
     // pywal's file is followed again only if this theme is made from it (`themefile::load_in`).
     crate::themefile::forget_pywal();
     *SELECTED.lock().unwrap_or_else(|e| e.into_inner()) = id.clone();
-    if id.is_empty() || id == CLASSIC.id {
+    if id.is_empty() || id == "raz" {
+        set(crate::palette::raz().clone());
+        return Vec::new();
+    }
+    if id == CLASSIC.id {
         set(CLASSIC.clone());
         return Vec::new();
     }

@@ -1,0 +1,186 @@
+# ==============================================================================
+# RAZ Studio — RAZ Creative Studio Signature Theme
+# Terakhir Diperbarui: 2026-11-11
+# Deskripsi: Tema default resmi RAZ Download Manager dengan palet warna khas
+#            RAZ Creative Studio: Obsidian Black, Luxury Gold (#FFD700),
+#            dan aksen modern presisi.
+# ==============================================================================
+
+name = "RAZ Studio"
+icons = "color"
+
+[controls]
+field-focus = "border"
+check = "fluent"
+progress = "line"
+scroll = "overlay"
+caption = "system"
+focus = "ring"
+button = "fluent"
+
+[sizes]
+radius = 6
+"radius.part" = 4
+"radius.check" = 4
+"radius.flyout" = 8
+"radius.menu-item" = 4
+"radius.popup" = 6
+"radius.egui" = 6
+
+[seeds.dark]
+background = "#12151b"
+surface = "#191d24"
+header = "#15181f"
+text = "#f3f5f8"
+accent = "#ffd700"
+selection = "#ffd70033"
+error = "#ff6b6b"
+warning = "#ffd166"
+success = "#06d6a0"
+
+[seeds.light]
+background = "#f6f8fa"
+surface = "#ffffff"
+header = "#f1f3f6"
+text = "#161b22"
+accent = "#c99700"
+selection = "#fff4cc"
+error = "#d73a49"
+warning = "#b08800"
+success = "#28a745"
+
+[dark]
+window = "#12151b"
+list = "#15181f"
+"list.grid" = "#1d222b"
+field = "#191d24"
+"field.border" = "#2c3340"
+"field.bottom" = "#ffd700aa"
+
+# Header & Menubar
+menubar = "#14171e"
+"menubar.bottom" = "#14171e"
+"menubar.line" = "#222733"
+header = "#181c25"
+"header.line" = "#242a37"
+"header.sep" = "#242a37"
+"header.sorted" = "#202531"
+
+# Button luxury styling
+button = "#202530"
+"button.border" = "#313849"
+"button.bottom" = "#282e3c"
+"button.hot" = "#29303e"
+"button.pressed" = "#1c212a"
+"button.text" = "#f3f5f8"
+"button.default.border" = "#ffd700"
+"button.default.bottom" = "#d4af37"
+
+# Accent button (Gold with dark obsidian text)
+"button.accent" = "#ffd700"
+"button.accent.hot" = "#ffe033"
+"button.accent.pressed" = "#e6c200"
+"button.accent.bottom" = "#ccaa00"
+"button.accent.text" = "#0d0f12"
+"button.accent.text.pressed" = "#0d0f12"
+
+# Links & Selection
+link = "#ffd700"
+selection = "#ffd70033"
+"selection.text" = "#ffffff"
+"selection.muted" = "#ffd700bb"
+"selection.inactive" = "#252b36"
+"focus.ring" = "#ffd700bf"
+
+# Tabs
+"tab.page" = "#181c24"
+tab = "#14171e"
+"tab.hot" = "#202530"
+
+# Progress & Segments (Radiant Gold Energy)
+"progress.bar" = "#ffd700"
+"progress.track" = "#202530"
+"meter.fill" = "#ffd700"
+"meter.edge" = "#ffd70066"
+"meter.track" = "#1c2028"
+
+"segments.done" = [
+  "#fff4b8",
+  "#ffe980",
+  "#ffdf47",
+  "#ffd700",
+  "#f7cc00",
+  "#e6bc00",
+  "#d6aa00",
+  "#c49800",
+  "#b38700",
+  "#a17700",
+  "#916800",
+  "#805900",
+  "#704c00"
+]
+
+[light]
+window = "#f6f8fa"
+list = "#ffffff"
+"list.grid" = "#edf0f4"
+field = "#ffffff"
+"field.border" = "#d0d7de"
+"field.bottom" = "#c99700cc"
+
+menubar = "#f1f3f6"
+"menubar.bottom" = "#f1f3f6"
+"menubar.line" = "#e1e4e8"
+header = "#f3f5f8"
+"header.line" = "#e1e4e8"
+"header.sep" = "#e1e4e8"
+"header.sorted" = "#eaecef"
+
+button = "#f3f5f8"
+"button.border" = "#d0d7de"
+"button.bottom" = "#bfc6ce"
+"button.hot" = "#e9ecf0"
+"button.pressed" = "#dfe2e6"
+"button.text" = "#161b22"
+"button.default.border" = "#c99700"
+"button.default.bottom" = "#a87e00"
+
+"button.accent" = "#c99700"
+"button.accent.hot" = "#dbab16"
+"button.accent.pressed" = "#b08500"
+"button.accent.bottom" = "#947000"
+"button.accent.text" = "#ffffff"
+"button.accent.text.pressed" = "#f5f5f5"
+
+link = "#b08500"
+selection = "#fff4cc"
+"selection.text" = "#161b22"
+"selection.muted" = "#806600"
+"selection.inactive" = "#f1f3f6"
+"focus.ring" = "#c99700bf"
+
+"tab.page" = "#ffffff"
+tab = "#f1f3f6"
+"tab.hot" = "#e9ecf0"
+
+"progress.bar" = "#c99700"
+"progress.track" = "#e1e4e8"
+"meter.fill" = "#c99700"
+"meter.edge" = "#a87e00"
+"meter.track" = "#eaecef"
+
+"segments.done" = [
+  "#ffe066",
+  "#ffd733",
+  "#ffcd00",
+  "#f5c200",
+  "#e6b400",
+  "#d6a300",
+  "#c79300",
+  "#b88300",
+  "#a87400",
+  "#996600",
+  "#8a5900",
+  "#7a4c00",
+  "#6b4000"
+]

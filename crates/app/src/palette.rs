@@ -618,11 +618,19 @@ pub static CLASSIC: Theme = Theme {
     controls: Controls::CLASSIC,
 };
 
+/// The official signature theme of RAZ Creative Studio.
+pub fn raz() -> &'static Theme {
+    static RAZ: std::sync::LazyLock<Theme> = std::sync::LazyLock::new(|| {
+        crate::themefile::builtin("raz", include_str!("../assets/themes/raz.toml"))
+    });
+    &RAZ
+}
+
 /// The built-in themes that don't change by themselves, the default first: the classic look
 /// (written out above), then the ones shipped as theme files (`assets/themes/`, in the format
 /// users write, so they double as examples). Native follows the system and is made when chosen
 /// (`crate::native`).
-pub fn builtins() -> [&'static Theme; 8] {
+pub fn builtins() -> [&'static Theme; 9] {
     static HIGH_CONTRAST: std::sync::LazyLock<Theme> = std::sync::LazyLock::new(|| {
         crate::themefile::builtin(
             "high-contrast",
@@ -657,6 +665,7 @@ pub fn builtins() -> [&'static Theme; 8] {
         &LUNA,
         &AERO,
         &AQUA,
+        raz(),
     ]
 }
 
@@ -859,6 +868,7 @@ mod tests {
             ("luna", "Luna", include_str!("../assets/themes/luna.toml")),
             ("aero", "Aero", include_str!("../assets/themes/aero.toml")),
             ("aqua", "Aqua", include_str!("../assets/themes/aqua.toml")),
+            ("raz", "RAZ Studio", include_str!("../assets/themes/raz.toml")),
         ] {
             let v: serde_json::Value = toml::from_str(text).unwrap();
             let l = crate::themefile::parse(id, &v, |_| {

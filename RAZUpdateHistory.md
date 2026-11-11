@@ -3,6 +3,32 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-11] — Rancang Bangun Tema Baru "RAZ Studio" & Konfigurasi Sebagai Tema Default
+*Waktu: 11 November 2026 14:24 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Pembuatan Tema Resmi "RAZ Studio" (`crates/app/assets/themes/raz.toml`)**:
+   - Ciri khas visual:
+     - **Obsidian Dark Luxury**: Latar belakang deep charcoal navy (`#12151b`), surface elevated (`#191d24`), header (`#15181f`).
+     - **RAZ Signature Gold Accent**: Aksen emas berkilau (`#FFD700`, hover `#FFE033`, pressed `#E6C200`).
+     - **Tombol Mewah**: Tombol aksi utama (accent) berwarna emas elegan dengan teks obsidian kontras tinggi (`#0d0f12`), tombol reguler berbingkai halus (`#313849`).
+     - **Bilah Progres Emas Radiatif**: *Segment bar* unduhan dengan gradasi 13 lapis emas berkilau (`#fff4b8` hingga `#704c00`).
+     - **Varian Terang (Light Mode)**: Latar champagne mewah (`#f6f8fa`) dipadu aksen emas tembaga (`#c99700`).
+2. **Konfigurasi Sebagai Tema Default Aplikasi**:
+   - `crates/app/src/settings.rs`: Mengubah default `theme` dari `"classic"` menjadi `"raz"`.
+   - `crates/app/src/theme.rs`: Mengatur `select()` agar saat parameter kosong atau `"raz"`, otomatis mengaktifkan `palette::raz()`.
+   - `crates/app/src/palette.rs`: Mendaftarkan tema bawaan `pub fn raz() -> &'static Theme` ke dalam daftar `builtins()`.
+   - `crates/app/src/app.rs`: Menempatkan opsi `RAZ Studio` pada posisi teratas di menu **View → Theme** sebagai tema utama.
+3. **Kompilasi Ulang Binary & Installer**:
+   - Berhasil dikompilasi dengan Inno Setup (Exit Code: 0).
+   - Checksum rilis terbaru di `target/dist/`:
+     - `RAZDownloadManager-1.0.0-setup.exe` (15,8 MB) — SHA-256: `525cbc03e061b09e33a7df78e511896a6933a426435078b62583d589624d7fac`
+     - `RAZDownloadManager-1.0.0-portable.zip` (18,6 MB) — SHA-256: `e18f762181d9ba42aac3245c6ceb6af07529d35df95a1f8922b888d95bae2d4b`
+     - `RAZDownloadManager-1.0.0-x64.zip` (18,6 MB) — SHA-256: `09a08986e00f2f626a8c452ccebdb8f62abf13dfc276253f10689017a896d9fb`
+   - Sinkronisasi checksum pada halaman `website/download.html`.
+
+---
+
 ## [2026-11-11] — Pembaruan Label "Support RAZ DM" & Rebranding Lengkap Menu / About Dialog
 *Waktu: 11 November 2026 14:04 WIB*
 

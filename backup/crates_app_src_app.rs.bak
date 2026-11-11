@@ -1,3 +1,9 @@
+// ==============================================================================
+// RAZ Download Manager — Main Window Application Logic
+// Terakhir Diperbarui: 2026-11-10 12:30 WIB
+// Deskripsi: Logika antarmuka grafis utama, menu bar, toolbar, dan download list.
+// ==============================================================================
+
 //! The main window (notes/ui-spec/main-window.md): menu bar, toolbar, Categories tree and the
 //! download list at IDM 6.42's measured positions, plus the download actions behind them.
 
@@ -56,7 +62,7 @@ enum Cmd {
     CheckUpdates,
     About,
     TellFriend,
-    /// Help → Support MDM: the creator's GitHub Sponsors page in the browser.
+    /// Help → Support RAZ DM: the creator's GitHub Sponsors page in the browser.
     Support,
     Exit,
     Stop,
@@ -4361,7 +4367,7 @@ impl App {
             return line(&ApiAnswer { api: on });
         } else if !self.settings.automation_api {
             return line(&ErrorAnswer {
-                error: "the automation API is off (misterdownloadmanager-cli api on)".into(),
+                error: "the automation API is off (razdownloadmanager-cli api on)".into(),
                 code: Some(ipc::api::API_OFF.into()),
             });
         }
@@ -4458,7 +4464,7 @@ impl App {
         }
     }
 
-    /// `{"pair": true}` (`misterdownloadmanager-cli pair`, #157): a new pairing code, the
+    /// `{"pair": true}` (`razdownloadmanager-cli pair`, #157): a new pairing code, the
     /// page's addresses and a QR code for a terminal; an error while the remote control is off
     /// or not listening.
     pub fn pair_answer(&mut self) -> String {
@@ -5581,7 +5587,7 @@ impl App {
                 Err(e) => {
                     if self.save_failed.as_ref() != Some(&e) {
                         self.notice = Some((
-                            crate::i18n::mark("Mister Download Manager"),
+                            crate::i18n::mark("RAZ Download Manager"),
                             crate::i18n::fmt(
                                 crate::i18n::t(
                                     "The download list could not be saved: {error}. Changes are kept while MDM runs.",
@@ -5796,7 +5802,7 @@ impl App {
                 I("&Keyboard shortcuts", Cmd::Shortcuts, true, false),
                 Sep,
                 I(
-                    "Mister Download Manager &Home Page",
+                    "RAZ Download Manager &Home Page",
                     Cmd::HelpPage(""),
                     true,
                     false,
@@ -5805,10 +5811,10 @@ impl App {
                 Sep,
                 I("Check for &updates...", Cmd::CheckUpdates, true, false),
                 Sep,
-                I("&About Mister Download Manager", Cmd::About, true, false),
+                I("&About RAZ Download Manager", Cmd::About, true, false),
                 I("Tell a &friend", Cmd::TellFriend, true, false),
                 // MDM's, not IDM's: the creator's GitHub Sponsors page, asked for only.
-                I("Support &MDM", Cmd::Support, true, false),
+                I("Support RAZ &DM", Cmd::Support, true, false),
             ],
         };
         // View → Theme (MDM's, #45), after Always dark; then Draw with (#89, #206), where wgpu is
@@ -6960,7 +6966,7 @@ impl App {
                 Popup::Node(node) => (self.node_entries(node), None),
                 Popup::DropTarget => (
                     vec![
-                        MenuEntry::Item("Show Mister Download Manager", Cmd::ShowMain, true, false),
+                        MenuEntry::Item("Show RAZ Download Manager", Cmd::ShowMain, true, false),
                         MenuEntry::Item("&Add new download", Cmd::AddUrl, true, false),
                         MenuEntry::Sep,
                         MenuEntry::Item("Hide drop target", Cmd::ToggleDropTarget, true, false),
@@ -7196,7 +7202,7 @@ impl App {
         let dt = self
             .drop_target
             .get_or_insert_with(|| crate::droptarget::DropTarget::new(pos));
-        let icon = egui::include_image!("../assets/icons/app/mdm-48.png");
+        let icon = egui::include_image!("../assets/icons/app/razdm-48.png");
         for ev in dt.show(ctx, &icon) {
             use crate::droptarget::Event;
             match ev {
@@ -7441,7 +7447,7 @@ impl App {
             } else {
                 // A file MDM can't download or import (a picture, a program).
                 self.notice = Some((
-                    crate::i18n::mark("Mister Download Manager"),
+                    crate::i18n::mark("RAZ Download Manager"),
                     crate::i18n::fmt(
                         crate::i18n::t(
                             "Nothing to download in {item}: drop links, a .torrent file, or a list of addresses (.txt, .ef2).",
