@@ -5431,7 +5431,7 @@
    "text": "Para añadir una descarga, envía <x1/>."
   },
   "54c47c38624ff486": {
-   "source": "<g1>Support MDM</g1>: <g2>Help → Support MDM</g2> and a line in <g3>About</g3> open the creator's <g4>GitHub Sponsors</g4> page in the browser; the website, the README and the browser extension's popup link to it too. Only when asked: MDM stays free, with no reminders, and nothing changes or unlocks.",
+   "source": "<g1>Support RAZ DM</g1>: <g2>Help → Support RAZ DM</g2> and a line in <g3>About</g3> open the creator's <g4>GitHub Sponsors</g4> page in the browser; the website, the README and the browser extension's popup link to it too. Only when asked: MDM stays free, with no reminders, and nothing changes or unlocks.",
    "text": "<g1>Apoyar a MDM</g1>: <g2>Ayuda → Apoyar a MDM</g2> y una línea en <g3>Acerca de</g3> abren la página de <g4>GitHub Sponsors</g4> del creador en el navegador; el sitio web, el README y la ventana emergente de la extensión del navegador también enlazan a ella. Solo cuando se solicita: MDM sigue siendo gratuito, sin recordatorios, y nada cambia ni se desbloquea."
   },
   "54ccaa53103fedbb": {
@@ -5771,7 +5771,7 @@
    "text": "lee quién abrió solicitudes de extracción e incidencias, y quién comentó, de la API pública de GitHub (el encargado del mantenimiento, Claude y los bots excluidos) para cada lugar que les da las gracias: la página de inicio del sitio web, <x1/> y cada lanzamiento en la página de Novedades (<x2/>, en cada compilación), las notas de cada lanzamiento (<x3/>, las personas activas desde el lanzamiento anterior) y el archivo README (<x4/> en la preparación de cada lanzamiento: sus fotos redondas se confirman en <x5/>, ya que GitHub no puede redondear una imagen en un README)."
   },
   "5a277738c32493f8": {
-   "source": "Support MDM",
+   "source": "Support RAZ DM",
    "text": "Apoyar a MDM"
   },
   "5a4d6f48645f0903": {
@@ -6763,7 +6763,7 @@
    "text": "<g1>Seguir compartiendo torrents después de que terminen</g1> — desactivado por defecto: un torrent terminado se detiene, como cualquier descarga. Actívelo para seguir subiendo a otros pares después de que su descarga se haya completado."
   },
   "6a1495d1d5fff32d": {
-   "source": "<g1>Help</g1> — help pages and tutorials (on the website, in your language when it has it), <g2>Keyboard shortcuts</g2>, <g3>Report a problem</g3>, <g4>Check for updates</g4>, <g5>About</g5>, <g6>Tell a friend</g6> and <g7>Support MDM</g7> (its creator's GitHub Sponsors page: optional, nothing in MDM changes).",
+   "source": "<g1>Help</g1> — help pages and tutorials (on the website, in your language when it has it), <g2>Keyboard shortcuts</g2>, <g3>Report a problem</g3>, <g4>Check for updates</g4>, <g5>About</g5>, <g6>Tell a friend</g6> and <g7>Support RAZ DM</g7> (its creator's GitHub Sponsors page: optional, nothing in MDM changes).",
    "text": "<g1>Ayuda</g1>: páginas de ayuda y tutoriales (en el sitio web, en tu idioma si está disponible), <g2>Métodos abreviados de teclado</g2>, <g3>Informar de un problema</g3>, <g4>Buscar actualizaciones</g4>, <g5>Acerca de</g5>, <g6>Recomendar a un amigo</g6> y <g7>Apoyar a MDM</g7> (la página de GitHub Sponsors de su creador: opcional, nada cambia en MDM)."
   },
   "6a1c931da89c37ad": {

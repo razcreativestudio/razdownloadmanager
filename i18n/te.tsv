@@ -4114,7 +4114,7 @@
 	Sunday	ఆదివారం
 #. link (opens a web page) in the Help menu's windows (About, updates, shortcuts, Tell a friend)
 #, machine
-	Support MDM on GitHub Sponsors	GitHub స్పాన్సర్‌ల ద్వారా MDMకి మద్దతు ఇవ్వండి
+	Support RAZ DM on GitHub Sponsors	GitHub స్పాన్సర్‌ల ద్వారా RAZ DMకి మద్దతు ఇవ్వండి
 #. text in countries.rs
 #. a country's name (where a download's server is)
 #, machine
@@ -5815,7 +5815,7 @@ extension	Sent to RAZ Download Manager	RAZ Download Managerకు పంపబ�
 #. text in the browser extension
 #. link at the foot of the toolbar button's popup to the creator's GitHub Sponsors page (MDM is free; this is an optional donation)
 #, machine
-extension	Support MDM	MDMకి మద్దతు ఇవ్వండి
+extension	Support RAZ DM	RAZ DMకి మద్దతు ఇవ్వండి
 #. text in the browser extension
 #. check box in the toolbar button's popup: on, downloads go to the app; off, the browser keeps them
 #, machine
@@ -6472,7 +6472,7 @@ menu	Stop Download	డౌన్‌లోడ్‌ను ఆపండి
 #. menu command in the main window
 #. & marks the keyboard shortcut letter: keep one & before a letter of the translation
 #, machine
-menu	Support &MDM	&MDMకి మద్దతు ఇవ్వండి
+menu	Support RAZ &DM	&RAZ DMకి మద్దతు ఇవ్వండి
 #. menu command in the main window
 #. & marks the keyboard shortcut letter: keep one & before a letter of the translation
 #, machine

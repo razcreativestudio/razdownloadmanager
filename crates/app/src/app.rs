@@ -62,7 +62,7 @@ enum Cmd {
     CheckUpdates,
     About,
     TellFriend,
-    /// Help → Support MDM: the creator's GitHub Sponsors page in the browser.
+    /// Help → Support RAZ DM: the creator's GitHub Sponsors page in the browser.
     Support,
     Exit,
     Stop,
@@ -5814,7 +5814,7 @@ impl App {
                 I("&About RAZ Download Manager", Cmd::About, true, false),
                 I("Tell a &friend", Cmd::TellFriend, true, false),
                 // MDM's, not IDM's: the creator's GitHub Sponsors page, asked for only.
-                I("Support &MDM", Cmd::Support, true, false),
+                I("Support RAZ &DM", Cmd::Support, true, false),
             ],
         };
         // View → Theme (MDM's, #45), after Always dark; then Draw with (#89, #206), where wgpu is

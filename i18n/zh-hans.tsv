@@ -4114,7 +4114,7 @@
 	Sunday	星期日
 #. link (opens a web page) in the Help menu's windows (About, updates, shortcuts, Tell a friend)
 #, machine
-	Support MDM on GitHub Sponsors	在 GitHub Sponsors 上支持 MDM
+	Support RAZ DM on GitHub Sponsors	在 GitHub Sponsors 上支持 RAZ DM
 #. text in countries.rs
 #. a country's name (where a download's server is)
 #, machine
@@ -5815,7 +5815,7 @@ extension	Sent to RAZ Download Manager	已发送到 RAZ Download Manager
 #. text in the browser extension
 #. link at the foot of the toolbar button's popup to the creator's GitHub Sponsors page (MDM is free; this is an optional donation)
 #, machine
-extension	Support MDM	支持 MDM
+extension	Support RAZ DM	支持 RAZ DM
 #. text in the browser extension
 #. check box in the toolbar button's popup: on, downloads go to the app; off, the browser keeps them
 #, machine
@@ -6472,7 +6472,7 @@ menu	Stop Download	停止下载
 #. menu command in the main window
 #. & marks the keyboard shortcut letter: keep one & before a letter of the translation
 #, machine
-menu	Support &MDM	支持 &MDM
+menu	Support RAZ &DM	支持 &RAZ DM
 #. menu command in the main window
 #. & marks the keyboard shortcut letter: keep one & before a letter of the translation
 #, machine

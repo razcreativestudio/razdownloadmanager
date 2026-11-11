@@ -5431,7 +5431,7 @@
    "text": "Om in plaats daarvan een download toe te voegen, stuurt u <x1/>."
   },
   "54c47c38624ff486": {
-   "source": "<g1>Support MDM</g1>: <g2>Help → Support MDM</g2> and a line in <g3>About</g3> open the creator's <g4>GitHub Sponsors</g4> page in the browser; the website, the README and the browser extension's popup link to it too. Only when asked: MDM stays free, with no reminders, and nothing changes or unlocks.",
+   "source": "<g1>Support RAZ DM</g1>: <g2>Help → Support RAZ DM</g2> and a line in <g3>About</g3> open the creator's <g4>GitHub Sponsors</g4> page in the browser; the website, the README and the browser extension's popup link to it too. Only when asked: MDM stays free, with no reminders, and nothing changes or unlocks.",
    "text": "<g1>Steun MDM</g1>: <g2>Help → Steun MDM</g2> en een regel in <g3>Info</g3> openen de <g4>GitHub Sponsors</g4>-pagina van de maker in de browser; de website, de README en de pop-up van de browserextensie linken er ook naar. Alleen wanneer gevraagd: MDM blijft gratis, zonder herinneringen, en er verandert of ontgrendelt niets."
   },
   "54ccaa53103fedbb": {
@@ -5771,7 +5771,7 @@
    "text": "leest wie pull requests en issues heeft geopend en wie commentaar heeft gegeven, via de openbare API van GitHub (de beheerder, Claude en bots zijn weggelaten) voor elke plek waar ze worden bedankt: de startpagina van de website, <x1/> en elke release op de Nieuwspagina (<x2/>, bij elke build), de notities van elke release (<x3/>, de mensen die actief waren sinds de vorige release) en de README (<x4/> bij de voorbereiding van elke release: de ronde foto's worden vastgelegd in <x5/>, aangezien GitHub geen ronde afbeelding kan maken in een README)."
   },
   "5a277738c32493f8": {
-   "source": "Support MDM",
+   "source": "Support RAZ DM",
    "text": "Steun MDM"
   },
   "5a4d6f48645f0903": {
@@ -6763,7 +6763,7 @@
    "text": "<g1>Torrents blijven delen nadat ze zijn voltooid</g1> — standaard uit: een voltooide torrent stopt, net als elke download. Schakel deze optie in om te blijven uploaden naar andere peers nadat uw download is voltooid."
   },
   "6a1495d1d5fff32d": {
-   "source": "<g1>Help</g1> — help pages and tutorials (on the website, in your language when it has it), <g2>Keyboard shortcuts</g2>, <g3>Report a problem</g3>, <g4>Check for updates</g4>, <g5>About</g5>, <g6>Tell a friend</g6> and <g7>Support MDM</g7> (its creator's GitHub Sponsors page: optional, nothing in MDM changes).",
+   "source": "<g1>Help</g1> — help pages and tutorials (on the website, in your language when it has it), <g2>Keyboard shortcuts</g2>, <g3>Report a problem</g3>, <g4>Check for updates</g4>, <g5>About</g5>, <g6>Tell a friend</g6> and <g7>Support RAZ DM</g7> (its creator's GitHub Sponsors page: optional, nothing in MDM changes).",
    "text": "<g1>Help</g1> — helppagina's en tutorials (op de website, in uw taal indien beschikbaar), <g2>Toetsenbordsneltoetsen</g2>, <g3>Een probleem melden</g3>, <g4>Controleren op updates</g4>, <g5>Over</g5>, <g6>Vertel een vriend</g6> en <g7>Steun MDM</g7> (de GitHub Sponsors-pagina van de maker: optioneel, er verandert niets in MDM)."
   },
   "6a1c931da89c37ad": {

@@ -71,7 +71,7 @@ button.row { width: 100%; text-align: start; margin-top: 6px; overflow: hidden; 
 #declined-what { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 #declined-why { color: var(--muted); }
 footer { display: flex; justify-content: space-between; align-items: baseline; margin-top: 10px; border-top: 1px solid var(--edge); padding-top: 6px; color: var(--muted); font-size: 12px; }
-/* Help and Support MDM side by side on the footer's one line: the popup keeps its height. */
+/* Help and Support RAZ DM side by side on the footer's one line: the popup keeps its height. */
 .footer-links { display: flex; align-items: baseline; gap: 14px; min-width: 0; }
 /* The media the tab loaded (#38): one row each, its type, name, what is known, and Download. */
 .media { margin-top: 12px; border-top: 1px solid var(--edge); padding-top: 8px; }

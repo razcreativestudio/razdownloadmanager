@@ -3,6 +3,28 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-11] — Pembaruan Label "Support RAZ DM" & Rebranding Lengkap Menu / About Dialog
+*Waktu: 11 November 2026 14:04 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Rebranding Menu & About Dialog**:
+   - Menu Help: Mengubah label `Support &MDM` menjadi `Support RAZ &DM`.
+   - Dialog About: Mengubah link `Support MDM on GitHub Sponsors` menjadi `Support RAZ DM on GitHub Sponsors`.
+   - Mengubah URL sponsor menuju organisasi resmi `https://github.com/razcreativestudio`.
+2. **Sinkronisasi Seluruh Katalog Bahasa (86 Bahasa)**:
+   - Memperbarui 86 file katalog `i18n/*.tsv` (misal Bahasa Indonesia: `Dukung RAZ &DM` & `Dukung RAZ DM di GitHub Sponsors`).
+   - Memperbarui seluruh file `extension/_locales/*/messages.json` untuk teks `popup_support`.
+   - Memperbarui dokumentasi petunjuk (`docs/getting-started.md`, `ROADMAP.md`, `CHANGELOG.md`, `.github/FUNDING.yml`).
+3. **Kompilasi Ulang Binary & Installer Inno Setup**:
+   - Kompilasi release penuh berhasil (Exit Code: 0).
+   - Checksum rilis baru di `target/dist/`:
+     - `RAZDownloadManager-1.0.0-setup.exe` (15,8 MB) — SHA-256: `5af76bcf64c4ddd2e3f3f2352e53970120e467dff8691227a2d8b8ffe0566208`
+     - `RAZDownloadManager-1.0.0-portable.zip` (18,6 MB) — SHA-256: `41b056d17e5becc9205587c02ef9f3014f2f1f8e89ba89c8a558e214a4596535`
+     - `RAZDownloadManager-1.0.0-x64.zip` (18,6 MB) — SHA-256: `72e69ea49f9c50448a775c0de852a87167f25284613a19dbd945a9a97a7a8733`
+   - Sinkronisasi nilai hash SHA-256 di `website/download.html`.
+
+---
+
 ## [2026-11-11] — Refactoring Crate Package Names (mdm-* -> razdm-*) & Rilis Bersih Installer v1.0.0
 *Waktu: 11 November 2026 13:28 WIB*
 

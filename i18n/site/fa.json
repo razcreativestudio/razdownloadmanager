@@ -5427,7 +5427,7 @@
    "text": "برای افزودن یک دانلود، <x1/> را بفرستید."
   },
   "54c47c38624ff486": {
-   "source": "<g1>Support MDM</g1>: <g2>Help → Support MDM</g2> and a line in <g3>About</g3> open the creator's <g4>GitHub Sponsors</g4> page in the browser; the website, the README and the browser extension's popup link to it too. Only when asked: MDM stays free, with no reminders, and nothing changes or unlocks.",
+   "source": "<g1>Support RAZ DM</g1>: <g2>Help → Support RAZ DM</g2> and a line in <g3>About</g3> open the creator's <g4>GitHub Sponsors</g4> page in the browser; the website, the README and the browser extension's popup link to it too. Only when asked: MDM stays free, with no reminders, and nothing changes or unlocks.",
    "text": "<g1>پشتیبانی از MDM</g1>: <g2>راهنما ← پشتیبانی از MDM</g2> و یک خط در <g3>درباره</g3> صفحه <g4>GitHub Sponsors</g4> سازنده را در مرورگر باز می‌کند؛ وب‌سایت، README و پنجره بازشوی افزونه مرورگر نیز به آن پیوند می‌دهند. فقط در صورت درخواست: MDM رایگان می‌ماند، بدون یادآوری، و هیچ چیز تغییر نمی‌کند یا قفل‌گشایی نمی‌شود."
   },
   "54ccaa53103fedbb": {
@@ -5767,7 +5767,7 @@
    "text": "نام افرادی را که درخواست‌های پول و ایشو باز کرده‌اند و کسانی که نظر داده‌اند، از API عمومی GitHub می‌خواند (نگهدارنده، کلود و ربات‌ها حذف شده‌اند) برای هر جایی که از آن‌ها تشکر می‌شود: صفحه اصلی وب‌سایت، <x1/> و هر انتشار در صفحه اخبار (<x2/>، در هر بیلد)، یادداشت‌های هر انتشار (<x3/>، افرادی که از انتشار قبلی فعال بوده‌اند) و فایل README (<x4/> در آماده‌سازی هر انتشار: عکس‌های گرد آن‌ها در <x5/> ثبت می‌شوند، زیرا GitHub نمی‌تواند یک تصویر را در README گرد کند)."
   },
   "5a277738c32493f8": {
-   "source": "Support MDM",
+   "source": "Support RAZ DM",
    "text": "پشتیبانی از MDM"
   },
   "5a4d6f48645f0903": {
@@ -6759,7 +6759,7 @@
    "text": "<g1>پس از اتمام، تورنت‌ها را به اشتراک‌گذاری ادامه بده</g1> — به‌طور پیش‌فرض خاموش است: تورنتی که بارگیری‌اش تمام شده، مانند هر بارگیری دیگری متوقف می‌شود. برای ادامه بارگذاری برای همتاهای دیگر پس از پایان بارگیری، این گزینه را روشن کنید."
   },
   "6a1495d1d5fff32d": {
-   "source": "<g1>Help</g1> — help pages and tutorials (on the website, in your language when it has it), <g2>Keyboard shortcuts</g2>, <g3>Report a problem</g3>, <g4>Check for updates</g4>, <g5>About</g5>, <g6>Tell a friend</g6> and <g7>Support MDM</g7> (its creator's GitHub Sponsors page: optional, nothing in MDM changes).",
+   "source": "<g1>Help</g1> — help pages and tutorials (on the website, in your language when it has it), <g2>Keyboard shortcuts</g2>, <g3>Report a problem</g3>, <g4>Check for updates</g4>, <g5>About</g5>, <g6>Tell a friend</g6> and <g7>Support RAZ DM</g7> (its creator's GitHub Sponsors page: optional, nothing in MDM changes).",
    "text": "<g1>راهنما</g1> — صفحات راهنما و آموزش‌ها (در وب‌سایت، در صورت وجود به زبان شما)، <g2>میانبرهای صفحه‌کلید</g2>، <g3>گزارش یک مشکل</g3>، <g4>بررسی به‌روزرسانی‌ها</g4>، <g5>درباره</g5>، <g6>معرفی به دوستان</g6> و <g7>پشتیبانی از MDM</g7> (صفحه GitHub Sponsors سازنده: اختیاری، چیزی در MDM تغییر نمی‌کند)."
   },
   "6a1c931da89c37ad": {

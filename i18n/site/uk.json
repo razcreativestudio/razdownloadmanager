@@ -5431,7 +5431,7 @@
    "text": "Натомість, щоб додати завантаження, надішліть <x1/>."
   },
   "54c47c38624ff486": {
-   "source": "<g1>Support MDM</g1>: <g2>Help → Support MDM</g2> and a line in <g3>About</g3> open the creator's <g4>GitHub Sponsors</g4> page in the browser; the website, the README and the browser extension's popup link to it too. Only when asked: MDM stays free, with no reminders, and nothing changes or unlocks.",
+   "source": "<g1>Support RAZ DM</g1>: <g2>Help → Support RAZ DM</g2> and a line in <g3>About</g3> open the creator's <g4>GitHub Sponsors</g4> page in the browser; the website, the README and the browser extension's popup link to it too. Only when asked: MDM stays free, with no reminders, and nothing changes or unlocks.",
    "text": "<g1>Підтримати MDM</g1>: <g2>Довідка → Підтримати MDM</g2> та рядок у вікні <g3>Про програму</g3> відкривають сторінку <g4>GitHub Sponsors</g4> творця в браузері; вебсайт, README та спливаюче вікно розширення браузера також посилаються на неї. Лише за запитом: MDM залишається безкоштовним, без нагадувань, і нічого не змінюється та не розблоковується."
   },
   "54ccaa53103fedbb": {
@@ -5771,7 +5771,7 @@
    "text": "читає, хто відкрив запити на витягування та проблеми, а також хто коментував, з публічного API GitHub (розробник, Клод та боти виключені) для кожного місця, де їм дякують: домашня сторінка вебсайту, <x1/> та кожен випуск на сторінці «Новини» (<x2/>, у кожній збірці), примітки до кожного випуску (<x3/>, люди, активні з попереднього випуску) та файл README (<x4/> під час підготовки кожного випуску: його круглі фотографії завантажуються в <x5/>, оскільки GitHub не може округлити зображення у файлі README)."
   },
   "5a277738c32493f8": {
-   "source": "Support MDM",
+   "source": "Support RAZ DM",
    "text": "Підтримати MDM"
   },
   "5a4d6f48645f0903": {
@@ -6763,7 +6763,7 @@
    "text": "<g1>Продовжувати роздачу торрентів після завершення</g1> — за замовчуванням вимкнено: після завершення торрент зупиняється, як і будь-яке завантаження. Увімкніть цей параметр, щоб після завершення завантаження й надалі надсилати дані іншим пірам."
   },
   "6a1495d1d5fff32d": {
-   "source": "<g1>Help</g1> — help pages and tutorials (on the website, in your language when it has it), <g2>Keyboard shortcuts</g2>, <g3>Report a problem</g3>, <g4>Check for updates</g4>, <g5>About</g5>, <g6>Tell a friend</g6> and <g7>Support MDM</g7> (its creator's GitHub Sponsors page: optional, nothing in MDM changes).",
+   "source": "<g1>Help</g1> — help pages and tutorials (on the website, in your language when it has it), <g2>Keyboard shortcuts</g2>, <g3>Report a problem</g3>, <g4>Check for updates</g4>, <g5>About</g5>, <g6>Tell a friend</g6> and <g7>Support RAZ DM</g7> (its creator's GitHub Sponsors page: optional, nothing in MDM changes).",
    "text": "<g1>Довідка</g1> — сторінки довідки та навчальні посібники (на вебсайті, вашою мовою, якщо вона доступна), <g2>Сполучення клавіш</g2>, <g3>Повідомити про проблему</g3>, <g4>Перевірити наявність оновлень</g4>, <g5>Про програму</g5>, <g6>Розкажіть другу</g6> та <g7>Підтримати MDM</g7> (сторінка GitHub Sponsors творця: необов’язково, нічого в MDM не змінюється)."
   },
   "6a1c931da89c37ad": {

@@ -5431,7 +5431,7 @@
    "text": "Untuk menambahkan unduhan, kirim <x1/>."
   },
   "54c47c38624ff486": {
-   "source": "<g1>Support MDM</g1>: <g2>Help → Support MDM</g2> and a line in <g3>About</g3> open the creator's <g4>GitHub Sponsors</g4> page in the browser; the website, the README and the browser extension's popup link to it too. Only when asked: MDM stays free, with no reminders, and nothing changes or unlocks.",
+   "source": "<g1>Support RAZ DM</g1>: <g2>Help → Support RAZ DM</g2> and a line in <g3>About</g3> open the creator's <g4>GitHub Sponsors</g4> page in the browser; the website, the README and the browser extension's popup link to it too. Only when asked: MDM stays free, with no reminders, and nothing changes or unlocks.",
    "text": "<g1>Dukung MDM</g1>: <g2>Bantuan → Dukung MDM</g2> dan satu baris di <g3>Tentang</g3> membuka halaman <g4>GitHub Sponsors</g4> pembuat di peramban; situs web, README, dan pop-up ekstensi peramban juga menautkannya. Hanya jika diminta: MDM tetap gratis, tanpa pengingat, dan tidak ada yang berubah atau terbuka."
   },
   "54ccaa53103fedbb": {
@@ -5771,7 +5771,7 @@
    "text": "membaca siapa yang membuka permintaan tarik dan isu, dan siapa yang berkomentar, dari API publik GitHub (pemelihara, Claude, dan bot tidak disertakan) untuk setiap tempat yang berterima kasih kepada mereka: halaman beranda situs web, <x1/> dan setiap rilis di halaman Berita (<x2/>, pada setiap build), catatan setiap rilis (<x3/>, orang-orang yang aktif sejak rilis sebelumnya) dan README (<x4/> pada persiapan setiap rilis: foto bulatnya di-commit di <x5/>, karena GitHub tidak dapat membulatkan gambar di README)."
   },
   "5a277738c32493f8": {
-   "source": "Support MDM",
+   "source": "Support RAZ DM",
    "text": "Dukung MDM"
   },
   "5a4d6f48645f0903": {
@@ -6763,7 +6763,7 @@
    "text": "<g1>Terus berbagi torrent setelah selesai</g1> — mati secara default: torrent yang selesai berhenti, seperti unduhan lainnya. Aktifkan untuk terus mengunggah ke rekan lain setelah unduhan Anda selesai."
   },
   "6a1495d1d5fff32d": {
-   "source": "<g1>Help</g1> — help pages and tutorials (on the website, in your language when it has it), <g2>Keyboard shortcuts</g2>, <g3>Report a problem</g3>, <g4>Check for updates</g4>, <g5>About</g5>, <g6>Tell a friend</g6> and <g7>Support MDM</g7> (its creator's GitHub Sponsors page: optional, nothing in MDM changes).",
+   "source": "<g1>Help</g1> — help pages and tutorials (on the website, in your language when it has it), <g2>Keyboard shortcuts</g2>, <g3>Report a problem</g3>, <g4>Check for updates</g4>, <g5>About</g5>, <g6>Tell a friend</g6> and <g7>Support RAZ DM</g7> (its creator's GitHub Sponsors page: optional, nothing in MDM changes).",
    "text": "<g1>Bantuan</g1> — halaman bantuan dan tutorial (di situs web, dalam bahasa Anda jika tersedia), <g2>Pintasan keyboard</g2>, <g3>Laporkan masalah</g3>, <g4>Periksa pembaruan</g4>, <g5>Tentang</g5>, <g6>Beri tahu teman</g6>, dan <g7>Dukung MDM</g7> (halaman GitHub Sponsors pembuatnya: opsional, tidak ada yang berubah di MDM)."
   },
   "6a1c931da89c37ad": {

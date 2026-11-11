@@ -5431,7 +5431,7 @@
    "text": "Bunun yerine bir indirme eklemek için <x1/> gönderin."
   },
   "54c47c38624ff486": {
-   "source": "<g1>Support MDM</g1>: <g2>Help → Support MDM</g2> and a line in <g3>About</g3> open the creator's <g4>GitHub Sponsors</g4> page in the browser; the website, the README and the browser extension's popup link to it too. Only when asked: MDM stays free, with no reminders, and nothing changes or unlocks.",
+   "source": "<g1>Support RAZ DM</g1>: <g2>Help → Support RAZ DM</g2> and a line in <g3>About</g3> open the creator's <g4>GitHub Sponsors</g4> page in the browser; the website, the README and the browser extension's popup link to it too. Only when asked: MDM stays free, with no reminders, and nothing changes or unlocks.",
    "text": "<g1>MDM'yi Destekleyin</g1>: <g2>Yardım → MDM'yi Destekleyin</g2> ve <g3>Hakkında</g3> bölümündeki bir satır, oluşturucunun <g4>GitHub Sponsors</g4> sayfasını tarayıcıda açar; web sitesi, README ve tarayıcı uzantısının açılır penceresi de buraya bağlanır. Yalnızca istendiğinde: MDM ücretsiz kalır, hatırlatıcılar olmadan ve hiçbir şey değişmez veya kilidi açılmaz."
   },
   "54ccaa53103fedbb": {
@@ -5767,7 +5767,7 @@
    "text": "GitHub'ın herkese açık API'sinden, katkıda bulunanları teşekkür eden her yerde (web sitesinin ana sayfası, <x1/> ve Haberler sayfasındaki her sürüm (<x2/>, her derlemede), her sürümün notları (<x3/>, önceki sürümden bu yana aktif olan kişiler) ve README (<x4/> her sürüm hazırlığında: yuvarlak fotoğrafları <x5/> içinde işlenir, çünkü GitHub bir README'deki bir resmi yuvarlayamaz) için çekme isteklerini ve sorunları kimin açtığını ve kimin yorum yaptığını okur (sürdürücü, Claude ve botlar hariç tutulur)."
   },
   "5a277738c32493f8": {
-   "source": "Support MDM",
+   "source": "Support RAZ DM",
    "text": "MDM'yi Destekleyin"
   },
   "5a4d6f48645f0903": {
@@ -6759,7 +6759,7 @@
    "text": "<g1>Torrentleri bittikten sonra paylaşmaya devam et</g1> — varsayılan olarak kapalıdır: bitmiş bir torrent, herhangi bir indirme gibi durur. İndirmeniz tamamlandıktan sonra diğer eşlere yüklemeye devam etmek için açın."
   },
   "6a1495d1d5fff32d": {
-   "source": "<g1>Help</g1> — help pages and tutorials (on the website, in your language when it has it), <g2>Keyboard shortcuts</g2>, <g3>Report a problem</g3>, <g4>Check for updates</g4>, <g5>About</g5>, <g6>Tell a friend</g6> and <g7>Support MDM</g7> (its creator's GitHub Sponsors page: optional, nothing in MDM changes).",
+   "source": "<g1>Help</g1> — help pages and tutorials (on the website, in your language when it has it), <g2>Keyboard shortcuts</g2>, <g3>Report a problem</g3>, <g4>Check for updates</g4>, <g5>About</g5>, <g6>Tell a friend</g6> and <g7>Support RAZ DM</g7> (its creator's GitHub Sponsors page: optional, nothing in MDM changes).",
    "text": "<g1>Yardım</g1> — yardım sayfaları ve eğitimler (web sitesinde, varsa kendi dilinizde), <g2>Klavye kısayolları</g2>, <g3>Bir sorun bildir</g3>, <g4>Güncelleştirmeleri denetle</g4>, <g5>Hakkında</g5>, <g6>Bir arkadaşına öner</g6> ve <g7>MDM'yi Destekleyin</g7> (yaratıcısının GitHub Sponsors sayfası: isteğe bağlı, MDM'de hiçbir şey değişmez)."
   },
   "6a1c931da89c37ad": {

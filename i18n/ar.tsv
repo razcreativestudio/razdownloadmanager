@@ -3105,7 +3105,7 @@
 #. text in the Options window; text in the Scheduler window
 	Sunday	الأحد
 #. link (opens a web page) in the Help menu's windows (About, updates, shortcuts, Tell a friend)
-	Support MDM on GitHub Sponsors	ادعم MDM على GitHub Sponsors
+	Support RAZ DM on GitHub Sponsors	ادعم RAZ DM على GitHub Sponsors
 #. text in countries.rs
 #. a country's name (where a download's server is)
 	Suriname	سورينام
@@ -4425,7 +4425,7 @@ extension	Send downloads to	إرسال التنزيلات إلى
 extension	Sent to RAZ Download Manager	تم الإرسال إلى RAZ Download Manager
 #. text in the browser extension
 #. link at the foot of the toolbar button's popup to the creator's GitHub Sponsors page (MDM is free; this is an optional donation)
-extension	Support MDM	ادعم MDM
+extension	Support RAZ DM	ادعم RAZ DM
 #. text in the browser extension
 #. check box in the toolbar button's popup: on, downloads go to the app; off, the browser keeps them
 extension	Take downloads from this browser	تلقي التنزيلات من هذا المستعرض
@@ -4939,7 +4939,7 @@ menu	Stop	إيقاف
 menu	Stop Download	إيقاف التنزيل
 #. menu command in the main window
 #. & marks the keyboard shortcut letter: keep one & before a letter of the translation
-menu	Support &MDM	ادعم &MDM
+menu	Support RAZ &DM	ادعم &RAZ DM
 #. menu command in the main window
 #. & marks the keyboard shortcut letter: keep one & before a letter of the translation
 menu	Tell a &friend	أخبر &صديقا

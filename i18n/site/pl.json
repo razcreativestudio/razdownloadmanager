@@ -5431,7 +5431,7 @@
    "text": "Aby zamiast tego dodać pobieranie, wyślij <x1/>."
   },
   "54c47c38624ff486": {
-   "source": "<g1>Support MDM</g1>: <g2>Help → Support MDM</g2> and a line in <g3>About</g3> open the creator's <g4>GitHub Sponsors</g4> page in the browser; the website, the README and the browser extension's popup link to it too. Only when asked: MDM stays free, with no reminders, and nothing changes or unlocks.",
+   "source": "<g1>Support RAZ DM</g1>: <g2>Help → Support RAZ DM</g2> and a line in <g3>About</g3> open the creator's <g4>GitHub Sponsors</g4> page in the browser; the website, the README and the browser extension's popup link to it too. Only when asked: MDM stays free, with no reminders, and nothing changes or unlocks.",
    "text": "<g1>Wesprzyj MDM</g1>: <g2>Pomoc → Wesprzyj MDM</g2> oraz wiersz w <g3>Informacje</g3> otwierają stronę <g4>GitHub Sponsors</g4> twórcy w przeglądarce; strona internetowa, README i wyskakujące okienko rozszerzenia przeglądarki również do niej linkują. Tylko na żądanie: MDM pozostaje darmowy, bez przypomnień, i nic się nie zmienia ani nie odblokowuje."
   },
   "54ccaa53103fedbb": {
@@ -5771,7 +5771,7 @@
    "text": "odczytuje z publicznego API GitHub, kto otwierał żądania ściągnięcia i zgłoszenia oraz kto komentował (z wyłączeniem opiekuna, Claude’a i botów), dla każdego miejsca, które im dziękuje: strony głównej witryny, <x1/> i każdego wydania na stronie Aktualności (<x2/>, w każdej kompilacji), notatek do każdego wydania (<x3/>, osoby aktywne od poprzedniego wydania) oraz pliku README (<x4/> podczas przygotowywania każdego wydania: okrągłe zdjęcia są zatwierdzane w <x5/>, ponieważ GitHub nie może zaokrąglić obrazu w pliku README)."
   },
   "5a277738c32493f8": {
-   "source": "Support MDM",
+   "source": "Support RAZ DM",
    "text": "Wesprzyj MDM"
   },
   "5a4d6f48645f0903": {
@@ -6763,7 +6763,7 @@
    "text": "<g1>Kontynuuj udostępnianie torrentów po ich zakończeniu</g1> — domyślnie wyłączone: po zakończeniu torrent zostaje zatrzymany, tak jak każde pobieranie. Włącz tę opcję, aby po zakończeniu pobierania nadal wysyłać dane do innych uczestników."
   },
   "6a1495d1d5fff32d": {
-   "source": "<g1>Help</g1> — help pages and tutorials (on the website, in your language when it has it), <g2>Keyboard shortcuts</g2>, <g3>Report a problem</g3>, <g4>Check for updates</g4>, <g5>About</g5>, <g6>Tell a friend</g6> and <g7>Support MDM</g7> (its creator's GitHub Sponsors page: optional, nothing in MDM changes).",
+   "source": "<g1>Help</g1> — help pages and tutorials (on the website, in your language when it has it), <g2>Keyboard shortcuts</g2>, <g3>Report a problem</g3>, <g4>Check for updates</g4>, <g5>About</g5>, <g6>Tell a friend</g6> and <g7>Support RAZ DM</g7> (its creator's GitHub Sponsors page: optional, nothing in MDM changes).",
    "text": "<g1>Pomoc</g1> — strony pomocy i samouczki (na stronie internetowej, w Twoim języku, jeśli dostępne), <g2>Skróty klawiaturowe</g2>, <g3>Zgłoś problem</g3>, <g4>Sprawdź aktualizacje</g4>, <g5>Informacje</g5>, <g6>Poleć znajomemu</g6> i <g7>Wesprzyj MDM</g7> (strona GitHub Sponsors twórcy: opcjonalne, nic w MDM się nie zmienia)."
   },
   "6a1c931da89c37ad": {

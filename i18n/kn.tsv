@@ -4114,7 +4114,7 @@
 	Sunday	ಭಾನುವಾರ
 #. link (opens a web page) in the Help menu's windows (About, updates, shortcuts, Tell a friend)
 #, machine
-	Support MDM on GitHub Sponsors	GitHub ಸ್ಪಾನ್ಸರ್‌ಗಳಲ್ಲಿ MDM ಅನ್ನು ಬೆಂಬಲಿಸಿ
+	Support RAZ DM on GitHub Sponsors	GitHub ಸ್ಪಾನ್ಸರ್‌ಗಳಲ್ಲಿ RAZ DM ಅನ್ನು ಬೆಂಬಲಿಸಿ
 #. text in countries.rs
 #. a country's name (where a download's server is)
 #, machine
@@ -5815,7 +5815,7 @@ extension	Sent to RAZ Download Manager	RAZ Download Manager ಗೆ ಕಳುಹ�
 #. text in the browser extension
 #. link at the foot of the toolbar button's popup to the creator's GitHub Sponsors page (MDM is free; this is an optional donation)
 #, machine
-extension	Support MDM	MDM ಅನ್ನು ಬೆಂಬಲಿಸಿ
+extension	Support RAZ DM	RAZ DM ಅನ್ನು ಬೆಂಬಲಿಸಿ
 #. text in the browser extension
 #. check box in the toolbar button's popup: on, downloads go to the app; off, the browser keeps them
 #, machine
@@ -6472,7 +6472,7 @@ menu	Stop Download	ಡೌನ್‌ಲೋಡ್ ನಿಲ್ಲಿಸಿ
 #. menu command in the main window
 #. & marks the keyboard shortcut letter: keep one & before a letter of the translation
 #, machine
-menu	Support &MDM	MDM ಅನ್ನು ಬೆಂಬಲಿಸಿ(&M)
+menu	Support RAZ &DM	RAZ DM ಅನ್ನು ಬೆಂಬಲಿಸಿ(&M)
 #. menu command in the main window
 #. & marks the keyboard shortcut letter: keep one & before a letter of the translation
 #, machine

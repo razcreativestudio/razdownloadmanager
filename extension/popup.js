@@ -7,7 +7,7 @@
 // The toolbar button's popup: whether the browser reaches RAZ Download Manager
 const ext = globalThis.browser ?? globalThis.chrome;
 const HELP = "https://razdownloadmanager.com/help/browser-help.html";
-// The creator's GitHub Sponsors page (the app's Help → Support MDM): a plain link, in a new tab.
+// The creator's GitHub Sponsors page (the app's Help → Support RAZ DM): a plain link, in a new tab.
 const SPONSORS = "https://github.com/sponsors/anefzaoui";
 const t = (key, ...subs) => ext.i18n.getMessage(key, subs) || key;
 const $ = (id) => document.getElementById(id);

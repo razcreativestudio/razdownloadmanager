@@ -5427,7 +5427,7 @@
    "text": "代わりにダウンロードを追加するには、<x1/>を送信してください。"
   },
   "54c47c38624ff486": {
-   "source": "<g1>Support MDM</g1>: <g2>Help → Support MDM</g2> and a line in <g3>About</g3> open the creator's <g4>GitHub Sponsors</g4> page in the browser; the website, the README and the browser extension's popup link to it too. Only when asked: MDM stays free, with no reminders, and nothing changes or unlocks.",
+   "source": "<g1>Support RAZ DM</g1>: <g2>Help → Support RAZ DM</g2> and a line in <g3>About</g3> open the creator's <g4>GitHub Sponsors</g4> page in the browser; the website, the README and the browser extension's popup link to it too. Only when asked: MDM stays free, with no reminders, and nothing changes or unlocks.",
    "text": "<g1>MDM をサポート</g1>: <g2>ヘルプ → MDM をサポート</g2>と<g3>バージョン情報</g3>の行から、作成者の<g4>GitHub Sponsors</g4>ページがブラウザーで開きます。ウェブサイト、README、ブラウザー拡張機能のポップアップもこれにリンクしています。要求された場合のみ: MDM は無料で、リマインダーはなく、何も変更されたりロック解除されたりすることはありません。"
   },
   "54ccaa53103fedbb": {
@@ -5763,7 +5763,7 @@
    "text": "GitHub の公開 API から、プルリクエストやイシューをオープンしたユーザー、コメントしたユーザーを読み込みます (メンテナー、Claude、ボットは除外)。これは、ウェブサイトのホーム ページ、<x1/>、ニュース ページの各リリース (<x2/>、すべてのビルド)、各リリースのノート (<x3/>、前回のリリース以降に活動したユーザー)、および README (<x4/>、各リリースの準備時。GitHub では README 内の画像を丸くできないため、丸い写真は <x5/> にコミットされています) など、貢献者に感謝するすべての場所で使用されます。"
   },
   "5a277738c32493f8": {
-   "source": "Support MDM",
+   "source": "Support RAZ DM",
    "text": "MDM をサポート"
   },
   "5a4d6f48645f0903": {
@@ -6755,7 +6755,7 @@
    "text": "<g1>完了後もトレントを共有し続ける</g1> — デフォルトではオフです。完了したトレントは、他のダウンロードと同様に停止します。ダウンロード完了後も他のピアへのアップロードを続けるには、オンにします。"
   },
   "6a1495d1d5fff32d": {
-   "source": "<g1>Help</g1> — help pages and tutorials (on the website, in your language when it has it), <g2>Keyboard shortcuts</g2>, <g3>Report a problem</g3>, <g4>Check for updates</g4>, <g5>About</g5>, <g6>Tell a friend</g6> and <g7>Support MDM</g7> (its creator's GitHub Sponsors page: optional, nothing in MDM changes).",
+   "source": "<g1>Help</g1> — help pages and tutorials (on the website, in your language when it has it), <g2>Keyboard shortcuts</g2>, <g3>Report a problem</g3>, <g4>Check for updates</g4>, <g5>About</g5>, <g6>Tell a friend</g6> and <g7>Support RAZ DM</g7> (its creator's GitHub Sponsors page: optional, nothing in MDM changes).",
    "text": "<g1>ヘルプ</g1> — ヘルプ ページとチュートリアル (ウェブサイト上、利用可能な場合は日本語で)、<g2>キーボード ショートカット</g2>、<g3>問題の報告</g3>、<g4>更新プログラムの確認</g4>、<g5>バージョン情報</g5>、<g6>友達に教える</g6>、<g7>MDM をサポート</g7> (作成者の GitHub Sponsors ページ: 任意、MDM の機能は変更されません)。"
   },
   "6a1c931da89c37ad": {

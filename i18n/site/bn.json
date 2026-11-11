@@ -5431,7 +5431,7 @@
    "text": "এর বদলে একটি ডাউনলোড যোগ করতে, <x1/> পাঠান।"
   },
   "54c47c38624ff486": {
-   "source": "<g1>Support MDM</g1>: <g2>Help → Support MDM</g2> and a line in <g3>About</g3> open the creator's <g4>GitHub Sponsors</g4> page in the browser; the website, the README and the browser extension's popup link to it too. Only when asked: MDM stays free, with no reminders, and nothing changes or unlocks.",
+   "source": "<g1>Support RAZ DM</g1>: <g2>Help → Support RAZ DM</g2> and a line in <g3>About</g3> open the creator's <g4>GitHub Sponsors</g4> page in the browser; the website, the README and the browser extension's popup link to it too. Only when asked: MDM stays free, with no reminders, and nothing changes or unlocks.",
    "text": "<g1>MDM-কে সহায়তা করুন</g1>: <g2>সহায়তা → MDM-কে সহায়তা করুন</g2> এবং <g3>সম্পর্কে</g3>-এর একটি লাইন ব্রাউজারে নির্মাতার <g4>GitHub Sponsors</g4> পৃষ্ঠা খোলে; ওয়েবসাইট, README এবং ব্রাউজার এক্সটেনশনের পপআপও এতে লিঙ্ক করে। শুধুমাত্র যখন চাওয়া হয়: MDM বিনামূল্যে থাকে, কোনো অনুস্মারক ছাড়াই, এবং কিছুই পরিবর্তন বা আনলক হয় না।"
   },
   "54ccaa53103fedbb": {
@@ -5771,7 +5771,7 @@
    "text": "যারা পুল রিকোয়েস্ট এবং ইস্যু খুলেছেন, এবং যারা মন্তব্য করেছেন, তাদের তালিকা GitHub-এর পাবলিক এপিআই থেকে পড়ে (রক্ষণাবেক্ষণকারী, ক্লদ এবং বট বাদ দিয়ে) প্রতিটি স্থানে তাদের ধন্যবাদ জানানোর জন্য: ওয়েবসাইটের হোম পেজ, <x1/> এবং নিউজ পেজের প্রতিটি রিলিজ (<x2/>, প্রতিটি বিল্ডে), প্রতিটি রিলিজের নোট (<x3/>, আগের রিলিজের পর থেকে সক্রিয় ব্যক্তিরা) এবং README (<x4/> প্রতিটি রিলিজের প্রস্তুতির সময়: এর গোলাকার ছবিগুলো <x5/>-এ কমিট করা হয়, কারণ GitHub README-তে একটি ছবি গোলাকার করতে পারে না)।"
   },
   "5a277738c32493f8": {
-   "source": "Support MDM",
+   "source": "Support RAZ DM",
    "text": "MDM সমর্থন করুন"
   },
   "5a4d6f48645f0903": {
@@ -6763,7 +6763,7 @@
    "text": "<g1>টরেন্ট শেষ হওয়ার পরেও শেয়ার করা চালিয়ে যান</g1> — ডিফল্টরূপে বন্ধ: একটি শেষ হওয়া টরেন্ট যেকোনো ডাউনলোডের মতোই থেমে যায়। আপনার ডাউনলোড সম্পূর্ণ হওয়ার পরে অন্যান্য পিয়ার্সগুলিতে আপলোড চালিয়ে যেতে এটি চালু করুন।"
   },
   "6a1495d1d5fff32d": {
-   "source": "<g1>Help</g1> — help pages and tutorials (on the website, in your language when it has it), <g2>Keyboard shortcuts</g2>, <g3>Report a problem</g3>, <g4>Check for updates</g4>, <g5>About</g5>, <g6>Tell a friend</g6> and <g7>Support MDM</g7> (its creator's GitHub Sponsors page: optional, nothing in MDM changes).",
+   "source": "<g1>Help</g1> — help pages and tutorials (on the website, in your language when it has it), <g2>Keyboard shortcuts</g2>, <g3>Report a problem</g3>, <g4>Check for updates</g4>, <g5>About</g5>, <g6>Tell a friend</g6> and <g7>Support RAZ DM</g7> (its creator's GitHub Sponsors page: optional, nothing in MDM changes).",
    "text": "<g1>সহায়তা</g1> — সহায়তার পৃষ্ঠা এবং টিউটোরিয়াল (ওয়েবসাইটে, আপনার ভাষায় যদি থাকে), <g2>কিবোর্ড শর্টকাট</g2>, <g3>একটি সমস্যা রিপোর্ট করুন</g3>, <g4>আপডেটের জন্য পরীক্ষা করুন</g4>, <g5>সম্পর্কে</g5>, <g6>একজন বন্ধুকে বলুন</g6> এবং <g7>MDM-কে সহায়তা করুন</g7> (এর নির্মাতার GitHub স্পনসর পৃষ্ঠা: ঐচ্ছিক, MDM-এ কিছু পরিবর্তন হয় না)।"
   },
   "6a1c931da89c37ad": {

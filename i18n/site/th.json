@@ -5431,7 +5431,7 @@
    "text": "หากต้องการเพิ่มการดาวน์โหลด ให้ส่ง <x1/> แทน"
   },
   "54c47c38624ff486": {
-   "source": "<g1>Support MDM</g1>: <g2>Help → Support MDM</g2> and a line in <g3>About</g3> open the creator's <g4>GitHub Sponsors</g4> page in the browser; the website, the README and the browser extension's popup link to it too. Only when asked: MDM stays free, with no reminders, and nothing changes or unlocks.",
+   "source": "<g1>Support RAZ DM</g1>: <g2>Help → Support RAZ DM</g2> and a line in <g3>About</g3> open the creator's <g4>GitHub Sponsors</g4> page in the browser; the website, the README and the browser extension's popup link to it too. Only when asked: MDM stays free, with no reminders, and nothing changes or unlocks.",
    "text": "<g1>สนับสนุน MDM</g1>: <g2>วิธีใช้ → สนับสนุน MDM</g2> และบรรทัดใน <g3>เกี่ยวกับ</g3> จะเปิดหน้า <g4>GitHub Sponsors</g4> ของผู้สร้างในเบราว์เซอร์ เว็บไซต์ README และป๊อปอัปของส่วนขยายเบราว์เซอร์ก็ลิงก์ไปยังหน้านี้ด้วย เฉพาะเมื่อมีการร้องขอเท่านั้น: MDM ยังคงใช้งานได้ฟรี ไม่มีข้อความแจ้งเตือน และไม่มีการเปลี่ยนแปลงหรือปลดล็อกใด ๆ"
   },
   "54ccaa53103fedbb": {
@@ -5771,7 +5771,7 @@
    "text": "อ่านข้อมูลผู้ที่เปิดคำขอพูลและปัญหา รวมถึงผู้ที่แสดงความคิดเห็น จาก API สาธารณะของ GitHub (ไม่รวมผู้ดูแล, Claude และบอท) สำหรับทุกที่ที่กล่าวขอบคุณพวกเขา: หน้าแรกของเว็บไซต์, <x1/> และแต่ละรุ่นบนหน้าข่าว (<x2/>, ในทุกบิลด์), บันทึกประจำรุ่นแต่ละรุ่น (<x3/>, ผู้ที่ใช้งานตั้งแต่รุ่นก่อนหน้า) และ README (<x4/> ในการเตรียมแต่ละรุ่น: รูปภาพวงกลมจะถูกคอมมิตใน <x5/> เนื่องจาก GitHub ไม่สามารถทำรูปภาพให้เป็นวงกลมใน README ได้)"
   },
   "5a277738c32493f8": {
-   "source": "Support MDM",
+   "source": "Support RAZ DM",
    "text": "สนับสนุน MDM"
   },
   "5a4d6f48645f0903": {
@@ -6763,7 +6763,7 @@
    "text": "<g1>แชร์ทอร์เรนต์ต่อไปหลังจากดาวน์โหลดเสร็จสิ้น</g1> — ปิดไว้โดยค่าเริ่มต้น: ทอร์เรนต์ที่ดาวน์โหลดเสร็จแล้วจะหยุดทำงานเหมือนกับการดาวน์โหลดทั่วไป เปิดตัวเลือกนี้เพื่ออัปโหลดให้เพียร์รายอื่นต่อไปหลังจากดาวน์โหลดเสร็จ"
   },
   "6a1495d1d5fff32d": {
-   "source": "<g1>Help</g1> — help pages and tutorials (on the website, in your language when it has it), <g2>Keyboard shortcuts</g2>, <g3>Report a problem</g3>, <g4>Check for updates</g4>, <g5>About</g5>, <g6>Tell a friend</g6> and <g7>Support MDM</g7> (its creator's GitHub Sponsors page: optional, nothing in MDM changes).",
+   "source": "<g1>Help</g1> — help pages and tutorials (on the website, in your language when it has it), <g2>Keyboard shortcuts</g2>, <g3>Report a problem</g3>, <g4>Check for updates</g4>, <g5>About</g5>, <g6>Tell a friend</g6> and <g7>Support RAZ DM</g7> (its creator's GitHub Sponsors page: optional, nothing in MDM changes).",
    "text": "<g1>วิธีใช้</g1> — หน้าวิธีใช้และบทแนะนำ (บนเว็บไซต์ ในภาษาของคุณหากมี), <g2>แป้นพิมพ์ลัด</g2>, <g3>รายงานปัญหา</g3>, <g4>ตรวจหาการอัปเดต</g4>, <g5>เกี่ยวกับ</g5>, <g6>บอกเพื่อน</g6> และ <g7>สนับสนุน MDM</g7> (หน้า GitHub Sponsors ของผู้สร้าง: ไม่บังคับ ไม่มีอะไรใน MDM เปลี่ยนแปลง)"
   },
   "6a1c931da89c37ad": {

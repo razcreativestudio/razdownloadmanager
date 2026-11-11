@@ -5431,7 +5431,7 @@
    "text": "Para adicionar uma transferência, envie <x1/>."
   },
   "54c47c38624ff486": {
-   "source": "<g1>Support MDM</g1>: <g2>Help → Support MDM</g2> and a line in <g3>About</g3> open the creator's <g4>GitHub Sponsors</g4> page in the browser; the website, the README and the browser extension's popup link to it too. Only when asked: MDM stays free, with no reminders, and nothing changes or unlocks.",
+   "source": "<g1>Support RAZ DM</g1>: <g2>Help → Support RAZ DM</g2> and a line in <g3>About</g3> open the creator's <g4>GitHub Sponsors</g4> page in the browser; the website, the README and the browser extension's popup link to it too. Only when asked: MDM stays free, with no reminders, and nothing changes or unlocks.",
    "text": "<g1>Apoiar o MDM</g1>: <g2>Ajuda → Apoiar o MDM</g2> e uma linha em <g3>Acerca de</g3> abrem a página <g4>GitHub Sponsors</g4> do criador no navegador; o site, o README e o pop-up da extensão do navegador também têm uma ligação para ela. Apenas quando solicitado: o MDM permanece gratuito, sem lembretes, e nada muda ou é desbloqueado."
   },
   "54ccaa53103fedbb": {
@@ -5771,7 +5771,7 @@
    "text": "lê quem abriu pedidos de pull e problemas, e quem comentou, a partir da API pública do GitHub (o mantenedor, Claude e bots excluídos) para cada local que lhes agradece: a página inicial do site, <x1/> e cada lançamento na página Notícias (<x2/>, em cada compilação), as notas de cada lançamento (<x3/>, as pessoas ativas desde o lançamento anterior) e o README (<x4/> na preparação de cada lançamento: as suas fotos redondas são submetidas em <x5/>, uma vez que o GitHub não consegue arredondar uma imagem num README)."
   },
   "5a277738c32493f8": {
-   "source": "Support MDM",
+   "source": "Support RAZ DM",
    "text": "Apoiar o MDM"
   },
   "5a4d6f48645f0903": {
@@ -6763,7 +6763,7 @@
    "text": "<g1>Manter a partilha de torrents após a conclusão</g1> — desativado por predefinição: um torrent concluído para, como qualquer transferência. Ative-o para continuar a enviar para outros pares após a sua transferência estar completa."
   },
   "6a1495d1d5fff32d": {
-   "source": "<g1>Help</g1> — help pages and tutorials (on the website, in your language when it has it), <g2>Keyboard shortcuts</g2>, <g3>Report a problem</g3>, <g4>Check for updates</g4>, <g5>About</g5>, <g6>Tell a friend</g6> and <g7>Support MDM</g7> (its creator's GitHub Sponsors page: optional, nothing in MDM changes).",
+   "source": "<g1>Help</g1> — help pages and tutorials (on the website, in your language when it has it), <g2>Keyboard shortcuts</g2>, <g3>Report a problem</g3>, <g4>Check for updates</g4>, <g5>About</g5>, <g6>Tell a friend</g6> and <g7>Support RAZ DM</g7> (its creator's GitHub Sponsors page: optional, nothing in MDM changes).",
    "text": "<g1>Ajuda</g1> — páginas de ajuda e tutoriais (no site, no seu idioma, se disponível), <g2>Atalhos de teclado</g2>, <g3>Comunicar um problema</g3>, <g4>Procurar atualizações</g4>, <g5>Acerca de</g5>, <g6>Recomendar a um amigo</g6> e <g7>Apoiar o MDM</g7> (página do GitHub Sponsors do criador: opcional, nada no MDM muda)."
   },
   "6a1c931da89c37ad": {

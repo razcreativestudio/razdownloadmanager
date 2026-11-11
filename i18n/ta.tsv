@@ -4114,7 +4114,7 @@
 	Sunday	ஞாயிறு
 #. link (opens a web page) in the Help menu's windows (About, updates, shortcuts, Tell a friend)
 #, machine
-	Support MDM on GitHub Sponsors	GitHub Sponsors-இல் MDM-ஐ ஆதரியுங்கள்
+	Support RAZ DM on GitHub Sponsors	GitHub Sponsors-இல் RAZ DM-ஐ ஆதரியுங்கள்
 #. text in countries.rs
 #. a country's name (where a download's server is)
 #, machine
@@ -5815,7 +5815,7 @@ extension	Sent to RAZ Download Manager	RAZ Download Managerக்கு அன�
 #. text in the browser extension
 #. link at the foot of the toolbar button's popup to the creator's GitHub Sponsors page (MDM is free; this is an optional donation)
 #, machine
-extension	Support MDM	MDM-ஐ ஆதரிக்கவும்
+extension	Support RAZ DM	RAZ DM-ஐ ஆதரிக்கவும்
 #. text in the browser extension
 #. check box in the toolbar button's popup: on, downloads go to the app; off, the browser keeps them
 #, machine
@@ -6472,7 +6472,7 @@ menu	Stop Download	பதிவிறக்கத்தை நிறுத்த
 #. menu command in the main window
 #. & marks the keyboard shortcut letter: keep one & before a letter of the translation
 #, machine
-menu	Support &MDM	MDM-ஐ ஆ&தரிக்கவும்
+menu	Support RAZ &DM	RAZ DM-ஐ ஆ&தரிக்கவும்
 #. menu command in the main window
 #. & marks the keyboard shortcut letter: keep one & before a letter of the translation
 #, machine

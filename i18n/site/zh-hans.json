@@ -5431,7 +5431,7 @@
    "text": "若要添加下载，请发送<x1/>。"
   },
   "54c47c38624ff486": {
-   "source": "<g1>Support MDM</g1>: <g2>Help → Support MDM</g2> and a line in <g3>About</g3> open the creator's <g4>GitHub Sponsors</g4> page in the browser; the website, the README and the browser extension's popup link to it too. Only when asked: MDM stays free, with no reminders, and nothing changes or unlocks.",
+   "source": "<g1>Support RAZ DM</g1>: <g2>Help → Support RAZ DM</g2> and a line in <g3>About</g3> open the creator's <g4>GitHub Sponsors</g4> page in the browser; the website, the README and the browser extension's popup link to it too. Only when asked: MDM stays free, with no reminders, and nothing changes or unlocks.",
    "text": "<g1>支持 MDM</g1>：<g2>帮助 → 支持 MDM</g2> 和<g3>关于</g3>中的一行文字会在浏览器中打开创建者的 <g4>GitHub Sponsors</g4> 页面；网站、README 和浏览器扩展的弹出窗口也链接到该页面。仅在被要求时显示：MDM 保持免费，没有提醒，也没有任何功能改变或解锁。"
   },
   "54ccaa53103fedbb": {
@@ -5767,7 +5767,7 @@
    "text": "从 GitHub 的公共 API 读取谁发起了拉取请求和问题，以及谁发表了评论（维护者、Claude 和机器人除外），用于感谢他们的所有地方：网站主页、<x1/> 和新闻页面上的每个版本（<x2/>，在每个构建中），每个版本的发布说明（<x3/>，自上一个版本以来活跃的人员）以及 README（<x4/> 在每个版本准备时：其圆形照片提交在 <x5/> 中，因为 GitHub 无法在 README 中将图片设为圆形）。"
   },
   "5a277738c32493f8": {
-   "source": "Support MDM",
+   "source": "Support RAZ DM",
    "text": "支持 MDM"
   },
   "5a4d6f48645f0903": {
@@ -6759,7 +6759,7 @@
    "text": "<g1>下载完成后继续共享种子</g1> — 默认关闭：种子完成后会停止共享，与其他下载相同。启用此选项后，下载完成仍会继续向其他节点上传。"
   },
   "6a1495d1d5fff32d": {
-   "source": "<g1>Help</g1> — help pages and tutorials (on the website, in your language when it has it), <g2>Keyboard shortcuts</g2>, <g3>Report a problem</g3>, <g4>Check for updates</g4>, <g5>About</g5>, <g6>Tell a friend</g6> and <g7>Support MDM</g7> (its creator's GitHub Sponsors page: optional, nothing in MDM changes).",
+   "source": "<g1>Help</g1> — help pages and tutorials (on the website, in your language when it has it), <g2>Keyboard shortcuts</g2>, <g3>Report a problem</g3>, <g4>Check for updates</g4>, <g5>About</g5>, <g6>Tell a friend</g6> and <g7>Support RAZ DM</g7> (its creator's GitHub Sponsors page: optional, nothing in MDM changes).",
    "text": "<g1>帮助</g1> — 帮助页面和教程（在网站上，如果支持您的语言则显示您的语言），<g2>键盘快捷方式</g2>，<g3>报告问题</g3>，<g4>检查更新</g4>，<g5>关于</g5>，<g6>告诉朋友</g6> 和 <g7>支持 MDM</g7>（其创建者的 GitHub 赞助者页面：可选，MDM 中没有任何更改）。"
   },
   "6a1c931da89c37ad": {

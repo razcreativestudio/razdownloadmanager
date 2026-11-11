@@ -5431,7 +5431,7 @@
    "text": "Để thêm một lượt tải xuống, hãy gửi <x1/>."
   },
   "54c47c38624ff486": {
-   "source": "<g1>Support MDM</g1>: <g2>Help → Support MDM</g2> and a line in <g3>About</g3> open the creator's <g4>GitHub Sponsors</g4> page in the browser; the website, the README and the browser extension's popup link to it too. Only when asked: MDM stays free, with no reminders, and nothing changes or unlocks.",
+   "source": "<g1>Support RAZ DM</g1>: <g2>Help → Support RAZ DM</g2> and a line in <g3>About</g3> open the creator's <g4>GitHub Sponsors</g4> page in the browser; the website, the README and the browser extension's popup link to it too. Only when asked: MDM stays free, with no reminders, and nothing changes or unlocks.",
    "text": "<g1>Hỗ trợ MDM</g1>: <g2>Trợ giúp → Hỗ trợ MDM</g2> và một dòng trong <g3>Giới thiệu</g3> sẽ mở trang <g4>GitHub Sponsors</g4> của người tạo trong trình duyệt; trang web, README và cửa sổ bật lên của tiện ích mở rộng trình duyệt cũng liên kết đến đó. Chỉ khi được yêu cầu: MDM vẫn miễn phí, không có lời nhắc, và không có gì thay đổi hoặc mở khóa."
   },
   "54ccaa53103fedbb": {
@@ -5771,7 +5771,7 @@
    "text": "đọc thông tin về những người đã mở yêu cầu kéo (pull request) và vấn đề (issue), cũng như những người đã bình luận, từ API công khai của GitHub (người bảo trì, Claude và các bot được bỏ qua) cho mọi nơi cảm ơn họ: trang chủ của trang web, <x1/> và mỗi bản phát hành trên trang Tin tức (<x2/>, trên mỗi bản dựng), ghi chú của mỗi bản phát hành (<x3/>, những người hoạt động kể từ bản phát hành trước) và README (<x4/> trong quá trình chuẩn bị mỗi bản phát hành: ảnh tròn của họ được cam kết trong <x5/>, vì GitHub không thể làm tròn ảnh trong README)."
   },
   "5a277738c32493f8": {
-   "source": "Support MDM",
+   "source": "Support RAZ DM",
    "text": "Hỗ trợ MDM"
   },
   "5a4d6f48645f0903": {
@@ -6763,7 +6763,7 @@
    "text": "<g1>Tiếp tục chia sẻ torrent sau khi hoàn tất</g1> — tắt theo mặc định: một torrent đã hoàn thành sẽ dừng, giống như bất kỳ bản tải xuống nào. Bật nó lên để tiếp tục tải lên cho các người ngang hàng khác sau khi tải xuống của bạn hoàn tất."
   },
   "6a1495d1d5fff32d": {
-   "source": "<g1>Help</g1> — help pages and tutorials (on the website, in your language when it has it), <g2>Keyboard shortcuts</g2>, <g3>Report a problem</g3>, <g4>Check for updates</g4>, <g5>About</g5>, <g6>Tell a friend</g6> and <g7>Support MDM</g7> (its creator's GitHub Sponsors page: optional, nothing in MDM changes).",
+   "source": "<g1>Help</g1> — help pages and tutorials (on the website, in your language when it has it), <g2>Keyboard shortcuts</g2>, <g3>Report a problem</g3>, <g4>Check for updates</g4>, <g5>About</g5>, <g6>Tell a friend</g6> and <g7>Support RAZ DM</g7> (its creator's GitHub Sponsors page: optional, nothing in MDM changes).",
    "text": "<g1>Trợ giúp</g1> — các trang trợ giúp và hướng dẫn (trên trang web, bằng ngôn ngữ của bạn nếu có), <g2>Phím tắt</g2>, <g3>Báo cáo sự cố</g3>, <g4>Kiểm tra bản cập nhật</g4>, <g5>Giới thiệu</g5>, <g6>Giới thiệu cho bạn bè</g6> và <g7>Hỗ trợ MDM</g7> (trang GitHub Sponsors của người tạo: tùy chọn, không có gì trong MDM thay đổi)."
   },
   "6a1c931da89c37ad": {

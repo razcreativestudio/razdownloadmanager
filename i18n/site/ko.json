@@ -5427,7 +5427,7 @@
    "text": "대신 다운로드를 추가하려면 <x1/>를 보내세요."
   },
   "54c47c38624ff486": {
-   "source": "<g1>Support MDM</g1>: <g2>Help → Support MDM</g2> and a line in <g3>About</g3> open the creator's <g4>GitHub Sponsors</g4> page in the browser; the website, the README and the browser extension's popup link to it too. Only when asked: MDM stays free, with no reminders, and nothing changes or unlocks.",
+   "source": "<g1>Support RAZ DM</g1>: <g2>Help → Support RAZ DM</g2> and a line in <g3>About</g3> open the creator's <g4>GitHub Sponsors</g4> page in the browser; the website, the README and the browser extension's popup link to it too. Only when asked: MDM stays free, with no reminders, and nothing changes or unlocks.",
    "text": "<g1>MDM 지원</g1>: <g2>도움말 → MDM 지원</g2> 및 <g3>정보</g3>의 한 줄이 브라우저에서 제작자의 <g4>GitHub Sponsors</g4> 페이지를 엽니다. 웹사이트, README 및 브라우저 확장 프로그램의 팝업도 이 페이지로 연결됩니다. 요청 시에만 작동하며, MDM은 무료로 유지되고 알림이 없으며, 아무것도 변경되거나 잠금 해제되지 않습니다."
   },
   "54ccaa53103fedbb": {
@@ -5763,7 +5763,7 @@
    "text": "감사 인사를 전하는 모든 곳(웹사이트 홈페이지, <x1/>, 뉴스 페이지의 각 릴리스(<x2/>, 모든 빌드), 각 릴리스 노트(<x3/>, 이전 릴리스 이후 활동한 사람), README(<x4/>, 각 릴리스 준비 시: GitHub에서는 README에서 사진을 둥글게 처리할 수 없으므로 둥근 사진은 <x5/>에 커밋됨))에 대해 GitHub의 공개 API에서 풀 리퀘스트와 이슈를 열고 댓글을 단 사람을 읽어옵니다(유지 관리자, Claude 및 봇은 제외)."
   },
   "5a277738c32493f8": {
-   "source": "Support MDM",
+   "source": "Support RAZ DM",
    "text": "MDM 지원"
   },
   "5a4d6f48645f0903": {
@@ -6755,7 +6755,7 @@
    "text": "<g1>토렌트 완료 후 계속 공유</g1> — 기본적으로 꺼져 있습니다: 완료된 토렌트는 다른 다운로드와 마찬가지로 중지됩니다. 다운로드가 완료된 후에도 다른 피어에게 계속 업로드하려면 이 기능을 켜십시오."
   },
   "6a1495d1d5fff32d": {
-   "source": "<g1>Help</g1> — help pages and tutorials (on the website, in your language when it has it), <g2>Keyboard shortcuts</g2>, <g3>Report a problem</g3>, <g4>Check for updates</g4>, <g5>About</g5>, <g6>Tell a friend</g6> and <g7>Support MDM</g7> (its creator's GitHub Sponsors page: optional, nothing in MDM changes).",
+   "source": "<g1>Help</g1> — help pages and tutorials (on the website, in your language when it has it), <g2>Keyboard shortcuts</g2>, <g3>Report a problem</g3>, <g4>Check for updates</g4>, <g5>About</g5>, <g6>Tell a friend</g6> and <g7>Support RAZ DM</g7> (its creator's GitHub Sponsors page: optional, nothing in MDM changes).",
    "text": "<g1>도움말</g1> — 도움말 페이지 및 튜토리얼(웹사이트에서 해당 언어로 제공), <g2>바로 가기 키</g2>, <g3>문제 보고</g3>, <g4>업데이트 확인</g4>, <g5>정보</g5>, <g6>친구에게 알리기</g6> 및 <g7>MDM 지원</g7>(제작자의 GitHub 스폰서 페이지: 선택 사항, MDM에는 변경 사항 없음)."
   },
   "6a1c931da89c37ad": {

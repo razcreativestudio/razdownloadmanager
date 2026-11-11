@@ -19,13 +19,13 @@ use crate::winui::{self, ButtonKind, r};
 
 /// The repository: problem reports, releases, source, licences.
 pub const REPO: &str = "https://github.com/razcreativestudio/razdownloadmanager";
-/// The creator's GitHub Sponsors page: Help → Support MDM, About's last line. The website, the
+/// The creator's GitHub Sponsors page: Help → Support RAZ DM, About's last line. The website, the
 /// extension's popup and the repository's Sponsor button (.github/FUNDING.yml) point there too.
 pub const SPONSORS: &str = "https://github.com/razcreativestudio";
 const LATEST: &str = "https://api.github.com/repos/razcreativestudio/razdownloadmanager/releases/latest";
 pub const VERSION: &str = env!("CARGO_PKG_VERSION");
 pub const COMMIT: &str = env!("MDM_COMMIT");
-/// While MDM runs, the automatic check comes again this often (it also checks at every start).
+/// While RAZ DM runs, the automatic check comes again this often (it also checks at every start).
 pub const CHECK_EVERY: i64 = 24 * 3600;
 /// The check at start waits this long (the window, the list and the downloads first).
 pub const CHECK_AFTER_START: std::time::Duration = std::time::Duration::from_secs(5);
@@ -82,7 +82,7 @@ pub fn open_page(doc: &str) {
     }
 }
 
-/// Help → Support MDM and About's link: the Sponsors page in the browser. Asked for only: MDM
+/// Help → Support RAZ DM and About's link: the Sponsors page in the browser. Asked for only: RAZ DM
 /// never brings it up by itself, and never in an off-screen test run (MDM_OFFSCREEN), whose
 /// clicks come from scripts, not from a person at the browser.
 pub fn support() {
@@ -789,14 +789,14 @@ impl About {
                 ) {
                     crate::launch::open(format!("{REPO}/blob/main/ATTRIBUTION.md"));
                 }
-                // Its own row under them: the creator's Sponsors page (Help → Support MDM).
+                // Its own row under them: the creator's Sponsors page (Help → Support RAZ DM).
                 y += 22.0;
                 if winui::link(
                     ui,
                     &p,
                     o.x + 80.0,
                     y,
-                    "Support MDM on GitHub Sponsors",
+                    "Support RAZ DM on GitHub Sponsors",
                     "support",
                 ) {
                     support();

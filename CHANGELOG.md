@@ -683,7 +683,7 @@ This release tightens what MDM accepts from torrents.
   link to the setting. On Linux an administrator has to allow it once (the guide shows how); on
   macOS only an administrator can schedule a wake, so the option says why it's greyed. MDM never
   asks for an administrator's password. The Scheduler is 40 pixels taller for it.
-- **Support MDM**: **Help → Support MDM** and a line in **About** open the creator's
+- **Support RAZ DM**: **Help → Support RAZ DM** and a line in **About** open the creator's
   [GitHub Sponsors](https://github.com/sponsors/anefzaoui) page in the browser; the website, the
   README and the browser extension's popup link to it too. Only when asked: MDM stays free, with
   no reminders, and nothing changes or unlocks.

@@ -247,8 +247,8 @@ Everything below ships together, in version 0.5.0.
 - ✅ Firefox's add-on offered from [addons.mozilla.org](https://addons.mozilla.org/firefox/addon/mister-download-manager/)
   first: **Add to Firefox** on the website, in the help, the FAQ and the README, and in MDM's
   **Add RAZ Download Manager to your browser** window (for Zen and LibreWolf too)
-- ✅ Support MDM: a way to support its creator on [GitHub Sponsors](https://github.com/sponsors/anefzaoui),
-  asked for only (**Help → Support MDM**, a line in About, the website, the README, the
+- ✅ Support RAZ DM: a way to support its creator on [GitHub Sponsors](https://github.com/razcreativestudio),
+  asked for only (**Help → Support RAZ DM**, a line in About, the website, the README, the
   extension's popup and GitHub's Sponsor button); MDM stays free, nothing changes or unlocks
 - ✅ A server that can't resume a download no longer gets the file downloaded twice on a busy
   computer (part of [#136](https://github.com/anefzaoui/razdownloadmanager/issues/136))

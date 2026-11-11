@@ -4114,7 +4114,7 @@
 	Sunday	Igandea
 #. link (opens a web page) in the Help menu's windows (About, updates, shortcuts, Tell a friend)
 #, machine
-	Support MDM on GitHub Sponsors	Lagundu MDMri GitHub Sponsors-en
+	Support RAZ DM on GitHub Sponsors	Lagundu RAZ DMri GitHub Sponsors-en
 #. text in countries.rs
 #. a country's name (where a download's server is)
 #, machine
@@ -5815,7 +5815,7 @@ extension	Sent to RAZ Download Manager	RAZ Download Manager aplikaziora bidali d
 #. text in the browser extension
 #. link at the foot of the toolbar button's popup to the creator's GitHub Sponsors page (MDM is free; this is an optional donation)
 #, machine
-extension	Support MDM	Lagundu MDMri
+extension	Support RAZ DM	Lagundu RAZ DMri
 #. text in the browser extension
 #. check box in the toolbar button's popup: on, downloads go to the app; off, the browser keeps them
 #, machine
@@ -6472,7 +6472,7 @@ menu	Stop Download	Gelditu deskarga
 #. menu command in the main window
 #. & marks the keyboard shortcut letter: keep one & before a letter of the translation
 #, machine
-menu	Support &MDM	Lagundu &MDMri
+menu	Support RAZ &DM	Lagundu &RAZ DMri
 #. menu command in the main window
 #. & marks the keyboard shortcut letter: keep one & before a letter of the translation
 #, machine

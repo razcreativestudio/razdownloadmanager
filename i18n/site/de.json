@@ -5431,7 +5431,7 @@
    "text": "Um stattdessen einen Download hinzuzufügen, senden Sie <x1/>."
   },
   "54c47c38624ff486": {
-   "source": "<g1>Support MDM</g1>: <g2>Help → Support MDM</g2> and a line in <g3>About</g3> open the creator's <g4>GitHub Sponsors</g4> page in the browser; the website, the README and the browser extension's popup link to it too. Only when asked: MDM stays free, with no reminders, and nothing changes or unlocks.",
+   "source": "<g1>Support RAZ DM</g1>: <g2>Help → Support RAZ DM</g2> and a line in <g3>About</g3> open the creator's <g4>GitHub Sponsors</g4> page in the browser; the website, the README and the browser extension's popup link to it too. Only when asked: MDM stays free, with no reminders, and nothing changes or unlocks.",
    "text": "<g1>MDM unterstützen</g1>: <g2>Hilfe → MDM unterstützen</g2> und eine Zeile in <g3>Info</g3> öffnen die <g4>GitHub Sponsors</g4>-Seite des Erstellers im Browser; die Website, die README und das Browser-Erweiterungs-Popup verlinken ebenfalls darauf. Nur wenn gefragt: MDM bleibt kostenlos, ohne Erinnerungen, und nichts ändert oder schaltet sich frei."
   },
   "54ccaa53103fedbb": {
@@ -5771,7 +5771,7 @@
    "text": "liest von GitHubs öffentlicher API, wer Pull Requests und Issues geöffnet und wer kommentiert hat (der Maintainer, Claude und Bots ausgenommen), für jeden Ort, der ihnen dankt: die Startseite der Website, <x1/> und jede Veröffentlichung auf der News-Seite (<x2/>, bei jedem Build), die Versionshinweise jeder Veröffentlichung (<x3/>, die seit der vorherigen Veröffentlichung aktiven Personen) und die README (<x4/> bei der Vorbereitung jeder Veröffentlichung: ihre runden Fotos werden in <x5/> committet, da GitHub ein Bild in einer README nicht runden kann)."
   },
   "5a277738c32493f8": {
-   "source": "Support MDM",
+   "source": "Support RAZ DM",
    "text": "MDM unterstützen"
   },
   "5a4d6f48645f0903": {
@@ -6763,7 +6763,7 @@
    "text": "<g1>Torrents nach Abschluss weitergeben</g1> – standardmäßig ausgeschaltet: Ein abgeschlossener Torrent stoppt wie jeder andere Download. Schalten Sie es ein, um nach Abschluss Ihres Downloads weiterhin auf andere Peers hochzuladen."
   },
   "6a1495d1d5fff32d": {
-   "source": "<g1>Help</g1> — help pages and tutorials (on the website, in your language when it has it), <g2>Keyboard shortcuts</g2>, <g3>Report a problem</g3>, <g4>Check for updates</g4>, <g5>About</g5>, <g6>Tell a friend</g6> and <g7>Support MDM</g7> (its creator's GitHub Sponsors page: optional, nothing in MDM changes).",
+   "source": "<g1>Help</g1> — help pages and tutorials (on the website, in your language when it has it), <g2>Keyboard shortcuts</g2>, <g3>Report a problem</g3>, <g4>Check for updates</g4>, <g5>About</g5>, <g6>Tell a friend</g6> and <g7>Support RAZ DM</g7> (its creator's GitHub Sponsors page: optional, nothing in MDM changes).",
    "text": "<g1>Hilfe</g1> – Hilfeseiten und Anleitungen (auf der Website, falls verfügbar in Ihrer Sprache), <g2>Tastenkombinationen</g2>, <g3>Ein Problem melden</g3>, <g4>Nach Updates suchen</g4>, <g5>Über</g5>, <g6>Einem Freund empfehlen</g6> und <g7>MDM unterstützen</g7> (die GitHub Sponsors-Seite des Erstellers: optional, ändert nichts in MDM)."
   },
   "6a1c931da89c37ad": {

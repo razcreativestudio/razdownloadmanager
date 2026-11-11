@@ -5431,7 +5431,7 @@
    "text": "Pour ajouter un téléchargement, envoyez plutôt <x1/>."
   },
   "54c47c38624ff486": {
-   "source": "<g1>Support MDM</g1>: <g2>Help → Support MDM</g2> and a line in <g3>About</g3> open the creator's <g4>GitHub Sponsors</g4> page in the browser; the website, the README and the browser extension's popup link to it too. Only when asked: MDM stays free, with no reminders, and nothing changes or unlocks.",
+   "source": "<g1>Support RAZ DM</g1>: <g2>Help → Support RAZ DM</g2> and a line in <g3>About</g3> open the creator's <g4>GitHub Sponsors</g4> page in the browser; the website, the README and the browser extension's popup link to it too. Only when asked: MDM stays free, with no reminders, and nothing changes or unlocks.",
    "text": "<g1>Soutenir MDM</g1> : <g2>Aide → Soutenir MDM</g2> et une ligne dans <g3>À propos</g3> ouvrent la page <g4>GitHub Sponsors</g4> du créateur dans le navigateur ; le site web, le README et la fenêtre contextuelle de l’extension de navigateur y renvoient également. Uniquement lorsque demandé : MDM reste gratuit, sans rappels, et rien ne change ni ne se débloque."
   },
   "54ccaa53103fedbb": {
@@ -5771,7 +5771,7 @@
    "text": "lit qui a ouvert des pull requests et des problèmes, et qui a commenté, à partir de l'API publique de GitHub (le mainteneur, Claude et les bots sont exclus) pour chaque endroit qui les remercie : la page d'accueil du site web, <x1/> et chaque version sur la page Nouveautés (<x2/>, sur chaque build), les notes de chaque version (<x3/>, les personnes actives depuis la version précédente) et le README (<x4/> lors de la préparation de chaque version : ses photos rondes sont validées dans <x5/>, car GitHub ne peut pas arrondir une image dans un README)."
   },
   "5a277738c32493f8": {
-   "source": "Support MDM",
+   "source": "Support RAZ DM",
    "text": "Soutenir MDM"
   },
   "5a4d6f48645f0903": {
@@ -6763,7 +6763,7 @@
    "text": "<g1>Continuer à partager les torrents une fois terminés</g1> — désactivé par défaut : un torrent terminé s'arrête, comme tout téléchargement. Activez-le pour continuer à envoyer des données aux autres pairs une fois votre téléchargement terminé."
   },
   "6a1495d1d5fff32d": {
-   "source": "<g1>Help</g1> — help pages and tutorials (on the website, in your language when it has it), <g2>Keyboard shortcuts</g2>, <g3>Report a problem</g3>, <g4>Check for updates</g4>, <g5>About</g5>, <g6>Tell a friend</g6> and <g7>Support MDM</g7> (its creator's GitHub Sponsors page: optional, nothing in MDM changes).",
+   "source": "<g1>Help</g1> — help pages and tutorials (on the website, in your language when it has it), <g2>Keyboard shortcuts</g2>, <g3>Report a problem</g3>, <g4>Check for updates</g4>, <g5>About</g5>, <g6>Tell a friend</g6> and <g7>Support RAZ DM</g7> (its creator's GitHub Sponsors page: optional, nothing in MDM changes).",
    "text": "<g1>Aide</g1> — pages d’aide et tutoriels (sur le site web, dans votre langue si disponible), <g2>Raccourcis clavier</g2>, <g3>Signaler un problème</g3>, <g4>Rechercher les mises à jour</g4>, <g5>À propos</g5>, <g6>Parler de RAZ Download Manager à un ami</g6> et <g7>Soutenir MDM</g7> (page GitHub Sponsors de son créateur : facultatif, rien ne change dans MDM)."
   },
   "6a1c931da89c37ad": {
