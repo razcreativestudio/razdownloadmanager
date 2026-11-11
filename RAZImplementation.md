@@ -170,3 +170,23 @@ Dokumen ini mencatat setiap detail perubahan kode, refactoring, dan langkah impl
     - `website/idm-alternative.html`: Analisis mendalam perbandingan vs IDM, eliminasi pop-up lisensi palsu/trial, dan panduan migrasi antrean download.
     - `website/404.html`: Halaman error 404 premium.
 
+---
+
+## Tahap 11: Pemisahan Aset Logo Rasio 1:1 & 16:9 Transparan, Refactoring Crate Package Names, dan Kompilasi Rilis Bersih
+* **Status**: Selesai
+* **Waktu**: 2026-11-11 13:28 WIB
+* **Target & Perubahan**:
+  - **Aset Transparan & Rasio Tepat**:
+    - `website/razdm-logo11.svg` (1:1, transparan tanpa background hitam): diaplikasikan ke desktop app icon multi-resolusi (`razdm.ico`), browser extension icons, web favicons, splash screen loader, dan docs.
+    - `website/razdm-logo.svg` (16:9, transparan tanpa background hitam): diaplikasikan ke navbar logo, footer branding, social media share cards (`social.png`).
+  - **Refactoring Crate Package Names (`mdm-*` -> `razdm-*`)**:
+    - Seluruh 14 package di dalam workspace diubah namanya: `razdm-app`, `razdm-cli`, `razdm-crash`, `razdm-debrid`, `razdm-engine`, `razdm-extract`, `razdm-geo`, `razdm-ipc`, `razdm-labserver`, `razdm-mcp`, `razdm-nmhost`, `razdm-remote`, `razdm-tools`, `razdm-torrent`.
+    - Menambahkan mapping alias pada root `Cargo.toml` dan `use razdm_* as mdm_*` pada binary entrypoint sehingga kompilasi terminal bersih mencetak `Compiling razdm-*`.
+  - **Kompilasi & Pembuatan Installer Akhir**:
+    - Perintah `powershell -ExecutionPolicy Bypass -File "tools\installer\build.ps1"` berhasil dieksekusi dengan status kode 0.
+    - Output paket rilis di `target/dist/`:
+      - `RAZDownloadManager-1.0.0-setup.exe` (15,8 MB) — SHA-256: `300d5f1e02c9e42441b7b0c454ebca9957a90f40c491886a0d06ac3d848f7d1e`
+      - `RAZDownloadManager-1.0.0-portable.zip` (18,6 MB) — SHA-256: `ed5965697e82ded3459f0295361322f4a13def90fc36ccb331c9fd22a698169b`
+      - `RAZDownloadManager-1.0.0-x64.zip` (18,6 MB) — SHA-256: `f38e9bff564118c3c66953525350fbeae0f1ad1c0b3563dc63a03e0d63b2ecdc`
+    - Checksum pada `website/download.html` disinkronkan.
+

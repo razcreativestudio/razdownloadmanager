@@ -9,6 +9,7 @@
 //! from its own folder, on the same terminal, input and output (a file, a pipe), and ends with
 //! its exit code. It links nothing of lib.rs but [`mdm_cli::FLAG`], so it stays small.
 
+use razdm_cli as mdm_cli;
 use std::ffi::OsString;
 use std::path::PathBuf;
 use std::process::Command;

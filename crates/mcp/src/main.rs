@@ -7,6 +7,7 @@
 //! razdownloadmanager-mcp: RAZ Download Manager's MCP server. An AI assistant starts it and
 //! speaks MCP with it on stdin and stdout; it hands what the assistant asks to the running app.
 
+use razdm_mcp as mdm_mcp;
 use rmcp::ServiceExt;
 
 #[tokio::main(flavor = "current_thread")]

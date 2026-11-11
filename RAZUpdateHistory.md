@@ -3,6 +3,36 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-11] — Refactoring Crate Package Names (mdm-* -> razdm-*) & Rilis Bersih Installer v1.0.0
+*Waktu: 11 November 2026 13:28 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Refactoring Nama Seluruh Crate Workspace (`mdm-*` -> `razdm-*`)**:
+   - Memperbarui atribut `[package] name` pada 14 crate `Cargo.toml` dari awalan `mdm-` menjadi `razdm-`:
+     - `razdm-app`, `razdm-cli`, `razdm-crash`, `razdm-debrid`, `razdm-engine`, `razdm-extract`, `razdm-geo`, `razdm-ipc`, `razdm-labserver`, `razdm-mcp`, `razdm-nmhost`, `razdm-remote`, `razdm-tools`, `razdm-torrent`.
+   - Mengatur workspace dependency aliases pada root `Cargo.toml` agar dependensi internal tetap kompatibel dan tidak memicu error kompilasi:
+     - Setiap `mdm-<crate>` dan `razdm-<crate>` merujuk ke package `razdm-<crate>`.
+   - Menambahkan alias import `use razdm_mcp as mdm_mcp;` pada `crates/mcp/src/main.rs` dan `use razdm_cli as mdm_cli;` pada `crates/cli/src/main.rs`.
+2. **Kompilasi Rilis Terminal Bersih**:
+   - Terminal kompilasi Cargo kini 100% menampilkan:
+     - `Compiling razdm-app v1.0.0`
+     - `Compiling razdm-nmhost v1.0.0`
+     - `Compiling razdm-cli v1.0.0`
+     - `Compiling razdm-mcp v1.0.0`
+     - `Compiling razdm-ipc v1.0.0`, `razdm-tools v1.0.0`, `razdm-torrent v1.0.0`, dll.
+   - Tidak ada lagi jejak teks kompilasi `Compiling mdm-*`.
+3. **Pembaruan Build Script Installer (`tools/installer/build.ps1`)**:
+   - Mengubah target build flag: `-p razdm-app -p razdm-nmhost -p razdm-cli -p razdm-mcp`.
+   - Mengatur path remapping `--remap-path-prefix=$root=razdm`.
+   - Menambahkan flag pembatas thread `-j 2` untuk menjaga alokasi RAM LLVM stabil dan mencegah OOM (*Out Of Memory*).
+4. **Hasil Distribusi & Installer Akhir (`target/dist/`)**:
+   - `RAZDownloadManager-1.0.0-setup.exe` (15,8 MB) — SHA-256: `300d5f1e02c9e42441b7b0c454ebca9957a90f40c491886a0d06ac3d848f7d1e`
+   - `RAZDownloadManager-1.0.0-portable.zip` (18,6 MB) — SHA-256: `ed5965697e82ded3459f0295361322f4a13def90fc36ccb331c9fd22a698169b`
+   - `RAZDownloadManager-1.0.0-x64.zip` (18,6 MB) — SHA-256: `f38e9bff564118c3c66953525350fbeae0f1ad1c0b3563dc63a03e0d63b2ecdc`
+   - SHA-256 Checksum pada halaman `website/download.html` telah diperbarui dan diverifikasi secara presisi.
+
+---
+
 ## [2026-11-11] — Implementasi Aset Rasio 1:1 (razdm-logo11.svg) & 16:9 (razdm-logo.svg) Transparan
 *Waktu: 11 November 2026*
 
