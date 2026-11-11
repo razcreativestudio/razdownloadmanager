@@ -697,7 +697,13 @@ pub fn paint(
     enabled: bool,
 ) -> bool {
     let px = rc.width() * ui.ctx().pixels_per_point();
-    let Some((src, tint)) = source(need, px, ink(enabled), enabled) else {
+    // Tema RAZ Studio: warnai ikon kategori sidebar dengan aksen emas signature
+    let draw_ink = if crate::theme::current().id == "raz" && need.starts_with("cat-") && enabled {
+        crate::theme::colors().accent
+    } else {
+        ink(enabled)
+    };
+    let Some((src, tint)) = source(need, px, draw_ink, enabled) else {
         return false;
     };
     let img = egui::Image::new(src);

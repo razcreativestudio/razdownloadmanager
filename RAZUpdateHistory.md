@@ -3,6 +3,51 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-11] — Ikon Tombol Tema RAZ Studio & Katalog "Bahasa Indo Oke"
+*Waktu: 11 November 2026 15:58 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Perancangan & Pembuatan Ikon Khusus Tema RAZ Creative Studio**:
+   - `crates/app/src/icons.rs`:
+     - Menambahkan fungsi gradasi warna khusus `raz_gradient()` untuk seluruh tombol toolbar dan ikon opsi:
+       - **Add URL**: Emas bercahaya signature RAZ (`#FFF59D` $\rightarrow$ `#FFD700`).
+       - **Add Torrent**: Amber emas mewah (`#FFE082` $\rightarrow$ `#FFB300`).
+       - **Resume**: Emerald neon modern dinamis (`#A7FFEB` $\rightarrow$ `#00E676`).
+       - **Stop**: Coral ruby elegan (`#FF8A80` $\rightarrow$ `#FF5252`).
+       - **Stop All**: Sunset coral tegas (`#FFAB91` $\rightarrow$ `#FF6E40`).
+       - **Delete**: Ruby crimson (`#FF8A80` $\rightarrow$ `#E53935`).
+       - **Delete Completed**: Emas champagne dengan centang sukses (`#FFE082` $\rightarrow$ `#FFB300`).
+       - **Options**: Platinum gold gear (`#FFF8E1` $\rightarrow$ `#FFD700`).
+       - **Scheduler**: Jam alarm emas mewah (`#FFE082` $\rightarrow$ `#FFA000`).
+       - **Start Queue**: Antrean cyan cyber modern (`#80E8FF` $\rightarrow$ `#00B4D8`).
+       - **Stop Queue**: Burnt coral queue (`#FFAB91` $\rightarrow$ `#E64A19`).
+       - **Drag Handle (DragOut)**: Emas murni berkilau (`#FFF59D` $\rightarrow$ `#FFD700`).
+       - Seluruh ikon halaman opsi dan helper dialog diselaraskan dengan palet emas RAZ.
+     - Mengatur `Icon::stops()` dan `Icon::image()` agar tema `raz` selalu menggunakan set ikon signature ini secara native.
+   - `crates/app/src/themeicons.rs`:
+     - Mengatur pewarnaan ikon kategori bilah sisi (sidebar: `cat-all`, `cat-compressed`, `cat-documents`, `cat-music`, `cat-programs`, `cat-video`, `cat-torrents`, `cat-unfinished`, `cat-finished`, `cat-queues`) agar diwarnai dengan aksen emas signature (`c.accent`, `#FFD700`).
+   - `crates/app/assets/themes/raz.toml`:
+     - Mengintegrasikan `icon-set = "metro"` untuk mengganti ikon Silk XP lama menjadi ikon vektor modern yang tajam dan presisi.
+
+2. **Katalog Bahasa Baru: "Bahasa Indo Oke" (`i18n/id-oke.tsv`)**:
+   - Membuat katalog bahasa baru `id-oke.tsv` dengan gaya copywriting santai, tech-savvy, dan bersahabat ala website resmi RAZ Creative Studio:
+     - Menggunakan kata ganti dan kosakata kasual-modern: "lo", "gue", "gaskeun", "ngunduh", "lanjutin", "stop", "kenceng", "list unduhan", dll.
+     - Menjaga seluruh format placeholder parameter `{n}`, `{folder}`, dan konteks pesan tetap utuh 100%.
+   - Membuat katalog pendamping `i18n/en-gb.tsv` untuk English (UK).
+   - Menambahkan file bahasa installer Inno Setup: `tools/installer/languages/id-oke.isl` dan registrasi di `tools/installer/languages.iss`.
+
+3. **Urutan Prioritas Pemilihan Bahasa (`crates/app/src/langpick.rs` & `i18n/languages.tsv`)**:
+   - Mengatur daftar urutan bahasa pada jendela pemilihan bahasa (Language Picker) agar mematuhi hierarki prioritas:
+     1. **Baris 1 (Teratas)**: Bahasa Indo Oke (`id-oke`) — Flag ID
+     2. **Baris 2**: Bahasa Indonesia (`id`) — Flag ID
+     3. **Baris 3**: English US (`en`) — Flag US
+     4. **Baris 4**: Bahasa Melayu Malaysia (`ms`) — Flag MY
+     5. **Baris 5**: English England / UK (`en-gb`) — Flag GB
+     6. **Baris Selanjutnya**: Bahasa-bahasa dunia lainnya diurutkan secara alfabetis.
+   - Berhasil lulus verifikasi kompilasi penuh `cargo check -p razdm-app`.
+
+---
+
 ## [2026-11-11] — Kompilasi Ekstensi Browser & Implementasi Direct Download (Bebas Webstore)
 *Waktu: 11 November 2026 15:15 WIB*
 

@@ -195,6 +195,49 @@ impl Icon {
         }
     }
 
+    /// Gradasi ikon bertema khusus RAZ Creative Studio: Luxury Gold & Obsidian Palette
+    fn raz_gradient(self) -> (&'static str, &'static str) {
+        match self {
+            // Emas bercahaya khas RAZ Studio (#FFF59D -> #FFD700)
+            Icon::AddUrl => ("#FFF59D", "#FFD700"),
+            // Amber emas mewah untuk magnet torrent (#FFE082 -> #FFB300)
+            Icon::AddTorrent => ("#FFE082", "#FFB300"),
+            // Emerald modern dinamis untuk melanjutkan unduhan (#A7FFEB -> #00E676)
+            Icon::Resume => ("#A7FFEB", "#00E676"),
+            // Coral ruby elegan untuk stop unduhan (#FF8A80 -> #FF5252)
+            Icon::Stop => ("#FF8A80", "#FF5252"),
+            // Sunset coral tegas untuk stop semua (#FFAB91", "#FF6E40")
+            Icon::StopAll => ("#FFAB91", "#FF6E40"),
+            // Ruby crimson untuk hapus unduhan (#FF8A80", "#E53935")
+            Icon::Delete => ("#FF8A80", "#E53935"),
+            // Emas champagne dengan centang sukses (#FFE082", "#FFB300")
+            Icon::DeleteCompleted => ("#FFE082", "#FFB300"),
+            // Gear emas platinum (#FFF8E1", "#FFD700")
+            Icon::Options => ("#FFF8E1", "#FFD700"),
+            // Jam alarm emas mewah (#FFE082", "#FFA000")
+            Icon::Scheduler => ("#FFE082", "#FFA000"),
+            // Antrean cyan cerah (#80E8FF", "#00B4D8")
+            Icon::StartQueue => ("#80E8FF", "#00B4D8"),
+            // Stop antrean peach coral (#FFAB91", "#E64A19")
+            Icon::StopQueue => ("#FFAB91", "#E64A19"),
+            // Drag handle signature emas murni (#FFF59D", "#FFD700")
+            Icon::DragOut => ("#FFF59D", "#FFD700"),
+            // Halaman opsi & dialog
+            Icon::PageGeneral | Icon::PageConnection => ("#FFE082", "#FFB300"),
+            Icon::PageFileTypes | Icon::PageDownloads => ("#FFF59D", "#FFD700"),
+            Icon::PageSaveTo => ("#FFE082", "#FFA000"),
+            Icon::PageProxy => ("#FFE57F", "#C99700"),
+            Icon::PageLogins => ("#FFE082", "#FFB300"),
+            Icon::PageSounds => ("#FFE57F", "#FF8F00"),
+            Icon::PageRegional => ("#FFF59D", "#FFD700"),
+            Icon::PageArchives => ("#FFE082", "#C99700"),
+            Icon::PageRemote => ("#80E8FF", "#00B4D8"),
+            Icon::HelperVideo => ("#FFF59D", "#FFD700"),
+            Icon::HelperMerge => ("#FFE082", "#FFA000"),
+            Icon::HelperChecked => ("#A7FFEB", "#00E676"),
+        }
+    }
+
     fn name(self) -> &'static str {
         match self {
             Icon::AddUrl => "add-url",
@@ -233,6 +276,11 @@ impl Icon {
         let c = crate::theme::colors();
         if !enabled {
             return (to_hex(c.icon_disabled), to_hex(c.icon_disabled_end));
+        }
+        // Tema RAZ Studio: gunakan gradasi signature emas & aksen presisi RAZ Creative Studio
+        if crate::theme::current().name == "RAZ Studio" || crate::theme::current().id == "raz" {
+            let (a, b) = self.raz_gradient();
+            return (a.to_owned(), b.to_owned());
         }
         match crate::theme::current().icons {
             IconStyle::Color => {
@@ -274,6 +322,10 @@ impl Icon {
     /// The icon, enabled or greyed: the theme's own where its icon set has one (a one-colour
     /// icon in the text colour), else the classic outline.
     pub fn image(self, enabled: bool) -> Image<'static> {
+        // Tema RAZ Studio: selalu gunakan toolbar icon gradasi signature emas
+        if crate::theme::current().name == "RAZ Studio" || crate::theme::current().id == "raz" {
+            return Image::new(self.source(enabled));
+        }
         let ink = crate::themeicons::ink(enabled);
         if let Some((src, tint)) = self
             .need()

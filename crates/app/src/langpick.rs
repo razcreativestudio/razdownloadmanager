@@ -61,7 +61,32 @@ impl Picker {
                     || i.code.contains(&needle)
             })
             .collect();
-        langs.sort_by_key(|i| i.english);
+        // Urutan prioritas pemilihan bahasa sesuai standar RAZ Creative Studio:
+        // 1. Bahasa Indo Oke (id-oke)
+        // 2. Bahasa Indonesia (id)
+        // 3. English US (en)
+        // 4. Bahasa Melayu Malaysia (ms)
+        // 5. English England / UK (en-gb)
+        // 6. Bahasa lainnya (alfabetis)
+        let priority = |code: &str| -> usize {
+            match code {
+                "id-oke" => 0,
+                "id" => 1,
+                "en" => 2,
+                "ms" => 3,
+                "en-gb" => 4,
+                _ => 100,
+            }
+        };
+        langs.sort_by(|a, b| {
+            let pa = priority(a.code);
+            let pb = priority(b.code);
+            if pa != pb {
+                pa.cmp(&pb)
+            } else {
+                a.english.cmp(b.english)
+            }
+        });
         let mut rows: Vec<Entry> = Vec::new();
         if !self.first && needle.is_empty() {
             rows.push(None);

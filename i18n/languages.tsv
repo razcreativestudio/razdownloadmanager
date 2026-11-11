@@ -7,7 +7,11 @@
 # (compiler:Languages\<inno>.isl), or - when there is none (tools/installer makes one).
 # windows: Windows' own tag for the language (its LCID picks the installer language).
 # code	english	native	flag	inno	windows
-en	English	English	gb	Default	en-US
+id-oke	Indonesian (Oke)	Bahasa Indo Oke	id	-	id-ID
+id	Indonesian	Bahasa Indonesia	id	-	id-ID
+en	English (US)	English (US)	us	Default	en-US
+ms	Malay (Malaysia)	Bahasa Melayu (Malaysia)	my	-	ms-MY
+en-gb	English (UK)	English (UK)	gb	-	en-GB
 af	Afrikaans	Afrikaans	za	-	af-ZA
 am	Amharic	አማርኛ	et	-	am-ET
 ar	Arabic	العربية	sa	Arabic	ar-SA
@@ -43,7 +47,6 @@ hi	Hindi	हिन्दी	in	-	hi-IN
 hr	Croatian	Hrvatski	hr	-	hr-HR
 hu	Hungarian	Magyar	hu	Hungarian	hu-HU
 hy	Armenian	Հայերեն	am	Armenian	hy-AM
-id	Indonesian	Bahasa Indonesia	id	-	id-ID
 is	Icelandic	Íslenska	is	-	is-IS
 it	Italian	Italiano	it	Italian	it-IT
 ja	Japanese	日本語	jp	Japanese	ja-JP
@@ -61,7 +64,6 @@ mi	Maori	Māori	nz	-	mi-NZ
 mk	Macedonian	Македонски	mk	-	mk-MK
 ml	Malayalam	മലയാളം	in	-	ml-IN
 mr	Marathi	मराठी	in	-	mr-IN
-ms	Malay	Bahasa Melayu	my	-	ms-MY
 mt	Maltese	Malti	mt	-	mt-MT
 nb	Norwegian Bokmål	Norsk bokmål	no	Norwegian	nb-NO
 ne	Nepali	नेपाली	np	-	ne-NP

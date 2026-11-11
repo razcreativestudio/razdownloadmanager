@@ -8,6 +8,7 @@
 
 name = "RAZ Studio"
 icons = "color"
+icon-set = "metro"
 
 [controls]
 field-focus = "border"
