@@ -1,0 +1,552 @@
+/* ==============================================
+   RAZ Creative Studio - Main Website Animations
+   Deskripsi: Animasi CSS premium untuk website utama
+              Splash screen, gold shimmer, hover effects,
+              floating particles, dan control buttons
+   Terakhir diupdate: 2026-05-20
+   Versi: 3.4.0
+   Cross-browser compatible (Chrome, Firefox, Safari, Edge)
+============================================== */
+
+/* === SPLASH SCREEN === */
+/* Overlay loading saat pertama kali buka halaman */
+.raz-splash-screen {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background: var(--color-dark-primary);
+    -webkit-transition: opacity 0.6s ease, visibility 0.6s ease;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.raz-splash-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Logo splash: bulat dengan ring emas */
+.raz-splash-logo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    -o-object-fit: contain;
+    object-fit: contain;
+    background: var(--color-dark-primary);
+    border: 3px solid transparent;
+    -webkit-box-shadow: 0 0 0 4px var(--color-gold-accent), 0 0 30px rgba(255,215,0,0.3);
+    box-shadow: 0 0 0 4px var(--color-gold-accent), 0 0 30px rgba(255,215,0,0.3);
+    -webkit-animation: razSplashPulse 1.5s ease-in-out infinite;
+    animation: razSplashPulse 1.5s ease-in-out infinite;
+    margin-bottom: 24px;
+}
+
+/* Spinner loading */
+.raz-splash-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255,215,0,0.15);
+    border-top-color: var(--color-gold-accent);
+    border-radius: 50%;
+    -webkit-animation: razSpinnerRotate 0.8s linear infinite;
+    animation: razSpinnerRotate 0.8s linear infinite;
+    margin-bottom: 16px;
+}
+
+/* Teks loading */
+.raz-splash-text {
+    font-family: var(--font-primary);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-gold-accent);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    -webkit-animation: razTextPulse 1.5s ease-in-out infinite;
+    animation: razTextPulse 1.5s ease-in-out infinite;
+}
+
+/* === GOLD SHIMMER === */
+/* Efek shimmer bergerak pada teks emas */
+.gold-shimmer {
+    background: -webkit-gradient(linear, left top, right top, from(var(--color-gold-accent)), color-stop(25%, #fff8dc), color-stop(50%, var(--color-gold-accent)), color-stop(75%, #FFA500), to(var(--color-gold-accent)));
+    background: linear-gradient(90deg, var(--color-gold-accent) 0%, #fff8dc 25%, var(--color-gold-accent) 50%, #FFA500 75%, var(--color-gold-accent) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    -webkit-animation: razGoldShimmer 3s linear infinite;
+    animation: razGoldShimmer 3s linear infinite;
+    will-change: background-position;
+}
+
+/* Shimmer pada section label garis */
+.section-label::before {
+    background: -webkit-gradient(linear, left top, right top, from(var(--color-gold-accent)), color-stop(#fff8dc), to(var(--color-gold-accent)));
+    background: linear-gradient(90deg, var(--color-gold-accent), #fff8dc, var(--color-gold-accent));
+    background-size: 200% auto;
+    -webkit-animation: razGoldShimmer 3s linear infinite;
+    animation: razGoldShimmer 3s linear infinite;
+}
+
+/* === ENHANCED HOVER EFFECTS === */
+/* Service card icon bounce saat hover */
+.service-card:hover .service-icon i {
+    -webkit-animation: razIconBounce 0.5s ease;
+    animation: razIconBounce 0.5s ease;
+}
+
+/* USP card icon bounce saat hover */
+.usp-card:hover .usp-icon i {
+    -webkit-animation: razIconBounce 0.5s ease;
+    animation: razIconBounce 0.5s ease;
+}
+
+/* Portfolio item enhanced hover */
+.portfolio-item:hover {
+    -webkit-box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,215,0,0.15);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,215,0,0.15);
+}
+
+/* Social button pop */
+.social-btn:hover i {
+    -webkit-animation: razSocialPop 0.4s ease;
+    animation: razSocialPop 0.4s ease;
+}
+
+/* CTA primary pulse saat hover */
+.cta-primary:hover {
+    -webkit-animation: razCtaPulse 1.5s ease-in-out infinite;
+    animation: razCtaPulse 1.5s ease-in-out infinite;
+}
+
+/* === CLICK EFFECTS === */
+.service-card:active {
+    -webkit-transform: translateY(-2px) scale(0.98) !important;
+    transform: translateY(-2px) scale(0.98) !important;
+    -webkit-transition: -webkit-transform 0.1s ease !important;
+    transition: transform 0.1s ease !important;
+}
+
+.cta-primary:active, .cta-secondary:active {
+    -webkit-transform: translateY(0) scale(0.97) !important;
+    transform: translateY(0) scale(0.97) !important;
+    -webkit-transition: -webkit-transform 0.1s ease !important;
+    transition: transform 0.1s ease !important;
+}
+
+.social-btn:active {
+    -webkit-transform: translateY(0) scale(0.9) !important;
+    transform: translateY(0) scale(0.9) !important;
+}
+
+/* === FLOATING PARTICLES === */
+.raz-particle {
+    position: fixed;
+    width: 3px;
+    height: 3px;
+    background: var(--color-gold-accent);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+    -webkit-animation: razParticleFloat 6s ease-in-out infinite;
+    animation: razParticleFloat 6s ease-in-out infinite;
+}
+
+.raz-particle:nth-child(1) { left: 8%; -webkit-animation-delay: 0s; animation-delay: 0s; -webkit-animation-duration: 8s; animation-duration: 8s; }
+.raz-particle:nth-child(2) { left: 22%; -webkit-animation-delay: 1.2s; animation-delay: 1.2s; -webkit-animation-duration: 6s; animation-duration: 6s; }
+.raz-particle:nth-child(3) { left: 45%; -webkit-animation-delay: 0.5s; animation-delay: 0.5s; -webkit-animation-duration: 9s; animation-duration: 9s; }
+.raz-particle:nth-child(4) { left: 68%; -webkit-animation-delay: 2s; animation-delay: 2s; -webkit-animation-duration: 7s; animation-duration: 7s; }
+.raz-particle:nth-child(5) { left: 85%; -webkit-animation-delay: 0.8s; animation-delay: 0.8s; -webkit-animation-duration: 8s; animation-duration: 8s; }
+
+/* === CONTROL BUTTONS (Theme & Language) === */
+/* Posisi fixed di kanan bawah agar tidak tabrakan dengan header */
+.raz-controls {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 999;
+    -webkit-animation: razControlsSlideIn 0.5s ease 1s forwards;
+    animation: razControlsSlideIn 0.5s ease 1s forwards;
+    opacity: 0;
+}
+
+.raz-control-btn {
+    width: 44px;
+    height: 44px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    color: var(--color-light-secondary);
+    font-size: 1rem;
+    cursor: pointer;
+    -webkit-transition: all var(--transition);
+    transition: all var(--transition);
+    outline: none;
+    position: relative;
+    overflow: hidden;
+    -webkit-box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.raz-control-btn:hover {
+    border-color: rgba(255,215,0,0.25);
+    color: var(--color-gold-accent);
+    background: var(--color-gold-dim);
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+    -webkit-box-shadow: 0 6px 20px rgba(255,215,0,0.15);
+    box-shadow: 0 6px 20px rgba(255,215,0,0.15);
+}
+
+.raz-control-btn:active {
+    -webkit-transform: translateY(0) scale(0.92);
+    transform: translateY(0) scale(0.92);
+}
+
+.raz-lang-btn {
+    font-size: 0.7rem;
+    font-weight: 800;
+    font-family: var(--font-primary);
+    letter-spacing: 0.5px;
+}
+
+.raz-theme-btn.switching i {
+    -webkit-animation: razThemeSpin 0.5s ease;
+    animation: razThemeSpin 0.5s ease;
+}
+
+/* === ENTRANCE ENHANCEMENTS === */
+/* Hero section enhanced entrance */
+.hero-content {
+    -webkit-animation: razHeroEntrance 1s cubic-bezier(0.16,1,0.3,1) 0.3s forwards;
+    animation: razHeroEntrance 1s cubic-bezier(0.16,1,0.3,1) 0.3s forwards;
+    opacity: 0;
+}
+
+/* Enhanced reveal animation */
+.reveal.revealed {
+    -webkit-animation: razReveal 0.7s cubic-bezier(0.16,1,0.3,1) forwards;
+    animation: razReveal 0.7s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+
+/* === KEYFRAMES === */
+@-webkit-keyframes razGoldShimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+}
+@keyframes razGoldShimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+}
+
+@-webkit-keyframes razSplashPulse {
+    0%, 100% { -webkit-box-shadow: 0 0 0 4px var(--color-gold-accent), 0 0 30px rgba(255,215,0,0.3); box-shadow: 0 0 0 4px var(--color-gold-accent), 0 0 30px rgba(255,215,0,0.3); }
+    50% { -webkit-box-shadow: 0 0 0 6px var(--color-gold-accent), 0 0 50px rgba(255,215,0,0.5); box-shadow: 0 0 0 6px var(--color-gold-accent), 0 0 50px rgba(255,215,0,0.5); }
+}
+@keyframes razSplashPulse {
+    0%, 100% { box-shadow: 0 0 0 4px var(--color-gold-accent), 0 0 30px rgba(255,215,0,0.3); }
+    50% { box-shadow: 0 0 0 6px var(--color-gold-accent), 0 0 50px rgba(255,215,0,0.5); }
+}
+
+@-webkit-keyframes razSpinnerRotate {
+    0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@keyframes razSpinnerRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@-webkit-keyframes razTextPulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+@keyframes razTextPulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+@-webkit-keyframes razIconBounce {
+    0% { -webkit-transform: scale(1); transform: scale(1); }
+    30% { -webkit-transform: scale(1.25); transform: scale(1.25); }
+    50% { -webkit-transform: scale(0.95); transform: scale(0.95); }
+    70% { -webkit-transform: scale(1.1); transform: scale(1.1); }
+    100% { -webkit-transform: scale(1); transform: scale(1); }
+}
+@keyframes razIconBounce {
+    0% { transform: scale(1); }
+    30% { transform: scale(1.25); }
+    50% { transform: scale(0.95); }
+    70% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@-webkit-keyframes razSocialPop {
+    0% { -webkit-transform: scale(1) rotate(0deg); transform: scale(1) rotate(0deg); }
+    30% { -webkit-transform: scale(1.2) rotate(-5deg); transform: scale(1.2) rotate(-5deg); }
+    60% { -webkit-transform: scale(0.95) rotate(2deg); transform: scale(0.95) rotate(2deg); }
+    100% { -webkit-transform: scale(1) rotate(0deg); transform: scale(1) rotate(0deg); }
+}
+@keyframes razSocialPop {
+    0% { transform: scale(1) rotate(0deg); }
+    30% { transform: scale(1.2) rotate(-5deg); }
+    60% { transform: scale(0.95) rotate(2deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
+@-webkit-keyframes razCtaPulse {
+    0%, 100% { -webkit-box-shadow: 0 4px 15px rgba(255,215,0,0.3); box-shadow: 0 4px 15px rgba(255,215,0,0.3); }
+    50% { -webkit-box-shadow: 0 8px 30px rgba(255,215,0,0.5), 0 0 40px rgba(255,215,0,0.15); box-shadow: 0 8px 30px rgba(255,215,0,0.5), 0 0 40px rgba(255,215,0,0.15); }
+}
+@keyframes razCtaPulse {
+    0%, 100% { box-shadow: 0 4px 15px rgba(255,215,0,0.3); }
+    50% { box-shadow: 0 8px 30px rgba(255,215,0,0.5), 0 0 40px rgba(255,215,0,0.15); }
+}
+
+@-webkit-keyframes razParticleFloat {
+    0% { -webkit-transform: translateY(100vh) scale(0); transform: translateY(100vh) scale(0); opacity: 0; }
+    10% { opacity: 0.5; -webkit-transform: translateY(90vh) scale(1); transform: translateY(90vh) scale(1); }
+    90% { opacity: 0.2; }
+    100% { -webkit-transform: translateY(-10vh) scale(0.5); transform: translateY(-10vh) scale(0.5); opacity: 0; }
+}
+@keyframes razParticleFloat {
+    0% { transform: translateY(100vh) scale(0); opacity: 0; }
+    10% { opacity: 0.5; transform: translateY(90vh) scale(1); }
+    90% { opacity: 0.2; }
+    100% { transform: translateY(-10vh) scale(0.5); opacity: 0; }
+}
+
+@-webkit-keyframes razControlsSlideIn {
+    0% { opacity: 0; -webkit-transform: translateY(20px); transform: translateY(20px); }
+    100% { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
+}
+@keyframes razControlsSlideIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@-webkit-keyframes razThemeSpin {
+    0% { -webkit-transform: rotate(0deg) scale(0.8); transform: rotate(0deg) scale(0.8); }
+    50% { -webkit-transform: rotate(180deg) scale(1.1); transform: rotate(180deg) scale(1.1); }
+    100% { -webkit-transform: rotate(360deg) scale(1); transform: rotate(360deg) scale(1); }
+}
+@keyframes razThemeSpin {
+    0% { transform: rotate(0deg) scale(0.8); }
+    50% { transform: rotate(180deg) scale(1.1); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+@-webkit-keyframes razHeroEntrance {
+    0% { opacity: 0; -webkit-transform: translateY(30px); transform: translateY(30px); }
+    100% { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
+}
+@keyframes razHeroEntrance {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@-webkit-keyframes razReveal {
+    0% { opacity: 0; -webkit-transform: translateY(25px) scale(0.98); transform: translateY(25px) scale(0.98); }
+    100% { opacity: 1; -webkit-transform: translateY(0) scale(1); transform: translateY(0) scale(1); }
+}
+@keyframes razReveal {
+    0% { opacity: 0; transform: translateY(25px) scale(0.98); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Animasi transisi bahasa */
+@-webkit-keyframes razLangFade {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes razLangFade {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.lang-switching [data-lang-key] {
+    -webkit-animation: razLangFade 0.4s ease;
+    animation: razLangFade 0.4s ease;
+}
+
+/* === ENHANCED HOVER: SUBPAGE CARDS === */
+/* Fusion card (about-raz.html) - icon bounce + glow */
+.fusion-card:hover .fusion-icon {
+    -webkit-animation: razIconBounce 0.5s ease;
+    animation: razIconBounce 0.5s ease;
+}
+
+.fusion-card:active {
+    -webkit-transform: translateY(-5px) scale(0.98) !important;
+    transform: translateY(-5px) scale(0.98) !important;
+    -webkit-transition: -webkit-transform 0.1s ease !important;
+    transition: transform 0.1s ease !important;
+}
+
+/* Portfolio card (raz-portofolio.html) - shimmer pada hover */
+.portfolio-card:hover .card-category {
+    -webkit-animation: razGoldShimmer 2s linear infinite;
+    animation: razGoldShimmer 2s linear infinite;
+    background: linear-gradient(90deg, var(--color-gold-accent) 0%, #fff8dc 50%, var(--color-gold-accent) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.portfolio-card:active {
+    -webkit-transform: translateY(-5px) scale(0.98) !important;
+    transform: translateY(-5px) scale(0.98) !important;
+}
+
+/* Info card (hubungi-raz.html) - icon glow saat hover */
+.info-card:hover .info-icon {
+    -webkit-animation: razIconBounce 0.5s ease;
+    animation: razIconBounce 0.5s ease;
+    -webkit-box-shadow: 0 0 15px rgba(255,215,0,0.2);
+    box-shadow: 0 0 15px rgba(255,215,0,0.2);
+}
+
+.info-card:active {
+    -webkit-transform: translateY(-2px) scale(0.98) !important;
+    transform: translateY(-2px) scale(0.98) !important;
+}
+
+/* Product card (raz-product.html) - enhanced hover */
+.product-card:hover {
+    -webkit-box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,215,0,0.15);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,215,0,0.15);
+}
+
+.product-card:active {
+    -webkit-transform: translateY(-5px) scale(0.98) !important;
+    transform: translateY(-5px) scale(0.98) !important;
+}
+
+/* Filter button click effect */
+.filter-btn:active {
+    -webkit-transform: scale(0.95) !important;
+    transform: scale(0.95) !important;
+    -webkit-transition: -webkit-transform 0.1s ease !important;
+    transition: transform 0.1s ease !important;
+}
+
+/* Process number shimmer (raz-services.html) */
+.process-item:hover .process-number {
+    -webkit-animation: razCtaPulse 1.5s ease-in-out infinite;
+    animation: razCtaPulse 1.5s ease-in-out infinite;
+}
+
+/* Service image zoom on section hover */
+.service-layout:hover .service-image img {
+    -webkit-transform: scale(1.03);
+    transform: scale(1.03);
+    -webkit-transition: -webkit-transform 0.7s ease;
+    transition: transform 0.7s ease;
+}
+
+.service-image img {
+    -webkit-transition: -webkit-transform 0.7s ease;
+    transition: transform 0.7s ease;
+}
+
+/* Highlight image subtle zoom */
+.highlight-image:hover img {
+    -webkit-transform: scale(1.03);
+    transform: scale(1.03);
+    -webkit-transition: -webkit-transform 0.7s ease;
+    transition: transform 0.7s ease;
+}
+
+.highlight-image img {
+    -webkit-transition: -webkit-transform 0.7s ease;
+    transition: transform 0.7s ease;
+}
+
+/* Submit button pulse */
+.submit-btn:hover {
+    -webkit-animation: razCtaPulse 1.5s ease-in-out infinite;
+    animation: razCtaPulse 1.5s ease-in-out infinite;
+}
+
+.submit-btn:active {
+    -webkit-transform: scale(0.97) !important;
+    transform: scale(0.97) !important;
+}
+
+/* CTA premium button bounce */
+.cta-btn-premium:hover {
+    -webkit-animation: razCtaPulse 1.5s ease-in-out infinite;
+    animation: razCtaPulse 1.5s ease-in-out infinite;
+}
+
+.cta-btn-premium:active {
+    -webkit-transform: scale(0.97) !important;
+    transform: scale(0.97) !important;
+}
+
+/* Footer social links hover pop */
+.footer .social-links a:hover i {
+    -webkit-animation: razSocialPop 0.4s ease;
+    animation: razSocialPop 0.4s ease;
+}
+
+/* === RESPONSIVE CONTROLS === */
+@media (max-width: 768px) {
+    .raz-controls {
+        bottom: 16px;
+        right: 16px;
+    }
+    .raz-control-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+}
+
+/* === REDUCED MOTION === */
+@media (prefers-reduced-motion: reduce) {
+    .raz-splash-screen { -webkit-transition-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    .gold-shimmer { -webkit-animation: none !important; animation: none !important; }
+    .raz-particle { display: none !important; }
+}
+

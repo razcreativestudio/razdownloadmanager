@@ -1,125 +1,265 @@
-<!doctype html>
-<html lang="en" class="js-off">
+﻿<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Download Mister Download Manager {{VERSION}} — free for Windows, macOS and Linux</title>
-  <meta name="description" content="Download Mister Download Manager {{VERSION}}, the free, open-source download manager: Windows installer and portable zip, macOS .dmg and Linux AppImage, .deb and .rpm, plus the browser extension. No ads, no bundled software.">
-  <meta name="theme-color" content="#1f63d6" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0c1a33" media="(prefers-color-scheme: dark)">
-  <meta name="color-scheme" content="light dark">
-  <link rel="canonical" href="{{SITE}}/download.html">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Mister Download Manager">
-  <meta property="og:title" content="Download Mister Download Manager {{VERSION}}">
-  <meta property="og:description" content="Free for Windows, with macOS and Linux to try. Installer, portable zip and the browser extension.">
-  <meta property="og:url" content="{{SITE}}/download.html">
-  <meta property="og:image" content="{{SITE}}/assets/social.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64">
-  <link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
-  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/styles.css">
-  <!--@theme-->
-  <script src="/main.js" defer></script>
-  <script type="application/ld+json">{{SOFTWARE_LD}}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"{{SITE}}/"},{"@type":"ListItem","position":2,"name":"Download","item":"{{SITE}}/download.html"}]}</script>
+    <!-- ==============================================
+         RAZ Download Manager - Halaman Unduhan
+         Deskripsi: Download installer, portable, packages, dan ekstensi browser
+         Terakhir diupdate: 2026-11-11
+         Versi: 1.0.0
+         Standar: RAZ Enterprise UI/UX Standard
+    ============================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Unduh RAZ Download Manager v1.0.0 resmi untuk Windows (Installer & Portable), macOS, dan Linux. Gratis, open-source, tanpa adware, dan terverifikasi checksum SHA-256.">
+    <link rel="canonical" href="https://dm.it-raz.com/download.html">
+    <title>Unduh RAZ Download Manager v1.0.0 — Installer, Portable & Ekstensi Browser</title>
+
+    <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48 64x64">
+    <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/RAZHero.css">
+    <link rel="stylesheet" href="css/RAZMainAnimations.css">
+    <link rel="stylesheet" href="css/RAZMainTheme.css">
+    <link rel="stylesheet" href="css/RAZModal.css">
+    <link rel="stylesheet" href="css/RAZDM.css">
 </head>
+
 <body>
-  <!--@header-->
-  <main id="main">
-    <section class="page-head">
-      <div class="wrap">
-        <ol class="crumbs" aria-label="Breadcrumb"><li><a href="/">Home</a></li><li aria-current="page">Download</li></ol>
-        <h1>Download Mister Download Manager</h1>
-        <p class="lede small">Version {{VERSION}} · free and open source · no ads, no spyware, nothing bundled. <a href="/news.html">What's new</a></p>
-      </div>
-    </section>
-
-    <section class="sec dl-services">
-      <div class="wrap">
-        <ul class="service-list os-cards" role="list">
-          <li class="service os-card" id="windows" data-os="windows" data-href="{{FILE_SETUP}}" data-label="Download for Windows">
-            <h2 class="h3like"><svg class="os-ico" aria-hidden="true"><use href="#os-windows"/></svg> Windows <small>10 and 11 · 64-bit</small></h2>
-            <p class="service-tags"><span class="tag stable">Stable</span><span class="tag">Recommended</span></p>
-            <dl class="fields">
-              <div><dt><a href="{{FILE_SETUP}}">setup.exe</a></dt><dd>Installs MDM, connects your browsers, asks your language</dd></div>
-              <div><dt><a href="{{FILE_PORTABLE}}">portable.zip</a></dt><dd>Unzip anywhere, a USB stick too; everything stays in its folder</dd></div>
-              <div><dt><a href="{{FILE_ZIP}}">x64.zip</a></dt><dd>The programs without an installer</dd></div>
-            </dl>
-            <a class="btn btn-go" href="{{FILE_SETUP}}"><svg class="os-ico" aria-hidden="true"><use href="#os-windows"/></svg> Download the installer</a>
-          </li>
-          <li class="service os-card" id="macos" data-os="macos" data-href="/download.html#macos" data-label="Download for macOS">
-            <h2 class="h3like"><svg class="os-ico" aria-hidden="true"><use href="#os-macos"/></svg> macOS <small>11 and later</small></h2>
-            <p class="service-tags"><span class="tag try">Experimental</span></p>
-            <dl class="fields">
-              <div><dt><a href="{{FILE_DMG_ARM64}}">arm64.dmg</a></dt><dd>Apple Silicon: Macs with an M1 chip or later</dd></div>
-              <div><dt><a href="{{FILE_DMG_INTEL}}">x86_64.dmg</a></dt><dd>Intel: Macs with an Intel processor</dd></div>
-              <div><dt>First start</dt><dd>Not notarized by Apple yet: right-click the app and choose Open (macOS 15 and later: System Settings → Privacy &amp; Security → Open Anyway)</dd></div>
-            </dl>
-            <a class="btn btn-line" href="{{FILE_DMG_ARM64}}"><svg class="os-ico" aria-hidden="true"><use href="#os-macos"/></svg> Download for Apple Silicon</a>
-          </li>
-          <li class="service os-card" id="linux" data-os="linux" data-href="{{FILE_APPIMAGE}}" data-label="Download for Linux">
-            <h2 class="h3like"><svg class="os-ico" aria-hidden="true"><use href="#os-linux"/></svg> Linux <small>x86-64</small></h2>
-            <p class="service-tags"><span class="tag try">Experimental</span></p>
-            <dl class="fields">
-              <div><dt><a href="{{FILE_APPIMAGE}}">.AppImage</a></dt><dd>Any distribution: make it executable and run it</dd></div>
-              <div><dt><a href="{{FILE_DEB}}">.deb</a> · <a href="{{FILE_RPM}}">.rpm</a></dt><dd>Debian, Ubuntu, Mint · Fedora, openSUSE, RHEL</dd></div>
-              <div><dt><a href="{{FILE_TAR}}">.tar.gz</a></dt><dd>The programs, to unpack anywhere</dd></div>
-            </dl>
-            <a class="btn btn-line" href="{{FILE_APPIMAGE}}"><svg class="os-ico" aria-hidden="true"><use href="#os-linux"/></svg> Download the AppImage</a>
-          </li>
-        </ul>
-        <p class="fine" data-mobile-note hidden>It's a desktop app: open this page on your computer to download it.</p>
-        <ul class="sender-list repo-list" role="list">
-          <li><a href="{{REPO}}/releases/tag/v{{VERSION}}"><svg aria-hidden="true"><use href="#i-tag"/></svg><span><b>All files and checksums</b><small>Version {{VERSION}} on GitHub Releases, with SHA256SUMS.txt</small></span></a></li>
-          <li><a href="/contributing.html#getting-set-up"><svg aria-hidden="true"><use href="#i-code"/></svg><span><b>Build it from source</b><small>cargo build, on Windows, macOS or Linux</small></span></a></li>
-          <li><a href="{{REPO}}"><svg aria-hidden="true"><use href="#i-github"/></svg><span><b>The project on GitHub</b><small>Code, issues and every release</small></span></a></li>
-        </ul>
-      </div>
-    </section>
-
-    <div class="wrap narrow prose page-body">
-      <h2 id="extension">The browser extension</h2>
-      <p>It hands your browser's downloads to MDM with their cookies, adds <b>Download with Mister Download Manager</b> to the right-click menu and puts a <b>Download video</b> button over videos.</p>
-      <p><b>Firefox</b> (and Zen, LibreWolf): one click from its add-ons store, and Firefox keeps it up to date.</p>
-      <p class="store-act"><!--@amo--></p>
-      <p><b>Chrome, Edge, Brave, Opera and Vivaldi</b>: one click from the Chrome Web Store, and the browser keeps it up to date. Edge first asks to allow extensions from other stores.</p>
-      <p class="store-act"><span class="store-btns"><!--@cws--></span></p>
-      <p>Can't use a store? It comes with the app, in its <code>extension</code> folder, and <a href="{{FILE_CHROMIUM}}">as its own download</a> for Chromium browsers (<code>.zip</code>: unzip, then <b>Load unpacked</b> on the browser's extensions page with Developer mode on). The <a href="/help/guide-catch-browser-downloads.html">step-by-step guide</a> shows each browser.</p>
-
-      <h2>Install in three steps</h2>
-      <ol>
-        <li>Download <b>setup.exe</b> above and run it. Windows may ask whether to allow it: the installer isn't code-signed yet, so choose <b>More info → Run anyway</b>.</li>
-        <li>Pick your language and keep <b>Set up browser integration</b> ticked.</li>
-        <li>Start Mister Download Manager from the Start menu, then <a href="/help/guide-first-download.html">download your first file</a>.</li>
-      </ol>
-
-      <h2 id="linux-mac">On Linux or a Mac</h2>
-      <p><b>Linux</b>: install the <b>.deb</b> with <code>sudo apt install ./&lt;file&gt;.deb</code> (Debian, Ubuntu, Mint) or the <b>.rpm</b> with <code>sudo dnf install ./&lt;file&gt;.rpm</code> (Fedora), and the packages bring what MDM needs. Or make the <b>AppImage</b> executable (<code>chmod +x</code>) and run it. MDM connects itself to your browsers at each start; then add the extension from your browser's store, above. <a href="/help/getting-started.html#on-linux">More in the help</a>.</p>
-      <figure class="shot"><img class="for-light" src="/assets/screens/main-linux-light.webp" width="930" height="507" alt="Mister Download Manager's main window on Ubuntu's GNOME desktop: the categories and a list of downloads." loading="lazy" decoding="async"><img class="for-dark" src="/assets/screens/main-linux-dark.webp" width="930" height="507" alt="Mister Download Manager's main window on Ubuntu's GNOME desktop, in night mode." loading="lazy" decoding="async"><figcaption>MDM on Ubuntu's GNOME desktop.</figcaption></figure>
-      <p><b>macOS</b>: open the <b>.dmg</b> and drag Mister Download Manager to Applications, then right-click it and choose <b>Open</b> the first time.</p>
-      <!--@coming 0.5-->
-      <p>Linux won't be experimental any more. GNOME, KDE Plasma, Xfce and Cinnamon were checked window by window, with the tray and Dark Mode support, in Wayland sessions too, and the <b>.deb</b> and <b>.rpm</b> in clean Ubuntu 24.04, Debian 12 and Fedora 45 systems. What's left: the Flatpak Firefox isn't checked yet, and screen readers (Orca) don't read MDM's windows on Linux yet. macOS stays experimental. <a href="/features/systems.html">Windows, Mac and Linux</a></p>
-
-      <h2>What you need</h2>
-      <ul>
-        <li><b>Windows 10 or 11</b>, 64-bit; about 100 MB of disk space.</li>
-        <li><b>macOS 11</b> or later on Apple Silicon or Intel (experimental).</li>
-        <li><b>Linux</b> on x86-64 with a desktop session, X11 or Wayland (today's files experimental).</li>
-        <li>For video pages, MDM downloads yt-dlp (and ffmpeg if you want merged qualities) on first use.</li>
-      </ul>
-
-      <h2 id="check-your-download">Check your download</h2>
-      <p>Every release lists the SHA-256 checksum of each file in <a href="{{FILE_SUMS}}">SHA256SUMS.txt</a>. On Windows, compare it with <code>certutil -hashfile file SHA256</code>; on macOS and Linux with <code>shasum -a 256 file</code>. All files are built from the public source by GitHub Actions; the build logs are on <a href="{{REPO}}/actions">GitHub</a>.</p>
-
-      <h2>Older versions and source code</h2>
-      <p>Every release, with its notes and files, is on <a href="{{REPO}}/releases">GitHub Releases</a>. The source code is at <a href="{{REPO}}">github.com/anefzaoui/misterdownloadmanager</a> under the GNU GPL, version 3.</p>
-
-      <div class="cta-band"><p>Something not working? We'd like to know.</p><a class="btn btn-line" href="{{REPO}}/issues">Report a problem</a></div>
+    <!-- Splash Screen -->
+    <div class="raz-splash-screen" id="raz-splash">
+        <img src="img/raz-logo.svg" alt="RAZ Download Manager Logo" class="raz-splash-logo" width="110" height="110">
+        <div class="raz-splash-spinner"></div>
+        <div class="raz-splash-text">Memuat Pusat Unduhan...</div>
     </div>
-  </main>
-  <!--@footer-->
+
+    <!-- Floating Particles -->
+    <div class="raz-particle"></div>
+    <div class="raz-particle"></div>
+    <div class="raz-particle"></div>
+    <div class="raz-particle"></div>
+    <div class="raz-particle"></div>
+
+    <!-- Controls -->
+    <div class="raz-controls" id="raz-controls">
+        <button class="raz-control-btn raz-lang-btn" id="raz-lang-toggle" aria-label="Switch Language">EN</button>
+        <button class="raz-control-btn raz-theme-btn" id="raz-theme-toggle" aria-label="Toggle Theme"><i
+                class="fas fa-moon"></i></button>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="main-header">
+        <div class="container">
+            <h1 class="logo">
+                <a href="index.html" style="display:flex;align-items:center;gap:12px;">
+                    <img src="img/raz-logo.svg" alt="RAZ Download Manager" class="logo-image" style="height:44px;width:auto;">
+                </a>
+            </h1>
+            <nav class="nav-menu">
+                <button class="nav-toggle" id="nav-toggle-btn" aria-label="Toggle navigation">
+                    <span class="gold-line"></span>
+                    <span class="gold-line"></span>
+                    <span class="gold-line"></span>
+                </button>
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="index.html" class="nav-link">Beranda</a></li>
+                    <li><a href="index.html#features" class="nav-link">Fitur</a></li>
+                    <li><a href="benchmark.html" class="nav-link">Benchmark vs IDM</a></li>
+                    <li><a href="idm-alternative.html" class="nav-link">Perbandingan</a></li>
+                    <li><a href="https://github.com/razcreativestudio/razdownloadmanager" target="_blank"
+                            class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a href="#windows" class="nav-link cta-button">Download v1.0.0</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="section" style="padding-top:140px;padding-bottom:40px;">
+        <div class="container">
+            <span class="section-label">Pusat Rilis Resmi</span>
+            <h2 class="section-title">Unduh <span class="gold">RAZ Download Manager</span></h2>
+            <p class="section-subtitle">
+                Versi 1.0.0 • 100% Bebas Iklan & Spyware • Kompilasi Otomatis via GitHub Actions
+            </p>
+        </div>
+    </section>
+
+    <!-- Download Options Section -->
+    <section class="section" style="padding-top:10px;" id="windows">
+        <div class="container">
+            <div class="download-grid">
+                <!-- Windows Setup -->
+                <div class="dl-card featured">
+                    <span class="dl-badge-featured">Rekomendasi Utama</span>
+                    <div class="dl-icon"><i class="fab fa-windows"></i></div>
+                    <h3 class="dl-title">Windows Installer</h3>
+                    <p class="dl-meta">
+                        File: <code>RAZDownloadManager-1.0.0-setup.exe</code> (~65 MB)<br>
+                        Mendukung Windows 10 & 11 (64-bit). Termasuk integrasi browser otomatis dan shortcut desktop.
+                    </p>
+                    <div class="dl-actions">
+                        <a href="https://github.com/razcreativestudio/razdownloadmanager/releases/download/v1.0.0/RAZDownloadManager-1.0.0-setup.exe"
+                            class="cta-primary" style="justify-content:center;">
+                            <i class="fas fa-download"></i> Unduh Installer (.exe)
+                        </a>
+                        <button class="btn-checksum checksum-copy-btn"
+                            data-hash="8397a6e11cfc355fb55452d7e00aa35f29aa70823aa50352ad28a1c6a282f9d9">
+                            <i class="fas fa-copy"></i> Salin SHA-256 Checksum
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Windows Portable -->
+                <div class="dl-card">
+                    <div class="dl-icon"><i class="fas fa-file-archive"></i></div>
+                    <h3 class="dl-title">Windows Portable ZIP</h3>
+                    <p class="dl-meta">
+                        File: <code>RAZDownloadManager-1.0.0-portable.zip</code> (~70 MB)<br>
+                        Ekstrak ke folder mana pun atau simpan di flashdisk USB. Konfigurasi dan riwayat tersimpan lokal.
+                    </p>
+                    <div class="dl-actions">
+                        <a href="https://github.com/razcreativestudio/razdownloadmanager/releases/download/v1.0.0/RAZDownloadManager-1.0.0-portable.zip"
+                            class="cta-secondary" style="justify-content:center;">
+                            <i class="fas fa-download"></i> Unduh Portable (.zip)
+                        </a>
+                        <button class="btn-checksum checksum-copy-btn"
+                            data-hash="b6e703348197171e2ef5ec2ebc827993aee80c2f3d61b3feec3f92e76ff3bc13">
+                            <i class="fas fa-copy"></i> Salin SHA-256 Checksum
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Windows Standalone Binaries -->
+                <div class="dl-card">
+                    <div class="dl-icon"><i class="fas fa-terminal"></i></div>
+                    <h3 class="dl-title">Windows Raw Binaries</h3>
+                    <p class="dl-meta">
+                        File: <code>RAZDownloadManager-1.0.0-x64.zip</code> (~68 MB)<br>
+                        Berisi binary bersih <code>razdownloadmanager.exe</code>, CLI automation, dan AI MCP assistant.
+                    </p>
+                    <div class="dl-actions">
+                        <a href="https://github.com/razcreativestudio/razdownloadmanager/releases/download/v1.0.0/RAZDownloadManager-1.0.0-x64.zip"
+                            class="cta-secondary" style="justify-content:center;">
+                            <i class="fas fa-download"></i> Unduh Binaries (x64.zip)
+                        </a>
+                        <button class="btn-checksum checksum-copy-btn"
+                            data-hash="383437a34293f0bbf3d616c6ba698ef656a29bc41d2797669d0bf7fa274ec8b6">
+                            <i class="fas fa-copy"></i> Salin SHA-256 Checksum
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panduan Instalasi 3 Langkah -->
+            <div style="background:var(--color-dark-secondary);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:40px;margin-top:50px;text-align:left;">
+                <h3 style="font-size:1.5rem;font-weight:700;margin-bottom:20px;color:var(--color-gold-accent);">
+                    <i class="fas fa-clipboard-check"></i> Panduan Instalasi 3 Langkah Mudah
+                </h3>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:24px;">
+                    <div style="background:var(--glass-bg);padding:20px;border-radius:var(--radius-md);border:1px solid var(--glass-border);">
+                        <h4 style="color:var(--color-gold-accent);margin-bottom:8px;">1. Jalankan Installer</h4>
+                        <p style="font-size:0.9rem;color:var(--color-light-secondary);">
+                            Download file <code>setup.exe</code> di atas lalu klik dua kali untuk membuka. Jika muncul peringatan Windows SmartScreen, klik <b>More info → Run anyway</b>.
+                        </p>
+                    </div>
+                    <div style="background:var(--glass-bg);padding:20px;border-radius:var(--radius-md);border:1px solid var(--glass-border);">
+                        <h4 style="color:var(--color-gold-accent);margin-bottom:8px;">2. Pilih Opsi Integrasi</h4>
+                        <p style="font-size:0.9rem;color:var(--color-light-secondary);">
+                            Pilih bahasa antarmuka lo dan pastikan centang opsi <b>Set up browser integration</b> agar browser lo langsung otomatis terhubung.
+                        </p>
+                    </div>
+                    <div style="background:var(--glass-bg);padding:20px;border-radius:var(--radius-md);border:1px solid var(--glass-border);">
+                        <h4 style="color:var(--color-gold-accent);margin-bottom:8px;">3. Mulai Unduh!</h4>
+                        <p style="font-size:0.9rem;color:var(--color-light-secondary);">
+                            Buka RAZ Download Manager dari menu Start. Setiap link unduhan di browser atau link yang lo salin akan langsung ditangkap dengan kecepatan maksimal.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Checksum Reference Box -->
+            <div style="margin-top:40px;text-align:left;">
+                <h4 style="font-size:1.1rem;color:var(--color-light-text);margin-bottom:12px;">
+                    <i class="fas fa-fingerprint gold"></i> Daftar Lengkap Checksum SHA-256
+                </h4>
+                <div class="checksum-box">
+                    <span>RAZDownloadManager-1.0.0-setup.exe : 8397a6e11cfc355fb55452d7e00aa35f29aa70823aa50352ad28a1c6a282f9d9</span>
+                    <button class="checksum-copy-btn" data-hash="8397a6e11cfc355fb55452d7e00aa35f29aa70823aa50352ad28a1c6a282f9d9">Salin</button>
+                </div>
+                <div class="checksum-box">
+                    <span>RAZDownloadManager-1.0.0-portable.zip : b6e703348197171e2ef5ec2ebc827993aee80c2f3d61b3feec3f92e76ff3bc13</span>
+                    <button class="checksum-copy-btn" data-hash="b6e703348197171e2ef5ec2ebc827993aee80c2f3d61b3feec3f92e76ff3bc13">Salin</button>
+                </div>
+                <div class="checksum-box">
+                    <span>RAZDownloadManager-1.0.0-x64.zip : 383437a34293f0bbf3d616c6ba698ef656a29bc41d2797669d0bf7fa274ec8b6</span>
+                    <button class="checksum-copy-btn" data-hash="383437a34293f0bbf3d616c6ba698ef656a29bc41d2797669d0bf7fa274ec8b6">Salin</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <hr class="section-separator">
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <img src="img/raz-logo.svg" alt="RAZ Logo" class="logo-image"
+                        style="max-width:180px;height:auto;margin-bottom:16px;">
+                    <p>RAZ Download Manager — Download manager open-source berkecepatan tinggi dari RAZ Creative Studio.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="index.html#features">Fitur</a></li>
+                        <li><a href="benchmark.html">Benchmark</a></li>
+                        <li><a href="idm-alternative.html">Perbandingan</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Bantuan</h4>
+                    <ul>
+                        <li><a href="https://dm.it-raz.com/help/" target="_blank">Panduan Pengguna</a></li>
+                        <li><a href="https://github.com/razcreativestudio/razdownloadmanager/issues" target="_blank">Laporkan Masalah</a></li>
+                        <li><a href="https://github.com/razcreativestudio/razdownloadmanager" target="_blank">Source Code GitHub</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Ekosistem RAZ</h4>
+                    <ul>
+                        <li><a href="https://raz.web.id/" target="_blank">RAZ Creative Studio</a></li>
+                        <li><a href="https://office.it-raz.com" target="_blank">RAZ Office</a></li>
+                        <li><a href="https://simaju.raz.web.id/" target="_blank">SIMAJURAZ POS</a></li>
+                        <li><a href="https://dm.it-raz.com" target="_blank">RAZ Download Manager</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 RAZ Creative Studio. Hak Cipta Dilindungi.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/raz_studio.id/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@razcreativestudio" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://github.com/razcreativestudio/razdownloadmanager" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/RAZModal.js"></script>
+    <script src="js/RAZMainLang.js"></script>
+    <script src="js/script.js"></script>
 </body>
+
 </html>

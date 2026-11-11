@@ -1,10 +1,10 @@
----
+﻿---
 name: Link grabber
 title: Link grabber and archive extraction
 headline: Every link on a page. Only the ones you tick.
 line: A page's links gathered, sorted into packages and checked online, then the archives unpacked when they arrive.
 lede: Link grabber collects many links at once, from the browser, a text file or the clipboard. It sorts them into packages, shows which ones are really there, and MDM can unpack the archives once they are downloaded.
-description: Mister Download Manager's link grabber collects a page's links, sorts them into packages, checks which are online and extracts the archives they bring.
+description: RAZ Download Manager's link grabber collects a page's links, sorts them into packages, checks which are online and extracts the archives they bring.
 group: downloading
 order: 70
 since: 0.5
@@ -16,8 +16,8 @@ help: link-grabber.md
 
 ## Links from anywhere
 
-Right-click a page in the browser for **Download all links with Mister Download Manager**, or
-select part of it for **Download selected links with Mister Download Manager**. The page's referrer and cookies go with each
+Right-click a page in the browser for **Download all links with RAZ Download Manager**, or
+select part of it for **Download selected links with RAZ Download Manager**. The page's referrer and cookies go with each
 link. You can also import a text file or an `.ef2` export with **Tasks → Import**, drop a list on
 the download list, or open **Tasks → Link grabber...** and paste any text with **Ctrl+V**: every
 web address in it is added.

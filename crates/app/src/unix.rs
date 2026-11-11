@@ -1,3 +1,9 @@
+// ==============================================================================
+// RAZ Download Manager — Unix / Linux / macOS Platform Integrations
+// Terakhir Diperbarui: 2026-11-10 12:35 WIB
+// Deskripsi: Integrasi sistem operasi Unix/Linux/macOS untuk RAZ Download Manager.
+// ==============================================================================
+
 //! Linux and macOS counterparts of what `win32` does through Windows (macOS's build experimental):
 //! starting with the session, the browsers' host registration, sounds, showing a file in its
 //! folder, and the torrent link handler. Each runs the system's own tool, so nothing here needs
@@ -31,13 +37,13 @@ fn spawn(cmd: &mut Command) {
 fn startup_file() -> Option<PathBuf> {
     let home = PathBuf::from(std::env::var_os("HOME")?);
     if cfg!(target_os = "macos") {
-        Some(home.join("Library/LaunchAgents/io.github.anefzaoui.misterdownloadmanager.plist"))
+        Some(home.join("Library/LaunchAgents/com.raz.downloadmanager.plist"))
     } else {
         let config = std::env::var_os("XDG_CONFIG_HOME")
             .map(PathBuf::from)
             .filter(|p| p.is_absolute())
             .unwrap_or_else(|| home.join(".config"));
-        Some(config.join("autostart/misterdownloadmanager.desktop"))
+        Some(config.join("autostart/razdownloadmanager.desktop"))
     }
 }
 
@@ -80,7 +86,7 @@ fn startup_entry(exe: &Path, macos: bool) -> String {
              <!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \
              \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">\n\
              <plist version=\"1.0\">\n<dict>\n\
-             \x20 <key>Label</key><string>io.github.anefzaoui.misterdownloadmanager</string>\n\
+             \x20 <key>Label</key><string>com.raz.downloadmanager</string>\n\
              \x20 <key>ProgramArguments</key><array><string>{exe}</string>\
              <string>{arg}</string></array>\n\
              \x20 <key>RunAtLoad</key><true/>\n\
@@ -96,8 +102,8 @@ fn startup_entry(exe: &Path, macos: bool) -> String {
             })
             .collect();
         format!(
-            "[Desktop Entry]\nType=Application\nName=Mister Download Manager\n\
-             Exec=\"{quoted}\" {arg}\nIcon=misterdownloadmanager\nTerminal=false\n\
+            "[Desktop Entry]\nType=Application\nName=RAZ Download Manager\n\
+             Exec=\"{quoted}\" {arg}\nIcon=razdownloadmanager\nTerminal=false\n\
              X-GNOME-Autostart-enabled=true\n"
         )
     }
@@ -170,9 +176,9 @@ pub fn update_run_at_startup() {
 }
 
 /// The browsers' helper program (crates/nmhost), beside this one.
-const HOST: &str = "misterdownloadmanager-nmhost";
+const HOST: &str = "razdownloadmanager-nmhost";
 /// The manifest it writes in each browser's folder.
-const MANIFEST: &str = "com.misterdownloadmanager.host.json";
+const MANIFEST: &str = "com.razdownloadmanager.host.json";
 /// How long the helper's `--register` has at a start (it writes a few small files).
 const REGISTER_LIMIT: std::time::Duration = std::time::Duration::from_secs(20);
 /// Why the last registration failed, in the system's words (Test browser integration says it);
@@ -468,7 +474,7 @@ pub fn show_in_folder(path: &Path) {
     });
 }
 
-/// Options → Downloads → open magnet links and .torrent files with Mister Download Manager:
+/// Options → Downloads → open magnet links and .torrent files with RAZ Download Manager:
 /// Linux records it with xdg-mime for the desktop entry the packages install (turning it off
 /// leaves the choice to the desktop's settings). Not on macOS yet: it hands links to an app as
 /// open-URL events, which the app doesn't receive.
@@ -1409,11 +1415,11 @@ pub fn missing_text(libs: &[&WindowLib], opening: bool) -> String {
     let names = ltr(&names.join(", "));
     let what = if opening {
         // i18n: Linux, at start, on the terminal and in a message box: a library the window needs isn't installed; {libraries} = its file names (libxkbcommon-x11.so.0…), left as they are
-        t("Mister Download Manager can't open its window: this system lacks {libraries}.")
+        t("RAZ Download Manager can't open its window: this system lacks {libraries}.")
     } else {
         // i18n: Linux, at start, on the terminal: the libraries an X11 window needs aren't installed, so the window opens through Wayland instead, where menus can't be placed under what was clicked; {libraries} = their file names, left as they are
         t(
-            "Mister Download Manager's X11 window needs {libraries}, which this system lacks: it opens on Wayland instead, where its menus may open away from their titles.",
+            "RAZ Download Manager's X11 window needs {libraries}, which this system lacks: it opens on Wayland instead, where its menus may open away from their titles.",
         )
     };
     let what = fmt(what, &[("libraries", &names)]);
@@ -1436,7 +1442,7 @@ pub fn missing_text(libs: &[&WindowLib], opening: bool) -> String {
 pub fn tell_window_failed(text: &str) {
     eprintln!("{text}");
     tracing::error!("{text}");
-    let title = "Mister Download Manager";
+    let title = "RAZ Download Manager";
     let boxes: [(&str, Vec<&str>); 2] = [
         (
             "zenity",
@@ -1895,7 +1901,7 @@ pub fn mark_downloaded(path: &Path, url: &str, referrer: Option<&str>) {
         set_xattr(
             path,
             "com.apple.quarantine",
-            &format!("0081;{now:x};Mister Download Manager;"),
+            &format!("0081;{now:x};RAZ Download Manager;"),
         );
         let _ = url;
     }
@@ -2446,9 +2452,9 @@ mod startup_tests {
     #[test]
     fn the_startup_entries_start_mdm_in_the_tray() {
         for exe in [
-            "/home/ana/Apps/Mister Download Manager.AppImage",
-            "/opt/mdm/misterdownloadmanager",
-            "/Applications/Mister Download Manager.app/Contents/MacOS/misterdownloadmanager",
+            "/home/ana/Apps/RAZ Download Manager.AppImage",
+            "/opt/mdm/razdownloadmanager",
+            "/Applications/RAZ Download Manager.app/Contents/MacOS/razdownloadmanager",
             "/home/a\"b$c/m&d<m>",
         ] {
             for macos in [false, true] {
@@ -2458,18 +2464,18 @@ mod startup_tests {
                 assert!(!startup_outdated(&text, Path::new(exe), macos));
             }
         }
-        let desktop = startup_entry(Path::new("/opt/mdm/misterdownloadmanager"), false);
-        assert!(desktop.contains("Exec=\"/opt/mdm/misterdownloadmanager\" /startup\n"));
-        let plist = startup_entry(Path::new("/opt/mdm/misterdownloadmanager"), true);
+        let desktop = startup_entry(Path::new("/opt/mdm/razdownloadmanager"), false);
+        assert!(desktop.contains("Exec=\"/opt/mdm/razdownloadmanager\" /startup\n"));
+        let plist = startup_entry(Path::new("/opt/mdm/razdownloadmanager"), true);
         assert!(plist.contains(
-            "<array><string>/opt/mdm/misterdownloadmanager</string><string>/startup</string></array>"
+            "<array><string>/opt/mdm/razdownloadmanager</string><string>/startup</string></array>"
         ));
     }
 
     /// An entry of a version before 0.5.0 for this program is written again; another copy's is not.
     #[test]
     fn old_startup_entries_are_rewritten() {
-        let exe = "/home/ana/Apps/Mister Download Manager.AppImage";
+        let exe = "/home/ana/Apps/RAZ Download Manager.AppImage";
         for macos in [false, true] {
             assert!(startup_outdated(
                 &old_entry(exe, macos),
@@ -2522,7 +2528,7 @@ mod secret_service {
     const ITEM: &str = "org.freedesktop.Secret.Item";
     const SESSION: &str = "org.freedesktop.Secret.Session";
     /// Groups MDM's entries in Seahorse and the like.
-    const SCHEMA: &str = "io.github.anefzaoui.misterdownloadmanager.Secret";
+    const SCHEMA: &str = "com.raz.downloadmanager.Secret";
 
     /// The D-Bus error's kind; its text (the service's own words) is never kept.
     fn fault(e: zbus::Error) -> Fault {
@@ -2937,7 +2943,7 @@ pub fn keep_awake(reason: Option<&str>) -> bool {
         )?;
         logind.call(
             "Inhibit",
-            &("sleep:idle", "Mister Download Manager", reason, "block"),
+            &("sleep:idle", "RAZ Download Manager", reason, "block"),
         )
     };
     match take() {

@@ -1,4 +1,4 @@
-// #42/#191 on Linux: the popup's proxy switch in the Snap Firefox (headless, over WebDriver BiDi).
+﻿// #42/#191 on Linux: the popup's proxy switch in the Snap Firefox (headless, over WebDriver BiDi).
 // Off at first; turning it on brings Firefox's permission prompt, answered through the browser's own
 // window (Allow, then Don't allow); the switch and the "proxy" permission are read back after each
 // step, and after turning it off again.
@@ -8,7 +8,7 @@ import path from "node:path";
 import { spawn, execFileSync } from "node:child_process";
 
 const xpi = path.resolve(process.argv[2]);
-const ID = "integration@misterdownloadmanager.com";
+const ID = "integration@RAZDownloadManager.com";
 const UUID = "5d0c3b8e-7a51-4c1e-9f0a-38e2c4a1d7b6";
 const NL = String.fromCharCode(10);
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));

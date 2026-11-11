@@ -1,3 +1,9 @@
+﻿// ==============================================================================
+// RAZ Download Manager — External Tools & Updater Library
+// Terakhir Diperbarui: 2026-11-10 12:25 WIB
+// Deskripsi: Manajemen utilitas pihak ketiga (yt-dlp, ffmpeg) & modul pembaruan.
+// ==============================================================================
+
 //! Verified, pinned installs of helper tools (D-011). yt-dlp is never updated by itself
 //! (`yt-dlp -U`): we fetch a release from its GitHub page, verify its `SHA2-256SUMS` against
 //! yt-dlp's OpenPGP signing key (pinned in `keys/yt-dlp.asc`), verify the program against that
@@ -28,7 +34,7 @@ use sha2::{Digest, Sha256};
 
 /// yt-dlp's release signing key, from its repository (`public.key`).
 const YTDLP_KEY: &str = include_str!("../keys/yt-dlp.asc");
-/// Mister Download Manager's release signing key (Ed25519, fingerprint
+/// RAZ Download Manager's release signing key (Ed25519, fingerprint
 /// 5826D399249DE856EA087D802E293C28E8A69D74): release.yml signs each release's SHA256SUMS.txt
 /// with it (the MDM_RELEASE_KEY secret), and MDM updates itself only from a list it signed.
 const MDM_KEY: &str = include_str!("../keys/mdm-release.asc");
@@ -158,8 +164,8 @@ pub(crate) async fn signed_list(
     Ok(String::from_utf8_lossy(&sums).into_owned())
 }
 
-/// MDM's own name, sent when it fetches its helpers and its updates.
-pub const USER_AGENT: &str = concat!("MisterDownloadManager/", env!("CARGO_PKG_VERSION"));
+/// RAZ DM's own name, sent when it fetches its helpers and its updates.
+pub const USER_AGENT: &str = concat!("RAZDownloadManager/", env!("CARGO_PKG_VERSION"));
 
 /// How MDM downloads its helpers and its updates: through its own engine (several connections,
 /// resumable), as MDM itself, through `proxy` (Options → Proxy / Socks).

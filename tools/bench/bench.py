@@ -1,4 +1,4 @@
-"""IDM vs Mister Download Manager: the same downloads from the same local lab server, timed.
+﻿"""IDM vs RAZ Download Manager: the same downloads from the same local lab server, timed.
 
     python tools/bench/bench.py [--runs N] [--only scenario,...] [--out DIR]
 
@@ -31,7 +31,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 IDM_EXE = Path(r"C:\Program Files (x86)\Internet Download Manager\IDMan.exe")
-MDM_EXE = ROOT / "target" / "release" / "misterdownloadmanager.exe"
+MDM_EXE = ROOT / "target" / "release" / "RAZDownloadManager.exe"
 LAB_EXE = ROOT / "target" / "release" / "labserver.exe"
 PORT = 8097
 

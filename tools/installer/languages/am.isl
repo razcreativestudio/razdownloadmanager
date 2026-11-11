@@ -1,4 +1,4 @@
-﻿; Mister Download Manager's installer in Amharic: tools/installer/languages.py
+﻿; RAZ Download Manager's installer in Amharic: tools/installer/languages.py
 ; (machine-translated; a native speaker may correct any line).
 
 [LangOptions]
@@ -291,8 +291,8 @@ ShutdownBlockReasonUninstallingApp=%1 እየተራገፈ ነው።
 
 [CustomMessages]
 TaskBrowser=የ&አሳሽ ውህደትን ያዋቅሩ (Chrome, Edge, Brave, Firefox)
-TaskTorrents=.&torrent ፋይሎችን እና ማግኔት ማገናኛዎችን በMister Download Manager ይክፈቱ
-TaskStartup=Start Mister Download Manager when &Windows starts
+TaskTorrents=.&torrent ፋይሎችን እና ማግኔት ማገናኛዎችን በRAZ Download Manager ይክፈቱ
+TaskStartup=Start RAZ Download Manager when &Windows starts
 TaskGroupOther=ሌላ:
-Launch=Mister Download Managerን ያስጀምሩ
+Launch=RAZ Download Managerን ያስጀምሩ
 KeepData=የእርስዎን የማውረድ ዝርዝር እና ቅንብሮችም መሰረዝ ይፈልጋሉ?%n%nየወረዱ ፋይሎችዎ በማንኛውም መንገድ አይነኩም።

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+﻿#!/usr/bin/env bash
 # The Linux test machine: an Ubuntu 24.04 desktop (GNOME on Xorg) that builds and runs MDM, with
 # the browsers for the extension and AT-SPI automation for the windows. Run it inside the machine
 # as its desktop user (it asks sudo for the system parts); running it again only adds what's
@@ -20,7 +20,7 @@ while [ $# -gt 0 ]; do
   shift
 done
 
-repo_url=https://github.com/anefzaoui/misterdownloadmanager.git
+repo_url=https://github.com/anefzaoui/RAZDownloadManager.git
 checkout="$HOME/mdm"
 # sudo_ takes the password from MDM_SUDO_PASSWORD when set (through stdin, so never pipe into it).
 sudo_() { if [ -n "${MDM_SUDO_PASSWORD:-}" ]; then echo "$MDM_SUDO_PASSWORD" | sudo -S -p '' "$@"; else sudo "$@"; fi; }

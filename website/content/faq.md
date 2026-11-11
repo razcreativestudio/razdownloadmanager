@@ -1,13 +1,13 @@
-# Questions and answers
+﻿# Questions and answers
 
 Each question becomes its own page (faq/<id>.html) and an entry of faq/index.html; groups are the
 level-two headings. Answers link to the full help page. Built by tools/website/build.py.
 
-## About Mister Download Manager
+## About RAZ Download Manager
 
-### Is Mister Download Manager really free? {#is-it-free}
+### Is RAZ Download Manager really free? {#is-it-free}
 
-Yes, completely. Mister Download Manager (MDM) is free and open-source software under the GNU General Public License, version 3. There is no trial period, no paid edition, no registration key, no nag screen and no ads, and there never will be. You may use it at home or at work, copy it and give it to others.
+Yes, completely. RAZ Download Manager (MDM) is free and open-source software under the GNU General Public License, version 3. There is no trial period, no paid edition, no registration key, no nag screen and no ads, and there never will be. You may use it at home or at work, copy it and give it to others.
 
 ### Is it a copy or a crack of Internet Download Manager? {#is-it-idm}
 
@@ -25,7 +25,7 @@ MDM contains no adware, spyware, bundled offers or tracking. Its whole source co
 
 No. MDM has no accounts, no analytics and no telemetry. It connects to the servers you download from and, each time it starts and once a day while it runs, asks GitHub whether a newer version exists (you can turn that off in Help → Check for updates). The browser extension talks only to MDM on your own computer. The details are in the [privacy policy](/privacy.html).
 
-### Who makes Mister Download Manager? {#who-makes-it}
+### Who makes RAZ Download Manager? {#who-makes-it}
 
 MDM is made by Ahmed Nefzaoui, an independent developer, and is open to contributions from anyone on [GitHub]({{REPO}}). Bug reports, translations and code are all welcome.
 
@@ -49,13 +49,13 @@ Yes. In IDM, export your list with **Tasks → Export → To IDM export file**. 
 
 ### How do I uninstall it? {#uninstall}
 
-Open Windows **Settings → Apps**, find Mister Download Manager and choose Uninstall. The uninstaller asks whether to delete your download list and settings as well. Files you downloaded are never touched. For the portable copy, delete its folder. On Linux, remove the package with your package manager, or delete the AppImage; [Uninstall on Linux](/help/getting-started.html#uninstall-linux) says what stays in your home folder and how to remove it.
+Open Windows **Settings → Apps**, find RAZ Download Manager and choose Uninstall. The uninstaller asks whether to delete your download list and settings as well. Files you downloaded are never touched. For the portable copy, delete its folder. On Linux, remove the package with your package manager, or delete the AppImage; [Uninstall on Linux](/help/getting-started.html#uninstall-linux) says what stays in your home folder and how to remove it.
 
 ## Browsers
 
 ### Which browsers does it work with? {#browsers}
 
-Firefox (from [addons.mozilla.org](https://addons.mozilla.org/firefox/addon/mister-download-manager/)), Google Chrome, Microsoft Edge, Brave, Opera and Vivaldi (from [the Chrome Web Store](https://chromewebstore.google.com/detail/mister-download-manager/ejoleppdfgjdndddcjoehopknmlglojp)), through the MDM browser extension, and browsers built on them: Zen and LibreWolf, Helium. The extension hands downloads to MDM with their cookies and referrer, so files behind a sign-in still work, and it adds **Download with Mister Download Manager** to the right-click menu and a **Download video** button over videos. See [Browser integration](/help/browser-integration.html).
+Firefox (from [addons.mozilla.org](https://addons.mozilla.org/firefox/addon/mister-download-manager/)), Google Chrome, Microsoft Edge, Brave, Opera and Vivaldi (from [the Chrome Web Store](https://chromewebstore.google.com/detail/mister-download-manager/ejoleppdfgjdndddcjoehopknmlglojp)), through the MDM browser extension, and browsers built on them: Zen and LibreWolf, Helium. The extension hands downloads to MDM with their cookies and referrer, so files behind a sign-in still work, and it adds **Download with RAZ Download Manager** to the right-click menu and a **Download video** button over videos. See [Browser integration](/help/browser-integration.html).
 
 ### How do I install the browser extension? {#install-extension}
 
@@ -63,7 +63,7 @@ Install MDM with the setup and keep **Set up browser integration** ticked. In Fi
 
 ### Why doesn't MDM take over my download? {#not-catching}
 
-Check four things: the extension is installed and turned on; **Options → General → Use advanced browser integration** is on and your browser is ticked; the file's type is in **Options → File types**; and the site isn't in the list of sites MDM leaves alone. Right-click a link and choose **Download with Mister Download Manager** to send any file whatever its type. More in [Troubleshooting](/help/troubleshooting.html).
+Check four things: the extension is installed and turned on; **Options → General → Use advanced browser integration** is on and your browser is ticked; the file's type is in **Options → File types**; and the site isn't in the list of sites MDM leaves alone. Right-click a link and choose **Download with RAZ Download Manager** to send any file whatever its type. More in [Troubleshooting](/help/troubleshooting.html).
 
 ### Can I download without the browser extension? {#without-extension}
 
@@ -129,11 +129,11 @@ Very likely: MDM speaks 86 languages, every display language Windows 11 offers, 
 
 ### Can other programs or scripts control MDM? {#automation}
 
-Yes. MDM accepts IDM's familiar command-line switches, comes with `misterdownloadmanager-cli` for downloads from a terminal, and has a local, token-protected automation API that can list, pause, start and remove downloads. The API is off until you turn it on. See [Command line and automation](/help/command-line.html).
+Yes. MDM accepts IDM's familiar command-line switches, comes with `razdownloadmanager-cli` for downloads from a terminal, and has a local, token-protected automation API that can list, pause, start and remove downloads. The API is off until you turn it on. See [Command line and automation](/help/command-line.html).
 
 ### Can my AI assistant use MDM? {#ai}
 
-Yes. MDM comes with an MCP server, `misterdownloadmanager-mcp`: add it to Claude Desktop, Claude Code, Cursor, VS Code or another assistant that supports MCP, and you can ask it in your own words to list, add, pause, resume or remove downloads. It works with the MDM on your computer only, and needs the automation API on. See [AI assistants](/help/ai-assistants.html).
+Yes. MDM comes with an MCP server, `razdownloadmanager-mcp`: add it to Claude Desktop, Claude Code, Cursor, VS Code or another assistant that supports MCP, and you can ask it in your own words to list, add, pause, resume or remove downloads. It works with the MDM on your computer only, and needs the automation API on. See [AI assistants](/help/ai-assistants.html).
 
 ### How do I report a bug or ask for a feature? {#report-bug}
 

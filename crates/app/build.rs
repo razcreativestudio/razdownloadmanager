@@ -1,3 +1,9 @@
+// ==============================================================================
+// RAZ Download Manager — App Build Script
+// Terakhir Diperbarui: 2026-11-10 12:45 WIB
+// Deskripsi: Script build untuk kompilasi resource Windows & katalog terjemahan.
+// ==============================================================================
+
 // Link the GUI with Windows subsystem version 5.02 (D-008). Windows gives windows of programs
 // linked this way the legacy frame metrics — dialogs get IDM's fixed frame (3 px borders,
 // 26 px caption, measured: 566×122 outer for a 560×93 client) instead of the padded modern
@@ -23,15 +29,15 @@ fn main() {
     // Linux or macOS); winresource builds on Windows only.
     #[cfg(windows)]
     if windows {
-        println!("cargo:rerun-if-changed=assets/icons/app/mdm.ico");
+        println!("cargo:rerun-if-changed=assets/icons/app/razdm.ico");
         let mut res = winresource::WindowsResource::new();
-        res.set_icon("assets/icons/app/mdm.ico")
-            .set("ProductName", "Mister Download Manager")
-            .set("FileDescription", "Mister Download Manager")
-            .set("CompanyName", "Ahmed Nefzaoui")
+        res.set_icon("assets/icons/app/razdm.ico")
+            .set("ProductName", "RAZ Download Manager")
+            .set("FileDescription", "RAZ Download Manager")
+            .set("CompanyName", "RAZ")
             .set(
                 "LegalCopyright",
-                "Copyright (C) 2026 Ahmed Nefzaoui. GPL-3.0-or-later.",
+                "Copyright (C) 2026 RAZ Team. GPL-3.0-or-later.",
             );
         if let Err(e) = res.compile() {
             // A missing resource compiler must not break the build; the window still sets

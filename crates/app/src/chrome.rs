@@ -1076,7 +1076,7 @@ fn popup_level<C: Clone>(
         .data(|d| d.get_temp::<(Option<usize>, Option<usize>)>(kb_key))
         .and_then(|(a, b)| if depth == 0 { a } else { b });
     let screen = Rect::from_min_size(place_menu(ctx, at, size, parent), size);
-    let title = format!("misterdownloadmanager menu {depth}"); // not translated: an id
+    let title = format!("razdownloadmanager menu {depth}"); // not translated: an id
     let builder = popup_viewport(&title)
         .with_active(false)
         .with_position(screen.min)

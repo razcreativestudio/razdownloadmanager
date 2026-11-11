@@ -1,7 +1,7 @@
----
+﻿---
 title: Intended use
-description: What Mister Download Manager is made for: a general-purpose download manager, like a web browser, for files you have the right to download.
-lede: Mister Download Manager is a general-purpose tool. This page says what it is made for, in a few lines.
+description: What RAZ Download Manager is made for: a general-purpose download manager, like a web browser, for files you have the right to download.
+lede: RAZ Download Manager is a general-purpose tool. This page says what it is made for, in a few lines.
 fine: Last updated {{TODAY}}
 priority: 0.1
 ---

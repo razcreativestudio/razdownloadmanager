@@ -1,7 +1,13 @@
-//! Mister Download Manager's browser native messaging host (Chrome, Edge, Brave, Firefox).
+// ==============================================================================
+// RAZ Download Manager — Browser Native Messaging Host
+// Terakhir Diperbarui: 2026-11-10 12:25 WIB
+// Deskripsi: Host native messaging penghubung ekstensi browser ke RAZ Download Manager.
+// ==============================================================================
+
+//! RAZ Download Manager's browser native messaging host (Chrome, Edge, Brave, Firefox).
 //!
 //! - Started by the browser: reads native messages (u32 LE length + JSON) from stdin, hands each
-//!   download to the running Mister Download Manager over mdm-ipc (starting Mister Download Manager if needed), answers
+//!   download to the running RAZ Download Manager over mdm-ipc (starting RAZ Download Manager if needed), answers
 //!   `{"ok": …}`. A download Options says to leave to the browser (file type, excluded site or
 //!   address, browser, integration off: `mdm_ipc::capture`) is answered `{"ok": false}` without
 //!   starting anything, and the extension lets the browser have it. `{"rules": true}` asks for
@@ -35,7 +41,7 @@ use serde::{Deserialize, Serialize};
 #[cfg(windows)]
 mod win32;
 
-const HOST_NAME: &str = "com.misterdownloadmanager.host";
+const HOST_NAME: &str = "com.razdownloadmanager.host";
 use mdm_ipc::extension::{FIREFOX_ID, STORE_ID, STORE_UPDATE_URL, chromium_ids, store_id};
 /// Where each Chromium browser looks for native messaging hosts on Windows, under HKCU (one
 /// user) or HKLM (everyone). Chromium-branded builds (Chromium, Helium, Thorium, and Brave and
@@ -93,7 +99,7 @@ struct Message {
     proxy: Option<String>,
     proxy_pac: Option<String>,
     proxy_login: bool,
-    /// The user asked for this download (right-click → Download with Mister Download Manager):
+    /// The user asked for this download (right-click → Download with RAZ Download Manager):
     /// Options' automatic-capture rules don't apply, as IDM's "Download with IDM" takes any link.
     explicit: bool,
     /// May the download button show over videos on page `url`?
@@ -116,7 +122,7 @@ struct Message {
     links: Vec<String>,
     /// The toolbar button: leave this site (a host name) to the browser.
     exclude_site: Option<String>,
-    /// The toolbar button: bring Mister Download Manager's window up.
+    /// The toolbar button: bring RAZ Download Manager's window up.
     open: bool,
     /// The extension left a download to the browser by Options' rules (it has them from
     /// `rules`) without asking about it: for MDM's log. Under its own key, with no `url`: an
@@ -144,7 +150,7 @@ struct Reply {
     /// (docs/browser-help.md): `not-running`, `too-large`, `refused`, `options`.
     #[serde(skip_serializing_if = "Option::is_none")]
     why: Option<&'static str>,
-    /// Mister Download Manager's version (this host comes with it).
+    /// RAZ Download Manager's version (this host comes with it).
     #[serde(skip_serializing_if = "Option::is_none")]
     version: Option<&'static str>,
     /// For `rules`: Options → File types.
@@ -392,7 +398,7 @@ fn log_line(message: &str) {
     if let Ok(mut f) = std::fs::OpenOptions::new()
         .create(true)
         .append(true)
-        .open(dir.join("mdm.log"))
+        .open(dir.join("razdm.log"))
     {
         let _ = f.write_all(line.as_bytes());
     }
@@ -566,7 +572,7 @@ enum Undelivered {
     Refused(String),
 }
 
-/// How long a Mister Download Manager just started gets to open its channel (a first start, a
+/// How long a RAZ Download Manager just started gets to open its channel (a first start, a
 /// slow disk or an antivirus scan can take a while); the browser's download waits meanwhile.
 const START_WAIT: Duration = Duration::from_secs(20);
 
@@ -582,7 +588,7 @@ fn bundle_of(exe: &std::path::Path) -> Option<PathBuf> {
         .map(PathBuf::from)
 }
 
-/// Hand `cmd` to Mister Download Manager, starting it only if none is running.
+/// Hand `cmd` to RAZ Download Manager, starting it only if none is running.
 fn deliver(cmd: &mdm_ipc::Command) -> Result<(), Undelivered> {
     // Whatever it asks may open a window: the app may bring it to the front (Windows only: Linux
     // and macOS have no foreground lock for a host to lift).
@@ -601,9 +607,9 @@ fn deliver(cmd: &mdm_ipc::Command) -> Result<(), Undelivered> {
     let app = match std::fs::read_to_string(dir.join("app-path")) {
         Ok(path) if !path.trim().is_empty() => PathBuf::from(path.trim()),
         _ => dir.join(if cfg!(windows) {
-            "misterdownloadmanager.exe"
+            "RAZDownloadManager.exe"
         } else {
-            "misterdownloadmanager"
+            "razdownloadmanager"
         }),
     };
     let safari = SAFARI.load(std::sync::atomic::Ordering::Relaxed);
@@ -643,7 +649,7 @@ fn deliver(cmd: &mdm_ipc::Command) -> Result<(), Undelivered> {
         }
     }
     Err(Undelivered::NotRunning(
-        "Mister Download Manager did not start".into(),
+        "RAZ Download Manager did not start".into(),
     ))
 }
 
@@ -731,7 +737,7 @@ fn this_program() -> Result<PathBuf, String> {
 fn chromium_manifest(program: &std::path::Path) -> serde_json::Value {
     serde_json::json!({
         "name": HOST_NAME,
-        "description": "Mister Download Manager",
+        "description": "RAZ Download Manager",
         "path": program,
         "type": "stdio",
         "allowed_origins": chromium_ids().into_iter().map(origin).collect::<Vec<_>>(),
@@ -742,7 +748,7 @@ fn chromium_manifest(program: &std::path::Path) -> serde_json::Value {
 fn firefox_manifest(program: &std::path::Path) -> serde_json::Value {
     serde_json::json!({
         "name": HOST_NAME,
-        "description": "Mister Download Manager",
+        "description": "RAZ Download Manager",
         "path": program,
         "type": "stdio",
         "allowed_extensions": [FIREFOX_ID],
@@ -761,7 +767,7 @@ fn portable_refused() -> Result<(), String> {
     if mdm_ipc::portable_dir().is_some() {
         return Err(
             "portable mode: browser integration is not registered (nothing is written outside \
-             its folder); install Mister Download Manager to use it"
+             its folder); install RAZ Download Manager to use it"
                 .into(),
         );
     }
@@ -1006,7 +1012,7 @@ fn unregister(all_users: bool) -> Result<(), String> {
 
 /// Linux: where the .deb and .rpm install this program, which their manifests name.
 #[cfg(target_os = "linux")]
-const PACKAGED_HOST: &str = "/usr/bin/misterdownloadmanager-nmhost";
+const PACKAGED_HOST: &str = "/usr/bin/razdownloadmanager-nmhost";
 
 /// Linux (the .deb and .rpm build, tools/installer/build-linux.sh): the manifests for everyone,
 /// in each folder the browsers read them from (`mdm_ipc::browsers::LINUX_SYSTEM_HOST_DIRS`),
@@ -1054,7 +1060,7 @@ fn main() {
         // manifests' allowed_origins / allowed_extensions say the same; this is a second check).
         _ if our_caller(&args) => serve().map_err(|e| e.to_string()),
         _ => Err(format!(
-            "refusing caller {args:?}: not the Mister Download Manager extension"
+            "refusing caller {args:?}: not the RAZ Download Manager extension"
         )),
     };
     if let Err(e) = result {
@@ -1080,11 +1086,11 @@ mod tests {
     #[test]
     fn safari_helper_finds_its_app() {
         let exe = std::path::Path::new(
-            "/Applications/Mister Download Manager.app/Contents/PlugIns/Mister Download Manager.appex/Contents/MacOS/misterdownloadmanager-nmhost",
+            "/Applications/RAZ Download Manager.app/Contents/PlugIns/RAZ Download Manager.appex/Contents/MacOS/razdownloadmanager-nmhost",
         );
         assert_eq!(
             bundle_of(exe),
-            Some(PathBuf::from("/Applications/Mister Download Manager.app"))
+            Some(PathBuf::from("/Applications/RAZ Download Manager.app"))
         );
         assert_eq!(bundle_of(std::path::Path::new("/usr/bin/nmhost")), None);
     }
@@ -1171,7 +1177,7 @@ mod tests {
         );
         assert!(r.ok && r.types.unwrap().contains("ZIP"));
         assert_eq!(file_name_of(&msg("https://x.org/f/b.rar?x=1", "")), "b.rar");
-        // Right-click → Download with Mister Download Manager: any link, whatever Options say.
+        // Right-click → Download with RAZ Download Manager: any link, whatever Options say.
         let mut page = msg("https://example.com/page.html", "");
         assert!(verdict(&page, &rules).is_err());
         page.explicit = true;
@@ -1521,7 +1527,7 @@ mod tests {
         assert_eq!(c.user_agent.as_deref(), Some("UA"));
         assert_eq!(
             c.name, None,
-            "empty filename means: let Mister Download Manager decide"
+            "empty filename means: let RAZ Download Manager decide"
         );
         assert!(!c.later && !c.silent);
         assert_eq!((c.proxy, c.proxy_pac, c.proxy_login), (None, None, false));

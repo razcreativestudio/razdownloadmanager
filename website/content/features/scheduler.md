@@ -1,10 +1,10 @@
----
+﻿---
 name: Scheduler and queues
 title: Download scheduler and queues
 headline: Queue it today. Download it tonight.
 line: Queues started and stopped by the clock, a few files at a time, the computer off at the end.
 lede: Put downloads in a queue and let the Scheduler start them when nobody needs the connection. When the queue is done, MDM can quit or turn the computer off.
-description: Mister Download Manager's queues and Scheduler: start downloads at night, stop them in the morning, stay under a data cap, turn the computer off.
+description: RAZ Download Manager's queues and Scheduler: start downloads at night, stop them in the morning, stay under a data cap, turn the computer off.
 group: organising
 order: 110
 since: 0.1.0

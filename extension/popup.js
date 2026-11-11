@@ -1,9 +1,12 @@
-// The toolbar button's popup: whether the browser reaches Mister Download Manager (and, when it
-// doesn't, a link to the help page's section for why), pausing capture, leaving the current
-// site to the browser, opening the app or its Options, and the media the tab loaded (#38), each
-// to download. background.js does the work.
+// ==============================================================================
+// RAZ Download Manager — Browser Extension Popup Script
+// Terakhir Diperbarui: 2026-11-10 12:40 WIB
+// Deskripsi: Logika UI popup ekstensi browser untuk status & kontrol unduhan.
+// ==============================================================================
+
+// The toolbar button's popup: whether the browser reaches RAZ Download Manager
 const ext = globalThis.browser ?? globalThis.chrome;
-const HELP = "https://misterdownloadmanager.com/help/browser-help.html";
+const HELP = "https://razdownloadmanager.com/help/browser-help.html";
 // The creator's GitHub Sponsors page (the app's Help → Support MDM): a plain link, in a new tab.
 const SPONSORS = "https://github.com/sponsors/anefzaoui";
 const t = (key, ...subs) => ext.i18n.getMessage(key, subs) || key;

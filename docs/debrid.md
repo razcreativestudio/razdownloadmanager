@@ -1,4 +1,4 @@
-# Debrid service accounts
+﻿# Debrid service accounts
 
 A debrid service, such as Real-Debrid, AllDebrid or Premiumize, is a paid account that downloads files from file hosts
 on its own servers. It hands back a plain direct link, without the host's waits, speed caps
@@ -12,7 +12,7 @@ MDM supports three services: **Real-Debrid**, **AllDebrid** and **Premiumize**.
 > real paid account. AllDebrid's answers were also checked against its real API with the public
 > demo key from its documentation, which answers with sample data, not a real file. If something
 > doesn't work with your account, please
-> [open an issue](https://github.com/anefzaoui/misterdownloadmanager/issues) (never paste your
+> [open an issue](https://github.com/anefzaoui/razdownloadmanager/issues) (never paste your
 > token or key in it).
 
 ## Add your account
@@ -57,7 +57,7 @@ the list:
 
 ## What happens to a link
 
-- Add URL, the clipboard, the browser's **Download with Mister Download Manager** link menu,
+- Add URL, the clipboard, the browser's **Download with RAZ Download Manager** link menu,
   and batch downloads go through the account when its service supports
   the link's host.
 - A download the browser had already started (MDM took it over from the browser) is
@@ -100,15 +100,15 @@ In the system's keychain, as are Sites Logins' passwords and the proxy's. MDM's 
 only a reference to it. **Options → Accounts** says where they are on your computer.
 
 - **Windows**: in **Windows Credential Manager** (Control Panel → Credential Manager → Windows
-  Credentials), as entries named `Mister Download Manager/…`, for your Windows account. They
+  Credentials), as entries named `RAZ Download Manager/…`, for your Windows account. They
   roam with your profile, as MDM's settings folder does.
 - **Linux**: in the system keyring through the Secret Service (GNOME Keyring, KeePassXC, KDE's
   wallet with its Secret Service on), its default collection, as items labelled
-  `Mister Download Manager: …`. MDM never unlocks a locked keyring and never asks for its
+  `RAZ Download Manager: …`. MDM never unlocks a locked keyring and never asks for its
   password: when the keyring is locked (some desktops that log in on their own leave it
   locked) or there is none (many tiling window managers), the sign-ins stay in MDM's settings,
   in a data folder only you may read (0700), as before.
-- **macOS**: in the login keychain (**Keychain Access**), service `Mister Download Manager`.
+- **macOS**: in the login keychain (**Keychain Access**), service `RAZ Download Manager`.
   macOS may ask once whether MDM may use them, after an update.
 - **A portable copy** writes nothing outside its folder: it keeps them in its own settings
   (Windows: encrypted for your Windows account).
@@ -120,7 +120,7 @@ starts again. A removed account's entry leaves the keychain with it.
 
 **Uninstalling** on Windows with **remove the download list and settings** removes MDM's
 entries from Credential Manager too. Elsewhere, or to remove them yourself:
-`misterdownloadmanager --forget-sign-ins` (only MDM's own entries).
+`razdownloadmanager --forget-sign-ins` (only MDM's own entries).
 
 MDM never writes the token to its event log, crash reports, the automation API or the
 command line's output.

@@ -1,10 +1,10 @@
----
+﻿---
 name: RSS feeds
 title: RSS feeds for torrents, with download rules
 headline: New episodes, downloaded as they appear.
 line: Follow torrent feeds, and let rules add the new episodes you want, each one only once.
 lede: Many sites publish their new torrents as an RSS or Atom feed. MDM watches the feeds you follow, lists what they hold, and its rules add the new torrents you want by themselves.
-description: Mister Download Manager follows RSS and Atom feeds of torrents and adds new episodes by rule: words to match, words to skip, each episode once.
+description: RAZ Download Manager follows RSS and Atom feeds of torrents and adds new episodes by rule: words to match, words to skip, each episode once.
 group: downloading
 order: 90
 since: 0.5

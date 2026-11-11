@@ -1,4 +1,4 @@
-"""Collect every translatable English text of the app into i18n/en.tsv (M16, D-019).
+﻿"""Collect every translatable English text of the app into i18n/en.tsv (M16, D-019).
 
     python tools/i18n/extract.py [--check]
 
@@ -457,7 +457,7 @@ def describe(texts, info):
 
 def render(rows, plurals):
     lines = [
-        "# Mister Download Manager: every English text of the interface (tools/i18n/extract.py).",
+        "# RAZ Download Manager: every English text of the interface (tools/i18n/extract.py).",
         "# context\tsource\ttranslation; a catalog for another language has the same rows.",
         "# A '#.' line is the translator note for the row under it.",
         "@id\tlanguage.name\tEnglish",

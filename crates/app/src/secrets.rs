@@ -1,3 +1,9 @@
+// ==============================================================================
+// RAZ Download Manager — Keychain & Secrets Management
+// Terakhir Diperbarui: 2026-11-10 12:30 WIB
+// Deskripsi: Pengelolaan kredensial akun aman via Windows Credential Manager / Keychain.
+// ==============================================================================
+
 //! Sign-in secrets in the system's keychain (#44): the debrid accounts' credentials, Sites
 //! Logins' passwords and the proxy's password. The settings keep a reference in a secret's
 //! place, `keychain:<service>/<scope>/<key>`, and the secret lives in Windows Credential
@@ -27,9 +33,9 @@ use crate::unix as os;
 #[cfg(windows)]
 use crate::win32 as os;
 
-/// The keychain's name for MDM's entries (Credential Manager's targets start with it; Secret
+/// The keychain's name for RAZ DM's entries (Credential Manager's targets start with it; Secret
 /// Service's `service` attribute; the macOS keychain's service).
-pub const SERVICE: &str = "Mister Download Manager";
+pub const SERVICE: &str = "RAZ Download Manager";
 /// What the settings hold in a secret's place.
 pub const REF: &str = "keychain:";
 

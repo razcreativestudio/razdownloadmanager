@@ -1,10 +1,10 @@
----
+﻿---
 name: Debrid accounts
 title: Real-Debrid, AllDebrid and Premiumize accounts
 headline: Your debrid account, with every connection MDM has.
 line: File-host links unlocked through Real-Debrid, AllDebrid or Premiumize, then downloaded with MDM's speed and resume.
 lede: A debrid service downloads files from file hosts on its own servers and hands back a plain link, without the host's waits, speed caps and captchas. With your account in MDM, that link is downloaded like any file.
-description: Use your Real-Debrid, AllDebrid or Premiumize account in Mister Download Manager: file-host links unlocked, then downloaded with every connection.
+description: Use your Real-Debrid, AllDebrid or Premiumize account in RAZ Download Manager: file-host links unlocked, then downloaded with every connection.
 group: downloading
 order: 60
 since: 0.5
@@ -17,7 +17,7 @@ help: debrid.md
 ## The file host's link, MDM's download
 
 Paste a link from a file host your service supports, in **Add URL**, from the browser's
-**Download with Mister Download Manager**, or in a batch download. MDM unlocks it through your
+**Download with RAZ Download Manager**, or in a batch download. MDM unlocks it through your
 account, then downloads it with all its connections, pause and resume. When the direct link
 expires, MDM asks the service for a new one.
 

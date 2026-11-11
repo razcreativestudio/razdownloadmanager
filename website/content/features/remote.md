@@ -1,10 +1,10 @@
----
+﻿---
 name: Remote control
 title: Control your downloads from your phone
 headline: Add a download from the couch.
 line: Paste a link on your phone and the computer downloads it. Watch and pause from anywhere at home.
 lede: Your phone opens a small page that MDM itself serves on your home network. Paste a link, a magnet link or a torrent file, and watch it download on the computer. Nothing to install on the phone, and no outside service.
-description: Control Mister Download Manager from your phone on your home network: add links and torrents, pause and start downloads, run queues. Paired devices only.
+description: Control RAZ Download Manager from your phone on your home network: add links and torrents, pause and start downloads, run queues. Paired devices only.
 group: network
 order: 230
 since: 0.5

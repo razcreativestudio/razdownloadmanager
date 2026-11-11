@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+﻿#!/usr/bin/env bash
 # mdm-lab: a WSL2 distribution that builds MDM for Linux at the PC's full speed and screenshots
 # its windows on a virtual screen (Xvfb) that never shows on Windows. It replaces the VirtualBox
 # machines for builds and window shots (those run about 3x slower under Hyper-V); README.md says
@@ -13,7 +13,7 @@
 set -euo pipefail
 [ "$(id -u)" = 0 ] || { echo "run as root: wsl -d mdm-lab -u root -- bash $0" >&2; exit 2; }
 user=lab
-repo_url=https://github.com/anefzaoui/misterdownloadmanager.git
+repo_url=https://github.com/anefzaoui/RAZDownloadManager.git
 export DEBIAN_FRONTEND=noninteractive
 
 # --- The distribution's own settings (per distribution; .wslconfig is global and stays as it is).

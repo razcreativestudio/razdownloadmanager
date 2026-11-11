@@ -1,4 +1,4 @@
-//! The lab HTTP server: generated files with Range support, a request log, and fault injection.
+﻿//! The lab HTTP server: generated files with Range support, a request log, and fault injection.
 //!
 //! Routes (every parameter is listed by `GET /`, [`HELP`]):
 //! - `GET|HEAD /gen/{size}[/{name}]?seed=N&<file params>&<faults>` — deterministic content (see
@@ -516,7 +516,7 @@ impl Drop for LabServer {
 }
 
 /// The index page (`GET /`): every route, parameter and fault.
-pub const HELP: &str = r#"labserver: an HTTP test server for Mister Download Manager
+pub const HELP: &str = r#"labserver: an HTTP test server for RAZ Download Manager
 
 FILES  deterministic content: byte i of seed s is the same on every request (src/content.rs)
 GET|HEAD /gen/{size}[/{name}]?seed=N&<file params>&<faults>   size: 12345, 64K, 100M, 1G

@@ -1,3 +1,9 @@
+// ==============================================================================
+// RAZ Download Manager — Browser Extension Integration Flow
+// Terakhir Diperbarui: 2026-11-10 12:30 WIB
+// Deskripsi: Alur penawaran dan registrasi ekstensi browser untuk RAZ Download Manager.
+// ==============================================================================
+
 //! The browser extension's offer: at each start, until a browser's extension has reached the
 //! app (the native host notes it: mdm_ipc::extension::seen), a window lists the browsers
 //! installed and opens the extension's page in the one picked (addons.mozilla.org for Firefox
@@ -127,7 +133,7 @@ impl Extension {
             ctx,
             "extension",
             // i18n: title of the window that offers the browser extension
-            "Add Mister Download Manager to your browser",
+            "Add RAZ Download Manager to your browser",
             [W, h + extra],
             false,
             winui::BG(),
@@ -275,7 +281,7 @@ impl Extension {
                 o.x + 18.0,
                 o.y + y,
                 crate::i18n::t(
-                    "Browser integration isn't set up on this computer, so no browser can reach Mister Download Manager yet.",
+                    "Browser integration isn't set up on this computer, so no browser can reach RAZ Download Manager yet.",
                 ),
                 winui::ERROR(),
                 o.x + fix_x - 10.0,
@@ -495,7 +501,7 @@ const STEPS: [&str; 8] = [
     // i18n: step 7 of turning on the Safari extension; the quoted tab name is what Safari's settings show in this language: use Apple's own word for it, or keep the English name when unsure
     "Switch to the \"Extensions\" tab (the puzzle piece).",
     // i18n: step 8 of turning on the Safari extension
-    "Turn on \"Mister Download Manager\" and allow it on all websites.",
+    "Turn on \"RAZ Download Manager\" and allow it on all websites.",
 ];
 
 /// The browsers whose extension reached the app, by Options' names.
@@ -570,7 +576,7 @@ pub fn set_up(ctx: &egui::Context) {
             if let Ok(exe) = std::env::current_exe() {
                 crate::launch::run_within(
                     std::process::Command::new(
-                        exe.with_file_name("misterdownloadmanager-nmhost.exe"),
+                        exe.with_file_name("RAZDownloadManager-nmhost.exe"),
                     )
                     .arg("--register"),
                     SET_UP_LIMIT,
@@ -626,7 +632,7 @@ pub fn checks(settings: &crate::settings::Settings) -> Vec<Check> {
         Registration::Ready | Registration::Missing => check(
             registration == Registration::Ready,
             // i18n: a check of Test browser integration: the browsers find MDM's helper program
-            "The browsers can find Mister Download Manager",
+            "The browsers can find RAZ Download Manager",
             Some("not-installed"),
         ),
         Registration::NoBrowser => check(

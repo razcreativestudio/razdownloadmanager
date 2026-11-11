@@ -197,7 +197,7 @@ fn is_format(c: char) -> bool {
 }
 
 /// Longest file name we create, in UTF-16 units: NTFS allows 255, and the part file adds
-/// ".mdm.part" (9) and a duplicate may add " (NNN)" (6). The extension is kept.
+/// ".razdm.part" (11) and a duplicate may add " (NNN)" (6). The extension is kept.
 const MAX_NAME: usize = 230;
 
 /// Longest full path we create, in UTF-16 units. On Windows: `MAX_PATH` (260) without the
@@ -206,8 +206,8 @@ const MAX_NAME: usize = 230;
 const MAX_PATH_LEN: usize = 259;
 #[cfg(not(windows))]
 const MAX_PATH_LEN: usize = 4095;
-/// What our files add to a destination: ".mdm.part" / ".mdm.json".
-const SIDECAR: usize = 9;
+/// What our files add to a destination: ".razdm.part" / ".razdm.json".
+const SIDECAR: usize = 11;
 /// What a duplicate's number adds: " (NNN)".
 const DUPLICATE: usize = 6;
 /// Shortest name worth making when a deep folder leaves little room.
@@ -348,8 +348,18 @@ fn clamp_to(name: &str, max: usize) -> String {
 /// The part file a download is written to before it is complete.
 pub fn part_path(dest: &Path) -> PathBuf {
     let mut s = dest.as_os_str().to_owned();
-    s.push(".mdm.part");
-    PathBuf::from(s)
+    s.push(".razdm.part");
+    let p = PathBuf::from(s);
+    if !p.exists() {
+        // Fallback backward compatibility jika file lama memakai ekstensi .mdm.part
+        let mut old = dest.as_os_str().to_owned();
+        old.push(".mdm.part");
+        let old_p = PathBuf::from(old);
+        if old_p.exists() {
+            let _ = std::fs::rename(&old_p, &p);
+        }
+    }
+    p
 }
 
 /// `dir/name`, or `dir/stem (N).ext` with the lowest N that is free — IDM's default for a

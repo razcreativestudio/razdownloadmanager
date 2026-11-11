@@ -1,10 +1,10 @@
----
+﻿---
 name: Acceleration and resume
 title: Download acceleration and crash-safe resume
 headline: Every connection at once. Picked up where it stopped.
 line: A file split over up to 32 connections, re-split until the last byte, and resumed after any crash.
 lede: MDM splits a file into parts and downloads them side by side, then keeps every connection busy until the last byte. If the line drops or the computer restarts, the download carries on from where it was.
-description: How Mister Download Manager speeds up downloads: up to 32 connections per file, dynamic re-splitting, per-server limits it learns, and crash-safe resume.
+description: How RAZ Download Manager speeds up downloads: up to 32 connections per file, dynamic re-splitting, per-server limits it learns, and crash-safe resume.
 group: downloading
 order: 10
 since: 0.1.0

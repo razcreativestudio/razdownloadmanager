@@ -1,6 +1,11 @@
-//! misterdownloadmanager-mcp: Mister Download Manager's MCP server. An AI assistant starts it and
-//! speaks MCP with it on stdin and stdout; it hands what the assistant asks to the running app
-//! (docs/ai-assistants.md).
+// ==============================================================================
+// RAZ Download Manager — Model Context Protocol (MCP) Server
+// Terakhir Diperbarui: 2026-11-10 12:25 WIB
+// Deskripsi: Server MCP untuk menghubungkan agen/asisten AI ke RAZ Download Manager.
+// ==============================================================================
+
+//! razdownloadmanager-mcp: RAZ Download Manager's MCP server. An AI assistant starts it and
+//! speaks MCP with it on stdin and stdout; it hands what the assistant asks to the running app.
 
 use rmcp::ServiceExt;
 
@@ -10,13 +15,13 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     if let Some(arg) = std::env::args().nth(1) {
         match arg.as_str() {
             "--version" | "-V" => {
-                println!("misterdownloadmanager-mcp {}", env!("CARGO_PKG_VERSION"))
+                println!("razdownloadmanager-mcp {}", env!("CARGO_PKG_VERSION"))
             }
             _ => println!(
-                "misterdownloadmanager-mcp: Mister Download Manager's MCP server, for AI \
+                "razdownloadmanager-mcp: RAZ Download Manager's MCP server, for AI \
                  assistants. The assistant starts it (no arguments) and talks to it on stdin and \
                  stdout. Setup: \
-                 https://misterdownloadmanager.com/help/ai-assistants.html"
+                 https://dm.it-raz.com/help/ai-assistants.html"
             ),
         }
         return Ok(());

@@ -1,7 +1,7 @@
----
+﻿---
 title: Terms of use
-description: The terms for using Mister Download Manager and misterdownloadmanager.com: free software under the GNU GPL 3.0, used at your own risk, for downloads you have the right to make.
-lede: Mister Download Manager is free software. These terms are short because the GNU General Public License already says most of it.
+description: The terms for using RAZ Download Manager and razdownloadmanager.com: free software under the GNU GPL 3.0, used at your own risk, for downloads you have the right to make.
+lede: RAZ Download Manager is free software. These terms are short because the GNU General Public License already says most of it.
 fine: Last updated {{TODAY}}
 priority: 0.3
 ---
@@ -10,7 +10,7 @@ priority: 0.3
 
 ## In short
 
-- You may use, copy, change and share Mister Download Manager under the **GNU GPL, version 3**.
+- You may use, copy, change and share RAZ Download Manager under the **GNU GPL, version 3**.
 - It comes **without any warranty**: use it at your own risk.
 - **Download only what you have the right to.** You are responsible for what you download and share.
 - MDM is **not affiliated** with Tonec Inc. or Internet Download Manager.
@@ -19,7 +19,7 @@ priority: 0.3
 
 ## 1. Who we are
 
-Mister Download Manager ("MDM", "the software") and the website misterdownloadmanager.com ("the site") are made by Ahmed Nefzaoui and contributors ("we"). By using the software or the site you accept these terms. If you don't, please don't use them.
+RAZ Download Manager ("MDM", "the software") and the website razdownloadmanager.com ("the site") are made by Ahmed Nefzaoui and contributors ("we"). By using the software or the site you accept these terms. If you don't, please don't use them.
 
 ## 2. The software's licence
 
@@ -52,7 +52,7 @@ To the extent allowed by law, we will not be liable for any damages arising from
 
 ## 7. Names and logos
 
-"Mister Download Manager", "MDM" and the MDM logo identify this project. You may use them to refer to the project, and to name unmodified copies you distribute. If you distribute a changed version, please give it a different name and logo so people aren't confused about who made it; the GPL still applies to the code.
+"RAZ Download Manager", "MDM" and the MDM logo identify this project. You may use them to refer to the project, and to name unmodified copies you distribute. If you distribute a changed version, please give it a different name and logo so people aren't confused about who made it; the GPL still applies to the code.
 
 Internet Download Manager and IDM are trademarks of their owner. We name them only to describe and compare, as allowed by law. MDM is **not affiliated with, endorsed by or connected to Tonec Inc.** and contains none of Internet Download Manager's code, artwork or text.
 

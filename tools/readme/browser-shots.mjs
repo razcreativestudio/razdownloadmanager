@@ -1,8 +1,8 @@
-// The README's pictures of the download button over a video, in a real Chrome window (its own
+﻿// The README's pictures of the download button over a video, in a real Chrome window (its own
 // tabs and address bar): the Blender Foundation's Big Buck Bunny (CC BY 3.0, ATTRIBUTION.md) on
 // YouTube, and the same film as a plain video file. Nothing shows on the screen: the window
 // opens far off the screens without taking the focus (and keeps painting there), Windows draws
-// it into the picture (PrintWindow), and a separate Mister Download Manager runs off the screen
+// it into the picture (PrintWindow), and a separate RAZ Download Manager runs off the screen
 // for the button to ask (MDM_DATA_DIR, MDM_OFFSCREEN). Windows only.
 //
 //   cargo build --release -p mdm-app -p mdm-nmhost; tools\extension\pack.ps1
@@ -80,8 +80,8 @@ async function main() {
   process.env.MDM_DATA_DIR = data;
   process.env.MDM_OFFSCREEN = "1";
 
-  const app = spawn(exe("misterdownloadmanager"), [], { env: process.env, stdio: "ignore" });
-  const nmhost = exe("misterdownloadmanager-nmhost");
+  const app = spawn(exe("RAZDownloadManager"), [], { env: process.env, stdio: "ignore" });
+  const nmhost = exe("RAZDownloadManager-nmhost");
   let browser = null;
   cleanup = () => {
     cleanup = () => {};
@@ -91,10 +91,10 @@ async function main() {
     killTree(app);
   };
   try {
-    await until("Mister Download Manager", 20000, () => fs.existsSync(path.join(data, "ipc.json")));
-    const key = "HKCU\\Software\\Google\\Chrome\\NativeMessagingHosts\\com.misterdownloadmanager.host";
+    await until("RAZ Download Manager", 20000, () => fs.existsSync(path.join(data, "ipc.json")));
+    const key = "HKCU\\Software\\Google\\Chrome\\NativeMessagingHosts\\com.RAZDownloadManager.host";
     if (spawnSync("reg", ["query", key], { stdio: "ignore" }).status === 0) {
-      throw new Error("Mister Download Manager's host is already registered (an installed copy): not touching it");
+      throw new Error("RAZ Download Manager's host is already registered (an installed copy): not touching it");
     }
     spawnSync(nmhost, ["--register"]);
     browser = spawn(

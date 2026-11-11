@@ -1,12 +1,12 @@
 {
   "name": {
-    "message": "Mister Download Manager"
+    "message": "RAZ Download Manager"
   },
   "description": {
-    "message": "Siirtää lataukset selaimesta Mister Download Manageriin."
+    "message": "Siirtää lataukset selaimesta RAZ Download Manageriin."
   },
   "menu": {
-    "message": "Lataa Mister Download Managerilla"
+    "message": "Lataa RAZ Download Managerilla"
   },
   "video_download": {
     "message": "Lataa video"
@@ -30,25 +30,25 @@
     "message": "Painikkeen asetukset..."
   },
   "video_sent": {
-    "message": "Lähetetty Mister Download Manager:lle"
+    "message": "Lähetetty RAZ Download Manager:lle"
   },
   "video_failed": {
-    "message": "Mister Download Manager ei ole asennettu tai sitä ei käynnistetty"
+    "message": "RAZ Download Manager ei ole asennettu tai sitä ei käynnistetty"
   },
   "video_drag": {
     "message": "Vedä siirtääksesi sitä videon reunaa pitkin"
   },
   "menu_selected": {
-    "message": "Lataa valitut linkit sovelluksella Mister Download Manager"
+    "message": "Lataa valitut linkit sovelluksella RAZ Download Manager"
   },
   "menu_all": {
-    "message": "Lataa kaikki linkit sovelluksella Mister Download Manager"
+    "message": "Lataa kaikki linkit sovelluksella RAZ Download Manager"
   },
   "status_connected": {
-    "message": "Yhdistetty sovellukseen Mister Download Manager"
+    "message": "Yhdistetty sovellukseen RAZ Download Manager"
   },
   "status_connected_version": {
-    "message": "Yhdistetty sovellukseen Mister Download Manager $version$",
+    "message": "Yhdistetty sovellukseen RAZ Download Manager $version$",
     "placeholders": {
       "version": {
         "content": "$1",
@@ -60,22 +60,22 @@
     "message": "Ei käytössä: lataukset jäävät selaimeen"
   },
   "status_not_installed": {
-    "message": "Mister Download Manager ei ole asennettu, tai sen selainintegrointia ei ole määritetty"
+    "message": "RAZ Download Manager ei ole asennettu, tai sen selainintegrointia ei ole määritetty"
   },
   "status_forbidden": {
-    "message": "Mister Download Manager ei hyväksy tätä laajennuksen kopiota"
+    "message": "RAZ Download Manager ei hyväksy tätä laajennuksen kopiota"
   },
   "status_not_running": {
-    "message": "Mister Download Manager ei käynnistynyt ajoissa"
+    "message": "RAZ Download Manager ei käynnistynyt ajoissa"
   },
   "status_host_failed": {
-    "message": "Yhteyden muodostaminen sovellukseen Mister Download Manager epäonnistui"
+    "message": "Yhteyden muodostaminen sovellukseen RAZ Download Manager epäonnistui"
   },
   "status_too_large": {
     "message": "Tämän latauksen tiedot olivat liian suuria siirrettäviksi"
   },
   "status_update_app": {
-    "message": "Päivitä Mister Download Manager, jotta voit käyttää kaikkia tämän laajennuksen tarjoamia ominaisuuksia"
+    "message": "Päivitä RAZ Download Manager, jotta voit käyttää kaikkia tämän laajennuksen tarjoamia ominaisuuksia"
   },
   "popup_take": {
     "message": "Latausten siirtäminen tästä selaimesta"
@@ -84,10 +84,10 @@
     "message": "Lähetä lataukset tämän selaimen välityspalvelimen tai VPN-laajennuksen kautta"
   },
   "popup_proxy_title": {
-    "message": "Tällöin Mister Download Manager lataa saman välityspalvelimen kautta kuin tämä selain. Selain pyytää kerran lupaa; tämän poistaminen käytöstä peruuttaa luvan."
+    "message": "Tällöin RAZ Download Manager lataa saman välityspalvelimen kautta kuin tämä selain. Selain pyytää kerran lupaa; tämän poistaminen käytöstä peruuttaa luvan."
   },
   "popup_proxy_title_chromium": {
-    "message": "Mister Download Manager lataa tiedostot sitten tämän selaimen käyttämän välityspalvelimen kautta. Kun tämä asetus on pois päältä, laajennus ei lue selaimen välityspalvelimen asetuksia."
+    "message": "RAZ Download Manager lataa tiedostot sitten tämän selaimen käyttämän välityspalvelimen kautta. Kun tämä asetus on pois päältä, laajennus ei lue selaimen välityspalvelimen asetuksia."
   },
   "popup_exclude_site": {
     "message": "Älä koskaan ota latauksia sivustolta $site$",
@@ -108,7 +108,7 @@
     }
   },
   "popup_open": {
-    "message": "Avaa Mister Download Manager"
+    "message": "Avaa RAZ Download Manager"
   },
   "popup_options": {
     "message": "Asetukset..."
@@ -195,7 +195,7 @@
     "message": "Tämä tietokone"
   },
   "popup_send_remote": {
-    "message": "Toinen Mister Download Manager (palvelin)"
+    "message": "Toinen RAZ Download Manager (palvelin)"
   },
   "popup_remote_code": {
     "message": "Pariliitoskoodi"
@@ -207,7 +207,7 @@
     "message": "Laita pariksi"
   },
   "popup_remote_help": {
-    "message": "Avaa sen osoite kerran ja hyväksy sen varmenne, anna sitten koodi sen Asetukset, Etä, Laita laite pariksi -kohdasta (tai misterdownloadmanager-cli pair)."
+    "message": "Avaa sen osoite kerran ja hyväksy sen varmenne, anna sitten koodi sen Asetukset, Etä, Laita laite pariksi -kohdasta (tai razdownloadmanager-cli pair)."
   },
   "status_remote": {
     "message": "Lataukset menevät osoitteeseen $address$",

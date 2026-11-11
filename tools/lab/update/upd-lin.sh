@@ -1,11 +1,11 @@
-#!/usr/bin/env bash
+﻿#!/usr/bin/env bash
 # Update now, end to end, on Linux: the .tar.gz and AppImage paths (README.md). Off-screen test
 # copies in folders of their own, on a virtual screen of this script's own (Xvfb :96, a session
 # bus, Metacity), fake 9.9.9 releases signed with a throwaway key made for this run (mkrel.py),
 # served by the lab server on 127.0.0.1. Needs a release-mode build with the `test-update`
 # feature (vmtest or release profile: debug builds are "built from source" and never update).
 #
-#   tools/lab/update/upd-lin.sh <folder with misterdownloadmanager and labserver> [scenario ...]
+#   tools/lab/update/upd-lin.sh <folder with RAZDownloadManager and labserver> [scenario ...]
 #   e.g. upd-lin.sh ~/src/mdm/target/vmtest     (every scenario)
 #
 # Scenarios and what each must show (the run fails otherwise, exit status 1):
@@ -57,11 +57,11 @@ keys=$work/keys
 release() { # release <name> <kind targz|file> <asset> [mkrel args]
   local name=$1 kind=$2 asset=$3; shift 3
   python3 "$here/mkrel.py" --keys "$keys" --out "$work/rel-$name" --base "$base" --asset "$asset" \
-    --kind "$kind" --program "$bin/misterdownloadmanager" --program-name misterdownloadmanager "$@" |
+    --kind "$kind" --program "$bin/RAZDownloadManager" --program-name RAZDownloadManager "$@" |
     sed 's/^/  /' | tee -a "$work/log.txt"
 }
-TGZ=MisterDownloadManager-9.9.9-linux-x86_64.tar.gz
-APP=MisterDownloadManager-9.9.9-linux-x86_64.AppImage
+TGZ=RAZDownloadManager-9.9.9-linux-x86_64.tar.gz
+APP=RAZDownloadManager-9.9.9-linux-x86_64.AppImage
 log "making the fake releases (throwaway keys in $keys)"
 release targz-good targz $TGZ
 release targz-bad-hash targz $TGZ --sums bad
@@ -74,8 +74,8 @@ run() { # run <name> <targz|appimage> <release> <hold> <close: -|download|instal
   local name=$1 kind=$2 rel=$3 hold=$4 close=$5
   local w=$work/run-$1 prog srv slow="" pid upd before new
   mkdir -p "$w/copy" "$w/data" "$w/Downloads"
-  if [ "$kind" = appimage ]; then prog=$w/copy/MisterDownloadManager.AppImage; else prog=$w/copy/misterdownloadmanager; fi
-  cp "$bin/misterdownloadmanager" "$prog"
+  if [ "$kind" = appimage ]; then prog=$w/copy/RAZDownloadManager.AppImage; else prog=$w/copy/RAZDownloadManager; fi
+  cp "$bin/RAZDownloadManager" "$prog"
   local start_hash; start_hash=$(sha256sum "$prog" | cut -c1-16)
   python3 - "$w/data/downloads.json" "$w/Downloads" <<'PY'
 import json, sys

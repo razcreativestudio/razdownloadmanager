@@ -1,10 +1,10 @@
----
+﻿---
 name: Windows, Mac and Linux
 title: Download manager for Windows, with macOS and Linux builds
 headline: Made for Windows. On a Mac and Linux too.
 line: Stable on Windows 10 and 11, installed or portable; builds for Linux and macOS with every release.
 lede: MDM is built for 64-bit Windows 10 and 11, as an installer, a portable copy or a plain zip. Builds for Linux and macOS come with every release.
-description: Mister Download Manager runs on Windows 10 and 11, installed or portable, with Linux (AppImage, .deb, .rpm, .tar.gz) and macOS (.dmg) builds.
+description: RAZ Download Manager runs on Windows 10 and 11, installed or portable, with Linux (AppImage, .deb, .rpm, .tar.gz) and macOS (.dmg) builds.
 group: app
 order: 340
 since: 0.1.0
@@ -41,7 +41,7 @@ stick](guide-usb-stick.md) shows the set-up.
 Today's files marked `-experimental` are for macOS 11 and later, on Apple Silicon or Intel, and
 for Linux on x86-64: an AppImage for most distributions, a `.deb` for Ubuntu, Debian, Mint and
 Pop!_OS, an `.rpm` for Fedora, openSUSE and RHEL, and a `.tar.gz` of the plain programs. Please
-[tell us how it went](https://github.com/anefzaoui/misterdownloadmanager/issues/new/choose), good
+[tell us how it went](https://github.com/anefzaoui/razdownloadmanager/issues/new/choose), good
 or bad.
 
 There, MDM connects itself to your browsers at each start, has its tray icon, follows the

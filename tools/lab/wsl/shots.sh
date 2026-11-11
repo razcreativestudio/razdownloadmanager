@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+﻿#!/usr/bin/env bash
 # Screenshots of MDM's windows on the lab's virtual screen: ONE MDM per language and mode, each
 # window opened by MDM's own command line (`/show <window>`, as tools/lab/docs-shots.ps1 does
 # on Windows), captured once it has painted, closed, then the next. Nothing shows on Windows
@@ -50,7 +50,7 @@ while [ $# -gt 0 ]; do
   shift
 done
 bin=$HOME/lab/bin/$label
-app=$bin/misterdownloadmanager
+app=$bin/RAZDownloadManager
 [ -x "$app" ] || { echo "no build $label in ~/lab/bin (build.sh)"; exit 1; }
 out=${out:-$HOME/lab/shots/$label}
 work=$HOME/lab/run/$label

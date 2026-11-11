@@ -1,4 +1,4 @@
-//! Mister Download Manager updating itself: how this copy was installed, the release file that
+﻿//! RAZ Download Manager updating itself: how this copy was installed, the release file that
 //! replaces it, and that file fetched and checked against the release's SHA256SUMS.txt, whose
 //! signature by MDM's release key ([`crate::signed_by_mdm`]) is checked first. Putting the file
 //! in place is the app's (`crates/app/src/update.rs`): it has to close itself to do it.
@@ -128,7 +128,7 @@ impl Install {
             Install::TarGz => ("linux-x86_64", ".tar.gz"),
             Install::System | Install::Source => return Vec::new(),
         };
-        let name = |tail: &str| format!("MisterDownloadManager-{version}-{tail}{ext}");
+        let name = |tail: &str| format!("RAZDownloadManager-{version}-{tail}{ext}");
         match self {
             Install::Installer | Install::PortableZip | Install::PlainZip => vec![name(tail)],
             _ => vec![name(tail), name(&format!("{tail}-experimental"))],
@@ -351,8 +351,8 @@ Connection: close
 
     #[tokio::test]
     async fn a_release_file_is_taken_only_from_a_list_signed_by_mdm() {
-        let zip = "MisterDownloadManager-9.9.9-x64.zip";
-        let setup = "MisterDownloadManager-9.9.9-setup.exe";
+        let zip = "RAZDownloadManager-9.9.9-x64.zip";
+        let setup = "RAZDownloadManager-9.9.9-setup.exe";
         let assets = |base: &str| -> Vec<(String, String)> {
             ["SHA256SUMS.txt", "SHA256SUMS.txt.sig", zip, setup]
                 .iter()
@@ -379,7 +379,7 @@ Connection: close
         let out = dir.path().join("out");
         unzip(&file, &out).unwrap();
         assert_eq!(
-            std::fs::read(single_folder(&out).join("misterdownloadmanager.exe")).unwrap(),
+            std::fs::read(single_folder(&out).join("RAZDownloadManager.exe")).unwrap(),
             b"new program"
         );
         // A file that isn't the one the signed list names is refused, and not kept.
@@ -415,15 +415,15 @@ Connection: close
     fn every_kind_has_its_release_file() {
         assert_eq!(
             Install::Installer.assets("0.2.2"),
-            ["MisterDownloadManager-0.2.2-setup.exe"]
+            ["RAZDownloadManager-0.2.2-setup.exe"]
         );
         assert_eq!(
             Install::PortableZip.assets("0.2.2"),
-            ["MisterDownloadManager-0.2.2-portable.zip"]
+            ["RAZDownloadManager-0.2.2-portable.zip"]
         );
         assert_eq!(
             Install::PlainZip.assets("0.2.2"),
-            ["MisterDownloadManager-0.2.2-x64.zip"]
+            ["RAZDownloadManager-0.2.2-x64.zip"]
         );
         // Linux and macOS: the plain name first, then the one up to 0.2.x.
         for (install, ext) in [
@@ -435,8 +435,8 @@ Connection: close
             assert_eq!(
                 install.assets("1.0.0"),
                 [
-                    format!("MisterDownloadManager-1.0.0-linux-x86_64{ext}"),
-                    format!("MisterDownloadManager-1.0.0-linux-x86_64-experimental{ext}"),
+                    format!("RAZDownloadManager-1.0.0-linux-x86_64{ext}"),
+                    format!("RAZDownloadManager-1.0.0-linux-x86_64-experimental{ext}"),
                 ]
             );
         }
@@ -449,8 +449,8 @@ Connection: close
         assert_eq!(
             Install::Dmg.assets("1.0.0"),
             [
-                format!("MisterDownloadManager-1.0.0-macos-{arch}.dmg"),
-                format!("MisterDownloadManager-1.0.0-macos-{arch}-experimental.dmg"),
+                format!("RAZDownloadManager-1.0.0-macos-{arch}.dmg"),
+                format!("RAZDownloadManager-1.0.0-macos-{arch}-experimental.dmg"),
             ]
         );
         assert!(Install::Source.assets("1.0.0").is_empty());
@@ -464,7 +464,7 @@ Connection: close
     fn the_linux_names_are_build_linux_sh_s() {
         let script = include_str!("../../../tools/installer/build-linux.sh").replace("\r\n", "\n");
         assert!(
-            script.contains("\nname=\"MisterDownloadManager-$version-linux-x86_64\"\n"),
+            script.contains("\nname=\"RAZDownloadManager-$version-linux-x86_64\"\n"),
             "build-linux.sh names its files differently"
         );
         for (install, ext) in [
@@ -479,7 +479,7 @@ Connection: close
             );
             assert_eq!(
                 install.assets("1.0.0")[0],
-                format!("MisterDownloadManager-1.0.0-linux-x86_64{ext}")
+                format!("RAZDownloadManager-1.0.0-linux-x86_64{ext}")
             );
         }
     }
@@ -489,11 +489,11 @@ Connection: close
     fn a_linux_copy_knows_its_package_manager() {
         let owner = |who: &'static str| {
             move |tool: &str, args: &[&str]| {
-                assert_eq!(args.last(), Some(&"/usr/bin/misterdownloadmanager"));
+                assert_eq!(args.last(), Some(&"/usr/bin/RAZDownloadManager"));
                 tool == who
             }
         };
-        let exe = Path::new("/usr/bin/misterdownloadmanager");
+        let exe = Path::new("/usr/bin/RAZDownloadManager");
         assert_eq!(linux_package(exe, &owner("dpkg-query")), Install::Deb);
         assert_eq!(linux_package(exe, &owner("rpm")), Install::Rpm);
         // An Arch package (pacman), or in /usr/bin with no package manager MDM knows: the
@@ -505,14 +505,14 @@ Connection: close
         assert_eq!(linux_package(exe, &both), Install::Deb);
         // The .tar.gz unpacked in the home folder, /opt or /usr/local: MDM's own to replace.
         let nobody = |_: &str, _: &[&str]| false;
-        let home = Path::new("/home/me/MisterDownloadManager/misterdownloadmanager");
+        let home = Path::new("/home/me/RAZDownloadManager/RAZDownloadManager");
         assert_eq!(linux_package(home, &nobody), Install::TarGz);
         assert_eq!(
-            linux_package(Path::new("/opt/mdm/misterdownloadmanager"), &nobody),
+            linux_package(Path::new("/opt/mdm/RAZDownloadManager"), &nobody),
             Install::TarGz
         );
         assert_eq!(
-            linux_package(Path::new("/usr/local/bin/misterdownloadmanager"), &nobody),
+            linux_package(Path::new("/usr/local/bin/RAZDownloadManager"), &nobody),
             Install::TarGz
         );
         // MDM updates neither another package manager's copy nor a build of its own.
@@ -522,14 +522,14 @@ Connection: close
     #[test]
     fn bundles_on_a_mac() {
         let exe = Path::new(
-            "/Applications/Mister Download Manager.app/Contents/MacOS/misterdownloadmanager",
+            "/Applications/RAZ Download Manager.app/Contents/MacOS/razdownloadmanager",
         );
         assert_eq!(
             app_bundle(exe).as_deref(),
-            Some(Path::new("/Applications/Mister Download Manager.app"))
+            Some(Path::new("/Applications/RAZ Download Manager.app"))
         );
         assert_eq!(
-            app_bundle(Path::new("/usr/bin/misterdownloadmanager")),
+            app_bundle(Path::new("/usr/bin/razdownloadmanager")),
             None
         );
     }
@@ -574,7 +574,7 @@ Connection: close
         let zip_path = root.path().join("r.zip");
         let mut w = zip::ZipWriter::new(std::fs::File::create(&zip_path).unwrap());
         let opts = zip::write::SimpleFileOptions::default();
-        w.start_file("MisterDownloadManager-9.9.9-x64/mdm.exe", opts)
+        w.start_file("RAZDownloadManager-9.9.9-x64/mdm.exe", opts)
             .unwrap();
         w.write_all(b"exe").unwrap();
         w.start_file("../escape.txt", opts).unwrap();

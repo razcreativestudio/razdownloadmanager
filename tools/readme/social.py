@@ -1,4 +1,4 @@
-"""The repository's social preview (GitHub → Settings → Social preview; 1280×640): the app icon,
+﻿"""The repository's social preview (GitHub → Settings → Social preview; 1280×640): the app icon,
 the name, the one-line promise and the main window. Built from the repo's own files:
 
     python tools/readme/social.py        # → docs/images/social-preview.png
@@ -37,9 +37,9 @@ def main():
     card.paste(shot, (x0, y0), mask)
 
     # The words, upper left.
-    icon = Image.open(ROOT / "art/Mister Download Manager.png").convert("RGBA").resize((112, 112), Image.LANCZOS)
+    icon = Image.open(ROOT / "art/RAZ Download Manager.png").convert("RGBA").resize((112, 112), Image.LANCZOS)
     card.paste(icon, (64, 56), icon)
-    draw.text((196, 58), "Mister Download Manager", font=font("segoeuib.ttf", 56), fill=INK)
+    draw.text((196, 58), "RAZ Download Manager", font=font("segoeuib.ttf", 56), fill=INK)
     draw.text((198, 132), "Downloads faster than IDM. Free, forever.", font=font("segoeui.ttf", 34), fill=ACCENT)
     draw.text((66, 196), "Windows, macOS and Linux  ·  86 languages  ·  no ads, no trial, no sign-up",
               font=font("segoeui.ttf", 24), fill=MUTED)

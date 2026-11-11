@@ -1,20 +1,20 @@
----
+﻿---
 name: Server mode
 title: Run MDM on a home server, NAS, Docker or Unraid
 headline: Let the home server do the downloading.
 line: MDM without a window on a NAS, in Docker or on Unraid, fed from your phone or browser.
 lede: Run MDM without a window on a home server or a NAS, and send it downloads from your phone or your browser. The files land in the server's own folders, such as a network share.
-description: Run Mister Download Manager without a window on a home server, NAS, Docker or Unraid, and send it downloads from your phone or your browser.
+description: Run RAZ Download Manager without a window on a home server, NAS, Docker or Unraid, and send it downloads from your phone or your browser.
 group: network
 order: 240
 since: 0.5
-where: The command line: `misterdownloadmanager --headless`
+where: The command line: `razdownloadmanager --headless`
 help: server.md
 ---
 
 ## The same MDM, without a window
 
-`misterdownloadmanager --headless` runs MDM with its list, categories, queues, Scheduler, speed
+`razdownloadmanager --headless` runs MDM with its list, categories, queues, Scheduler, speed
 limits and torrents, but no window. Its folders and port come from flags or the environment. It
 stops cleanly, saving its list, when the system stops it. It runs on any Linux machine with MDM
 installed, and on Windows and macOS the same way.
@@ -33,10 +33,10 @@ maps the folders and runs MDM as `nobody:users`, as Unraid's shares expect.
 
 The remote control is on in this mode. The log prints the address to open and a pairing code
 with a QR code: pair your phone as with the [remote control](/features/remote.html), and
-`misterdownloadmanager-cli pair` makes a new code at any time.
+`razdownloadmanager-cli pair` makes a new code at any time.
 
-In the browser extension, **Send downloads to → Another Mister Download Manager (a server)** sends the downloads it catches, and
-**Download with Mister Download Manager** on a link, to the server instead of your computer. The
+In the browser extension, **Send downloads to → Another RAZ Download Manager (a server)** sends the downloads it catches, and
+**Download with RAZ Download Manager** on a link, to the server instead of your computer. The
 browser's cookies stay behind, so a download that needs you signed in to a site stays with your
 computer.
 
@@ -47,4 +47,4 @@ window, so a download that would ask a question, such as a duplicate, takes the 
 settings, or isn't added. Don't publish the port on the internet: reach your home network through
 a VPN instead.
 
-Server mode is new, so please [tell us how it goes](https://github.com/anefzaoui/misterdownloadmanager/issues).
+Server mode is new, so please [tell us how it goes](https://github.com/anefzaoui/razdownloadmanager/issues).

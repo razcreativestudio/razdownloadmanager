@@ -1,4 +1,4 @@
-﻿; Mister Download Manager's installer in Uzbek: tools/installer/languages.py
+﻿; RAZ Download Manager's installer in Uzbek: tools/installer/languages.py
 ; (machine-translated; a native speaker may correct any line).
 
 [LangOptions]
@@ -291,8 +291,8 @@ ShutdownBlockReasonUninstallingApp=%1 oʻchirilmoqda.
 
 [CustomMessages]
 TaskBrowser=Brauzer integratsiyasini sozlash (&Chrome, Edge, Brave, Firefox)
-TaskTorrents=.&torrent fayllarini va magnit havolalarni Mister Download Manager bilan ochish
-TaskStartup=&Windows ishga tushganda Mister Download Managerni ishga tushirish
+TaskTorrents=.&torrent fayllarini va magnit havolalarni RAZ Download Manager bilan ochish
+TaskStartup=&Windows ishga tushganda RAZ Download Managerni ishga tushirish
 TaskGroupOther=Boshqa:
-Launch=Mister Download Managerni ishga tushirish
+Launch=RAZ Download Managerni ishga tushirish
 KeepData=Yuklab olish roʻyxati va sozlamalaringizni ham oʻchirib tashlaysizmi?%n%nYuklab olingan fayllaringizga hech qanday holatda tegmaydi.

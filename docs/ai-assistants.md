@@ -1,8 +1,8 @@
-# AI assistants (MCP)
+﻿# AI assistants (MCP)
 
 [← Back to docs index](README.md)
 
-MDM comes with an [MCP](https://modelcontextprotocol.io) server, `misterdownloadmanager-mcp`, so an AI assistant that supports MCP (Claude Desktop, Claude Code, Cursor, VS Code and others) can work with the downloads in your running MDM. You ask in your own words:
+MDM comes with an [MCP](https://modelcontextprotocol.io) server, `razdownloadmanager-mcp`, so an AI assistant that supports MCP (Claude Desktop, Claude Code, Cursor, VS Code and others) can work with the downloads in your running MDM. You ask in your own words:
 
 - "What is MDM downloading right now, and how long is left?"
 - "Download https://example.com/big.iso to D:\ISOs tonight, don't start it yet."
@@ -31,23 +31,23 @@ The assistant can't change MDM's options, see your browser, or turn the automati
 Listing and acting on downloads needs MDM's automation API, which is off until you turn it on. With MDM running, run this once (it stays on):
 
 ```
-misterdownloadmanager-cli api on
+razdownloadmanager-cli api on
 ```
 
-`misterdownloadmanager-cli api off` turns it off again. Without the API, the assistant can still add downloads, the same as MDM's [command line](command-line.md#the-apps-command-line).
+`razdownloadmanager-cli api off` turns it off again. Without the API, the assistant can still add downloads, the same as MDM's [command line](command-line.md#the-apps-command-line).
 
 ### 2. Find the server
 
-`misterdownloadmanager-mcp` is next to the app:
+`razdownloadmanager-mcp` is next to the app:
 
 | You installed | The server |
 |---|---|
-| Windows, for you only (the installer's default) | `%LOCALAPPDATA%\Programs\Mister Download Manager\misterdownloadmanager-mcp.exe` |
-| Windows, for everyone | `C:\Program Files\Mister Download Manager\misterdownloadmanager-mcp.exe` |
-| Windows, a zip or [portable copy](portable.md) | `misterdownloadmanager-mcp.exe` in its folder |
-| macOS | `/Applications/Mister Download Manager.app/Contents/MacOS/misterdownloadmanager-mcp` |
-| Linux, the .deb or .rpm | `/usr/bin/misterdownloadmanager-mcp` |
-| Linux, the .tar.gz | `misterdownloadmanager-mcp` in its folder (the AppImage doesn't expose it: use the .tar.gz) |
+| Windows, for you only (the installer's default) | `%LOCALAPPDATA%\Programs\RAZ Download Manager\razdownloadmanager-mcp.exe` |
+| Windows, for everyone | `C:\Program Files\RAZ Download Manager\razdownloadmanager-mcp.exe` |
+| Windows, a zip or [portable copy](portable.md) | `razdownloadmanager-mcp.exe` in its folder |
+| macOS | `/Applications/RAZ Download Manager.app/Contents/MacOS/razdownloadmanager-mcp` |
+| Linux, the .deb or .rpm | `/usr/bin/razdownloadmanager-mcp` |
+| Linux, the .tar.gz | `razdownloadmanager-mcp` in its folder (the AppImage doesn't expose it: use the .tar.gz) |
 
 A portable copy's server finds the portable copy's MDM by itself, from its own folder.
 
@@ -58,8 +58,8 @@ A portable copy's server finds the portable copy's MDM by itself, from its own f
 ```json
 {
   "mcpServers": {
-    "misterdownloadmanager": {
-      "command": "C:\\Users\\you\\AppData\\Local\\Programs\\Mister Download Manager\\misterdownloadmanager-mcp.exe"
+    "razdownloadmanager": {
+      "command": "C:\\Users\\you\\AppData\\Local\\Programs\\RAZ Download Manager\\razdownloadmanager-mcp.exe"
     }
   }
 }
@@ -68,7 +68,7 @@ A portable copy's server finds the portable copy's MDM by itself, from its own f
 **Claude Code**:
 
 ```
-claude mcp add misterdownloadmanager -- "C:\Users\you\AppData\Local\Programs\Mister Download Manager\misterdownloadmanager-mcp.exe"
+claude mcp add razdownloadmanager -- "C:\Users\you\AppData\Local\Programs\RAZ Download Manager\razdownloadmanager-mcp.exe"
 ```
 
 **Cursor**: the same `mcpServers` entry as Claude Desktop's, in `~/.cursor/mcp.json` (or add it in Cursor's MCP settings).
@@ -78,9 +78,9 @@ claude mcp add misterdownloadmanager -- "C:\Users\you\AppData\Local\Programs\Mis
 ```json
 {
   "servers": {
-    "misterdownloadmanager": {
+    "razdownloadmanager": {
       "type": "stdio",
-      "command": "C:\\Users\\you\\AppData\\Local\\Programs\\Mister Download Manager\\misterdownloadmanager-mcp.exe"
+      "command": "C:\\Users\\you\\AppData\\Local\\Programs\\RAZ Download Manager\\razdownloadmanager-mcp.exe"
     }
   }
 }
@@ -96,8 +96,8 @@ MDM itself still sends nothing anywhere: the server talks only to the MDM on thi
 
 | The assistant says | What to do |
 |---|---|
-| Mister Download Manager isn't running | Start MDM. The server can't start it for you. |
-| The automation API is off | Run `misterdownloadmanager-cli api on` with MDM running. |
+| RAZ Download Manager isn't running | Start MDM. The server can't start it for you. |
+| The automation API is off | Run `razdownloadmanager-cli api on` with MDM running. |
 | MDM didn't answer in time | A window in MDM may be waiting for you (a question, **Add torrent**); answer it and ask again. |
 | MDM refused the request | MDM's channel file is from an earlier start; restart MDM. |
-| The tools don't show up at all | Check the path in the assistant's settings, and restart the assistant. Started by hand, `misterdownloadmanager-mcp --help` says what it is. |
+| The tools don't show up at all | Check the path in the assistant's settings, and restart the assistant. Started by hand, `razdownloadmanager-mcp --help` says what it is. |

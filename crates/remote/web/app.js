@@ -1,4 +1,4 @@
-// Mister Download Manager's remote control page (#141). Served by MDM itself; no other site is
+﻿// RAZ Download Manager's remote control page (#141). Served by MDM itself; no other site is
 // reached. Every text shown goes through T() (the app's translations, /api/texts): the English
 // texts here are the catalog's keys (crates/app/src/remote.rs lists them for the catalog).
 'use strict';
@@ -14,7 +14,7 @@ let failures = 0;
 let chosenFile = null;
 const rows = new Map();
 
-try { token = localStorage.getItem('mdm-token'); } catch (e) { token = null; }
+try { token = localStorage.getItem('razdm-token'); } catch (e) { token = null; }
 
 function T(s) { return TX[s] || s; }
 function F(s, args) { return T(s).replace(/\{(\w+)\}/g, (m, k) => (k in args ? String(args[k]) : m)); }
@@ -103,7 +103,7 @@ function showPair() {
 
 function signedOut() {
   token = null;
-  try { localStorage.removeItem('mdm-token'); } catch (e) { /* nothing kept */ }
+  try { localStorage.removeItem('razdm-token'); } catch (e) { /* nothing kept */ }
   showPair();
 }
 
@@ -114,7 +114,7 @@ $('pair-form').addEventListener('submit', async (ev) => {
   try {
     const j = await api('pair', { json: { code: $('code').value, name: $('name').value } });
     token = j.token;
-    try { localStorage.setItem('mdm-token', token); } catch (e) { /* this visit only */ }
+    try { localStorage.setItem('razdm-token', token); } catch (e) { /* this visit only */ }
     $('code').value = '';
     showMain();
   } catch (e) {

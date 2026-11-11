@@ -1,10 +1,10 @@
----
+﻿---
 name: Browser extension
 title: Browser extension that sends downloads to a download manager
 headline: Click a download. MDM takes it from there.
 line: Downloads you click in Chrome, Edge, Brave, Opera, Vivaldi or Firefox go straight to MDM, sign-in included.
 lede: The free MDM extension hands each download you click over to MDM, with the page it came from and your sign-in for the site. A button over videos sends them to MDM too.
-description: The Mister Download Manager extension for Chrome, Edge, Brave, Opera, Vivaldi and Firefox: downloads you click go to MDM with their cookies.
+description: The RAZ Download Manager extension for Chrome, Edge, Brave, Opera, Vivaldi and Firefox: downloads you click go to MDM with their cookies.
 group: downloading
 order: 20
 since: 0.1.0

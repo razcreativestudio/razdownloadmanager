@@ -1,4 +1,4 @@
-<#
+﻿<#
 A build from mdm-lab (WSL2) into a VirtualBox lab machine's ~/lab/bin/<label>/, so a check on a
 real desktop (GNOME or KDE portals, the tray, real browsers) never waits for the VM to build.
 
@@ -33,7 +33,7 @@ if (-not $user -or -not $pass) { throw "no VM account: set MDM_VM_USER and MDM_V
 $auth = @('--username', $user, '--password', $pass)
 
 $src = "\\wsl$\$Distro\home\lab\lab\bin\$Label"
-if (-not (Test-Path "$src\misterdownloadmanager")) { throw "no build $Label in $Distro (tools/lab/wsl/build.sh)" }
+if (-not (Test-Path "$src\RAZDownloadManager")) { throw "no build $Label in $Distro (tools/lab/wsl/build.sh)" }
 
 function Invoke-Guest([string] $Command) {
     & $vbox guestcontrol $Vm run --exe /bin/bash @auth --wait-stdout --wait-stderr -- -c $Command

@@ -1,3 +1,9 @@
+// ==============================================================================
+// RAZ Download Manager — Drop Target Floating Window
+// Terakhir Diperbarui: 2026-11-10 12:30 WIB
+// Deskripsi: Jendela melayang (drop target) untuk drag-and-drop link unduhan.
+// ==============================================================================
+
 //! Tasks → Show drop target (D-021): IDM's small floating box that takes links dragged onto
 //! it. Always on top, moved by dragging it, double-click brings the main window back,
 //! right-click hides it. Browsers hand dragged links over through OLE drag and drop (the
@@ -11,7 +17,7 @@ use std::sync::{Arc, atomic::AtomicBool, atomic::Ordering};
 use egui::{Pos2, ViewportCommand, ViewportId, pos2, vec2};
 
 /// The window's title (its OLE target is found by it).
-const TITLE: &str = "Mister Download Manager drop target"; // not translated: an id
+const TITLE: &str = "RAZ Download Manager drop target"; // not translated: an id
 const SIZE: f32 = 56.0;
 
 /// What was dropped: an address or a file path.

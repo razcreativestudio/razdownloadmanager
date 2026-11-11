@@ -1,6 +1,6 @@
-# Mister Download Manager (MDM) — agent guide
+# RAZ Download Manager (MDM) — agent guide
 
-Mister Download Manager (MDM) is a download manager for Windows in Rust (egui + storytold
+RAZ Download Manager (MDM) is a download manager for Windows in Rust (egui + storytold
 craft-libs), laid out the way Internet Download Manager users expect. Start by reading
 [README.md](README.md) and [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
@@ -25,7 +25,7 @@ craft-libs), laid out the way Internet Download Manager users expect. Start by r
 6. Every PR description shows what it changed in screenshots, as many as it takes: each changed
    window and state, before and after, light and dark, a long language (de) and right to left (ar);
    phone width for the website. The images live on the `pr-shots` branch (`<pr>/<name>.png`, never
-   merged) and are embedded from `raw.githubusercontent.com/anefzaoui/misterdownloadmanager/pr-shots/`.
+   merged) and are embedded from `raw.githubusercontent.com/anefzaoui/razdownloadmanager/pr-shots/`.
    Neutral test folders in shots, no IDM artwork. A change with nothing to see shows its proof
    (tables, logs) instead and says so.
 
@@ -36,7 +36,7 @@ craft-libs), laid out the way Internet Download Manager users expect. Start by r
   script); `node tools/extension/e2e.mjs` — the extension in real headless browsers.
 - `cargo run -p mdm-labserver -- --faults "rate=2M"` — test server (GET / lists the faults).
 - `cargo run -p mdm-app -- --cli get <url> -o <dir>` — headless download with progress (the
-  app's program runs the command line; `misterdownloadmanager-cli` is only its launcher).
+  app's program runs the command line; `razdownloadmanager-cli` is only its launcher).
 - `tools/extension/pack.ps1` — build the extension for Chromium and Firefox into
   `target/extension/`; `node tools/extension/test.mjs` — its logic against fake browser APIs.
 - `tools/installer/build.ps1` — the Windows installer and portable zip into `target/dist/`.

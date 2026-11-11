@@ -1,4 +1,4 @@
-// #155/#167 on Linux with Google Chrome (.deb; Ubuntu's Chromium is a Snap, which can't reach MDM):
+﻿// #155/#167 on Linux with Google Chrome (.deb; Ubuntu's Chromium is a Snap, which can't reach MDM):
 // headless over the DevTools pipe (as tools/extension/e2e.mjs drives it), the unpacked extension
 // loaded, the lab's HLS and DASH player pages; the button over the player and the popup's media
 // list (Chrome's own right-click menu can't be driven). Same checks as streams.mjs.
@@ -76,8 +76,8 @@ fs.mkdirSync(path.join(profile, "Default"), { recursive: true });
 // (not ~/.config/google-chrome/): the one MDM registered, copied there.
 const hosts = path.join(profile, "NativeMessagingHosts");
 fs.mkdirSync(hosts, { recursive: true });
-const registered = path.join(process.env.HOME, ".config/google-chrome/NativeMessagingHosts/com.misterdownloadmanager.host.json");
-fs.copyFileSync(registered, path.join(hosts, "com.misterdownloadmanager.host.json"));
+const registered = path.join(process.env.HOME, ".config/google-chrome/NativeMessagingHosts/com.RAZDownloadManager.host.json");
+fs.copyFileSync(registered, path.join(hosts, "com.RAZDownloadManager.host.json"));
 const proc = spawn(
   "/usr/bin/google-chrome",
   ["--headless", "--remote-debugging-pipe", "--enable-unsafe-extension-debugging", "--password-store=basic", `--user-data-dir=${profile}`, "--no-first-run", "--no-default-browser-check", "--window-size=1280,900", "about:blank"],

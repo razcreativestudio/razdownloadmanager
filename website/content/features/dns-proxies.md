@@ -1,10 +1,10 @@
----
+﻿---
 name: DNS and proxies
 title: Proxy, SOCKS, PAC and DNS settings
 headline: Your network's rules, followed to the letter.
 line: The system's proxy, your own, a SOCKS proxy or your network's auto-config script.
 lede: MDM goes through the proxy your network needs: the one set in Windows, one you type, a SOCKS proxy or the auto-config script your network gives. Choosing who looks up names comes with version 0.5.
-description: Proxy settings in Mister Download Manager: the system's proxy, a manual HTTP or SOCKS5 proxy, PAC scripts, and soon a DNS of your choice over HTTPS or TLS.
+description: Proxy settings in RAZ Download Manager: the system's proxy, a manual HTTP or SOCKS5 proxy, PAC scripts, and soon a DNS of your choice over HTTPS or TLS.
 group: network
 order: 220
 since: 0.1.0

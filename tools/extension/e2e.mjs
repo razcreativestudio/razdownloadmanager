@@ -1,4 +1,4 @@
-// The whole browser integration in real browsers, with nothing on the screen: each browser runs
+﻿// The whole browser integration in real browsers, with nothing on the screen: each browser runs
 // headless with its own new profile and loads the extension (target/extension, from pack.ps1);
 // the native messaging host (target/release) hands what it sends to a separate Mister Download
 // Manager instance (its own data folder, MDM_DATA_DIR; off the screens, MDM_OFFSCREEN). Each case
@@ -65,7 +65,7 @@ const proxyLog = [];
 const PAC = `function FindProxyForURL(url, host) { return host === "${PROXY_HOST}" ? "PROXY 127.0.0.1:${PROXY_PORT}" : "DIRECT"; }`;
 // The extension's own address in Firefox (moz-extension://UUID/), fixed in the test profile so
 // its pages (the popup) can be opened in a tab.
-const FIREFOX_ID = "integration@misterdownloadmanager.com";
+const FIREFOX_ID = "integration@RAZDownloadManager.com";
 // The extensions the browsers load: pack.ps1's, or their copies for E2E_HOST_NAME (testHost).
 let chromiumExtension = path.join(root, "target", "extension", "chromium");
 let firefoxExtension = { type: "archivePath", path: path.join(root, "target", "extension", "mdm-firefox.xpi") };
@@ -603,13 +603,13 @@ async function firefox(bin, profile, dl, page, ready) {
   }
 }
 
-// ---- the test instance of Mister Download Manager ----------------------------------------------
+// ---- the test instance of RAZ Download Manager ----------------------------------------------
 
 let data = "";
 let downloads = "";
 // The yt-dlp the test instance uses (the streams case), or "" (none found).
 let ytdlp = "";
-const appExe = exe("misterdownloadmanager");
+const appExe = exe("RAZDownloadManager");
 
 // One command to the instance over its channel (ipc.json), its one-line answer.
 function ipc(cmd, dir = data) {
@@ -659,7 +659,7 @@ function appProcesses() {
     [
       "-NoProfile",
       "-Command",
-      `Get-CimInstance Win32_Process -Filter "Name='misterdownloadmanager.exe'" | Where-Object { $_.ExecutablePath -eq '${p}' -and $_.CommandLine -notlike '*--headless*' } | ForEach-Object { "$($_.ProcessId) $($_.CommandLine -like '*--crash-monitor*')" }`,
+      `Get-CimInstance Win32_Process -Filter "Name='RAZDownloadManager.exe'" | Where-Object { $_.ExecutablePath -eq '${p}' -and $_.CommandLine -notlike '*--headless*' } | ForEach-Object { "$($_.ProcessId) $($_.CommandLine -like '*--crash-monitor*')" }`,
     ],
     { encoding: "utf8" },
   ).stdout;
@@ -699,7 +699,7 @@ async function arrived(file, size, sub = "Compressed", ms = 45000) {
   const want = path.join(downloads, sub, file);
   let last = null;
   try {
-    return await until(`${file} in Mister Download Manager`, ms, async () => {
+    return await until(`${file} in RAZ Download Manager`, ms, async () => {
       const item = (await mdmList().catch(() => [])).find((d) => d.file === file);
       last = item || last;
       if (item && item.status === "Error") throw new Error(`${file}: MDM's download failed: ${item.error}`);
@@ -725,11 +725,11 @@ async function requests(p) {
 const clearLog = () => fetch(`${LAB}/_log`, { method: "DELETE" });
 const brief = (e) => `${e.method} ${e.status} ${e.outcome} ${e.range || "-"}`;
 
-// ---- another Mister Download Manager (the remote case, #157) -------------------------------------
+// ---- another RAZ Download Manager (the remote case, #157) -------------------------------------
 
 // The server the remote case sends downloads to: E2E_REMOTE_URL names one already running (the
 // Docker image: E2E_REMOTE_PAIR is a command printing a pairing code, `docker exec mdm
-// misterdownloadmanager-cli pair`, and E2E_REMOTE_DOWNLOADS the folder its downloads land in, as
+// RAZDownloadManager-cli pair`, and E2E_REMOTE_DOWNLOADS the folder its downloads land in, as
 // seen from here); else target/release's app runs headless here, on 127.0.0.1, with its own data
 // and download folders under target/e2e.
 const REMOTE_PORT = 18463;
@@ -1210,7 +1210,7 @@ function firefoxVpnExtension() {
       version: "1.0",
       permissions: ["proxy", "<all_urls>"],
       background: { scripts: ["background.js"] },
-      browser_specific_settings: { gecko: { id: "vpn-e2e@misterdownloadmanager.com" } },
+      browser_specific_settings: { gecko: { id: "vpn-e2e@RAZDownloadManager.com" } },
     }),
   );
   fs.writeFileSync(
@@ -1726,7 +1726,7 @@ const CASES = {
       // The right-click menu on the player (Firefox: its menu can be driven headless).
       if (t.session.menu) {
         done.push(await named(`${kind} menu`, () => streamLookedUp(async () => {
-          const r = await t.session.menu((v.l + v.r) / 2, (v.t + v.b) / 2, "Download with Mister Download Manager");
+          const r = await t.session.menu((v.l + v.r) / 2, (v.t + v.b) / 2, "Download with RAZ Download Manager");
           if (!String(r).startsWith("chosen")) throw new Error(`the right-click menu: ${r}`);
           if (process.env.E2E_DEBUG) console.error("menu:", r);
         }, manifest, page, cookie)));
@@ -1859,7 +1859,7 @@ const CASES = {
       if (theirs.length) throw new Error(`refused: ${theirs.map(brief).join("; ")}`);
       if (!mdm.length) throw new Error("no request for the file");
       const said = await until("the popup's word", 5000, () => popup.evaluate(`document.getElementById("media-said").textContent`));
-      if (!/Sent to Mister Download Manager/.test(said)) throw new Error(`the popup said "${said}"`);
+      if (!/Sent to RAZ Download Manager/.test(said)) throw new Error(`the popup said "${said}"`);
       // Each stream: the Download video window, for its manifest.
       const pid = appPid();
       const opened = [];
@@ -1923,7 +1923,7 @@ const CASES = {
     return `started by the host (pid ${pids[0]})${WIN ? ", off the screens" : ""}, stopped`;
   },
 
-  // #157: Send downloads to → Another Mister Download Manager. The popup pairs with a server (its
+  // #157: Send downloads to → Another RAZ Download Manager. The popup pairs with a server (its
   // address and a code); a link clicked then downloads there, into the server's folders, the
   // browser's cookies not sent: neither the browser nor this computer's MDM keeps it. The popup
   // goes back to This computer at the end.
@@ -1987,7 +1987,7 @@ const KNOWN_BUGS = {};
 // The registry keys `nmhost --register` and `--unregister` touch (crates/nmhost REGISTRY_KEYS,
 // FIREFOX_KEY, CHROME_EXTERNAL_KEY): each browser's host entry and Chrome's external extension,
 // per user and for everyone (the latter only read: an installed copy's). [key, 32-bit view].
-const HOST = "com.misterdownloadmanager.host";
+const HOST = "com.RAZDownloadManager.host";
 const REG_KEYS = ["HKCU", "HKLM"].flatMap((root) => [
   ...[
     "Software\\Google\\Chrome\\NativeMessagingHosts",
@@ -2111,7 +2111,7 @@ function testHost(name, browsers, nmhost) {
   const write = (kind, more) => {
     const file = path.join(work, "host", `${name}.${kind}.json`);
     fs.mkdirSync(path.dirname(file), { recursive: true });
-    fs.writeFileSync(file, JSON.stringify({ name, description: "Mister Download Manager (test)", path: nmhost, type: "stdio", ...more }, null, 2));
+    fs.writeFileSync(file, JSON.stringify({ name, description: "RAZ Download Manager (test)", path: nmhost, type: "stdio", ...more }, null, 2));
     manifests[kind] = file;
   };
   if (kinds.has("chromium")) {
@@ -2173,7 +2173,7 @@ async function run() {
     idmRunning = /IDMan\.exe/i.test(idm);
     if (idmRunning && process.env.E2E_IDM_OK !== "1") throw new Error("Internet Download Manager is running: quit it first (it takes the browsers' downloads), or set E2E_IDM_OK=1 if it leaves 127.0.0.1 alone");
   }
-  for (const p of [appExe, exe("misterdownloadmanager-nmhost"), exe("labserver")]) {
+  for (const p of [appExe, exe("RAZDownloadManager-nmhost"), exe("labserver")]) {
     if (!fs.existsSync(p)) throw new Error(`build it first: ${p}`);
   }
   const t0 = Date.now();
@@ -2221,7 +2221,7 @@ async function run() {
   before = new Set(appProcesses().map(([pid]) => pid));
   const server = spawn(exe("labserver"), ["--bind", `127.0.0.1:${PORT}`], { stdio: "ignore", windowsHide: true });
   const proxy = startProxy();
-  const nmhost = exe("misterdownloadmanager-nmhost");
+  const nmhost = exe("RAZDownloadManager-nmhost");
   const results = [];
   let regBefore = null;
   let regCheck = null;
@@ -2231,13 +2231,13 @@ async function run() {
   let testLeft = [];
   try {
     await until("the lab server", 10000, () => fetch(`${LAB}/`).then((r) => r.ok, () => false));
-    // An installed Mister Download Manager's registration is never replaced or removed.
+    // An installed RAZ Download Manager's registration is never replaced or removed.
     // Linux and macOS: its manifests (files) are put back byte for byte at the end, so a lab
     // machine's (E2E_REPLACE_HOST=1) may be replaced while the run lasts.
-    const key = "HKCU\\Software\\Google\\Chrome\\NativeMessagingHosts\\com.misterdownloadmanager.host";
+    const key = "HKCU\\Software\\Google\\Chrome\\NativeMessagingHosts\\com.RAZDownloadManager.host";
     const installed = WIN ? spawnSync("reg", ["query", key], { stdio: "ignore" }).status === 0 : regSnapshot().some((m) => m.bytes) && process.env.E2E_REPLACE_HOST !== "1";
     if (installed) {
-      throw new Error("Mister Download Manager's host is already registered (an installed copy): not touching it");
+      throw new Error("RAZ Download Manager's host is already registered (an installed copy): not touching it");
     }
     regBefore = regSnapshot(path.join(work, "registry", "before"));
     if (process.env.E2E_HOST_NAME) {

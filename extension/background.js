@@ -1,19 +1,17 @@
-// Mister Download Manager's browser extension: the background part (Chrome, Edge, Brave, Opera
+// ==============================================================================
+// RAZ Download Manager — Browser Extension Background Service Worker
+// Terakhir Diperbarui: 2026-11-10 12:40 WIB
+// Deskripsi: Menangani penangkapan unduhan web dan komunikasi native messaging.
+// ==============================================================================
+
+// RAZ Download Manager's browser extension: the background part (Chrome, Edge, Brave, Opera
 // and Vivaldi run it as a service worker, Firefox as a background script; one file for both, see
 // manifest.json and manifest.firefox.json).
-//
-// Downloads of the file types Mister Download Manager takes are handed to it: the browser's own
-// download is cancelled, and the address, referrer, cookies, User-Agent, file name, size, type
-// and (for a form) the posted body go to the app through the native messaging host
-// (crates/nmhost). When it can't be reached the download stays with the browser, so nothing is
-// lost, and the toolbar button says why, linking the help page's section for it
-// (docs/browser-help.md). The browser may stop this script whenever it is idle: what must last
-// (the rules, the status, the pause) is kept in storage, not in memory.
 
 const ext = globalThis.browser ?? globalThis.chrome;
-const HOST = "com.misterdownloadmanager.host";
+const HOST = "com.razdownloadmanager.host";
 const VERSION = ext.runtime.getManifest().version;
-const HELP = "https://misterdownloadmanager.com/help/browser-help.html";
+const HELP = "https://razdownloadmanager.com/help/browser-help.html";
 const action = ext.action ?? ext.browserAction;
 // Safari has no downloads API at all (nor proxy): it can't take a download from the browser, so
 // the links clicked in a page are handed over instead (`link`, below; page.js).
@@ -32,7 +30,7 @@ const t = (key, ...subs) => ext.i18n.getMessage(key, subs) || key;
 
 // ---- the native host ---------------------------------------------------------------------
 
-// How long an answer may take: the host starts Mister Download Manager when it isn't running
+// How long an answer may take: the host starts RAZ Download Manager when it isn't running
 // and waits for it (crates/nmhost START_WAIT); the browser's download waits meanwhile.
 const HOST_WAIT = 30000;
 
@@ -1705,9 +1703,9 @@ function createMenus() {
   ext.contextMenus.removeAll(() => {
     const add = (id, contexts, key) =>
       ext.contextMenus.create({ id, title: t(key), contexts }, () => void ext.runtime.lastError);
-    add("mdm-link", ["link", "video", "audio", "image"], "menu");
-    add("mdm-selected", ["selection"], "menu_selected");
-    add("mdm-all", ["page"], "menu_all");
+    add("razdm-link", ["link", "video", "audio", "image"], "menu");
+    add("razdm-selected", ["selection"], "menu_selected");
+    add("razdm-all", ["page"], "menu_all");
   });
 }
 
@@ -1747,7 +1745,7 @@ function explain(why) {
 ext.contextMenus.onClicked.addListener(async (info, tab) => {
   const incognito = Boolean(tab && tab.incognito);
   const storeId = tab && tab.cookieStoreId;
-  if (info.menuItemId === "mdm-link") {
+  if (info.menuItemId === "razdm-link") {
     const url = info.linkUrl || info.srcUrl;
     // A player's own stream (blob:, a MediaSource) or a stream's manifest: the Download video
     // window, which reads streams (a manifest downloaded as a file is only a short list).
@@ -1784,13 +1782,13 @@ ext.contextMenus.onClicked.addListener(async (info, tab) => {
     if (!reply.ok) explain(reply.why);
     return;
   }
-  if ((info.menuItemId === "mdm-selected" || info.menuItemId === "mdm-all") && tab) {
+  if ((info.menuItemId === "razdm-selected" || info.menuItemId === "razdm-all") && tab) {
     let links = [];
     try {
       const [res] = await ext.scripting.executeScript({
         target: { tabId: tab.id, frameIds: [info.frameId || 0] },
         func: pageLinks,
-        args: [info.menuItemId === "mdm-selected"],
+        args: [info.menuItemId === "razdm-selected"],
       });
       links = (res && res.result) || [];
     } catch {

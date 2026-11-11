@@ -1,10 +1,10 @@
----
+﻿---
 name: Categories
 title: Download categories by file type
 headline: Every file in its folder, without asking.
 line: Downloads sorted by type into folders of their own, with Finished and Unfinished one click away.
 lede: MDM files each download by its type, music with music and programs with programs, each category with a folder of its own. The pane on the left shows them all, finished or not.
-description: Categories in Mister Download Manager: each file type in its own folder, Finished and Unfinished at a glance, and categories of your own.
+description: Categories in RAZ Download Manager: each file type in its own folder, Finished and Unfinished at a glance, and categories of your own.
 group: organising
 order: 130
 since: 0.1.0

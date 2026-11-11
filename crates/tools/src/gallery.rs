@@ -1,3 +1,9 @@
+// ==============================================================================
+// RAZ Download Manager — Gallery Download Helper
+// Terakhir Diperbarui: 2026-11-10 12:25 WIB
+// Deskripsi: Integrasi gallery-dl untuk unduhan gambar dari web album.
+// ==============================================================================
+
 //! gallery-dl (#58): image galleries (Wikimedia Commons, Flickr, DeviantArt, Pixiv…) as yt-dlp
 //! is for video pages. An optional helper, installed the same way: a release from its own page
 //! (Codeberg), its `SHA256SUMS` checked against its author's OpenPGP key (pinned in
@@ -27,12 +33,12 @@ use crate::{Error, Installed, chosen};
 const KEY: &str = include_str!("../keys/gallery-dl.asc");
 /// Where releases come from (Gitea's API, as GitHub's: `tag_name`, `assets`).
 const RELEASES: &str = "https://codeberg.org/api/v1/repos/mikf/gallery-dl/releases/latest";
-/// MDM as sites see it: gallery-dl's own name is refused by some (Wikimedia's servers answer
+/// RAZ DM as sites see it: gallery-dl's own name is refused by some (Wikimedia's servers answer
 /// 429 to unnamed tools); this one says who asks and where to read about it.
 pub const USER_AGENT: &str = concat!(
-    "MisterDownloadManager/",
+    "RAZDownloadManager/",
     env!("CARGO_PKG_VERSION"),
-    " (+https://misterdownloadmanager.com) gallery-dl"
+    " (+https://dm.it-raz.com) gallery-dl"
 );
 
 /// gallery-dl's program for this system in its releases. None on macOS (it publishes no build

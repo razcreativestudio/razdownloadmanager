@@ -1,21 +1,25 @@
-# Mister Download Manager
+# RAZ Download Manager
 
 <p align="center">
-  <img src="docs/images/logo.png" alt="Mister Download Manager's logo" width="160">
+  <img src="docs/images/logo.png" alt="RAZ Download Manager's logo" width="160">
 </p>
 
 <h3 align="center">Downloads faster than IDM. Free, forever.</h3>
 
 <p align="center">
-  <a href="https://github.com/anefzaoui/misterdownloadmanager/releases/latest"><img src="https://img.shields.io/badge/Download%20for-Windows-2a78d6?style=flat-square&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0yIDMuNWw4LjUtMS4ydjguMkgyek0xMS41IDIuMkwyMiAuOHY5LjdIMTEuNXpNMiAxMS41aDguNXY4LjJMMiAxOC41ek0xMS41IDExLjVIMjJ2OS43bC0xMC41LTEuNHoiLz48L3N2Zz4%3D" alt="Download for Windows" height="34"></a>
-  <a href="https://github.com/anefzaoui/misterdownloadmanager/releases/latest"><img src="https://img.shields.io/badge/Download%20for-macOS-2a78d6?style=flat-square&logo=apple&logoColor=white" alt="Download for macOS" height="34"></a>
-  <a href="https://github.com/anefzaoui/misterdownloadmanager/releases/latest"><img src="https://img.shields.io/badge/Download%20for-Linux-2a78d6?style=flat-square&logo=linux&logoColor=white" alt="Download for Linux" height="34"></a>
+  <a href="https://github.com/razcreativestudio/razdownloadmanager/releases/latest"><img src="https://img.shields.io/badge/Download%20for-Windows-2a78d6?style=flat-square&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0yIDMuNWw4LjUtMS4ydjguMkgyek0xMS41IDIuMkwyMiAuOHY5LjdIMTEuNXpNMiAxMS41aDguNXY4LjJMMiAxOC41ek0xMS41IDExLjVIMjJ2OS43bC0xMC41LTEuNHoiLz48L3N2Zz4%3D" alt="Download for Windows" height="34"></a>
+  <a href="https://github.com/razcreativestudio/razdownloadmanager/releases/latest"><img src="https://img.shields.io/badge/Download%20for-macOS-2a78d6?style=flat-square&logo=apple&logoColor=white" alt="Download for macOS" height="34"></a>
+  <a href="https://github.com/razcreativestudio/razdownloadmanager/releases/latest"><img src="https://img.shields.io/badge/Download%20for-Linux-2a78d6?style=flat-square&logo=linux&logoColor=white" alt="Download for Linux" height="34"></a>
+</p>
+
+<p align="center">
+  🌐 <b>Official Website:</b> <a href="https://dm.it-raz.com">https://dm.it-raz.com</a>
 </p>
 
 <p align="center">
   🧩 <b>Browser extension:</b><br>
-  <a href="https://addons.mozilla.org/firefox/addon/mister-download-manager/"><img src="https://img.shields.io/badge/Add%20to-Firefox-2a78d6?style=flat-square&logo=firefoxbrowser&logoColor=white" alt="Add to Firefox" height="34"></a>
-  <a href="https://chromewebstore.google.com/detail/mister-download-manager/ejoleppdfgjdndddcjoehopknmlglojp"><img src="https://img.shields.io/badge/Add%20to-Chrome-2a78d6?style=flat-square&logo=googlechrome&logoColor=white" alt="Add to Chrome" height="34"></a><br>
+  <a href="https://addons.mozilla.org/firefox/addon/raz-download-manager/"><img src="https://img.shields.io/badge/Add%20to-Firefox-2a78d6?style=flat-square&logo=firefoxbrowser&logoColor=white" alt="Add to Firefox" height="34"></a>
+  <a href="https://chromewebstore.google.com/detail/raz-download-manager"><img src="https://img.shields.io/badge/Add%20to-Chrome-2a78d6?style=flat-square&logo=googlechrome&logoColor=white" alt="Add to Chrome" height="34"></a><br>
   <sub>The Chrome Web Store's is for
   <img src="docs/images/browsers/edge.png" width="16" height="16" alt=""> Edge,
   <img src="docs/images/browsers/brave.png" width="16" height="16" alt=""> Brave,
@@ -23,8 +27,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/anefzaoui/misterdownloadmanager/stargazers"><img src="https://img.shields.io/github/stars/anefzaoui/misterdownloadmanager?style=social&label=Star%20MDM" alt="Star Mister Download Manager on GitHub" height="28"></a><br>
-  <sub>⭐ <b>Like it? Give it a star.</b> MDM has no ads and no marketing budget: stars are how people find it.</sub>
+  <a href="https://github.com/razcreativestudio/razdownloadmanager/stargazers"><img src="https://img.shields.io/github/stars/razcreativestudio/razdownloadmanager?style=social&label=Star%20RAZ%20DM" alt="Star RAZ Download Manager on GitHub" height="28"></a><br>
+  <sub>⭐ <b>Like it? Give it a star.</b> RAZ Download Manager has no ads and no marketing budget: stars are how people find it.</sub>
 </p>
 
 <p align="center">
@@ -44,18 +48,16 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="docs/images/main-dark.webp">
-    <img src="docs/images/main-light.webp" alt="Mister Download Manager's main window: categories, toolbar and a list of downloads" width="920">
+    <img src="docs/images/main-light.webp" alt="RAZ Download Manager's main window: categories, toolbar and a list of downloads" width="920">
   </picture>
 </p>
 
 <p align="center">
-  <a href="https://github.com/anefzaoui/misterdownloadmanager/releases/latest"><img src="https://img.shields.io/github/v/release/anefzaoui/misterdownloadmanager?logo=github" alt="Latest release"></a>
-  <a href="https://github.com/anefzaoui/misterdownloadmanager/releases"><img src="https://img.shields.io/github/downloads/anefzaoui/misterdownloadmanager/total?logo=github" alt="Downloads"></a>
-  <a href="https://github.com/anefzaoui/misterdownloadmanager/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/anefzaoui/misterdownloadmanager/ci.yml?logo=github&label=ci" alt="CI"></a>
-  <a href="https://github.com/anefzaoui/misterdownloadmanager/stargazers"><img src="https://img.shields.io/github/stars/anefzaoui/misterdownloadmanager?logo=github" alt="GitHub stars"></a>
-  <a href="https://addons.mozilla.org/firefox/addon/mister-download-manager/"><img src="https://img.shields.io/amo/v/mister-download-manager?logo=firefoxbrowser&label=Firefox%20add-on" alt="Firefox add-on"></a>
-  <a href="https://chromewebstore.google.com/detail/mister-download-manager/ejoleppdfgjdndddcjoehopknmlglojp"><img src="https://img.shields.io/chrome-web-store/v/ejoleppdfgjdndddcjoehopknmlglojp?logo=googlechrome&label=Chrome%20Web%20Store" alt="Chrome Web Store"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/anefzaoui/misterdownloadmanager" alt="GPL-3.0 license"></a>
+  <a href="https://github.com/razcreativestudio/razdownloadmanager/releases/latest"><img src="https://img.shields.io/github/v/release/razcreativestudio/razdownloadmanager?logo=github" alt="Latest release"></a>
+  <a href="https://github.com/razcreativestudio/razdownloadmanager/releases"><img src="https://img.shields.io/github/downloads/razcreativestudio/razdownloadmanager/total?logo=github" alt="Downloads"></a>
+  <a href="https://github.com/razcreativestudio/razdownloadmanager/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/razcreativestudio/razdownloadmanager/ci.yml?logo=github&label=ci" alt="CI"></a>
+  <a href="https://github.com/razcreativestudio/razdownloadmanager/stargazers"><img src="https://img.shields.io/github/stars/razcreativestudio/razdownloadmanager?logo=github" alt="GitHub stars"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/razcreativestudio/razdownloadmanager" alt="GPL-3.0 license"></a>
 </p>
 
 | 🚀 [Download](#download) | ⚡ [Why switch](#why-switch-from-idm) | 🖼️ [Screenshots](#screenshots) | ✨ [Getting started](docs/getting-started.md) | 📜 [Help and tutorials](docs/README.md) |
@@ -68,12 +70,12 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="docs/images/races-dark.svg">
-    <img src="docs/images/races-light.svg" alt="Three races. A big 1 GB file: Mister Download Manager 1 second, IDM 5.5 seconds, 5 times faster. A small file: instantly versus 3.1 seconds, over 100 times faster. A shaky connection: 1.6 seconds versus 5.4 seconds, 3 times faster." width="880">
+    <img src="docs/images/races-light.svg" alt="Three races. A big 1 GB file: RAZ Download Manager 1 second, IDM 5.5 seconds, 5 times faster. A small file: instantly versus 3.1 seconds, over 100 times faster. A shaky connection: 1.6 seconds versus 5.4 seconds, 3 times faster." width="880">
   </picture>
 </p>
 
 <!-- compare:start -->
-| | Mister Download Manager | IDM 6.42 |
+| | RAZ Download Manager | IDM 6.42 |
 | --- | --- | --- |
 | Download a big file (1 GB) | **1 second** | 5.5 seconds |
 | Download a small file | **instantly** | 3.1 seconds |
@@ -91,12 +93,12 @@ programs at their default settings ([how we measured](#the-benchmark-in-detail))
 ## Download
 
 <p align="center">
-  <a href="https://github.com/anefzaoui/misterdownloadmanager/releases/latest"><img src="https://img.shields.io/badge/Download%20for-Windows-2a78d6?style=flat-square&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0yIDMuNWw4LjUtMS4ydjguMkgyek0xMS41IDIuMkwyMiAuOHY5LjdIMTEuNXpNMiAxMS41aDguNXY4LjJMMiAxOC41ek0xMS41IDExLjVIMjJ2OS43bC0xMC41LTEuNHoiLz48L3N2Zz4%3D" alt="Download for Windows" height="34"></a>
-  <a href="https://github.com/anefzaoui/misterdownloadmanager/releases/latest"><img src="https://img.shields.io/badge/Download%20for-macOS-2a78d6?style=flat-square&logo=apple&logoColor=white" alt="Download for macOS" height="34"></a>
-  <a href="https://github.com/anefzaoui/misterdownloadmanager/releases/latest"><img src="https://img.shields.io/badge/Download%20for-Linux-2a78d6?style=flat-square&logo=linux&logoColor=white" alt="Download for Linux" height="34"></a>
+  <a href="https://github.com/anefzaoui/razdownloadmanager/releases/latest"><img src="https://img.shields.io/badge/Download%20for-Windows-2a78d6?style=flat-square&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0yIDMuNWw4LjUtMS4ydjguMkgyek0xMS41IDIuMkwyMiAuOHY5LjdIMTEuNXpNMiAxMS41aDguNXY4LjJMMiAxOC41ek0xMS41IDExLjVIMjJ2OS43bC0xMC41LTEuNHoiLz48L3N2Zz4%3D" alt="Download for Windows" height="34"></a>
+  <a href="https://github.com/anefzaoui/razdownloadmanager/releases/latest"><img src="https://img.shields.io/badge/Download%20for-macOS-2a78d6?style=flat-square&logo=apple&logoColor=white" alt="Download for macOS" height="34"></a>
+  <a href="https://github.com/anefzaoui/razdownloadmanager/releases/latest"><img src="https://img.shields.io/badge/Download%20for-Linux-2a78d6?style=flat-square&logo=linux&logoColor=white" alt="Download for Linux" height="34"></a>
 </p>
 
-On the [download page](https://github.com/anefzaoui/misterdownloadmanager/releases/latest), pick
+On the [download page](https://github.com/anefzaoui/razdownloadmanager/releases/latest), pick
 one:
 
 | File | Choose it when |
@@ -128,7 +130,7 @@ Up to version 0.2.4, the files' names end in `-experimental`.
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="docs/images/main-linux-dark.webp">
-    <img src="docs/images/main-linux.webp" alt="Mister Download Manager's main window on Ubuntu's GNOME desktop" width="620">
+    <img src="docs/images/main-linux.webp" alt="RAZ Download Manager's main window on Ubuntu's GNOME desktop" width="620">
   </picture>
 </p>
 
@@ -136,7 +138,7 @@ Up to version 0.2.4, the files' names end in `-experimental`.
 
 Fresh builds for **macOS** (Apple Silicon and Intel) are on the same download page, marked
 `-experimental`: we haven't tried them on a Mac ourselves yet. Give them a go and
-[tell us how it went](https://github.com/anefzaoui/misterdownloadmanager/issues/new/choose); you'll
+[tell us how it went](https://github.com/anefzaoui/razdownloadmanager/issues/new/choose); you'll
 help make them as solid as the Windows and Linux versions.
 
 | File | For |
@@ -317,7 +319,7 @@ statistically significant (Mann-Whitney p < 0.001), and MDM used less CPU in eve
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="docs/images/bench-time-dark.svg">
-    <img src="docs/images/bench-time-light.svg" alt="Time to finish a download in seconds, Mister Download Manager versus IDM, in seven scenarios" width="880">
+    <img src="docs/images/bench-time-light.svg" alt="Time to finish a download in seconds, RAZ Download Manager versus IDM, in seven scenarios" width="880">
   </picture>
 </p>
 
@@ -360,15 +362,15 @@ cargo build --release
 cargo test
 ```
 
-This makes `misterdownloadmanager.exe` (the app), `misterdownloadmanager-cli.exe` (headless
-command line), `misterdownloadmanager-mcp.exe` (the MCP server for AI assistants) and
-`misterdownloadmanager-nmhost.exe` (the browser host) in `target\release\`.
+This makes `razdownloadmanager.exe` (the app), `razdownloadmanager-cli.exe` (headless
+command line), `razdownloadmanager-mcp.exe` (the MCP server for AI assistants) and
+`razdownloadmanager-nmhost.exe` (the browser host) in `target\release\`.
 `tools\installer\build.ps1` builds the installer and both zips into `target\dist\` (needs
 [Inno Setup 6](https://jrsoftware.org/isinfo.php)); a `vX.Y.Z` tag does the same on GitHub
 Actions and publishes the release.
 
 Browser integration from a build: register the native messaging host with
-`target\release\misterdownloadmanager-nmhost.exe --register` (undo with `--unregister`), then in
+`target\release\razdownloadmanager-nmhost.exe --register` (undo with `--unregister`), then in
 `chrome://extensions` or `edge://extensions` turn on Developer mode, **Load unpacked** and pick
 the `extension/` folder (its ID is always `oogbclbbninliongijffeeggalppliok`).
 
@@ -409,7 +411,7 @@ pieces fit.
 | `python tools/shots/make.py` | The help pages' pictures, from one list (`tools/shots/shots.toml`): shot, cropped, annotated, lossless WebP; `make.py check` keeps them in step |
 | `tools/lab/wsl/` | A WSL2 machine that builds MDM for Linux in minutes and shoots its windows on a virtual screen ([README](tools/lab/wsl/README.md)) |
 | `tools\lab\progress-shots.ps1` | The progress window of a video (yt-dlp) and of a torrent, from a swarm on this computer (`cargo run -p mdm-torrent --example swarm`) |
-| `python tools/website/build.py --serve` | misterdownloadmanager.com into `target/site` (help pages from `docs/`, news from the CHANGELOG, FAQ and legal pages from `website/content/`), served on http://127.0.0.1:8765; GitHub Pages publishes it (`pages.yml`) |
+| `python tools/website/build.py --serve` | razdownloadmanager.com into `target/site` (help pages from `docs/`, news from the CHANGELOG, FAQ and legal pages from `website/content/`), served on http://127.0.0.1:8765; GitHub Pages publishes it (`pages.yml`) |
 | `python tools/readme/social.py` | The repository's social preview card (`docs/images/social-preview.png`) |
 | `MDM_FIT_AUDIT=<file>` | Lists every text that doesn't fit its window or runs over another, for checking a translation |
 | `MDM_OFFSCREEN=1` | Opens every window off the screen, without focus, tray icon or sound (screenshots and checks) |
@@ -430,13 +432,13 @@ Linux, and some corners are still "good enough for now".
   Flatpak browsers aren't supported yet.
 
 Bug reports and ideas are welcome in
-[Issues](https://github.com/anefzaoui/misterdownloadmanager/issues/new/choose): **Help → Report a problem**
+[Issues](https://github.com/anefzaoui/razdownloadmanager/issues/new/choose): **Help → Report a problem**
 in the app fills in your version and system. Pull requests are accepted under the same licence: start with [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Made possible by these amazing humans
 
 Everyone who sent a pull request, opened an issue or joined a conversation here: thank you. People
-with pull requests first, then issues, then comments; [the website](https://misterdownloadmanager.com/contributors.html)
+with pull requests first, then issues, then comments; [the website](https://razdownloadmanager.com/contributors.html)
 shows what each one did.
 
 <!-- contributors:start (python tools/contributors.py readme) -->
@@ -475,12 +477,12 @@ shows what each one did.
 ## ⭐ Star history
 
 If MDM saves you time, a star is the quickest way to say so, and it helps the next person find
-a free download manager. [Star it on GitHub](https://github.com/anefzaoui/misterdownloadmanager/stargazers).
+a free download manager. [Star it on GitHub](https://github.com/anefzaoui/razdownloadmanager/stargazers).
 
-<a href="https://star-history.com/#anefzaoui/misterdownloadmanager&Date">
+<a href="https://star-history.com/#anefzaoui/razdownloadmanager&Date">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=anefzaoui/misterdownloadmanager&type=Date&theme=dark">
-    <img src="https://api.star-history.com/svg?repos=anefzaoui/misterdownloadmanager&type=Date" alt="Mister Download Manager's GitHub stars over time" width="600">
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=anefzaoui/razdownloadmanager&type=Date&theme=dark">
+    <img src="https://api.star-history.com/svg?repos=anefzaoui/razdownloadmanager&type=Date" alt="RAZ Download Manager's GitHub stars over time" width="600">
   </picture>
 </a>
 
@@ -492,7 +494,7 @@ changes or unlocks, and there is no paid edition.
 
 ## Licence and credits
 
-Copyright (c) 2026 Ahmed Nefzaoui. Mister Download Manager is free software under the
+Copyright (c) 2026 Ahmed Nefzaoui. RAZ Download Manager is free software under the
 [GNU General Public License, version 3](LICENSE) or (at your option) any later version.
 
 Built on [egui](https://github.com/emilk/egui) through

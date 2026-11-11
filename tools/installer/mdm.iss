@@ -1,4 +1,4 @@
-; Mister Download Manager's Windows installer (Inno Setup 6). Built by tools/installer/build.ps1,
+; RAZ Download Manager's Windows installer (Inno Setup 6). Built by tools/installer/build.ps1,
 ; which passes /DAppVersion=... and, when a certificate is set up, /DSign with /Smdmsign=...
 ;
 ; Install for the current user (no administrator rights, %LOCALAPPDATA%\Programs) or for
@@ -6,14 +6,14 @@
 ; for Chrome, Edge, Brave and Firefox), .torrent files and magnet links, start with Windows, a
 ; desktop shortcut. A running MDM is asked to save and quit first (/exit). Uninstalling asks
 ; whether to keep the download list and settings; removing them also removes MDM's sign-ins from
-; Windows Credential Manager (misterdownloadmanager --forget-sign-ins).
+; Windows Credential Manager (RAZDownloadManager --forget-sign-ins).
 
 #ifndef AppVersion
   #define AppVersion "0.5.2"
 #endif
-#define AppName "Mister Download Manager"
-#define AppExe "misterdownloadmanager.exe"
-#define HostExe "misterdownloadmanager-nmhost.exe"
+#define AppName "RAZ Download Manager"
+#define AppExe "RAZDownloadManager.exe"
+#define HostExe "RAZDownloadManager-nmhost.exe"
 #define Root "..\.."
 #define Bin Root + "\target\release"
 
@@ -24,9 +24,9 @@ AppName={#AppName}
 AppVersion={#AppVersion}
 AppVerName={#AppName} {#AppVersion}
 AppPublisher=Ahmed Nefzaoui
-AppPublisherURL=https://github.com/anefzaoui/misterdownloadmanager
-AppSupportURL=https://github.com/anefzaoui/misterdownloadmanager/issues
-AppUpdatesURL=https://github.com/anefzaoui/misterdownloadmanager/releases
+AppPublisherURL=https://github.com/anefzaoui/RAZDownloadManager
+AppSupportURL=https://github.com/anefzaoui/RAZDownloadManager/issues
+AppUpdatesURL=https://github.com/anefzaoui/RAZDownloadManager/releases
 AppCopyright=Copyright (C) 2026 Ahmed Nefzaoui
 DefaultDirName={autopf}\{#AppName}
 DisableProgramGroupPage=yes
@@ -38,17 +38,17 @@ ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
 MinVersion=10.0
 WizardStyle=modern
-SetupIconFile={#Root}\crates\app\assets\icons\app\mdm.ico
+SetupIconFile={#Root}\crates\app\assets\icons\app\razdm.ico
 UninstallDisplayIcon={app}\{#AppExe}
 UninstallDisplayName={#AppName}
 OutputDir={#Root}\target\dist
-OutputBaseFilename=MisterDownloadManager-{#AppVersion}-setup
+OutputBaseFilename=RAZDownloadManager-{#AppVersion}-setup
 ; A 64 MB dictionary (#25): an 8 MB one (lzma2/max) only finds what repeats close by in the
 ; solid archive. A few MB smaller; building needs about 750 MB of memory, installing 64 MB.
 Compression=lzma2/ultra64
 SolidCompression=yes
 ChangesAssociations=yes
-; A running MDM is asked to quit by [Code] (it holds the mutex MisterDownloadManager.Running);
+; A running MDM is asked to quit by [Code] (it holds the mutex RAZDownloadManager.Running);
 ; AppMutex isn't used because it would refuse to start before that. Restart Manager is the
 ; fallback for anything else holding the files (a browser running the host).
 CloseApplications=yes
@@ -85,8 +85,8 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 [Files]
 Source: "{#Bin}\{#AppExe}"; DestDir: "{app}"; Flags: ignoreversion {#SignFlag}
 Source: "{#Bin}\{#HostExe}"; DestDir: "{app}"; Flags: ignoreversion {#SignFlag}
-Source: "{#Bin}\misterdownloadmanager-cli.exe"; DestDir: "{app}"; Flags: ignoreversion {#SignFlag}
-Source: "{#Bin}\misterdownloadmanager-mcp.exe"; DestDir: "{app}"; Flags: ignoreversion {#SignFlag}
+Source: "{#Bin}\RAZDownloadManager-cli.exe"; DestDir: "{app}"; Flags: ignoreversion {#SignFlag}
+Source: "{#Bin}\RAZDownloadManager-mcp.exe"; DestDir: "{app}"; Flags: ignoreversion {#SignFlag}
 ; The extension, for "Load unpacked" (Chromium) and about:debugging (Firefox) until it is in
 ; the stores.
 Source: "{#Root}\target\extension\chromium\*"; DestDir: "{app}\extension\chromium"; Flags: ignoreversion recursesubdirs
@@ -102,16 +102,16 @@ Name: "{autodesktop}\{#AppName}"; Filename: "{app}\{#AppExe}"; Tasks: desktopico
 ; The language chosen in the wizard ({language}: "lang_" + a languages.tsv code with "_" for "-",
 ; see languages.py inno_name). The app
 ; takes it on its first start, when it has no language setting yet (settings.rs), then deletes it.
-Root: HKCU; Subkey: "Software\MisterDownloadManager"; ValueType: string; ValueName: "InstallLanguage"; ValueData: "{language}"; Flags: uninsdeletevalue uninsdeletekeyifempty
+Root: HKCU; Subkey: "Software\RAZDownloadManager"; ValueType: string; ValueName: "InstallLanguage"; ValueData: "{language}"; Flags: uninsdeletevalue uninsdeletekeyifempty
 ; Start with Windows: the same value Options -> "Launch on startup" writes and reads, with the
 ; argument that starts MDM in the notification area (#226; win32.rs startup_command).
-Root: HKCU; Subkey: "Software\Microsoft\Windows\CurrentVersion\Run"; ValueType: string; ValueName: "MisterDownloadManager"; ValueData: """{app}\{#AppExe}"" /startup"; Flags: uninsdeletevalue; Tasks: startup
+Root: HKCU; Subkey: "Software\Microsoft\Windows\CurrentVersion\Run"; ValueType: string; ValueName: "RAZDownloadManager"; ValueData: """{app}\{#AppExe}"" /startup"; Flags: uninsdeletevalue; Tasks: startup
 ; .torrent files and magnet links (HKA: the user's or everyone's classes, as installed).
-Root: HKA; Subkey: "Software\Classes\MisterDownloadManager.torrent"; ValueType: string; ValueName: ""; ValueData: "Torrent file"; Flags: uninsdeletekey; Tasks: torrents
-Root: HKA; Subkey: "Software\Classes\MisterDownloadManager.torrent\DefaultIcon"; ValueType: string; ValueName: ""; ValueData: "{app}\{#AppExe},0"; Tasks: torrents
-Root: HKA; Subkey: "Software\Classes\MisterDownloadManager.torrent\shell\open\command"; ValueType: string; ValueName: ""; ValueData: """{app}\{#AppExe}"" ""%1"""; Tasks: torrents
-Root: HKA; Subkey: "Software\Classes\.torrent"; ValueType: string; ValueName: ""; ValueData: "MisterDownloadManager.torrent"; Flags: uninsdeletekeyifempty; Tasks: torrents
-Root: HKA; Subkey: "Software\Classes\.torrent\OpenWithProgids"; ValueType: string; ValueName: "MisterDownloadManager.torrent"; ValueData: ""; Flags: uninsdeletevalue uninsdeletekeyifempty; Tasks: torrents
+Root: HKA; Subkey: "Software\Classes\RAZDownloadManager.torrent"; ValueType: string; ValueName: ""; ValueData: "Torrent file"; Flags: uninsdeletekey; Tasks: torrents
+Root: HKA; Subkey: "Software\Classes\RAZDownloadManager.torrent\DefaultIcon"; ValueType: string; ValueName: ""; ValueData: "{app}\{#AppExe},0"; Tasks: torrents
+Root: HKA; Subkey: "Software\Classes\RAZDownloadManager.torrent\shell\open\command"; ValueType: string; ValueName: ""; ValueData: """{app}\{#AppExe}"" ""%1"""; Tasks: torrents
+Root: HKA; Subkey: "Software\Classes\.torrent"; ValueType: string; ValueName: ""; ValueData: "RAZDownloadManager.torrent"; Flags: uninsdeletekeyifempty; Tasks: torrents
+Root: HKA; Subkey: "Software\Classes\.torrent\OpenWithProgids"; ValueType: string; ValueName: "RAZDownloadManager.torrent"; ValueData: ""; Flags: uninsdeletevalue uninsdeletekeyifempty; Tasks: torrents
 Root: HKA; Subkey: "Software\Classes\magnet"; ValueType: string; ValueName: ""; ValueData: "URL:Magnet link"; Tasks: torrents
 Root: HKA; Subkey: "Software\Classes\magnet"; ValueType: string; ValueName: "URL Protocol"; ValueData: ""; Tasks: torrents
 Root: HKA; Subkey: "Software\Classes\magnet\DefaultIcon"; ValueType: string; ValueName: ""; ValueData: "{app}\{#AppExe},0"; Tasks: torrents
@@ -130,11 +130,11 @@ Filename: "{app}\{#HostExe}"; Parameters: "--unregister"; Flags: runhidden; RunO
 Filename: "{app}\{#HostExe}"; Parameters: "--unregister --all-users"; Flags: runhidden; RunOnceId: "UnregisterAll"; Check: IsAdminInstallMode
 
 [UninstallDelete]
-Type: files; Name: "{app}\com.misterdownloadmanager.host*.json"
+Type: files; Name: "{app}\com.RAZDownloadManager.host*.json"
 
 [Code]
 const
-  RunningMutex = 'MisterDownloadManager.Running';
+  RunningMutex = 'RAZDownloadManager.Running';
 
 { /relaunch=1 on the command line (MDM's Update now): start MDM again after installing. }
 function Relaunch: Boolean;
@@ -191,11 +191,11 @@ var
   Value, Data: String;
   Code: Integer;
 begin
-  Data := ExpandConstant('{userappdata}\misterdownloadmanager');
+  Data := ExpandConstant('{userappdata}\RAZDownloadManager');
   if CurUninstallStep = usUninstall then
   begin
     ForgetIfOurs('Software\Classes\magnet', ExpandConstant('{app}\{#AppExe}'));
-    if RegQueryStringValue(HKA, 'Software\Classes\.torrent', '', Value) and (Value = 'MisterDownloadManager.torrent') then
+    if RegQueryStringValue(HKA, 'Software\Classes\.torrent', '', Value) and (Value = 'RAZDownloadManager.torrent') then
       RegDeleteValue(HKA, 'Software\Classes\.torrent', '');
     RemoveData := False;
     if DirExists(Data) and not UninstallSilent() then

@@ -1,4 +1,4 @@
-// #155/#167 on Linux: the Snap Firefox (headless, over WebDriver BiDi, as tools/extension/e2e.mjs
+﻿// #155/#167 on Linux: the Snap Firefox (headless, over WebDriver BiDi, as tools/extension/e2e.mjs
 // drives it) with an add-on, on the lab server's HLS and DASH player pages. Each hand-over path
 // (the button over the player, the right-click menu, the popup's media list) is triggered, then:
 // when the host started, when MDM's Download video window opened, the address yt-dlp was given,
@@ -13,7 +13,7 @@ import { spawn, execFileSync } from "node:child_process";
 const xpi = path.resolve(process.argv[2]);
 const LAB = process.argv[3] || "http://127.0.0.1:8097";
 const KINDS = (process.argv[4] || "hls:/hls/master.m3u8,dash:/dash/manifest.mpd").split(",").map((k) => k.split(":"));
-const ID = "integration@misterdownloadmanager.com";
+const ID = "integration@RAZDownloadManager.com";
 const UUID = "5d0c3b8e-7a51-4c1e-9f0a-38e2c4a1d7b6";
 const NL = String.fromCharCode(10);
 const NUL = String.fromCharCode(0);
@@ -207,7 +207,7 @@ try {
       return chrome(`(async () => {
         const menu = document.getElementById("contentAreaContextMenu");
         const shown = () => [...menu.querySelectorAll("menuitem")].filter((m) => !m.hidden);
-        const L = "Download with Mister Download Manager";
+        const L = "Download with RAZ Download Manager";
         for (let i = 0; i < 50 && !shown().some((m) => m.label === L); i++) await new Promise((r) => setTimeout(r, 100));
         const item = shown().find((m) => m.label === L);
         if (!item) { const all = shown().map((m) => m.label).join(" | "); menu.hidePopup(); return "not there: " + all; }

@@ -1,4 +1,4 @@
-You are making a theme file for Mister Download Manager (MDM), a free, open-source download manager. Write one TOML file, named after the theme in lower case with dashes (for example harbour.toml). Reply with the file only, in one code block, then one line on how to install it.
+﻿You are making a theme file for RAZ Download Manager (MDM), a free, open-source download manager. Write one TOML file, named after the theme in lower case with dashes (for example harbour.toml). Reply with the file only, in one code block, then one line on how to install it.
 
 THE FORMAT
 A theme names only what it changes; everything else comes from the theme it inherits.

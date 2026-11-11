@@ -1,32 +1,79 @@
-<!doctype html>
-<html lang="en" class="js-off">
+﻿<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Page not found — Mister Download Manager</title>
-  <meta name="robots" content="noindex">
-  <meta name="color-scheme" content="light dark">
-  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64">
-  <link rel="stylesheet" href="/styles.css">
-  <!--@theme-->
-  <script src="/main.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Halaman Tidak Ditemukan | RAZ Download Manager</title>
+    <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48 64x64">
+    <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/RAZHero.css">
+    <link rel="stylesheet" href="css/RAZMainAnimations.css">
+    <link rel="stylesheet" href="css/RAZMainTheme.css">
+    <link rel="stylesheet" href="css/RAZModal.css">
+    <link rel="stylesheet" href="css/RAZDM.css">
 </head>
+
 <body>
-  <!--@header-->
-  <main id="main">
-    <section class="not-found">
-      <div class="wrap">
-        <p class="num" aria-hidden="true">404</p>
-        <h1>This page didn't download.</h1>
-        <p class="lede">It may have moved, or the address has a typo. Try one of these:</p>
-        <div class="cta">
-          <a class="btn btn-go" href="/download.html">Download MDM</a>
-          <a class="btn btn-line" href="/help/">Help and tutorials</a>
-          <a class="btn btn-line" href="/faq/">Questions</a>
+    <!-- Floating Particles -->
+    <div class="raz-particle"></div>
+    <div class="raz-particle"></div>
+    <div class="raz-particle"></div>
+
+    <!-- Controls -->
+    <div class="raz-controls" id="raz-controls">
+        <button class="raz-control-btn raz-theme-btn" id="raz-theme-toggle" aria-label="Toggle Theme"><i
+                class="fas fa-moon"></i></button>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="main-header">
+        <div class="container">
+            <h1 class="logo">
+                <a href="index.html" style="display:flex;align-items:center;gap:12px;">
+                    <img src="img/raz-logo.svg" alt="RAZ Download Manager" class="logo-image" style="height:44px;width:auto;">
+                </a>
+            </h1>
         </div>
-      </div>
+    </header>
+
+    <section class="section" style="min-height:80vh;display:flex;align-items:center;justify-content:center;padding-top:100px;">
+        <div class="container" style="text-align:center;">
+            <div style="font-size:clamp(5rem, 12vw, 9rem);font-weight:900;color:var(--color-gold-accent);line-height:1;font-family:'Poppins',sans-serif;">
+                404
+            </div>
+            <h2 style="font-size:2rem;color:var(--color-light-text);margin:20px 0 10px;">
+                Halaman Tidak Ditemukan
+            </h2>
+            <p style="color:var(--color-light-secondary);max-width:500px;margin:0 auto 30px;">
+                Halaman yang lo tuju mungkin sudah dipindahkan, diganti tautannya, atau tidak tersedia lagi.
+            </p>
+            <a href="index.html" class="cta-primary">
+                <i class="fas fa-arrow-left"></i> Kembali ke Beranda
+            </a>
+        </div>
     </section>
-  </main>
-  <!--@footer-->
+
+    <footer class="footer">
+        <div class="container" style="text-align:center;padding:20px 0;">
+            <p style="color:var(--color-light-secondary);font-size:0.85rem;">
+                &copy; 2026 RAZ Creative Studio. Hak Cipta Dilindungi.
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/RAZModal.js"></script>
+    <script src="js/script.js"></script>
 </body>
+
 </html>

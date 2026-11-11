@@ -1,6 +1,6 @@
-# Contributing
+﻿# Contributing
 
-Thanks for helping with Mister Download Manager. Bug reports, ideas, translation fixes and pull
+Thanks for helping with RAZ Download Manager. Bug reports, ideas, translation fixes and pull
 requests are all welcome.
 
 ## Getting set up

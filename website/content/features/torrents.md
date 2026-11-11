@@ -1,10 +1,10 @@
----
+﻿---
 name: Torrents
 title: Download torrents and magnet links
 headline: Torrents and magnet links, in the list you already use.
 line: Magnet links and .torrent files beside your other downloads, queued and scheduled like any of them.
 lede: MDM downloads torrents itself, with no second program to install. Pick the files you want, watch the peers and the pieces come in, and keep sharing if you like.
-description: Mister Download Manager downloads torrents and magnet links: choose the files, see peers, trackers and pieces, and queue them with your other downloads.
+description: RAZ Download Manager downloads torrents and magnet links: choose the files, see peers, trackers and pieces, and queue them with your other downloads.
 group: downloading
 order: 50
 since: 0.1.0

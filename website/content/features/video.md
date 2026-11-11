@@ -1,10 +1,10 @@
----
+﻿---
 name: Video downloads
 title: Download videos from YouTube and other sites
 headline: Paste a video's page. Pick the quality.
 line: Videos from YouTube, Vimeo, TikTok and well over a thousand other sites, in the quality you choose.
 lede: MDM downloads videos from their web pages with yt-dlp, the open-source tool whose community keeps it working as sites change. You pick the quality; the video joins your other downloads.
-description: Download videos from YouTube, Vimeo, TikTok and over a thousand other sites with Mister Download Manager and yt-dlp, in the quality you choose.
+description: Download videos from YouTube, Vimeo, TikTok and over a thousand other sites with RAZ Download Manager and yt-dlp, in the quality you choose.
 group: downloading
 order: 30
 since: 0.1.0

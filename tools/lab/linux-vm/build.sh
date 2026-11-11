@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+﻿#!/usr/bin/env bash
 # Build the checkout (~/mdm) in a terminal on the lab's desktop, so whoever watches the VM follows
 # it; the output is also kept in ~/lab/build.log for the host to read. The programs are then copied
 # to ~/lab/bin/<label>/ (default: the ref's name), so builds of several branches can be compared.
@@ -34,7 +34,7 @@ status=${PIPESTATUS[0]}
 if [ "$status" = 0 ]; then
   out=target/$profile; [ "$profile" = dev ] && out=target/debug
   mkdir -p "$HOME/lab/bin/$label"
-  cp "$out"/misterdownloadmanager{,-nmhost,-cli} "$out"/labserver "$HOME/lab/bin/$label/"
+  cp "$out"/RAZDownloadManager{,-nmhost,-cli} "$out"/labserver "$HOME/lab/bin/$label/"
 fi
 echo "== exit $status after $(( $(date +%s) - start )) s" | tee -a "$log"
 exit "$status"

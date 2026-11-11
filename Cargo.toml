@@ -1,13 +1,19 @@
+# ==============================================================================
+# RAZ Download Manager — Root Workspace Configuration
+# Terakhir Diperbarui: 2026-11-10 12:15 WIB
+# Deskripsi: Konfigurasi root workspace Rust untuk RAZ Download Manager.
+# ==============================================================================
+
 [workspace]
 resolver = "3"
 members = ["crates/*"]
 
 [workspace.package]
-version = "0.5.2"
+version = "1.0.0"
 edition = "2024"
 rust-version = "1.95"
 license = "GPL-3.0-or-later"
-authors = ["Ahmed Nefzaoui"]
+authors = ["RAZ Team", "Ahmed Nefzaoui"]
 publish = false
 
 [workspace.dependencies]
@@ -136,7 +142,8 @@ all = { level = "warn", priority = -1 }
 [profile.release]
 # Whole-program optimisation in one unit: smaller and a little faster programs, for a slower
 # release build (#25).
-lto = "fat"
+# Gunakan "thin" LTO agar efisien memori RAM pada lingkungan build Windows
+lto = "thin"
 codegen-units = 1
 # Function names and file:line for crash reports. The debug info doesn't ship: CI turns it into the
 # release's symbols zip (tools/installer/symbols.py); Windows keeps it in the .pdb, which no

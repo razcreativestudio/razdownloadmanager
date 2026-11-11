@@ -1,3 +1,9 @@
+// ==============================================================================
+// RAZ Download Manager — BitTorrent & Magnet Integration
+// Terakhir Diperbarui: 2026-11-10 12:25 WIB
+// Deskripsi: Integrasi klien BitTorrent menggunakan wrapper librqbit.
+// ==============================================================================
+
 //! BitTorrent and magnet downloads (D-014): librqbit, pure Rust, behind the few calls the app
 //! needs. Read what a torrent holds without starting it, add it with the files and folder the
 //! person chose, then watch it (stats, peers, trackers, pieces), pause, resume and remove it.
@@ -568,7 +574,7 @@ impl Torrents {
             }),
             // Major and minor only: the exact build would help someone aiming at one (#40).
             client_name_and_version: Some(format!(
-                "MisterDownloadManager/{}.{}",
+                "RAZDownloadManager/{}.{}",
                 env!("CARGO_PKG_VERSION_MAJOR"),
                 env!("CARGO_PKG_VERSION_MINOR")
             )),

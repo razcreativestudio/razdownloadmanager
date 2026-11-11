@@ -1,11 +1,11 @@
----
+﻿---
 version: 1
 slug: "website-index-html"
 primary_target: "website/index.html"
 related_targets: ["website/download.html","website/idm-alternative.html","website/benchmark.html","tools/website/build.py"]
 ---
 
-# Website: misterdownloadmanager.com
+# Website: razdownloadmanager.com
 
 Scope: every page `tools/website/build.py` makes. Home, download, IDM alternative and
 benchmark are Persuade; help, FAQ, news and legal pages are Read and take the same world with

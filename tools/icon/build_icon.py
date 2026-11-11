@@ -1,4 +1,4 @@
-"""Builds every app icon size from art/Mister Download Manager.png (made with ChatGPT).
+﻿"""Builds every app icon size from art/RAZ Download Manager.png (made with ChatGPT).
 
 - 48 px and up: the full artwork (globe, hat, moustache, arrow and pixel trail).
 - 16-32 px: a tighter crop on the globe, hat and moustache; the fine trail and thin arrow
@@ -15,7 +15,7 @@ from pathlib import Path
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[2]
-SRC = ROOT / "art" / "Mister Download Manager.png"
+SRC = ROOT / "art" / "RAZ Download Manager.png"
 APP = ROOT / "crates" / "app" / "assets" / "icons" / "app"
 EXT = ROOT / "extension" / "icons"
 SIZES = [16, 20, 24, 32, 48, 64, 128, 256]

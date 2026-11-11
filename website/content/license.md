@@ -1,7 +1,7 @@
----
+﻿---
 title: License
-description: Mister Download Manager is free software under the GNU General Public License, version 3. What that means for you, and the licences of every component it is built from.
-lede: Mister Download Manager is free software under the GNU General Public License, version 3 (GPL-3.0). Here's what that means, and who else's work it is built on.
+description: RAZ Download Manager is free software under the GNU General Public License, version 3. What that means for you, and the licences of every component it is built from.
+lede: RAZ Download Manager is free software under the GNU General Public License, version 3 (GPL-3.0). Here's what that means, and who else's work it is built on.
 fine: Applies to version {{VERSION}}
 priority: 0.4
 ---
@@ -22,9 +22,9 @@ This summary is not the licence. The full text is in the [LICENSE file]({{REPO}}
 
 Copyright © 2026 Ahmed Nefzaoui and contributors.
 
-> Mister Download Manager is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+> RAZ Download Manager is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 >
-> Mister Download Manager is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+> RAZ Download Manager is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
 ## Artwork and fonts
 

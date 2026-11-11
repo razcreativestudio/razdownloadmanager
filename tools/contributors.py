@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """The people who make MDM possible, from GitHub's public record: everyone who opened a pull
 request (merged or not) or an issue, or commented on one. One module for every place that thanks
 them: the website (tools/website/build.py: the home page, /contributors.html, each release on the
@@ -43,7 +43,7 @@ import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-REPO = "anefzaoui/misterdownloadmanager"
+REPO = "anefzaoui/RAZDownloadManager"
 MAINTAINER = "anefzaoui"
 API = "https://api.github.com"
 # The README's round avatars (`readme`), committed: GitHub can't round an image in a README.
@@ -66,7 +66,7 @@ def _token() -> str:
 def _get(url: str) -> tuple[object, dict]:
     """One GET of the API, as (JSON, headers). Waits out a short secondary rate limit (up to a
     minute, three times) and GitHub's own passing errors; raises on anything else."""
-    headers = {"Accept": "application/vnd.github+json", "User-Agent": "misterdownloadmanager-contributors",
+    headers = {"Accept": "application/vnd.github+json", "User-Agent": "RAZDownloadManager-contributors",
                "X-GitHub-Api-Version": "2022-11-28"}
     if _token():
         headers["Authorization"] = f"Bearer {_token()}"
@@ -272,7 +272,7 @@ def refresh_readme() -> int:
     for p in people:
         name = f"{p['login'].lower()}.png"
         keep.add(name)
-        req = urllib.request.Request(avatar(p["avatar"], README_SIZE), headers={"User-Agent": "misterdownloadmanager-contributors"})
+        req = urllib.request.Request(avatar(p["avatar"], README_SIZE), headers={"User-Agent": "RAZDownloadManager-contributors"})
         with urllib.request.urlopen(req, timeout=20) as r:
             png = round_png(r.read(), README_SIZE)
         target = README_AVATARS / name

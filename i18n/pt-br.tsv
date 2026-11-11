@@ -1,4 +1,4 @@
-# Mister Download Manager in Portuguese (Brazil) (Português (Brasil)): tools/i18n/translate.py
+﻿# RAZ Download Manager in Portuguese (Brazil) (Português (Brasil)): tools/i18n/translate.py
 # writes the rows marked '#, machine'; a native speaker deletes that line after checking.
 # context	source	translation (craft-i18n format, rows as in en.tsv)
 @id	language.name	Português (Brasil)
@@ -11,7 +11,7 @@
 #. never shown for a single download
 #. {n} = a number (keep the braces as they are)
 #, machine
-@plural	Are you sure you want to delete {n} download from Mister Download Manager list of downloads?|Are you sure you want to delete these {n} downloads from Mister Download Manager list of downloads?	Tem certeza de que deseja excluir {n} download da lista de downloads do Mister Download Manager?|Tem certeza de que deseja excluir estes {n} downloads da lista de downloads do Mister Download Manager?
+@plural	Are you sure you want to delete {n} download from RAZ Download Manager list of downloads?|Are you sure you want to delete these {n} downloads from RAZ Download Manager list of downloads?	Tem certeza de que deseja excluir {n} download da lista de downloads do RAZ Download Manager?|Tem certeza de que deseja excluir estes {n} downloads da lista de downloads do RAZ Download Manager?
 #. count in the Add torrent window
 #. while a magnet link's file list is fetched; {n} = peers that answered
 #. {n} = a number (keep the braces as they are)
@@ -226,7 +226,7 @@
 	a volume of it is missing	um volume está faltando
 #. window title in the Help menu's windows (About, updates, shortcuts, Tell a friend)
 #, machine
-	About Mister Download Manager	Sobre o Mister Download Manager
+	About RAZ Download Manager	Sobre o RAZ Download Manager
 #. text in whereis.rs
 #. a download's server's round trip: {ms} a number of milliseconds, {reach} near, medium or far
 #, machine
@@ -280,7 +280,7 @@
 #. window title in extension.rs
 #. title of the window that offers the browser extension
 #, machine
-	Add Mister Download Manager to your browser	Adicionar Mister Download Manager ao seu navegador
+	Add RAZ Download Manager to your browser	Adicionar RAZ Download Manager ao seu navegador
 #. message or event log entry in the main window; text in the tray icon's menu
 #. link in the empty download list: opens Add URL
 #, machine
@@ -447,7 +447,7 @@
 	Always into a folder named after it	Sempre em uma pasta com o nome dele
 #. checkbox in a dialog box
 #, machine
-	Always turn on Speed Limiter on Mister Download Manager startup	Sempre ativar o Limitador de Velocidade na inicialização do Mister Download Manager
+	Always turn on Speed Limiter on RAZ Download Manager startup	Sempre ativar o Limitador de Velocidade na inicialização do RAZ Download Manager
 #. text in regional.rs; text in the Scheduler window
 #. before noon, after a time of day (12-hour clock). Its pair is "PM": write both the same way (this language's own short marks, or both kept as AM and PM)
 #, machine
@@ -513,7 +513,7 @@
 #. text in a dialog box
 #. {name} = a file name (keep the braces as they are)
 #, machine
-	Are you sure you want to delete "{name}" from Mister Download Manager list of downloads?	Tem certeza de que deseja excluir "{name}" da lista de downloads do Mister Download Manager?
+	Are you sure you want to delete "{name}" from RAZ Download Manager list of downloads?	Tem certeza de que deseja excluir "{name}" da lista de downloads do RAZ Download Manager?
 #. text in countries.rs
 #. a country's name (where a download's server is)
 #, machine
@@ -682,7 +682,7 @@
 	Browse...	Procurar...
 #. text in extension.rs
 #, machine
-	Browser integration isn't set up on this computer, so no browser can reach Mister Download Manager yet.	A integração do navegador não está configurada neste computador, então nenhum navegador pode acessar Mister Download Manager ainda.
+	Browser integration isn't set up on this computer, so no browser can reach RAZ Download Manager yet.	A integração do navegador não está configurada neste computador, então nenhum navegador pode acessar RAZ Download Manager ainda.
 #. page title in the Options window
 #, machine
 	Browser/System Integration	Integração com Navegador/Sistema
@@ -882,7 +882,7 @@
 	Choose a language	Escolher um idioma
 #. text in langpick.rs
 #, machine
-	Choose the language Mister Download Manager shows its windows in:	Escolha o idioma em que o Mister Download Manager mostra suas janelas:
+	Choose the language RAZ Download Manager shows its windows in:	Escolha o idioma em que o RAZ Download Manager mostra suas janelas:
 #. text in the Options window
 #. Options → Sites Logins → Cookies for video sites: the title of the window, and the tooltip of the button, that pick a browser profile's folder
 #, machine
@@ -1502,7 +1502,7 @@
 	Exit	Sair
 #. checkbox in a download's progress window; checkbox in the Scheduler window
 #, machine
-	Exit Mister Download Manager when done	Sair do Mister Download Manager quando terminar
+	Exit RAZ Download Manager when done	Sair do RAZ Download Manager quando terminar
 #. text in the Checksum window
 #, machine
 	Expected checksum (MD5, SHA-1, SHA-256, SHA-512 or CRC32):	Soma de verificação esperada (MD5, SHA-1, SHA-256, SHA-512 ou CRC32):
@@ -1938,7 +1938,7 @@
 	Hide web pages	Ocultar páginas da web
 #. text in the Options window
 #, machine
-	Hold Alt while clicking a link to let the browser download it instead of Mister Download Manager.	Mantenha Alt pressionado ao clicar em um link para que o navegador o baixe em vez de Mister Download Manager.
+	Hold Alt while clicking a link to let the browser download it instead of RAZ Download Manager.	Mantenha Alt pressionado ao clicar em um link para que o navegador o baixe em vez de RAZ Download Manager.
 #. link (opens a web page) in the Help menu's windows (About, updates, shortcuts, Tell a friend)
 #, machine
 	Home page	Página inicial
@@ -1974,7 +1974,7 @@
 	Hungary	Hungria
 #. text in the Help menu's windows (About, updates, shortcuts, Tell a friend)
 #, machine
-	I download with Mister Download Manager: fast, free, and it looks like the download manager you already know. {link}	Eu baixo com o Mister Download Manager: rápido, gratuito e parece o gerenciador de downloads que você já conhece. {link}
+	I download with RAZ Download Manager: fast, free, and it looks like the download manager you already know. {link}	Eu baixo com o RAZ Download Manager: rápido, gratuito e parece o gerenciador de downloads que você já conhece. {link}
 #. text in countries.rs
 #. a country's name (where a download's server is)
 #, machine
@@ -2249,7 +2249,7 @@
 	Latvia	Letônia
 #. text in the Options window
 #, machine
-	Launch Mister Download Manager on startup	Iniciar o Mister Download Manager na inicialização
+	Launch RAZ Download Manager on startup	Iniciar o RAZ Download Manager na inicialização
 #. text in countries.rs
 #. a country's name (where a download's server is)
 #, machine
@@ -2536,54 +2536,54 @@
 	Missing	Faltando
 #. message or event log entry in the main window; window title in a dialog box; text in the Help menu's windows (About, updates, shortcuts, Tell a friend)
 #, machine
-	Mister Download Manager	Mister Download Manager
+	RAZ Download Manager	RAZ Download Manager
 #. text in unix.rs
 #. Linux, at start, on the terminal and in a message box: a library the window needs isn't installed; {libraries} = its file names (libxkbcommon-x11.so.0…), left as they are
 #, machine
-	Mister Download Manager can't open its window: this system lacks {libraries}.	Mister Download Manager não consegue abrir sua janela: este sistema não tem {libraries}.
+	RAZ Download Manager can't open its window: this system lacks {libraries}.	RAZ Download Manager não consegue abrir sua janela: este sistema não tem {libraries}.
 #. text in crashui.rs
 #. crash report window heading: MDM crashed and is gone
 #, machine
-	Mister Download Manager closed unexpectedly	Mister Download Manager fechou inesperadamente
+	RAZ Download Manager closed unexpectedly	RAZ Download Manager fechou inesperadamente
 #. window title in the Options window
 #, machine
-	Mister Download Manager Configuration	Configuração do Mister Download Manager
+	RAZ Download Manager Configuration	Configuração do RAZ Download Manager
 #. text in crashui.rs
 #, machine
-	Mister Download Manager crash report	Relatório de falha do Mister Download Manager
+	RAZ Download Manager crash report	Relatório de falha do RAZ Download Manager
 #. text in crashui.rs
 #. crash report window heading: an internal error, MDM still running
 #, machine
-	Mister Download Manager hit an internal error	Mister Download Manager encontrou um erro interno
+	RAZ Download Manager hit an internal error	RAZ Download Manager encontrou um erro interno
 #. text in wake.rs
 #. why the computer isn't going to sleep, in the system's list of programs that keep it awake; {queue} = the queue's name
 #. {queue} = a queue name such as "Main queue" (keep the braces as they are)
 #, machine
-	Mister Download Manager is running the queue "{queue}"	Mister Download Manager está executando a fila "{queue}"
+	RAZ Download Manager is running the queue "{queue}"	RAZ Download Manager está executando a fila "{queue}"
 #. text in crashui.rs
 #. crash report window heading: MDM's window doesn't answer (frozen)
 #, machine
-	Mister Download Manager stopped responding	Mister Download Manager parou de responder
+	RAZ Download Manager stopped responding	RAZ Download Manager parou de responder
 #. text in crashui.rs
 #, machine
-	Mister Download Manager stopped responding for a while	Mister Download Manager parou de responder por um tempo
+	RAZ Download Manager stopped responding for a while	RAZ Download Manager parou de responder por um tempo
 #. text in the Options window
 #. \\n starts a new line: break lines where they fit the translation
 #, machine
-	Mister Download Manager writes every connection straight into the final\nfile (a sparse part file next to it), so no temporary directory and no\nassembling step are needed.	O Mister Download Manager grava cada conexão diretamente no arquivo\nfinal (um arquivo de parte esparsa ao lado dele), então nenhum diretório\ntemporário e nenhuma etapa de montagem são necessários.
+	RAZ Download Manager writes every connection straight into the final\nfile (a sparse part file next to it), so no temporary directory and no\nassembling step are needed.	O RAZ Download Manager grava cada conexão diretamente no arquivo\nfinal (um arquivo de parte esparsa ao lado dele), então nenhum diretório\ntemporário e nenhuma etapa de montagem são necessários.
 #. text in the Help menu's windows (About, updates, shortcuts, Tell a friend)
 #. {version} = a version number (keep the braces as they are)
 #, machine
-	Mister Download Manager {version} is available (released {date}).	Mister Download Manager {version} está disponível (lançado em {date}).
+	RAZ Download Manager {version} is available (released {date}).	RAZ Download Manager {version} está disponível (lançado em {date}).
 #. text in helpers.rs
 #. Video helpers: {version} = the version of MDM's own copy
 #. {version} = a version number (keep the braces as they are)
 #, machine
-	Mister Download Manager's own copy, version {version}	Cópia própria do Mister Download Manager, versão {version}
+	RAZ Download Manager's own copy, version {version}	Cópia própria do RAZ Download Manager, versão {version}
 #. text in unix.rs
 #. Linux, at start, on the terminal: the libraries an X11 window needs aren't installed, so the window opens through Wayland instead, where menus can't be placed under what was clicked; {libraries} = their file names, left as they are
 #, machine
-	Mister Download Manager's X11 window needs {libraries}, which this system lacks: it opens on Wayland instead, where its menus may open away from their titles.	A janela X11 de Mister Download Manager precisa de {libraries}, que não estão instaladas neste sistema: ela abre no Wayland, onde os menus podem aparecer longe dos títulos.
+	RAZ Download Manager's X11 window needs {libraries}, which this system lacks: it opens on Wayland instead, where its menus may open away from their titles.	A janela X11 de RAZ Download Manager precisa de {libraries}, que não estão instaladas neste sistema: ela abre no Wayland, onde os menus podem aparecer longe dos títulos.
 #. text in the Scheduler window
 #. Monday, as short as a calendar's column head (two letters in English)
 #, machine
@@ -3089,10 +3089,10 @@
 	Open folder	Abrir pasta
 #. checkbox in the Add torrent window
 #, machine
-	Open magnet links and .torrent files with Mister Download Manager	Abrir links magnet e arquivos .torrent com o Mister Download Manager
+	Open magnet links and .torrent files with RAZ Download Manager	Abrir links magnet e arquivos .torrent com o RAZ Download Manager
 #. text in the tray icon's menu
 #, machine
-	Open Mister Download Manager	Abrir Mister Download Manager
+	Open RAZ Download Manager	Abrir RAZ Download Manager
 #. text in extension.rs
 #. step 2 of turning on the Safari extension; Cmd is the Command key
 #, machine
@@ -3163,7 +3163,7 @@
 #. text in remote.rs
 #. remote control page (on a phone): title of the pairing screen
 #, machine
-	Pair with Mister Download Manager	Emparelhar com Mister Download Manager
+	Pair with RAZ Download Manager	Emparelhar com RAZ Download Manager
 #. text in the Options window
 #. column title: when the device was paired
 #, machine
@@ -3649,7 +3649,7 @@
 	Select or unselect the download with the dotted outline	Selecionar ou desmarcar o download com o contorno pontilhado
 #. group box title in the Options window
 #, machine
-	Select sounds for Mister Download Manager events	Selecionar sons para eventos do Mister Download Manager
+	Select sounds for RAZ Download Manager events	Selecionar sons para eventos do RAZ Download Manager
 #. what a keyboard shortcut does in the Help menu's windows (About, updates, shortcuts, Tell a friend)
 #, machine
 	Select the downloads in the box	Selecionar os downloads na caixa
@@ -3975,7 +3975,7 @@
 	Start download at	Iniciar download em
 #. checkbox in the Scheduler window
 #, machine
-	Start download on Mister Download Manager startup	Iniciar download na inicialização do Mister Download Manager
+	Start download on RAZ Download Manager startup	Iniciar download na inicialização do RAZ Download Manager
 #. checkbox in the Options window
 #, machine
 	Start downloading immediately while displaying "Download File Info" dialog	Iniciar o download imediatamente ao exibir a caixa de diálogo "Informações do arquivo de download"
@@ -4010,7 +4010,7 @@
 #, machine
 	Started with the computer, it starts minimized: no notification area shows its icon here	Iniciado com o computador, ele inicia minimizado: nenhuma área de notificação mostra seu ícone aqui
 #. text in the Options window
-#. tooltip of "Launch Mister Download Manager on startup": started with the computer, MDM's window stays hidden, its icon in the notification area (system tray)
+#. tooltip of "Launch RAZ Download Manager on startup": started with the computer, MDM's window stays hidden, its icon in the notification area (system tray)
 #, machine
 	Started with the computer, it waits in the notification area	Iniciado com o computador, ele aguarda na área de notificação
 #. message or event log entry in the main window
@@ -4231,7 +4231,7 @@
 #. text in extension.rs
 #. a check of Test browser integration: the browsers find MDM's helper program
 #, machine
-	The browsers can find Mister Download Manager	Os navegadores podem encontrar Mister Download Manager
+	The browsers can find RAZ Download Manager	Os navegadores podem encontrar RAZ Download Manager
 #. text in the Options window
 #. Options → Remote → Status: the settings were changed; they apply on OK
 #, machine
@@ -4255,7 +4255,7 @@
 #. text in the Scheduler window
 #. tooltip on the Scheduler's "Wake the computer to run this queue"
 #, machine
-	The computer is woken a minute before the start time and kept awake while the queue runs. Mister Download Manager has to be running (it can wait in the notification area).	O computador é ativado um minuto antes da hora de início e mantido ativo enquanto a fila é executada. Mister Download Manager precisa estar em execução (pode aguardar na área de notificação).
+	The computer is woken a minute before the start time and kept awake while the queue runs. RAZ Download Manager has to be running (it can wait in the notification area).	O computador é ativado um minuto antes da hora de início e mantido ativo enquanto a fila é executada. RAZ Download Manager precisa estar em execução (pode aguardar na área de notificação).
 #. text in the Scheduler window
 #. the Scheduler, under "Wake the computer to run this queue": when it will happen; {date} = e.g. 06/11/2026, {time} = e.g. 22:59:00
 #. {time} = a time of day (keep the braces as they are)
@@ -4376,7 +4376,7 @@
 #, machine
 	the FTP server answered {code} {reply}	o servidor FTP respondeu {code} {reply}
 #. text in extension.rs
-#. a check of Test browser integration: the browsers are set up, but the small helper program they start (misterdownloadmanager-nmhost) is gone
+#. a check of Test browser integration: the browsers are set up, but the small helper program they start (razdownloadmanager-nmhost) is gone
 #, machine
 	The helper program the browsers start is missing	O programa auxiliar que os navegadores iniciam está ausente
 #. message or event log entry in the main window
@@ -4426,7 +4426,7 @@
 #. text in a dialog box
 #. \\n starts a new line: break lines where they fit the translation
 #, machine
-	The selected download is not complete. Are you sure you want to delete\nit from Mister Download Manager list of downloads?	O download selecionado não está completo. Tem certeza de que deseja excluí-lo da lista de downloads do Mister Download Manager?
+	The selected download is not complete. Are you sure you want to delete\nit from RAZ Download Manager list of downloads?	O download selecionado não está completo. Tem certeza de que deseja excluí-lo da lista de downloads do RAZ Download Manager?
 #. text in errors.rs
 #, machine
 	the server answered {status}	o servidor respondeu {status}
@@ -4790,7 +4790,7 @@
 #. text in extension.rs
 #. step 8 of turning on the Safari extension
 #, machine
-	Turn on "Mister Download Manager" and allow it on all websites.	Ativar “Mister Download Manager” e permitir em todos os sites.
+	Turn on "RAZ Download Manager" and allow it on all websites.	Ativar “RAZ Download Manager” e permitir em todos os sites.
 #. text in extension.rs
 #. step 4 of turning on the Safari extension; the quoted switch name is what Safari's settings show in this language: use Apple's own words for it, or keep the English name when unsure
 #, machine
@@ -5203,7 +5203,7 @@
 #. text in the Help menu's windows (About, updates, shortcuts, Tell a friend)
 #. {version} = a version number (keep the braces as they are)
 #, machine
-	You have the latest version of Mister Download Manager ({version}).	Você tem a versão mais recente do Mister Download Manager ({version}).
+	You have the latest version of RAZ Download Manager ({version}).	Você tem a versão mais recente do RAZ Download Manager ({version}).
 #. text in the Help menu's windows (About, updates, shortcuts, Tell a friend)
 #. Check for updates, under the new version's line, when MDM was installed by the Linux system's package manager (pacman, ...), which MDM can't update itself
 #. {version} = a version number (keep the braces as they are)
@@ -5590,15 +5590,15 @@ column	Time left	Tempo restante
 #, machine
 column	Transfer rate	Taxa de transferência
 #. text in the browser extension
-#. choice under Send downloads to: an MDM running on another computer of the network, such as a home server; keep the name Mister Download Manager as it is
+#. choice under Send downloads to: an MDM running on another computer of the network, such as a home server; keep the name RAZ Download Manager as it is
 #, machine
-extension	Another Mister Download Manager (a server)	Outro Mister Download Manager (um servidor)
+extension	Another RAZ Download Manager (a server)	Outro RAZ Download Manager (um servidor)
 #. text in the browser extension
 #. the name this browser gets in the other MDM's list of paired devices
 #, machine
 extension	Browser extension	Extensão do navegador
 #. text in the browser extension
-#. menu command of the download button over a video: opens its settings in Mister Download Manager
+#. menu command of the download button over a video: opens its settings in RAZ Download Manager
 #. the trailing ... means it is still going on: keep it
 #, machine
 extension	Button settings...	Configurações do botão...
@@ -5607,34 +5607,34 @@ extension	Button settings...	Configurações do botão...
 #, machine
 extension	Can't tell which video this is: open its own page and try there	Não dá para saber qual é este vídeo: abra a página dele e tente lá
 #. text in the browser extension
-#. the toolbar button's status when the browser reaches the app; keep the name Mister Download Manager as it is
+#. the toolbar button's status when the browser reaches the app; keep the name RAZ Download Manager as it is
 #, machine
-extension	Connected to Mister Download Manager	Conectado a Mister Download Manager
+extension	Connected to RAZ Download Manager	Conectado a RAZ Download Manager
 #. text in the browser extension
-#. the toolbar button's status when the browser reaches the app, with the app's version number; keep the name Mister Download Manager as it is
+#. the toolbar button's status when the browser reaches the app, with the app's version number; keep the name RAZ Download Manager as it is
 #. {version} = a version number (keep the braces as they are)
 #, machine
-extension	Connected to Mister Download Manager {version}	Conectado a Mister Download Manager {version}
+extension	Connected to RAZ Download Manager {version}	Conectado a RAZ Download Manager {version}
 #. text in the browser extension
 #. button beside a video, sound or stream in the toolbar button's popup: download it with the app; verb; short
 #, machine
 extension	Download	Baixar
 #. text in the browser extension
-#. command in the browser's right-click menu on a page: download the links of the whole page; keep the name Mister Download Manager as it is
+#. command in the browser's right-click menu on a page: download the links of the whole page; keep the name RAZ Download Manager as it is
 #, machine
-extension	Download all links with Mister Download Manager	Baixar todos os links com Mister Download Manager
+extension	Download all links with RAZ Download Manager	Baixar todos os links com RAZ Download Manager
 #. text in the browser extension
-#. command in the browser's right-click menu on selected text: download the links in the selection; keep the name Mister Download Manager as it is
+#. command in the browser's right-click menu on selected text: download the links in the selection; keep the name RAZ Download Manager as it is
 #, machine
-extension	Download selected links with Mister Download Manager	Baixar links selecionados com Mister Download Manager
+extension	Download selected links with RAZ Download Manager	Baixar links selecionados com RAZ Download Manager
 #. text in the browser extension
 #. the button over a video on a web page that downloads it; verb; short (it sits on the video)
 #, machine
 extension	Download video	Baixar vídeo
 #. text in the browser extension
-#. command in the browser's right-click menu on a link, picture, video or sound; keep the name Mister Download Manager as it is
+#. command in the browser's right-click menu on a link, picture, video or sound; keep the name RAZ Download Manager as it is
 #, machine
-extension	Download with Mister Download Manager	Baixar com Mister Download Manager
+extension	Download with RAZ Download Manager	Baixar com RAZ Download Manager
 #. text in the browser extension
 #. shown in the toolbar button's popup after the site was excluded
 #. {site} = a web site's name such as "example.com" (keep the braces as they are)
@@ -5653,9 +5653,9 @@ extension	Drag to move it along the video's edge	Arraste para movê-lo ao longo 
 #, machine
 extension	Enter its https:// address.	Insira o endereço https://.
 #. text in the browser extension
-#. the extension's description in the browser's list of extensions; keep the name Mister Download Manager as it is
+#. the extension's description in the browser's list of extensions; keep the name RAZ Download Manager as it is
 #, machine
-extension	Hands downloads from the browser to Mister Download Manager.	Entrega os downloads do navegador para o Mister Download Manager.
+extension	Hands downloads from the browser to RAZ Download Manager.	Entrega os downloads do navegador para o RAZ Download Manager.
 #. text in the browser extension
 #. link in the toolbar button's popup to the help page
 #, machine
@@ -5710,33 +5710,33 @@ extension	Live	Ao vivo
 #, machine
 extension	Media on this page	Mídia nesta página
 #. text in the browser extension
-#. the extension's name in the browser's list of extensions and on its toolbar button; keep the name Mister Download Manager as it is
+#. the extension's name in the browser's list of extensions and on its toolbar button; keep the name RAZ Download Manager as it is
 #, machine
-extension	Mister Download Manager	Mister Download Manager
+extension	RAZ Download Manager	RAZ Download Manager
 #. text in the browser extension
-#. status when the app was started for a download but didn't answer in time; keep the name Mister Download Manager as it is
+#. status when the app was started for a download but didn't answer in time; keep the name RAZ Download Manager as it is
 #, machine
-extension	Mister Download Manager didn't start in time	Mister Download Manager não iniciou a tempo
+extension	RAZ Download Manager didn't start in time	RAZ Download Manager não iniciou a tempo
 #. text in the browser extension
-#. status when the app refuses this copy of the extension (another copy is installed, or it came from another store); keep the name Mister Download Manager as it is
+#. status when the app refuses this copy of the extension (another copy is installed, or it came from another store); keep the name RAZ Download Manager as it is
 #, machine
-extension	Mister Download Manager doesn't accept this copy of the extension	Mister Download Manager não aceita esta cópia da extensão
+extension	RAZ Download Manager doesn't accept this copy of the extension	RAZ Download Manager não aceita esta cópia da extensão
 #. text in the browser extension
-#. shown briefly on the download button when the app could not be reached; keep the name Mister Download Manager as it is
+#. shown briefly on the download button when the app could not be reached; keep the name RAZ Download Manager as it is
 #, machine
-extension	Mister Download Manager isn't installed or didn't start	Mister Download Manager não está instalado ou não iniciou
+extension	RAZ Download Manager isn't installed or didn't start	RAZ Download Manager não está instalado ou não iniciou
 #. text in the browser extension
-#. status when the browser can't find the app's connection; keep the name Mister Download Manager as it is
+#. status when the browser can't find the app's connection; keep the name RAZ Download Manager as it is
 #, machine
-extension	Mister Download Manager isn't installed, or its browser integration isn't set up	Mister Download Manager não está instalado ou sua integração com o navegador não está configurada
+extension	RAZ Download Manager isn't installed, or its browser integration isn't set up	RAZ Download Manager não está instalado ou sua integração com o navegador não está configurada
 #. text in the browser extension
-#. tooltip of the switch Send downloads through this browser's proxy or VPN extension; keep the name Mister Download Manager as it is
+#. tooltip of the switch Send downloads through this browser's proxy or VPN extension; keep the name RAZ Download Manager as it is
 #, machine
-extension	Mister Download Manager then downloads through the same proxy as this browser. The browser asks you once to allow it; turning this off takes that back.	O Mister Download Manager baixa usando o mesmo proxy deste navegador. O navegador pedirá uma vez para permitir; desativar isso reverte a permissão.
+extension	RAZ Download Manager then downloads through the same proxy as this browser. The browser asks you once to allow it; turning this off takes that back.	O RAZ Download Manager baixa usando o mesmo proxy deste navegador. O navegador pedirá uma vez para permitir; desativar isso reverte a permissão.
 #. text in the browser extension
-#. tooltip of the switch Send downloads through this browser's proxy or VPN extension in Chrome, Edge and the other Chromium browsers (they ask for no permission at the switch); keep the name Mister Download Manager as it is
+#. tooltip of the switch Send downloads through this browser's proxy or VPN extension in Chrome, Edge and the other Chromium browsers (they ask for no permission at the switch); keep the name RAZ Download Manager as it is
 #, machine
-extension	Mister Download Manager then downloads through the same proxy as this browser. While this is off, the extension doesn't read the browser's proxy.	O Mister Download Manager baixa por meio do mesmo proxy que este navegador. Quando desativado, a extensão não lê o proxy do navegador.
+extension	RAZ Download Manager then downloads through the same proxy as this browser. While this is off, the extension doesn't read the browser's proxy.	O RAZ Download Manager baixa por meio do mesmo proxy que este navegador. Quando desativado, a extensão não lê o proxy do navegador.
 #. text in the browser extension
 #. the small arrow next to the Download video button that opens its menu (read aloud by screen readers)
 #, machine
@@ -5764,13 +5764,13 @@ extension	Not reached. Open its address once in this browser and accept its cert
 #, machine
 extension	Open it	Abrir
 #. text in the browser extension
-#. help under the pairing boxes; Options, Remote and Pair a device are the app's window, tab and button; keep misterdownloadmanager-cli pair as it is
+#. help under the pairing boxes; Options, Remote and Pair a device are the app's window, tab and button; keep razdownloadmanager-cli pair as it is
 #, machine
-extension	Open its address once and accept its certificate, then enter a code from its Options, Remote, Pair a device (or misterdownloadmanager-cli pair).	Abra o endereço uma vez e aceite o certificado, depois insira um código de suas Opções, Remoto, Emparelhar um dispositivo (ou misterdownloadmanager-cli pair).
+extension	Open its address once and accept its certificate, then enter a code from its Options, Remote, Pair a device (or razdownloadmanager-cli pair).	Abra o endereço uma vez e aceite o certificado, depois insira um código de suas Opções, Remoto, Emparelhar um dispositivo (ou razdownloadmanager-cli pair).
 #. text in the browser extension
-#. button in the toolbar button's popup; keep the name Mister Download Manager as it is
+#. button in the toolbar button's popup; keep the name RAZ Download Manager as it is
 #, machine
-extension	Open Mister Download Manager	Abrir Mister Download Manager
+extension	Open RAZ Download Manager	Abrir RAZ Download Manager
 #. text in the browser extension
 #. button in the toolbar button's popup: open the app's Options
 #. the trailing ... means it is still going on: keep it
@@ -5809,9 +5809,9 @@ extension	Send downloads through this browser's proxy or VPN extension	Enviar do
 #, machine
 extension	Send downloads to	Enviar downloads para
 #. text in the browser extension
-#. shown briefly on the download button after it was clicked; keep the name Mister Download Manager as it is
+#. shown briefly on the download button after it was clicked; keep the name RAZ Download Manager as it is
 #, machine
-extension	Sent to Mister Download Manager	Enviado para Mister Download Manager
+extension	Sent to RAZ Download Manager	Enviado para RAZ Download Manager
 #. text in the browser extension
 #. link at the foot of the toolbar button's popup to the creator's GitHub Sponsors page (MDM is free; this is an optional donation)
 #, machine
@@ -5825,9 +5825,9 @@ extension	Take downloads from this browser	Assumir downloads deste navegador
 #, machine
 extension	The Chrome Web Store's rules keep this copy of the add-on away from this site's videos. Help says what you can do.	As regras da Chrome Web Store mantêm esta cópia da extensão longe dos vídeos deste site. A Ajuda explica o que você pode fazer.
 #. text in the browser extension
-#. status when the connection to the app broke off (often security software blocking it); keep the name Mister Download Manager as it is
+#. status when the connection to the app broke off (often security software blocking it); keep the name RAZ Download Manager as it is
 #, machine
-extension	The connection to Mister Download Manager failed	A conexão com Mister Download Manager falhou
+extension	The connection to RAZ Download Manager failed	A conexão com RAZ Download Manager falhou
 #. text in the browser extension
 #. shown briefly on the download button over a video when the app's settings keep the button off on this web site
 #, machine
@@ -5845,7 +5845,7 @@ extension	The last download was left to the browser.	O último download foi deix
 #, machine
 extension	This browser isn't ticked in Options → General.	Este navegador não está marcado em Opções → Geral.
 #. text in the browser extension
-#. choice under Send downloads to: the Mister Download Manager on this computer
+#. choice under Send downloads to: the RAZ Download Manager on this computer
 #, machine
 extension	This computer	Este computador
 #. text in the browser extension
@@ -5857,9 +5857,9 @@ extension	This download's details were too large to hand over	Os detalhes deste 
 #, machine
 extension	This page's player streams its video in pieces, so there's no file to list. Point at the video and use its Download video button.	O player desta página transmite o vídeo em partes, então não há arquivo para listar. Aponte para o vídeo e use o botão "Baixar vídeo" dele.
 #. text in the browser extension
-#. status when the app is older than the extension; keep the name Mister Download Manager as it is
+#. status when the app is older than the extension; keep the name RAZ Download Manager as it is
 #, machine
-extension	Update Mister Download Manager to use everything this extension offers	Atualize o Mister Download Manager para usar tudo o que esta extensão oferece
+extension	Update RAZ Download Manager to use everything this extension offers	Atualize o RAZ Download Manager para usar tudo o que esta extensão oferece
 #. text in the browser extension
 #. why a download stayed with the browser: the app's setting 'Use advanced browser integration' is off; keep the setting's name as the app shows it
 #, machine
@@ -5975,7 +5975,7 @@ key	Up / Down	Seta para Cima / Seta para Baixo
 #. menu command in the main window
 #. & marks the keyboard shortcut letter: keep one & before a letter of the translation
 #, machine
-menu	&About Mister Download Manager	So&bre o Mister Download Manager
+menu	&About RAZ Download Manager	So&bre o RAZ Download Manager
 #. menu command in the main window
 #. & marks the keyboard shortcut letter: keep one & before a letter of the translation
 #, machine
@@ -6337,7 +6337,7 @@ menu	Metro	Metro
 #. menu command in the main window
 #. & marks the keyboard shortcut letter: keep one & before a letter of the translation
 #, machine
-menu	Mister Download Manager &Home Page	Página &Inicial do Mister Download Manager
+menu	RAZ Download Manager &Home Page	Página &Inicial do RAZ Download Manager
 #. menu command in the main window
 #, machine
 menu	Move/Rename (Ctrl-M)	Mover/Renomear (Ctrl+M)
@@ -6450,7 +6450,7 @@ menu	Select &all	Selecionar t&udo
 menu	Show &drop target	Mostrar &alvo de arrastar e soltar
 #. menu command in the main window
 #, machine
-menu	Show Mister Download Manager	Mostrar Mister Download Manager
+menu	Show RAZ Download Manager	Mostrar RAZ Download Manager
 #. menu command in the main window
 #. & marks the keyboard shortcut letter: keep one & before a letter of the translation
 #, machine

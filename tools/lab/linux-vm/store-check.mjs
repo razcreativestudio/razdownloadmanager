@@ -1,4 +1,4 @@
-// A store package checked on Linux before it ships: installed in a throwaway profile (Firefox: the
+﻿// A store package checked on Linux before it ships: installed in a throwaway profile (Firefox: the
 // .xpi as a temporary add-on over WebDriver BiDi, as about:debugging loads one, since the Snap
 // Firefox wants signed add-ons for a normal install; Google Chrome: the unpacked folder over the
 // DevTools pipe), its version read back, its popup captured (PNG beside the output), and an
@@ -14,7 +14,7 @@ import { spawn, execFileSync } from "node:child_process";
 const [browser, pkg] = [process.argv[2], path.resolve(process.argv[3])];
 const LAB = process.argv[4] || "http://127.0.0.1:8097";
 const OUT = path.resolve(process.argv[5] || path.join(process.env.HOME, "lab/store-check"));
-const ID = "integration@misterdownloadmanager.com";
+const ID = "integration@RAZDownloadManager.com";
 const UUID = "5d0c3b8e-7a51-4c1e-9f0a-38e2c4a1d7b6";
 const NL = String.fromCharCode(10);
 const NUL = String.fromCharCode(0);
@@ -184,8 +184,8 @@ if (browser === "firefox") {
   // there is one (with the .deb or .rpm installed there is none, #266, and everyone's is read).
   const hosts = path.join(profile, "NativeMessagingHosts");
   fs.mkdirSync(hosts, { recursive: true });
-  const mine = path.join(process.env.HOME, ".config/google-chrome/NativeMessagingHosts/com.misterdownloadmanager.host.json");
-  if (fs.existsSync(mine)) fs.copyFileSync(mine, path.join(hosts, "com.misterdownloadmanager.host.json"));
+  const mine = path.join(process.env.HOME, ".config/google-chrome/NativeMessagingHosts/com.RAZDownloadManager.host.json");
+  if (fs.existsSync(mine)) fs.copyFileSync(mine, path.join(hosts, "com.RAZDownloadManager.host.json"));
   say(`host manifest: ${fs.existsSync(mine) ? mine : "/etc/opt/chrome/native-messaging-hosts (none in the home folder)"}`);
   const proc = spawn(
     "/usr/bin/google-chrome",

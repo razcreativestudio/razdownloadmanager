@@ -1,0 +1,268 @@
+/* ==============================================
+   RAZHero.css - Hero Section Styling
+   Deskripsi: Styling khusus untuk hero section 
+   dengan animasi grid teknologi dan floating keywords
+   Terakhir diupdate: 2026-05-08
+   Versi: 3.0.0
+============================================== */
+
+/* --- Hero Container Utama --- */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0a0a0a 0%, #121212 40%, #1a1510 100%);
+    border-bottom: none;
+    padding: 0;
+}
+
+/* --- Canvas animasi partikel di belakang hero --- */
+#hero-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.4;
+}
+
+/* --- Overlay gradient untuk readability teks --- */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, transparent 0%, rgba(10,10,10,0.6) 70%);
+    z-index: 2;
+}
+
+/* --- Konten Hero (teks, tombol) --- */
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    max-width: 900px;
+    padding: 40px 20px;
+}
+
+/* --- Badge kecil di atas tagline --- */
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 215, 0, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 50px;
+    padding: 8px 20px;
+    font-size: 0.85rem;
+    color: var(--color-gold-accent);
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    -webkit-animation: fadeInDown 0.8s ease-out;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.hero-badge .badge-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--color-gold-accent);
+    border-radius: 50%;
+    -webkit-animation: pulse-dot 2s infinite;
+    animation: pulse-dot 2s infinite;
+}
+
+/* --- Tagline utama hero --- */
+.hero-title {
+    font-family: 'Inter', 'Poppins', sans-serif;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 24px;
+    color: var(--color-light-text);
+    -webkit-animation: fadeInUp 0.8s ease-out 0.2s both;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* Teks gold di dalam tagline */
+.hero-title .gold-text {
+    background: linear-gradient(135deg, #FFD700, #FFA500, #FFD700);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-animation: shimmer 3s ease-in-out infinite;
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+/* --- Sub-tagline hero --- */
+.hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--color-light-secondary);
+    max-width: 700px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+    -webkit-animation: fadeInUp 0.8s ease-out 0.4s both;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+/* --- Container tombol CTA hero --- */
+.hero-cta-group {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    -webkit-animation: fadeInUp 0.8s ease-out 0.6s both;
+    animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+/* --- Floating tech keywords di hero --- */
+.hero-keywords {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.hero-keywords .keyword {
+    position: absolute;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgba(255, 215, 0, 0.12);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    -webkit-animation: float-keyword 20s linear infinite;
+    animation: float-keyword 20s linear infinite;
+}
+
+/* Posisi dan delay masing-masing keyword */
+.keyword:nth-child(1) { top: 15%; left: 5%; animation-delay: 0s; animation-duration: 25s; }
+.keyword:nth-child(2) { top: 30%; right: 8%; animation-delay: -5s; animation-duration: 22s; }
+.keyword:nth-child(3) { top: 60%; left: 10%; animation-delay: -10s; animation-duration: 28s; }
+.keyword:nth-child(4) { top: 75%; right: 12%; animation-delay: -3s; animation-duration: 20s; }
+.keyword:nth-child(5) { top: 45%; left: 3%; animation-delay: -8s; animation-duration: 24s; }
+.keyword:nth-child(6) { top: 85%; left: 50%; animation-delay: -12s; animation-duration: 26s; }
+.keyword:nth-child(7) { top: 20%; right: 3%; animation-delay: -6s; animation-duration: 23s; }
+.keyword:nth-child(8) { top: 50%; right: 5%; animation-delay: -15s; animation-duration: 27s; }
+
+/* --- Scroll indicator panah ke bawah --- */
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 215, 0, 0.5);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    -webkit-animation: fadeInUp 1s ease-out 1s both;
+    animation: fadeInUp 1s ease-out 1s both;
+}
+
+.scroll-indicator .scroll-arrow {
+    width: 24px;
+    height: 24px;
+    border-right: 2px solid var(--color-gold-accent);
+    border-bottom: 2px solid var(--color-gold-accent);
+    transform: rotate(45deg);
+    -webkit-animation: bounce-arrow 2s infinite;
+    animation: bounce-arrow 2s infinite;
+    opacity: 0.6;
+}
+
+/* ==============================================
+   KEYFRAME ANIMATIONS
+============================================== */
+
+/* Efek shimmer pada teks gold */
+@-webkit-keyframes shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+@keyframes shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Animasi masuk dari bawah */
+@-webkit-keyframes fadeInUp {
+    from { opacity: 0; -webkit-transform: translateY(30px); transform: translateY(30px); }
+    to { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animasi masuk dari atas */
+@-webkit-keyframes fadeInDown {
+    from { opacity: 0; -webkit-transform: translateY(-20px); transform: translateY(-20px); }
+    to { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
+}
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animasi dot berkedip */
+@-webkit-keyframes pulse-dot {
+    0%, 100% { opacity: 1; -webkit-transform: scale(1); transform: scale(1); }
+    50% { opacity: 0.5; -webkit-transform: scale(0.8); transform: scale(0.8); }
+}
+@keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+/* Animasi floating keyword */
+@-webkit-keyframes float-keyword {
+    0% { -webkit-transform: translateY(0) translateX(0); transform: translateY(0) translateX(0); opacity: 0; }
+    10% { opacity: 0.12; }
+    90% { opacity: 0.12; }
+    100% { -webkit-transform: translateY(-50px) translateX(30px); transform: translateY(-50px) translateX(30px); opacity: 0; }
+}
+@keyframes float-keyword {
+    0% { transform: translateY(0) translateX(0); opacity: 0; }
+    10% { opacity: 0.12; }
+    90% { opacity: 0.12; }
+    100% { transform: translateY(-50px) translateX(30px); opacity: 0; }
+}
+
+/* Animasi panah scroll */
+@-webkit-keyframes bounce-arrow {
+    0%, 20%, 50%, 80%, 100% { -webkit-transform: rotate(45deg) translateY(0); transform: rotate(45deg) translateY(0); }
+    40% { -webkit-transform: rotate(45deg) translateY(8px); transform: rotate(45deg) translateY(8px); }
+    60% { -webkit-transform: rotate(45deg) translateY(4px); transform: rotate(45deg) translateY(4px); }
+}
+@keyframes bounce-arrow {
+    0%, 20%, 50%, 80%, 100% { transform: rotate(45deg) translateY(0); }
+    40% { transform: rotate(45deg) translateY(8px); }
+    60% { transform: rotate(45deg) translateY(4px); }
+}
+
+/* ==============================================
+   RESPONSIVE - Mobile
+============================================== */
+@media (max-width: 768px) {
+    .hero { min-height: 90vh; }
+    .hero-badge { font-size: 0.75rem; padding: 6px 14px; }
+    .hero-title { font-size: 2rem; }
+    .hero-subtitle { font-size: 0.95rem; }
+    .hero-keywords .keyword { font-size: 0.6rem; }
+    .scroll-indicator { bottom: 20px; }
+}

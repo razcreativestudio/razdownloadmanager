@@ -1,4 +1,4 @@
-# Torrents and your security
+﻿# Torrents and your security
 
 [← Back to docs index](README.md)
 
@@ -8,7 +8,7 @@ A torrent comes from other people's computers, not from one website. That change
 
 - **Your IP address.** Everyone sharing the same torrent sees it, as do its trackers and the DHT (the network peers use to find each other). That's how BitTorrent works, and no setting in MDM changes it. To hide your address, use a VPN on your whole computer.
 - **What you download, on your local network.** MDM tells other computers on your network which torrents it has, so they can share faster. On public Wi-Fi, turn off **Find peers on the local network**.
-- **That you use MDM.** Peers see the name "MisterDownloadManager" and its major version, not the exact build.
+- **That you use MDM.** Peers see the name "razdownloadmanager" and its major version, not the exact build.
 
 MDM's torrents don't use **encryption** (sometimes called "protocol encryption"). That kind of encryption only hides the traffic from simple filters. It never hides who you are, so MDM doesn't claim to offer it. Some peers that require it won't connect.
 
@@ -53,7 +53,7 @@ It works as a kill switch. When the adapter disconnects, running torrents stop w
 
 ## Reporting a problem
 
-Found a security issue? Please report it privately on GitHub (**Security → Report a vulnerability**, see [SECURITY.md](https://github.com/anefzaoui/misterdownloadmanager/blob/main/SECURITY.md)) rather than in a public issue.
+Found a security issue? Please report it privately on GitHub (**Security → Report a vulnerability**, see [SECURITY.md](https://github.com/anefzaoui/razdownloadmanager/blob/main/SECURITY.md)) rather than in a public issue.
 
 ## Next steps
 

@@ -1,10 +1,10 @@
----
+﻿---
 name: Speed limiter
 title: Download speed limiter
 headline: Fast downloads that leave room for everyone else.
 line: One cap for all of MDM, a limit per file, and full speed when you're away.
 lede: A download manager can fill your whole connection. The Speed Limiter caps MDM so that browsing, video calls and games stay smooth, and can give it full speed again while you're away from the computer.
-description: The speed limiter in Mister Download Manager: one cap for all downloads, a limit per file or per download, and full speed when you're away.
+description: The speed limiter in RAZ Download Manager: one cap for all downloads, a limit per file or per download, and full speed when you're away.
 group: organising
 order: 120
 since: 0.1.0

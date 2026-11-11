@@ -1,3 +1,9 @@
+// ==============================================================================
+// RAZ Download Manager — Browser Integration & Manifests
+// Terakhir Diperbarui: 2026-11-10 12:25 WIB
+// Deskripsi: Pemetaan path manifest native messaging untuk integrasi browser.
+// ==============================================================================
+
 //! The browsers the extension runs in, and where each reads native messaging host manifests:
 //! one table for the native host (which writes the manifests), and the app (which lists the
 //! browsers and checks the manifests are there), #41.
@@ -379,7 +385,7 @@ pub fn windows_can_run_extension(program: &str) -> bool {
 }
 
 /// The host manifest's file name, in every folder.
-pub const HOST_MANIFEST: &str = "com.misterdownloadmanager.host.json";
+pub const HOST_MANIFEST: &str = "com.razdownloadmanager.host.json";
 
 /// Linux and macOS (`mac`): the folders to write the host manifest into, each with the family
 /// whose manifest goes there, for this user (`home`, `config` = $XDG_CONFIG_HOME) or for

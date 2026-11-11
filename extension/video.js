@@ -1,4 +1,4 @@
-// Mister Download Manager's download button over videos (a content script, in every page and
+// RAZ Download Manager's download button over videos (a content script, in every page and
 // frame). Our own design: a small pill at the video's edge that appears while the pointer is
 // over the video (or it has the keyboard's focus) and fades when the pointer rests or leaves.
 // Clicking it opens the app's Download video window for this page (an embedded player's own
@@ -10,7 +10,7 @@
 (() => {
   // One button per page: a copy cut off from the extension (after an update) gives way to the
   // new one.
-  const prev = globalThis.__mdmVideoButton;
+  const prev = globalThis.__razdmVideoButton;
   if (prev && typeof prev === "object" && prev.alive()) return;
   if (prev && typeof prev.teardown === "function") prev.teardown();
   const ext = globalThis.browser ?? globalThis.chrome;
@@ -34,8 +34,8 @@
     video_more: "More options",
     video_hide_here: "Hide on this video",
     video_settings: "Button settings...",
-    video_sent: "Sent to Mister Download Manager",
-    video_failed: "Mister Download Manager isn't installed or didn't start",
+    video_sent: "Sent to RAZ Download Manager",
+    video_failed: "RAZ Download Manager isn't installed or didn't start",
     video_off: "The download button is off on this site",
     video_drm: "Protected video: it can't be saved",
     video_unnamed: "Can't tell which video this is: open its own page and try there",
@@ -154,7 +154,7 @@
       focusedPlayer.contains(video) && focusedPlayer.matches(":focus-visible"));
 
   // ---- the button: a closed shadow tree the page's styles and scripts can't reach ----------
-  const root = document.createElement("mdm-video-button");
+  const root = document.createElement("razdm-video-button");
   // Each with !important: a page's own rules can't hide or move it.
   for (const [k, v] of Object.entries({
     all: "initial", position: "fixed", "z-index": "2147483647", left: "0", top: "0", display: "none",
@@ -679,7 +679,7 @@ button:focus-visible { outline: 2px solid #2a78d6; outline-offset: -2px; }
     allowed = false;
     video = null;
   }
-  globalThis.__mdmVideoButton = { alive: () => Boolean(ext.runtime?.id), teardown };
+  globalThis.__razdmVideoButton = { alive: () => Boolean(ext.runtime?.id), teardown };
   addEventListener("pointermove", onMove, { capture: true, passive: true });
   addEventListener("pointerdown", (e) => {
     if (menuOpen && !e.composedPath().includes(root)) closeMenu();

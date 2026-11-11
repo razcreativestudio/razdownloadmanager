@@ -1,7 +1,7 @@
-#!/usr/bin/env bash
+﻿#!/usr/bin/env bash
 # Builds the macOS release into target/dist/ (experimental: built by CI, not yet tested by us):
-#   MisterDownloadManager-<version>-macos-arm64-experimental.dmg   Apple Silicon
-#   MisterDownloadManager-<version>-macos-x86_64-experimental.dmg  Intel
+#   RAZDownloadManager-<version>-macos-arm64-experimental.dmg   Apple Silicon
+#   RAZDownloadManager-<version>-macos-x86_64-experimental.dmg  Intel
 # One app per processor, each half the size of a universal one (#25), ad-hoc signed: without an
 # Apple Developer ID, macOS asks before the first start (right-click the app -> Open).
 # The app carries the Safari extension (tools/safari). Safari loads an ad-hoc signed one only with
@@ -16,7 +16,7 @@ root="$(cd "$(dirname "$0")/../.." && pwd)"
 dist="$root/target/dist"
 version="$(sed -n 's/^version *= *"\([^"]*\)".*/\1/p' "$root/Cargo.toml" | head -1)"
 [ -n "$version" ] || { echo "no version in Cargo.toml" >&2; exit 1; }
-programs=(misterdownloadmanager misterdownloadmanager-nmhost misterdownloadmanager-cli misterdownloadmanager-mcp)
+programs=(RAZDownloadManager RAZDownloadManager-nmhost RAZDownloadManager-cli RAZDownloadManager-mcp)
 # Rust's target and the processor's name in the release files (as macOS calls it), with ':'.
 targets=(aarch64-apple-darwin:arm64 x86_64-apple-darwin:x86_64)
 
@@ -44,9 +44,9 @@ mkdir -p "$stage"
 set_dir="$stage/AppIcon.iconset"
 mkdir -p "$set_dir"
 for s in 16 32 128 256 512; do
-  sips -z "$s" "$s" "$root/art/Mister Download Manager.png" --out "$set_dir/icon_${s}x${s}.png" >/dev/null
+  sips -z "$s" "$s" "$root/art/RAZ Download Manager.png" --out "$set_dir/icon_${s}x${s}.png" >/dev/null
   d=$((s * 2))
-  sips -z "$d" "$d" "$root/art/Mister Download Manager.png" --out "$set_dir/icon_${s}x${s}@2x.png" >/dev/null
+  sips -z "$d" "$d" "$root/art/RAZ Download Manager.png" --out "$set_dir/icon_${s}x${s}@2x.png" >/dev/null
 done
 iconutil -c icns "$set_dir" -o "$stage/AppIcon.icns"
 
@@ -54,8 +54,8 @@ dmgs=()
 for pair in "${targets[@]}"; do
   t="${pair%%:*}"
   arch="${pair##*:}"
-  name="MisterDownloadManager-$version-macos-$arch-experimental"
-  app="$stage/$arch/dmg/Mister Download Manager.app"
+  name="RAZDownloadManager-$version-macos-$arch-experimental"
+  app="$stage/$arch/dmg/RAZ Download Manager.app"
   mkdir -p "$app/Contents/MacOS" "$app/Contents/Resources"
 
   # Crash reports: the release's symbols for this processor (the -symbols zip, one per .dmg) from
@@ -81,13 +81,13 @@ for pair in "${targets[@]}"; do
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-  <key>CFBundleName</key><string>Mister Download Manager</string>
-  <key>CFBundleDisplayName</key><string>Mister Download Manager</string>
-  <key>CFBundleIdentifier</key><string>io.github.anefzaoui.misterdownloadmanager</string>
+  <key>CFBundleName</key><string>RAZ Download Manager</string>
+  <key>CFBundleDisplayName</key><string>RAZ Download Manager</string>
+  <key>CFBundleIdentifier</key><string>io.github.anefzaoui.RAZDownloadManager</string>
   <key>CFBundleVersion</key><string>$version</string>
   <key>CFBundleShortVersionString</key><string>$version</string>
   <key>CFBundlePackageType</key><string>APPL</string>
-  <key>CFBundleExecutable</key><string>misterdownloadmanager</string>
+  <key>CFBundleExecutable</key><string>RAZDownloadManager</string>
   <key>CFBundleIconFile</key><string>AppIcon</string>
   <key>LSMinimumSystemVersion</key><string>11.0</string>
   <key>NSHighResolutionCapable</key><true/>
@@ -96,13 +96,13 @@ for pair in "${targets[@]}"; do
 EOF
   # The Safari extension (it carries its own copy of the helper, signed for its sandbox).
   "$root/tools/safari/build-appex.sh" "$app" "$arch-apple-macos14.0" "$root/target/extension/safari" \
-    "$app/Contents/MacOS/misterdownloadmanager-nmhost" "$version" "$sign"
+    "$app/Contents/MacOS/RAZDownloadManager-nmhost" "$version" "$sign"
   # The helper programs, then the app, which signs its own program (not --deep: that would sign
   # the extension again, without the entitlements it was given). Signing the app's own program
   # alone asks for the others to be signed already, which Intel builds made on an Apple Silicon
   # Mac are not (the linker signs only its own processor's).
   for p in "${programs[@]}"; do
-    [ "$p" = misterdownloadmanager ] || codesign --force ${sign_opts[@]+"${sign_opts[@]}"} --sign "$sign" "$app/Contents/MacOS/$p"
+    [ "$p" = RAZDownloadManager ] || codesign --force ${sign_opts[@]+"${sign_opts[@]}"} --sign "$sign" "$app/Contents/MacOS/$p"
   done
   codesign --force ${sign_opts[@]+"${sign_opts[@]}"} --sign "$sign" "$app"
   codesign --verify --strict --deep "$app"
@@ -118,7 +118,7 @@ EOF
   # 10.15 and later; the app needs 11) packs it tighter than zlib (UDZO).
   ln -s /Applications "$stage/$arch/dmg/Applications"
   rm -f "$dist/$name.dmg"
-  hdiutil create -volname "Mister Download Manager" -srcfolder "$stage/$arch/dmg" -ov -format ULMO \
+  hdiutil create -volname "RAZ Download Manager" -srcfolder "$stage/$arch/dmg" -ov -format ULMO \
     "$dist/$name.dmg"
   if [ -n "${MDM_NOTARY_PROFILE:-}" ]; then
     codesign --force --sign "$sign" --timestamp "$dist/$name.dmg"

@@ -1,3 +1,9 @@
+﻿// ==============================================================================
+// RAZ Download Manager — Browser Extension Metadata
+// Terakhir Diperbarui: 2026-11-10 12:25 WIB
+// Deskripsi: Metadata identitas ekstensi browser untuk Chromium dan Firefox.
+// ==============================================================================
+
 //! The browser extension's identity and whether a browser has it, shared by the native messaging
 //! host (which serves it and notes each browser that starts it) and the app (which offers to
 //! install it until one has).
@@ -13,9 +19,9 @@ pub const STORE_ID: &str = "ejoleppdfgjdndddcjoehopknmlglojp";
 pub const OTHER_STORE_IDS: [&str; 2] = ["EDGE_ADDONS_ID_PENDING", "OPERA_ADDONS_ID_PENDING"];
 /// The Firefox add-on's page on addons.mozilla.org (listed: Firefox installs and updates it from
 /// there).
-pub const FIREFOX_PAGE: &str = "https://addons.mozilla.org/firefox/addon/mister-download-manager/";
+pub const FIREFOX_PAGE: &str = "https://addons.mozilla.org/firefox/addon/raz-download-manager/";
 /// The Firefox add-on's ID (extension/manifest.firefox.json).
-pub const FIREFOX_ID: &str = "integration@misterdownloadmanager.com";
+pub const FIREFOX_ID: &str = "integration@razdownloadmanager.com";
 /// Chrome's update service: an external-install entry naming it makes Chrome offer the store's
 /// extension at its next start (developer.chrome.com, "Alternative extension distribution
 /// options").
@@ -51,7 +57,7 @@ pub fn store_page() -> Option<String> {
 /// the interface language (the app's help::page_url).
 pub const GUIDE_DOC: &str = "guide-catch-browser-downloads.md";
 
-/// The help page for a browser that doesn't reach Mister Download Manager, at the section for
+/// The help page for a browser that doesn't reach RAZ Download Manager, at the section for
 /// `why` (the native host's reasons, and the app's own checks): its file in docs/ and the
 /// section, as GUIDE_DOC.
 pub fn help_doc(why: &str) -> String {

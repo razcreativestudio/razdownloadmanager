@@ -1,10 +1,10 @@
----
+﻿---
 name: Image galleries
 title: Download image galleries with gallery-dl
 headline: A whole gallery at once. Only new pictures next time.
 line: Paste a gallery's address and MDM saves all its pictures into a folder of their own.
 lede: MDM downloads the pictures of a gallery, a Flickr album, a DeviantArt gallery, a Wikimedia Commons category and many more, with gallery-dl, a free program that reads several hundred sites.
-description: Download whole image galleries from Flickr, DeviantArt, Imgur, Wikimedia Commons and more with Mister Download Manager and gallery-dl.
+description: Download whole image galleries from Flickr, DeviantArt, Imgur, Wikimedia Commons and more with RAZ Download Manager and gallery-dl.
 group: downloading
 order: 40
 since: 0.5

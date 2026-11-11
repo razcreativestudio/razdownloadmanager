@@ -1,6 +1,6 @@
-# Mister Download Manager — documentation
+﻿# RAZ Download Manager — documentation
 
-Mister Download Manager (MDM) is a free download manager for Windows and Linux (and, still experimental, macOS). It is laid out the way Internet Download Manager users expect: a toolbar, categories on the left, one list of downloads and a browser extension that hands downloads to it.
+RAZ Download Manager (MDM) is a free download manager for Windows and Linux (and, still experimental, macOS). It is laid out the way Internet Download Manager users expect: a toolbar, categories on the left, one list of downloads and a browser extension that hands downloads to it.
 
 These pages explain each part of the program. The tutorials walk through the things people do most, one task each.
 
@@ -43,7 +43,7 @@ These pages explain each part of the program. The tutorials walk through the thi
 - **[Languages](languages.md)** — the 86 interface languages, numbers and dates, right-to-left layouts, and how to help translate.
 - **[Portable mode](portable.md)** — run MDM from a folder or a USB stick without installing it.
 - **[Keyboard shortcuts](keyboard-shortcuts.md)** — every key the main window answers, and screen readers.
-- **[Command line and automation](command-line.md)** — IDM's command-line switches, the `misterdownloadmanager-cli` tool, and the automation API other programs can use.
+- **[Command line and automation](command-line.md)** — IDM's command-line switches, the `razdownloadmanager-cli` tool, and the automation API other programs can use.
 - **[AI assistants (MCP)](ai-assistants.md)** — let Claude, Cursor, VS Code or another MCP assistant list, add, pause and remove your downloads.
 
 ## Tutorials
@@ -62,8 +62,8 @@ These pages explain each part of the program. The tutorials walk through the thi
 - **[Crash reports](crash-reports.md)** — what the crash report window shows when MDM closes unexpectedly or stops responding, what a report contains, and how to send it.
 - **[Troubleshooting](troubleshooting.md)** — what to check when a download fails, the browser doesn't hand over a download, or a schedule doesn't start.
 - **[The browser and MDM aren't connected](browser-help.md)** — what the extension's red **!** means, reason by reason, and how to fix each.
-- **[Releases](https://github.com/anefzaoui/misterdownloadmanager/releases)** — download the latest version.
-- **[Report a problem](https://github.com/anefzaoui/misterdownloadmanager/issues/new/choose)** — or use **Help → Report a problem** in MDM, which fills in your version, system and how MDM was installed for you.
+- **[Releases](https://github.com/anefzaoui/razdownloadmanager/releases)** — download the latest version.
+- **[Report a problem](https://github.com/anefzaoui/razdownloadmanager/issues/new/choose)** — or use **Help → Report a problem** in MDM, which fills in your version, system and how MDM was installed for you.
 
 ---
 

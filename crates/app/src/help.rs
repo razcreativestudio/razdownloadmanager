@@ -1,3 +1,9 @@
+// ==============================================================================
+// RAZ Download Manager — Help & Documentation Menu
+// Terakhir Diperbarui: 2026-11-10 12:30 WIB
+// Deskripsi: Menu bantuan, cek pembaruan, dialog tentang aplikasi (About).
+// ==============================================================================
+
 //! The Help menu (D-020): the user guide and the home page on the website (docs/ made into
 //! pages, in the interface language), problem reports on GitHub (pre-filled), update checks
 //! against GitHub Releases (on demand, and at every start and once a day while running), About,
@@ -12,11 +18,11 @@ use crate::dialogs::{Outcome, window};
 use crate::winui::{self, ButtonKind, r};
 
 /// The repository: problem reports, releases, source, licences.
-pub const REPO: &str = "https://github.com/anefzaoui/misterdownloadmanager";
+pub const REPO: &str = "https://github.com/razcreativestudio/razdownloadmanager";
 /// The creator's GitHub Sponsors page: Help → Support MDM, About's last line. The website, the
 /// extension's popup and the repository's Sponsor button (.github/FUNDING.yml) point there too.
-pub const SPONSORS: &str = "https://github.com/sponsors/anefzaoui";
-const LATEST: &str = "https://api.github.com/repos/anefzaoui/misterdownloadmanager/releases/latest";
+pub const SPONSORS: &str = "https://github.com/razcreativestudio";
+const LATEST: &str = "https://api.github.com/repos/razcreativestudio/razdownloadmanager/releases/latest";
 pub const VERSION: &str = env!("CARGO_PKG_VERSION");
 pub const COMMIT: &str = env!("MDM_COMMIT");
 /// While MDM runs, the automatic check comes again this often (it also checks at every start).
@@ -26,7 +32,7 @@ pub const CHECK_AFTER_START: std::time::Duration = std::time::Duration::from_sec
 
 /// The official website: the home page and the user guide, docs/*.md made into pages by
 /// tools/website/build.py. GitHub (REPO) keeps what is GitHub's: issues, releases, the source.
-pub const SITE: &str = "https://misterdownloadmanager.com";
+pub const SITE: &str = "https://dm.it-raz.com";
 
 /// The website's languages besides English, its folders (`/de/help/`): tools/website/sitei18n.py's
 /// LANGS, which a test keeps this list equal to. English is at the root.
@@ -371,7 +377,7 @@ impl Updates {
                     Some(Ok(Found::Latest)) => {
                         let line = crate::i18n::fmt(
                             crate::i18n::t(
-                                "You have the latest version of Mister Download Manager ({version}).",
+                                "You have the latest version of RAZ Download Manager ({version}).",
                             ),
                             &[("version", VERSION)],
                         );
@@ -391,7 +397,7 @@ impl Updates {
                     Some(Ok(Found::Newer(rel))) => {
                         let line = crate::i18n::fmt(
                             crate::i18n::t(
-                                "Mister Download Manager {version} is available (released {date}).",
+                                "RAZ Download Manager {version} is available (released {date}).",
                             ),
                             &[("version", &rel.version), ("date", &rel.date)],
                         );
@@ -713,7 +719,7 @@ impl About {
         window(
             ctx,
             "about",
-            "About Mister Download Manager",
+            "About RAZ Download Manager",
             [420.0, 236.0 + extra],
             false,
             winui::BG(),
@@ -721,15 +727,15 @@ impl About {
                 let p = ui.painter().clone();
                 let ink = winui::TEXT();
                 egui::Image::from_bytes(
-                    "bytes://mdm-48.png",
-                    include_bytes!("../assets/icons/app/mdm-48.png"),
+                    "bytes://razdm-48.png",
+                    include_bytes!("../assets/icons/app/razdm-48.png"),
                 )
                 .paint_at(ui, winui::r(o, 16.0, 16.0, 48.0, 48.0));
                 winui::text(
                     &p,
                     o.x + 80.0,
                     o.y + 28.0,
-                    crate::i18n::t("Mister Download Manager"),
+                    crate::i18n::t("RAZ Download Manager"),
                     ink,
                 );
                 let version = crate::i18n::fmt(
@@ -948,7 +954,7 @@ impl TellFriend {
     fn message() -> String {
         crate::i18n::fmt(
             crate::i18n::t(
-                "I download with Mister Download Manager: fast, free, and it looks like the download manager you already know. {link}",
+                "I download with RAZ Download Manager: fast, free, and it looks like the download manager you already know. {link}",
             ),
             &[("link", SITE)],
         )
@@ -1067,7 +1073,7 @@ impl TellFriend {
                             .collect::<String>()
                             .replace('+', "%20")
                     };
-                    let subject = crate::i18n::t("Mister Download Manager");
+                    let subject = crate::i18n::t("RAZ Download Manager");
                     let opened = open::that_detached(format!(
                         "mailto:?subject={}&body={}",
                         enc(subject),
@@ -1205,22 +1211,22 @@ mod tests {
         let at = |doc, lang| page_url(doc, lang);
         assert_eq!(
             at("README.md", "en"),
-            "https://misterdownloadmanager.com/help/"
+            "https://dm.it-raz.com/help/"
         );
         assert_eq!(
             at("README.md#tutorials", "en"),
-            "https://misterdownloadmanager.com/help/#tutorials"
+            "https://dm.it-raz.com/help/#tutorials"
         );
         assert_eq!(
             at("video.md", "de"),
-            "https://misterdownloadmanager.com/de/help/video.html"
+            "https://dm.it-raz.com/de/help/video.html"
         );
         assert_eq!(
             at("queues-and-scheduler.md#the-scheduler-window", "ar"),
-            "https://misterdownloadmanager.com/ar/help/queues-and-scheduler.html#the-scheduler-window"
+            "https://dm.it-raz.com/ar/help/queues-and-scheduler.html#the-scheduler-window"
         );
-        assert_eq!(at("", "fr"), "https://misterdownloadmanager.com/fr/");
-        assert_eq!(at("", "en"), "https://misterdownloadmanager.com/");
+        assert_eq!(at("", "fr"), "https://dm.it-raz.com/fr/");
+        assert_eq!(at("", "en"), "https://dm.it-raz.com/");
         // The site's folders: its own codes, a region read as its language, else English.
         for (lang, folder) in [
             ("pt-br", "/pt-br"),
@@ -1236,7 +1242,7 @@ mod tests {
         ] {
             assert_eq!(
                 at("options.md", lang),
-                format!("https://misterdownloadmanager.com{folder}/help/options.html"),
+                format!("https://dm.it-raz.com{folder}/help/options.html"),
                 "{lang}"
             );
         }
@@ -1274,7 +1280,7 @@ mod tests {
         }
         let calls = regex::Regex::new(r#"(?:open_page|HelpPage)\(\s*"([^"]+)""#).unwrap();
         let site =
-            regex::Regex::new(r"https://misterdownloadmanager\.com/help/([\w.-]*)(#[\w-]+)?")
+            regex::Regex::new(r"https://razdownloadmanager\.com/help/([\w.-]*)(#[\w-]+)?")
                 .unwrap();
         let mut files = vec![];
         let mut dirs = vec![root().join("crates"), root().join("extension")];

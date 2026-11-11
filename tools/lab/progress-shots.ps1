@@ -1,6 +1,6 @@
-# The progress window of a video and of a torrent, for the docs (progress-video.png,
+﻿# The progress window of a video and of a torrent, for the docs (progress-video.png,
 # progress-torrent.png: docs/images/*.webp through `tools/shots/make.py docs`), at 1x and off the screens, as docs-shots.ps1 takes the others. Each
-# runs in a Mister Download Manager instance of its own (MDM_DATA_DIR, MDM_OFFSCREEN) whose list
+# runs in a RAZ Download Manager instance of its own (MDM_DATA_DIR, MDM_OFFSCREEN) whose list
 # holds that one download; the automation API starts it and /show progress opens its window,
 # so nothing is clicked or typed. The video comes from the labserver through yt-dlp (copied
 # from your own MDM's tools folder: Tasks → Download video from a page installs it); the
@@ -39,8 +39,8 @@ param(
 $ErrorActionPreference = "Stop"
 $root = Split-Path -Parent (Split-Path -Parent $PSScriptRoot)
 $bin = (Resolve-Path (Join-Path $root $Bin)).Path
-$exe = Join-Path $bin "misterdownloadmanager.exe"
-$cli = Join-Path $bin "misterdownloadmanager-cli.exe"
+$exe = Join-Path $bin "RAZDownloadManager.exe"
+$cli = Join-Path $bin "RAZDownloadManager-cli.exe"
 $out = if ([IO.Path]::IsPathRooted($OutDir)) { $OutDir } else { Join-Path $root $OutDir }
 # Under the repository (ignored target/): the temp folder's path names the user.
 $work = if ($Work) { $Work } else { Join-Path $root "target\progress-shots" }
@@ -144,7 +144,7 @@ try {
   New-Item -ItemType Directory -Force $work, $out | Out-Null
 
   if (Want "video") {
-    $tools = Join-Path ([Environment]::GetFolderPath("ApplicationData")) "misterdownloadmanager\tools"
+    $tools = Join-Path ([Environment]::GetFolderPath("ApplicationData")) "RAZDownloadManager\tools"
     if ($YtDlp) {
       # A tools folder of the run's own, holding the given yt-dlp as MDM installs it.
       $tools = Join-Path $work "tools"

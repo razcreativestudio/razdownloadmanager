@@ -1,3 +1,9 @@
+// ==============================================================================
+// RAZ Download Manager — Crash Report UI
+// Terakhir Diperbarui: 2026-11-10 12:30 WIB
+// Deskripsi: Dialog laporan crash dan pemantau proses untuk RAZ Download Manager.
+// ==============================================================================
+
 //! The crash monitor's process (`--crash-monitor`, started by crash.rs) and its report window.
 //!
 //! The monitor waits without a window. When MDM crashes, panics or freezes, mdm-crash writes the
@@ -93,7 +99,7 @@ pub fn monitor_main(m: MonitorArgs) -> eframe::Result {
     let zoom = crate::scale::startup(settings.interface_size);
     let builder = crate::quiet(
         ViewportBuilder::default()
-            .with_title(crate::i18n::t("Mister Download Manager crash report"))
+            .with_title(crate::i18n::t("RAZ Download Manager crash report"))
             .with_inner_size([CLIENT[0] * zoom, CLIENT[1] * zoom])
             .with_resizable(false)
             .with_maximize_button(false)
@@ -120,7 +126,7 @@ pub fn monitor_main(m: MonitorArgs) -> eframe::Result {
     );
     plan.watched = false;
     let data = m.data.clone();
-    crate::renderer::run("misterdownloadmanager-crash", &plan, options, move |cc| {
+    crate::renderer::run("razdownloadmanager-crash", &plan, options, move |cc| {
         crate::scale::start(&cc.egui_ctx, zoom);
         crate::theme::select(&crate::theme::startup_id(&settings.theme), &cc.egui_ctx);
         crate::theme::apply(&cc.egui_ctx);
@@ -328,7 +334,7 @@ impl eframe::App for ReportWindow {
         // Re-asserted as the main window does (winit can set it back from Windows' own mode).
         #[cfg(windows)]
         crate::win32::caption_dark(
-            crate::i18n::t("Mister Download Manager crash report"),
+            crate::i18n::t("RAZ Download Manager crash report"),
             crate::theme::dark_surface(),
         );
         while let Ok(e) = self.events.try_recv() {
@@ -355,14 +361,14 @@ impl ReportWindow {
         match self.job.kind {
             // i18n: crash report window heading: the window of MDM stopped answering, then answered again
             Kind::Freeze if self.recovered => {
-                crate::i18n::t("Mister Download Manager stopped responding for a while")
+                crate::i18n::t("RAZ Download Manager stopped responding for a while")
             }
             // i18n: crash report window heading: MDM's window doesn't answer (frozen)
-            Kind::Freeze => crate::i18n::t("Mister Download Manager stopped responding"),
+            Kind::Freeze => crate::i18n::t("RAZ Download Manager stopped responding"),
             // i18n: crash report window heading: an internal error, MDM still running
-            Kind::Panic if alive => crate::i18n::t("Mister Download Manager hit an internal error"),
+            Kind::Panic if alive => crate::i18n::t("RAZ Download Manager hit an internal error"),
             // i18n: crash report window heading: MDM crashed and is gone
-            _ => crate::i18n::t("Mister Download Manager closed unexpectedly"),
+            _ => crate::i18n::t("RAZ Download Manager closed unexpectedly"),
         }
     }
 

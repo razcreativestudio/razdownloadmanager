@@ -1,6 +1,6 @@
----
+﻿---
 title: Security
-description: How to report a security problem in Mister Download Manager privately, how releases are built and verified, and what the project does to keep you safe.
+description: How to report a security problem in RAZ Download Manager privately, how releases are built and verified, and what the project does to keep you safe.
 lede: Found a security problem? Please tell us privately first, so it can be fixed before it's public.
 priority: 0.3
 ---

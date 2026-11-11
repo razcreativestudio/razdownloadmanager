@@ -9,7 +9,7 @@ use std::process::{Command, Stdio};
 use std::sync::mpsc;
 use std::time::Duration;
 
-const HOST: &str = env!("CARGO_BIN_EXE_misterdownloadmanager-nmhost");
+const HOST: &str = env!("CARGO_BIN_EXE_razdownloadmanager-nmhost");
 const CALLER: &str = "chrome-extension://oogbclbbninliongijffeeggalppliok/";
 const UA: &str = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0.0.0 Safari/537.36";
 
@@ -298,7 +298,7 @@ fn zen_and_helium_alone_are_registered() {
     };
     host("--register");
     let manifest = |dir: &std::path::Path| -> serde_json::Value {
-        let file = dir.join("com.misterdownloadmanager.host.json");
+        let file = dir.join("com.razdownloadmanager.host.json");
         serde_json::from_str(&std::fs::read_to_string(&file).unwrap()).unwrap()
     };
     assert!(manifest(&mozilla_hosts)["allowed_extensions"].is_array());
@@ -313,7 +313,7 @@ fn zen_and_helium_alone_are_registered() {
     }
     host("--unregister");
     for dir in [&mozilla_hosts, &helium_hosts] {
-        assert!(!dir.join("com.misterdownloadmanager.host.json").exists());
+        assert!(!dir.join("com.razdownloadmanager.host.json").exists());
     }
     let _ = std::fs::remove_dir_all(&home);
 }
@@ -347,7 +347,7 @@ fn brave_origin_alone_is_registered() {
         .output()
         .unwrap();
     assert!(out.status.success(), "{out:?}");
-    let file = hosts.join("com.misterdownloadmanager.host.json");
+    let file = hosts.join("com.razdownloadmanager.host.json");
     let manifest: serde_json::Value =
         serde_json::from_str(&std::fs::read_to_string(&file).unwrap()).unwrap();
     assert_eq!(
@@ -377,7 +377,7 @@ fn a_host_inside_an_appimage_mount_is_not_registered() {
     assert!(String::from_utf8_lossy(&out.stderr).contains("AppImage"));
     assert!(
         !home
-            .join(".config/google-chrome/NativeMessagingHosts/com.misterdownloadmanager.host.json")
+            .join(".config/google-chrome/NativeMessagingHosts/com.razdownloadmanager.host.json")
             .exists()
     );
     let _ = std::fs::remove_dir_all(&home);

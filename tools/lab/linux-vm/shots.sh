@@ -1,4 +1,4 @@
-#!/bin/bash
+﻿#!/bin/bash
 # One MDM window ready for a screenshot: MDM restarted with the language and mode set in its
 # settings, the window opened with `/show <name>` and raised; prints its frame on the screen as
 # "X Y W H" for the host to crop VirtualBox's screenshot to (vm.ps1 shot; capturing an OpenGL
@@ -6,8 +6,8 @@
 #   shots.sh <label> <main|fileinfo|show name> <lang> <light|dark>   e.g. shots.sh base extension de dark
 . ~/lab/env.sh
 label=$1; show=$2; lang=$3; mode=$4
-app=$HOME/lab/bin/$label/misterdownloadmanager
-data=$HOME/.local/share/misterdownloadmanager
+app=$HOME/lab/bin/$label/RAZDownloadManager
+data=$HOME/.local/share/RAZDownloadManager
 pkill -x misterdownloadm; sleep 2
 # MDM_STATE: a saved list and settings put back first, so builds compared see the same list.
 [ -n "${MDM_STATE:-}" ] && cp "$MDM_STATE" "$data/downloads.json"

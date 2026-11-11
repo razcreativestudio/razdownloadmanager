@@ -1,10 +1,10 @@
----
+﻿---
 name: Archives extracted
 title: Extract ZIP, 7z and RAR archives automatically
 headline: Downloaded, then unpacked. No extra step.
 line: ZIP, TAR and more extracted as they arrive, 7z and RAR with 7-Zip, split archives once complete.
 lede: MDM can unpack an archive as soon as its download completes, or when you ask. A split archive waits for its last part, and nothing already on your disk is overwritten.
-description: Mister Download Manager extracts ZIP, TAR, GZ and XZ archives itself, and 7z and RAR with 7-Zip, as soon as they finish downloading.
+description: RAZ Download Manager extracts ZIP, TAR, GZ and XZ archives itself, and 7z and RAR with 7-Zip, as soon as they finish downloading.
 group: organising
 order: 140
 since: 0.5

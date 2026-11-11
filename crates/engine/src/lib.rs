@@ -1,4 +1,4 @@
-//! Mister Download Manager download engine. See notes/ENGINE.md.
+﻿//! RAZ Download Manager download engine. See notes/ENGINE.md.
 
 pub mod disk;
 pub mod dns;

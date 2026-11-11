@@ -1,10 +1,10 @@
----
+﻿---
 name: Network adapter
 title: Bind downloads to a VPN adapter, with a kill switch
 headline: Through your VPN, or not at all.
 line: Every connection MDM opens goes out through the adapter you pick, and stops when it disconnects.
 lede: Pick a network adapter, usually your VPN's, and every connection MDM opens goes through it. If the VPN drops, nothing slips out through your normal connection: downloads stop, and start again when it's back.
-description: Hold Mister Download Manager's downloads, torrents and videos to one network adapter, usually a VPN's, with a kill switch when it disconnects.
+description: Hold RAZ Download Manager's downloads, torrents and videos to one network adapter, usually a VPN's, with a kill switch when it disconnects.
 group: network
 order: 210
 since: 0.5

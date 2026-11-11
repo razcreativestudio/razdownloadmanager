@@ -1,4 +1,4 @@
-﻿; Mister Download Manager's installer in Latvian: tools/installer/languages.py
+﻿; RAZ Download Manager's installer in Latvian: tools/installer/languages.py
 ; (machine-translated; a native speaker may correct any line).
 
 [LangOptions]
@@ -291,8 +291,8 @@ ShutdownBlockReasonUninstallingApp=Atinstalē %1.
 
 [CustomMessages]
 TaskBrowser=Iestatīt pārlūkprogrammas &integrāciju (Chrome, Edge, Brave, Firefox)
-TaskTorrents=Atvērt .&torrent failus un magnētsaites ar Mister Download Manager
-TaskStartup=Sākt Mister Download Manager, kad startējas &Windows
+TaskTorrents=Atvērt .&torrent failus un magnētsaites ar RAZ Download Manager
+TaskStartup=Sākt RAZ Download Manager, kad startējas &Windows
 TaskGroupOther=Cits:
-Launch=Startēt Mister Download Manager
+Launch=Startēt RAZ Download Manager
 KeepData=Vai dzēst arī lejupielāžu sarakstu un iestatījumus?%n%nJūsu lejupielādētie faili netiek skarti.

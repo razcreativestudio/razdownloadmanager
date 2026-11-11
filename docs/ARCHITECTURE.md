@@ -1,15 +1,15 @@
-# Architecture
+﻿# Architecture
 
-How Mister Download Manager's pieces fit together.
+How RAZ Download Manager's pieces fit together.
 
 ## Crates
 
 | Path | Crate | Role |
 |---|---|---|
 | `crates/engine` | `mdm-engine` | Downloads one file over HTTP(S) or FTP(S): probe, segment planner, connection workers, resume state, per-host limits, speed limiter, checksums, proxy scripts |
-| `crates/app` | `mdm-app` | The desktop app (`misterdownloadmanager.exe`, egui): list, categories, queues, scheduler, dialogs, tray, settings |
-| `crates/cli` | `mdm-cli` | Headless downloads with progress (`get`, `resume`), videos, torrents and the automation API's commands: a library the app's program runs (`misterdownloadmanager --cli …`), and `misterdownloadmanager-cli`, a small launcher that starts it with the same arguments, terminal and exit code |
-| `crates/mcp` | `mdm-mcp` | The MCP server (`misterdownloadmanager-mcp`): AI assistants list, add and control the running app's downloads through the automation API |
+| `crates/app` | `mdm-app` | The desktop app (`razdownloadmanager.exe`, egui): list, categories, queues, scheduler, dialogs, tray, settings |
+| `crates/cli` | `mdm-cli` | Headless downloads with progress (`get`, `resume`), videos, torrents and the automation API's commands: a library the app's program runs (`razdownloadmanager --cli …`), and `razdownloadmanager-cli`, a small launcher that starts it with the same arguments, terminal and exit code |
+| `crates/mcp` | `mdm-mcp` | The MCP server (`razdownloadmanager-mcp`): AI assistants list, add and control the running app's downloads through the automation API |
 | `crates/remote` | `mdm-remote` | The remote control (#141): the HTTPS server a paired phone or computer on the local network uses (its page, pairing codes, device tokens, the self-signed certificate); every request becomes an automation API command the app answers |
 | `crates/nmhost` | `mdm-nmhost` | The browser's native messaging host: takes captured downloads from the extension and hands them to the app |
 | `crates/ipc` | `mdm-ipc` | The single-instance channel (a token-protected local socket), the data folder, and the capture rules shared by the app and the host |
@@ -22,7 +22,7 @@ How Mister Download Manager's pieces fit together.
 | `crates/labserver` | `mdm-labserver` | An HTTP Range server with a request log and fault injection, and an FTP/FTPS server with its own faults, for tests and benchmarks |
 | `extension/` | — | The Chromium (MV3) and Firefox extension |
 | `docs/` | — | The user guide and tutorials, this file, the benchmark data; the website makes the guide its help pages, which Help opens |
-| `website/` | — | misterdownloadmanager.com's own pages (home, download, features, themes, FAQ); `tools/website/build.py` adds the help from `docs/` and the news from the CHANGELOG, in 22 languages, and GitHub Pages publishes it |
+| `website/` | — | razdownloadmanager.com's own pages (home, download, features, themes, FAQ); `tools/website/build.py` adds the help from `docs/` and the news from the CHANGELOG, in 22 languages, and GitHub Pages publishes it |
 
 Dependencies point inward: `app`, `cli`, `mcp`, `nmhost` and `remote` use `engine` and `ipc`; the engine knows
 nothing of the UI. The app sees the engine only through its events (progress, segment table
@@ -124,8 +124,8 @@ scrolls.
 ### Data
 
 The download list and settings are saved atomically to the data folder (`downloads.json`):
-`%APPDATA%\misterdownloadmanager\` on Windows, `~/.local/share/misterdownloadmanager` on Linux,
-`~/Library/Application Support/misterdownloadmanager` on macOS, a `data` folder beside a portable
+`%APPDATA%\razdownloadmanager\` on Windows, `~/.local/share/razdownloadmanager` on Linux,
+`~/Library/Application Support/razdownloadmanager` on macOS, a `data` folder beside a portable
 copy, or `MDM_DATA_DIR` (`mdm_ipc::data_dir`). The browser host reads the same file for the
 capture rules, so a change in Options applies to the next captured download.
 

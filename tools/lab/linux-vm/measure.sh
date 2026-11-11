@@ -1,10 +1,10 @@
-#!/bin/bash
+﻿#!/bin/bash
 # Start-up timings of a build: measure.sh <program> <label> [runs]
 # fresh: an empty profile (the language picker opens, every script's font loads);
 # warm: the profile the fresh run left (language chosen: no picker... unless never chosen).
 . ~/lab/env.sh
 prog=$1; label=$2; runs=${3:-5}
-d=~/.local/share/misterdownloadmanager
+d=~/.local/share/RAZDownloadManager
 # The app and its crash monitor (a process name is cut to 15 characters).
 stop() { pkill -x misterdownloadm; sleep 2; }
 ms() { date -d "$1" +%s%3N; }

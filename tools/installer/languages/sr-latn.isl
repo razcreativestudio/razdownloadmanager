@@ -1,4 +1,4 @@
-﻿; Mister Download Manager's installer in Serbian (Latin): tools/installer/languages.py
+﻿; RAZ Download Manager's installer in Serbian (Latin): tools/installer/languages.py
 ; (machine-translated; a native speaker may correct any line).
 
 [LangOptions]
@@ -291,8 +291,8 @@ ShutdownBlockReasonUninstallingApp=Deinstaliranje programa %1.
 
 [CustomMessages]
 TaskBrowser=Podesite integraciju &pregledača (Chrome, Edge, Brave, Firefox)
-TaskTorrents=Otvorite .&torrent datoteke i magnet veze pomoću programa Mister Download Manager
-TaskStartup=Pokreni Mister Download Manager kada se pokrene &Windows
+TaskTorrents=Otvorite .&torrent datoteke i magnet veze pomoću programa RAZ Download Manager
+TaskStartup=Pokreni RAZ Download Manager kada se pokrene &Windows
 TaskGroupOther=Ostalo:
-Launch=Pokreni Mister Download Manager
+Launch=Pokreni RAZ Download Manager
 KeepData=Izbrisati i listu preuzimanja i podešavanja?%n%nPreuzete datoteke se ne diraju ni u jednom slučaju.

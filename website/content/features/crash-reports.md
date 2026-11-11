@@ -1,10 +1,10 @@
----
+﻿---
 name: Crash reports
 title: Crash and freeze reports you read before you send
 headline: When something breaks, you see why.
 line: A crash or freeze opens a report you read first, then send on GitHub yourself if you want.
 lede: If MDM closes unexpectedly or stops responding, a window opens with a report of what happened. You can read all of it, and send it to the developers on GitHub if you want to.
-description: Mister Download Manager's crash and freeze reports: readable, free of your addresses and file names, and sent only by you, through your browser and GitHub.
+description: RAZ Download Manager's crash and freeze reports: readable, free of your addresses and file names, and sent only by you, through your browser and GitHub.
 group: app
 order: 320
 since: 0.2.3
@@ -18,7 +18,7 @@ help: crash-reports.md
 
 A second copy of MDM watches the first. When MDM crashes, the report window says **Mister
 Download Manager closed unexpectedly**. When its window hasn't answered for 8 seconds, it says
-**Mister Download Manager stopped responding**, and **End and restart MDM** closes the frozen
+**RAZ Download Manager stopped responding**, and **End and restart MDM** closes the frozen
 copy and starts a fresh one. If MDM comes back by itself, the window says so.
 
 The report names what happened and where in MDM's code, so the problem can be found and fixed.

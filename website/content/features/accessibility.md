@@ -1,10 +1,10 @@
----
+﻿---
 name: Accessibility
 title: Accessible download manager: screen readers and full keyboard use
 headline: Every window, from the keyboard. Read aloud.
 line: Works with Narrator and NVDA, and everything can be done from the keyboard, menus and dialogs included.
 lede: MDM works with screen readers such as Narrator and NVDA, which hear what each control is and its state. Everything can be done from the keyboard, with the keys most Windows programs use.
-description: Mister Download Manager works with screen readers (Narrator, NVDA) and from the keyboard alone: menus, dialogs, the download list and the Categories tree.
+description: RAZ Download Manager works with screen readers (Narrator, NVDA) and from the keyboard alone: menus, dialogs, the download list and the Categories tree.
 group: app
 order: 350
 since: 0.2.2
@@ -21,7 +21,7 @@ its name and its state. The download list reads each download's name, status and
 know what is running and how far it has got without looking.
 
 The help names Windows' screen readers, Narrator and NVDA. If you use a screen reader on Linux
-or macOS, please [tell us how it goes](https://github.com/anefzaoui/misterdownloadmanager/issues/new/choose).
+or macOS, please [tell us how it goes](https://github.com/anefzaoui/razdownloadmanager/issues/new/choose).
 
 ## No mouse needed
 

@@ -1,6 +1,12 @@
-//! `misterdownloadmanager-cli`'s commands. The app's program carries them (#25: one download
-//! engine shipped, not two): `misterdownloadmanager-cli` (main.rs) is a small launcher that runs
-//! `misterdownloadmanager --cli <arguments>`, and the app's `main` hands those to [`main`].
+// ==============================================================================
+// RAZ Download Manager — CLI Implementation Library
+// Terakhir Diperbarui: 2026-11-10 12:45 WIB
+// Deskripsi: Implementasi perintah baris, download headless, otomasi API.
+// ==============================================================================
+
+//! `razdownloadmanager-cli`'s commands. The app's program carries them (#25: one download
+//! engine shipped, not two): `razdownloadmanager-cli` (main.rs) is a small launcher that runs
+//! `razdownloadmanager --cli <arguments>`, and the app's `main` hands those to [`main`].
 
 use std::ffi::OsString;
 use std::io::Write;
@@ -18,10 +24,10 @@ use serde_json::json;
 #[derive(Parser)]
 #[command(
     version,
-    about = "Mister Download Manager command line",
-    long_about = "Mister Download Manager command line: downloads, videos and torrents without the \
+    about = "RAZ Download Manager command line",
+    long_about = "RAZ Download Manager command line: downloads, videos and torrents without the \
                   window, and the running app's automation API. Guide: \
-                  https://misterdownloadmanager.com/help/command-line.html"
+                  https://dm.it-raz.com/help/command-line.html"
 )]
 struct Cli {
     /// Print JSON for programs: one object per line (`progress` events, then `done`, `paused`
@@ -221,9 +227,9 @@ enum Cmd {
         #[arg(value_parser = ["on", "off"])]
         state: String,
     },
-    /// Continue a paused or interrupted download from its `.mdm.json` state file.
+    /// Continue a paused or interrupted download from its `.razdm.json` state file.
     Resume {
-        /// The `<file>.mdm.json` next to the unfinished download.
+        /// The `<file>.razdm.json` next to the unfinished download.
         state: PathBuf,
         /// Maximum connections (1 to 128).
         #[arg(short, long, default_value_t = Options::default().max_connections,
@@ -311,7 +317,7 @@ impl std::error::Error for Reported {}
 /// `{"error"}` answer fails the command.
 fn ask(cmd: mdm_ipc::Command) -> anyhow::Result<()> {
     let answer = mdm_ipc::request(&cmd)
-        .map_err(|e| anyhow::anyhow!("Mister Download Manager isn't running ({e})"))?;
+        .map_err(|e| anyhow::anyhow!("RAZ Download Manager isn't running ({e})"))?;
     println!("{answer}");
     if serde_json::from_str::<mdm_ipc::api::ErrorAnswer>(&answer).is_ok() {
         return Err(Reported.into());
@@ -325,7 +331,7 @@ fn pair() -> anyhow::Result<()> {
         pair: true,
         ..Default::default()
     })
-    .map_err(|e| anyhow::anyhow!("Mister Download Manager isn't running ({e})"))?;
+    .map_err(|e| anyhow::anyhow!("RAZ Download Manager isn't running ({e})"))?;
     match mdm_ipc::api::parse::<mdm_ipc::api::PairAnswer>(&answer).map_err(anyhow::Error::msg)? {
         Ok(a) => {
             println!("{}", a.qr);
@@ -362,7 +368,7 @@ fn act(action: &str, ids: Vec<u64>) -> anyhow::Result<()> {
 pub const FLAG: &str = "--cli";
 
 /// The launcher's name, which the commands' help and messages show.
-pub const NAME: &str = "misterdownloadmanager-cli";
+pub const NAME: &str = "razdownloadmanager-cli";
 
 /// The app's program, started for the command line.
 pub struct Launch {

@@ -1,10 +1,10 @@
----
+﻿---
 name: Verify checksum
 title: Verify a download's checksum (MD5, SHA-256)
 headline: Make sure it's the file they published.
 line: Paste the checksum a site publishes, and MDM says plainly whether your file matches it.
 lede: Many sites publish a checksum next to a download. Paste it into MDM and it tells you in plain words whether the file you got is the one they meant.
-description: Check a download against its published MD5, SHA-1, SHA-256, SHA-512 or CRC32 checksum in Mister Download Manager, from the list or the command line.
+description: Check a download against its published MD5, SHA-1, SHA-256, SHA-512 or CRC32 checksum in RAZ Download Manager, from the list or the command line.
 group: organising
 order: 150
 since: 0.1.0
@@ -36,7 +36,7 @@ The command line's `get` takes `--checksum` and checks the finished file: the co
 own or named, as in `sha256:…`. One command downloads the file and checks it:
 
 ```
-misterdownloadmanager-cli get https://example.com/big.iso -o D:\Downloads --checksum sha256:9f86d0…
+razdownloadmanager-cli get https://example.com/big.iso -o D:\Downloads --checksum sha256:9f86d0…
 ```
 
 The [command line guide](command-line.md) lists everything `get` takes.

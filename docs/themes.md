@@ -1,4 +1,4 @@
-# Themes
+﻿# Themes
 
 [← Back to docs index](README.md)
 
@@ -16,7 +16,7 @@ The built-in themes are **Classic** (MDM's own look, the default), **Native** (y
 accent colour and contrast), **High contrast**, and the style themes **Metro**, **Adwaita**,
 **Breeze**, **Luna**, **Aero** and **Aqua**, each with its own control shapes and icons, and on
 Windows its own title bar. [Getting started](getting-started.md#themes) describes each one; the
-website's [Themes page](https://misterdownloadmanager.com/themes.html) shows them all, light and
+website's [Themes page](https://razdownloadmanager.com/themes.html) shows them all, light and
 dark.
 
 ## Where theme files go
@@ -26,9 +26,9 @@ opens it (and makes it the first time). It is in MDM's data folder:
 
 | System | Folder |
 |---|---|
-| Windows | `%APPDATA%\misterdownloadmanager\themes` |
-| Linux | `~/.local/share/misterdownloadmanager/themes` |
-| macOS | `~/Library/Application Support/misterdownloadmanager/themes` |
+| Windows | `%APPDATA%\razdownloadmanager\themes` |
+| Linux | `~/.local/share/razdownloadmanager/themes` |
+| macOS | `~/Library/Application Support/razdownloadmanager/themes` |
 | [Portable copy](portable.md) | `data\themes` beside the program |
 
 Within two seconds a new file shows in **View → Theme**, under the built-in themes, by the `name`
@@ -144,9 +144,9 @@ focus = "ring"
 - **`contrast = "high"`** — strengthens every edge and text colour on top of the rest.
 
 Every colour role, size and control style, with what it sets, is listed on the website's
-[Themes page](https://misterdownloadmanager.com/themes.html#make-your-own) (read from MDM's own
+[Themes page](https://razdownloadmanager.com/themes.html#make-your-own) (read from MDM's own
 code, so it never drifts). The built-in themes are written the same way:
-[read them on GitHub](https://github.com/anefzaoui/misterdownloadmanager/tree/main/crates/app/assets/themes).
+[read them on GitHub](https://github.com/anefzaoui/razdownloadmanager/tree/main/crates/app/assets/themes).
 
 A key MDM doesn't know, or a value it can't read, is skipped and written to MDM's log (the `logs`
 folder beside the themes folder), so a file made for a newer MDM still loads. A file that isn't
@@ -160,7 +160,7 @@ A theme in a folder of its own (`harbour/theme.toml`) can bring its icons in `ic
 more), each named for what it shows (`tb-add-url.svg`, `cat-music.png`…). SVG and PNG files keep
 their colours; `-symbolic.svg` and `-symbolic.png` ones, as GNOME and KDE name them, take the
 theme's text colour. An icon the set lacks is drawn as the classic look draws it. The full list of
-names is in [themeicons.rs](https://github.com/anefzaoui/misterdownloadmanager/blob/main/crates/app/src/themeicons.rs) (`NEEDS`).
+names is in [themeicons.rs](https://github.com/anefzaoui/razdownloadmanager/blob/main/crates/app/src/themeicons.rs) (`NEEDS`).
 
 ## Make one
 
@@ -169,14 +169,14 @@ names is in [themeicons.rs](https://github.com/anefzaoui/misterdownloadmanager/b
 3. Pick it in **View → Theme**, and look at both sides: **View → Always dark** on and off. Check
    that text is readable and the focus mark visible in both.
 
-The website's [Themes page](https://misterdownloadmanager.com/themes.html#ai-prompt) has a prompt
+The website's [Themes page](https://razdownloadmanager.com/themes.html#ai-prompt) has a prompt
 you can give an AI assistant, with the format, every key and the rules, to write a theme for you
 from a description.
 
 ## Share it
 
 Made something others would like? Open a
-[pull request](https://github.com/anefzaoui/misterdownloadmanager/pulls) that adds it to
+[pull request](https://github.com/anefzaoui/razdownloadmanager/pulls) that adds it to
 `crates/app/assets/themes`, with:
 
 - the `.toml` file, and its folder of icons if it has one;
@@ -186,7 +186,7 @@ Made something others would like? Open a
   program.
 
 Not sure yet? Show it in the
-[discussions](https://github.com/anefzaoui/misterdownloadmanager/discussions) first.
+[discussions](https://github.com/anefzaoui/razdownloadmanager/discussions) first.
 [CONTRIBUTING.md](../CONTRIBUTING.md) explains how pull requests work here.
 
 ## Next steps

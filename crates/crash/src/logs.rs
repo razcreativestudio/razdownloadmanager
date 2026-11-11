@@ -24,7 +24,7 @@ pub fn dir(data: &Path) -> PathBuf {
 }
 
 /// The app's log; the monitor's is "monitor".
-pub const APP: &str = "mdm";
+pub const APP: &str = "razdm";
 pub const MONITOR: &str = "monitor";
 
 fn current(dir: &Path, name: &str) -> PathBuf {
@@ -178,7 +178,7 @@ pub fn init(data: &Path, name: &'static str) -> bool {
     let filter = std::env::var("MDM_LOG")
         .ok()
         .and_then(|f| EnvFilter::try_new(f).ok())
-        .unwrap_or_else(|| EnvFilter::new("warn,minidump=error,minidump_processor=error,minidump_unwind=error,breakpad_symbols=error,mdm=info,mdm_app=info,misterdownloadmanager=info,mdm_engine=info,mdm_torrent=info,mdm_crash=info,mdm_tools=info,mdm_ipc=info"));
+        .unwrap_or_else(|| EnvFilter::new("warn,minidump=error,minidump_processor=error,minidump_unwind=error,breakpad_symbols=error,mdm=info,mdm_app=info,razdownloadmanager=info,misterdownloadmanager=info,mdm_engine=info,mdm_torrent=info,mdm_crash=info,mdm_tools=info,mdm_ipc=info"));
     tracing_subscriber::fmt()
         .with_writer(writer)
         .with_ansi(false)

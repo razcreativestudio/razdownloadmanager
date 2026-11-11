@@ -1,4 +1,4 @@
-﻿; Mister Download Manager's installer in Quechua: tools/installer/languages.py
+﻿; RAZ Download Manager's installer in Quechua: tools/installer/languages.py
 ; (machine-translated; a native speaker may correct any line).
 
 [LangOptions]
@@ -291,8 +291,8 @@ ShutdownBlockReasonUninstallingApp=%1 hurquchkan.
 
 [CustomMessages]
 TaskBrowser=Wamp'aq &mask'ay (Chrome, Edge, Brave, Firefox) t'ikrayta churay
-TaskTorrents=.&torrent willkakunatawan magnet t'inkikunata Mister Download Managerwan kichay
-TaskStartup=&Windows qallariptin Mister Download Managerta qallariy
+TaskTorrents=.&torrent willkakunatawan magnet t'inkikunata RAZ Download Managerwan kichay
+TaskStartup=&Windows qallariptin RAZ Download Managerta qallariy
 TaskGroupOther=Huk:
-Launch=Mister Download Managerta qallariy
+Launch=RAZ Download Managerta qallariy
 KeepData=Chaymanta urayk'uchisqa willk'ana listaykita chaymanta churaykunata pichayta munankichu?%n%nUrayk'uchisqa willk'anakunaqa manam imatapas llamk'achisqachu.

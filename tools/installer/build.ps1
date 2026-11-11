@@ -1,8 +1,8 @@
-# Builds the Windows release into target/dist/:
-#   MisterDownloadManager-<version>-setup.exe     the installer (tools/installer/mdm.iss)
-#   MisterDownloadManager-<version>-portable.zip  the same programs with a `data` folder (portable
+﻿# Builds the Windows release into target/dist/:
+#   RAZDownloadManager-<version>-setup.exe     the installer (tools/installer/razdm.iss)
+#   RAZDownloadManager-<version>-portable.zip  the same programs with a `data` folder (portable
 #                                                 mode: settings beside the exe, no registry)
-#   MisterDownloadManager-<version>-x64.zip       the same programs, data in %APPDATA% as installed
+#   RAZDownloadManager-<version>-x64.zip       the same programs, data in %APPDATA% as installed
 #   SHA256SUMS.txt
 # Needs Inno Setup 6 (ISCC.exe on PATH, in $env:ISCC, or in its default folders).
 # Code signing: set $env:MDM_SIGN_COMMAND to a signtool command line with $f for the file, e.g.
@@ -46,7 +46,8 @@ if (-not $iscc) { throw "Inno Setup 6 (ISCC.exe) not found" }
 New-Item -ItemType Directory -Force $dist | Out-Null
 $isccArgs = @("/Qp", "/DAppVersion=$version")
 if ($SignCommand) { $isccArgs += @("/DSign", "/Smdmsign=$SignCommand") }
-& $iscc @isccArgs (Join-Path $PSScriptRoot "mdm.iss")
+$issFile = if (Test-Path (Join-Path $PSScriptRoot "razdm.iss")) { "razdm.iss" } else { "mdm.iss" }
+& $iscc @isccArgs (Join-Path $PSScriptRoot $issFile)
 if ($LASTEXITCODE) { throw "ISCC failed" }
 
 # The zips: the same programs; the portable one adds a `data` folder next to the exe, which
@@ -55,7 +56,7 @@ function New-Zip([string]$name, [bool]$portable) {
   $stage = Join-Path $dist "stage\$name"
   if (Test-Path $stage) { Remove-Item -LiteralPath $stage -Recurse -Force }
   New-Item -ItemType Directory -Force $stage | Out-Null
-  foreach ($exe in "misterdownloadmanager.exe", "misterdownloadmanager-nmhost.exe", "misterdownloadmanager-cli.exe", "misterdownloadmanager-mcp.exe") {
+  foreach ($exe in "RAZDownloadManager.exe", "RAZDownloadManager-nmhost.exe", "RAZDownloadManager-cli.exe", "RAZDownloadManager-mcp.exe") {
     Copy-Item (Join-Path $bin $exe) $stage
   }
   New-Item -ItemType Directory -Force (Join-Path $stage "extension") | Out-Null
@@ -66,7 +67,7 @@ function New-Zip([string]$name, [bool]$portable) {
   if ($portable) {
     New-Item -ItemType Directory -Force (Join-Path $stage "data") | Out-Null
     Set-Content -Encoding utf8 (Join-Path $stage "data\README.txt") @"
-This folder makes Mister Download Manager portable: the download list and settings are kept
+This folder makes RAZ Download Manager portable: the download list and settings are kept
 here instead of in your profile, and nothing is written to the registry. Delete the folder to
 use the profile instead. Browser integration needs the installer.
 "@
@@ -96,11 +97,11 @@ use the profile instead. Browser integration needs the installer.
   }
 }
 Add-Type -AssemblyName System.IO.Compression, System.IO.Compression.FileSystem
-New-Zip "MisterDownloadManager-$version-portable" $true
-New-Zip "MisterDownloadManager-$version-x64" $false
+New-Zip "RAZDownloadManager-$version-portable" $true
+New-Zip "RAZDownloadManager-$version-x64" $false
 Remove-Item -LiteralPath (Join-Path $dist "stage") -Recurse -Force
 
-$files = Get-ChildItem $dist -File | Where-Object { $_.Name -like "MisterDownloadManager-$version-*" }
+$files = Get-ChildItem $dist -File | Where-Object { $_.Name -like "RAZDownloadManager-$version-*" }
 $files | ForEach-Object { "{0}  {1}" -f (Get-FileHash $_.FullName -Algorithm SHA256).Hash.ToLower(), $_.Name } |
   Set-Content -Encoding ascii (Join-Path $dist "SHA256SUMS.txt")
 $files | ForEach-Object { "{0}  {1:N1} MB" -f $_.Name, ($_.Length / 1MB) }

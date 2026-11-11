@@ -1,13 +1,13 @@
-# Issue #145: a magnet link or a download handed over from the browser while MDM's main window was
+﻿# Issue #145: a magnet link or a download handed over from the browser while MDM's main window was
 # hidden (closed to the notification area) crashed 0.2.4 ("egui backend is implemented incorrectly
 # - the user callback was never called"). This script plays it on a test copy, off the screens:
 #
-#   powershell -File tools/lab/magnet-hidden.ps1 -Exe <dir>\misterdownloadmanager.exe [-State hidden] [-Send magnet]
+#   powershell -File tools/lab/magnet-hidden.ps1 -Exe <dir>\RAZDownloadManager.exe [-State hidden] [-Send magnet]
 #
 # -Send: what the browser hands over.
 #   magnet    the browser gives a magnet link to Windows, which starts the program with it (the file
 #             association); that second launch passes it to the running copy, which opens Add torrent.
-#   download  the extension gives a download to the native host (misterdownloadmanager-nmhost.exe,
+#   download  the extension gives a download to the native host (RAZDownloadManager-nmhost.exe,
 #             beside -Exe), started as Firefox starts it (the manifest's path, then the add-on's
 #             ID) with one native message; the host passes it on and the copy opens Download File
 #             Info. The address is on 127.0.0.1 port 9, where nothing answers.
@@ -44,7 +44,7 @@ param(
 )
 $ErrorActionPreference = "Stop"
 $Exe = (Resolve-Path $Exe).Path
-$Host_ = Join-Path (Split-Path $Exe) "misterdownloadmanager-nmhost.exe"
+$Host_ = Join-Path (Split-Path $Exe) "RAZDownloadManager-nmhost.exe"
 if ($Send -eq "download" -and -not (Test-Path $Host_)) { throw "no native host beside -Exe: $Host_" }
 Add-Type @"
 using System; using System.Text; using System.Collections.Generic; using System.Runtime.InteropServices;
@@ -109,7 +109,7 @@ function Native-Message([hashtable]$Message) {
   try {
     [IO.File]::WriteAllBytes($msg, [BitConverter]::GetBytes([uint32]$json.Length) + $json)
     $manifest = Join-Path (Split-Path $Exe) "firefox-host.json"
-    $p = Start-Process -FilePath "cmd.exe" -PassThru -WindowStyle Hidden -ArgumentList "/d /c `"`"$Host_`" `"$manifest`" integration@misterdownloadmanager.com < `"$msg`" > `"$out`"`""
+    $p = Start-Process -FilePath "cmd.exe" -PassThru -WindowStyle Hidden -ArgumentList "/d /c `"`"$Host_`" `"$manifest`" integration@RAZDownloadManager.com < `"$msg`" > `"$out`"`""
     if (-not $p.WaitForExit(15000)) { throw "the native host didn't quit" }
     $bytes = [IO.File]::ReadAllBytes($out)
     if ($bytes.Length -lt 4) { return "(no reply)" }
@@ -150,7 +150,7 @@ function Run-State([string]$St) {
   $reply = ""
   try {
     # The main window: the copy's first (its title has the version, Options' starts the same).
-    $main = Wait-Window $app.Id "Mister Download Manager*"
+    $main = Wait-Window $app.Id "RAZ Download Manager*"
     Start-Sleep -Milliseconds 800
     switch ($St) {
       "visible" { }

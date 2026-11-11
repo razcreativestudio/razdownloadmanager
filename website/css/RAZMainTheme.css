@@ -1,0 +1,700 @@
+/* ==============================================
+   RAZ Creative Studio - Global Light/Dark Theme
+   Deskripsi: Override CSS untuk mode terang (light mode)
+              Mencakup SEMUA halaman: index, about, services,
+              tools, portfolio, product, contact
+   Terakhir diupdate: 2026-05-20
+   Versi: 3.7.0
+   ============================================== */
+
+/* ================================================
+   TRANSISI SMOOTH ANTAR TEMA
+   Semua elemen yang berubah warna akan bertransisi halus
+   ================================================ */
+*, *::before, *::after {
+    -webkit-transition: background-color 0.4s ease,
+                        color 0.4s ease,
+                        border-color 0.4s ease,
+                        box-shadow 0.4s ease;
+    transition: background-color 0.4s ease,
+                color 0.4s ease,
+                border-color 0.4s ease,
+                box-shadow 0.4s ease;
+}
+
+/* ================================================
+   LIGHT MODE: VARIABEL GLOBAL
+   Override semua CSS custom properties untuk tema terang
+   ================================================ */
+[data-theme="light"] {
+    --color-dark-primary: #f8f5ef;
+    --color-dark-secondary: #ffffff;
+    --color-dark-tertiary: #f0ebe3;
+    --color-gold-accent: #b8860b;
+    --color-gold-hover: #996f0a;
+    --color-gold-dim: rgba(184,134,11,0.1);
+    --color-gold-glow: rgba(184,134,11,0.06);
+    --gold-gradient: linear-gradient(135deg, #b8860b 0%, #d4a017 100%);
+    --gold-gradient-soft: linear-gradient(135deg, rgba(184,134,11,0.08) 0%, rgba(212,160,23,0.04) 100%);
+    --color-light-text: #1a1a1a;
+    --color-light-secondary: #555555;
+    --color-border: rgba(0,0,0,0.08);
+    --glass-bg: rgba(255,255,255,0.75);
+    --glass-border: rgba(0,0,0,0.08);
+    --shadow-card: 0 4px 20px rgba(0,0,0,0.08);
+    --shadow-gold: 0 0 15px rgba(184,134,11,0.1);
+}
+
+/* ================================================
+   BODY & GLOBAL ELEMENTS
+   ================================================ */
+[data-theme="light"] body {
+    background: #f8f5ef;
+    color: #1a1a1a;
+}
+
+/* Semua heading berubah warna gelap */
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] h4,
+[data-theme="light"] h5 {
+    color: #1a1a1a;
+}
+
+/* Teks paragraf & subtitle */
+[data-theme="light"] p,
+[data-theme="light"] .section-subtitle,
+[data-theme="light"] .text-gray-400 {
+    color: #555555;
+}
+
+/* Gold text tetap emas */
+[data-theme="light"] .gold,
+[data-theme="light"] .gold-text,
+[data-theme="light"] .text-gold-accent {
+    color: var(--color-gold-accent) !important;
+}
+
+/* Section label */
+[data-theme="light"] .section-label {
+    color: var(--color-gold-accent);
+}
+
+/* ================================================
+   HEADER & NAVIGATION (Global - Semua Halaman)
+   ================================================ */
+[data-theme="light"] .header.scrolled {
+    background: rgba(248,245,239,0.92);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-bottom-color: rgba(0,0,0,0.06);
+}
+
+[data-theme="light"] .nav-link {
+    color: rgba(26,26,26,0.7);
+}
+
+[data-theme="light"] .nav-link:hover,
+[data-theme="light"] .nav-link.active {
+    color: var(--color-gold-accent);
+    background: rgba(184,134,11,0.06);
+}
+
+[data-theme="light"] .cta-button {
+    background: linear-gradient(135deg, #b8860b, #d4a017) !important;
+    color: #ffffff !important;
+}
+
+/* Mobile nav light */
+[data-theme="light"] .nav-list {
+    background: rgba(248,245,239,0.97);
+}
+
+/* ================================================
+   SECTION SEPARATOR (Global)
+   ================================================ */
+[data-theme="light"] .section-separator {
+    background: linear-gradient(90deg, transparent, rgba(184,134,11,0.2), transparent);
+}
+
+/* ================================================
+   HERO SECTIONS (Semua Halaman)
+   Mengoverride background radial-gradient gelap
+   ================================================ */
+
+/* Hero utama (index.html) */
+[data-theme="light"] .hero {
+    background-color: #f0ebe3;
+}
+
+[data-theme="light"] .hero-overlay {
+    background: rgba(248,245,239,0.75);
+}
+
+[data-theme="light"] .hero-title,
+[data-theme="light"] .hero-content h2 {
+    color: #1a1a1a;
+}
+
+[data-theme="light"] .hero-subtitle,
+[data-theme="light"] .hero-content p {
+    color: #555555;
+}
+
+[data-theme="light"] .hero-badge {
+    background: rgba(184,134,11,0.08);
+    border-color: rgba(184,134,11,0.2);
+    color: var(--color-gold-accent);
+}
+
+[data-theme="light"] .scroll-indicator span {
+    color: #888888;
+}
+
+/* About hero (about-raz.html) */
+[data-theme="light"] .about-hero {
+    background: radial-gradient(circle at 50% 50%, #f0ebe3 0%, #f8f5ef 100%) !important;
+}
+
+[data-theme="light"] .hero-glow {
+    background: radial-gradient(circle, rgba(184,134,11,0.06) 0%, transparent 70%);
+}
+
+/* Services hero (raz-services.html) */
+[data-theme="light"] .services-hero {
+    background: radial-gradient(circle at center, #f0ebe3 0%, #f8f5ef 100%) !important;
+}
+
+/* Portfolio hero (raz-portofolio.html) */
+[data-theme="light"] .portfolio-hero {
+    background: radial-gradient(circle at center, #f0ebe3 0%, #f8f5ef 100%) !important;
+}
+
+/* Contact hero (hubungi-raz.html) */
+[data-theme="light"] .contact-hero {
+    background: radial-gradient(circle at center, #f0ebe3 0%, #f8f5ef 100%) !important;
+}
+
+/* Product hero (raz-product.html) */
+[data-theme="light"] .product-hero {
+    background: radial-gradient(circle at center, #f0ebe3 0%, #f8f5ef 100%) !important;
+}
+
+/* ================================================
+   ABOUT SECTION (index.html)
+   ================================================ */
+[data-theme="light"] .about {
+    background: #ffffff;
+}
+
+[data-theme="light"] .stat-item {
+    background: rgba(184,134,11,0.04);
+    border-color: rgba(0,0,0,0.06);
+}
+
+[data-theme="light"] .stat-item:hover {
+    border-color: rgba(184,134,11,0.2);
+    background: rgba(184,134,11,0.08);
+}
+
+[data-theme="light"] .usp-card {
+    background: rgba(255,255,255,0.8);
+    border-color: rgba(0,0,0,0.06);
+    -webkit-box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+[data-theme="light"] .usp-card:hover {
+    border-color: rgba(184,134,11,0.25);
+    -webkit-box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+[data-theme="light"] .usp-icon {
+    background: rgba(184,134,11,0.08);
+}
+
+/* ================================================
+   ABOUT PAGE SPECIFIC (about-raz.html)
+   ================================================ */
+
+/* Detailed About Section */
+[data-theme="light"] .detailed-about {
+    background: #ffffff !important;
+}
+
+[data-theme="light"] .detailed-about-content {
+    color: #555555;
+}
+
+[data-theme="light"] .detailed-about-content strong {
+    color: var(--color-gold-accent);
+}
+
+/* Philosophy / Fusion Cards */
+[data-theme="light"] .philosophy-section {
+    background: #f8f5ef;
+}
+
+[data-theme="light"] .fusion-card {
+    background: rgba(255,255,255,0.9) !important;
+    border-color: rgba(0,0,0,0.06);
+    -webkit-box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+[data-theme="light"] .fusion-card:hover {
+    border-color: rgba(184,134,11,0.3);
+    -webkit-box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+}
+
+[data-theme="light"] .fusion-card::before {
+    background: var(--gold-gradient);
+}
+
+/* Highlight / Vision Section */
+[data-theme="light"] .highlight-section {
+    background: #ffffff !important;
+}
+
+[data-theme="light"] .highlight-image {
+    border-color: rgba(184,134,11,0.15);
+}
+
+[data-theme="light"] .check-list li {
+    color: #444444;
+}
+
+/* CTA Premium Button */
+[data-theme="light"] .cta-btn-premium {
+    background: var(--gold-gradient);
+    color: #ffffff;
+}
+
+/* ================================================
+   SERVICES SECTION (index.html + raz-services.html)
+   ================================================ */
+[data-theme="light"] .services {
+    background: #f8f5ef;
+}
+
+[data-theme="light"] .service-card {
+    background: #ffffff;
+    border-color: rgba(0,0,0,0.06);
+    -webkit-box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+[data-theme="light"] .service-card:hover {
+    border-color: rgba(184,134,11,0.25);
+    -webkit-box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+[data-theme="light"] .service-icon {
+    background: rgba(184,134,11,0.08);
+}
+
+/* Service Detail Sections (raz-services.html) */
+[data-theme="light"] .service-detail-section {
+    background: #f8f5ef;
+}
+
+[data-theme="light"] .service-content p {
+    color: #555555 !important;
+}
+
+[data-theme="light"] .service-image {
+    border-color: rgba(184,134,11,0.15) !important;
+}
+
+[data-theme="light"] .feature-list li {
+    color: #444444 !important;
+}
+
+/* Process Section (raz-services.html) */
+[data-theme="light"] .process-section {
+    background: #ffffff !important;
+}
+
+[data-theme="light"] .process-number {
+    background: var(--gold-gradient);
+    color: #ffffff;
+    -webkit-box-shadow: 0 5px 15px rgba(184,134,11,0.2);
+    box-shadow: 0 5px 15px rgba(184,134,11,0.2);
+}
+
+[data-theme="light"] .process-item p {
+    color: #888888 !important;
+}
+
+/* ================================================
+   TECH MARQUEE (index.html)
+   ================================================ */
+[data-theme="light"] .tech-section {
+    background: #ffffff;
+    border-color: rgba(0,0,0,0.06);
+}
+
+[data-theme="light"] .marquee-item {
+    color: rgba(26,26,26,0.25);
+}
+
+/* ================================================
+   PORTFOLIO SECTION (index.html + raz-portofolio.html)
+   ================================================ */
+[data-theme="light"] .portfolio {
+    background: #f8f5ef;
+}
+
+[data-theme="light"] .portfolio-item {
+    background: #ebe6de;
+}
+
+/* Portfolio Cards (raz-portofolio.html) */
+[data-theme="light"] .portfolio-card {
+    background: #ffffff !important;
+    border-color: rgba(0,0,0,0.06) !important;
+    -webkit-box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+[data-theme="light"] .portfolio-card:hover {
+    border-color: rgba(184,134,11,0.3) !important;
+    -webkit-box-shadow: 0 12px 40px rgba(0,0,0,0.1) !important;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1) !important;
+}
+
+[data-theme="light"] .card-title {
+    color: #1a1a1a !important;
+}
+
+[data-theme="light"] .card-link {
+    color: #888888 !important;
+}
+
+[data-theme="light"] .portfolio-card:hover .card-link {
+    color: var(--color-gold-accent) !important;
+}
+
+/* Portfolio Filter Buttons */
+[data-theme="light"] .filter-btn {
+    background: rgba(0,0,0,0.03);
+    border-color: rgba(0,0,0,0.08);
+    color: #666666;
+}
+
+[data-theme="light"] .filter-btn:hover,
+[data-theme="light"] .filter-btn.active {
+    background: var(--gold-gradient);
+    color: #ffffff;
+    border-color: transparent;
+    -webkit-box-shadow: 0 5px 20px rgba(184,134,11,0.2);
+    box-shadow: 0 5px 20px rgba(184,134,11,0.2);
+}
+
+/* ================================================
+   PRODUCT / MARKETPLACE (raz-product.html)
+   ================================================ */
+[data-theme="light"] .product-grid .service-card,
+[data-theme="light"] .product-card {
+    background: #ffffff !important;
+    border-color: rgba(0,0,0,0.06) !important;
+    -webkit-box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+[data-theme="light"] .product-grid .service-card:hover,
+[data-theme="light"] .product-card:hover {
+    border-color: rgba(184,134,11,0.3) !important;
+    -webkit-box-shadow: 0 12px 40px rgba(0,0,0,0.1) !important;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1) !important;
+}
+
+/* Product filter buttons */
+[data-theme="light"] .product-filters .filter-btn {
+    background: rgba(0,0,0,0.03);
+    border-color: rgba(0,0,0,0.08);
+    color: #666666;
+}
+
+[data-theme="light"] .product-filters .filter-btn:hover,
+[data-theme="light"] .product-filters .filter-btn.active {
+    background: var(--gold-gradient);
+    color: #ffffff;
+}
+
+/* Product price badges */
+[data-theme="light"] .price-badge,
+[data-theme="light"] .product-price {
+    color: var(--color-gold-accent);
+}
+
+/* ================================================
+   CONTACT SECTION (index.html + hubungi-raz.html)
+   ================================================ */
+[data-theme="light"] .contact {
+    background: #ffffff;
+}
+
+[data-theme="light"] .contact-form-card {
+    background: rgba(248,245,239,0.8);
+    border-color: rgba(0,0,0,0.06);
+    -webkit-box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+/* Contact form inputs */
+[data-theme="light"] .contact-form input[type="text"],
+[data-theme="light"] .contact-form input[type="email"],
+[data-theme="light"] .contact-form textarea,
+[data-theme="light"] .form-control {
+    background: rgba(0,0,0,0.03) !important;
+    border-color: rgba(0,0,0,0.1) !important;
+    color: #1a1a1a !important;
+}
+
+[data-theme="light"] .form-control::placeholder {
+    color: #999999;
+}
+
+[data-theme="light"] .contact-form input:focus,
+[data-theme="light"] .contact-form textarea:focus,
+[data-theme="light"] .form-control:focus {
+    border-color: var(--color-gold-accent) !important;
+    -webkit-box-shadow: 0 0 0 3px rgba(184,134,11,0.1);
+    box-shadow: 0 0 0 3px rgba(184,134,11,0.1);
+}
+
+/* Contact Info Cards (hubungi-raz.html) */
+[data-theme="light"] .info-card {
+    background: #ffffff !important;
+    border-color: rgba(0,0,0,0.06) !important;
+    -webkit-box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+
+[data-theme="light"] .info-card:hover {
+    border-color: rgba(184,134,11,0.25) !important;
+    -webkit-box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+[data-theme="light"] .info-icon {
+    background: rgba(184,134,11,0.08) !important;
+}
+
+[data-theme="light"] .info-details h4 {
+    color: #1a1a1a;
+}
+
+[data-theme="light"] .info-details p {
+    color: #666666 !important;
+}
+
+/* Contact form column (hubungi-raz.html) */
+[data-theme="light"] .contact-form-col {
+    background: #ffffff !important;
+    border-color: rgba(0,0,0,0.06) !important;
+    -webkit-box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+[data-theme="light"] .form-group label {
+    color: #666666 !important;
+}
+
+/* Submit button */
+[data-theme="light"] .submit-btn {
+    background: var(--gold-gradient);
+    color: #ffffff;
+}
+
+/* Social buttons */
+[data-theme="light"] .social-btn {
+    background: rgba(0,0,0,0.03);
+    border-color: rgba(0,0,0,0.08);
+    color: #555555;
+}
+
+[data-theme="light"] .social-btn:hover {
+    background: rgba(184,134,11,0.1);
+    border-color: rgba(184,134,11,0.3);
+}
+
+/* ================================================
+   TOOLS PAGE (tools.html)
+   ================================================ */
+
+/* Tools card coming-soon light */
+[data-theme="light"] .tool-card.coming-soon .cta-tool-link,
+[data-theme="light"] .service-card.coming-soon .cta-tool-link {
+    background: #e8e3db;
+    color: #999999 !important;
+}
+
+/* CTA tool link light */
+[data-theme="light"] .cta-tool-link {
+    background: var(--gold-gradient);
+    color: #ffffff !important;
+}
+
+[data-theme="light"] .cta-tool-link:hover {
+    -webkit-box-shadow: 0 4px 15px rgba(184,134,11,0.25);
+    box-shadow: 0 4px 15px rgba(184,134,11,0.25);
+}
+
+/* ================================================
+   FOOTER (Global - Semua Halaman)
+   ================================================ */
+[data-theme="light"] .footer {
+    background: #f0ebe3;
+    border-top-color: rgba(0,0,0,0.06);
+}
+
+[data-theme="light"] .footer-col h4 {
+    color: #1a1a1a;
+}
+
+[data-theme="light"] .footer-about p {
+    color: #666666;
+}
+
+[data-theme="light"] .footer-col ul li a {
+    color: #666666;
+}
+
+[data-theme="light"] .footer-col ul li a:hover {
+    color: var(--color-gold-accent);
+}
+
+[data-theme="light"] .footer-bottom {
+    border-top-color: rgba(0,0,0,0.06);
+}
+
+[data-theme="light"] .footer-bottom p {
+    color: #888888;
+}
+
+[data-theme="light"] .footer .social-links a {
+    color: #888888;
+}
+
+[data-theme="light"] .footer .social-links a:hover {
+    color: var(--color-gold-accent);
+}
+
+/* ================================================
+   CTA BUTTONS (Global)
+   ================================================ */
+[data-theme="light"] .cta-primary {
+    background: linear-gradient(135deg, #b8860b, #d4a017);
+    color: #ffffff;
+    -webkit-box-shadow: 0 4px 15px rgba(184,134,11,0.25);
+    box-shadow: 0 4px 15px rgba(184,134,11,0.25);
+}
+
+[data-theme="light"] .cta-primary:hover {
+    color: #ffffff;
+}
+
+[data-theme="light"] .cta-secondary {
+    border-color: rgba(184,134,11,0.4);
+    color: var(--color-gold-accent);
+}
+
+[data-theme="light"] .cta-secondary:hover {
+    background: rgba(184,134,11,0.08);
+    border-color: var(--color-gold-accent);
+}
+
+/* ================================================
+   CONTROL BUTTONS (Theme & Language)
+   ================================================ */
+[data-theme="light"] .raz-control-btn {
+    background: rgba(255,255,255,0.9);
+    border-color: rgba(0,0,0,0.08);
+    color: #555555;
+    -webkit-box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+[data-theme="light"] .raz-control-btn:hover {
+    background: rgba(184,134,11,0.1);
+    border-color: rgba(184,134,11,0.3);
+    color: var(--color-gold-accent);
+}
+
+/* ================================================
+   SPLASH SCREEN (Global)
+   ================================================ */
+[data-theme="light"] .raz-splash-screen {
+    background: #f8f5ef;
+}
+
+[data-theme="light"] .raz-splash-logo {
+    background: #ffffff;
+}
+
+[data-theme="light"] .raz-splash-spinner {
+    border-color: rgba(184,134,11,0.15);
+    border-top-color: var(--color-gold-accent);
+}
+
+/* ================================================
+   GOLD SHIMMER (Light mode - emas lebih gelap)
+   ================================================ */
+[data-theme="light"] .gold-shimmer {
+    background: linear-gradient(90deg, #b8860b 0%, #d4a017 25%, #b8860b 50%, #996f0a 75%, #b8860b 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ================================================
+   FLOATING KEYWORDS / CANVAS (Light mode)
+   ================================================ */
+[data-theme="light"] .keyword {
+    color: rgba(184,134,11,0.08);
+}
+
+[data-theme="light"] #hero-canvas {
+    opacity: 0.4;
+}
+
+/* ================================================
+   PARTICLES (Light mode - partikel lebih gelap)
+   ================================================ */
+[data-theme="light"] .raz-particle {
+    background: var(--color-gold-accent);
+    opacity: 0;
+}
+
+/* ================================================
+   MISC / UTILITY OVERRIDES
+   ================================================ */
+
+/* Warna teks inline yang hardcoded #aaa, #666 di subpages */
+[data-theme="light"] .text-gray-400 {
+    color: #666666 !important;
+}
+
+/* Background radial-gradient overrides untuk section gelap di subpages */
+[data-theme="light"] .bg-razDark {
+    background: #f8f5ef !important;
+}
+
+/* Select/dropdown form controls */
+[data-theme="light"] select.form-control {
+    background: rgba(0,0,0,0.03) !important;
+    border-color: rgba(0,0,0,0.1) !important;
+    color: #1a1a1a !important;
+}
+
+[data-theme="light"] select.form-control option {
+    background: #ffffff;
+    color: #1a1a1a;
+}

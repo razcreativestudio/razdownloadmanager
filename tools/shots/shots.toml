@@ -1,4 +1,4 @@
-# The help pages' pictures (docs/images/help/), one entry each. tools/shots/make.py takes them
+﻿# The help pages' pictures (docs/images/help/), one entry each. tools/shots/make.py takes them
 # all again in one go, light and dark; `make.py check` keeps this list, the pages and the files
 # in step. See tools/shots/README.md.
 #
@@ -156,7 +156,7 @@ id = "browser-offer"
 page = "browser-integration.md"
 under = "Set it up"
 take = "extension"
-alt = "Add Mister Download Manager to your browser: each browser found, with a button to its store page"
+alt = "Add RAZ Download Manager to your browser: each browser found, with a button to its store page"
 caption = "MDM's own window opens each browser's store page for you."
 
 [[shot]]
@@ -392,7 +392,7 @@ id = "about-updates"
 page = "troubleshooting.md"
 under = "Updates"
 take = "about"
-alt = "About Mister Download Manager: its version, licence and links"
+alt = "About RAZ Download Manager: its version, licence and links"
 caption = "Help → About: the version you have."
 
 # ---- Options -------------------------------------------------------------------------------------
@@ -623,7 +623,7 @@ ring = ["Test browser integration..."]
 alt = "Options, General with Test browser integration..."
 caption = "Test browser integration... says whether the browser reaches MDM."
 
-# ---- The website (misterdownloadmanager.com) ------------------------------------------------------
+# ---- The website (RAZDownloadManager.com) ------------------------------------------------------
 # Pictures the site's own pages show (tools/website/build.py), not a help page: `page` names the
 # website file that lists them, where `make.py check` looks for "images/help/<id>.webp".
 

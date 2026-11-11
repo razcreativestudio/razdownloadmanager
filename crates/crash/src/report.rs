@@ -40,7 +40,7 @@ const SORRY: &[&str] = &[
 pub fn text(input: &Input, home: Option<&Path>) -> String {
     let kind = input.kind.unwrap_or(Kind::Crash);
     let mut s = String::new();
-    let _ = writeln!(s, "---- Mister Download Manager crash report ----");
+    let _ = writeln!(s, "---- RAZ Download Manager crash report ----");
     let n = input.time.bytes().map(usize::from).sum::<usize>();
     let _ = writeln!(s, "// {}", SORRY[n % SORRY.len()]);
     let _ = writeln!(s);
@@ -530,7 +530,7 @@ fn over_before_snapshot(kind: Kind, input: &Input) -> bool {
 fn first_own_frame(frames: &[Frame], main_module: Option<&str>) -> Option<String> {
     let own_crate = main_module
         .map(|m| m.split('.').next().unwrap_or(m).replace('-', "_"))
-        .unwrap_or_else(|| "misterdownloadmanager".to_owned());
+        .unwrap_or_else(|| "razdownloadmanager".to_owned());
     let paths: Vec<String> = frames
         .iter()
         .filter(|f| main_module.is_none_or(|m| f.module.as_deref() == Some(m)))

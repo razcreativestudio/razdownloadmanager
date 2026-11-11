@@ -1,10 +1,10 @@
----
+﻿---
 name: Batch downloads
 title: Batch download numbered files and lists of links
 headline: A whole numbered series from one address.
 line: One address with an asterisk fetches a numbered series; a text file of links adds them all.
 lede: Files named photo001.jpg to photo150.jpg don't need 150 clicks. Write the address once with an asterisk where the number changes, and MDM queues every file. A list of links in a text file goes in just as easily.
-description: Batch downloads in Mister Download Manager: a numbered series of files from one address with an asterisk, or every link in a text file at once.
+description: Batch downloads in RAZ Download Manager: a numbered series of files from one address with an asterisk, or every link in a text file at once.
 group: downloading
 order: 80
 since: 0.1.0

@@ -1,5 +1,5 @@
-#!/usr/bin/env python3
-"""Builds misterdownloadmanager.com into target/site (GitHub Pages publishes it, .github/workflows/
+﻿#!/usr/bin/env python3
+"""Builds RAZDownloadManager.com into target/site (GitHub Pages publishes it, .github/workflows/
 pages.yml). No framework: website/ holds the hand-written home page, styles, scripts and assets;
 website/content/ the pages written as Markdown (FAQ, legal); the rest comes from the repository
 itself so the site never drifts from it: docs/*.md become the help pages, CHANGELOG.md the news
@@ -42,18 +42,18 @@ ROOT = Path(__file__).resolve().parents[2]
 WEB = ROOT / "website"
 CONTENT = WEB / "content"
 OUT = ROOT / "target" / "site"
-SITE = "https://misterdownloadmanager.com"
-REPO = "https://github.com/anefzaoui/misterdownloadmanager"
+SITE = "https://dm.it-raz.com"
+REPO = "https://github.com/razcreativestudio/razdownloadmanager"
 # The Firefox add-on's listing (crates/ipc/src/extension.rs FIREFOX_PAGE): {{AMO}} in pages, and
 # <!--@amo--> for its Add to Firefox button.
-AMO = "https://addons.mozilla.org/firefox/addon/mister-download-manager/"
+AMO = "https://addons.mozilla.org/firefox/addon/raz-download-manager/"
 # The extension's listing in the Chrome Web Store (crates/ipc/src/extension.rs STORE_ID), for
 # Chrome, Edge, Brave, Opera and Vivaldi: {{CWS}} in pages; <!--@stores--> is both buttons.
-CWS = "https://chromewebstore.google.com/detail/mister-download-manager/ejoleppdfgjdndddcjoehopknmlglojp"
-# The creator's GitHub Sponsors page: the header, the footer and the home page's Support MDM
+CWS = "https://chromewebstore.google.com/detail/raz-download-manager"
+# The creator's GitHub Sponsors page: the header, the footer and the home page's Support RAZ DM
 # (the app's Help menu and About, the extension's popup and .github/FUNDING.yml point there too).
-SPONSORS = "https://github.com/sponsors/anefzaoui"
-NAME = "Mister Download Manager"
+SPONSORS = "https://github.com/razcreativestudio"
+NAME = "RAZ Download Manager"
 # The next release, as the site announces it. What is in the source but not in a download yet
 # says "Coming with version <this>" (coming_banner(): the feature pages, the Themes page, the
 # features' tiles), shown for a feature whose `since` is this version or later. At that release
@@ -65,7 +65,7 @@ CARGO_VERSION = re.search(r'(?m)^version\s*=\s*"([^"]+)"', (ROOT / "Cargo.toml")
 def github(path: str):
     """GET api.github.com/<path> as JSON, or None (offline, rate-limited)."""
     req = urllib.request.Request(f"https://api.github.com/{path}", headers={
-        "Accept": "application/vnd.github+json", "User-Agent": "misterdownloadmanager-site"})
+        "Accept": "application/vnd.github+json", "User-Agent": "RAZDownloadManager-site"})
     if os.environ.get("GITHUB_TOKEN"):
         req.add_header("Authorization", f"Bearer {os.environ['GITHUB_TOKEN']}")
     try:
@@ -113,7 +113,7 @@ def setup_size() -> str:
 def mac_file(arch: str) -> str:
     """The .dmg for a Mac with `arch` (arm64, x86_64): one per processor (#25), or the one
     universal .dmg of a release from before."""
-    universal = f"MisterDownloadManager-{VERSION}-macos-universal-experimental.dmg"
+    universal = f"RAZDownloadManager-{VERSION}-macos-universal-experimental.dmg"
     if any(a.get("name") == universal for a in LATEST.get("assets", [])):
         return f"{RELEASE}-macos-universal-experimental.dmg"
     return f"{RELEASE}-macos-{arch}-experimental.dmg"
@@ -123,7 +123,7 @@ def linux_file(ext: str) -> str:
     """The Linux file ending in `ext` (.AppImage, .deb, .rpm, .tar.gz): named without
     "-experimental" from the release after 0.2.4 (tools/installer/build-linux.sh), with it in a
     release from before."""
-    old = f"MisterDownloadManager-{VERSION}-linux-x86_64-experimental{ext}"
+    old = f"RAZDownloadManager-{VERSION}-linux-x86_64-experimental{ext}"
     if any(a.get("name") == old for a in LATEST.get("assets", [])):
         return f"{RELEASE}-linux-x86_64-experimental{ext}"
     return f"{RELEASE}-linux-x86_64{ext}"
@@ -132,7 +132,7 @@ def linux_file(ext: str) -> str:
 VERSION = published_version()
 SETUP_SIZE = setup_size()
 TODAY = datetime.date.today().isoformat()
-RELEASE = f"{REPO}/releases/download/v{VERSION}/MisterDownloadManager-{VERSION}"
+RELEASE = f"{REPO}/releases/download/v{VERSION}/RAZDownloadManager-{VERSION}"
 FILES = {
     "setup": f"{RELEASE}-setup.exe",
     "portable": f"{RELEASE}-portable.zip",
@@ -156,8 +156,8 @@ DOCS_MD: list[tuple[str, str, str, str]] = []
 FAQ_MD: list[tuple[str, str, str]] = []
 
 # The visit counter (privacy.md says what it records). Statcounter's own code, as given.
-STATCOUNTER = """<!-- Default Statcounter code for Mister Download Manager
-https://misterdownloadmanager.com/ -->
+STATCOUNTER = """<!-- Default Statcounter code for RAZ Download Manager
+https://RAZDownloadManager.com/ -->
 <script type="text/javascript">
 var sc_project=13364153;
 var sc_invisible=1;
@@ -364,7 +364,7 @@ def gh_pill(cls: str = "gh-pill") -> str:
     """The GitHub link with its star count (when known): header, hero, open-source card."""
     stars = STATS.get("stars")
     count = f'<span class="gh-count">{stars}</span>' if stars else ""
-    return (f'<a class="{cls}" href="{REPO}" aria-label="Mister Download Manager on GitHub'
+    return (f'<a class="{cls}" href="{REPO}" aria-label="RAZ Download Manager on GitHub'
             f'{f", {stars} stars" if stars else ""}">'
             f'<svg aria-hidden="true"><use href="#i-github"/></svg><span class="gh-label">GitHub</span>{count}</a>')
 
@@ -441,7 +441,7 @@ def header(section: str = "") -> str:
         <button class="icon-btn theme" type="button" aria-label="Switch between light and dark" title="Light / dark">
           <svg class="for-light-i" aria-hidden="true"><use href="#i-moon"/></svg><svg class="for-dark-i" aria-hidden="true"><use href="#i-sun"/></svg>
         </button>
-        <a class="icon-btn top-gh" href="{REPO}" aria-label="Mister Download Manager on GitHub" title="GitHub"><svg aria-hidden="true"><use href="#i-github"/></svg></a>
+        <a class="icon-btn top-gh" href="{REPO}" aria-label="RAZ Download Manager on GitHub" title="GitHub"><svg aria-hidden="true"><use href="#i-github"/></svg></a>
         <a class="icon-btn top-sponsor" href="{SPONSORS}" aria-label="Sponsor the creator on GitHub" title="Sponsor"><svg aria-hidden="true"><use href="#i-heart"/></svg></a>
         <a class="btn btn-go top-dl" href="/download.html">Download</a>
         <details class="menu">
@@ -1191,7 +1191,7 @@ def build_repo_pages() -> None:
     trail = [("Home", "/"), ("Contributing", path)]
     lede = ("Bug reports, ideas, translation fixes and pull requests are all welcome. "
             f'Everything happens in the open on <a href="{REPO}">GitHub</a>.')
-    body = f"""{page_head("Contribute to Mister Download Manager", lede, trail)}
+    body = f"""{page_head("Contribute to RAZ Download Manager", lede, trail)}
     <div class="wrap narrow prose page-body">
       <div class="contrib-ways">
         <a href="{REPO}/issues/new?template=bug.yml"><b>Report a bug</b><span>Something broken or odd? Tell us what you saw.</span></a>
@@ -1203,7 +1203,7 @@ def build_repo_pages() -> None:
       {page_tools("CONTRIBUTING.md", path, "Contributing")}
     </div>"""
     write(path, f"Contribute — {NAME}",
-          "How to help Mister Download Manager: report bugs, fix translations, build it from source and send pull requests. The checks CI runs and the project's rules.",
+          "How to help RAZ Download Manager: report bugs, fix translations, build it from source and send pull requests. The checks CI runs and the project's rules.",
           body, jsonld=[crumbs_ld(trail)], priority="0.5")
 
 
@@ -1430,7 +1430,7 @@ def feature_label(m: dict) -> str:
         rows.append(f'<div class="wide"><dt>Full guide</dt><dd><a href="{help_href(m["help"])}">Step by step in the help</a></dd></div>')
     return (f'<aside class="waybill feature-label" aria-label="At a glance"><div class="wb-band">'
             f'<img src="/assets/logo-64.png" width="32" height="32" alt=""><span class="wb-from"><b>{esc(m["name"])}</b>'
-            f'<small>Mister Download Manager</small></span></div><dl class="fields">{"".join(rows)}</dl></aside>')
+            f'<small>RAZ Download Manager</small></span></div><dl class="fields">{"".join(rows)}</dl></aside>')
 
 
 def build_features() -> None:
@@ -1583,9 +1583,9 @@ def build_themes() -> None:
         <li id="try-it"><h3>Try it, without building MDM</h3>
           <p>Put the file in MDM's themes folder. <b>View → Theme → Open themes folder</b> opens it, and makes it the first time. It is in MDM's data folder:</p>
           <dl class="fields os-paths">
-            <div><dt>Windows</dt><dd><code translate="no">%APPDATA%\\misterdownloadmanager\\themes</code></dd></div>
-            <div><dt>Linux</dt><dd><code translate="no">~/.local/share/misterdownloadmanager/themes</code></dd></div>
-            <div><dt>macOS</dt><dd><code translate="no">~/Library/Application Support/misterdownloadmanager/themes</code></dd></div>
+            <div><dt>Windows</dt><dd><code translate="no">%APPDATA%\\RAZDownloadManager\\themes</code></dd></div>
+            <div><dt>Linux</dt><dd><code translate="no">~/.local/share/RAZDownloadManager/themes</code></dd></div>
+            <div><dt>macOS</dt><dd><code translate="no">~/Library/Application Support/RAZDownloadManager/themes</code></dd></div>
             <div><dt>Portable copy</dt><dd><code translate="no">data\\themes</code> beside the program</dd></div>
           </dl>
           <p>Within two seconds it shows in <b>View → Theme</b>, under the built-in themes, by the <code>name</code> it gives itself. Pick it and the whole window changes at once. After you edit the file, pick it again in <b>View → Theme</b> to see the change. <b>View → Dark Mode support</b> and <b>Always dark</b> switch between its light and dark side.</p>
@@ -1670,7 +1670,7 @@ def copy_static() -> None:
     schema = ROOT / "docs" / "automation-api.schema.json"
     if schema.is_file():
         shutil.copy2(schema, OUT / "automation-api.schema.json")
-    (OUT / "CNAME").write_text("misterdownloadmanager.com\n", "utf-8")
+    (OUT / "CNAME").write_text("RAZDownloadManager.com\n", "utf-8")
     (OUT / ".nojekyll").write_text("", "utf-8")
     (OUT / "site.webmanifest").write_text(json.dumps({
         "name": NAME, "short_name": "MDM", "start_url": "/", "display": "browser",

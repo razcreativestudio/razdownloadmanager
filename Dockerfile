@@ -1,10 +1,10 @@
-# Mister Download Manager on a server, without a window (#157): docs/server.md.
+﻿# RAZ Download Manager on a server, without a window (#157): docs/server.md.
 #
-#   docker build -t misterdownloadmanager .
+#   docker build -t RAZDownloadManager .
 #   docker run -d --name mdm -p 8463:8463 -v mdm-config:/config -v /srv/downloads:/downloads \
-#     misterdownloadmanager
+#     RAZDownloadManager
 #   docker logs mdm                                  # the address and a pairing code
-#   docker exec mdm misterdownloadmanager-cli pair   # another code
+#   docker exec mdm RAZDownloadManager-cli pair   # another code
 #
 # PROFILE=release (the default) is what ships: slow to build (whole-program optimisation);
 # `--build-arg PROFILE=dev` builds quicker, for a try.
@@ -27,7 +27,7 @@ ENV CARGO_PROFILE_RELEASE_DEBUG=false
 RUN set -e; \
     cargo build --locked --profile "$PROFILE" -p mdm-app -p mdm-cli; \
     out="target/$PROFILE"; if [ "$PROFILE" = dev ]; then out=target/debug; fi; \
-    mkdir -p /out; cp "$out/misterdownloadmanager" "$out/misterdownloadmanager-cli" /out/; \
+    mkdir -p /out; cp "$out/RAZDownloadManager" "$out/RAZDownloadManager-cli" /out/; \
     strip /out/*; \
     rm -rf target /usr/local/cargo/registry /usr/local/cargo/git
 
@@ -46,4 +46,4 @@ EXPOSE 8463
 # Any user works (`--user 99:100` on Unraid): it needs only to write /config and /downloads.
 USER 1000:1000
 # MDM handles docker stop's SIGTERM itself (it saves the list), so it runs as PID 1.
-ENTRYPOINT ["misterdownloadmanager", "--headless"]
+ENTRYPOINT ["RAZDownloadManager", "--headless"]

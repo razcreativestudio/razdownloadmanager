@@ -190,11 +190,21 @@ fn is_strong_date(last_modified: &str, date: Option<&str>) -> bool {
     date >= lm + std::time::Duration::from_secs(1)
 }
 
-/// `<dest>.mdm.json`.
+/// `<dest>.razdm.json`.
 pub fn state_path(dest: &Path) -> PathBuf {
     let mut s = dest.as_os_str().to_owned();
-    s.push(".mdm.json");
-    PathBuf::from(s)
+    s.push(".razdm.json");
+    let p = PathBuf::from(s);
+    if !p.exists() {
+        // Fallback backward compatibility jika file lama memakai ekstensi .mdm.json
+        let mut old = dest.as_os_str().to_owned();
+        old.push(".mdm.json");
+        let old_p = PathBuf::from(old);
+        if old_p.exists() {
+            let _ = std::fs::rename(&old_p, &p);
+        }
+    }
+    p
 }
 
 /// Downloads started under the app's former codename keep `<dest>.idmnext.json` and

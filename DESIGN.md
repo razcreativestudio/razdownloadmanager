@@ -1,5 +1,5 @@
 ---
-name: Mister Download Manager website
+name: RAZ Download Manager website
 description: A download is a delivery. The site is the file's waybill, stuck on the real app window.
 colors:
   board: "#1f63d6"
@@ -181,7 +181,7 @@ components:
     textColor: "{colors.paper}"
 ---
 
-# Design System: Mister Download Manager website
+# Design System: RAZ Download Manager website
 
 ## Overview
 

@@ -1,10 +1,10 @@
----
+﻿---
 name: Moving from IDM
 title: Import your download list from IDM
 headline: Switching is easy. Bring your downloads with you.
 line: Your IDM list comes over in one file, each download with its address, referrer and cookies.
 lede: Moving from Internet Download Manager? Export your list there and import it in MDM. Every download comes over with its address, referrer and cookies, into a window laid out the way you know.
-description: Move from Internet Download Manager to Mister Download Manager: import an IDM export file (.ef2) or a text list of links, with referrers and cookies.
+description: Move from Internet Download Manager to RAZ Download Manager: import an IDM export file (.ef2) or a text list of links, with referrers and cookies.
 group: organising
 order: 160
 since: 0.1.0

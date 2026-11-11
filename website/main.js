@@ -1,4 +1,4 @@
-// Mister Download Manager — site behaviour: light/dark, the download for your system, the
+﻿// RAZ Download Manager — site behaviour: light/dark, the download for your system, the
 // split button's menu, the "What do you download?" chips and the rotating hello.
 (function () {
   "use strict";

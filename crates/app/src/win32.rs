@@ -1,4 +1,4 @@
-//! The only Windows FFI in Mister Download Manager (D-008): IDM's dialog frame for our dialog windows, and the
+//! The only Windows FFI in RAZ Download Manager (D-008): IDM's dialog frame for our dialog windows, and the
 //! shell's own small file-type icons (the ones Explorer and IDM show — Windows' artwork, not IDM's),
 //! and the drop target's OLE `IDropTarget` (`ole`).
 #![allow(unsafe_code)]
@@ -2339,7 +2339,7 @@ fn reg_string(key: &str, name: &str) -> Option<String> {
 /// names have `_` for `-`.
 pub fn take_install_language() -> Option<String> {
     use windows_sys::Win32::System::Registry::{HKEY_CURRENT_USER, RegDeleteKeyValueW};
-    const KEY: &str = r"Software\MisterDownloadManager";
+    const KEY: &str = r"Software\RAZDownloadManager";
     const NAME: &str = "InstallLanguage";
     let value = reg_string(KEY, NAME)?;
     let w = |s: &str| -> Vec<u16> { s.encode_utf16().chain(Some(0)).collect() };
@@ -2563,7 +2563,7 @@ pub fn set_torrent_handlers(on: bool) {
         HKEY_CURRENT_USER, REG_SZ, RRF_RT_REG_SZ, RegDeleteKeyValueW, RegDeleteTreeW, RegGetValueW,
         RegSetKeyValueW,
     };
-    const PROGID: &str = "MisterDownloadManager.Torrent";
+    const PROGID: &str = "RAZDownloadManager.Torrent";
     let w = |s: &str| -> Vec<u16> { s.encode_utf16().chain(Some(0)).collect() };
     let set = |key: &str, name: Option<&str>, value: &str| {
         let (key, value) = (w(key), w(value));
@@ -2658,7 +2658,7 @@ fn run_value() -> Option<String> {
             .ok()
             .filter(|v| v.starts_with("MisterDownloadManagerTest"));
     }
-    Some("MisterDownloadManager".to_owned())
+    Some("RAZDownloadManager".to_owned())
 }
 
 const RUN_KEY: &str = r"Software\Microsoft\Windows\CurrentVersion\Run";
@@ -2697,7 +2697,7 @@ fn startup_outdated(value: &str, exe: &std::path::Path) -> bool {
         .any(|a| a.eq_ignore_ascii_case(mdm_ipc::STARTUP))
 }
 
-/// Is Mister Download Manager in the user's Run key (set by Options or by the installer's
+/// Is RAZ Download Manager in the user's Run key (set by Options or by the installer's
 /// "Start when Windows starts")? The registry is the truth for Options → "Launch on startup".
 pub fn run_at_startup() -> bool {
     run_value().is_some_and(|name| {
@@ -2768,7 +2768,7 @@ mod startup_tests {
     use super::{startup_command, startup_outdated};
     use std::path::Path;
 
-    const EXE: &str = r"C:\Program Files\Mister Download Manager\misterdownloadmanager.exe";
+    const EXE: &str = r"C:\Program Files\RAZ Download Manager\misterdownloadmanager.exe";
 
     /// The entry Options and the installer write (#226): the program, quoted, then `/startup`.
     #[test]
@@ -2793,7 +2793,7 @@ mod startup_tests {
         assert!(startup_outdated(&format!("\"{EXE}\""), exe));
         // Written by hand: unquoted, in another case, with other slashes.
         assert!(startup_outdated(
-            r"c:\program files\mister download manager\MISTERDOWNLOADMANAGER.EXE",
+            r"c:\program files\RAZ Download Manager\MISTERDOWNLOADMANAGER.EXE",
             exe
         ));
         assert!(startup_outdated(
@@ -3570,7 +3570,7 @@ pub mod ole {
 /// with the process.
 pub fn mark_running() {
     use windows_sys::Win32::System::Threading::CreateMutexW;
-    let name: Vec<u16> = "MisterDownloadManager.Running\0".encode_utf16().collect();
+    let name: Vec<u16> = "RAZDownloadManager.Running\0".encode_utf16().collect();
     // SAFETY: NUL-terminated name; the handle is deliberately kept for the process's life.
     unsafe {
         CreateMutexW(std::ptr::null(), 0, name.as_ptr());
@@ -3941,8 +3941,8 @@ pub fn host_registration() -> crate::extension::Registration {
     use windows_sys::Win32::System::Registry::{HKEY_CURRENT_USER, HKEY_LOCAL_MACHINE};
     let mut broken = None;
     for key in [
-        r"Software\Google\Chrome\NativeMessagingHosts\com.misterdownloadmanager.host",
-        r"Software\Mozilla\NativeMessagingHosts\com.misterdownloadmanager.host",
+        r"Software\Google\Chrome\NativeMessagingHosts\com.razdownloadmanager.host",
+        r"Software\Mozilla\NativeMessagingHosts\com.razdownloadmanager.host",
     ] {
         for root in [HKEY_CURRENT_USER, HKEY_LOCAL_MACHINE] {
             let Some(manifest) = reg_string_in(root, key, "") else {

@@ -1,7 +1,7 @@
-// Mister Download Manager's Safari extension: the native half. Safari's extension can't start a
+﻿// RAZ Download Manager's Safari extension: the native half. Safari's extension can't start a
 // program of its own (no native messaging host manifests), it can only talk to this app
 // extension. So this does nothing but pass each message on to the same helper the other browsers
-// start (misterdownloadmanager-nmhost; the build puts a copy of it in this extension, signed to
+// start (RAZDownloadManager-nmhost; the build puts a copy of it in this extension, signed to
 // run inside its sandbox), and hand its answer back. All the rules live in the helper and in
 // extension/ (one source for every browser): when the extension learns to say something new,
 // nothing here changes.
@@ -33,7 +33,7 @@ final class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
 
     /// The helper, in this extension: X.appex/Contents/MacOS.
     private static var helper: URL {
-        Bundle.main.bundleURL.appendingPathComponent("Contents/MacOS/misterdownloadmanager-nmhost")
+        Bundle.main.bundleURL.appendingPathComponent("Contents/MacOS/RAZDownloadManager-nmhost")
     }
 
     /// MDM's data folder in the user's real home: the sandbox gives this process a home of its
@@ -42,7 +42,7 @@ final class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
         // (selftest.sh points it at a folder of its own.)
         if let given = ProcessInfo.processInfo.environment["MDM_DATA_DIR"] { return given }
         guard let entry = getpwuid(getuid()) else { return nil }
-        return String(cString: entry.pointee.pw_dir) + "/Library/Application Support/misterdownloadmanager"
+        return String(cString: entry.pointee.pw_dir) + "/Library/Application Support/RAZDownloadManager"
     }
 
     static func relay(_ message: Any?) -> [String: Any]? {

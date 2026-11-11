@@ -1,6 +1,12 @@
-//! Mister Download Manager's command channel (shared by the app, its command line and the browser host).
+﻿// ==============================================================================
+// RAZ Download Manager — IPC Command Channel
+// Terakhir Diperbarui: 2026-11-10 12:25 WIB
+// Deskripsi: Kanal komunikasi antar proses lokal untuk RAZ Download Manager.
+// ==============================================================================
+
+//! RAZ Download Manager's command channel (shared by the app, its command line and the browser host).
 //! Single-instance command channel. The running app listens on a localhost port and writes
-//! `{port, token}` to `%APPDATA%\misterdownloadmanager\ipc.json`; a second launch (IDM-style command line)
+//! `{port, token}` to `%APPDATA%\razdownloadmanager\ipc.json`; a second launch (IDM-style command line)
 //! or the browser's native messaging host sends one JSON line per command, carrying the token.
 //! Only connections from 127.0.0.1 with the right token are accepted.
 
@@ -83,7 +89,7 @@ pub struct Command {
     /// The remote control: an uploaded .torrent file's bytes (never read from a request line).
     #[serde(skip)]
     pub torrent_file: Option<Vec<u8>>,
-    /// The remote control (#157, `misterdownloadmanager-cli pair`): show a new pairing code;
+    /// The remote control (#157, `RAZDownloadManager-cli pair`): show a new pairing code;
     /// answered with it, the page's addresses and a QR code to scan ([`api::PairAnswer`]).
     pub pair: bool,
     /// `/exit` (beyond IDM): the running app saves and quits (the installer, before an upgrade
@@ -216,26 +222,29 @@ pub fn set_data_dir(dir: PathBuf) {
     let _ = DATA_DIR.set(dir);
 }
 
-/// The app's data folder, `%APPDATA%\misterdownloadmanager` (list, settings, channel, crash
-/// log). The folder of the app's former codename, `idmnext`, is moved here once.
+/// The app's data folder, `%APPDATA%\razdownloadmanager` (list, settings, channel, crash
+/// log). The folder of former versions (`RAZDownloadManager`, `idmnext`) is migrated here.
 ///
-/// `MDM_DATA_DIR` overrides it (a separate instance with its own list and channel: tests,
+/// `RAZ_DATA_DIR` or `MDM_DATA_DIR` overrides it (a separate instance with its own list and channel: tests,
 /// screenshots). Portable mode: a writable `data` folder next to the program holds it all.
 pub fn data_dir() -> Option<PathBuf> {
     if let Some(dir) = DATA_DIR.get() {
         return Some(dir.clone());
     }
-    if let Some(dir) = std::env::var_os("MDM_DATA_DIR") {
+    if let Some(dir) = std::env::var_os("RAZ_DATA_DIR").or_else(|| std::env::var_os("MDM_DATA_DIR")) {
         return Some(PathBuf::from(dir));
     }
     if let Some(dir) = portable_dir() {
         return Some(dir);
     }
     let base = dirs::data_dir()?;
-    let dir = base.join("misterdownloadmanager");
-    let legacy = base.join("idmnext");
-    if !dir.exists() && legacy.is_dir() {
-        let _ = std::fs::rename(&legacy, &dir);
+    let dir = base.join("razdownloadmanager");
+    let legacy_mdm = base.join("RAZDownloadManager");
+    let legacy_idmnext = base.join("idmnext");
+    if !dir.exists() && legacy_mdm.is_dir() {
+        let _ = std::fs::rename(&legacy_mdm, &dir);
+    } else if !dir.exists() && legacy_idmnext.is_dir() {
+        let _ = std::fs::rename(&legacy_idmnext, &dir);
     }
     Some(dir)
 }
@@ -329,7 +338,7 @@ impl std::fmt::Display for SendError {
     }
 }
 
-/// Send `cmd` to a running Mister Download Manager.
+/// Send `cmd` to a running RAZ Download Manager.
 pub fn send(cmd: &Command) -> Result<(), SendError> {
     let ack = exchange(cmd)?;
     if ack.trim() == "ok" {

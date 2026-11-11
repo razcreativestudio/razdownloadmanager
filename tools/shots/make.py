@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """The help pages' pictures, made from one shot list (tools/shots/shots.toml, issue #228).
 
 Every picture in docs/images/help/ comes from here, never by hand: the list says which window
@@ -87,7 +87,7 @@ def raw_name(take: str) -> str:
 def shoot(shots: list[dict], bin_dir: Path, work: str | None, extra: list[str]) -> None:
     if os.name != "nt":
         sys.exit("shoot runs on Windows (tools/lab/docs-shots.ps1); `build` works anywhere")
-    exe = bin_dir / "misterdownloadmanager.exe"
+    exe = bin_dir / "RAZDownloadManager.exe"
     server = bin_dir / "labserver.exe"
     for p in (exe, server):
         if not p.is_file():

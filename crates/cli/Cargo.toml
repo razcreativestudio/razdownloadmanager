@@ -1,6 +1,12 @@
+# ==============================================================================
+# RAZ Download Manager — Headless CLI Crate
+# Terakhir Diperbarui: 2026-11-10 12:15 WIB
+# Deskripsi: Binary launcher dan perintah baris RAZ Download Manager.
+# ==============================================================================
+
 [package]
 name = "mdm-cli"
-description = "Mister Download Manager, headless command line (in the app's program) and its launcher"
+description = "RAZ Download Manager, headless command line and launcher"
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true
@@ -14,7 +20,8 @@ path = "src/lib.rs"
 
 # The launcher: starts the app's program for them (std only, but for Ctrl+C on Windows).
 [[bin]]
-name = "misterdownloadmanager-cli"
+# Nama file binary executable Windows untuk CLI
+name = "RAZDownloadManager-cli"
 path = "src/main.rs"
 
 [dependencies]

@@ -1,3 +1,9 @@
+// ==============================================================================
+// RAZ Download Manager — Desktop Application Entrypoint
+// Terakhir Diperbarui: 2026-11-10 12:30 WIB
+// Deskripsi: Titik masuk utama aplikasi desktop RAZ Download Manager (GUI).
+// ==============================================================================
+
 #![windows_subsystem = "windows"]
 
 mod app;
@@ -72,7 +78,7 @@ mod winui;
 mod xdgicons;
 
 /// The main window's title (dialogs find their owner by it).
-pub const MAIN_TITLE: &str = concat!("Mister Download Manager ", env!("CARGO_PKG_VERSION"));
+pub const MAIN_TITLE: &str = concat!("RAZ Download Manager ", env!("CARGO_PKG_VERSION"));
 
 /// The app icon (art/, made with ChatGPT; sizes by tools/icon/build_icon.py), for windows that
 /// show one as IDM's do: the 256 px size, which the system scales down for the title bar, the
@@ -86,7 +92,7 @@ pub fn app_icon() -> std::sync::Arc<egui::IconData> {
             // eframe takes an empty icon as "none" (AppTitleIconSetter).
             return std::sync::Arc::new(egui::IconData::default());
         }
-        let png = include_bytes!("../assets/icons/app/mdm-256.png");
+        let png = include_bytes!("../assets/icons/app/razdm-256.png");
         std::sync::Arc::new(eframe::icon_data::from_png_bytes(png).unwrap_or_default())
     })
     .clone()
@@ -330,7 +336,7 @@ fn app() -> eframe::Result {
     if let Some(data) = mdm_ipc::data_dir() {
         mdm_crash::logs::init(&data, mdm_crash::logs::APP);
         tracing::info!(
-            "Mister Download Manager {} ({}) starting",
+            "RAZ Download Manager {} ({}) starting",
             help::VERSION,
             help::COMMIT
         );
@@ -405,7 +411,7 @@ fn app() -> eframe::Result {
         event_loop_builder: unix::event_loop_hook(),
         ..Default::default()
     };
-    let result = renderer::run("misterdownloadmanager", &plan, options, move |cc| {
+    let result = renderer::run("razdownloadmanager", &plan, options, move |cc| {
         #[cfg(windows)]
         win32::set_main_window(cc);
         scale::start(&cc.egui_ctx, z);

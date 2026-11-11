@@ -1,3 +1,9 @@
+// ==============================================================================
+// RAZ Download Manager — Debrid Services Integration
+// Terakhir Diperbarui: 2026-11-10 12:25 WIB
+// Deskripsi: Integrasi akun debrid (RealDebrid, dll) untuk direct link download.
+// ==============================================================================
+
 //! Debrid services (#44): the user's own account at a service such as Real-Debrid turns a file
 //! host's link into a direct link, which MDM's engine then downloads as any file (every
 //! connection, resume). Only the services' official, documented APIs, with the user's own
@@ -330,7 +336,7 @@ impl Http {
     }
 }
 
-const USER_AGENT: &str = concat!("MisterDownloadManager/", env!("CARGO_PKG_VERSION"));
+const USER_AGENT: &str = concat!("RAZDownloadManager/", env!("CARGO_PKG_VERSION"));
 
 /// One account, signed in: its access token in memory (Real-Debrid's device flow gives tokens
 /// that expire; a pasted token doesn't).

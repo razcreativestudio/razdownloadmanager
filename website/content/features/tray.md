@@ -1,10 +1,10 @@
----
+﻿---
 name: Notification area
 title: Run in the notification area: start hidden, hide progress windows
 headline: Out of the way. Still downloading.
 line: Starts with the computer in the notification area, and hides progress windows there while they run.
 lede: MDM can start with your computer and wait in the notification area, its window closed and its downloads running. A download's progress window can go there too, with one click.
-description: Mister Download Manager starts with your computer in the notification area, hides progress windows there in one click, and uses little memory there.
+description: RAZ Download Manager starts with your computer in the notification area, hides progress windows there in one click, and uses little memory there.
 group: app
 order: 310
 since: 0.5
@@ -16,7 +16,7 @@ help: getting-started.md#the-tray-icon
 
 ## Starts with the computer, without getting in front
 
-Tick **Launch Mister Download Manager on startup** in **Options → General** and MDM starts
+Tick **Launch RAZ Download Manager on startup** in **Options → General** and MDM starts
 when you sign in, hidden, its icon in the notification area. Its downloads, queues, the
 **Scheduler** and downloads from the browser all run from there. Click the icon, or start MDM
 again, and the window opens as usual.

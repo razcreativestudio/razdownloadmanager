@@ -1,4 +1,4 @@
-// #155 in Google Chrome by the right-click menu, which headless Chrome can't show: a Chrome window
+﻿// #155 in Google Chrome by the right-click menu, which headless Chrome can't show: a Chrome window
 // on the lab's desktop (the DevTools pipe loads the unpacked extension), the lab's HLS player
 // page, a real right-click on the player (xdotool), then the menu's own entry by the keyboard
 // (Up from the menu's end: Inspect, then the extension's entry above it). Then as streams.mjs:
@@ -75,7 +75,7 @@ const profile = path.join(process.env.HOME, "lab/chrome-menu");
 fs.rmSync(profile, { recursive: true, force: true });
 const hosts = path.join(profile, "NativeMessagingHosts");
 fs.mkdirSync(hosts, { recursive: true });
-fs.copyFileSync(path.join(process.env.HOME, ".config/google-chrome/NativeMessagingHosts/com.misterdownloadmanager.host.json"), path.join(hosts, "com.misterdownloadmanager.host.json"));
+fs.copyFileSync(path.join(process.env.HOME, ".config/google-chrome/NativeMessagingHosts/com.RAZDownloadManager.host.json"), path.join(hosts, "com.RAZDownloadManager.host.json"));
 const proc = spawn(
   "/usr/bin/google-chrome",
   ["--remote-debugging-pipe", "--enable-unsafe-extension-debugging", "--password-store=basic", `--user-data-dir=${profile}`, "--no-first-run", "--no-default-browser-check", "--window-position=40,60", "--window-size=1100,800", "about:blank"],
