@@ -3,11 +3,8 @@
 #   target/extension/firefox/   - manifest.firefox.json as manifest.json
 #   target/extension/safari/    - manifest.safari.json as manifest.json (a folder only: tools/safari
 #                                 builds it into the app as Safari's extension, macOS)
-#   target/extension/mdm-chromium.zip - the chromium folder, zipped (a release download: unzip it
-#                                       and load the folder unpacked)
-#   target/extension/mdm-firefox.xpi  - the firefox folder, zipped (Firefox needs it signed by AMO
-#                                       to install for good; about:debugging loads it unsigned)
-#   target/extension/mdm-chrome-store.zip - what is uploaded to the Chrome Web Store (see below)
+#   target/extension/razdm-extension-chrome.zip - the chromium folder, zipped (direct release download)
+#   target/extension/razdm-extension-firefox.xpi - the firefox folder, zipped (direct release download)
 # Both manifests get the app's version (Cargo.toml), so an extension and its app always match.
 $ErrorActionPreference = "Stop"
 $root = Split-Path -Parent (Split-Path -Parent $PSScriptRoot)
@@ -54,12 +51,11 @@ Add-Type -AssemblyName System.IO.Compression, System.IO.Compression.FileSystem
 # The zips have manifest.json at their root. Entries are named with "/" as zip requires
 # (Windows PowerShell's CreateFromDirectory writes "\", which Firefox rejects).
 foreach ($pair in @(
-    @("chromium", "mdm-chromium.zip"),
-    @("firefox", "mdm-firefox.xpi"),
-    @("chrome-store", "mdm-chrome-store.zip"),
     @("chromium", "razdm-chromium.zip"),
     @("firefox", "razdm-firefox.xpi"),
-    @("chrome-store", "razdm-chrome-store.zip")
+    @("chrome-store", "razdm-chrome-store.zip"),
+    @("chromium", "razdm-extension-chrome.zip"),
+    @("firefox", "razdm-extension-firefox.xpi")
 )) {
   $dir = (Resolve-Path (Join-Path $out $pair[0])).Path
   $zip = Join-Path $out $pair[1]
@@ -72,4 +68,17 @@ foreach ($pair in @(
     }
   } finally { $archive.Dispose() }
 }
-"built $out (chromium, firefox, safari, chrome-store, mdm-chromium.zip, mdm-firefox.xpi, mdm-chrome-store.zip; version $version)"
+
+# Copy direct download extensions to website assets & target dist
+$webExt = Join-Path $root "website\assets\extension"
+if (-not (Test-Path $webExt)) { New-Item -ItemType Directory -Force $webExt | Out-Null }
+Copy-Item (Join-Path $out "razdm-extension-chrome.zip") (Join-Path $webExt "razdm-extension-chrome.zip") -Force
+Copy-Item (Join-Path $out "razdm-extension-firefox.xpi") (Join-Path $webExt "razdm-extension-firefox.xpi") -Force
+
+$dist = Join-Path $root "target\dist"
+if (Test-Path $dist) {
+  Copy-Item (Join-Path $out "razdm-extension-chrome.zip") (Join-Path $dist "RAZDownloadManager-$version-extension-chrome.zip") -Force
+  Copy-Item (Join-Path $out "razdm-extension-firefox.xpi") (Join-Path $dist "RAZDownloadManager-$version-extension-firefox.xpi") -Force
+}
+
+"built $out (chromium, firefox, safari, razdm-extension-chrome.zip, razdm-extension-firefox.xpi; version $version)"

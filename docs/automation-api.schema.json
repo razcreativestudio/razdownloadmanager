@@ -1,4 +1,4 @@
-﻿{
+{
   "$defs": {
     "ActAnswer": {
       "description": "`{\"action\": …, \"ids\": […]}`: what was done, and what was skipped and why.",
@@ -427,7 +427,7 @@
         },
         "pair": {
           "default": false,
-          "description": "The remote control (#157, `misterdownloadmanager-cli pair`): show a new pairing code;\nanswered with it, the page's addresses and a QR code to scan ([`api::PairAnswer`]).",
+          "description": "The remote control (#157, `RAZDownloadManager-cli pair`): show a new pairing code;\nanswered with it, the page's addresses and a QR code to scan ([`api::PairAnswer`]).",
           "type": "boolean"
         },
         "panel_hide_site": {
@@ -595,9 +595,9 @@
       "type": "object"
     }
   },
-  "$id": "https://razdownloadmanager.com/automation-api.schema.json",
+  "$id": "https://dm.it-raz.com/automation-api.schema.json",
   "$ref": "#/$defs/Request",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "One JSON line to the port in ipc.json (on 127.0.0.1), one line back. A request is `Request`. A command (an address to add, start_queue) is answered `ok`; a question is answered with the JSON object for it (`ListAnswer`, `ActAnswer`, `ApiAnswer`) or an `ErrorAnswer`. A wrong token is answered `denied`, an app that doesn't answer within 2 seconds `timeout`. Guide: https://razdownloadmanager.com/help/command-line.html#the-automation-api",
+  "description": "One JSON line to the port in ipc.json (on 127.0.0.1), one line back. A request is `Request`. A command (an address to add, start_queue) is answered `ok`; a question is answered with the JSON object for it (`ListAnswer`, `ActAnswer`, `ApiAnswer`) or an `ErrorAnswer`. A wrong token is answered `denied`, an app that doesn't answer within 2 seconds `timeout`. Guide: https://dm.it-raz.com/help/command-line.html#the-automation-api",
   "title": "RAZ Download Manager automation API"
 }

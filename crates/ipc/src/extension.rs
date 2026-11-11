@@ -1,7 +1,8 @@
 ﻿// ==============================================================================
 // RAZ Download Manager — Browser Extension Metadata
-// Terakhir Diperbarui: 2026-11-10 12:25 WIB
+// Terakhir Diperbarui: 2026-11-11 15:15 WIB
 // Deskripsi: Metadata identitas ekstensi browser untuk Chromium dan Firefox.
+//            Mendukung unduhan langsung (direct download) tanpa webstore.
 // ==============================================================================
 
 //! The browser extension's identity and whether a browser has it, shared by the native messaging
@@ -17,9 +18,8 @@ pub const STORE_ID: &str = "ejoleppdfgjdndddcjoehopknmlglojp";
 /// Its IDs in Microsoft Edge Add-ons and Opera add-ons, which give their own; placeholders until
 /// listed there, never served then (`valid_id`).
 pub const OTHER_STORE_IDS: [&str; 2] = ["EDGE_ADDONS_ID_PENDING", "OPERA_ADDONS_ID_PENDING"];
-/// The Firefox add-on's page on addons.mozilla.org (listed: Firefox installs and updates it from
-/// there).
-pub const FIREFOX_PAGE: &str = "https://addons.mozilla.org/firefox/addon/raz-download-manager/";
+/// The direct download / install page for browser extensions on the official website.
+pub const FIREFOX_PAGE: &str = "https://dm.it-raz.com/download.html#extension";
 /// The Firefox add-on's ID (extension/manifest.firefox.json).
 pub const FIREFOX_ID: &str = "integration@razdownloadmanager.com";
 /// Chrome's update service: an external-install entry naming it makes Chrome offer the store's
@@ -45,11 +45,9 @@ pub fn chromium_ids() -> Vec<&'static str> {
         .collect()
 }
 
-/// The extension's page in the Chrome Web Store (Chrome, Edge, Brave, Opera and Vivaldi all
-/// install from it), once it is listed: the listing's own address, its name then its ID.
+/// The direct download and installation guide page on the official website (dm.it-raz.com).
 pub fn store_page() -> Option<String> {
-    store_id()
-        .map(|id| format!("https://chromewebstore.google.com/detail/mister-download-manager/{id}"))
+    Some("https://dm.it-raz.com/download.html#extension".to_string())
 }
 
 /// The tutorial that adds the extension: from the stores, and by hand (a build of its own, or
@@ -124,7 +122,7 @@ mod tests {
         // A placeholder store ID is never served, registered or linked.
         assert_eq!(store_id().is_some(), valid_id(STORE_ID));
         assert!(chromium_ids().iter().all(|id| valid_id(id)));
-        assert_eq!(store_page().is_some(), store_id().is_some());
+        assert!(store_page().is_some());
     }
 
     /// The store's copy and the app folder's (unpacked) both reach the host: the manifests'
@@ -140,9 +138,7 @@ mod tests {
         );
         assert_eq!(
             store_page().as_deref(),
-            Some(
-                "https://chromewebstore.google.com/detail/mister-download-manager/ejoleppdfgjdndddcjoehopknmlglojp"
-            )
+            Some("https://dm.it-raz.com/download.html#extension")
         );
     }
 

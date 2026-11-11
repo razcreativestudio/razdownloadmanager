@@ -3,6 +3,34 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-11] — Kompilasi Ekstensi Browser & Implementasi Direct Download (Bebas Webstore)
+*Waktu: 11 November 2026 15:15 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Kompilasi Otomatis Paket Ekstensi Browser Direct**:
+   - Memperbarui skrip `tools/extension/pack.ps1` agar mengompilasi dan mengemas ekstensi browser untuk Chromium dan Firefox, serta langsung mendistribusikannya ke `website/assets/extension/` dan `target/dist/`.
+   - Menghasilkan dua paket rilis resmi:
+     - `razdm-extension-chrome.zip` (~190 KB): Paket ekstensi Chromium untuk Google Chrome, Microsoft Edge, Brave Browser, Opera, dan Vivaldi (Manifest V3 dengan public key terdaftar).
+     - `razdm-extension-firefox.xpi` (~192 KB): Paket ekstensi Gecko untuk Mozilla Firefox, Librewolf, Waterfox, Zen Browser (ID `integration@razdownloadmanager.com`).
+2. **Pembaruan Logika In-App Extension (`crates/ipc/src/extension.rs`)**:
+   - Mengarahkan tautan instalasi ekstensi dari Chrome Web Store dan Mozilla Add-ons langsung menuju halaman unduhan web resmi (`https://dm.it-raz.com/download.html#extension`).
+   - Memastikan native messaging host (`razdm-nmhost`) tetap sinkron mengenali ID ekstensi lokal/unpacked (`oogbclbbninliongijffeeggalppliok`) dan Firefox ID.
+   - Sinkronisasi dan update skema otomatis (`docs/automation-api.schema.json`).
+   - Seluruh 41 unit test pada crate `razdm-ipc` lulus 100%.
+3. **Pusat Unduhan Ekstensi di Website (`website/download.html` & `website/index.html`)**:
+   - Menambahkan section khusus `#extension` di `website/download.html` lengkap dengan kartu unduhan direct untuk Chromium (.zip) dan Firefox (.xpi).
+   - Menyediakan panduan instalasi langkah demi langkah (*step-by-step*) yang jelas dan ramah pemula:
+     - Chromium: Ekstrak $\rightarrow$ `chrome://extensions` $\rightarrow$ Aktifkan *Developer mode* $\rightarrow$ Klik *Load unpacked*.
+     - Firefox: Unduh $\rightarrow$ `about:addons` $\rightarrow$ Klik ikon gerigi $\rightarrow$ *Install Add-on From File...*
+   - Memperbarui pill bar navigasi peramban di `website/index.html` agar langsung mengarah ke `download.html#extension`.
+   - Memperbarui bagian FAQ (Q5 & A5) di HTML dan terjemahan multilingual (`website/js/RAZMainLang.js`).
+4. **Verifikasi Integritas & Checksum SHA-256**:
+   - `razdm-extension-chrome.zip`: `f7997dd118be24a857ea87ecd1f30f0b2bb91f2ccab97e5c728005e4e0b8f164`
+   - `razdm-extension-firefox.xpi`: `03df4319e5b6f30fe62cbd208c8f7f72fb9b833ec396115108ccddb165cb49f6`
+   - Sinkronisasi `target/dist/SHA256SUMS.txt` dan tombol salin checksum di halaman web.
+
+---
+
 ## [2026-11-11] — Rancang Bangun Tema Baru "RAZ Studio" & Konfigurasi Sebagai Tema Default
 *Waktu: 11 November 2026 14:24 WIB*
 

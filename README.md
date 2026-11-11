@@ -93,12 +93,12 @@ programs at their default settings ([how we measured](#the-benchmark-in-detail))
 ## Download
 
 <p align="center">
-  <a href="https://github.com/anefzaoui/razdownloadmanager/releases/latest"><img src="https://img.shields.io/badge/Download%20for-Windows-2a78d6?style=flat-square&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0yIDMuNWw4LjUtMS4ydjguMkgyek0xMS41IDIuMkwyMiAuOHY5LjdIMTEuNXpNMiAxMS41aDguNXY4LjJMMiAxOC41ek0xMS41IDExLjVIMjJ2OS43bC0xMC41LTEuNHoiLz48L3N2Zz4%3D" alt="Download for Windows" height="34"></a>
-  <a href="https://github.com/anefzaoui/razdownloadmanager/releases/latest"><img src="https://img.shields.io/badge/Download%20for-macOS-2a78d6?style=flat-square&logo=apple&logoColor=white" alt="Download for macOS" height="34"></a>
-  <a href="https://github.com/anefzaoui/razdownloadmanager/releases/latest"><img src="https://img.shields.io/badge/Download%20for-Linux-2a78d6?style=flat-square&logo=linux&logoColor=white" alt="Download for Linux" height="34"></a>
+  <a href="https://dm.it-raz.com/download.html"><img src="https://img.shields.io/badge/Download%20for-Windows-2a78d6?style=flat-square&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0yIDMuNWw4LjUtMS4ydjguMkgyek0xMS41IDIuMkwyMiAuOHY5LjdIMTEuNXpNMiAxMS41aDguNXY4LjJMMiAxOC41ek0xMS41IDExLjVIMjJ2OS43bC0xMC41LTEuNHoiLz48L3N2Zz4%3D" alt="Download for Windows" height="34"></a>
+  <a href="https://dm.it-raz.com/download.html"><img src="https://img.shields.io/badge/Download%20for-macOS-2a78d6?style=flat-square&logo=apple&logoColor=white" alt="Download for macOS" height="34"></a>
+  <a href="https://dm.it-raz.com/download.html"><img src="https://img.shields.io/badge/Download%20for-Linux-2a78d6?style=flat-square&logo=linux&logoColor=white" alt="Download for Linux" height="34"></a>
 </p>
 
-On the [download page](https://github.com/anefzaoui/razdownloadmanager/releases/latest), pick
+On the [download page](https://dm.it-raz.com/download.html), pick
 one:
 
 | File | Choose it when |
@@ -106,7 +106,8 @@ one:
 | **`...-setup.exe`** | **Not sure? Take this one.** It installs RAZ DM, connects it to your browser and asks your language. |
 | `...-portable.zip` | You want RAZ DM on a USB stick or without installing: unzip and run. Everything stays in its folder. |
 | `...-x64.zip` | You want the plain programs without an installer. |
-| `...-extension-chromium.zip` | You want to add the browser extension by hand (Chrome, Edge, Brave, Opera, Vivaldi). From the stores is easier: [Add to Chrome](https://chromewebstore.google.com/detail/mister-download-manager/ejoleppdfgjdndddcjoehopknmlglojp), [Add to Firefox](https://addons.mozilla.org/firefox/addon/mister-download-manager/). |
+| `razdm-extension-chrome.zip` | Direct download for Chromium browsers (Chrome, Edge, Brave, Opera, Vivaldi). |
+| `razdm-extension-firefox.xpi` | Direct download for Firefox and Gecko browsers. |
 
 > [!NOTE]
 > Windows may say *"Windows protected your PC"* the first time, because this early version isn't
@@ -384,19 +385,19 @@ pieces fit.
 
 | Crate | What it is |
 |---|---|
-| [`mdm-engine`](crates/engine) | The download engine: segmentation, connections, resume, limits |
-| [`mdm-app`](crates/app) | The desktop app (egui), and `--headless` for servers |
-| [`mdm-cli`](crates/cli) | Headless downloads from the command line |
-| [`mdm-mcp`](crates/mcp) | The MCP server, for AI assistants |
-| [`mdm-nmhost`](crates/nmhost) | The browser's native messaging host |
-| [`mdm-ipc`](crates/ipc) | Talking to a running app; shared capture rules; the extension's IDs |
-| [`mdm-remote`](crates/remote) | The remote control: the HTTPS server and page a paired phone uses |
-| [`mdm-crash`](crates/crash) | Crash and freeze reports: the monitor, minidumps, stacks |
-| [`mdm-debrid`](crates/debrid) | Debrid accounts through the services' official APIs |
-| [`mdm-extract`](crates/extract) | Archive extraction (zip, tar, gz, xz; 7z and RAR through 7-Zip) |
-| [`mdm-geo`](crates/geo) | A server's country, from an IP table on this computer |
-| [`mdm-tools`](crates/tools) | yt-dlp and ffmpeg for video pages, gallery-dl for galleries |
-| [`mdm-torrent`](crates/torrent) | BitTorrent through librqbit |
+| [`razdm-engine`](crates/engine) | The download engine: segmentation, connections, resume, limits |
+| [`razdm-app`](crates/app) | The desktop app (egui), and `--headless` for servers |
+| [`razdm-cli`](crates/cli) | Headless downloads from the command line |
+| [`razdm-mcp`](crates/mcp) | The MCP server, for AI assistants |
+| [`razdm-nmhost`](crates/nmhost) | The browser's native messaging host |
+| [`razdm-ipc`](crates/ipc) | Talking to a running app; shared capture rules; the extension's IDs |
+| [`razdm-remote`](crates/remote) | The remote control: the HTTPS server and page a paired phone uses |
+| [`razdm-crash`](crates/crash) | Crash and freeze reports: the monitor, minidumps, stacks |
+| [`razdm-debrid`](crates/debrid) | Debrid accounts through the services' official APIs |
+| [`razdm-extract`](crates/extract) | Archive extraction (zip, tar, gz, xz; 7z and RAR through 7-Zip) |
+| [`razdm-geo`](crates/geo) | A server's country, from an IP table on this computer |
+| [`razdm-tools`](crates/tools) | yt-dlp and ffmpeg for video pages, gallery-dl for galleries |
+| [`razdm-torrent`](crates/torrent) | BitTorrent through librqbit |
 | [`razdm-labserver`](crates/labserver) | An HTTP test server with fault injection, for tests and benchmarks |
 
 | Tool | What it does |

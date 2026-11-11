@@ -185,7 +185,7 @@ const RAZMainLang = {
             'faq-q4': 'Apakah saya bisa download Torrent langsung tanpa software lain?',
             'faq-a4': 'Bisa banget! RAZ Download Manager memiliki engine BitTorrent bawaan berbasis librqbit. Lo cukup klik tautan magnet link atau buka file .torrent, pilih file mana saja yang ingin diunduh, dan pantau potongan file (pieces) secara real-time langsung di jendela utama.',
             'faq-q5': 'Bagaimana cara memasang ekstensi ke Google Chrome dan browser lain?',
-            'faq-a5': 'Saat lo menjalankan installer (setup.exe), pastikan opsi integrasi browser dicentang. Ekstensi untuk Chrome, Edge, Brave, dan Opera bisa langsung dipasang dari Chrome Web Store, sedangkan untuk Firefox tersedia di Mozilla Add-ons Store. Tautan unduhannya sudah tersedia lengkap di halaman ini.',
+            'faq-a5': 'Saat lo menjalankan installer (setup.exe), pastikan opsi integrasi browser dicentang. Ekstensi untuk Chrome, Edge, Brave, Opera, dan Firefox bisa langsung diunduh secara direct dari halaman unduhan resmi kami (Pusat Ekstensi) tanpa perlu melewati Chrome Web Store atau Add-ons Store.',
             'faq-q6': 'Bisa nggak saya impor riwayat atau daftar download lama saya dari IDM?',
             'faq-a6': 'Bisa! Di IDM, pilih menu Tasks → Export → To IDM export file. Kemudian di RAZ Download Manager, cukup buka menu Tasks → Import → From IDM export file. Semua link dan status antrean lo akan langsung berpindah.',
 
@@ -367,7 +367,7 @@ const RAZMainLang = {
             'faq-q4': 'Can I download Torrents without third-party software?',
             'faq-a4': 'Yes! RAZ Download Manager includes a native BitTorrent client engine powered by librqbit. Simply click a magnet link or open a .torrent file to download selective files and watch the swarm pieces live.',
             'faq-q5': 'How do I install the browser extension?',
-            'faq-a5': 'When running the setup installer, ensure browser integration is checked. For Chrome, Edge, Brave, and Opera, install it from the Chrome Web Store. For Firefox, grab it from Mozilla Add-ons. Links are provided on this page.',
+            'faq-a5': 'When running the setup installer, ensure browser integration is checked. Extensions for Chrome, Edge, Brave, Opera, and Firefox can be downloaded directly from our official Downloads page without going through the Chrome Web Store or Mozilla Add-ons.',
             'faq-q6': 'Can I import my existing downloads from IDM?',
             'faq-a6': 'Yes. In IDM, go to Tasks → Export → To IDM export file. Then in RAZ Download Manager, select Tasks → Import → From IDM export file. Your links, queues, and progress will be imported seamlessly.',
 
