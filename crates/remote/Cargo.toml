@@ -1,5 +1,5 @@
 [package]
-name = "mdm-remote"
+name = "razdm-remote"
 description = "RAZ Download Manager's remote control: a paired phone or computer on the local network adds and controls downloads over HTTPS (#141)"
 version.workspace = true
 edition.workspace = true

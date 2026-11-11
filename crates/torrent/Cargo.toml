@@ -1,5 +1,5 @@
 [package]
-name = "mdm-torrent"
+name = "razdm-torrent"
 description = "BitTorrent and magnet downloads for RAZ Download Manager (librqbit, D-014)"
 version.workspace = true
 edition.workspace = true

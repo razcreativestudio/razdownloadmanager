@@ -21,12 +21,12 @@ if (-not $version) { throw "no version in Cargo.toml" }
 
 if (-not $NoBuild) {
   # The build machine's paths out of the programs (#25): panic locations and debug info say
-  # "cargo\..." for cargo's folder and "mdm\..." for this checkout (shorter, and no user name).
+  # "cargo\..." for cargo's folder and "razdm\..." for this checkout (shorter, and no user name).
   # Encoded flags, as those paths may hold spaces.
   $cargoHome = if ($env:CARGO_HOME) { $env:CARGO_HOME } else { Join-Path $env:USERPROFILE ".cargo" }
-  $env:CARGO_ENCODED_RUSTFLAGS = "--remap-path-prefix=$cargoHome=cargo" + [char]0x1f + "--remap-path-prefix=$root=mdm"
+  $env:CARGO_ENCODED_RUSTFLAGS = "--remap-path-prefix=$cargoHome=cargo" + [char]0x1f + "--remap-path-prefix=$root=razdm"
   try {
-    & cargo build --release -p mdm-app -p mdm-nmhost -p mdm-cli -p mdm-mcp
+    & cargo build --release -j 2 -p razdm-app -p razdm-nmhost -p razdm-cli -p razdm-mcp
     if ($LASTEXITCODE) { throw "cargo build failed" }
   } finally {
     Remove-Item Env:CARGO_ENCODED_RUSTFLAGS

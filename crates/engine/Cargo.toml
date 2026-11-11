@@ -1,5 +1,5 @@
 [package]
-name = "mdm-engine"
+name = "razdm-engine"
 description = "MDM download engine: dynamic segmentation, workers, resume"
 version.workspace = true
 edition.workspace = true

@@ -4427,318 +4427,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "mdm-app"
-version = "1.0.0"
-dependencies = [
- "arboard",
- "base64 0.23.1",
- "brotli",
- "brotli-decompressor",
- "chrono",
- "craft-atomic",
- "craft-i18n",
- "dirs 7.0.0",
- "drag",
- "eframe",
- "egui",
- "egui-wgpu",
- "egui_extras",
- "image",
- "libc",
- "mdm-cli",
- "mdm-crash",
- "mdm-debrid",
- "mdm-engine",
- "mdm-extract",
- "mdm-geo",
- "mdm-ipc",
- "mdm-labserver",
- "mdm-remote",
- "mdm-tools",
- "mdm-torrent",
- "objc2 0.6.5",
- "objc2-app-kit 0.3.2",
- "objc2-foundation 0.3.2",
- "open",
- "percent-encoding",
- "qrcodegen",
- "raw-window-handle",
- "regex",
- "reqwest 0.13.5",
- "rfd",
- "roxmltree",
- "security-framework",
- "serde",
- "serde_json",
- "tempfile",
- "tokio",
- "toml 1.1.8+spec-1.1.0",
- "tracing",
- "tracing-subscriber",
- "tray-icon",
- "unicode-segmentation",
- "url",
- "wgpu",
- "windows 0.62.2",
- "windows-sys 0.61.2",
- "winit",
- "winresource",
- "x11rb",
- "zbus",
-]
-
-[[package]]
-name = "mdm-cli"
-version = "1.0.0"
-dependencies = [
- "anyhow",
- "clap",
- "ctrlc",
- "mdm-engine",
- "mdm-ipc",
- "mdm-tools",
- "mdm-torrent",
- "reqwest 0.13.5",
- "serde_json",
- "tempfile",
- "tokio",
- "tokio-util",
- "url",
-]
-
-[[package]]
-name = "mdm-crash"
-version = "1.0.0"
-dependencies = [
- "breakpad-symbols",
- "chrono",
- "crash-handler",
- "libc",
- "mdm-engine",
- "minidump",
- "minidump-processor",
- "minidump-unwind",
- "minidumper",
- "reqwest 0.13.5",
- "serde",
- "serde_json",
- "tempfile",
- "tokio",
- "tracing",
- "tracing-subscriber",
- "url",
- "windows-sys 0.61.2",
- "zip",
-]
-
-[[package]]
-name = "mdm-debrid"
-version = "1.0.0"
-dependencies = [
- "bytes",
- "futures",
- "mdm-engine",
- "mdm-labserver",
- "reqwest 0.13.5",
- "serde",
- "serde_json",
- "tempfile",
- "tokio",
- "tokio-util",
- "tracing",
- "tracing-subscriber",
- "url",
-]
-
-[[package]]
-name = "mdm-engine"
-version = "1.0.0"
-dependencies = [
- "base64 0.23.1",
- "bytes",
- "core-foundation 0.10.1",
- "core-foundation-sys",
- "craft-atomic",
- "crc32fast",
- "futures",
- "hex",
- "hickory-resolver",
- "http",
- "httpdate",
- "hyper-util",
- "md-5",
- "mdm-labserver",
- "network-interface",
- "percent-encoding",
- "proptest",
- "reqwest 0.13.5",
- "rquickjs",
- "rustix 1.1.6",
- "rustls",
- "rustls-platform-verifier",
- "serde",
- "serde_json",
- "sha1",
- "sha2",
- "socket2",
- "suppaftp",
- "sysinfo",
- "tempfile",
- "thiserror 2.0.21",
- "tokio",
- "tokio-rustls",
- "tokio-util",
- "tower-layer",
- "tower-service",
- "url",
- "windows-sys 0.61.2",
-]
-
-[[package]]
-name = "mdm-extract"
-version = "1.0.0"
-dependencies = [
- "flate2",
- "lzma-rust2",
- "mdm-engine",
- "tar",
- "tempfile",
- "tracing",
- "zip",
-]
-
-[[package]]
-name = "mdm-geo"
-version = "1.0.0"
-dependencies = [
- "lzma-rust2",
- "png 0.18.1",
- "resvg",
-]
-
-[[package]]
-name = "mdm-ipc"
-version = "1.0.0"
-dependencies = [
- "craft-atomic",
- "dirs 7.0.0",
- "schemars 1.2.3",
- "serde",
- "serde_json",
- "tempfile",
-]
-
-[[package]]
-name = "mdm-labserver"
-version = "1.0.0"
-dependencies = [
- "anyhow",
- "axum",
- "bytes",
- "clap",
- "futures",
- "hex",
- "http-range-header",
- "httpdate",
- "percent-encoding",
- "rcgen",
- "reqwest 0.13.5",
- "rustls",
- "serde",
- "serde_json",
- "serde_urlencoded",
- "sha2",
- "tokio",
- "tokio-rustls",
- "url",
-]
-
-[[package]]
-name = "mdm-mcp"
-version = "1.0.0"
-dependencies = [
- "mdm-ipc",
- "rmcp",
- "schemars 1.2.3",
- "serde",
- "serde_json",
- "tempfile",
- "tokio",
- "url",
-]
-
-[[package]]
-name = "mdm-nmhost"
-version = "1.0.0"
-dependencies = [
- "chrono",
- "mdm-ipc",
- "serde",
- "serde_json",
- "windows-sys 0.61.2",
-]
-
-[[package]]
-name = "mdm-remote"
-version = "1.0.0"
-dependencies = [
- "aws-lc-rs",
- "axum",
- "hex",
- "mdm-engine",
- "mdm-ipc",
- "rcgen",
- "reqwest 0.13.5",
- "rustls",
- "serde",
- "serde_json",
- "sha2",
- "tempfile",
- "tokio",
- "tokio-rustls",
- "tracing",
-]
-
-[[package]]
-name = "mdm-tools"
-version = "1.0.0"
-dependencies = [
- "aws-lc-rs",
- "base64 0.23.1",
- "craft-atomic",
- "hex",
- "mdm-engine",
- "mdm-ipc",
- "mdm-labserver",
- "percent-encoding",
- "reqwest 0.13.5",
- "serde",
- "serde_json",
- "sha2",
- "tempfile",
- "thiserror 2.0.21",
- "tokio",
- "url",
- "win32job",
- "zip",
-]
-
-[[package]]
-name = "mdm-torrent"
-version = "1.0.0"
-dependencies = [
- "flate2",
- "librqbit",
- "mdm-engine",
- "serde_json",
- "tempfile",
- "thiserror 2.0.21",
- "tokio",
- "tracing-subscriber",
- "url",
-]
-
-[[package]]
 name = "memchr"
 version = "2.8.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -6672,6 +6360,318 @@ dependencies = [
  "objc2-core-foundation",
  "objc2-foundation 0.3.2",
  "objc2-quartz-core 0.3.2",
+]
+
+[[package]]
+name = "razdm-app"
+version = "1.0.0"
+dependencies = [
+ "arboard",
+ "base64 0.23.1",
+ "brotli",
+ "brotli-decompressor",
+ "chrono",
+ "craft-atomic",
+ "craft-i18n",
+ "dirs 7.0.0",
+ "drag",
+ "eframe",
+ "egui",
+ "egui-wgpu",
+ "egui_extras",
+ "image",
+ "libc",
+ "objc2 0.6.5",
+ "objc2-app-kit 0.3.2",
+ "objc2-foundation 0.3.2",
+ "open",
+ "percent-encoding",
+ "qrcodegen",
+ "raw-window-handle",
+ "razdm-cli",
+ "razdm-crash",
+ "razdm-debrid",
+ "razdm-engine",
+ "razdm-extract",
+ "razdm-geo",
+ "razdm-ipc",
+ "razdm-labserver",
+ "razdm-remote",
+ "razdm-tools",
+ "razdm-torrent",
+ "regex",
+ "reqwest 0.13.5",
+ "rfd",
+ "roxmltree",
+ "security-framework",
+ "serde",
+ "serde_json",
+ "tempfile",
+ "tokio",
+ "toml 1.1.8+spec-1.1.0",
+ "tracing",
+ "tracing-subscriber",
+ "tray-icon",
+ "unicode-segmentation",
+ "url",
+ "wgpu",
+ "windows 0.62.2",
+ "windows-sys 0.61.2",
+ "winit",
+ "winresource",
+ "x11rb",
+ "zbus",
+]
+
+[[package]]
+name = "razdm-cli"
+version = "1.0.0"
+dependencies = [
+ "anyhow",
+ "clap",
+ "ctrlc",
+ "razdm-engine",
+ "razdm-ipc",
+ "razdm-tools",
+ "razdm-torrent",
+ "reqwest 0.13.5",
+ "serde_json",
+ "tempfile",
+ "tokio",
+ "tokio-util",
+ "url",
+]
+
+[[package]]
+name = "razdm-crash"
+version = "1.0.0"
+dependencies = [
+ "breakpad-symbols",
+ "chrono",
+ "crash-handler",
+ "libc",
+ "minidump",
+ "minidump-processor",
+ "minidump-unwind",
+ "minidumper",
+ "razdm-engine",
+ "reqwest 0.13.5",
+ "serde",
+ "serde_json",
+ "tempfile",
+ "tokio",
+ "tracing",
+ "tracing-subscriber",
+ "url",
+ "windows-sys 0.61.2",
+ "zip",
+]
+
+[[package]]
+name = "razdm-debrid"
+version = "1.0.0"
+dependencies = [
+ "bytes",
+ "futures",
+ "razdm-engine",
+ "razdm-labserver",
+ "reqwest 0.13.5",
+ "serde",
+ "serde_json",
+ "tempfile",
+ "tokio",
+ "tokio-util",
+ "tracing",
+ "tracing-subscriber",
+ "url",
+]
+
+[[package]]
+name = "razdm-engine"
+version = "1.0.0"
+dependencies = [
+ "base64 0.23.1",
+ "bytes",
+ "core-foundation 0.10.1",
+ "core-foundation-sys",
+ "craft-atomic",
+ "crc32fast",
+ "futures",
+ "hex",
+ "hickory-resolver",
+ "http",
+ "httpdate",
+ "hyper-util",
+ "md-5",
+ "network-interface",
+ "percent-encoding",
+ "proptest",
+ "razdm-labserver",
+ "reqwest 0.13.5",
+ "rquickjs",
+ "rustix 1.1.6",
+ "rustls",
+ "rustls-platform-verifier",
+ "serde",
+ "serde_json",
+ "sha1",
+ "sha2",
+ "socket2",
+ "suppaftp",
+ "sysinfo",
+ "tempfile",
+ "thiserror 2.0.21",
+ "tokio",
+ "tokio-rustls",
+ "tokio-util",
+ "tower-layer",
+ "tower-service",
+ "url",
+ "windows-sys 0.61.2",
+]
+
+[[package]]
+name = "razdm-extract"
+version = "1.0.0"
+dependencies = [
+ "flate2",
+ "lzma-rust2",
+ "razdm-engine",
+ "tar",
+ "tempfile",
+ "tracing",
+ "zip",
+]
+
+[[package]]
+name = "razdm-geo"
+version = "1.0.0"
+dependencies = [
+ "lzma-rust2",
+ "png 0.18.1",
+ "resvg",
+]
+
+[[package]]
+name = "razdm-ipc"
+version = "1.0.0"
+dependencies = [
+ "craft-atomic",
+ "dirs 7.0.0",
+ "schemars 1.2.3",
+ "serde",
+ "serde_json",
+ "tempfile",
+]
+
+[[package]]
+name = "razdm-labserver"
+version = "1.0.0"
+dependencies = [
+ "anyhow",
+ "axum",
+ "bytes",
+ "clap",
+ "futures",
+ "hex",
+ "http-range-header",
+ "httpdate",
+ "percent-encoding",
+ "rcgen",
+ "reqwest 0.13.5",
+ "rustls",
+ "serde",
+ "serde_json",
+ "serde_urlencoded",
+ "sha2",
+ "tokio",
+ "tokio-rustls",
+ "url",
+]
+
+[[package]]
+name = "razdm-mcp"
+version = "1.0.0"
+dependencies = [
+ "razdm-ipc",
+ "rmcp",
+ "schemars 1.2.3",
+ "serde",
+ "serde_json",
+ "tempfile",
+ "tokio",
+ "url",
+]
+
+[[package]]
+name = "razdm-nmhost"
+version = "1.0.0"
+dependencies = [
+ "chrono",
+ "razdm-ipc",
+ "serde",
+ "serde_json",
+ "windows-sys 0.61.2",
+]
+
+[[package]]
+name = "razdm-remote"
+version = "1.0.0"
+dependencies = [
+ "aws-lc-rs",
+ "axum",
+ "hex",
+ "razdm-engine",
+ "razdm-ipc",
+ "rcgen",
+ "reqwest 0.13.5",
+ "rustls",
+ "serde",
+ "serde_json",
+ "sha2",
+ "tempfile",
+ "tokio",
+ "tokio-rustls",
+ "tracing",
+]
+
+[[package]]
+name = "razdm-tools"
+version = "1.0.0"
+dependencies = [
+ "aws-lc-rs",
+ "base64 0.23.1",
+ "craft-atomic",
+ "hex",
+ "percent-encoding",
+ "razdm-engine",
+ "razdm-ipc",
+ "razdm-labserver",
+ "reqwest 0.13.5",
+ "serde",
+ "serde_json",
+ "sha2",
+ "tempfile",
+ "thiserror 2.0.21",
+ "tokio",
+ "url",
+ "win32job",
+ "zip",
+]
+
+[[package]]
+name = "razdm-torrent"
+version = "1.0.0"
+dependencies = [
+ "flate2",
+ "librqbit",
+ "razdm-engine",
+ "serde_json",
+ "tempfile",
+ "thiserror 2.0.21",
+ "tokio",
+ "tracing-subscriber",
+ "url",
 ]
 
 [[package]]

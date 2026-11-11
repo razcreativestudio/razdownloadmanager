@@ -1,5 +1,5 @@
 [package]
-name = "mdm-extract"
+name = "razdm-extract"
 description = "Safe archive extraction: zip, tar (gz, xz), single gz/xz; 7z and RAR through an installed 7-Zip"
 version.workspace = true
 edition.workspace = true

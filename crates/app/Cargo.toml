@@ -5,7 +5,7 @@
 # ==============================================================================
 
 [package]
-name = "mdm-app"
+name = "razdm-app"
 description = "RAZ Download Manager, desktop app (egui)"
 version.workspace = true
 edition.workspace = true

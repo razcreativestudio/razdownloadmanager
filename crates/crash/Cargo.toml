@@ -1,5 +1,5 @@
 [package]
-name = "mdm-crash"
+name = "razdm-crash"
 description = "Crash and freeze reports: the monitor process, minidumps, symbolicated stacks, logs"
 version.workspace = true
 edition.workspace = true

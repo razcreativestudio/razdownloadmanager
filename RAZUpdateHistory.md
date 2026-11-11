@@ -3,6 +3,34 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-11] — Implementasi Aset Rasio 1:1 (razdm-logo11.svg) & 16:9 (razdm-logo.svg) Transparan
+*Waktu: 11 November 2026*
+
+### Aktivitas & Pembaruan:
+1. **Penghapusan Background Hitam (*Transparent Logo Clean-up*)**:
+   - Menghapus elemen `<rect ... fill="url(#bgGlow)">` dan `<circle ... fill="url(#centerAmbient)">` berlatar belakang gelap dari kedua master SVG:
+     - `website/razdm-logo11.svg` (Rasio 1:1 Square, 1600x1600 px) -> Menghasilkan SVG transparan murni.
+     - `website/razdm-logo.svg` (Rasio 16:9 Landscape, 1600x900 px) -> Menghasilkan SVG transparan murni.
+2. **Pemisahan Penggunaan Rasio Aset Sesuai Standar**:
+   - **Rasio 1:1 (`website/razdm-logo11.svg`)**:
+     - Desktop app icon: `crates/app/assets/icons/app/razdm-*.png` (16, 20, 24, 32, 48, 64, 128, 256 px) & `razdm.ico` multi-layer.
+     - Browser extension icons: `extension/icons/icon-*.png` (16, 32, 48, 128 px).
+     - Website favicons & web app icons: `website/favicon.ico`, `website/assets/favicon-32.png`, `apple-touch-icon.png`, `logo-64.png`, `logo-256.webp`.
+     - Dokumentasi: `docs/images/logo.png`.
+     - Website Splash Screen Loader & Benchmark Lane: `website/img/raz-logo11.svg`.
+   - **Rasio 16:9 (`website/razdm-logo.svg`)**:
+     - Navbar header branding & footer: `website/img/raz-logo.svg`.
+     - Social share & OpenGraph: `website/assets/logo-640.png`, `website/assets/social.png`.
+3. **Kompilasi Ulang Binary & Installer Windows**:
+   - Menjalankan pipeline kompilasi release dengan resource icon transparan baru disematkan ke binary executable.
+   - Hasil installer dan distribusi baru di `target/dist/`:
+     - `RAZDownloadManager-1.0.0-setup.exe` (15,8 MB) — SHA-256: `1ff247d9406e86bd6fab27b3c10cbffaf47e40e2c63a854d7e09e36275e75dea`
+     - `RAZDownloadManager-1.0.0-portable.zip` (18,6 MB) — SHA-256: `207959b1e092a80708cd4b4b6941b3ab6eb8b5445155caa11955802377e3bcf2`
+     - `RAZDownloadManager-1.0.0-x64.zip` (18,6 MB) — SHA-256: `317168409490b2a259ef3f5b00d900cbc9fbade122e3d5eee74da9e92526ea06`
+   - Sinkronisasi nilai hash SHA-256 di `website/index.html` dan `website/download.html`.
+
+---
+
 ## [2026-11-11] — Rilis Website Baru dm.it-raz.com & Standar Visual webraz (Dark & Gold Luxury)
 *Waktu: 11 November 2026*
 

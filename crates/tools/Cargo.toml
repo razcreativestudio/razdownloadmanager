@@ -1,5 +1,5 @@
 [package]
-name = "mdm-tools"
+name = "razdm-tools"
 description = "Verified, pinned installs of helper tools (yt-dlp) for RAZ Download Manager"
 version.workspace = true
 edition.workspace = true

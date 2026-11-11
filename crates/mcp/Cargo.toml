@@ -5,7 +5,7 @@
 # ==============================================================================
 
 [package]
-name = "mdm-mcp"
+name = "razdm-mcp"
 description = "MCP server: lets AI assistants list, add and control running RAZ Download Manager"
 version.workspace = true
 edition.workspace = true

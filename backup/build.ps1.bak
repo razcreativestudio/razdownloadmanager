@@ -1,5 +1,5 @@
 ﻿# Builds the Windows release into target/dist/:
-#   RAZDownloadManager-<version>-setup.exe     the installer (tools/installer/mdm.iss)
+#   RAZDownloadManager-<version>-setup.exe     the installer (tools/installer/razdm.iss)
 #   RAZDownloadManager-<version>-portable.zip  the same programs with a `data` folder (portable
 #                                                 mode: settings beside the exe, no registry)
 #   RAZDownloadManager-<version>-x64.zip       the same programs, data in %APPDATA% as installed
@@ -46,7 +46,8 @@ if (-not $iscc) { throw "Inno Setup 6 (ISCC.exe) not found" }
 New-Item -ItemType Directory -Force $dist | Out-Null
 $isccArgs = @("/Qp", "/DAppVersion=$version")
 if ($SignCommand) { $isccArgs += @("/DSign", "/Smdmsign=$SignCommand") }
-& $iscc @isccArgs (Join-Path $PSScriptRoot "mdm.iss")
+$issFile = if (Test-Path (Join-Path $PSScriptRoot "razdm.iss")) { "razdm.iss" } else { "mdm.iss" }
+& $iscc @isccArgs (Join-Path $PSScriptRoot $issFile)
 if ($LASTEXITCODE) { throw "ISCC failed" }
 
 # The zips: the same programs; the portable one adds a `data` folder next to the exe, which

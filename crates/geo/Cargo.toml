@@ -1,5 +1,5 @@
 [package]
-name = "mdm-geo"
+name = "razdm-geo"
 description = "Where a download's server is (#140): an IP address's country, from DB-IP's IP to Country Lite (CC BY 4.0) shipped with MDM, looked up on this computer only; and the countries' flags"
 version.workspace = true
 edition.workspace = true

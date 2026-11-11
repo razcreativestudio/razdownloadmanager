@@ -5,7 +5,7 @@
 # ==============================================================================
 
 [package]
-name = "mdm-cli"
+name = "razdm-cli"
 description = "RAZ Download Manager, headless command line and launcher"
 version.workspace = true
 edition.workspace = true

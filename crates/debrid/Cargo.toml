@@ -1,5 +1,5 @@
 [package]
-name = "mdm-debrid"
+name = "razdm-debrid"
 description = "Debrid service accounts for RAZ Download Manager (#44): file-host links unlocked through the user's own account"
 version.workspace = true
 edition.workspace = true

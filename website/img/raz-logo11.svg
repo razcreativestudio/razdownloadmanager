@@ -1,0 +1,250 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1600" width="100%" height="100%">
+  <defs>
+    <!-- Background Radial Gradient (1:1 Square) -->
+    <radialGradient id="bgGlow" cx="50%" cy="48%" r="50%" fx="50%" fy="48%">
+      <stop offset="0%" stop-color="#332616" />
+      <stop offset="45%" stop-color="#1c1916" />
+      <stop offset="100%" stop-color="#121313" />
+    </radialGradient>
+
+    <!-- Ambient Golden Glow Behind A -->
+    <radialGradient id="centerAmbient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff9d2e" stop-opacity="0.28" />
+      <stop offset="50%" stop-color="#b87b31" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#121313" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Side Bars Gradient -->
+    <linearGradient id="sideBarGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7c6346" />
+      <stop offset="100%" stop-color="#9e805b" />
+    </linearGradient>
+
+    <!-- Metallic Gold Outline Gradient -->
+    <linearGradient id="goldStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e5c185" />
+      <stop offset="35%" stop-color="#9b7c56" />
+      <stop offset="65%" stop-color="#ffcf7d" />
+      <stop offset="100%" stop-color="#7c6243" />
+    </linearGradient>
+
+    <!-- R Facet 1: Upper-Left Triangle (Bright Gold Edge) -->
+    <linearGradient id="rFacetLeft" x1="0%" y1="30%" x2="100%" y2="70%">
+      <stop offset="0%" stop-color="#f7cf86" />
+      <stop offset="18%" stop-color="#b58d58" />
+      <stop offset="100%" stop-color="#876b49" />
+    </linearGradient>
+
+    <!-- R Facet 2: Upper-Right Bowl -->
+    <linearGradient id="rFacetBowl" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7d6446" />
+      <stop offset="60%" stop-color="#6b553b" />
+      <stop offset="100%" stop-color="#8b6f4e" />
+    </linearGradient>
+
+    <!-- R Facet 3: Bottom Base -->
+    <linearGradient id="rFacetBottom" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#735b3f" />
+      <stop offset="70%" stop-color="#5d4a34" />
+      <stop offset="100%" stop-color="#a8804c" />
+    </linearGradient>
+
+    <!-- A Left Leg Gradient -->
+    <linearGradient id="aLeftLeg" x1="20%" y1="100%" x2="80%" y2="0%">
+      <stop offset="0%" stop-color="#8b6d47" />
+      <stop offset="40%" stop-color="#695339" />
+      <stop offset="85%" stop-color="#9d7d54" />
+      <stop offset="100%" stop-color="#d4ad73" />
+    </linearGradient>
+
+    <!-- A Left Inner Arrow Facet -->
+    <linearGradient id="aArrowLeft" x1="30%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" stop-color="#f4d599" />
+      <stop offset="35%" stop-color="#cfa66c" />
+      <stop offset="70%" stop-color="#8f704a" />
+      <stop offset="100%" stop-color="#b5854b" />
+    </linearGradient>
+
+    <!-- A Right Glowing Orange-Gold Arrow Facet -->
+    <linearGradient id="aArrowRight" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#ffaa33" />
+      <stop offset="28%" stop-color="#ff8c1a" />
+      <stop offset="55%" stop-color="#ffea85" />
+      <stop offset="78%" stop-color="#ff9424" />
+      <stop offset="100%" stop-color="#e06310" />
+    </linearGradient>
+
+    <!-- A Bottom-Right Small Triangle Left Half -->
+    <linearGradient id="aSmallTriLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9e7f58" />
+      <stop offset="100%" stop-color="#6c563b" />
+    </linearGradient>
+
+    <!-- A Bottom-Right Small Triangle Right Half -->
+    <linearGradient id="aSmallTriRight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d49546" />
+      <stop offset="100%" stop-color="#ff841c" />
+    </linearGradient>
+
+    <!-- Z Top-Left Facet -->
+    <linearGradient id="zTopLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#786043" />
+      <stop offset="65%" stop-color="#9e7e58" />
+      <stop offset="100%" stop-color="#b89366" />
+    </linearGradient>
+
+    <!-- Z Top-Right Triangle (Warm Orange-Gold Corner) -->
+    <linearGradient id="zTopRight" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b58852" />
+      <stop offset="55%" stop-color="#e3963e" />
+      <stop offset="100%" stop-color="#ff8c1a" />
+    </linearGradient>
+
+    <!-- Z Diagonal Center Bar -->
+    <linearGradient id="zCenterDiag" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8f724d" />
+      <stop offset="50%" stop-color="#69543a" />
+      <stop offset="100%" stop-color="#5e4b34" />
+    </linearGradient>
+
+    <!-- Z Bottom-Left Triangle (Bright Gold Highlight) -->
+    <linearGradient id="zBottomLeft" x1="0%" y1="0%" x2="85%" y2="85%">
+      <stop offset="0%" stop-color="#c49a62" />
+      <stop offset="45%" stop-color="#ffdf94" />
+      <stop offset="100%" stop-color="#b88c54" />
+    </linearGradient>
+
+    <!-- Z Bottom-Right Facet -->
+    <linearGradient id="zBottomRight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#876b48" />
+      <stop offset="35%" stop-color="#624e36" />
+      <stop offset="100%" stop-color="#786042" />
+    </linearGradient>
+
+    <!-- Text Metallic Gold Gradient -->
+    <linearGradient id="textGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9c7e54" />
+      <stop offset="22%" stop-color="#cbb082" />
+      <stop offset="48%" stop-color="#ebd19e" />
+      <stop offset="62%" stop-color="#ffd984" />
+      <stop offset="80%" stop-color="#d4b27b" />
+      <stop offset="100%" stop-color="#9e7f56" />
+    </linearGradient>
+
+    <!-- Speed Lines Gradient -->
+    <linearGradient id="speedGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7c6242" stop-opacity="0.2" />
+      <stop offset="65%" stop-color="#b89262" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#ffd885" stop-opacity="1" />
+    </linearGradient>
+
+    <!-- Glow Filter for Orange Arrow & Light Flares -->
+    <filter id="orangeGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="flareBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" />
+    </filter>
+
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.65" />
+    </filter>
+  </defs>
+
+  <!-- 1. Transparent 1:1 Background (Black background removed per user request) -->
+
+  <!-- 2. Horizontal Accent Bars (Left & Right) -->
+  <rect x="0" y="746" width="214" height="16" fill="url(#sideBarGrad)" />
+  <rect x="1426" y="746" width="174" height="16" fill="url(#sideBarGrad)" />
+
+  <!-- 3. Speed Lines & Particles on Left of "R" -->
+  <g fill="url(#speedGrad)">
+    <!-- Upper Cluster -->
+    <polygon points="315,613 266,616 315,619" />
+    <circle cx="243" cy="616" r="4.5" fill="#9c7e58" />
+
+    <polygon points="315,638 182,642 315,646" />
+
+    <polygon points="315,661 252,665 315,669" />
+    <circle cx="235" cy="653" r="2.5" fill="#9c7e58" />
+    <circle cx="217" cy="665" r="4.5" fill="#9c7e58" />
+
+    <polygon points="315,686 258,690 315,695" />
+    <circle cx="243" cy="690" r="3" fill="#9c7e58" />
+
+    <polygon points="315,711 288,715 315,719" />
+    <circle cx="263" cy="718" r="3.5" fill="#9c7e58" />
+
+    <!-- Lower Cluster -->
+    <circle cx="260" cy="832" r="2.2" fill="#9c7e58" />
+    <circle cx="246" cy="853" r="3" fill="#9c7e58" />
+
+    <polygon points="315,853 256,858 315,863" />
+    <circle cx="232" cy="858" r="5" fill="#9c7e58" />
+
+    <polygon points="315,878 242,883 315,888" />
+
+    <polygon points="315,903 158,907 315,911" />
+    <circle cx="202" cy="894" r="3" fill="#9c7e58" />
+
+    <polygon points="315,927 254,932 315,937" />
+    <circle cx="238" cy="932" r="4.5" fill="#9c7e58" />
+  </g>
+
+  <!-- 4. LETTER "R" -->
+  <g stroke="url(#goldStroke)" stroke-width="2" stroke-linejoin="round">
+    <!-- Upper-Left Triangle -->
+    <polygon points="315,548 493,790 315,790" fill="url(#rFacetLeft)" />
+    <!-- Upper-Right Semicircular Bowl -->
+    <path d="M 315,548 L 493,548 A 121,121 0 0,1 493,790 Z" fill="url(#rFacetBowl)" />
+    <!-- Bottom Trapezoid Base -->
+    <polygon points="315,790 493,790 612,952 315,952" fill="url(#rFacetBottom)" />
+  </g>
+
+  <!-- 5. LETTER "A" + INTEGRATED DOWNLOAD ARROW -->
+  <g stroke-linejoin="round">
+    <!-- Left Leg of A -->
+    <polygon points="612,952 748,682 798,778 798,822 738,835 772,862 728,952" fill="url(#aLeftLeg)" stroke="url(#goldStroke)" stroke-width="2" />
+
+    <!-- Small Bottom-Right Foot of A (Split Triangle) -->
+    <polygon points="902,952 945,852 945,952" fill="url(#aSmallTriLeft)" stroke="url(#goldStroke)" stroke-width="1.5" />
+    <polygon points="945,852 988,952 945,952" fill="url(#aSmallTriRight)" stroke="url(#goldStroke)" stroke-width="1.5" />
+
+    <!-- Left Facet of the Download Arrow inside A -->
+    <polygon points="748,682 802,548 884,952 738,835 798,822 798,778" fill="url(#aArrowLeft)" stroke="url(#goldStroke)" stroke-width="2" />
+
+    <!-- Right Glowing Orange-Gold Facet of the Download Arrow -->
+    <polygon points="802,548 918,798 966,784 884,952" fill="url(#aArrowRight)" stroke="#ffcf75" stroke-width="2" filter="url(#orangeGlow)" />
+  </g>
+
+  <!-- 6. LETTER "Z" -->
+  <g stroke="url(#goldStroke)" stroke-width="2" stroke-linejoin="round">
+    <!-- Top-Left Trapezoid -->
+    <polygon points="992,548 1316,548 1179,668 992,668" fill="url(#zTopLeft)" />
+    <!-- Top-Right Triangle -->
+    <polygon points="1316,548 1316,668 1179,668" fill="url(#zTopRight)" />
+    <!-- Center Diagonal Parallelogram -->
+    <polygon points="1179,668 1316,668 1129,832 992,832" fill="url(#zCenterDiag)" />
+    <!-- Bottom-Left Triangle -->
+    <polygon points="992,832 1129,832 992,952" fill="url(#zBottomLeft)" />
+    <!-- Bottom-Right Trapezoid -->
+    <polygon points="1129,832 1316,832 1316,952 992,952" fill="url(#zBottomRight)" />
+  </g>
+
+  <!-- 7. Edge Light Flares & Highlights -->
+  <!-- Left Edge Flare on R -->
+  <ellipse cx="315" cy="745" rx="6" ry="55" fill="#ffe49e" filter="url(#flareBlur)" opacity="0.85" />
+  <line x1="315" y1="680" x2="315" y2="810" stroke="#fff3cf" stroke-width="3" />
+
+  <!-- Bottom Vertex Flare Between R and A -->
+  <ellipse cx="612" cy="952" rx="45" ry="6" fill="#ffbe55" filter="url(#flareBlur)" opacity="0.85" />
+  <circle cx="612" cy="952" r="4" fill="#fff6d6" filter="url(#flareBlur)" />
+
+  <!-- Arrow Center Ridge Highlight -->
+  <line x1="802" y1="548" x2="884" y2="952" stroke="#ffe596" stroke-width="2.2" opacity="0.9" />
+
+  <!-- 8. Typography: "DOWNLOAD MANAGER" -->
+  <text x="816" y="1046" text-anchor="middle" font-family="&#39;Montserrat&#39;, &#39;Gotham&#39;, &#39;Futura&#39;, &#39;Segoe UI&#39;, &#39;Helvetica Neue&#39;, Arial, sans-serif" font-size="60" font-weight="500" letter-spacing="11" fill="url(#textGold)" stroke="#5c472c" stroke-width="0.8" filter="url(#softShadow)">DOWNLOAD MANAGER</text>
+</svg>

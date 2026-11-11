@@ -153,9 +153,7 @@
     </filter>
   </defs>
 
-  <!-- 1. Background -->
-  <rect width="1600" height="900" fill="url(#bgGlow)" />
-  <circle cx="840" cy="420" r="460" fill="url(#centerAmbient)" />
+  <!-- 1. Transparent Background (Black background removed per user request) -->
 
   <!-- 2. Horizontal Accent Bars (Left & Right) -->
   <rect x="0" y="396" width="214" height="16" fill="url(#sideBarGrad)" />

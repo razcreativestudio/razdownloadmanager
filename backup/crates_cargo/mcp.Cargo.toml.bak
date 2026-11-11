@@ -1,0 +1,35 @@
+# ==============================================================================
+# RAZ Download Manager — Model Context Protocol (MCP) Server Crate
+# Terakhir Diperbarui: 2026-11-10 12:15 WIB
+# Deskripsi: Server MCP untuk menghubungkan asisten AI ke RAZ Download Manager.
+# ==============================================================================
+
+[package]
+name = "mdm-mcp"
+description = "MCP server: lets AI assistants list, add and control running RAZ Download Manager"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+publish.workspace = true
+
+[[bin]]
+# Nama file binary executable Windows untuk MCP Server
+name = "RAZDownloadManager-mcp"
+path = "src/main.rs"
+
+[dependencies]
+mdm-ipc.workspace = true
+rmcp.workspace = true
+schemars.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tokio.workspace = true
+url.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true
+
+[lints]
+workspace = true

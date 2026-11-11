@@ -17,18 +17,33 @@ authors = ["RAZ Team", "Ahmed Nefzaoui"]
 publish = false
 
 [workspace.dependencies]
-mdm-cli = { path = "crates/cli" }
-mdm-crash = { path = "crates/crash", default-features = false }
-mdm-debrid = { path = "crates/debrid" }
-mdm-engine = { path = "crates/engine" }
-mdm-extract = { path = "crates/extract" }
-mdm-geo = { path = "crates/geo" }
-mdm-ipc = { path = "crates/ipc" }
-mdm-labserver = { path = "crates/labserver" }
-mdm-mcp = { path = "crates/mcp" }
-mdm-remote = { path = "crates/remote" }
-mdm-tools = { path = "crates/tools" }
-mdm-torrent = { path = "crates/torrent" }
+razdm-cli = { path = "crates/cli", package = "razdm-cli" }
+razdm-crash = { path = "crates/crash", package = "razdm-crash", default-features = false }
+razdm-debrid = { path = "crates/debrid", package = "razdm-debrid" }
+razdm-engine = { path = "crates/engine", package = "razdm-engine" }
+razdm-extract = { path = "crates/extract", package = "razdm-extract" }
+razdm-geo = { path = "crates/geo", package = "razdm-geo" }
+razdm-ipc = { path = "crates/ipc", package = "razdm-ipc" }
+razdm-labserver = { path = "crates/labserver", package = "razdm-labserver" }
+razdm-mcp = { path = "crates/mcp", package = "razdm-mcp" }
+razdm-nmhost = { path = "crates/nmhost", package = "razdm-nmhost" }
+razdm-remote = { path = "crates/remote", package = "razdm-remote" }
+razdm-tools = { path = "crates/tools", package = "razdm-tools" }
+razdm-torrent = { path = "crates/torrent", package = "razdm-torrent" }
+
+mdm-cli = { path = "crates/cli", package = "razdm-cli" }
+mdm-crash = { path = "crates/crash", package = "razdm-crash", default-features = false }
+mdm-debrid = { path = "crates/debrid", package = "razdm-debrid" }
+mdm-engine = { path = "crates/engine", package = "razdm-engine" }
+mdm-extract = { path = "crates/extract", package = "razdm-extract" }
+mdm-geo = { path = "crates/geo", package = "razdm-geo" }
+mdm-ipc = { path = "crates/ipc", package = "razdm-ipc" }
+mdm-labserver = { path = "crates/labserver", package = "razdm-labserver" }
+mdm-mcp = { path = "crates/mcp", package = "razdm-mcp" }
+mdm-nmhost = { path = "crates/nmhost", package = "razdm-nmhost" }
+mdm-remote = { path = "crates/remote", package = "razdm-remote" }
+mdm-tools = { path = "crates/tools", package = "razdm-tools" }
+mdm-torrent = { path = "crates/torrent", package = "razdm-torrent" }
 
 # storytold craft-libs (D-003), pinned by commit.
 craft-atomic = { git = "https://github.com/storytold/craft-libs", rev = "1a11a4897865f7410c40d25ca6e452ce399a1a2c" }
