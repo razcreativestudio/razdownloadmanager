@@ -1,0 +1,815 @@
+﻿<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+
+<head>
+    <!-- ==============================================
+         RAZ Download Manager - Official Website
+         Deskripsi: Landing page resmi RAZ Download Manager (IDM Alternative)
+         Terakhir diupdate: 2026-11-11
+         Versi: 1.0.0 (RAZ DM Enterprise Release)
+         Standar: RAZ Enterprise UI/UX Standard
+    ============================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="RAZ Download Manager — Download manager open-source berkecepatan tinggi alternatif IDM. Engine multi-thread Rust 5.4× lebih cepat, resume anti-rusak, terintegrasi BitTorrent, video sniffer, dan AI MCP. 100% gratis tanpa iklan.">
+    <meta name="keywords"
+        content="RAZ Download Manager, IDM alternative, alternatif IDM gratis, download manager terbaik, rust download manager, torrent client, video sniffer, RAZ Creative Studio, dm.it-raz.com">
+    <meta name="author" content="RAZ Creative Studio">
+    <link rel="canonical" href="https://dm.it-raz.com/">
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dm.it-raz.com/">
+    <meta property="og:site_name" content="RAZ Download Manager">
+    <meta property="og:title" content="RAZ Download Manager — Download Super Kencang & IDM Alternative Bebas Lisensi">
+    <meta property="og:description"
+        content="Download manager modern open-source pengganti IDM berbasis Rust. Akselerasi 64 koneksi paralel, resume aman, torrent & video sniffer terintegrasi. 100% gratis selamanya.">
+    <meta property="og:image" content="https://dm.it-raz.com/assets/logo-640.png">
+    <meta property="og:locale" content="id_ID">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://dm.it-raz.com/">
+    <meta name="twitter:title" content="RAZ Download Manager — IDM Alternative Berkecepatan Tinggi">
+    <meta name="twitter:description"
+        content="5.4× lebih cepat dari IDM di pengujian benchmark resmi. Free & open-source, bebas pop-up lisensi palsu.">
+    <meta name="twitter:image" content="https://dm.it-raz.com/assets/logo-640.png">
+
+    <!-- Favicon & Touch Icons -->
+    <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48 64x64">
+    <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+    <title>RAZ Download Manager — IDM Alternative Berkecepatan Tinggi & Open Source</title>
+
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "RAZ Download Manager",
+      "operatingSystem": "Windows 10, Windows 11, macOS, Linux",
+      "applicationCategory": "UtilitiesApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "url": "https://dm.it-raz.com/",
+      "image": "https://dm.it-raz.com/assets/logo-640.png",
+      "softwareVersion": "1.0.0",
+      "description": "High-performance, free and open-source download manager and IDM alternative written in native Rust."
+    }
+    </script>
+
+    <!-- Resource Hints & Google Fonts: Inter + Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- RAZ Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/RAZHero.css">
+    <link rel="stylesheet" href="css/RAZMainAnimations.css">
+    <link rel="stylesheet" href="css/RAZMainTheme.css">
+    <link rel="stylesheet" href="css/RAZModal.css">
+    <link rel="stylesheet" href="css/RAZDM.css">
+</head>
+
+<body>
+
+    <!-- ======================== SPLASH SCREEN ======================== -->
+    <div class="raz-splash-screen" id="raz-splash">
+        <img src="img/raz-logo11.svg" alt="RAZ Download Manager Logo" class="raz-splash-logo" width="110" height="110"
+            fetchpriority="high">
+        <div class="raz-splash-spinner"></div>
+        <div class="raz-splash-text" data-lang-key="splash-loading">Memuat RAZ Download Manager...</div>
+    </div>
+
+    <!-- ======================== FLOATING PARTICLES ======================== -->
+    <div class="raz-particle"></div>
+    <div class="raz-particle"></div>
+    <div class="raz-particle"></div>
+    <div class="raz-particle"></div>
+    <div class="raz-particle"></div>
+
+    <!-- ======================== CONTROL BUTTONS (LANG & THEME) ======================== -->
+    <div class="raz-controls" id="raz-controls">
+        <button class="raz-control-btn raz-lang-btn" id="raz-lang-toggle" aria-label="Switch Language">EN</button>
+        <button class="raz-control-btn raz-theme-btn" id="raz-theme-toggle" aria-label="Toggle Theme"><i
+                class="fas fa-moon"></i></button>
+    </div>
+
+    <!-- ======================== HEADER / NAVIGASI ======================== -->
+    <header class="header" id="main-header">
+        <div class="container">
+            <h1 class="logo">
+                <a href="index.html" style="display:flex;align-items:center;gap:12px;">
+                    <img src="img/raz-logo.svg" alt="RAZ Download Manager" class="logo-image" style="height:44px;width:auto;">
+                </a>
+            </h1>
+            <nav class="nav-menu">
+                <button class="nav-toggle" id="nav-toggle-btn" aria-label="Toggle navigation">
+                    <span class="gold-line"></span>
+                    <span class="gold-line"></span>
+                    <span class="gold-line"></span>
+                </button>
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="#hero" class="nav-link" data-lang-key="nav-home">Beranda</a></li>
+                    <li><a href="#features" class="nav-link" data-lang-key="nav-features">Fitur</a></li>
+                    <li><a href="#benchmark" class="nav-link" data-lang-key="nav-benchmark">Benchmark vs IDM</a></li>
+                    <li><a href="#compare" class="nav-link" data-lang-key="nav-compare">Perbandingan</a></li>
+                    <li><a href="#faq" class="nav-link" data-lang-key="nav-faq">FAQ</a></li>
+                    <li><a href="https://github.com/razcreativestudio/razdownloadmanager" target="_blank"
+                            class="nav-link" title="GitHub Repository"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a href="#download" class="nav-link cta-button" data-lang-key="nav-btn-download">Unduh Gratis</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ======================== HERO SECTION ======================== -->
+    <section id="hero" class="hero">
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-overlay"></div>
+
+        <!-- Floating tech keywords -->
+        <div class="hero-keywords">
+            <span class="keyword">Rust Native Engine</span>
+            <span class="keyword">64 Parallel Streams</span>
+            <span class="keyword">BitTorrent Client</span>
+            <span class="keyword">IDM Alternative</span>
+            <span class="keyword">Video Sniffer 4K</span>
+            <span class="keyword">Zero Bloatware</span>
+            <span class="keyword">Open Source GPL-3</span>
+            <span class="keyword">AI MCP Assistant</span>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span data-lang-key="hero-badge">The Next-Gen High-Speed Download Manager</span>
+            </div>
+            <h2 class="hero-title">
+                <span data-lang-key="hero-title-1">Download Ngebut Tanpa Batas,</span><br>
+                <span class="gold-text gold-shimmer" data-lang-key="hero-title-2">Bebas Lisensi & Nol Iklan</span>
+            </h2>
+            <p class="hero-subtitle" data-lang-key="hero-subtitle">
+                Download manager modern berbasis Rust dengan arsitektur multi-thread hingga 64 jalur simultan. Gak ada
+                lagi drama pop-up lisensi bajakan atau trial expired. Terintegrasi BitTorrent, video sniffer, dan AI
+                Assistant.
+            </p>
+
+            <div class="hero-cta-group">
+                <a href="#download" class="cta-primary">
+                    <i class="fas fa-download"></i>
+                    <span data-lang-key="hero-btn-download">Unduh Installer (v1.0.0)</span>
+                </a>
+                <a href="#benchmark" class="cta-secondary">
+                    <i class="fas fa-bolt"></i>
+                    <span data-lang-key="hero-btn-benchmark">Lihat Benchmark vs IDM</span>
+                </a>
+            </div>
+
+            <div class="hero-meta-badge">
+                <i class="fab fa-windows"></i>
+                <span data-lang-key="hero-meta">Windows 10/11 (64-bit) • 100% Open Source • Terverifikasi Bebas
+                    Virus/Malware</span>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <span data-lang-key="hero-scroll">Scroll</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- ======================== SPEED HIGHLIGHT METRICS ======================== -->
+    <section class="speed-metric-bar">
+        <div class="container">
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-value" data-lang-key="metric-speed-val">5.4×</div>
+                    <div class="metric-title" data-lang-key="metric-speed-title">Lebih Cepat dari IDM</div>
+                    <div class="metric-desc" data-lang-key="metric-speed-desc">Berdasarkan pengujian resmi file 1 GiB dengan koneksi multi-part paralel.</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" data-lang-key="metric-threads-val">64</div>
+                    <div class="metric-title" data-lang-key="metric-threads-title">Koneksi Simultan</div>
+                    <div class="metric-desc" data-lang-key="metric-threads-desc">Membagi file jadi puluhan bagian dan menariknya bersamaan.</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" data-lang-key="metric-bloat-val">0 MB</div>
+                    <div class="metric-title" data-lang-key="metric-bloat-title">Zero Bloatware</div>
+                    <div class="metric-desc" data-lang-key="metric-bloat-desc">Murni dibuat dengan Rust native, tanpa Java, tanpa Electron.</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" data-lang-key="metric-sat-val">100%</div>
+                    <div class="metric-title" data-lang-key="metric-sat-title">Saturasi Bandwidth</div>
+                    <div class="metric-desc" data-lang-key="metric-sat-desc">Maksimalkan throughput ISP lo sampai ke batas kapasitas tertinggi.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== INTERACTIVE SPEED BENCHMARK ======================== -->
+    <hr class="section-separator">
+    <section id="benchmark" class="section">
+        <div class="container">
+            <span class="section-label" data-lang-key="bench-label">Pembuktian Kecepatan Nyata</span>
+            <h3 class="section-title">
+                <span data-lang-key="bench-title-1">Bukan Sekadar Klaim,</span> <span class="gold"
+                    data-lang-key="bench-title-2">Tapi Teruji Sampai Milidetik</span>
+            </h3>
+            <p class="section-subtitle" data-lang-key="bench-desc">
+                Hasil benchmark kami di PC yang sama, server lokal yang sama, dan diuji secara bergantian.
+            </p>
+
+            <div class="benchmark-container" id="benchmark-race">
+                <div class="benchmark-tabs">
+                    <button class="bench-tab-btn active" data-lang-key="bench-tab-1gib">File 1 GiB (Koneksi Cepat)</button>
+                    <button class="bench-tab-btn" data-lang-key="bench-tab-small">File Kecil (256 KiB)</button>
+                    <button class="bench-tab-btn" data-lang-key="bench-tab-conns">Server Batas 2 Koneksi</button>
+                </div>
+
+                <div class="race-track-wrapper">
+                    <!-- Lane RAZ Download Manager -->
+                    <div class="race-lane razdm">
+                        <div class="lane-header">
+                            <div class="lane-identity">
+                                <img src="img/raz-logo11.svg" alt="RAZ DM" style="width:28px;height:28px;">
+                                <span class="lane-name">RAZ Download Manager</span>
+                            </div>
+                            <span class="lane-stat" id="race-time-raz">0.00 s</span>
+                        </div>
+                        <div class="lane-progress-bg">
+                            <div class="lane-progress-bar" id="race-bar-raz"></div>
+                        </div>
+                        <div class="race-status-text">
+                            <span>Status: Engine Rust 64-Thread Dynamic Re-splitting</span>
+                            <span>Status: Aktif</span>
+                        </div>
+                    </div>
+
+                    <!-- Lane IDM -->
+                    <div class="race-lane idm">
+                        <div class="lane-header">
+                            <div class="lane-identity">
+                                <span class="lane-badge-idm">IDM</span>
+                                <span class="lane-name">Internet Download Manager 6.42</span>
+                            </div>
+                            <span class="lane-stat" id="race-time-idm">0.00 s</span>
+                        </div>
+                        <div class="lane-progress-bg">
+                            <div class="lane-progress-bar" id="race-bar-idm"></div>
+                        </div>
+                        <div class="race-status-text">
+                            <span>Status: Legacy Engine C++</span>
+                            <span>Status: Standby</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="race-summary-box">
+                    <div class="race-big-ratio">
+                        <span id="race-ratio-val">5.4×</span>
+                        <small data-lang-key="bench-ratio-label">Lebih Kencang</small>
+                    </div>
+                    <div style="flex-grow:1;max-width:550px;text-align:left;font-size:0.92rem;" id="race-scenario-note">
+                        RAZ DM selesai hanya dalam 1.01 detik menggunakan 64 koneksi simultan saturasi penuh, sedangkan
+                        IDM membutuhkan 5.46 detik.
+                    </div>
+                    <button class="race-replay-btn" id="race-replay-btn">
+                        <i class="fas fa-redo"></i>
+                        <span data-lang-key="bench-replay">Putar Ulang Race</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== INTERACTIVE APP TOUR / SHOWCASE ======================== -->
+    <hr class="section-separator">
+    <section class="section" id="tour">
+        <div class="container">
+            <span class="section-label" data-lang-key="tour-label">Tampilan Antarmuka</span>
+            <h3 class="section-title">
+                <span data-lang-key="tour-title-1">Desain Klasik yang Lo Kenal,</span> <span class="gold"
+                    data-lang-key="tour-title-2">Engine Modern yang Jauh Lebih Kencang</span>
+            </h3>
+            <p class="section-subtitle" data-lang-key="tour-desc">
+                Layout praktis dan familiar seperti download manager yang lo pake selama bertahun-tahun, tapi dengan
+                teknologi modern dan fitur yang belum pernah ada sebelumnya.
+            </p>
+
+            <div class="app-tour-grid">
+                <div class="tour-tab-list">
+                    <div class="tour-tab-item active" data-img="assets/screens/progress-dark.webp">
+                        <h4 data-lang-key="tour-tab-progress-title">Setiap Koneksi Terpantau Live</h4>
+                        <p data-lang-key="tour-tab-progress-desc">Pantau kecepatan dan bagian file yang terisi secara real-time. Resume aman dari crash tanpa takut file rusak.</p>
+                    </div>
+                    <div class="tour-tab-item" data-img="assets/screens/torrent-dark.webp">
+                        <h4 data-lang-key="tour-tab-torrents-title">BitTorrent Terintegrasi</h4>
+                        <p data-lang-key="tour-tab-torrents-desc">Buka magnet link dan file .torrent langsung di daftar download tanpa butuh software torrent terpisah.</p>
+                    </div>
+                    <div class="tour-tab-item" data-img="assets/screens/video-dark.webp">
+                        <h4 data-lang-key="tour-tab-video-title">Sniffer Video Web</h4>
+                        <p data-lang-key="tour-tab-video-desc">Download video sampai kualitas 4K dari YouTube, Vimeo, dan ribuan situs streaming lainnya.</p>
+                    </div>
+                    <div class="tour-tab-item" data-img="assets/screens/scheduler-dark.webp">
+                        <h4 data-lang-key="tour-tab-scheduler-title">Jadwal Antrean Otomatis</h4>
+                        <p data-lang-key="tour-tab-scheduler-desc">Atur antrean download mulai jam 2 pagi, berhenti jam 6 pagi, dan otomatis matikan komputer setelah selesai.</p>
+                    </div>
+                    <div class="tour-tab-item" data-img="assets/screens/options-dark.webp">
+                        <h4 data-lang-key="tour-tab-options-title">Pengaturan Lengkap</h4>
+                        <p data-lang-key="tour-tab-options-desc">Atur koneksi per unduhan, proxy, suara, folder tujuan, hingga integrasi browser semau lo.</p>
+                    </div>
+                    <div class="tour-tab-item" data-img="assets/screens/main-dark.webp">
+                        <h4>Layar Utama Modern</h4>
+                        <p>Daftar unduhan bersih, kategorisasi otomatis (Dokumen, Video, Program, Musik), dan pencarian instan.</p>
+                    </div>
+                </div>
+
+                <div class="tour-viewport">
+                    <img id="tour-preview-img" src="assets/screens/progress-dark.webp" alt="Tampilan Antarmuka RAZ Download Manager"
+                        loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== CORE FEATURES GRID ======================== -->
+    <hr class="section-separator">
+    <section id="features" class="section">
+        <div class="container">
+            <span class="section-label" data-lang-key="feat-label">Fitur Unggulan</span>
+            <h3 class="section-title">
+                <span data-lang-key="feat-title-1">Semua Kebutuhan Download Lo,</span> <span class="gold"
+                    data-lang-key="feat-title-2">Sudah Ada di Dalamnya</span>
+            </h3>
+            <p class="section-subtitle" data-lang-key="feat-desc">
+                Didesain untuk efisiensi maksimal, performa tinggi, dan kenyamanan pengguna tanpa kompromi.
+            </p>
+
+            <div class="download-grid">
+                <div class="dl-card">
+                    <div class="dl-icon"><i class="fas fa-bolt"></i></div>
+                    <h4 class="dl-title" data-lang-key="feat-1-title">Akselerasi Multi-Thread Turbo</h4>
+                    <p class="dl-meta" data-lang-key="feat-1-desc">Membagi file menjadi hingga 64 segmen simultan dan otomatis memecah ulang segmen yang lambat.</p>
+                </div>
+                <div class="dl-card">
+                    <div class="dl-icon"><i class="fas fa-magnet"></i></div>
+                    <h4 class="dl-title" data-lang-key="feat-2-title">Torrent & Magnet Client</h4>
+                    <p class="dl-meta" data-lang-key="feat-2-desc">Download file torrent langsung dengan kontrol file selektif dan visualisasi pieces yang detail.</p>
+                </div>
+                <div class="dl-card">
+                    <div class="dl-icon"><i class="fas fa-video"></i></div>
+                    <h4 class="dl-title" data-lang-key="feat-3-title">Video & Media Sniffer Otomatis</h4>
+                    <p class="dl-meta" data-lang-key="feat-3-desc">Ekstensi browser mendeteksi video, audio, dan galeri secara otomatis untuk diunduh 1-klik.</p>
+                </div>
+                <div class="dl-card">
+                    <div class="dl-icon"><i class="fas fa-crown"></i></div>
+                    <h4 class="dl-title" data-lang-key="feat-4-title">Dukungan Akun Debrid</h4>
+                    <p class="dl-meta" data-lang-key="feat-4-desc">Integrasi langsung dengan Real-Debrid, AllDebrid, dan Debrid-Link untuk direct link premium.</p>
+                </div>
+                <div class="dl-card">
+                    <div class="dl-icon"><i class="fas fa-puzzle-piece"></i></div>
+                    <h4 class="dl-title" data-lang-key="feat-5-title">Ekstensi Semua Browser</h4>
+                    <p class="dl-meta" data-lang-key="feat-5-desc">Kompatibel penuh dengan Chrome, Edge, Firefox, Brave, Opera, dan Vivaldi tanpa ribet.</p>
+                </div>
+                <div class="dl-card">
+                    <div class="dl-icon"><i class="fas fa-robot"></i></div>
+                    <h4 class="dl-title" data-lang-key="feat-6-title">AI Assistant MCP Server</h4>
+                    <p class="dl-meta" data-lang-key="feat-6-desc">Hubungkan ke Claude, Gemini, atau ChatGPT untuk menambah, memantau, dan mengelola unduhan via prompt AI.</p>
+                </div>
+                <div class="dl-card">
+                    <div class="dl-icon"><i class="fas fa-clock"></i></div>
+                    <h4 class="dl-title" data-lang-key="feat-7-title">Smart Scheduler & Antrean</h4>
+                    <p class="dl-meta" data-lang-key="feat-7-desc">Manajemen antrean download berbasis waktu, batas kecepatan (speed limiter), dan auto shutdown.</p>
+                </div>
+                <div class="dl-card">
+                    <div class="dl-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h4 class="dl-title" data-lang-key="feat-8-title">Organisir & Verifikasi Hash</h4>
+                    <p class="dl-meta" data-lang-key="feat-8-desc">Kategorisasi file otomatis (Dokumen, Video, Musik, Program) dan verifikasi hash MD5/SHA-256.</p>
+                </div>
+                <div class="dl-card">
+                    <div class="dl-icon"><i class="fas fa-terminal"></i></div>
+                    <h4 class="dl-title" data-lang-key="feat-9-title">CLI & JSON IPC API</h4>
+                    <p class="dl-meta" data-lang-key="feat-9-desc">Kendalikan RAZ DM via command line (CLI) atau integrasikan ke skrip otomatisasi headless.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== COMPARISON MATRIX ======================== -->
+    <hr class="section-separator">
+    <section id="compare" class="section">
+        <div class="container">
+            <span class="section-label" data-lang-key="comp-label">Komparasi Terbuka</span>
+            <h3 class="section-title">
+                <span data-lang-key="comp-title-1">Kenapa Pindah ke</span> <span class="gold"
+                    data-lang-key="comp-title-2">RAZ Download Manager?</span>
+            </h3>
+            <p class="section-subtitle" data-lang-key="comp-desc">
+                Bandingkan langsung RAZ Download Manager dengan software legendaris berbayar dan alternatif lainnya.
+            </p>
+
+            <div class="table-responsive">
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <th data-lang-key="comp-th-param">Fitur / Parameter</th>
+                            <th class="col-raz" data-lang-key="comp-th-raz">RAZ Download Manager</th>
+                            <th data-lang-key="comp-th-idm">Internet Download Manager (IDM)</th>
+                            <th data-lang-key="comp-th-others">Download Manager Lain (FDM/Motrix)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th data-lang-key="comp-price">Harga & Lisensi</th>
+                            <td class="col-raz status-yes"><i class="fas fa-check-circle"></i> <span
+                                    data-lang-key="comp-price-raz">100% Gratis Selamanya (GPL-3.0)</span></td>
+                            <td><span data-lang-key="comp-price-idm">Berbayar ($24.95 / lisensi atau langganan)</span></td>
+                            <td><span data-lang-key="comp-price-others">Gratis (Sebagian ada iklan/telemetri)</span></td>
+                        </tr>
+                        <tr>
+                            <th data-lang-key="comp-speed">Kecepatan File 1 GiB</th>
+                            <td class="col-raz status-yes"><i class="fas fa-bolt"></i> <span
+                                    data-lang-key="comp-speed-raz">1.01 detik (5.4× lebih cepat)</span></td>
+                            <td><span data-lang-key="comp-speed-idm">5.46 detik (median test)</span></td>
+                            <td><span data-lang-key="comp-speed-others">3 - 6 detik</span></td>
+                        </tr>
+                        <tr>
+                            <th data-lang-key="comp-engine">Teknologi Engine</th>
+                            <td class="col-raz status-yes"><i class="fas fa-shield-alt"></i> <span
+                                    data-lang-key="comp-engine-raz">Rust Native (Ringan, Aman, 0 Memory Leak)</span></td>
+                            <td><span data-lang-key="comp-engine-idm">C++ Legacy (32-bit/64-bit klasik)</span></td>
+                            <td><span data-lang-key="comp-engine-others">Electron / Java (Boros RAM)</span></td>
+                        </tr>
+                        <tr>
+                            <th data-lang-key="comp-torrent">BitTorrent & Magnet</th>
+                            <td class="col-raz status-yes"><i class="fas fa-check-circle"></i> <span
+                                    data-lang-key="comp-torrent-raz">Ya, Terintegrasi Langsung</span></td>
+                            <td class="status-no"><i class="fas fa-times-circle"></i> <span
+                                    data-lang-key="comp-torrent-idm">Tidak Didukung</span></td>
+                            <td><span data-lang-key="comp-torrent-others">Sebagian Mendukung</span></td>
+                        </tr>
+                        <tr>
+                            <th data-lang-key="comp-video">Video Sniffer dari Web</th>
+                            <td class="col-raz status-yes"><i class="fas fa-check-circle"></i> <span
+                                    data-lang-key="comp-video-raz">Ya (Didukung engine yt-dlp & FFmpeg)</span></td>
+                            <td class="status-yes"><i class="fas fa-check-circle"></i> <span
+                                    data-lang-key="comp-video-idm">Ya (Panel download video)</span></td>
+                            <td><span data-lang-key="comp-video-others">Terbatas / Butuh plugin tambahan</span></td>
+                        </tr>
+                        <tr>
+                            <th data-lang-key="comp-debrid">Integrasi Debrid</th>
+                            <td class="col-raz status-yes"><i class="fas fa-check-circle"></i> <span
+                                    data-lang-key="comp-debrid-raz">Ya (Real-Debrid, AllDebrid, Debrid-Link)</span></td>
+                            <td class="status-no"><i class="fas fa-times-circle"></i> <span
+                                    data-lang-key="comp-debrid-idm">Tidak (Manual generate)</span></td>
+                            <td><span data-lang-key="comp-debrid-others">Tidak Ada</span></td>
+                        </tr>
+                        <tr>
+                            <th data-lang-key="comp-ai">AI MCP Assistant</th>
+                            <td class="col-raz status-yes"><i class="fas fa-check-circle"></i> <span
+                                    data-lang-key="comp-ai-raz">Ya (Model Context Protocol resmi)</span></td>
+                            <td class="status-no"><i class="fas fa-times-circle"></i> <span
+                                    data-lang-key="comp-ai-idm">Tidak Ada</span></td>
+                            <td><span data-lang-key="comp-ai-others">Tidak Ada</span></td>
+                        </tr>
+                        <tr>
+                            <th data-lang-key="comp-popup">Pop-up Lisensi Palsu</th>
+                            <td class="col-raz status-yes"><i class="fas fa-check-circle"></i> <span
+                                    data-lang-key="comp-popup-raz">Gak Pernah Ada Pop-up!</span></td>
+                            <td class="status-no"><i class="fas fa-times-circle"></i> <span
+                                    data-lang-key="comp-popup-idm">Sering muncul pop-up fake serial / expired</span></td>
+                            <td><span data-lang-key="comp-popup-others">Tergantung software</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== DOWNLOAD CENTER ======================== -->
+    <hr class="section-separator">
+    <section id="download" class="section">
+        <div class="container">
+            <span class="section-label" data-lang-key="dl-label">Pusat Unduhan</span>
+            <h3 class="section-title">
+                <span data-lang-key="dl-title-1">Unduh RAZ Download Manager</span> <span class="gold"
+                    data-lang-key="dl-title-2">Versi 1.0.0 Resmi</span>
+            </h3>
+            <p class="section-subtitle" data-lang-key="dl-desc">
+                Gratis selamanya buat siapa aja. Tanpa registrasi akun, tanpa iklan, dan tanpa installer titipan.
+            </p>
+
+            <div class="download-grid">
+                <!-- Installer Card -->
+                <div class="dl-card featured">
+                    <span class="dl-badge-featured">Rekomendasi</span>
+                    <div class="dl-icon"><i class="fab fa-windows"></i></div>
+                    <h4 class="dl-title" data-lang-key="dl-win-installer-title">Windows Installer (.exe)</h4>
+                    <p class="dl-meta" data-lang-key="dl-win-installer-meta">
+                        Rekomendasi untuk Windows 10 & 11 (64-bit). Integrasi otomatis ke browser dan shortcut Start Menu.
+                    </p>
+                    <ul class="dl-features">
+                        <li><i class="fas fa-check"></i> Setup otomatis ekstensi browser</li>
+                        <li><i class="fas fa-check"></i> Dukungan menu klik-kanan Windows</li>
+                        <li><i class="fas fa-check"></i> Pembaruan sistem otomatis</li>
+                    </ul>
+                    <div class="dl-actions">
+                        <a href="https://github.com/razcreativestudio/razdownloadmanager/releases/download/v1.0.0/RAZDownloadManager-1.0.0-setup.exe"
+                            class="cta-primary" style="justify-content:center;">
+                            <i class="fas fa-download"></i>
+                            <span data-lang-key="dl-win-installer-btn">Unduh Installer (setup.exe)</span>
+                        </a>
+                        <button class="btn-checksum checksum-copy-btn"
+                            data-hash="1ff247d9406e86bd6fab27b3c10cbffaf47e40e2c63a854d7e09e36275e75dea">
+                            <i class="fas fa-copy"></i>
+                            <span data-lang-key="dl-checksum-btn">Salin SHA-256</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Portable Card -->
+                <div class="dl-card">
+                    <div class="dl-icon"><i class="fas fa-file-archive"></i></div>
+                    <h4 class="dl-title" data-lang-key="dl-win-portable-title">Windows Portable (.zip)</h4>
+                    <p class="dl-meta" data-lang-key="dl-win-portable-meta">
+                        Tanpa instalasi. Tinggal ekstrak ke folder atau flashdisk USB, semua data tersimpan di foldernya.
+                    </p>
+                    <ul class="dl-features">
+                        <li><i class="fas fa-check"></i> 100% Standalone tanpa register OS</li>
+                        <li><i class="fas fa-check"></i> Cocok untuk USB drive / lingkungan kerja</li>
+                        <li><i class="fas fa-check"></i> Pengaturan tersimpan lokal di folder</li>
+                    </ul>
+                    <div class="dl-actions">
+                        <a href="https://github.com/razcreativestudio/razdownloadmanager/releases/download/v1.0.0/RAZDownloadManager-1.0.0-portable.zip"
+                            class="cta-secondary" style="justify-content:center;">
+                            <i class="fas fa-download"></i>
+                            <span data-lang-key="dl-win-portable-btn">Unduh Portable (portable.zip)</span>
+                        </a>
+                        <button class="btn-checksum checksum-copy-btn"
+                            data-hash="207959b1e092a80708cd4b4b6941b3ab6eb8b5445155caa11955802377e3bcf2">
+                            <i class="fas fa-copy"></i>
+                            <span data-lang-key="dl-checksum-btn">Salin SHA-256</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Windows Binaries Card -->
+                <div class="dl-card">
+                    <div class="dl-icon"><i class="fas fa-cube"></i></div>
+                    <h4 class="dl-title" data-lang-key="dl-win-binaries-title">Windows Binaries (.zip)</h4>
+                    <p class="dl-meta" data-lang-key="dl-win-binaries-meta">
+                        Paket binary mandiri untuk power user dan otomasi skrip (razdownloadmanager.exe + CLI + MCP).
+                    </p>
+                    <ul class="dl-features">
+                        <li><i class="fas fa-check"></i> Eksekutabel murni tanpa instalasi</li>
+                        <li><i class="fas fa-check"></i> Termasuk CLI tool & MCP server</li>
+                        <li><i class="fas fa-check"></i> Ideal untuk skrip & automasi CI</li>
+                    </ul>
+                    <div class="dl-actions">
+                        <a href="https://github.com/razcreativestudio/razdownloadmanager/releases/download/v1.0.0/RAZDownloadManager-1.0.0-x64.zip"
+                            class="cta-secondary" style="justify-content:center;">
+                            <i class="fas fa-download"></i>
+                            <span data-lang-key="dl-win-binaries-btn">Unduh Binaries (x64.zip)</span>
+                        </a>
+                        <button class="btn-checksum checksum-copy-btn"
+                            data-hash="317168409490b2a259ef3f5b00d900cbc9fbade122e3d5eee74da9e92526ea06">
+                            <i class="fas fa-copy"></i>
+                            <span data-lang-key="dl-checksum-btn">Salin SHA-256</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Browser Extensions Bar -->
+            <div class="browser-bar">
+                <h4 class="browser-title" data-lang-key="browser-compat-title">Kompatibel Penuh dengan Browser Favorit Lo</h4>
+                <div class="browser-logos">
+                    <a href="https://chromewebstore.google.com/detail/raz-download-manager" target="_blank"
+                        class="browser-pill">
+                        <img src="assets/browsers/chrome.svg" alt="Chrome">
+                        <span>Google Chrome</span>
+                    </a>
+                    <a href="https://addons.mozilla.org/firefox/addon/raz-download-manager/" target="_blank"
+                        class="browser-pill">
+                        <img src="assets/browsers/firefox.svg" alt="Firefox">
+                        <span>Mozilla Firefox</span>
+                    </a>
+                    <a href="https://chromewebstore.google.com/detail/raz-download-manager" target="_blank"
+                        class="browser-pill">
+                        <img src="assets/browsers/edge.svg" alt="Edge">
+                        <span>Microsoft Edge</span>
+                    </a>
+                    <a href="https://chromewebstore.google.com/detail/raz-download-manager" target="_blank"
+                        class="browser-pill">
+                        <img src="assets/browsers/brave.svg" alt="Brave">
+                        <span>Brave Browser</span>
+                    </a>
+                    <a href="https://chromewebstore.google.com/detail/raz-download-manager" target="_blank"
+                        class="browser-pill">
+                        <img src="assets/browsers/opera.svg" alt="Opera">
+                        <span>Opera</span>
+                    </a>
+                    <a href="https://chromewebstore.google.com/detail/raz-download-manager" target="_blank"
+                        class="browser-pill">
+                        <img src="assets/browsers/vivaldi.svg" alt="Vivaldi">
+                        <span>Vivaldi</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== FAQ ACCORDION ======================== -->
+    <hr class="section-separator">
+    <section id="faq" class="section">
+        <div class="container">
+            <span class="section-label" data-lang-key="faq-label">Pertanyaan Umum</span>
+            <h3 class="section-title">
+                <span data-lang-key="faq-title-1">Hal-Hal yang Sering Ditanyakan</span> <span class="gold"
+                    data-lang-key="faq-title-2">Seputar RAZ Download Manager</span>
+            </h3>
+            <p class="section-subtitle" data-lang-key="faq-desc">
+                Penjelasan transparan dan santai biar lo makin paham cara kerja dan keunggulan RAZ Download Manager.
+            </p>
+
+            <div class="faq-list">
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        <span data-lang-key="faq-q1">Apakah RAZ Download Manager beneran 100% gratis selamanya?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-lang-key="faq-a1">
+                            Iya, beneran 100% gratis! RAZ Download Manager dirilis dengan lisensi open-source GNU
+                            General Public License v3 (GPL-3.0). Gak ada sistem langganan bulanan, gak ada biaya lisensi
+                            tersembunyi, gak ada batas waktu trial 30 hari, dan gak akan pernah ada iklan sama sekali.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span data-lang-key="faq-q2">Kenapa kecepatannya bisa 5.4× lebih cepat dari IDM?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-lang-key="faq-a2">
+                            RAZ Download Manager ditulis murni menggunakan bahasa Rust yang terkenal sangat kencang dan
+                            aman dari memori leak. Engine kami membuka koneksi paralel secara simultan seketika sejak
+                            milidetik pertama dan langsung melakukan pembagian ulang potongan file (re-splitting) secara
+                            cerdas jika ada jalur koneksi yang lambat atau terhenti.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span data-lang-key="faq-q3">Apakah aman dari virus, malware, atau adware?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-lang-key="faq-a3">
+                            Sangat aman! Seluruh baris kode sumber terbuka untuk diaudit publik di GitHub. Build
+                            aplikasi dikompilasi secara otomatis melalui GitHub Actions CI/CD langsung dari kode sumber
+                            publik, bukan dari laptop pribadi. Setiap file rilis dilengkapi dengan hash SHA-256 resmi
+                            untuk verifikasi integritas file.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span data-lang-key="faq-q4">Apakah saya bisa download Torrent langsung tanpa software lain?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-lang-key="faq-a4">
+                            Bisa banget! RAZ Download Manager memiliki engine BitTorrent bawaan berbasis librqbit. Lo
+                            cukup klik tautan magnet link atau buka file .torrent, pilih file mana saja yang ingin
+                            diunduh, dan pantau potongan file (pieces) secara real-time langsung di jendela utama.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span data-lang-key="faq-q5">Bagaimana cara memasang ekstensi ke Google Chrome dan browser lain?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-lang-key="faq-a5">
+                            Saat lo menjalankan installer (setup.exe), pastikan opsi integrasi browser dicentang.
+                            Ekstensi untuk Chrome, Edge, Brave, dan Opera bisa langsung dipasang dari Chrome Web Store,
+                            sedangkan untuk Firefox tersedia di Mozilla Add-ons Store. Tautan unduhannya sudah tersedia
+                            lengkap di halaman ini.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span data-lang-key="faq-q6">Bisa nggak saya impor riwayat atau daftar download lama saya dari IDM?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-lang-key="faq-a6">
+                            Bisa! Di IDM, pilih menu Tasks → Export → To IDM export file. Kemudian di RAZ Download
+                            Manager, cukup buka menu Tasks → Import → From IDM export file. Semua link dan status
+                            antrean lo akan langsung berpindah.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== PREMIUM FOOTER ======================== -->
+    <hr class="section-separator">
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Kolom 1: About & Identity -->
+                <div class="footer-col footer-about">
+                    <img src="img/raz-logo.svg" alt="RAZ Download Manager" class="logo-image"
+                        style="max-width:180px;height:auto;margin-bottom:16px;" loading="lazy">
+                    <p data-lang-key="footer-tag">
+                        RAZ Download Manager adalah proyek download manager modern open-source berkecepatan tinggi dari
+                        ekosistem RAZ Creative Studio.
+                    </p>
+                </div>
+
+                <!-- Kolom 2: Quick Links -->
+                <div class="footer-col">
+                    <h4 data-lang-key="footer-quick">Navigasi Cepat</h4>
+                    <ul>
+                        <li><a href="#hero" data-lang-key="nav-home">Beranda</a></li>
+                        <li><a href="#features" data-lang-key="nav-features">Fitur</a></li>
+                        <li><a href="#benchmark" data-lang-key="nav-benchmark">Benchmark vs IDM</a></li>
+                        <li><a href="#compare" data-lang-key="nav-compare">Perbandingan</a></li>
+                        <li><a href="#download" data-lang-key="nav-download">Pusat Unduhan</a></li>
+                        <li><a href="#faq" data-lang-key="nav-faq">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kolom 3: Resource & Guide -->
+                <div class="footer-col">
+                    <h4 data-lang-key="footer-help">Bantuan & Dokumentasi</h4>
+                    <ul>
+                        <li><a href="https://dm.it-raz.com/help/" target="_blank">Panduan Pengguna</a></li>
+                        <li><a href="https://dm.it-raz.com/help/#tutorials" target="_blank">Tutorial Lengkap</a></li>
+                        <li><a href="https://github.com/razcreativestudio/razdownloadmanager/issues" target="_blank">Laporkan Masalah (Bug)</a></li>
+                        <li><a href="https://github.com/razcreativestudio/razdownloadmanager" target="_blank">Source Code GitHub</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kolom 4: Ekosistem RAZ -->
+                <div class="footer-col">
+                    <h4 data-lang-key="footer-ecosystem">Ekosistem RAZ</h4>
+                    <ul>
+                        <li><a href="https://raz.web.id/" target="_blank">RAZ Creative Studio</a></li>
+                        <li><a href="https://office.it-raz.com" target="_blank">RAZ Office</a></li>
+                        <li><a href="https://simaju.raz.web.id/" target="_blank">SIMAJURAZ POS</a></li>
+                        <li><a href="https://dm.it-raz.com" target="_blank">RAZ Download Manager</a></li>
+                        <li><a href="https://raz.web.id/tools.html" target="_blank">Tools Online Gratis</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer bottom -->
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2026</span> <span data-lang-key="footer-copyright">RAZ Creative
+                        Studio & Kontributor Open Source. Hak Cipta Dilindungi.</span></p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/raz_studio.id/" aria-label="Instagram" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@razcreativestudio" aria-label="YouTube" target="_blank"><i
+                            class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@razcreativestudio" aria-label="TikTok" target="_blank"><i
+                            class="fab fa-tiktok"></i></a>
+                    <a href="https://github.com/razcreativestudio/razdownloadmanager" aria-label="GitHub"
+                        target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- RAZ Core Scripts -->
+    <script src="js/RAZModal.js"></script>
+    <script src="js/RAZMainLang.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

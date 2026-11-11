@@ -114,7 +114,7 @@
                             <i class="fas fa-download"></i> Unduh Installer (.exe)
                         </a>
                         <button class="btn-checksum checksum-copy-btn"
-                            data-hash="1ff247d9406e86bd6fab27b3c10cbffaf47e40e2c63a854d7e09e36275e75dea">
+                            data-hash="525cbc03e061b09e33a7df78e511896a6933a426435078b62583d589624d7fac">
                             <i class="fas fa-copy"></i> Salin SHA-256 Checksum
                         </button>
                     </div>
@@ -134,7 +134,7 @@
                             <i class="fas fa-download"></i> Unduh Portable (.zip)
                         </a>
                         <button class="btn-checksum checksum-copy-btn"
-                            data-hash="207959b1e092a80708cd4b4b6941b3ab6eb8b5445155caa11955802377e3bcf2">
+                            data-hash="e18f762181d9ba42aac3245c6ceb6af07529d35df95a1f8922b888d95bae2d4b">
                             <i class="fas fa-copy"></i> Salin SHA-256 Checksum
                         </button>
                     </div>
@@ -154,7 +154,7 @@
                             <i class="fas fa-download"></i> Unduh Binaries (x64.zip)
                         </a>
                         <button class="btn-checksum checksum-copy-btn"
-                            data-hash="317168409490b2a259ef3f5b00d900cbc9fbade122e3d5eee74da9e92526ea06">
+                            data-hash="09a08986e00f2f626a8c452ccebdb8f62abf13dfc276253f10689017a896d9fb">
                             <i class="fas fa-copy"></i> Salin SHA-256 Checksum
                         </button>
                     </div>

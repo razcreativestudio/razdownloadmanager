@@ -1,4 +1,4 @@
-# Builds the browser extension for each browser family from extension/ (one background.js):
+﻿# Builds the browser extension for each browser family from extension/ (one background.js):
 #   target/extension/chromium/  - manifest.json (Chrome, Edge, Brave, Opera, Vivaldi; load unpacked)
 #   target/extension/firefox/   - manifest.firefox.json as manifest.json
 #   target/extension/safari/    - manifest.safari.json as manifest.json (a folder only: tools/safari
@@ -53,7 +53,14 @@ $json = $manifest | ConvertTo-Json -Depth 10
 Add-Type -AssemblyName System.IO.Compression, System.IO.Compression.FileSystem
 # The zips have manifest.json at their root. Entries are named with "/" as zip requires
 # (Windows PowerShell's CreateFromDirectory writes "\", which Firefox rejects).
-foreach ($pair in @(@("chromium", "mdm-chromium.zip"), @("firefox", "mdm-firefox.xpi"), @("chrome-store", "mdm-chrome-store.zip"))) {
+foreach ($pair in @(
+    @("chromium", "mdm-chromium.zip"),
+    @("firefox", "mdm-firefox.xpi"),
+    @("chrome-store", "mdm-chrome-store.zip"),
+    @("chromium", "razdm-chromium.zip"),
+    @("firefox", "razdm-firefox.xpi"),
+    @("chrome-store", "razdm-chrome-store.zip")
+)) {
   $dir = (Resolve-Path (Join-Path $out $pair[0])).Path
   $zip = Join-Path $out $pair[1]
   if (Test-Path $zip) { Remove-Item -LiteralPath $zip -Force }

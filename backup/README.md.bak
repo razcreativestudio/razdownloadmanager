@@ -103,8 +103,8 @@ one:
 
 | File | Choose it when |
 | --- | --- |
-| **`...-setup.exe`** | **Not sure? Take this one.** It installs MDM, connects it to your browser and asks your language. |
-| `...-portable.zip` | You want MDM on a USB stick or without installing: unzip and run. Everything stays in its folder. |
+| **`...-setup.exe`** | **Not sure? Take this one.** It installs RAZ DM, connects it to your browser and asks your language. |
+| `...-portable.zip` | You want RAZ DM on a USB stick or without installing: unzip and run. Everything stays in its folder. |
 | `...-x64.zip` | You want the plain programs without an installer. |
 | `...-extension-chromium.zip` | You want to add the browser extension by hand (Chrome, Edge, Brave, Opera, Vivaldi). From the stores is easier: [Add to Chrome](https://chromewebstore.google.com/detail/mister-download-manager/ejoleppdfgjdndddcjoehopknmlglojp), [Add to Firefox](https://addons.mozilla.org/firefox/addon/mister-download-manager/). |
 
@@ -138,17 +138,17 @@ Up to version 0.2.4, the files' names end in `-experimental`.
 
 Fresh builds for **macOS** (Apple Silicon and Intel) are on the same download page, marked
 `-experimental`: we haven't tried them on a Mac ourselves yet. Give them a go and
-[tell us how it went](https://github.com/anefzaoui/razdownloadmanager/issues/new/choose); you'll
+[tell us how it went](https://github.com/razcreativestudio/razdownloadmanager/issues/new/choose); you'll
 help make them as solid as the Windows and Linux versions.
 
 | File | For |
 | --- | --- |
-| `...-macos-arm64-experimental.dmg` | Mac with Apple Silicon (M1 or later). Open it and drag MDM to Applications. The first time, right-click the app and choose **Open**. |
+| `...-macos-arm64-experimental.dmg` | Mac with Apple Silicon (M1 or later). Open it and drag RAZ DM to Applications. The first time, right-click the app and choose **Open**. |
 | `...-macos-x86_64-experimental.dmg` | Mac with an Intel processor, the same way. |
 
 ## 🌍 In your language
 
-Every language Windows 11 offers, **86 in all**. MDM asks on its first start, and you can change
+Every language Windows 11 offers, **86 in all**. RAZ DM asks on its first start, and you can change
 it any time in **View → Language**. Arabic, Hebrew, Persian, Urdu and Uyghur get a fully mirrored,
 right-to-left window.
 
@@ -255,7 +255,7 @@ right-to-left window.
     <td width="50%"><img src="docs/images/main-dark.webp" alt="Dark mode"><br><sub><b>Dark mode</b> that follows Windows.</sub></td>
   </tr>
   <tr>
-    <td><img src="docs/images/add-url.webp" alt="Add URL"><br><sub><b>Add a download</b>: paste a link, or let MDM catch it from your browser.</sub></td>
+    <td><img src="docs/images/add-url.webp" alt="Add URL"><br><sub><b>Add a download</b>: paste a link, or let RAZ DM catch it from your browser.</sub></td>
     <td><img src="docs/images/add-torrent.webp" alt="Add torrent"><br><sub><b>Torrents and magnet links</b>: pick the files you want, skip the rest.</sub></td>
   </tr>
   <tr>
@@ -278,7 +278,7 @@ right-to-left window.
   re-balancing until the last byte.
 - **Resumes** after a crash, a restart or a dropped connection, without starting over.
 - **Catches downloads from Firefox, Chrome, Edge, Brave, Opera and Vivaldi** (the extension is
-  on Firefox Add-ons and the Chrome Web Store), and gives them back to the browser when MDM isn't
+  on Firefox Add-ons and the Chrome Web Store), and gives them back to the browser when RAZ DM isn't
   running.
 - **Downloads videos** from web pages (a button appears over the video; playlists, subtitles,
   the sound alone), **image galleries** with gallery-dl, and **torrents and magnet links**
@@ -290,7 +290,7 @@ right-to-left window.
   down if you like.
 - **Through your VPN only**, if you want: hold every download to one network adapter, with a kill
   switch, and choose an encrypted DNS. Each download shows its server's country.
-- **From your phone, or on a server**: control MDM from a phone on your home network, or run it
+- **From your phone, or on a server**: control RAZ DM from a phone on your home network, or run it
   without a window on a NAS (Docker, Unraid) ([how](docs/server.md)).
 - **Works from scripts too**: IDM's command-line switches, a command-line tool, and a local API for other programs ([how](docs/command-line.md)).
 - **Works with your AI assistant**: an MCP server lets Claude, Cursor or VS Code list, add, pause and remove your downloads ([set it up](docs/ai-assistants.md)).
@@ -313,8 +313,8 @@ Step by step: [your first download](docs/guide-first-download.md) ·
 
 Both programs downloaded the same files from the same local test server
 ([labserver](crates/labserver)), with the network trouble each scenario names: seven runs each,
-both at their default settings. MDM finished first in **all seven scenarios**; every difference is
-statistically significant (Mann-Whitney p < 0.001), and MDM used less CPU in every one.
+both at their default settings. RAZ DM finished first in **all seven scenarios**; every difference is
+statistically significant (Mann-Whitney p < 0.001), and RAZ DM used less CPU in every one.
 
 <p align="center">
   <picture>
@@ -323,7 +323,7 @@ statistically significant (Mann-Whitney p < 0.001), and MDM used less CPU in eve
   </picture>
 </p>
 
-On a server that allows only two connections, MDM used 2 and still finished first; IDM opened 480.
+On a server that allows only two connections, RAZ DM used 2 and still finished first; IDM opened 480.
 The full table, the machine and the raw data: [docs/bench/run5/REPORT.md](docs/bench/run5/REPORT.md).
 The harness is in [tools/bench](tools/bench), so anyone can run it again.
 
@@ -334,19 +334,19 @@ working, not a copy of anyone's software.
 
 - **No one else's code or assets.** It contains no code, binaries, artwork, icons, sounds or
   text from Internet Download Manager, nor code from any other download manager. The app icon
-  was made for MDM with ChatGPT (OpenAI's image generation); the other icons come from openly
+  was made custom for RAZ DM; the other icons come from openly
   licensed sets ([ATTRIBUTION.md](ATTRIBUTION.md)).
 - **Nothing taken apart.** No IDM file was ever disassembled, decompiled, debugged, patched or
   inspected below its user interface, and its licensing, trial and registration were never
   touched or bypassed.
-- **Learned as a user learns.** What MDM does was learned from IDM's public documentation and
+- **Learned as a user learns.** What RAZ DM does was learned from IDM's public documentation and
   help pages, its public screenshots, and by using a licensed copy as a black box: downloading
   test files from our own test server ([labserver](crates/labserver)) and watching what reached
   the network and the screen.
 - **Built on public standards.** The download engine follows the HTTP specifications (RFC 9110,
   RFC 9112) and was designed, tested and measured independently. Its speed comes from its own
   design, which the benchmark shows.
-- **Not affiliated.** MDM isn't affiliated with, endorsed by or connected to Tonec Inc.
+- **Not affiliated.** RAZ DM isn't affiliated with, endorsed by or connected to Tonec Inc.
   "Internet Download Manager" and "IDM" are trademarks of their owner, named here only to
   describe the layout people already know and to compare the two programs.
 
@@ -397,32 +397,32 @@ pieces fit.
 | [`mdm-geo`](crates/geo) | A server's country, from an IP table on this computer |
 | [`mdm-tools`](crates/tools) | yt-dlp and ffmpeg for video pages, gallery-dl for galleries |
 | [`mdm-torrent`](crates/torrent) | BitTorrent through librqbit |
-| [`mdm-labserver`](crates/labserver) | An HTTP test server with fault injection, for tests and benchmarks |
+| [`razdm-labserver`](crates/labserver) | An HTTP test server with fault injection, for tests and benchmarks |
 
 | Tool | What it does |
 |---|---|
 | `tools\dev\check-cross.ps1` | Checks the code for Linux and macOS from Windows (with [Zig](https://ziglang.org) as the C compiler) |
-| `node tools/extension/e2e.mjs` | The browser extension in real Chrome, Brave, Edge and Firefox, headless: a link's download must reach MDM (or another MDM, a server); on Windows and Linux |
+| `node tools/extension/e2e.mjs` | The browser extension in real Chrome, Brave, Edge and Firefox, headless: a link's download must reach RAZ DM (or another RAZ DM, a server); on Windows and Linux |
 | `python tools/i18n/extract.py` | Lists every interface text in `i18n/en.tsv` (CI checks it matches the code) |
 | `python tools/i18n/translate.py` | Translates what the catalogs lack (checks every row in code) |
 | `python tools/installer/languages.py` | The installer's messages in every language |
 | `node tools/readme/build.mjs` | This page's pictures, comparison table and flags, from the benchmark data |
 | `tools\lab\docs-shots.ps1` | The screenshots, from a separate test instance (`/show <window>` opens each window), off the screen |
 | `python tools/shots/make.py` | The help pages' pictures, from one list (`tools/shots/shots.toml`): shot, cropped, annotated, lossless WebP; `make.py check` keeps them in step |
-| `tools/lab/wsl/` | A WSL2 machine that builds MDM for Linux in minutes and shoots its windows on a virtual screen ([README](tools/lab/wsl/README.md)) |
-| `tools\lab\progress-shots.ps1` | The progress window of a video (yt-dlp) and of a torrent, from a swarm on this computer (`cargo run -p mdm-torrent --example swarm`) |
-| `python tools/website/build.py --serve` | razdownloadmanager.com into `target/site` (help pages from `docs/`, news from the CHANGELOG, FAQ and legal pages from `website/content/`), served on http://127.0.0.1:8765; GitHub Pages publishes it (`pages.yml`) |
+| `tools/lab/wsl/` | A WSL2 machine that builds RAZ DM for Linux in minutes and shoots its windows on a virtual screen ([README](tools/lab/wsl/README.md)) |
+| `tools\lab\progress-shots.ps1` | The progress window of a video (yt-dlp) and of a torrent, from a swarm on this computer (`cargo run -p razdm-torrent --example swarm`) |
+| `python tools/website/build.py --serve` | dm.it-raz.com into `target/site` (help pages from `docs/`, news from the CHANGELOG, FAQ and legal pages from `website/content/`), served on http://127.0.0.1:8765; GitHub Pages publishes it (`pages.yml`) |
 | `python tools/readme/social.py` | The repository's social preview card (`docs/images/social-preview.png`) |
-| `MDM_FIT_AUDIT=<file>` | Lists every text that doesn't fit its window or runs over another, for checking a translation |
-| `MDM_OFFSCREEN=1` | Opens every window off the screen, without focus, tray icon or sound (screenshots and checks) |
-| `MDM_TEST_TRASH_DIR=<folder>` | Tests only: archives deleted after extracting go into this folder, never into the real Recycle Bin or Trash |
-| `MDM_TEST_7ZIP=<program>\|none` | Tests only: the 7-Zip program to use for 7z and RAR archives, or `none` to act as if 7-Zip weren't installed |
+| `RAZDM_FIT_AUDIT=<file>` | Lists every text that doesn't fit its window or runs over another, for checking a translation |
+| `RAZDM_OFFSCREEN=1` | Opens every window off the screen, without focus, tray icon or sound (screenshots and checks) |
+| `RAZDM_TEST_TRASH_DIR=<folder>` | Tests only: archives deleted after extracting go into this folder, never into the real Recycle Bin or Trash |
+| `RAZDM_TEST_7ZIP=<program>\|none` | Tests only: the 7-Zip program to use for 7z and RAR archives, or `none` to act as if 7-Zip weren't installed |
 
 </details>
 
 ## Status and helping out
 
-MDM is young: the engine, the main window and the browser integration are solid on Windows and
+RAZ DM is young: the engine, the main window and the browser integration are solid on Windows and
 Linux, and some corners are still "good enough for now".
 
 - **Translations are machine-made.** Rows marked `#, machine` in [`i18n/`](i18n) wait for a
@@ -432,13 +432,13 @@ Linux, and some corners are still "good enough for now".
   Flatpak browsers aren't supported yet.
 
 Bug reports and ideas are welcome in
-[Issues](https://github.com/anefzaoui/razdownloadmanager/issues/new/choose): **Help → Report a problem**
+[Issues](https://github.com/razcreativestudio/razdownloadmanager/issues/new/choose): **Help → Report a problem**
 in the app fills in your version and system. Pull requests are accepted under the same licence: start with [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Made possible by these amazing humans
 
 Everyone who sent a pull request, opened an issue or joined a conversation here: thank you. People
-with pull requests first, then issues, then comments; [the website](https://razdownloadmanager.com/contributors.html)
+with pull requests first, then issues, then comments; [the website](https://dm.it-raz.com/contributors.html)
 shows what each one did.
 
 <!-- contributors:start (python tools/contributors.py readme) -->
@@ -476,21 +476,20 @@ shows what each one did.
 
 ## ⭐ Star history
 
-If MDM saves you time, a star is the quickest way to say so, and it helps the next person find
-a free download manager. [Star it on GitHub](https://github.com/anefzaoui/razdownloadmanager/stargazers).
+If RAZ DM saves you time, a star is the quickest way to say so, and it helps the next person find
+a free download manager. [Star it on GitHub](https://github.com/razcreativestudio/razdownloadmanager/stargazers).
 
-<a href="https://star-history.com/#anefzaoui/razdownloadmanager&Date">
+<a href="https://star-history.com/#razcreativestudio/razdownloadmanager&Date">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=anefzaoui/razdownloadmanager&type=Date&theme=dark">
-    <img src="https://api.star-history.com/svg?repos=anefzaoui/razdownloadmanager&type=Date" alt="RAZ Download Manager's GitHub stars over time" width="600">
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=razcreativestudio/razdownloadmanager&type=Date&theme=dark">
+    <img src="https://api.star-history.com/svg?repos=razcreativestudio/razdownloadmanager&type=Date" alt="RAZ Download Manager's GitHub stars over time" width="600">
   </picture>
 </a>
 
-## Support MDM
+## Support RAZ DM
 
-MDM is free and always will be. If it saves you time, you can support its creator on
-[GitHub Sponsors](https://github.com/sponsors/anefzaoui). It's optional: nothing in the app
-changes or unlocks, and there is no paid edition.
+RAZ DM is free and always will be. If it saves you time, you can star and share the repository.
+It's optional: nothing in the app changes or unlocks, and there is no paid edition.
 
 ## Licence and credits
 
