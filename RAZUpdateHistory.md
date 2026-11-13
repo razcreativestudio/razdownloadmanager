@@ -3,6 +3,42 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-13] — Redesign Dialog Opsi Modern Sidepanel Navigation & Rebranding Menyeluruh "RAZ DM"
+*Waktu: 13 November 2026 10:25 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Redesign Dialog Opsi Menjadi Modern Vertical Sidepanel**:
+   - `crates/app/src/options.rs`:
+     - Menghapus tampilan multi-tab klasik 2-baris bertumpuk yang kuno.
+     - Menggantinya dengan layout navigasi modern **Vertical Sidepanel** (lebar 175 px) di sebelah kiri, terinspirasi dari desain antarmuka modern Fluent / VS Code Settings:
+       - 12 Kategori Opsi: `General`, `File types`, `Save to`, `Downloads`, `Connection`, `Remote`, `Proxy / Socks`, `Sites Logins`, `Accounts`, `Sounds`, `Regional`, `Archives`.
+       - Setiap item navigasi dilengkapi ikon signature vektor bergradasi emas (`Icon::Page*`) dan label terjemahan dinamis.
+       - Item aktif diberi highlight rounded pill obsidian dengan aksen emas (`#FFD700`), border emas lembut, serta indikator vertikal emas di sisi kiri.
+       - Item hover memiliki efek translusen obsidian modern.
+       - Navigasi keyboard penuh menggunakan tombol panah Atas/Bawah, Home, End, dan Tab.
+     - Memperluas dimensi dialog konfigurasi menjadi `605 x 506 px` sehingga proporsi tata letak sangat seimbang dan luas.
+     - Menambahkan garis pembatas vertikal (divider) elegan antara sidepanel dan area konten panel.
+
+2. **Pembersihan String dan Rebranding Lengkap "MDM" $\rightarrow$ "RAZ DM"**:
+   - `crates/app/src/options.rs`:
+     - Memperbarui label `Customize keys to prevent or force downloading with RAZ DM`.
+     - Memperbarui label `Customize RAZ DM menu items in context menu of browsers`.
+     - Memperbarui label `Customize RAZ DM Download panels in browsers`.
+     - Memperbarui teks integrasi remote dan helper: `Let phones and computers on the local network control RAZ DM`, `Off: nothing on the network can reach RAZ DM`, `RAZ DM can't be reached on the network now...`, `{device} is paired. It can control RAZ DM now.`, `Type this code at {page} and allow RAZ DM...`.
+     - Memperbarui penyimpanan password kredensial Windows/keyring: `...kept in RAZ DM's settings...`.
+   - `i18n/en.tsv`, `i18n/id.tsv`, `i18n/id-oke.tsv`:
+     - Menyesuaikan seluruh string sumber dan terjemahan bahasa Indonesia baku serta Bahasa Indo Oke agar konsisten menggunakan "RAZ DM" tanpa ada lagi penyebutan "MDM".
+
+3. **Kompilasi Release & Pembuatan Ulang Installer**:
+   - Berhasil mengompilasi release binary: `target/release/razdownloadmanager.exe`.
+   - Membangun ulang seluruh paket distribusi di `target/dist/`:
+     - `RAZDownloadManager-1.0.0-setup.exe` (15,8 MB)
+     - `RAZDownloadManager-1.0.0-portable.zip` (18,6 MB)
+     - `RAZDownloadManager-1.0.0-x64.zip` (18,6 MB)
+   - Memperbarui catatan hash checksum di `target/dist/SHA256SUMS.txt` dan halaman web `website/download.html`.
+
+---
+
 ## [2026-11-11] — Ikon Tombol Tema RAZ Studio & Katalog "Bahasa Indo Oke"
 *Waktu: 11 November 2026 15:58 WIB*
 

@@ -783,11 +783,11 @@
 #. text in the Options window
 	Customize "Download progress" dialog	Customize "Download progress" dialog
 #. text in the Options window
-	Customize keys to prevent or force downloading with MDM	Customize keys to prevent or force downloading with MDM
+	Customize keys to prevent or force downloading with RAZ DM	Customize keys to prevent or force downloading with RAZ DM
 #. text in the Options window
-	Customize MDM Download panels in browsers	Customize MDM Download panels in browsers
+	Customize RAZ DM Download panels in browsers	Customize RAZ DM Download panels in browsers
 #. text in the Options window
-	Customize MDM menu items in context menu of browsers	Customize MDM menu items in context menu of browsers
+	Customize RAZ DM menu items in context menu of browsers	Customize RAZ DM menu items in context menu of browsers
 #. text in countries.rs
 #. a country's name (where a download's server is)
 	Cyprus	Cyprus
@@ -1690,7 +1690,7 @@
 	Lesotho	Lesotho
 #. checkbox in the Options window
 #. Options → Remote check box (off by default)
-	Let phones and computers on the local network control MDM	Let phones and computers on the local network control MDM
+	Let phones and computers on the local network control RAZ DM	Let phones and computers on the local network control RAZ DM
 #. option (radio button) in the Batch download window
 #. the * in the address runs through letters
 	Letters	Letters
@@ -2132,7 +2132,7 @@
 	No proxy/socks	No proxy/socks
 #. text in the Options window
 #. Options → Accounts: no system keyring/keychain answered (none runs, e.g. a desktop without one), so the sign-ins stay in MDM's settings folder, which only the user's account may read
-	No system keyring answered, so sign-ins and passwords are kept in MDM's settings, which only you can read.	No system keyring answered, so sign-ins and passwords are kept in MDM's settings, which only you can read.
+	No system keyring answered, so sign-ins and passwords are kept in RAZ DM's settings, which only you can read.	No system keyring answered, so sign-ins and passwords are kept in RAZ DM's settings, which only you can read.
 #. message or event log entry in the main window
 #. event log entry: Add trackers changed nothing, the torrent had them all
 	No tracker added: it has them already	No tracker added: it has them already
@@ -3318,7 +3318,7 @@
 	The symbols couldn't be fetched: some lines of the report show addresses instead of names (the developers can still read them).	The symbols couldn't be fetched: some lines of the report show addresses instead of names (the developers can still read them).
 #. text in the Options window
 #. Options → Accounts (Linux): the system keyring is locked (MDM never unlocks it: that would ask for its password), so the sign-ins stay in MDM's settings folder, which only the user's account may read
-	The system keyring is locked and MDM doesn't unlock it, so sign-ins and passwords are kept in MDM's settings, which only you can read.	The system keyring is locked and MDM doesn't unlock it, so sign-ins and passwords are kept in MDM's settings, which only you can read.
+	The system keyring is locked and RAZ DM doesn't unlock it, so sign-ins and passwords are kept in RAZ DM's settings, which only you can read.	The system keyring is locked and RAZ DM doesn't unlock it, so sign-ins and passwords are kept in RAZ DM's settings, which only you can read.
 #. text in the Options window
 #. Options → Connection → DNS: the operating system's own DNS (the default)
 	The system's DNS	The system's DNS
@@ -3605,7 +3605,7 @@
 #. text in the Options window
 #. Options → Add an account: waiting while the user types the code at the service's page; {page} its address, {time} minutes:seconds left
 #. {time} = a time of day (keep the braces as they are)
-	Type this code at {page} and allow MDM; waiting for you (the code expires in {time}).	Type this code at {page} and allow MDM; waiting for you (the code expires in {time}).
+	Type this code at {page} and allow RAZ DM; waiting for you (the code expires in {time}).	Type this code at {page} and allow RAZ DM; waiting for you (the code expires in {time}).
 #. tooltip (why a control is greyed) in the Find window
 #. tooltip of the greyed Find button
 	Type what to find, and tick at least one place to look	Type what to find, and tick at least one place to look
@@ -3821,7 +3821,7 @@
 	Windows allows wake timers only while plugged in	Windows allows wake timers only while plugged in
 #. text in the Options window
 #. Options → Accounts: Windows Credential Manager didn't answer, so the sign-ins stay in MDM's settings, encrypted so that only this Windows account can read them
-	Windows Credential Manager didn't answer, so sign-ins and passwords are kept in MDM's settings, encrypted for your Windows account.	Windows Credential Manager didn't answer, so sign-ins and passwords are kept in MDM's settings, encrypted for your Windows account.
+	Windows Credential Manager didn't answer, so sign-ins and passwords are kept in RAZ DM's settings, encrypted for your Windows account.	Windows Credential Manager didn't answer, so sign-ins and passwords are kept in RAZ DM's settings, encrypted for your Windows account.
 #. text in a dialog box
 #. why the computer could not be put to sleep (fills {error})
 	Windows refused	Windows refused

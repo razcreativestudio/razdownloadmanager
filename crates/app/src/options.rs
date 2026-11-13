@@ -303,39 +303,43 @@ impl OptionsDialog {
     /// `Done(settings)` on OK.
     pub fn show(&mut self, ctx: &egui::Context, downloads: &std::path::Path) -> Outcome<Settings> {
         let modal = self.sub.is_some() || self.cat_edit.is_some() || self.restore_ask.is_some();
+        const SIDE_WIDTH: f32 = 175.0;
+        const W: f32 = SIDE_WIDTH + 430.0;
+        const H: f32 = 506.0;
         let outcome = window(
             ctx,
             "options",
             "RAZ Download Manager Configuration",
-            [430.0, 506.0],
+            [W, H],
             false,
             LIGHT_BG(),
             |ui, o| {
-                // Ctrl+Tab through the pages in the tabs' order (Archives, 10, came last).
-                const ORDER: [usize; 12] = [0, 1, 2, 3, 4, 11, 5, 6, 7, 8, 9, 10];
+                // Ctrl+Tab through the pages in order.
+                const ORDER: [usize; 12] = [0, 1, 2, 3, 4, REMOTE_PAGE, 5, 6, 7, 8, 9, 10];
                 let at = ORDER.iter().position(|p| *p == self.page).unwrap_or(0);
                 let by_key = winui::tab_keys(ui, ORDER.len(), at).map(|i| ORDER[i]);
                 if let Some(p) = tabs(ui, o, self.page).or(by_key) {
                     self.page = p;
                 }
+                let page_o = pos2(o.x + SIDE_WIDTH + 2.0, o.y);
                 match self.page {
-                    0 => self.general(ui, o),
-                    1 => self.file_types(ui, o),
-                    2 => self.save_to(ui, o, downloads),
-                    3 => self.downloads(ui, o),
-                    4 => self.connection(ui, o),
-                    5 => self.proxy(ui, o),
-                    6 => self.logins(ui, o),
-                    7 => self.accounts(ui, o),
-                    9 => self.regional(ui, o),
-                    10 => self.archives(ui, o),
-                    REMOTE_PAGE => self.remote_page(ui, o),
-                    8 => self.sounds(ui, o),
-                    _ => self.regional(ui, o),
+                    0 => self.general(ui, page_o),
+                    1 => self.file_types(ui, page_o),
+                    2 => self.save_to(ui, page_o, downloads),
+                    3 => self.downloads(ui, page_o),
+                    4 => self.connection(ui, page_o),
+                    5 => self.proxy(ui, page_o),
+                    6 => self.logins(ui, page_o),
+                    7 => self.accounts(ui, page_o),
+                    9 => self.regional(ui, page_o),
+                    10 => self.archives(ui, page_o),
+                    REMOTE_PAGE => self.remote_page(ui, page_o),
+                    8 => self.sounds(ui, page_o),
+                    _ => self.regional(ui, page_o),
                 }
                 let ok = winui::button_light(
                     ui,
-                    r(o, 269.0, 477.0, 73.0, 21.0),
+                    r(o, W - 12.0 - 73.0 - 8.0 - 73.0, 477.0, 73.0, 21.0),
                     "OK",
                     ButtonKind::Default,
                     false,
@@ -343,7 +347,7 @@ impl OptionsDialog {
                 .clicked();
                 if winui::button_light(
                     ui,
-                    r(o, 350.0, 477.0, 73.0, 21.0),
+                    r(o, W - 12.0 - 73.0, 477.0, 73.0, 21.0),
                     // i18n: noun: button that opens the help
                     "Help",
                     ButtonKind::Normal,
@@ -590,7 +594,7 @@ impl OptionsDialog {
         let fit_right =
             |label: &str| winui::buttons_to_right(&p, 392.0, 0.0, &[(label, 73.0)], 160.0)[0];
         let keys_at = fit_right("Keys...");
-        let label = crate::i18n::t("Customize keys to prevent or force downloading with MDM");
+        let label = crate::i18n::t("Customize keys to prevent or force downloading with RAZ DM");
         // Inside the browsers' group box: it starts no further out than the group's frame.
         let (rect, cut) = winui::text_right_within(
             &p,
@@ -614,7 +618,7 @@ impl OptionsDialog {
         {
             self.sub = Some(Sub::Keys(self.s.capture_opened));
         }
-        let label = crate::i18n::t("Customize MDM menu items in context menu of browsers");
+        let label = crate::i18n::t("Customize RAZ DM menu items in context menu of browsers");
         let (rect, cut) = winui::text_right(&p, o.x + 313.0, o.y + 419.0, label, LIGHT_DISABLED());
         if cut {
             winui::full_on_hover(ui, rect, ("general-right", 419), label);
@@ -622,7 +626,7 @@ impl OptionsDialog {
         // i18n: verb: edit the item
         off(ui, r(o, 289.0, 406.0, 103.0, 21.0), "Edit...");
         // The download button over videos in the browsers (our own panel, Sub::Panels).
-        let label = crate::i18n::t("Customize MDM Download panels in browsers");
+        let label = crate::i18n::t("Customize RAZ DM Download panels in browsers");
         let panels_at = fit_right("Edit...");
         let (rect, cut) = winui::text_right(
             &p,
@@ -2588,7 +2592,7 @@ impl OptionsDialog {
             o + vec2(21.0, 92.0),
             &mut self.s.remote_on,
             // i18n: Options → Remote check box (off by default)
-            "Let phones and computers on the local network control MDM",
+            "Let phones and computers on the local network control RAZ DM",
             true,
         );
         let on = self.s.remote_on;
@@ -2663,7 +2667,7 @@ impl OptionsDialog {
             ),
             None | Some(Status::Off) => (
                 // i18n: Options → Remote → Status: the remote control is off
-                crate::i18n::t("Off: nothing on the network can reach MDM.").to_owned(),
+                crate::i18n::t("Off: nothing on the network can reach RAZ DM.").to_owned(),
                 true,
             ),
             Some(Status::Listening(_)) => (
@@ -2826,7 +2830,7 @@ impl OptionsDialog {
             o.y + 438.0,
             // i18n: Options → Remote, at the bottom of the page
             crate::i18n::t(
-                "Only paired devices see or change anything. The first time, the phone's browser warns about MDM's own certificate: its fingerprint is the one above.",
+                "Only paired devices see or change anything. The first time, the phone's browser warns about RAZ DM's own certificate: its fingerprint is the one above.",
             ),
             LIGHT_TEXT(),
             o.x + 406.0,
@@ -2874,7 +2878,7 @@ impl OptionsDialog {
                         o.y + 30.0,
                         // i18n: Options → Remote → Pair a device: the remote control isn't listening (no network, port taken): the Remote page says why
                         crate::i18n::t(
-                            "MDM can't be reached on the network now: Options → Remote says why.",
+                            "RAZ DM can't be reached on the network now: Options → Remote says why.",
                         ),
                         crate::theme::colors().error_strong,
                         o.x + 346.0,
@@ -2889,7 +2893,7 @@ impl OptionsDialog {
                 if let Some(name) = &paired {
                     let line = crate::i18n::fmt(
                         // i18n: Options → Remote → Pair a device: done; {device} = the name it was given
-                        crate::i18n::t("{device} is paired. It can control MDM now."),
+                        crate::i18n::t("{device} is paired. It can control RAZ DM now."),
                         &[("device", &crate::i18n::isolate(name))],
                     );
                     winui::paragraph(
@@ -3867,7 +3871,7 @@ fn account_dialog(ui: &mut Ui, o: Pos2, e: &mut AccountEdit) -> Outcome<settings
             &crate::i18n::fmt(
                 // i18n: Options → Add an account: waiting while the user types the code at the service's page; {page} its address, {time} minutes:seconds left
                 crate::i18n::t(
-                    "Type this code at {page} and allow MDM; waiting for you (the code expires in {time}).",
+                    "Type this code at {page} and allow RAZ DM; waiting for you (the code expires in {time}).",
                 ),
                 &[
                     ("page", &crate::i18n::ltr(page)),
@@ -4023,240 +4027,155 @@ fn ok_cancel(ui: &mut Ui, o: Pos2, x: f32, y: f32, valid: bool) -> Outcome<()> {
     }
 }
 
-/// A row of tabs as shown: IDM's measured tabs in English; a translation's sized by its labels
-/// (each label centred, the room left over shared out), so the row keeps its span (x 8..419)
-/// and no label is cut.
-fn tab_row(
-    p: &egui::Painter,
-    row: &[(usize, &'static str, f32, f32, f32)],
-    measured: bool,
-) -> Vec<(usize, &'static str, f32, f32, f32)> {
-    // `measured`: the row's English positions are IDM's (a row of ours is sized as a translation).
-    if measured && row.iter().all(|t| crate::i18n::t(t.1) == t.1) {
-        return row.to_vec();
-    }
-    let (left, right) = (row[0].2, row[row.len() - 1].3);
-    let widths: Vec<f32> = row
-        .iter()
-        .map(|t| winui::text_width(p, crate::i18n::t(t.1)).ceil())
-        .collect();
-    let total: f32 = widths.iter().map(|w| w + 16.0).sum();
-    let spare = ((right - left - total) / row.len() as f32).floor();
-    let padded: Vec<f32> = widths.iter().map(|w| w + 16.0).collect();
-    let cap = winui::width_cap(&padded, right - left);
-    let mut x0 = left;
-    row.iter()
-        .zip(&widths)
-        .enumerate()
-        .map(|(k, (t, w))| {
-            let x1 = if k + 1 == row.len() {
-                right
-            } else if spare < 0.0 {
-                // Too wide for the strip: the narrow tabs keep their width, the wide ones share
-                // the rest (their labels cut where drawn).
-                x0 + (w + 16.0).min(cap)
-            } else {
-                x0 + w + 16.0 + spare
-            };
-            let tab = (t.0, t.1, x0, x1, x0 + ((x1 - x0 - w) / 2.0).floor());
-            x0 = x1;
-            tab
-        })
-        .collect()
-}
-
-/// The two-row tab strip and the page frame; returns the page clicked.
+/// Modern vertical sidepanel navigation and the content page frame; returns the page clicked.
 fn tabs(ui: &mut Ui, o: Pos2, page: usize) -> Option<usize> {
-    // (page, label, x0, x1, label x): the rows never move sideways, only swap front and back.
-    // Remote (#141, ours) joins the first row, which is sized by its labels since.
-    const G: [(usize, &str, f32, f32, f32); 6] = [
-        // i18n: tab title: general settings
-        (0, crate::i18n::mark("General"), 8.0, 82.0, 26.0),
-        // i18n: tab title
-        (1, crate::i18n::mark("File types"), 82.0, 166.0, 101.0),
-        // i18n: tab title: where downloads are saved
-        (2, crate::i18n::mark("Save to"), 166.0, 241.0, 185.0),
-        // i18n: tab title: download settings
-        (3, crate::i18n::mark("Downloads"), 241.0, 330.0, 260.0),
-        // i18n: tab title: connection settings
-        (4, crate::i18n::mark("Connection"), 330.0, 419.0, 349.0),
-        (
-            REMOTE_PAGE,
-            // i18n: tab title: control MDM from a phone or another computer on the local network
-            crate::i18n::mark("Remote"),
-            380.0,
-            419.0,
-            390.0,
-        ),
+    const SIDE_WIDTH: f32 = 175.0;
+    const ITEM_H: f32 = 36.0;
+    const START_Y: f32 = 12.0;
+
+    const TABS: [(usize, &str, Icon); 12] = [
+        (0, crate::i18n::mark("General"), Icon::PageGeneral),
+        (1, crate::i18n::mark("File types"), Icon::PageFileTypes),
+        (2, crate::i18n::mark("Save to"), Icon::PageSaveTo),
+        (3, crate::i18n::mark("Downloads"), Icon::PageDownloads),
+        (4, crate::i18n::mark("Connection"), Icon::PageConnection),
+        (REMOTE_PAGE, crate::i18n::mark("Remote"), Icon::PageRemote),
+        (5, crate::i18n::mark("Proxy / Socks"), Icon::PageProxy),
+        (6, crate::i18n::mark("Sites Logins"), Icon::PageLogins),
+        (7, crate::i18n::mark("Accounts"), Icon::PageLogins),
+        (8, crate::i18n::mark("Sounds"), Icon::PageSounds),
+        (9, crate::i18n::mark("Regional"), Icon::PageRegional),
+        (10, crate::i18n::mark("Archives"), Icon::PageArchives),
     ];
-    // IDM's Dial Up / VPN tab is gone (D-021: no modem support; it did nothing); ours, Regional
-    // (how dates and times are written), Accounts (#44, debrid services) and Archives (#37) share
-    // the row, sized by their labels.
-    const P: [(usize, &str, f32, f32, f32); 6] = [
-        // i18n: tab title
-        (5, crate::i18n::mark("Proxy / Socks"), 8.0, 104.0, 20.0),
-        // i18n: tab title: user names and passwords for sites
-        (6, crate::i18n::mark("Sites Logins"), 104.0, 192.0, 116.0),
-        // i18n: tab title: the user's debrid service accounts (Real-Debrid…)
-        (7, crate::i18n::mark("Accounts"), 192.0, 265.0, 204.0),
-        // i18n: tab title: sound settings
-        (8, crate::i18n::mark("Sounds"), 265.0, 336.0, 279.0),
-        // i18n: tab title: how dates and times are written (date order, 12- or 24-hour clock)
-        (9, crate::i18n::mark("Regional"), 336.0, 380.0, 350.0),
-        // i18n: tab title: extracting downloaded archives, and Link grabber
-        (10, crate::i18n::mark("Archives"), 380.0, 419.0, 390.0),
-    ];
+
     let p = ui.painter().clone();
     let border = winui::HEADER_LINE();
-    let (g, pr) = (tab_row(&p, &G, false), tab_row(&p, &P, false));
-    let first_row = page < 5 || page == REMOTE_PAGE;
-    let (front, back): (&[_], &[_]) = if first_row { (&g, &pr) } else { (&pr, &g) };
     let mut clicked = None;
-    let mut tab = |ui: &mut Ui,
-                   (i, label, x0, x1, lx): (usize, &str, f32, f32, f32),
-                   top: f32,
-                   base: f32,
-                   sel: bool| {
-        let (x0, x1) = if sel {
-            (x0 - if x0 <= 8.0 { 2.0 } else { 1.0 }, x1 + 2.0)
-        } else {
-            (x0, x1)
-        };
-        let bottom = if sel { 45.0 } else { top + 17.0 };
-        // From the leading edge: the first tab at the right in RTL.
-        let rc = winui::rect(Rect::from_min_max(
-            o + vec2(x0, top),
-            o + vec2(x1 + 1.0, bottom + 1.0),
-        ));
-        // The strip is one Tab stop, the chosen tab (Windows' tab control); the arrows move.
-        let sense = if sel {
-            Sense::click()
-        } else {
-            winui::pointer_only()
-        };
-        let resp = ui.interact(rc, egui::Id::unique(("opt-tab", i)), sense);
-        winui::expose(
-            &resp,
-            egui::Role::Tab,
-            crate::i18n::t(label),
-            true,
-            Some(sel),
+
+    // Draw sidepanel navigation items
+    for (k, (i, label, icon)) in TABS.iter().enumerate() {
+        let sel = *i == page;
+        let y = START_Y + k as f32 * ITEM_H;
+        let rc = Rect::from_min_size(
+            pos2(o.x + 8.0, o.y + y),
+            vec2(SIDE_WIDTH - 16.0, ITEM_H - 4.0),
         );
+        let resp = ui.interact(rc, egui::Id::unique(("opt-side-tab", *i)), Sense::click());
+        winui::expose(&resp, egui::Role::Tab, crate::i18n::t(label), true, Some(sel));
         let resp = winui::enter_is_not_a_click(ui, resp);
         if resp.clicked() && !sel {
-            clicked = Some(i);
+            clicked = Some(*i);
         }
+
         if sel {
             winui::keep_keys(ui, &resp, true, false, false);
             if resp.has_focus() {
-                // Left / Right (mirrored in RTL), Home / End through the pages in order.
-                const ORDER: [usize; 12] = [0, 1, 2, 3, 4, 11, 5, 6, 7, 8, 9, 10];
-                let at = ORDER.iter().position(|p| *p == i).unwrap_or(0) as isize;
-                let fwd = if winui::rtl() { -1 } else { 1 };
-                let to = if winui::take_key(ui, egui::Key::ArrowRight) {
-                    Some(at + fwd)
-                } else if winui::take_key(ui, egui::Key::ArrowLeft) {
-                    Some(at - fwd)
+                let at = k as isize;
+                let to = if winui::take_key(ui, egui::Key::ArrowDown) {
+                    Some(at + 1)
+                } else if winui::take_key(ui, egui::Key::ArrowUp) {
+                    Some(at - 1)
                 } else if winui::take_key(ui, egui::Key::Home) {
                     Some(0)
                 } else if winui::take_key(ui, egui::Key::End) {
-                    Some(ORDER.len() as isize - 1)
+                    Some(TABS.len() as isize - 1)
                 } else {
                     None
                 };
                 if let Some(to) = to {
-                    let next = ORDER[to.clamp(0, ORDER.len() as isize - 1) as usize];
+                    let next_k = to.clamp(0, TABS.len() as isize - 1) as usize;
+                    let next = TABS[next_k].0;
                     clicked = Some(next);
-                    // The keys stay on the strip: the new tab takes the focus.
-                    ui.memory_mut(|m| m.request_focus(egui::Id::unique(("opt-tab", next))));
+                    ui.memory_mut(|m| m.request_focus(egui::Id::unique(("opt-side-tab", next))));
                 }
             }
         }
-        let face = if sel {
-            LIGHT_PAGE()
-        } else if resp.hovered() {
-            winui::TAB_HOT()
-        } else {
-            winui::TAB_UNSELECTED()
-        };
-        fill(&p, o.x + x0, o.y + top, o.x + x1, o.y + bottom, face);
-        fill(
-            &p,
-            o.x + x0 + 1.0,
-            o.y + top,
-            o.x + x1 - 1.0,
-            o.y + top,
-            border,
-        );
-        fill(
-            &p,
-            o.x + x0,
-            o.y + top + 1.0,
-            o.x + x0,
-            o.y + bottom,
-            border,
-        );
-        fill(
-            &p,
-            o.x + x1,
-            o.y + top + 1.0,
-            o.x + x1,
-            o.y + bottom,
-            border,
-        );
-        // A translated row too wide for the strip has narrower tabs (`tab_row`): their labels are
-        // cut with "..." and shown whole on hover.
+
         let full = crate::i18n::t(label);
-        let shown = winui::ellipsize(&p, &winui::tahoma(), full, x1 - x0 - 6.0);
-        if shown == full {
-            text(&p, o.x + lx, o.y + base, full, LIGHT_TEXT());
+        let text_x = rc.left() + 32.0;
+        let text_y = rc.top() + 20.0;
+        let room = rc.right() - text_x - 6.0;
+
+        if sel {
+            // Elegant obsidian & gold pill selection
+            p.rect_filled(
+                rc,
+                6.0,
+                egui::Color32::from_rgba_unmultiplied(255, 215, 0, 32),
+            );
+            p.rect_stroke(
+                rc,
+                6.0,
+                egui::Stroke::new(1.0, egui::Color32::from_rgba_unmultiplied(255, 215, 0, 100)),
+                egui::StrokeKind::Inside,
+            );
+            // Gold vertical indicator line on left edge
+            p.rect_filled(
+                Rect::from_min_size(pos2(rc.left() + 2.0, rc.top() + 6.0), vec2(3.0, rc.height() - 12.0)),
+                1.5,
+                egui::Color32::from_rgb(255, 215, 0),
+            );
+            // RAZ gradient colored icon
+            icon.image(true).paint_at(
+                ui,
+                Rect::from_min_size(
+                    pos2(rc.left() + 8.0, rc.top() + (rc.height() - 18.0) / 2.0),
+                    vec2(18.0, 18.0),
+                ),
+            );
+            let shown = winui::ellipsize(&p, &winui::tahoma_bold(), full, room);
+            text(&p, text_x, text_y, &shown, egui::Color32::from_rgb(255, 220, 80));
+            winui::show_focus(ui, &resp, rc.shrink(1.0));
+        } else if resp.hovered() {
+            p.rect_filled(
+                rc,
+                6.0,
+                egui::Color32::from_rgba_unmultiplied(255, 255, 255, 14),
+            );
+            icon.image(true).paint_at(
+                ui,
+                Rect::from_min_size(
+                    pos2(rc.left() + 8.0, rc.top() + (rc.height() - 18.0) / 2.0),
+                    vec2(18.0, 18.0),
+                ),
+            );
+            let shown = winui::ellipsize(&p, &winui::tahoma(), full, room);
+            text(&p, text_x, text_y, &shown, winui::TEXT());
         } else {
-            let w = winui::text_width(&p, &shown);
-            let lx = x0 + ((x1 - x0 - w) / 2.0).floor();
-            let rc = text(&p, o.x + lx, o.y + base, &shown, LIGHT_TEXT());
-            winui::full_on_hover(ui, rc, ("opt-tab-label", i), full);
+            icon.image(false).paint_at(
+                ui,
+                Rect::from_min_size(
+                    pos2(rc.left() + 8.0, rc.top() + (rc.height() - 18.0) / 2.0),
+                    vec2(18.0, 18.0),
+                ),
+            );
+            let shown = winui::ellipsize(&p, &winui::tahoma(), full, room);
+            text(&p, text_x, text_y, &shown, winui::MUTED());
         }
-        winui::show_focus(ui, &resp, rc.shrink(2.0));
-    };
-    for t in back {
-        tab(ui, *t, 9.0, 22.0, false);
     }
-    for t in front.iter().filter(|t| t.0 != page) {
-        tab(ui, *t, 27.0, 40.0, false);
-    }
-    // Page frame (x 6..421, y 45..468) with its shadow, then the selected tab over its top.
+
+    // Divider line between sidepanel and content page
+    p.line_segment(
+        [pos2(o.x + SIDE_WIDTH, o.y + 12.0), pos2(o.x + SIDE_WIDTH, o.y + 468.0)],
+        egui::Stroke::new(1.0, border),
+    );
+
+    // Page frame container inside the content panel
+    let content_left = o.x + SIDE_WIDTH + 8.0;
+    let content_right = o.x + SIDE_WIDTH + 423.0;
     fill(
         &p,
-        o.x + 6.0,
-        o.y + 45.0,
-        o.x + 421.0,
+        content_left,
+        o.y + 12.0,
+        content_right,
         o.y + 468.0,
         LIGHT_PAGE(),
     );
-    fill(&p, o.x + 6.0, o.y + 45.0, o.x + 421.0, o.y + 45.0, border);
-    fill(&p, o.x + 6.0, o.y + 468.0, o.x + 421.0, o.y + 468.0, border);
-    fill(&p, o.x + 6.0, o.y + 45.0, o.x + 6.0, o.y + 468.0, border);
-    fill(
-        &p,
-        o.x + 421.0,
-        o.y + 45.0,
-        o.x + 421.0,
-        o.y + 468.0,
-        border,
-    );
-    let shadow = winui::TAB_UNSELECTED();
-    fill(
-        &p,
-        o.x + 422.0,
-        o.y + 45.0,
-        o.x + 423.0,
-        o.y + 469.0,
-        shadow,
-    );
-    fill(&p, o.x + 6.0, o.y + 469.0, o.x + 423.0, o.y + 469.0, shadow);
-    if let Some(t) = front.iter().find(|t| t.0 == page) {
-        tab(ui, *t, 25.0, 38.0, true);
-    }
+    fill(&p, content_left, o.y + 12.0, content_right, o.y + 12.0, border);
+    fill(&p, content_left, o.y + 468.0, content_right, o.y + 468.0, border);
+    fill(&p, content_left, o.y + 12.0, content_left, o.y + 468.0, border);
+    fill(&p, content_right, o.y + 12.0, content_right, o.y + 468.0, border);
+
     clicked
 }
 
@@ -4550,17 +4469,17 @@ fn kept_text(kept: crate::secrets::Kept) -> Option<&'static str> {
         ),
         // i18n: Options → Accounts (Linux): the system keyring is locked (MDM never unlocks it: that would ask for its password), so the sign-ins stay in MDM's settings folder, which only the user's account may read
         Kept::Locked => crate::i18n::mark(
-            "The system keyring is locked and MDM doesn't unlock it, so sign-ins and passwords are kept in MDM's settings, which only you can read.",
+            "The system keyring is locked and RAZ DM doesn't unlock it, so sign-ins and passwords are kept in RAZ DM's settings, which only you can read.",
         ),
         #[cfg(windows)]
         // i18n: Options → Accounts: Windows Credential Manager didn't answer, so the sign-ins stay in MDM's settings, encrypted so that only this Windows account can read them
         Kept::Missing => crate::i18n::mark(
-            "Windows Credential Manager didn't answer, so sign-ins and passwords are kept in MDM's settings, encrypted for your Windows account.",
+            "Windows Credential Manager didn't answer, so sign-ins and passwords are kept in RAZ DM's settings, encrypted for your Windows account.",
         ),
         #[cfg(not(windows))]
         // i18n: Options → Accounts: no system keyring/keychain answered (none runs, e.g. a desktop without one), so the sign-ins stay in MDM's settings folder, which only the user's account may read
         Kept::Missing => crate::i18n::mark(
-            "No system keyring answered, so sign-ins and passwords are kept in MDM's settings, which only you can read.",
+            "No system keyring answered, so sign-ins and passwords are kept in RAZ DM's settings, which only you can read.",
         ),
     })
 }
