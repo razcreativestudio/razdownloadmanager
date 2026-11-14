@@ -6807,8 +6807,8 @@ impl App {
             let rows = self.tree_rows();
             let tree: Vec<TreeRow<'_>> = rows.iter().map(|(r, ..)| r.clone()).collect();
             // The splitter: the 4 px gap between the pane and the list, dragged sideways.
-            let max_w = (w * 0.6).max(180.0);
-            let cat_w = (self.settings.categories_width as f32).max(185.0).clamp(160.0, max_w);
+            let max_w = (w * 0.6).max(160.0);
+            let cat_w = (self.settings.categories_width as f32).clamp(130.0, max_w);
             let right = o.x + 6.0 + cat_w;
             let split = winui::rect(egui::Rect::from_min_max(
                 pos2(right, o.y + chrome::MENU_H + chrome::pane_top()),
@@ -6829,7 +6829,7 @@ impl App {
                 // edge: the right in RTL).
                 let nw = (winui::mx(p.x) - o.x - 6.0 - 2.0)
                     .round()
-                    .clamp(160.0, max_w);
+                    .clamp(130.0, max_w);
                 self.settings.categories_width = nw as u32;
             }
             if sr.drag_stopped() {

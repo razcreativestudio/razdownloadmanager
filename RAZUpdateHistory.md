@@ -3,6 +3,43 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-14] — Optimasi Side Panel Ramping & Bebas Scrollbar: Desain Kompak & Tipografi Segoe UI Modern
+*Waktu: 14 November 2026 12:45 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Penyusutan Dimensi & Spacing Side Panel (`chrome::categories`)**:
+   - `crates/app/src/chrome.rs`:
+     - Menurunkan tinggi baris item dari 34px menjadi 25px (`rc` height 23px) dan tinggi header seksi dari 28px menjadi 20px.
+     - Mengoptimalkan radius pill seleksi/hover menjadi 5.0px yang ramping dan elegan.
+     - Mengurangi total tinggi kumulatif seluruh seksi navigasi (LIBRARY, FILE TYPES, QUEUES) dari ~410px menjadi hanya ~296px.
+     - Pada ukuran jendela normal (tinggi minimal 400px), seluruh item side panel kini tampil utuh dalam satu pandangan tanpa memicu scrollbar vertikal sama sekali (`need_v = false`).
+     - Menyesuaikan proporsi dan ketebalan stroke ikon kustom:
+       - Lingkaran panah `AllDownloads` radius 7.0px (garis panah 1.6px).
+       - Lingkaran jam `Incomplete` radius 6.5px (garis 1.3px).
+       - Lingkaran centang `Completed` radius 6.5px (garis 1.5px).
+       - Titik kategori warna `Dot` radius 3.5px.
+       - Tumpukan garis `Queue` lebar 10px.
+
+2. **Penyempurnaan Tipografi Modern (Clean Segoe UI / Proportional Font)**:
+   - Menggantikan font tebal jadul (tahoma-bold/serif look) dengan `FontId::proportional(12.0)` yang halus, jernih, dan modern khas antarmuka Windows 11 / RAZ Creative Studio.
+   - Badge hitungan unduhan menggunakan `FontId::proportional(11.5)`.
+   - Header seksi menggunakan `FontId::proportional(10.0)` berwarna abu-abu steel modern (`#737a87`).
+
+3. **Fleksibilitas Lebar Sidebar di `app.rs`**:
+   - `crates/app/src/app.rs`:
+     - Menurunkan batas bawah lebar sidebar dari 185px menjadi 130px (`clamp(130.0, max_w)`), memberikan kebebasan bagi pengguna untuk mengecilkan atau melebarkan side panel sesuai preferensi layout.
+
+4. **Kompilasi Biner Release & Build Ulang Installer**:
+   - Berhasil mengompilasi biner rilis dengan performa tinggi dan 0 warning (`cargo check` & `cargo build --release -p razdm-app`).
+   - Membangun kembali paket installer dan biner portabel di `target/dist/`:
+     - `RAZDownloadManager-1.0.0-setup.exe` (15,8 MB)
+     - `RAZDownloadManager-1.0.0-portable.zip` (18,6 MB)
+     - `RAZDownloadManager-1.0.0-x64.zip` (18,6 MB)
+     - `RAZDownloadManager-1.0.0-extension-chrome.zip` (0,2 MB)
+     - `RAZDownloadManager-1.0.0-extension-firefox.xpi` (0,2 MB)
+
+---
+
 ## [2026-11-14] — Perbaikan Folder Instalasi & Migrasi Data: Penggantian AppId Unik & `UsePreviousAppDir=no`
 *Waktu: 14 November 2026 12:21 WIB*
 

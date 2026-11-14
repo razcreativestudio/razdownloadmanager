@@ -342,6 +342,7 @@ pub fn segoe() -> FontId {
 }
 
 /// Arial Bold −13: the Categories close "x".
+#[allow(dead_code)]
 pub fn arial_bold() -> FontId {
     FontId::new(
         crate::theme::metrics().font_ui_bold,

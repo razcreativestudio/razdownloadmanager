@@ -45,8 +45,10 @@ themed! {
     TB_DISABLED => toolbar_text_disabled;
     /// A drop-down's arrow (dark: light on the dark band, where #282828 could not be seen).
     TB_ARROW => toolbar_arrow;
+    #[allow(dead_code)]
     CAT_FRAME => tree_frame;
     TREE_BG => tree;
+    #[allow(dead_code)]
     TREE_LINES => tree_lines;
     /// The tree's chevrons (dark look).
     TREE_EXPANDER => tree_expander;
@@ -1653,14 +1655,17 @@ pub enum RowIconKind {
 #[derive(Clone)]
 pub struct TreeRow<'a> {
     pub is_header: bool,
+    #[allow(dead_code)]
     pub level: usize,
     pub label: std::borrow::Cow<'a, str>,
     /// None: leaf; Some(open): has an expander.
     pub expander: Option<bool>,
     pub selected: bool,
     pub icon_kind: RowIconKind,
+    #[allow(dead_code)]
     pub icon: IconKey,
     /// A small Silk icon overlaid at the icon's bottom-right (Finished ✓, queue stacks).
+    #[allow(dead_code)]
     pub badge: Option<&'static str>,
     /// How many downloads the node holds, shown after its label (none when empty).
     pub count: Option<usize>,
@@ -1675,6 +1680,7 @@ fn count_text(n: usize) -> String {
 pub enum TreeEvent {
     Select(usize),
     Toggle(usize),
+    #[allow(dead_code)]
     Close,
     /// Right-click: the row whose menu opens (the selection does not move) and where.
     Context(usize, Pos2),
@@ -1714,14 +1720,17 @@ pub fn categories(
         pos2(right - 2.0, bottom - 8.0),
     );
 
-    // Compute dynamic layout tops for rows
+    // Compute dynamic layout tops for rows (compact modern spacing)
     let mut row_tops = Vec::with_capacity(rows.len());
-    let mut cur_y = 6.0;
-    for r in rows {
+    let mut cur_y = 5.0;
+    for (i, r) in rows.iter().enumerate() {
+        if r.is_header && i > 0 {
+            cur_y += 6.0;
+        }
         row_tops.push(cur_y);
-        cur_y += if r.is_header { 28.0 } else { 34.0 };
+        cur_y += if r.is_header { 20.0 } else { 25.0 };
     }
-    let content_h = cur_y + 8.0;
+    let content_h = cur_y + 4.0;
 
     let need_v = content_h > area.height();
     let view_area = if need_v {
@@ -1736,7 +1745,7 @@ pub fn categories(
         .data(|d| d.get_temp::<f32>(scroll_id))
         .unwrap_or_default();
     if ui.rect_contains_pointer(winui::rect(frame)) {
-        vpos += winui::wheel_rows(ui, 34.0, (view_area.height() / 34.0).floor().max(1.0));
+        vpos += winui::wheel_rows(ui, 25.0, (view_area.height() / 25.0).floor().max(1.0));
     }
     vpos = vpos.clamp(0.0, (content_h - view_area.height()).max(0.0));
     ui.ctx().data_mut(|d| d.insert_temp(scroll_id, vpos));
@@ -1747,16 +1756,16 @@ pub fn categories(
 
     for (k, r) in rows.iter().enumerate() {
         let top = view_area.top() + row_tops[k] - vpos;
-        let row_h = if r.is_header { 28.0 } else { 34.0 };
+        let row_h = if r.is_header { 20.0 } else { 25.0 };
         if top + row_h < view_area.top() || top > view_area.bottom() {
             continue;
         }
 
         if r.is_header {
             // Section Header: e.g. "LIBRARY", "FILE TYPES", "QUEUES"
-            let text_x = view_area.left() + 10.0;
-            let text_y = top + 18.0;
-            let font = egui::FontId::proportional(11.0);
+            let text_x = view_area.left() + 8.0;
+            let text_y = top + 14.0;
+            let font = egui::FontId::proportional(10.0);
             let header_text = crate::i18n::t(&r.label);
             text_font(
                 &tp,
@@ -1770,8 +1779,8 @@ pub fn categories(
         }
 
         let rc = Rect::from_min_size(
-            pos2(view_area.left() + 4.0, top),
-            vec2(view_area.width() - 8.0, 32.0),
+            pos2(view_area.left() + 3.0, top),
+            vec2(view_area.width() - 6.0, 23.0),
         );
         let resp = rows_ui.interact(
             winui::rect(rc),
@@ -1783,123 +1792,120 @@ pub fn categories(
             // Selected rounded pill: subtle luxury obsidian / gold pill
             tp.rect_filled(
                 rc,
-                6.0,
-                Color32::from_rgba_unmultiplied(255, 255, 255, 22),
+                5.0,
+                Color32::from_rgba_unmultiplied(255, 255, 255, 20),
             );
             tp.rect_stroke(
                 rc,
-                6.0,
-                Stroke::new(1.0, Color32::from_rgba_unmultiplied(255, 215, 0, 75)),
+                5.0,
+                Stroke::new(1.0, Color32::from_rgba_unmultiplied(255, 215, 0, 70)),
                 egui::StrokeKind::Inside,
             );
             selected_at = Some((k, rc.left_bottom()));
         } else if resp.hovered() {
             tp.rect_filled(
                 rc,
-                6.0,
+                5.0,
                 Color32::from_rgba_unmultiplied(255, 255, 255, 10),
             );
         }
 
-        // Draw icon
-        let center = pos2(rc.left() + 16.0, rc.center().y);
+        // Draw icon (compact & crisp)
+        let center = pos2(rc.left() + 13.0, rc.center().y);
         match r.icon_kind {
             RowIconKind::AllDownloads => {
-                tp.circle_filled(center, 8.5, Color32::from_rgb(59, 130, 246));
+                tp.circle_filled(center, 7.0, Color32::from_rgb(59, 130, 246));
                 tp.line_segment(
-                    [pos2(center.x, center.y - 4.0), pos2(center.x, center.y + 3.0)],
-                    Stroke::new(2.0, Color32::WHITE),
+                    [pos2(center.x, center.y - 3.2), pos2(center.x, center.y + 2.5)],
+                    Stroke::new(1.6, Color32::WHITE),
                 );
                 tp.line_segment(
-                    [pos2(center.x - 3.0, center.y), pos2(center.x, center.y + 3.0)],
-                    Stroke::new(2.0, Color32::WHITE),
+                    [pos2(center.x - 2.5, center.y), pos2(center.x, center.y + 2.5)],
+                    Stroke::new(1.6, Color32::WHITE),
                 );
                 tp.line_segment(
-                    [pos2(center.x + 3.0, center.y), pos2(center.x, center.y + 3.0)],
-                    Stroke::new(2.0, Color32::WHITE),
+                    [pos2(center.x + 2.5, center.y), pos2(center.x, center.y + 2.5)],
+                    Stroke::new(1.6, Color32::WHITE),
                 );
             }
             RowIconKind::Incomplete => {
                 tp.circle_stroke(
                     center,
-                    8.0,
-                    Stroke::new(1.5, Color32::from_rgb(148, 163, 184)),
+                    6.5,
+                    Stroke::new(1.3, Color32::from_rgb(148, 163, 184)),
                 );
                 tp.line_segment(
-                    [center, pos2(center.x, center.y - 4.5)],
-                    Stroke::new(1.5, Color32::from_rgb(148, 163, 184)),
+                    [center, pos2(center.x, center.y - 3.5)],
+                    Stroke::new(1.3, Color32::from_rgb(148, 163, 184)),
                 );
                 tp.line_segment(
-                    [center, pos2(center.x + 4.0, center.y)],
-                    Stroke::new(1.5, Color32::from_rgb(148, 163, 184)),
+                    [center, pos2(center.x + 3.0, center.y)],
+                    Stroke::new(1.3, Color32::from_rgb(148, 163, 184)),
                 );
             }
             RowIconKind::Completed => {
                 tp.circle_stroke(
                     center,
-                    8.0,
+                    6.5,
+                    Stroke::new(1.3, Color32::from_rgb(148, 163, 184)),
+                );
+                tp.line_segment(
+                    [pos2(center.x - 3.0, center.y), pos2(center.x - 0.8, center.y + 2.0)],
                     Stroke::new(1.5, Color32::from_rgb(148, 163, 184)),
                 );
                 tp.line_segment(
-                    [pos2(center.x - 3.5, center.y), pos2(center.x - 1.0, center.y + 2.5)],
-                    Stroke::new(1.8, Color32::from_rgb(148, 163, 184)),
-                );
-                tp.line_segment(
-                    [pos2(center.x - 1.0, center.y + 2.5), pos2(center.x + 4.0, center.y - 2.5)],
-                    Stroke::new(1.8, Color32::from_rgb(148, 163, 184)),
+                    [pos2(center.x - 0.8, center.y + 2.0), pos2(center.x + 3.5, center.y - 2.0)],
+                    Stroke::new(1.5, Color32::from_rgb(148, 163, 184)),
                 );
             }
             RowIconKind::Dot(c) => {
-                tp.circle_filled(center, 4.5, c);
+                tp.circle_filled(center, 3.5, c);
             }
             RowIconKind::Queue => {
                 tp.line_segment(
-                    [pos2(center.x - 6.0, center.y - 3.5), pos2(center.x + 6.0, center.y - 3.5)],
-                    Stroke::new(1.8, Color32::from_rgb(255, 215, 0)),
+                    [pos2(center.x - 5.0, center.y - 3.0), pos2(center.x + 5.0, center.y - 3.0)],
+                    Stroke::new(1.5, Color32::from_rgb(255, 215, 0)),
                 );
                 tp.line_segment(
-                    [pos2(center.x - 6.0, center.y), pos2(center.x + 6.0, center.y)],
-                    Stroke::new(1.8, Color32::from_rgb(255, 215, 0)),
+                    [pos2(center.x - 5.0, center.y), pos2(center.x + 5.0, center.y)],
+                    Stroke::new(1.5, Color32::from_rgb(255, 215, 0)),
                 );
                 tp.line_segment(
-                    [pos2(center.x - 6.0, center.y + 3.5), pos2(center.x + 6.0, center.y + 3.5)],
-                    Stroke::new(1.8, Color32::from_rgb(255, 215, 0)),
+                    [pos2(center.x - 5.0, center.y + 3.0), pos2(center.x + 5.0, center.y + 3.0)],
+                    Stroke::new(1.5, Color32::from_rgb(255, 215, 0)),
                 );
             }
             RowIconKind::None => {}
         }
 
-        // Draw label
-        let text_x = rc.left() + 34.0;
-        let text_y = rc.center().y + 4.5;
+        // Draw label (modern clean Segoe UI font)
+        let text_x = rc.left() + 27.0;
+        let text_y = rc.center().y + 4.0;
         let text_color = if r.selected {
             Color32::WHITE
         } else if resp.hovered() {
             Color32::WHITE
         } else {
-            Color32::from_rgb(215, 220, 230)
+            Color32::from_rgb(210, 215, 225)
         };
-        let font = if r.selected {
-            winui::tahoma_bold()
-        } else {
-            winui::tahoma()
-        };
+        let font = egui::FontId::proportional(12.0);
         let label_text = crate::i18n::t(&r.label);
-        let max_label_w = (rc.width() - 70.0).max(20.0);
+        let max_label_w = (rc.width() - 55.0).max(20.0);
         let shown = winui::ellipsize(&tp, &font, label_text, max_label_w);
         text_font(&tp, font, text_x, text_y, &shown, text_color);
 
         // Draw count badge (right aligned)
         if let Some(n) = r.count {
             let count_str = crate::i18n::integer(n as u64);
-            let cw = text_width_font(&tp, winui::tahoma(), &count_str);
+            let count_font = egui::FontId::proportional(11.5);
+            let cw = text_width_font(&tp, count_font.clone(), &count_str);
             text_font(
                 &tp,
-                winui::tahoma(),
-                rc.right() - 12.0 - cw,
+                count_font,
+                rc.right() - 8.0 - cw,
                 text_y,
                 &count_str,
-                Color32::from_rgb(156, 163, 175),
+                Color32::from_rgb(148, 163, 184),
             );
         }
 
