@@ -1640,13 +1640,25 @@ mod label_cap_tests {
 
 // ---- Categories pane -----------------------------------------------------------------------
 
+#[derive(Clone, Copy, PartialEq, Eq)]
+pub enum RowIconKind {
+    None,
+    AllDownloads,
+    Incomplete,
+    Completed,
+    Dot(Color32),
+    Queue,
+}
+
 #[derive(Clone)]
 pub struct TreeRow<'a> {
+    pub is_header: bool,
     pub level: usize,
     pub label: std::borrow::Cow<'a, str>,
     /// None: leaf; Some(open): has an expander.
     pub expander: Option<bool>,
     pub selected: bool,
+    pub icon_kind: RowIconKind,
     pub icon: IconKey,
     /// A small Silk icon overlaid at the icon's bottom-right (Finished ✓, queue stacks).
     pub badge: Option<&'static str>,
@@ -1655,6 +1667,7 @@ pub struct TreeRow<'a> {
 }
 
 /// A tree node's count, after its label: "(7)".
+#[allow(dead_code)]
 fn count_text(n: usize) -> String {
     format!("({})", crate::i18n::integer(n as u64))
 }
@@ -1667,327 +1680,232 @@ pub enum TreeEvent {
     Context(usize, Pos2),
 }
 
-/// The Categories pane: frame x 6 .. `right` (IDM: 148, resizable by the splitter), caption, close "x", tree (rows 16 px, indent 19).
+/// The Categories pane: modern grouped sidebar layout (LIBRARY, FILE TYPES, QUEUES).
 pub fn categories(
     ui: &mut Ui,
-    icons: &mut ShellIcons,
+    _icons: &mut ShellIcons,
     o: Pos2,
     bottom: f32,
     right: f32,
     rows: &[TreeRow<'_>],
-    // The tree has the keys (its chosen node shows the focus).
+    // The sidebar has the keys (its chosen node shows the focus).
     keys: bool,
 ) -> Option<TreeEvent> {
     let p = ui.painter().clone();
     let y0 = o.y + pane_top() + MENU_H; // frame top
-    // Laid out in English (frame x 6 .. right); every part made where it is on screen — the pane
-    // on the right in RTL, its tree indenting from the right.
     let frame = winui::rect(Rect::from_min_max(
         pos2(o.x + 6.0, y0),
         pos2(right, bottom - 5.0),
     ));
+
+    // Modern obsidian sidebar container
+    let bg = winui::BG();
+    p.rect_filled(frame, 6.0, bg);
     p.rect_stroke(
         frame,
-        0.0,
-        Stroke::new(1.0, CAT_FRAME()),
+        6.0,
+        Stroke::new(1.0, winui::HEADER_LINE()),
         egui::StrokeKind::Inside,
     );
-    winui::fill_l(
-        &p,
-        o.x + 6.0,
-        y0 + 18.0,
-        right - 1.0,
-        y0 + 18.0,
-        CAT_FRAME(),
-    ); // caption underline
-    // i18n: title of the side pane that lists the categories
-    let caption = crate::i18n::t("Categories");
-    // Short of the close box: in a narrow pane or a long translation, "..." and whole on hover.
-    let shown = winui::ellipsize(&p, &winui::tahoma(), caption, right - 21.0 - (o.x + 12.0));
-    let drawn = text_font(&p, winui::tahoma(), o.x + 12.0, y0 + 13.0, &shown, TEXT());
-    if shown != caption {
-        winui::full_on_hover(ui, drawn, "categories-caption", caption);
-    }
-    let mut event = None;
-    let close = winui::rect(Rect::from_min_size(
-        pos2(right - 19.0, y0 + 2.0),
-        vec2(16.0, 15.0),
-    ));
-    let cr = ui
-        .interact(close, egui::Id::unique("cat-close"), winui::pointer_only())
-        // i18n: tooltip of the × that closes the Categories pane
-        .on_hover_text(crate::i18n::t("Close"));
-    if let Some(c) = winui::subtle_fill(winui::State::of(&cr, true), crate::theme::colors()) {
-        p.rect_filled(close, crate::theme::metrics().part_radius, c);
-    }
-    text_font(
-        &p,
-        winui::arial_bold(),
-        right - 15.0,
-        y0 + 13.0,
-        crate::i18n::t("x"),
-        TEXT(),
-    );
-    if cr.clicked() {
-        event = Some(TreeEvent::Close);
-    }
-    let tree = Rect::from_min_max(pos2(o.x + 8.0, y0 + 18.0), pos2(right - 3.0, bottom - 9.0));
-    p.rect_filled(winui::rect(tree), 0.0, TREE_BG());
 
-    // Scroll bars (notes/ui-spec/scrollbars.md "Categories tree"): by rows vertically, by
-    // pixels horizontally; each shows when the content overflows (Win32 rule).
-    let content_h = rows.len() as f32 * 16.0;
-    let content_w = rows
-        .iter()
-        .map(|r| {
-            let text_x = if r.level == 0 { 51.0 } else { 70.0 };
-            let count = r.count.map_or(0.0, |n| {
-                5.0 + text_width_font(&p, winui::tahoma(), &count_text(n))
-            });
-            text_x - 8.0
-                + text_width_font(&p, winui::tahoma(), crate::i18n::t(&r.label))
-                + count
-                + 5.0
-        })
-        .fold(0.0, f32::max)
-        .ceil();
-    let (mut need_v, mut need_h) = (false, false);
-    for _ in 0..2 {
-        need_h = content_w > tree.width() - if need_v { scrollbar::THICK } else { 0.0 };
-        need_v = content_h > tree.height() - if need_h { scrollbar::THICK } else { 0.0 };
-    }
+    let mut event = None;
     let area = Rect::from_min_max(
-        tree.min,
-        pos2(
-            tree.right() - if need_v { scrollbar::THICK } else { 0.0 },
-            tree.bottom() - if need_h { scrollbar::THICK } else { 0.0 },
-        ),
+        pos2(o.x + 8.0, y0 + 6.0),
+        pos2(right - 2.0, bottom - 8.0),
     );
+
+    // Compute dynamic layout tops for rows
+    let mut row_tops = Vec::with_capacity(rows.len());
+    let mut cur_y = 6.0;
+    for r in rows {
+        row_tops.push(cur_y);
+        cur_y += if r.is_header { 28.0 } else { 34.0 };
+    }
+    let content_h = cur_y + 8.0;
+
+    let need_v = content_h > area.height();
+    let view_area = if need_v {
+        Rect::from_min_max(area.min, pos2(area.right() - scrollbar::THICK, area.bottom()))
+    } else {
+        area
+    };
+
     let scroll_id = egui::Id::unique("tree-scroll");
-    let (mut vpos, mut hpos) = ui
+    let mut vpos = ui
         .ctx()
-        .data(|d| d.get_temp::<(f32, f32)>(scroll_id))
+        .data(|d| d.get_temp::<f32>(scroll_id))
         .unwrap_or_default();
-    let page_rows = (area.height() / 16.0).floor().max(1.0);
-    if ui.rect_contains_pointer(winui::rect(tree)) {
-        vpos += winui::wheel_rows(ui, 16.0, page_rows);
-        hpos -= ui.input(|i| i.smooth_scroll_delta.x);
+    if ui.rect_contains_pointer(winui::rect(frame)) {
+        vpos += winui::wheel_rows(ui, 34.0, (view_area.height() / 34.0).floor().max(1.0));
     }
-    vpos = vpos.clamp(0.0, (rows.len() as f32 - page_rows).max(0.0));
-    hpos = hpos.clamp(0.0, (content_w - area.width()).max(0.0)).round();
-    let first_row = vpos.round();
-    // Everything below is laid out from a horizontally scrolled origin.
-    let o = pos2(o.x - hpos, o.y);
-    let tp = p.with_clip_rect(winui::rect(area));
-    let row_top = |k: usize| area.top() + 16.0 * (k as f32 - first_row);
-    // Blank space (registered first, so the rows sit above it): the selected node's menu, at
-    // the pointer (IDM places it beside the node; user decision: at the pointer).
-    let blank = ui.interact(
-        winui::rect(area),
-        egui::Id::unique("tree-blank"),
-        winui::pointer_only(),
-    );
-    if blank.secondary_clicked()
-        && let Some(k) = rows.iter().position(|r| r.selected)
-        && let Some(at) = blank.interact_pointer_pos()
-    {
-        event = Some(TreeEvent::Context(k, at));
-    }
-    // For screen readers and UI Automation (#113): the pane is a tree named as its caption, its
-    // rows the tree's items (made in a child whose accessibility parent is the tree).
-    winui::expose(
-        &blank,
-        egui::Role::Tree,
-        crate::i18n::t("Categories"),
-        true,
-        None,
-    );
-    let rows_ui = ui.new_child(egui::UiBuilder::new().accessibility_parent(blank.id));
-    // Where the selected row is, for its menu from the keyboard (Shift+F10, the Menu key).
+    vpos = vpos.clamp(0.0, (content_h - view_area.height()).max(0.0));
+    ui.ctx().data_mut(|d| d.insert_temp(scroll_id, vpos));
+
+    let tp = p.with_clip_rect(winui::rect(view_area));
+    let rows_ui = ui.new_child(egui::UiBuilder::new());
     let mut selected_at: Option<(usize, Pos2)> = None;
 
-    // Connector dots (#6d6d6d, every other pixel), painted first; expander boxes cover them.
-    let roots: Vec<usize> = (0..rows.len()).filter(|&k| rows[k].level == 0).collect();
-    if let (Some(&first), Some(&last)) = (roots.first(), roots.last()) {
-        let mut y = row_top(first);
-        while y <= row_top(last) + 8.0 {
-            if (y - tree.top()) as i32 % 2 == 0 {
-                winui::px_l(&tp, o.x + 19.0, y, TREE_LINES());
-            }
-            y += 1.0;
-        }
-        for &k in &roots {
-            let mut x = o.x + 19.0;
-            while x <= o.x + 29.0 {
-                winui::px_l(&tp, x, row_top(k) + 8.0, TREE_LINES());
-                x += 2.0;
-            }
-        }
-    }
     for (k, r) in rows.iter().enumerate() {
-        if r.level == 1 {
-            let mut x = o.x + 38.0;
-            while x <= o.x + 48.0 {
-                winui::px_l(&tp, x, row_top(k) + 8.0, TREE_LINES());
-                x += 2.0;
-            }
-            let is_last = rows.get(k + 1).is_none_or(|n| n.level == 0);
-            let start = row_top(k);
-            let end = if is_last {
-                row_top(k) + 8.0
-            } else {
-                row_top(k) + 15.0
-            };
-            let mut y = start;
-            while y <= end {
-                if (y - tree.top()) as i32 % 2 == 0 {
-                    winui::px_l(&tp, o.x + 38.0, y, TREE_LINES());
-                }
-                y += 1.0;
-            }
-        }
-    }
-
-    for (k, r) in rows.iter().enumerate() {
-        let top = row_top(k);
-        // Rows outside the viewport (icons are not clipped by `tp`).
-        if top < area.top() || top >= area.bottom() {
+        let top = view_area.top() + row_tops[k] - vpos;
+        let row_h = if r.is_header { 28.0 } else { 34.0 };
+        if top + row_h < view_area.top() || top > view_area.bottom() {
             continue;
         }
-        let icon_x = o.x + if r.level == 0 { 30.0 } else { 49.0 };
-        let text_x = o.x + if r.level == 0 { 51.0 } else { 70.0 };
-        let ext = text_width_font(&p, winui::tahoma(), crate::i18n::t(&r.label));
-        if r.selected {
-            // The inactive selection grey behind the label, in both modes (#f0f0f0 on the white
-            // tree could not be seen).
-            winui::fill_l(
+
+        if r.is_header {
+            // Section Header: e.g. "LIBRARY", "FILE TYPES", "QUEUES"
+            let text_x = view_area.left() + 10.0;
+            let text_y = top + 18.0;
+            let font = egui::FontId::proportional(11.0);
+            let header_text = crate::i18n::t(&r.label);
+            text_font(
                 &tp,
-                text_x - 2.0,
-                top,
-                text_x + ext + 1.0,
-                top + 15.0,
-                winui::SELECTED_INACTIVE(),
+                font,
+                text_x,
+                text_y,
+                header_text,
+                Color32::from_rgb(115, 122, 135),
             );
+            continue;
         }
-        if let Some(open) = r.expander {
-            if crate::theme::colors().tree_chevrons {
-                winui::fill_l(&tp, o.x + 11.0, top, o.x + 26.0, top + 15.0, TREE_BG());
-                chevron(&tp, o.x, top, open, r.selected);
-            } else {
-                // Classic box; nothing opaque around it, so connectors run up to it.
-                expander_box(&tp, o.x, top, open);
-            }
-        }
-        // Icons placed, not mirrored.
-        icons.paint_in(ui, &tp, r.icon.clone(), pos2(icon_x, top));
-        if let Some(name) = r.badge {
-            let rc = winui::rect(Rect::from_min_size(
-                pos2(icon_x + 7.0, top + 7.0),
-                vec2(9.0, 9.0),
-            ));
-            // The check badge from the theme's icon set, where it has one.
-            let themed =
-                name == "tick" && crate::themeicons::paint(ui, &tp, "misc-emblem-ok", rc, true);
-            if !themed && let Some(src) = silk(name) {
-                paint_image(ui, &tp, src, rc);
-            }
-        }
-        text_font(
-            &tp,
-            winui::tahoma(),
-            text_x,
-            top + 11.0,
-            crate::i18n::t(&r.label),
-            TEXT(),
+
+        let rc = Rect::from_min_size(
+            pos2(view_area.left() + 4.0, top),
+            vec2(view_area.width() - 8.0, 32.0),
         );
-        if keys && r.selected {
-            winui::focus_ring(
-                &tp,
-                winui::rect(Rect::from_min_max(
-                    pos2(text_x - 3.0, top),
-                    pos2(text_x + ext + 3.0, top + 16.0),
-                )),
+        let resp = rows_ui.interact(
+            winui::rect(rc),
+            egui::Id::unique(("cat-row", k)),
+            winui::pointer_only(),
+        );
+
+        if r.selected {
+            // Selected rounded pill: subtle luxury obsidian / gold pill
+            tp.rect_filled(
+                rc,
+                6.0,
+                Color32::from_rgba_unmultiplied(255, 255, 255, 22),
+            );
+            tp.rect_stroke(
+                rc,
+                6.0,
+                Stroke::new(1.0, Color32::from_rgba_unmultiplied(255, 215, 0, 75)),
+                egui::StrokeKind::Inside,
+            );
+            selected_at = Some((k, rc.left_bottom()));
+        } else if resp.hovered() {
+            tp.rect_filled(
+                rc,
+                6.0,
+                Color32::from_rgba_unmultiplied(255, 255, 255, 10),
             );
         }
+
+        // Draw icon
+        let center = pos2(rc.left() + 16.0, rc.center().y);
+        match r.icon_kind {
+            RowIconKind::AllDownloads => {
+                tp.circle_filled(center, 8.5, Color32::from_rgb(59, 130, 246));
+                tp.line_segment(
+                    [pos2(center.x, center.y - 4.0), pos2(center.x, center.y + 3.0)],
+                    Stroke::new(2.0, Color32::WHITE),
+                );
+                tp.line_segment(
+                    [pos2(center.x - 3.0, center.y), pos2(center.x, center.y + 3.0)],
+                    Stroke::new(2.0, Color32::WHITE),
+                );
+                tp.line_segment(
+                    [pos2(center.x + 3.0, center.y), pos2(center.x, center.y + 3.0)],
+                    Stroke::new(2.0, Color32::WHITE),
+                );
+            }
+            RowIconKind::Incomplete => {
+                tp.circle_stroke(
+                    center,
+                    8.0,
+                    Stroke::new(1.5, Color32::from_rgb(148, 163, 184)),
+                );
+                tp.line_segment(
+                    [center, pos2(center.x, center.y - 4.5)],
+                    Stroke::new(1.5, Color32::from_rgb(148, 163, 184)),
+                );
+                tp.line_segment(
+                    [center, pos2(center.x + 4.0, center.y)],
+                    Stroke::new(1.5, Color32::from_rgb(148, 163, 184)),
+                );
+            }
+            RowIconKind::Completed => {
+                tp.circle_stroke(
+                    center,
+                    8.0,
+                    Stroke::new(1.5, Color32::from_rgb(148, 163, 184)),
+                );
+                tp.line_segment(
+                    [pos2(center.x - 3.5, center.y), pos2(center.x - 1.0, center.y + 2.5)],
+                    Stroke::new(1.8, Color32::from_rgb(148, 163, 184)),
+                );
+                tp.line_segment(
+                    [pos2(center.x - 1.0, center.y + 2.5), pos2(center.x + 4.0, center.y - 2.5)],
+                    Stroke::new(1.8, Color32::from_rgb(148, 163, 184)),
+                );
+            }
+            RowIconKind::Dot(c) => {
+                tp.circle_filled(center, 4.5, c);
+            }
+            RowIconKind::Queue => {
+                tp.line_segment(
+                    [pos2(center.x - 6.0, center.y - 3.5), pos2(center.x + 6.0, center.y - 3.5)],
+                    Stroke::new(1.8, Color32::from_rgb(255, 215, 0)),
+                );
+                tp.line_segment(
+                    [pos2(center.x - 6.0, center.y), pos2(center.x + 6.0, center.y)],
+                    Stroke::new(1.8, Color32::from_rgb(255, 215, 0)),
+                );
+                tp.line_segment(
+                    [pos2(center.x - 6.0, center.y + 3.5), pos2(center.x + 6.0, center.y + 3.5)],
+                    Stroke::new(1.8, Color32::from_rgb(255, 215, 0)),
+                );
+            }
+            RowIconKind::None => {}
+        }
+
+        // Draw label
+        let text_x = rc.left() + 34.0;
+        let text_y = rc.center().y + 4.5;
+        let text_color = if r.selected {
+            Color32::WHITE
+        } else if resp.hovered() {
+            Color32::WHITE
+        } else {
+            Color32::from_rgb(215, 220, 230)
+        };
+        let font = if r.selected {
+            winui::tahoma_bold()
+        } else {
+            winui::tahoma()
+        };
+        let label_text = crate::i18n::t(&r.label);
+        let max_label_w = (rc.width() - 70.0).max(20.0);
+        let shown = winui::ellipsize(&tp, &font, label_text, max_label_w);
+        text_font(&tp, font, text_x, text_y, &shown, text_color);
+
+        // Draw count badge (right aligned)
         if let Some(n) = r.count {
-            let count = count_text(n);
+            let count_str = crate::i18n::integer(n as u64);
+            let cw = text_width_font(&tp, winui::tahoma(), &count_str);
             text_font(
                 &tp,
                 winui::tahoma(),
-                text_x + ext + 5.0,
-                top + 11.0,
-                &count,
-                winui::MUTED(),
+                rc.right() - 12.0 - cw,
+                text_y,
+                &count_str,
+                Color32::from_rgb(156, 163, 175),
             );
         }
 
-        let row = winui::rect(
-            Rect::from_min_size(pos2(area.left(), top), vec2(area.width(), 16.0)).intersect(area),
-        );
-        let resp = rows_ui.interact(
-            row,
-            egui::Id::unique(("tree-row", k)),
-            winui::pointer_only(),
-        );
-        // A tree item: its name (with its count), selected, open or shut, its level; Click
-        // selects it (egui's own), Expand / Collapse open and shut it, Show context menu opens
-        // its menu.
-        {
-            use egui::accesskit::Action;
-            let name = match r.count {
-                Some(n) => format!("{} {}", crate::i18n::t(&r.label), count_text(n)),
-                None => crate::i18n::t(&r.label).to_owned(),
-            };
-            winui::expose(&resp, egui::Role::TreeItem, &name, true, None);
-            let (expand, collapse, menu) = ui.input(|i| {
-                (
-                    i.has_accesskit_action_request(resp.id, Action::Expand),
-                    i.has_accesskit_action_request(resp.id, Action::Collapse),
-                    i.has_accesskit_action_request(resp.id, Action::ShowContextMenu),
-                )
-            });
-            let (level, selected, open) = (r.level, r.selected, r.expander);
-            ui.ctx().accesskit_node_builder(resp.id, |n| {
-                n.set_selected(selected);
-                n.set_level(level + 1);
-                n.add_action(Action::ShowContextMenu);
-                if let Some(open) = open {
-                    n.set_expanded(open);
-                    n.add_action(if open {
-                        Action::Collapse
-                    } else {
-                        Action::Expand
-                    });
-                }
-            });
-            let under = resp.rect.left_bottom() + vec2(24.0, 0.0);
-            if r.selected {
-                selected_at = Some((k, under));
-            }
-            if (expand && r.expander == Some(false)) || (collapse && r.expander == Some(true)) {
-                event = Some(TreeEvent::Toggle(k));
-            }
-            if menu {
-                event = Some(TreeEvent::Context(k, under));
-            }
-            // An assistive action moves no pointer: the frame showing its result is asked for.
-            if expand || collapse || menu {
-                ui.ctx().request_repaint();
-            }
-        }
+        // Handle events
         if resp.clicked() {
-            let on_expander = resp.interact_pointer_pos().is_some_and(|q| {
-                let x = winui::mx(q.x);
-                x >= o.x + 11.0 && x <= o.x + 26.0
-            });
-            event = Some(if on_expander && r.expander.is_some() {
-                TreeEvent::Toggle(k)
-            } else {
-                TreeEvent::Select(k)
-            });
-        }
-        if resp.double_clicked() && r.expander.is_some() {
-            event = Some(TreeEvent::Toggle(k));
+            event = Some(TreeEvent::Select(k));
         }
         if resp.secondary_clicked()
             && let Some(at) = resp.interact_pointer_pos()
@@ -1995,7 +1913,31 @@ pub fn categories(
             event = Some(TreeEvent::Context(k, at));
         }
     }
-    // The selected node's menu from the keyboard, under the node: Shift+F10 or the Menu key.
+
+    if need_v {
+        let track = winui::rect(Rect::from_min_max(
+            pos2(area.right() - scrollbar::THICK, area.top()),
+            pos2(area.right(), area.bottom()),
+        ));
+        let total = content_h;
+        let page = view_area.height();
+        let mut cur_scroll = vpos;
+        if scrollbar::bar(
+            ui,
+            scroll_id.with("v"),
+            track,
+            true,
+            total,
+            page,
+            34.0,
+            &mut cur_scroll,
+        ) {
+            ui.ctx().data_mut(|d| d.insert_temp(scroll_id, cur_scroll));
+            ui.ctx().request_repaint();
+        }
+    }
+
+    // Keyboard context menu (Shift+F10, Menu key)
     if keys
         && let Some((k, at)) = selected_at
         && ui.input_mut(|i| {
@@ -2006,55 +1948,11 @@ pub fn categories(
         event = Some(TreeEvent::Context(k, at));
     }
 
-    if need_v {
-        // At the trailing edge: the left in RTL.
-        let track = winui::rect(Rect::from_min_max(
-            pos2(area.right(), tree.top()),
-            pos2(tree.right(), area.bottom()),
-        ));
-        let total = rows.len() as f32;
-        if scrollbar::bar(
-            ui,
-            scroll_id.with("v"),
-            track,
-            true,
-            total,
-            page_rows,
-            1.0,
-            &mut vpos,
-        ) {
-            vpos = vpos.round();
-            ui.ctx().request_repaint();
-        }
-    }
-    if need_h {
-        let track = winui::rect(Rect::from_min_max(
-            pos2(tree.left(), area.bottom()),
-            pos2(area.right(), tree.bottom()),
-        ));
-        if scrollbar::bar(
-            ui,
-            scroll_id.with("h"),
-            track,
-            false,
-            content_w,
-            area.width(),
-            15.0,
-            &mut hpos,
-        ) {
-            hpos = hpos.round();
-            ui.ctx().request_repaint();
-        }
-    }
-    if need_v && need_h {
-        scrollbar::corner(ui, area.right(), area.bottom());
-    }
-    ui.ctx()
-        .data_mut(|d| d.insert_temp(scroll_id, (vpos, hpos)));
     event
 }
 
 /// Light mode's classic 9×9 +/- box at x 15..23, y top+4..top+12 (light-main.md grids).
+#[allow(dead_code)]
 fn expander_box(p: &egui::Painter, ox: f32, top: f32, open: bool) {
     const MINUS: [[u32; 9]; 9] = [
         [
@@ -2142,6 +2040,7 @@ fn expander_box(p: &egui::Painter, ox: f32, top: f32, open: bool) {
 }
 
 /// Explorer dark-theme chevrons, pixel for pixel (spec "Expander chevrons").
+#[allow(dead_code)]
 fn chevron(p: &egui::Painter, ox: f32, top: f32, open: bool, bright: bool) {
     const COLLAPSED: [[u8; 6]; 9] = [
         [0xc9, 0x95, 0x23, 0x20, 0x20, 0x20],

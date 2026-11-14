@@ -5839,6 +5839,8 @@ impl App {
         let mut items = Vec::new();
         let mut files = false;
         let on = |id: &str| chosen == id;
+        // i18n: View → Theme: RAZ Creative Studio official signature look (default)
+        items.push(Radio("RAZ Studio", Cmd::Theme("raz"), true, on("raz") || chosen.is_empty()));
         // i18n: View → Theme: MDM's own look, the default (IDM's layout, Windows 11's controls)
         items.push(Radio("Classic", Cmd::Theme("classic"), true, on("classic")));
         // i18n: View → Theme: the system's own colours (its accent colour, its high contrast)

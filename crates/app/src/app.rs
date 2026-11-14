@@ -18,8 +18,8 @@ use mdm_engine::{Destination, Download, Options, Request};
 use reqwest::header::{AUTHORIZATION, HeaderMap, HeaderValue};
 
 use crate::chrome::{
-    self, IconKey, MenuBarEvent, MenuEntry, MenuKind, PopupResult, ShellIcons, ToolbarEvent,
-    TreeEvent, TreeRow,
+    self, IconKey, MenuBarEvent, MenuEntry, MenuKind, PopupResult, RowIconKind, ShellIcons,
+    ToolbarEvent, TreeEvent, TreeRow,
 };
 use crate::dialogs::{self, AddUrl, Complete, FileInfo, Outcome, Start};
 use crate::icons::Icon;
@@ -921,6 +921,7 @@ fn sort_key(it: &Item, col: usize, queued: bool) -> (f64, String) {
 
 /// Silk icons standing in for IDM's XP-era category icons.
 /// A theme's icon set may replace them (`crate::themeicons`).
+#[allow(dead_code)]
 fn category_icon(c: Category) -> IconKey {
     let (need, silk) = match c {
         Category::Compressed => ("cat-compressed", "page_white_zip"),
@@ -6312,118 +6313,209 @@ impl App {
 
     // ---- painting --------------------------------------------------------------------------
 
-    /// The Categories tree: each row, the view it selects (None: just toggles) and its branch.
+    /// The modern sidebar: grouped sections (LIBRARY, FILE TYPES, QUEUES).
     fn tree_rows(&self) -> Vec<(TreeRow<'static>, Option<View>, Branch)> {
         let cur = self.view;
-        let row = |level, label: &'static str, expander, icon, badge, view: Option<View>| TreeRow {
-            level,
-            label: label.into(),
-            expander,
-            selected: view == Some(cur),
-            icon,
-            badge,
-            count: None,
+
+        // Current status filter (0: All, 1: Incomplete, 2: Completed) and category filter.
+        let (cur_status, cur_cat) = match cur {
+            View::All => (Some(0), None),
+            View::Cat(c) => (Some(0), Some(c)),
+            View::Unfinished(c) => (Some(1), c),
+            View::Finished(c) => (Some(2), c),
+            View::Queue(_) => (None, None),
         };
+
+        // Item counts filtered by category for the LIBRARY section
+        let cat_items: Vec<&Item> = match cur_cat {
+            Some(c) => self.items.iter().filter(|i| i.category == c).collect(),
+            None => self.items.iter().collect(),
+        };
+        let count_all = cat_items.len();
+        let count_incomplete = cat_items
+            .iter()
+            .filter(|i| i.status != Status::Complete)
+            .count();
+        let count_completed = cat_items
+            .iter()
+            .filter(|i| i.status == Status::Complete)
+            .count();
+
+        // Item counts filtered by status for the FILE TYPES section
+        let status_items: Vec<&Item> = match cur_status {
+            Some(0) | None => self.items.iter().collect(),
+            Some(1) => self
+                .items
+                .iter()
+                .filter(|i| i.status != Status::Complete)
+                .collect(),
+            Some(2) => self
+                .items
+                .iter()
+                .filter(|i| i.status == Status::Complete)
+                .collect(),
+            _ => self.items.iter().collect(),
+        };
+        let count_all_types = status_items.len();
+
         let mut rows = Vec::new();
-        // Silk icons in IDM's roles: folder, folder + green arrow, folder + tick, page stacks.
-        let mut branch =
-            |label, open: bool, icon, badge, view: View, b: Branch, child: fn(Category) -> View| {
-                rows.push((
-                    row(0, label, Some(open), icon, badge, Some(view)),
-                    Some(view),
-                    b,
-                ));
-                if open {
-                    for c in Category::named() {
-                        let v = child(c);
-                        rows.push((
-                            TreeRow {
-                                level: 1,
-                                label: c.label(),
-                                expander: None,
-                                selected: v == cur,
-                                icon: category_icon(c),
-                                badge: None,
-                                count: None,
-                            },
-                            Some(v),
-                            Branch::Leaf,
-                        ));
-                    }
-                }
-            };
-        branch(
-            "All Downloads",
-            self.all_open,
-            IconKey::Themed("cat-all", "folder"),
-            None,
-            View::All,
-            Branch::All,
-            View::Cat,
-        );
-        branch(
-            // i18n: adjective: the downloads that are not complete yet
-            "Unfinished",
-            self.unfinished_open,
-            IconKey::Themed("cat-unfinished", "folder_go"),
-            None,
-            View::Unfinished(None),
-            Branch::Unfinished,
-            |c| View::Unfinished(Some(c)),
-        );
-        branch(
-            // i18n: adjective: the downloads that are complete
-            "Finished",
-            self.finished_open,
-            IconKey::Themed("cat-finished", "folder"),
-            Some("tick"),
-            View::Finished(None),
-            Branch::Finished,
-            |c| View::Finished(Some(c)),
-        );
-        let stack = IconKey::Silk("page_white_stack");
-        rows.push((
-            row(
-                0,
-                // i18n: plural noun: the download queues
-                "Queues",
-                Some(self.queues_open),
-                IconKey::Themed("cat-queues", "folder"),
-                Some("page_white_stack"),
+
+        let make_header = |label: &'static str| -> (TreeRow<'static>, Option<View>, Branch) {
+            (
+                TreeRow {
+                    level: 0,
+                    is_header: true,
+                    label: label.into(),
+                    expander: None,
+                    selected: false,
+                    icon: IconKey::Silk(""),
+                    icon_kind: RowIconKind::None,
+                    badge: None,
+                    count: None,
+                },
                 None,
-            ),
-            None,
-            Branch::Queues,
+                Branch::Leaf,
+            )
+        };
+
+        // 1. SECTION: LIBRARY
+        rows.push(make_header("LIBRARY"));
+
+        // All Downloads row
+        let all_view = cur_cat.map_or(View::All, View::Cat);
+        rows.push((
+            TreeRow {
+                level: 0,
+                is_header: false,
+                label: "All Downloads".into(),
+                expander: None,
+                selected: cur_status == Some(0),
+                icon: IconKey::Silk(""),
+                icon_kind: RowIconKind::AllDownloads,
+                badge: None,
+                count: Some(count_all),
+            },
+            Some(all_view),
+            Branch::All,
         ));
-        if self.queues_open {
-            // Every queue, the user's too (IDM lists them all here).
+
+        // Incomplete row
+        rows.push((
+            TreeRow {
+                level: 0,
+                is_header: false,
+                label: "Incomplete".into(),
+                expander: None,
+                selected: cur_status == Some(1),
+                icon: IconKey::Silk(""),
+                icon_kind: RowIconKind::Incomplete,
+                badge: None,
+                count: Some(count_incomplete),
+            },
+            Some(View::Unfinished(cur_cat)),
+            Branch::Unfinished,
+        ));
+
+        // Completed row
+        rows.push((
+            TreeRow {
+                level: 0,
+                is_header: false,
+                label: "Completed".into(),
+                expander: None,
+                selected: cur_status == Some(2),
+                icon: IconKey::Silk(""),
+                icon_kind: RowIconKind::Completed,
+                badge: None,
+                count: Some(count_completed),
+            },
+            Some(View::Finished(cur_cat)),
+            Branch::Finished,
+        ));
+
+        // 2. SECTION: FILE TYPES
+        rows.push(make_header("FILE TYPES"));
+
+        // All Types row
+        let all_types_view = match cur_status {
+            Some(1) => View::Unfinished(None),
+            Some(2) => View::Finished(None),
+            _ => View::All,
+        };
+        rows.push((
+            TreeRow {
+                level: 0,
+                is_header: false,
+                label: "All Types".into(),
+                expander: None,
+                selected: cur_cat.is_none() && !matches!(cur, View::Queue(_)),
+                icon: IconKey::Silk(""),
+                icon_kind: RowIconKind::Dot(egui::Color32::from_rgb(244, 114, 182)),
+                badge: None,
+                count: Some(count_all_types),
+            },
+            Some(all_types_view),
+            Branch::Leaf,
+        ));
+
+        // Category items
+        let cat_color = |c: Category| match c {
+            Category::Documents => egui::Color32::from_rgb(52, 211, 153),
+            Category::Compressed => egui::Color32::from_rgb(96, 165, 250),
+            Category::Music => egui::Color32::from_rgb(251, 191, 36),
+            Category::Video => egui::Color32::from_rgb(167, 139, 250),
+            Category::Programs => egui::Color32::from_rgb(45, 212, 191),
+            Category::Torrents => egui::Color32::from_rgb(245, 158, 11),
+            _ => egui::Color32::from_rgb(148, 163, 184),
+        };
+
+        for c in Category::named() {
+            let cat_view = match cur_status {
+                Some(1) => View::Unfinished(Some(c)),
+                Some(2) => View::Finished(Some(c)),
+                _ => View::Cat(c),
+            };
+            let c_count = status_items.iter().filter(|i| i.category == c).count();
+            rows.push((
+                TreeRow {
+                    level: 0,
+                    is_header: false,
+                    label: c.label(),
+                    expander: None,
+                    selected: cur_cat == Some(c),
+                    icon: IconKey::Silk(""),
+                    icon_kind: RowIconKind::Dot(cat_color(c)),
+                    badge: None,
+                    count: Some(c_count),
+                },
+                Some(cat_view),
+                Branch::Leaf,
+            ));
+        }
+
+        // 3. SECTION: QUEUES
+        if !self.queues.is_empty() {
+            rows.push(make_header("QUEUES"));
             for (q, queue) in self.queues.iter().enumerate() {
                 let view = Some(View::Queue(q));
                 rows.push((
                     TreeRow {
-                        level: 1,
+                        level: 0,
+                        is_header: false,
                         label: queue.name.clone().into(),
                         expander: None,
                         selected: view == Some(cur),
-                        icon: stack.clone(),
-                        badge: queue.sync.then_some("tick"),
-                        count: None,
+                        icon: IconKey::Silk(""),
+                        icon_kind: RowIconKind::Queue,
+                        badge: None,
+                        count: Some(queue.items.len()),
                     },
                     view,
                     Branch::Leaf,
                 ));
             }
         }
-        // Each top node's downloads, as its list would show them (before column filters):
-        // the pane is narrow, its children's names fill it already.
-        for (row, view, _) in &mut rows {
-            if row.level == 0
-                && let Some(v) = view
-            {
-                let n = self.items.iter().filter(|i| self.in_view(*v, i)).count();
-                row.count = (n > 0).then_some(n);
-            }
-        }
+
         rows
     }
 
@@ -6715,8 +6807,8 @@ impl App {
             let rows = self.tree_rows();
             let tree: Vec<TreeRow<'_>> = rows.iter().map(|(r, ..)| r.clone()).collect();
             // The splitter: the 4 px gap between the pane and the list, dragged sideways.
-            let max_w = (w * 0.6).max(100.0);
-            let cat_w = (self.settings.categories_width as f32).clamp(100.0, max_w);
+            let max_w = (w * 0.6).max(180.0);
+            let cat_w = (self.settings.categories_width as f32).max(185.0).clamp(160.0, max_w);
             let right = o.x + 6.0 + cat_w;
             let split = winui::rect(egui::Rect::from_min_max(
                 pos2(right, o.y + chrome::MENU_H + chrome::pane_top()),
@@ -6737,7 +6829,7 @@ impl App {
                 // edge: the right in RTL).
                 let nw = (winui::mx(p.x) - o.x - 6.0 - 2.0)
                     .round()
-                    .clamp(100.0, max_w);
+                    .clamp(160.0, max_w);
                 self.settings.categories_width = nw as u32;
             }
             if sr.drag_stopped() {

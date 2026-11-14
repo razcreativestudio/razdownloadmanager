@@ -3,7 +3,50 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
-## [2026-11-13] — Redesign Dialog Opsi Modern Sidepanel Navigation & Rebranding Menyeluruh "RAZ DM"
+## [2026-11-14] — Modernisasi Side Panel Main Window (Grouped Sections: LIBRARY, FILE TYPES, QUEUES)
+*Waktu: 14 November 2026 11:58 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Redesign Total TreeView Sidebar Menjadi Modern Grouped Sidepanel**:
+   - `crates/app/src/chrome.rs`:
+     - Menghapus garis-garis pohon klasik putus-putus 90-an era IDM (`TREE_LINES`) dan expander kotak jadul.
+     - Menggantinya dengan kontainer obsidian modern bergradasi elegan, border halus `HEADER_LINE()`, dan rounded pills untuk setiap item navigasi aktif/hover.
+     - Menambahkan tipe ikon `RowIconKind`:
+       - `AllDownloads`: Circular badge biru solid dengan panah unduhan putih di tengah.
+       - `Incomplete`: Lingkaran outline elegan dengan jarum jam / pie slice.
+       - `Completed`: Lingkaran outline elegan dengan tanda centang (checkmark).
+       - `Dot(Color32)`: Titik berwarna solid untuk kategori file (Pink, Hijau Zamrud, Biru Langit, Amber, Ungu, Toska, Emas).
+       - `Queue`: Ikon tumpukan antrean modern bergaris emas signature RAZ.
+     - Menambahkan badge jumlah download (item count) presisi yang rata kanan di setiap baris.
+     - Menambahkan header seksi dengan tipografi uppercase ter-spacing rapi (`LIBRARY`, `FILE TYPES`, `QUEUES`).
+
+2. **Arsitektur Orthogonal Dual-Filtering di `App::tree_rows`**:
+   - `crates/app/src/app.rs`:
+     - Mengelompokkan navigasi ke dalam 3 seksi utama yang terkoordinasi:
+       - **`LIBRARY`**: `All Downloads`, `Incomplete`, `Completed`.
+       - **`FILE TYPES`**: `All Types`, `Documents`, `Compressed`, `Music`, `Video`, `Programs`, `Torrents`.
+       - **`QUEUES`**: Antrean kustom & utama pengguna.
+     - Logika filter ortogonal: status filter (All/Incomplete/Completed) dan tipe filter (All Types/Kategori spesifik) tetap aktif bersamaan tanpa saling meniadakan.
+     - Hitungan download (*count badge*) dihitung secara dinamis dan real-time sesuai filter yang sedang aktif.
+     - Memperluas lebar default sidebar dari 100px menjadi ~190px (`clamp(160.0, max_w)`) agar nama kategori dan badge jumlah muat dengan leluasa.
+
+3. **Lokalisasi Bahasa**:
+   - `i18n/en.tsv`, `i18n/id.tsv`, `i18n/id-oke.tsv`:
+     - Menambahkan terjemahan untuk header seksi dan item navigasi baru:
+       - `LIBRARY` $\rightarrow$ `PUSTAKA`
+       - `Incomplete` $\rightarrow$ `Belum Selesai`
+       - `Completed` $\rightarrow$ `Selesai` / `Udah Selesai`
+       - `FILE TYPES` $\rightarrow$ `TIPE FILE`
+       - `All Types` $\rightarrow$ `Semua Tipe`
+       - `QUEUES` $\rightarrow$ `ANTREAN`
+
+4. **Kompilasi & Pembuatan Paket Rilis**:
+   - Berhasil mengompilasi release binary: `target/release/razdownloadmanager.exe`.
+   - Membangun ulang seluruh paket installer di `target/dist/`:
+     - `RAZDownloadManager-1.0.0-setup.exe` (15,8 MB)
+     - `RAZDownloadManager-1.0.0-portable.zip` (18,6 MB)
+     - `RAZDownloadManager-1.0.0-x64.zip` (18,6 MB)
+   - Memperbarui daftar checksum di `target/dist/SHA256SUMS.txt`.
 *Waktu: 13 November 2026 10:25 WIB*
 
 ### Aktivitas & Pembaruan:
