@@ -3,6 +3,39 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-14] — Penggantian Total Logo Tombol Unduh Video Browser Extension & Ekosistem Icon RAZ
+*Waktu: 14 November 2026 13:22 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Penggantian Logo Tombol Unduh Video Web (`extension/video.js`)**:
+   - `extension/video.js`:
+     - Menghapus konstanta base64 logo lama era *Mister Download Manager* (ikon bola dunia bertopi).
+     - Memperbarui `LOGO` dengan data URL base64 dari logo resmi monogram emas metalik RAZ Creative Studio (`website/razdm-logo11.svg`) yang beresolusi tajam dan transparan.
+     - Tombol melayang *Unduh video* beserta dropdown menu di situs video (YouTube, Vimeo, Facebook, dll.) kini resmi menampilkan logo RAZ Download Manager dengan proporsi presisi 22x22px.
+
+2. **Peremajaan Menyeluruh Ikon Ekstensi Browser & Aplikasi Desktop**:
+   - Mengonversi `website/razdm-logo11.svg` (ratio 1:1 tanpa background hitam sesuai arahan) menggunakan engine rasterisasi `resvg/tiny-skia` ke seluruh ukuran resolusi standar:
+     - **Browser Extension (`extension/icons/`)**:
+       - `icon-16.png`, `icon-32.png`, `icon-48.png`, `icon-128.png`
+     - **Aplikasi Desktop Windows (`crates/app/assets/icons/app/`)**:
+       - `razdm-16.png`, `razdm-20.png`, `razdm-24.png`, `razdm-32.png`, `razdm-48.png`, `razdm-64.png`, `razdm-128.png`, `razdm-256.png`
+       - Meng-generate ulang file container multi-resolusi `razdm.ico` (16, 20, 24, 32, 48, 64, 128, 256) untuk executable Windows dan taskbar icon.
+     - **Aset Website (`website/assets/`)**:
+       - `favicon-32.png`, `logo-64.png`, `logo-256.png`, `apple-touch-icon.png`
+
+3. **Re-pack Ekstensi Browser & Build Ulang Installer**:
+   - Menjalankan `tools/extension/pack.ps1` untuk memaketkan ulang ekstensi:
+     - `razdm-extension-chrome.zip` (0,2 MB)
+     - `razdm-extension-firefox.xpi` (0,2 MB)
+   - Sinkronisasi file zip/xpi ke folder `website/assets/extension/`.
+   - Mengompilasi biner rilis `razdm-app` dan merilis ulang installer di `target/dist/`:
+     - `RAZDownloadManager-1.0.0-setup.exe` (15,9 MB)
+     - `RAZDownloadManager-1.0.0-portable.zip` (18,6 MB)
+     - `RAZDownloadManager-1.0.0-x64.zip` (18,6 MB)
+   - Memperbarui daftar hash SHA256 di `target/dist/SHA256SUMS.txt`.
+
+---
+
 ## [2026-11-14] — Optimasi Side Panel Ramping & Bebas Scrollbar: Desain Kompak & Tipografi Segoe UI Modern
 *Waktu: 14 November 2026 12:45 WIB*
 
