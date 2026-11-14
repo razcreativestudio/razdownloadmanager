@@ -18,17 +18,18 @@
 #define Bin Root + "\target\release"
 
 [Setup]
-; Never change AppId: upgrades and the uninstaller find the installation by it.
-AppId={{667DB4D8-32C2-4487-A0E5-5825BF29778C}
+; AppId unique to RAZ Download Manager
+AppId={{0D8EBE54-9DCA-4B13-A506-CFFD63B81B22}
 AppName={#AppName}
 AppVersion={#AppVersion}
 AppVerName={#AppName} {#AppVersion}
-AppPublisher=Ahmed Nefzaoui
-AppPublisherURL=https://github.com/anefzaoui/RAZDownloadManager
-AppSupportURL=https://github.com/anefzaoui/RAZDownloadManager/issues
-AppUpdatesURL=https://github.com/anefzaoui/RAZDownloadManager/releases
-AppCopyright=Copyright (C) 2026 Ahmed Nefzaoui
+AppPublisher=RAZ Creative Studio
+AppPublisherURL=https://razcreativestudio.com
+AppSupportURL=https://razcreativestudio.com
+AppUpdatesURL=https://razcreativestudio.com
+AppCopyright=Copyright (C) 2026 RAZ Creative Studio
 DefaultDirName={autopf}\{#AppName}
+UsePreviousAppDir=no
 DisableProgramGroupPage=yes
 PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
@@ -53,7 +54,7 @@ ChangesAssociations=yes
 ; fallback for anything else holding the files (a browser running the host).
 CloseApplications=yes
 VersionInfoVersion={#AppVersion}
-VersionInfoCompany=Ahmed Nefzaoui
+VersionInfoCompany=RAZ Creative Studio
 VersionInfoDescription={#AppName} setup
 VersionInfoProductName={#AppName}
 #ifdef Sign
@@ -191,7 +192,7 @@ var
   Value, Data: String;
   Code: Integer;
 begin
-  Data := ExpandConstant('{userappdata}\RAZDownloadManager');
+  Data := ExpandConstant('{userappdata}\razdownloadmanager');
   if CurUninstallStep = usUninstall then
   begin
     ForgetIfOurs('Software\Classes\magnet', ExpandConstant('{app}\{#AppExe}'));

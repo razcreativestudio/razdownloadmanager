@@ -240,9 +240,12 @@ pub fn data_dir() -> Option<PathBuf> {
     let base = dirs::data_dir()?;
     let dir = base.join("razdownloadmanager");
     let legacy_mdm = base.join("RAZDownloadManager");
+    let legacy_mister = base.join("misterdownloadmanager");
     let legacy_idmnext = base.join("idmnext");
     if !dir.exists() && legacy_mdm.is_dir() {
         let _ = std::fs::rename(&legacy_mdm, &dir);
+    } else if !dir.exists() && legacy_mister.is_dir() {
+        let _ = std::fs::rename(&legacy_mister, &dir);
     } else if !dir.exists() && legacy_idmnext.is_dir() {
         let _ = std::fs::rename(&legacy_idmnext, &dir);
     }

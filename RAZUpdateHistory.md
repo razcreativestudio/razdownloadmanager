@@ -3,6 +3,32 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-14] — Perbaikan Folder Instalasi & Migrasi Data: Penggantian AppId Unik & `UsePreviousAppDir=no`
+*Waktu: 14 November 2026 12:21 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Perbaikan Destination Folder Instalasi Inno Setup**:
+   - `tools/installer/razdm.iss` & `tools/installer/mdm.iss`:
+     - Menetapkan direktif mutlak `UsePreviousAppDir=no` di konfigurasi `[Setup]` Inno Setup. Hal ini mencegah installer membaca sisa registry instalasi lawas era *Mister Download Manager* dan memastikan folder tujuan instalasi selalu otomatis terarah ke:
+       `C:\Program Files\RAZ Download Manager` (Instalasi All Users) atau `%LOCALAPPDATA%\Programs\RAZ Download Manager` (Instalasi Current User).
+     - Mengganti `AppId` bawaan lama (`{667DB4D8-...}`) dengan GUID khusus RAZ Download Manager yang baru dan bersih: `{{0D8EBE54-9DCA-4B13-A506-CFFD63B81B22}}`.
+     - Memperbarui metadata publisher, URLs, dan copyright: `RAZ Creative Studio`, `https://razcreativestudio.com`.
+
+2. **Migrasi Otomatis Folder Data Roaming**:
+   - `crates/ipc/src/lib.rs`:
+     - Menambahkan penanganan migrasi otomatis `legacy_mister` (`base.join("misterdownloadmanager")`) menuju `razdownloadmanager` di `%APPDATA%`.
+     - Data download, riwayat, dan konfigurasi dari versi terdahulu otomatis berpindah rapi ke folder resmi `razdownloadmanager` tanpa ada data yang hilang.
+
+3. **Rebuild Biner Rilis, Installer & Checksum**:
+   - Berhasil mengompilasi biner release: `razdm-app`, `razdm-nmhost`, `razdm-cli`, `razdm-mcp`.
+   - Membangun ulang seluruh paket installer di `target/dist/`:
+     - `RAZDownloadManager-1.0.0-setup.exe` (15,8 MB)
+     - `RAZDownloadManager-1.0.0-portable.zip` (18,6 MB)
+     - `RAZDownloadManager-1.0.0-x64.zip` (18,6 MB)
+   - Memperbarui daftar checksum di `target/dist/SHA256SUMS.txt` dan `website/download.html`.
+
+---
+
 ## [2026-11-14] — Modernisasi Side Panel Main Window (Grouped Sections: LIBRARY, FILE TYPES, QUEUES)
 *Waktu: 14 November 2026 11:58 WIB*
 

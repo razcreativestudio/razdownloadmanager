@@ -4,8 +4,8 @@
 ; Install for the current user (no administrator rights, %LOCALAPPDATA%\Programs) or for
 ; everyone (Program Files); the wizard asks. Tasks: browser integration (native messaging host
 ; for Chrome, Edge, Brave and Firefox), .torrent files and magnet links, start with Windows, a
-; desktop shortcut. A running MDM is asked to save and quit first (/exit). Uninstalling asks
-; whether to keep the download list and settings; removing them also removes MDM's sign-ins from
+; desktop shortcut. A running RAZ DM is asked to save and quit first (/exit). Uninstalling asks
+; whether to keep the download list and settings; removing them also removes RAZ DM's sign-ins from
 ; Windows Credential Manager (RAZDownloadManager --forget-sign-ins).
 
 #ifndef AppVersion
@@ -18,17 +18,18 @@
 #define Bin Root + "\target\release"
 
 [Setup]
-; Never change AppId: upgrades and the uninstaller find the installation by it.
-AppId={{667DB4D8-32C2-4487-A0E5-5825BF29778C}
+; AppId unique to RAZ Download Manager
+AppId={{0D8EBE54-9DCA-4B13-A506-CFFD63B81B22}
 AppName={#AppName}
 AppVersion={#AppVersion}
 AppVerName={#AppName} {#AppVersion}
-AppPublisher=Ahmed Nefzaoui
-AppPublisherURL=https://github.com/anefzaoui/RAZDownloadManager
-AppSupportURL=https://github.com/anefzaoui/RAZDownloadManager/issues
-AppUpdatesURL=https://github.com/anefzaoui/RAZDownloadManager/releases
-AppCopyright=Copyright (C) 2026 Ahmed Nefzaoui
+AppPublisher=RAZ Creative Studio
+AppPublisherURL=https://raz.we.id
+AppSupportURL=https://dm.ir-raz.com
+AppUpdatesURL=https://dm.it-raz.com
+AppCopyright=Copyright (C) 2026 RAZ Creative Studio
 DefaultDirName={autopf}\{#AppName}
+UsePreviousAppDir=no
 DisableProgramGroupPage=yes
 PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
@@ -48,12 +49,12 @@ OutputBaseFilename=RAZDownloadManager-{#AppVersion}-setup
 Compression=lzma2/ultra64
 SolidCompression=yes
 ChangesAssociations=yes
-; A running MDM is asked to quit by [Code] (it holds the mutex RAZDownloadManager.Running);
+; A running RAZDM is asked to quit by [Code] (it holds the mutex RAZDownloadManager.Running);
 ; AppMutex isn't used because it would refuse to start before that. Restart Manager is the
 ; fallback for anything else holding the files (a browser running the host).
 CloseApplications=yes
 VersionInfoVersion={#AppVersion}
-VersionInfoCompany=Ahmed Nefzaoui
+VersionInfoCompany=RAZ Creative Studio
 VersionInfoDescription={#AppName} setup
 VersionInfoProductName={#AppName}
 #ifdef Sign
@@ -191,7 +192,7 @@ var
   Value, Data: String;
   Code: Integer;
 begin
-  Data := ExpandConstant('{userappdata}\RAZDownloadManager');
+  Data := ExpandConstant('{userappdata}\razdownloadmanager');
   if CurUninstallStep = usUninstall then
   begin
     ForgetIfOurs('Software\Classes\magnet', ExpandConstant('{app}\{#AppExe}'));
