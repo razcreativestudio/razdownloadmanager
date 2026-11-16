@@ -3,6 +3,29 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-16] — Revamp Total README.md: Gaya RAZ Creative Studio, Bahasa Indo Oke & Aset Baru
+*Waktu: 16 November 2026 09:45 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Perombakan Total File `README.md`**:
+   - Ditulis ulang sepenuhnya menggunakan **Bahasa Indo Oke** yang luwes, santai, modern, dan bergaya *senior dev pair-programming* (tanpa gaya robot/kaku).
+   - Mematuhi 100% kamus istilah: *Donlot*, *Ngedonlot*, *Donlotan*, *Terdonlot*, *Mendonlot*, *Aplot*, *Aplotan*.
+   - Mengadopsi standar visual **RAZ Creative Studio**:
+     - Header resmi dengan badge platform (Windows, macOS, Linux), browser store (Chrome Web Store, Firefox Add-ons), stars badge, dan lisensi GPL-3.0.
+     - Kartu matriks keunggulan (5.4× Lebih Kencang, 86+ Bahasa, 100% Gratis Selamanya, BitTorrent Native).
+     - Tabel komparasi *head-to-head* dengan IDM 6.42 yang bersih dan to-the-point.
+     - Penjelasan lengkap fitur unggulan (64 multi-thread, smart resume, video sniffer, scheduler, VPN interface bind, AI MCP server).
+     - Panduan instalasi dan pilihan berkas rilis (.exe setup, portable .zip, x64 .zip, ekstensi web, Linux, macOS).
+     - Panduan kompilasi dan kontribusi developer (Cargo build, rincian crate workspace).
+2. **Pembersihan Aset Lama & Penyegaran Visual**:
+   - Menghapus semua foto, diagram, dan tangkapan layar versi lama (era MDM / antarmuka jadul / diagram SVG lama).
+   - Memperbarui `docs/images/logo.png` dengan logo resmi RAZ Download Manager (256x256).
+   - Menyertakan tangkapan layar antarmuka terbaru `docs/images/main-raz.png` yang menampilkan tema gelap obsidian presisi dengan sidepanel minimalis tanpa scrollbar.
+3. **Backup & Versioning Terpusat**:
+   - Salinan cadangan aman tersimpan di `backup/README.md.bak`.
+
+---
+
 ## [2026-11-16] — Penerapan Glosarium Bahasa Indo Oke ke Seluruh Laman Website Resmi
 *Waktu: 16 November 2026 09:35 WIB*
 
