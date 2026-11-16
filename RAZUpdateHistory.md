@@ -3,6 +3,27 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-16] — Pembaruan Tangkapan Layar Tombol Unduh Video Browser (Video Sniffer) di Website dan README.md
+*Waktu: 16 November 2026 16:35 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Pembaruan Aset Tangkapan Layar Tombol Unduh Video**:
+   - Memproses tangkapan layar tombol melayang browser resmi dengan logo 3D RAZ dan label "Unduh video":
+     - `docs/images/video-button.png` &rarr; Berkas PNG resolusi tajam untuk dokumentasi `README.md`.
+     - `docs/images/help/video-button.webp` &rarr; Berkas WebP terkompresi optimal untuk dokumentasi offline.
+     - `website/assets/help/video-button.webp` &rarr; Menggantikan gambar panduan video sniffer di pusat bantuan website (`website/help.html`).
+     - `website/assets/screens/video-button.webp` & `video-button.png` &rarr; Menambah aset pratinjau tur interaktif peramban di portal web.
+
+2. **Pembaruan Dokumentasi `README.md`**:
+   - Menambahkan tangkapan layar langsung tombol unduh video di bawah poin fitur `🎬 Video Sniffer & Grabber`.
+   - Menambahkan baris pratinjau antarmuka khusus `🎬 Tombol Unduh Video di Browser (Video Sniffer)` pada tabel tangkapan layar resmi.
+
+3. **Pembaruan Halaman Bantuan & Portal Website (`website/help.html` & `website/index.html`)**:
+   - Memperbarui teks deskripsi langkah 3 pada `website/help.html` agar selaras dengan tombol melayang "Unduh video" berlogo RAZ.
+   - Menambahkan tab tur interaktif baru `Tombol Unduh Video Browser` di `website/index.html` lengkap dengan dukungan bilingual Indonesia & Inggris di `website/js/RAZMainLang.js`.
+
+---
+
 ## [2026-11-16] — Pembaruan Tangkapan Layar Dialog Konfigurasi / Opsi (Dark & Light Mode) di Website dan README.md
 *Waktu: 16 November 2026 16:18 WIB*
 

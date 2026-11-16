@@ -90,6 +90,8 @@ const RAZMainLang = {
             'tour-tab-torrents-light-desc': 'Dukungan penuh tema terang Windows dengan kontras tajam, tombol aksen amber, dan visualisasi file yang bersih.',
             'tour-tab-torrent-pieces-title': 'Visualisasi Potongan Torrent',
             'tour-tab-torrent-pieces-desc': 'Pantau blok file yang sedang diunduh secara grafis real-time, peer aktif, dan laju transfer.',
+            'tour-tab-video-button-title': 'Tombol Unduh Video Browser',
+            'tour-tab-video-button-desc': 'Tombol melayang 1-klik dengan logo resmi RAZ yang muncul otomatis di pojok video player browser.',
             'tour-tab-video-title': 'Sniffer Video Web',
             'tour-tab-video-desc': 'Download video sampai kualitas 4K dari YouTube, Vimeo, dan ribuan situs streaming lainnya.',
 
@@ -282,6 +284,8 @@ const RAZMainLang = {
             'tour-tab-torrents-light-desc': 'Full Windows light mode support with high contrast, warm amber accents, and clean file tree.',
             'tour-tab-torrent-pieces-title': 'Torrent Pieces Visualization',
             'tour-tab-torrent-pieces-desc': 'Real-time graphical piece block monitoring, active peers, and transfer speed.',
+            'tour-tab-video-button-title': 'Browser Video Sniffer Button',
+            'tour-tab-video-button-desc': '1-click floating button with official RAZ logo appearing automatically on web video players.',
             'tour-tab-video-title': 'Web Video Sniffer',
             'tour-tab-video-desc': 'Grab up to 4K video from YouTube, Vimeo, and thousands of streaming websites.',
 
