@@ -4,8 +4,8 @@
  * File: website/js/RAZMainLang.js
  * Deskripsi: Modul lokalisasi bilingual (Indonesia & Inggris) untuk situs resmi
  *            RAZ Download Manager (dm.it-raz.com).
- * Terakhir Diupdate: 2026-11-11
- * Versi: 1.0.0 (RAZ DM Modern Tech Release)
+ * Terakhir Diupdate: 2026-11-16 21:15 WIB
+ * Versi: 1.0.0 (RAZ DM Modern Tech Release - Added Updates Dialog Screens)
  * Standar: RAZ Enterprise Language Protocol (Gaya Santai, Presisi, Ramah Awam)
  * ============================================================================
  */
@@ -116,6 +116,10 @@ const RAZMainLang = {
             'tour-tab-about-desc': 'Informasi lisensi GPL-3, versi biner, dan atribusi komponen open-source (Obsidian Dark).',
             'tour-tab-about-light-title': 'Tentang RAZ DM (Mode Terang)',
             'tour-tab-about-light-desc': 'Tampilan jendela tentang aplikasi tema terang Windows dengan kontras tajam dan tombol amber.',
+            'tour-tab-updates-title': 'Cek Pembaruan (Mode Gelap)',
+            'tour-tab-updates-desc': 'Verifikasi otomatis rilis terbaru dan opsi pengecekan update saat startup (Obsidian Dark).',
+            'tour-tab-updates-light-title': 'Cek Pembaruan (Mode Terang)',
+            'tour-tab-updates-light-desc': 'Tampilan dialog cek pembaruan tema terang Windows dengan tombol amber presisi.',
 
             // Core Features
             'feat-label': 'Fitur Unggulan',
@@ -332,6 +336,10 @@ const RAZMainLang = {
             'tour-tab-about-desc': 'GPL-3 license details, binary build hash, and open-source component attribution (Obsidian Dark).',
             'tour-tab-about-light-title': 'About RAZ DM (Light Mode)',
             'tour-tab-about-light-desc': 'Windows light mode about dialog with crisp contrast, warm amber button, and project links.',
+            'tour-tab-updates-title': 'Check for Updates (Dark Mode)',
+            'tour-tab-updates-desc': 'Automatic version verification and check-on-startup settings (Obsidian Dark).',
+            'tour-tab-updates-light-title': 'Check for Updates (Light Mode)',
+            'tour-tab-updates-light-desc': 'Windows light mode update check dialog with crisp contrast and warm amber button.',
 
             // Core Features
             'feat-label': 'Core Features',

@@ -3,6 +3,28 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-16] — Pembaruan Tangkapan Layar Jendela Cek Pembaruan (Dark & Light Mode) di Website dan README.md
+*Waktu: 16 November 2026 21:15 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Pembaruan Tangkapan Layar Jendela "Cek Pembaruan" (Check for Updates Dialog)**:
+   - Memproses tangkapan layar dialog Cek Pembaruan versi terbaru untuk kedua tema (Dark & Light) dengan rincian status versi terbaru 1.0.0, opsi cek otomatis saat startup, dan tombol OK aksen amber:
+     - `docs/images/updates-dark.png` & `docs/images/updates.png` &rarr; Jendela Cek Pembaruan tema Obsidian Dark untuk `README.md`.
+     - `docs/images/updates-light.png` &rarr; Jendela Cek Pembaruan tema Windows Light untuk `README.md`.
+     - `website/assets/screens/updates-dark.webp` & `updates-dark.png` &rarr; Aset resolusi tinggi di website.
+     - `website/assets/screens/updates-light.webp` & `updates-light.png` &rarr; Aset resolusi tinggi di website.
+     - `website/assets/help/updates-dark.webp` & `updates.webp` &rarr; Aset Pusat Bantuan website & dokumentasi offline.
+
+2. **Pembaruan Tabel Antarmuka `README.md`**:
+   - Menambahkan baris perbandingan simetris pada tabel pratinjau: `🔄 Cek Pembaruan (Mode Gelap)` vs `🔄 Cek Pembaruan (Mode Terang)`.
+
+3. **Pembaruan Website & Pusat Bantuan (`website/help.html`, `website/index.html`, `website/js/RAZMainLang.js`)**:
+   - `website/help.html`: Menambahkan kartu penjelasan dialog Cek Pembaruan dalam grid responsif dual-mode berdampingan pada Langkah 4 Bagian 7.
+   - `website/index.html`: Menyediakan tab tur interaktif `Cek Pembaruan (Mode Gelap)` dan `Cek Pembaruan (Mode Terang)`.
+   - `website/js/RAZMainLang.js`: Menambahkan dukungan lokalisasi bilingual (Indonesia & Inggris) untuk tab tur pembaruan.
+
+---
+
 ## [2026-11-16] — Pembaruan Tangkapan Layar Jendela Tentang Aplikasi (Dark & Light Mode) di Website dan README.md
 *Waktu: 16 November 2026 21:06 WIB*
 

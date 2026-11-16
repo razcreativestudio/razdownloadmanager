@@ -170,6 +170,11 @@ Berikut tampilan antarmuka resmi RAZ Download Manager v1.0.0 dengan sentuhan tem
 | <img src="docs/images/about-dark.png" alt="Tentang RAZ Download Manager Mode Gelap" width="460"> | <img src="docs/images/about-light.png" alt="Tentang RAZ Download Manager Mode Terang" width="460"> |
 | *Informasi lisensi GPL-3, versi biner, dan tautan repositori (Dark)* | *Dukungan penuh tema terang Windows dengan tombol aksi amber presisi (Light)* |
 
+| 🔄 Cek Pembaruan (Mode Gelap) | 🔄 Cek Pembaruan (Mode Terang) |
+| :---: | :---: |
+| <img src="docs/images/updates-dark.png" alt="Cek Pembaruan RAZ DM Mode Gelap" width="460"> | <img src="docs/images/updates-light.png" alt="Cek Pembaruan RAZ DM Mode Terang" width="460"> |
+| *Notifikasi versi biner mutakhir 1.0.0 dan opsi cek otomatis (Dark)* | *Dukungan penuh tema terang Windows dengan tombol aksi amber presisi (Light)* |
+
 | 🎬 Tombol Unduh Video di Browser (Video Sniffer) |
 | :---: |
 | <img src="docs/images/video-button.png" alt="Tombol Unduh Video RAZ di Browser" width="340"> |
