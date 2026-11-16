@@ -138,6 +138,11 @@ Berikut tampilan antarmuka resmi RAZ Download Manager v1.0.0 dengan sentuhan tem
 | <img src="docs/images/settings.png" alt="Konfigurasi RAZ Download Manager Mode Gelap" width="460"> | <img src="docs/images/settings-light.png" alt="Konfigurasi RAZ Download Manager Mode Terang" width="460"> |
 | *Pengaturan integrasi peramban, koneksi, dan proksi (Dark)* | *Pengaturan tema terang dengan navigasi tab amber presisi (Light)* |
 
+| 🎬 Donlot Video dari Halaman (Mode Gelap) | 🎬 Donlot Video dari Halaman (Mode Terang) |
+| :---: | :---: |
+| <img src="docs/images/video-dark.png" alt="Dialog Donlot Video dari Halaman Mode Gelap" width="460"> | <img src="docs/images/video-light.png" alt="Dialog Donlot Video dari Halaman Mode Terang" width="460"> |
+| *Deteksi otomatis resolusi video/audio, subtitle, dan konversi format (Dark)* | *Dukungan penuh mode terang Windows dengan tombol amber presisi (Light)* |
+
 | 🎬 Tombol Unduh Video di Browser (Video Sniffer) |
 | :---: |
 | <img src="docs/images/video-button.png" alt="Tombol Unduh Video RAZ di Browser" width="340"> |

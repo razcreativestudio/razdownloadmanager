@@ -3,6 +3,29 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-16] — Pembaruan Tangkapan Layar Dialog Donlot Video dari Halaman (Dark & Light Mode) di Website dan README.md
+*Waktu: 16 November 2026 16:42 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Pembaruan Tangkapan Layar Dialog Donlot Video (yt-dlp Engine)**:
+   - Memproses tangkapan layar dialog "Donlot video dari halaman" versi terbaru untuk kedua tema (Dark & Light):
+     - `docs/images/video-dark.png` &rarr; Dialog donlot video tema Obsidian Dark untuk dokumentasi `README.md`.
+     - `docs/images/video-light.png` &rarr; Dialog donlot video tema Windows Light untuk dokumentasi `README.md`.
+     - `website/assets/screens/video-dark.webp` & `video-dark.png` &rarr; Aset resolusi tinggi di website.
+     - `website/assets/screens/video-light.webp` & `video-light.png` &rarr; Aset resolusi tinggi di website.
+     - `website/assets/help/video-qualities-dark.webp` & `video-qualities.webp` &rarr; Aset Pusat Bantuan website.
+     - `docs/images/help/video-qualities-dark.webp` & `video-qualities.webp` &rarr; Aset bantuan offline.
+
+2. **Pembaruan Tabel Antarmuka `README.md`**:
+   - Menambahkan baris perbandingan simetris: `🎬 Donlot Video dari Halaman (Mode Gelap)` dan `🎬 Donlot Video dari Halaman (Mode Terang)`.
+
+3. **Pembaruan Website & Pusat Bantuan (`website/help.html`, `website/index.html`, `website/js/RAZMainLang.js`)**:
+   - `website/help.html`: Menampilkan pratinjau responsif dual-mode (Dark & Light) berdampingan untuk jendela pemilihan resolusi & format video.
+   - `website/index.html`: Memperbarui tab tur interaktif menjadi `Donlot Video Web (Mode Gelap)` dan menambahkan `Donlot Video Web (Mode Terang)`.
+   - `website/js/RAZMainLang.js`: Menambahkan dukungan bilingual (Indonesia & Inggris) untuk kedua tab tersebut.
+
+---
+
 ## [2026-11-16] — Pembaruan Tangkapan Layar Tombol Unduh Video Browser (Video Sniffer) di Website dan README.md
 *Waktu: 16 November 2026 16:35 WIB*
 

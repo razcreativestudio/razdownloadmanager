@@ -92,8 +92,10 @@ const RAZMainLang = {
             'tour-tab-torrent-pieces-desc': 'Pantau blok file yang sedang diunduh secara grafis real-time, peer aktif, dan laju transfer.',
             'tour-tab-video-button-title': 'Tombol Unduh Video Browser',
             'tour-tab-video-button-desc': 'Tombol melayang 1-klik dengan logo resmi RAZ yang muncul otomatis di pojok video player browser.',
-            'tour-tab-video-title': 'Sniffer Video Web',
-            'tour-tab-video-desc': 'Download video sampai kualitas 4K dari YouTube, Vimeo, dan ribuan situs streaming lainnya.',
+            'tour-tab-video-title': 'Donlot Video Web (Mode Gelap)',
+            'tour-tab-video-desc': 'Download video sampai 4K dan ekstrak audio MP3 dari YouTube, TikTok, dll (Tema Obsidian Gelap).',
+            'tour-tab-video-light-title': 'Donlot Video Web (Mode Terang)',
+            'tour-tab-video-light-desc': 'Dukungan penuh tema terang Windows dengan kontras tajam, tombol aksen amber, dan pemilih resolusi.',
 
             // Core Features
             'feat-label': 'Fitur Unggulan',
@@ -286,8 +288,10 @@ const RAZMainLang = {
             'tour-tab-torrent-pieces-desc': 'Real-time graphical piece block monitoring, active peers, and transfer speed.',
             'tour-tab-video-button-title': 'Browser Video Sniffer Button',
             'tour-tab-video-button-desc': '1-click floating button with official RAZ logo appearing automatically on web video players.',
-            'tour-tab-video-title': 'Web Video Sniffer',
-            'tour-tab-video-desc': 'Grab up to 4K video from YouTube, Vimeo, and thousands of streaming websites.',
+            'tour-tab-video-title': 'Web Video Downloader (Dark Mode)',
+            'tour-tab-video-desc': 'Download up to 4K video and extract MP3 audio from YouTube, TikTok, etc. (Obsidian Dark Theme).',
+            'tour-tab-video-light-title': 'Web Video Downloader (Light Mode)',
+            'tour-tab-video-light-desc': 'Full Windows light mode support with high contrast, warm amber buttons, and stream quality selector.',
 
             // Core Features
             'feat-label': 'Core Features',
