@@ -127,6 +127,11 @@ Berikut tampilan antarmuka resmi RAZ Download Manager v1.0.0 dengan sentuhan tem
 | <img src="docs/images/torrent-dark.png" alt="Dialog Tambah Torrent Mode Gelap" width="460"> | <img src="docs/images/torrent-light.png" alt="Dialog Tambah Torrent Mode Terang" width="460"> |
 | *Deteksi otomatis magnet link & pemilihan file selektif (Dark)* | *Dukungan penuh tema terang Windows dengan kontras presisi (Light)* |
 
+| 🔄 Proses Donlot Torrent (Mode Gelap) | 🔄 Proses Donlot Torrent (Mode Terang) |
+| :---: | :---: |
+| <img src="docs/images/torrent-progress-dark.png" alt="Visualisasi Potongan Torrent Mode Gelap" width="460"> | <img src="docs/images/torrent-progress-light.png" alt="Visualisasi Potongan Torrent Mode Terang" width="460"> |
+| *Visualisasi blok potongan file (pieces) real-time & laju transfer (Dark)* | *Visualisasi potongan torrent tema terang dengan kontras tajam (Light)* |
+
 ---
 
 ## 📥 Pilihan Donlot & Instalasi

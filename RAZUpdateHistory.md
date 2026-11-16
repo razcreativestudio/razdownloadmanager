@@ -3,22 +3,24 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
-## [2026-11-16] — Penambahan Tangkapan Layar Dialog Tambah Torrent (Mode Gelap & Mode Terang) di Website dan README.md
-*Waktu: 16 November 2026 15:50 WIB*
+## [2026-11-16] — Penambahan Tangkapan Layar Dialog Tambah Torrent & Proses Donlot Potongan (Dark & Light Mode)
+*Waktu: 16 November 2026 15:58 WIB*
 
 ### Aktivitas & Pembaruan:
 1. **Penambahan Tangkapan Layar BitTorrent di `README.md`**:
-   - Menambahkan baris perbandingan visual khusus untuk fitur BitTorrent & Magnet Link di tabel antarmuka `README.md`:
+   - Menambahkan dua baris perbandingan visual khusus untuk fitur BitTorrent & Magnet Link di tabel antarmuka `README.md`:
      - `docs/images/torrent-dark.png` &rarr; Dialog Tambah Torrent dalam Mode Gelap (Obsidian Gold).
      - `docs/images/torrent-light.png` &rarr; Dialog Tambah Torrent dalam Mode Terang (Light Mode presisi tinggi).
-   - Memperlihatkan fitur pemilihan folder target, penguraian magnet URI otomatis, dan seleksi centang file individual di dalam berkas torrent.
+     - `docs/images/torrent-progress-dark.png` &rarr; Proses Donlot & Visualisasi Potongan File (*Pieces*) Mode Gelap.
+     - `docs/images/torrent-progress-light.png` &rarr; Proses Donlot & Visualisasi Potongan File (*Pieces*) Mode Terang.
+   - Memperlihatkan fitur pemilihan folder target, penguraian magnet URI otomatis, dan seleksi centang file individual di dalam berkas torrent, serta pemantauan potongan blok data hijau live.
 
 2. **Integrasi Tangkapan Layar BitTorrent di Beranda Website (`website/index.html` & `website/js/RAZMainLang.js`)**:
-   - Menambahkan tab preview interaktif untuk **BitTorrent (Mode Gelap)** (`assets/screens/add-torrent-dark.webp`) dan **BitTorrent (Mode Terang)** (`assets/screens/add-torrent-light.webp`).
+   - Menambahkan tab preview interaktif untuk **BitTorrent (Mode Gelap)** (`assets/screens/add-torrent-dark.webp`), **BitTorrent (Mode Terang)** (`assets/screens/add-torrent-light.webp`), dan **Visualisasi Potongan Torrent** (`assets/screens/torrent-progress-dark.webp`).
    - Melengkapi string multibahasa Indonesia dan Inggris di `RAZMainLang.js`.
 
 3. **Penyempurnaan Halaman Panduan BitTorrent (`website/help.html`)**:
-   - Memperbarui seksi Panduan BitTorrent & Magnet Link agar menyajikan perbandingan visual dual-mode (Dark & Light) dalam layout grid responsif yang rapi.
+   - Memperbarui seksi Panduan BitTorrent & Magnet Link agar menyajikan perbandingan visual dual-mode (Dark & Light) untuk dialog penambahan file dan dialog proses pemantauan potongan blok data (*pieces*) dalam kartu grid responsif.
 
 ---
 

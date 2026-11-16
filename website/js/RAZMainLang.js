@@ -84,6 +84,8 @@ const RAZMainLang = {
             'tour-tab-torrents-desc': 'Buka magnet link dan file .torrent langsung di daftar download tanpa software terpisah (Obsidian Gold).',
             'tour-tab-torrents-light-title': 'BitTorrent (Mode Terang)',
             'tour-tab-torrents-light-desc': 'Dukungan penuh tema terang Windows dengan kontras tajam, tombol aksen amber, dan visualisasi file yang bersih.',
+            'tour-tab-torrent-pieces-title': 'Visualisasi Potongan Torrent',
+            'tour-tab-torrent-pieces-desc': 'Pantau blok file yang sedang diunduh secara grafis real-time, peer aktif, dan laju transfer.',
             'tour-tab-video-title': 'Sniffer Video Web',
             'tour-tab-video-desc': 'Download video sampai kualitas 4K dari YouTube, Vimeo, dan ribuan situs streaming lainnya.',
 
@@ -270,6 +272,8 @@ const RAZMainLang = {
             'tour-tab-torrents-desc': 'Open magnet links and .torrent files directly without separate client (Obsidian Gold theme).',
             'tour-tab-torrents-light-title': 'Built-in BitTorrent (Light)',
             'tour-tab-torrents-light-desc': 'Full Windows light mode support with high contrast, warm amber accents, and clean file tree.',
+            'tour-tab-torrent-pieces-title': 'Torrent Pieces Visualization',
+            'tour-tab-torrent-pieces-desc': 'Real-time graphical piece block monitoring, active peers, and transfer speed.',
             'tour-tab-video-title': 'Web Video Sniffer',
             'tour-tab-video-desc': 'Grab up to 4K video from YouTube, Vimeo, and thousands of streaming websites.',
 
