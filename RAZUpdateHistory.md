@@ -3,6 +3,29 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-16] — Pembaruan Tangkapan Layar Dialog Donlotan Selesai (Dark & Light Mode) di Website dan README.md
+*Waktu: 16 November 2026 20:38 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Pembaruan Tangkapan Layar Dialog "Donlotan selesai" (Download Completed Dialog)**:
+   - Memproses tangkapan layar dialog notifikasi unduhan selesai versi terbaru untuk kedua tema (Dark & Light):
+     - `docs/images/completed-dark.png` & `docs/images/completed.png` &rarr; Dialog selesai tema Obsidian Dark untuk `README.md`.
+     - `docs/images/completed-light.png` &rarr; Dialog selesai tema Windows Light untuk `README.md`.
+     - `website/assets/screens/completed-dark.webp` & `completed-dark.png` &rarr; Aset resolusi tinggi di website.
+     - `website/assets/screens/completed-light.webp` & `completed-light.png` &rarr; Aset resolusi tinggi di website.
+     - `website/assets/help/catch-complete-dark.webp`, `catch-complete.webp`, `first-complete-dark.webp`, `first-complete.webp` &rarr; Aset Pusat Bantuan website & dokumentasi offline.
+
+2. **Pembaruan Tabel Antarmuka `README.md`**:
+   - Menjadikan baris `✅ Dialog Donlotan Selesai` simetris: Mode Gelap vs Mode Terang.
+   - Menjaga tata letak tabel tetap rapi dan seimbang dengan baris mandiri untuk tombol sniffer video browser.
+
+3. **Pembaruan Website & Pusat Bantuan (`website/help.html`, `website/index.html`, `website/js/RAZMainLang.js`)**:
+   - `website/help.html`: Menampilkan dialog donlotan selesai dalam grid responsif dual-mode berdampingan.
+   - `website/index.html`: Menyediakan tab tur interaktif `Donlotan Selesai (Mode Gelap)` dan `Donlotan Selesai (Mode Terang)`.
+   - `website/js/RAZMainLang.js`: Dukungan lokalisasi bilingual (Indonesia & Inggris).
+
+---
+
 ## [2026-11-16] — Pembaruan Tangkapan Layar Pop-Up Konfirmasi Donlot Browser (Dark & Light Mode) di Website dan README.md
 *Waktu: 16 November 2026 16:58 WIB*
 
