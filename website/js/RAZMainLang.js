@@ -112,6 +112,10 @@ const RAZMainLang = {
             'tour-tab-video-desc': 'Download video sampai 4K dan ekstrak audio MP3 dari YouTube, TikTok, dll (Tema Obsidian Gelap).',
             'tour-tab-video-light-title': 'Donlot Video Web (Mode Terang)',
             'tour-tab-video-light-desc': 'Dukungan penuh tema terang Windows dengan kontras tajam, tombol aksen amber, dan pemilih resolusi.',
+            'tour-tab-about-title': 'Tentang RAZ DM (Mode Gelap)',
+            'tour-tab-about-desc': 'Informasi lisensi GPL-3, versi biner, dan atribusi komponen open-source (Obsidian Dark).',
+            'tour-tab-about-light-title': 'Tentang RAZ DM (Mode Terang)',
+            'tour-tab-about-light-desc': 'Tampilan jendela tentang aplikasi tema terang Windows dengan kontras tajam dan tombol amber.',
 
             // Core Features
             'feat-label': 'Fitur Unggulan',
@@ -324,6 +328,10 @@ const RAZMainLang = {
             'tour-tab-video-desc': 'Download up to 4K video and extract MP3 audio from YouTube, TikTok, etc. (Obsidian Dark Theme).',
             'tour-tab-video-light-title': 'Web Video Downloader (Light Mode)',
             'tour-tab-video-light-desc': 'Full Windows light mode support with high contrast, warm amber buttons, and stream quality selector.',
+            'tour-tab-about-title': 'About RAZ DM (Dark Mode)',
+            'tour-tab-about-desc': 'GPL-3 license details, binary build hash, and open-source component attribution (Obsidian Dark).',
+            'tour-tab-about-light-title': 'About RAZ DM (Light Mode)',
+            'tour-tab-about-light-desc': 'Windows light mode about dialog with crisp contrast, warm amber button, and project links.',
 
             // Core Features
             'feat-label': 'Core Features',

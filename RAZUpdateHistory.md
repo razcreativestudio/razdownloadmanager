@@ -3,6 +3,28 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-16] — Pembaruan Tangkapan Layar Jendela Tentang Aplikasi (Dark & Light Mode) di Website dan README.md
+*Waktu: 16 November 2026 21:06 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Pembaruan Tangkapan Layar Jendela "Tentang RAZ Download Manager" (About Dialog)**:
+   - Memproses tangkapan layar dialog Tentang Aplikasi versi terbaru untuk kedua tema (Dark & Light) dengan rincian lisensi GPL-3, hash versi biner, dan logo 3D RAZ:
+     - `docs/images/about-dark.png` & `docs/images/about.png` &rarr; Jendela Tentang tema Obsidian Dark untuk `README.md`.
+     - `docs/images/about-light.png` &rarr; Jendela Tentang tema Windows Light untuk `README.md`.
+     - `website/assets/screens/about-dark.webp` & `about-dark.png` &rarr; Aset resolusi tinggi di website.
+     - `website/assets/screens/about-light.webp` & `about-light.png` &rarr; Aset resolusi tinggi di website.
+     - `website/assets/help/about-updates-dark.webp` & `about-updates.webp` &rarr; Aset Pusat Bantuan website & dokumentasi offline.
+
+2. **Pembaruan Tabel Antarmuka `README.md`**:
+   - Menambahkan baris perbandingan simetris pada tabel pratinjau: `ℹ️ Tentang RAZ DM (Mode Gelap)` vs `ℹ️ Tentang RAZ DM (Mode Terang)`.
+
+3. **Pembaruan Website & Pusat Bantuan (`website/help.html`, `website/index.html`, `website/js/RAZMainLang.js`)**:
+   - `website/help.html`: Menambahkan kartu penjelasan dialog Tentang, lisensi GPL-3, dan pembaruan dalam grid responsif dual-mode berdampingan pada Langkah 4 Bagian 7.
+   - `website/index.html`: Menyediakan tab tur interaktif `Tentang RAZ DM (Mode Gelap)` dan `Tentang RAZ DM (Mode Terang)`.
+   - `website/js/RAZMainLang.js`: Dukungan lokalisasi bilingual (Indonesia & Inggris).
+
+---
+
 ## [2026-11-16] — Pembaruan Tangkapan Layar Jendela Pilihan Bahasa (Dark & Light Mode) di Website dan README.md
 *Waktu: 16 November 2026 20:57 WIB*
 
