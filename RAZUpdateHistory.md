@@ -3,6 +3,29 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-16] — Pembaruan Tangkapan Layar Dialog Proses Donlot Multi-Thread (Dark & Light Mode) di Website dan README.md
+*Waktu: 16 November 2026 16:50 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Pembaruan Tangkapan Layar Dialog Progres Unduhan (Multi-Thread Engine)**:
+   - Memproses tangkapan layar dialog proses donlotan multi-thread versi terbaru untuk kedua tema (Dark & Light) dengan rincian segmen koneksi live dan bendera server lokasi:
+     - `docs/images/downloading-dark.png` & `docs/images/downloading.png` &rarr; Dialog progres donlotan tema Obsidian Dark untuk `README.md`.
+     - `docs/images/downloading-light.png` &rarr; Dialog progres donlotan tema Windows Light untuk `README.md`.
+     - `website/assets/screens/progress-dark.webp` & `progress-dark.png` &rarr; Aset resolusi tinggi di website.
+     - `website/assets/screens/progress-light.webp` & `progress-light.png` &rarr; Aset resolusi tinggi di website.
+     - `website/assets/help/catch-progress-dark.webp`, `catch-progress.webp`, `first-progress-dark.webp`, `first-progress.webp` &rarr; Aset Pusat Bantuan website & dokumentasi offline.
+
+2. **Pembaruan Tabel Antarmuka `README.md`**:
+   - Menjadikan baris `⚡ Proses & Segmen Donlot` simetris: Mode Gelap vs Mode Terang.
+   - Menyandingkan `✅ Dialog Donlotan Selesai` dengan `🎬 Tombol Unduh Video di Browser`.
+
+3. **Pembaruan Website & Pusat Bantuan (`website/help.html`, `website/index.html`, `website/js/RAZMainLang.js`)**:
+   - `website/help.html`: Menampilkan dialog progres donlot multi-thread dalam grid responsif dual-mode berdampingan.
+   - `website/index.html`: Menyediakan tab tur interaktif `Proses Donlot (Mode Gelap)` dan `Proses Donlot (Mode Terang)`.
+   - `website/js/RAZMainLang.js`: Dukungan lokalisasi bilingual (Indonesia & Inggris).
+
+---
+
 ## [2026-11-16] — Pembaruan Tangkapan Layar Dialog Donlot Video dari Halaman (Dark & Light Mode) di Website dan README.md
 *Waktu: 16 November 2026 16:42 WIB*
 

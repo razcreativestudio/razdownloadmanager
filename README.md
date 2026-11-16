@@ -128,10 +128,10 @@ Berikut tampilan antarmuka resmi RAZ Download Manager v1.0.0 dengan sentuhan tem
 | <img src="docs/images/torrent-progress-dark.png" alt="Visualisasi Potongan Torrent Mode Gelap" width="460"> | <img src="docs/images/torrent-progress-light.png" alt="Visualisasi Potongan Torrent Mode Terang" width="460"> |
 | *Visualisasi blok potongan file (pieces) real-time & laju transfer (Dark)* | *Visualisasi potongan torrent tema terang dengan kontras tajam (Light)* |
 
-| ⚡ Proses & Segmen Donlot Multi-Thread | ✅ Dialog Donlotan Selesai |
+| ⚡ Proses & Segmen Donlot (Mode Gelap) | ⚡ Proses & Segmen Donlot (Mode Terang) |
 | :---: | :---: |
-| <img src="docs/images/downloading.png" alt="Dialog Proses Donlot Multi-Thread" width="460"> | <img src="docs/images/completed.png" alt="Dialog Donlotan Selesai" width="460"> |
-| *Pemantauan segmen byte live, kecepatan, dan sisa waktu* | *Aksi cepat buka file, buka folder, dan setel aplikasi* |
+| <img src="docs/images/downloading-dark.png" alt="Dialog Proses Donlot Multi-Thread Mode Gelap" width="460"> | <img src="docs/images/downloading-light.png" alt="Dialog Proses Donlot Multi-Thread Mode Terang" width="460"> |
+| *Pemantauan segmen koneksi multi-thread live, bendera server, dan kecepatan (Dark)* | *Visualisasi segmen koneksi tema terang Windows dengan kontras tajam (Light)* |
 
 | ⚙️ Konfigurasi (Mode Gelap) | ⚙️ Konfigurasi (Mode Terang) |
 | :---: | :---: |
@@ -143,10 +143,10 @@ Berikut tampilan antarmuka resmi RAZ Download Manager v1.0.0 dengan sentuhan tem
 | <img src="docs/images/video-dark.png" alt="Dialog Donlot Video dari Halaman Mode Gelap" width="460"> | <img src="docs/images/video-light.png" alt="Dialog Donlot Video dari Halaman Mode Terang" width="460"> |
 | *Deteksi otomatis resolusi video/audio, subtitle, dan konversi format (Dark)* | *Dukungan penuh mode terang Windows dengan tombol amber presisi (Light)* |
 
-| 🎬 Tombol Unduh Video di Browser (Video Sniffer) |
-| :---: |
-| <img src="docs/images/video-button.png" alt="Tombol Unduh Video RAZ di Browser" width="340"> |
-| *Tombol melayang otomatis di atas pemutar video browser (YouTube, TikTok, dll) dengan logo resmi RAZ* |
+| ✅ Dialog Donlotan Selesai | 🎬 Tombol Unduh Video di Browser |
+| :---: | :---: |
+| <img src="docs/images/completed.png" alt="Dialog Donlotan Selesai" width="460"> | <img src="docs/images/video-button.png" alt="Tombol Unduh Video RAZ di Browser" width="360"> |
+| *Aksi cepat buka file, buka folder, dan setel aplikasi* | *Tombol melayang otomatis di atas player browser dengan logo resmi RAZ* |
 
 ---
 
