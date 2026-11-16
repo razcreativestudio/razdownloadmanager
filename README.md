@@ -96,7 +96,8 @@ Tampilan akrab yang udah biasa lo pake di IDM, tapi performanya jauh lebih ngaci
 
 - ⚡ **Multi-Thread Engine Super Kencang**: Memecah satu file donlotan hingga 64 koneksi paralel secara simultan dan otomatis menyeimbangkan beban byte sampai selesai.
 - 🔄 **Smart Resume & Auto-Reconnect**: Koneksi putus atau PC mati mendadak? Santai, tinggal lanjutin donlotan tanpa perlu ngulang dari nol.
-- 🧩 **Penangkap Tautan Browser Otomatis**: Menangkap semua donlotan dari Chrome, Edge, Firefox, Brave, Opera, Vivaldi, dan Zen Browser lewat ekstensi resmi.
+- 🧩 **Penangkap Tautan Browser Otomatis**: Menangkap semua donlotan dari Chrome, Edge, Firefox, Brave, Opera, Vivaldi, dan Zen Browser lewat ekstensi resmi dengan jendela konfirmasi instan:
+  <br><img src="docs/images/catch-dark.png" alt="Dialog Info File Donlotan" width="460"><br>
 - 🎬 **Video Sniffer & Grabber**: Tombol melayang "Unduh video" dengan logo resmi RAZ otomatis muncul di pojok video streaming (YouTube, TikTok, Vimeo, dll) lengkap dengan deteksi resolusi cepat hingga 4K dan opsi ekstrak audio MP3/M4A:
   <br><img src="docs/images/video-button.png" alt="Tombol Unduh Video RAZ di Browser" width="280"><br>
 - 🧲 **Dukungan BitTorrent & Magnet Link**: Gak perlu buka software torrent terpisah. Klik magnet link, pilih file yang mau diambil, dan biarkan RAZ DM ngurus sisanya.
@@ -117,6 +118,11 @@ Berikut tampilan antarmuka resmi RAZ Download Manager v1.0.0 dengan sentuhan tem
 | :---: | :---: |
 | <img src="docs/images/main-raz.png" alt="Layar Utama RAZ Download Manager Mode Gelap" width="460"> | <img src="docs/images/main-raz-light.png" alt="Layar Utama RAZ Download Manager Mode Terang" width="460"> |
 | *Tema Obsidian Black, toolbar emas, dan sidepanel rapi* | *Tema Light Windows dengan kontras presisi tinggi & teks tajam* |
+
+| 🧩 Konfirmasi Tangkapan Browser (Mode Gelap) | 🧩 Konfirmasi Tangkapan Browser (Mode Terang) |
+| :---: | :---: |
+| <img src="docs/images/catch-dark.png" alt="Dialog Konfirmasi Donlot Browser Mode Gelap" width="460"> | <img src="docs/images/catch-light.png" alt="Dialog Konfirmasi Donlot Browser Mode Terang" width="460"> |
+| *Deteksi otomatis URL, kategorisasi file, dan folder tujuan (Dark)* | *Dukungan penuh tema terang Windows dengan tombol amber (Light)* |
 
 | 🧲 Tambah Torrent (Mode Gelap) | 🧲 Tambah Torrent (Mode Terang) |
 | :---: | :---: |

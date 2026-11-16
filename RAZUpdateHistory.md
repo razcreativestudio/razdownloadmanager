@@ -3,6 +3,29 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-16] — Pembaruan Tangkapan Layar Pop-Up Konfirmasi Donlot Browser (Dark & Light Mode) di Website dan README.md
+*Waktu: 16 November 2026 16:58 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Pembaruan Tangkapan Layar Pop-Up "Info file donlotan" (Browser Catch Pop-Up)**:
+   - Memproses tangkapan layar dialog konfirmasi tangkapan tautan peramban versi terbaru untuk kedua tema (Dark & Light):
+     - `docs/images/catch-dark.png` & `docs/images/catch.png` &rarr; Dialog info donlotan tema Obsidian Dark untuk `README.md`.
+     - `docs/images/catch-light.png` &rarr; Dialog info donlotan tema Windows Light untuk `README.md`.
+     - `website/assets/screens/catch-dark.webp` & `catch-dark.png` &rarr; Aset resolusi tinggi di website.
+     - `website/assets/screens/catch-light.webp` & `catch-light.png` &rarr; Aset resolusi tinggi di website.
+     - `website/assets/help/catch-file-info-dark.webp`, `catch-file-info.webp`, `download-file-info-dark.webp`, `download-file-info.webp`, `first-file-info-dark.webp`, `first-file-info.webp` &rarr; Aset Pusat Bantuan website & dokumentasi offline.
+
+2. **Pembaruan Tabel & Poin Fitur `README.md`**:
+   - Menambahkan tangkapan layar langsung pada poin fitur `🧩 Penangkap Tautan Browser Otomatis`.
+   - Menambahkan baris perbandingan simetris pada tabel pratinjau: `🧩 Konfirmasi Tangkapan Browser (Mode Gelap)` vs `🧩 Konfirmasi Tangkapan Browser (Mode Terang)`.
+
+3. **Pembaruan Website & Pusat Bantuan (`website/help.html`, `website/index.html`, `website/js/RAZMainLang.js`)**:
+   - `website/help.html`: Menambahkan pratinjau responsif berdampingan untuk pop-up 'Info file donlotan' di Langkah 1 tutorial.
+   - `website/index.html`: Menyediakan tab tur interaktif `Konfirmasi Donlotan (Mode Gelap)` dan `Konfirmasi Donlotan (Mode Terang)`.
+   - `website/js/RAZMainLang.js`: Dukungan lokalisasi bilingual (Indonesia & Inggris).
+
+---
+
 ## [2026-11-16] — Pembaruan Tangkapan Layar Dialog Proses Donlot Multi-Thread (Dark & Light Mode) di Website dan README.md
 *Waktu: 16 November 2026 16:50 WIB*
 
