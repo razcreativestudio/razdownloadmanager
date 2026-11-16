@@ -3,6 +3,32 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-16] — Perbaikan dan Peningkatan Presisi Kontras Tampilan Mode Terang (Light Theme) pada Sidebar & Tabel Utama
+*Waktu: 16 November 2026 14:20 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Perbaikan Kontras & Keterbacaan Teks Sidebar Kategori (`crates/app/src/chrome.rs`)**:
+   - Memperbaiki bug kritis di mana teks item yang dipilih (*selected*) dan di-*hover* menggunakan `Color32::WHITE`, yang menyebabkan teks menjadi 100% tidak terlihat (putih di atas putih/abu-abu terang) saat aplikasi dialihkan ke Mode Terang (*Light Mode*).
+   - Menambahkan deteksi dinamis status tema via `crate::theme::dark()`.
+   - Mengatur warna teks item terpilih dan *hovered* pada Light Mode menjadi `Color32::from_rgb(15, 23, 42)` (slate-900 / hitam tegas) dan teks item unselected menjadi `Color32::from_rgb(51, 65, 85)` (slate-700 / arang kontras tinggi, lolos standar WCAG AAA rasio kontras > 7:1).
+   - Mengubah warna judul seksi kategori ("PUSTAKA", "TIPE FILE", "ANTREAN") menjadi `Color32::from_rgb(71, 85, 105)` (slate-600) untuk keterbacaan yang tajam.
+   - Mengatur warna lencana hitungan unduhan (*count badge*) menjadi `Color32::from_rgb(180, 83, 9)` (amber emas saat terpilih) dan `Color32::from_rgb(100, 116, 139)` (slate saat normal).
+
+2. **Penyempurnaan Pill & Ikon Sidebar di Mode Terang**:
+   - Mengganti latar belakang pill terpilih yang sebelumnya putih transparan tipis menjadi latar hangat bernuansa amber-50 `rgba(254, 243, 199, 210)` dengan border aksen amber emas `rgba(217, 119, 6, 180)`.
+   - Mengatur hover pill pada Light Mode dengan tint elegan `rgba(0, 0, 0, 14)`.
+   - Menyesuaikan ikon antrean (*queue*) dengan warna emas pekat `Color32::from_rgb(217, 119, 6)` agar tidak pudar di latar terang.
+   - Menyesuaikan ikon unduhan selesai (*completed*) dengan warna hijau segar `Color32::from_rgb(22, 163, 74)` dan ikon belum selesai (*incomplete*) dengan `Color32::from_rgb(100, 116, 139)`.
+
+3. **Penyelarasan Palet Tema Global (`crates/app/assets/themes/raz.toml`)**:
+   - Menambahkan konfigurasi `"list.frame" = "#d0d7de"` dan `"list.grid" = "#e8ebef"` pada seksi `[light]` agar garis kisi tabel dan bingkai luar daftar unduhan tampil presisi, halus, dan bersih seperti aplikasi Windows 11 modern, menghilangkan garis abu-abu tebal yang sebelumnya kaku.
+   - Menambahkan konfigurasi `"list.frame" = "#242a37"` pada seksi `[dark]` untuk konsistensi garis bingkai tema gelap obsidian.
+
+4. **Peningkatan Kontras Dialog Opsi/Pengaturan (`crates/app/src/options.rs`)**:
+   - Menambahkan penyesuaian dinamis pada navigasi samping (*sidepanel tabs*) jendela Opsi/Pengaturan, di mana pada Light Mode teks tab aktif menggunakan warna amber tua `Color32::from_rgb(180, 83, 9)` dengan pill hangat dan indikator aksen emas, serta teks tab non-aktif menggunakan slate-600 untuk kenyamanan mata pengguna.
+
+---
+
 ## [2026-11-16] — Penyesuaian & Sinkronisasi Seluruh Tautan Menu Bantuan Desktop & Routing Website
 *Waktu: 16 November 2026 13:42 WIB*
 

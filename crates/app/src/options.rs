@@ -1,3 +1,11 @@
+// ==============================================================================
+// RAZ Studio — Options & Settings Dialog UI Renderer
+// Terakhir Diperbarui: 2026-11-16
+// Deskripsi: Dialog pengaturan & konfigurasi RAZ Download Manager dengan navigasi
+//            modern sidebar tab bergaya Obsidian Glassmorphism dan dukungan
+//            kontras adaptif Light/Dark mode enterprise.
+// ==============================================================================
+
 //! Options (Downloads → Options, the toolbar's Options): IDM's configuration dialog, nine pages
 //! in a two-row tab control (notes/ui-spec/options-dialog.md). Light in both modes, as IDM's.
 //! It edits a copy of the settings: OK applies it, the close box and Escape discard it.
@@ -4051,6 +4059,7 @@ fn tabs(ui: &mut Ui, o: Pos2, page: usize) -> Option<usize> {
     let p = ui.painter().clone();
     let border = winui::HEADER_LINE();
     let mut clicked = None;
+    let is_dark = crate::theme::dark();
 
     // Draw sidepanel navigation items
     for (k, (i, label, icon)) in TABS.iter().enumerate() {
@@ -4097,23 +4106,34 @@ fn tabs(ui: &mut Ui, o: Pos2, page: usize) -> Option<usize> {
         let room = rc.right() - text_x - 6.0;
 
         if sel {
-            // Elegant obsidian & gold pill selection
-            p.rect_filled(
-                rc,
-                6.0,
-                egui::Color32::from_rgba_unmultiplied(255, 215, 0, 32),
-            );
+            // Elegant obsidian & gold pill selection (adaptive for dark/light)
+            let (fill_c, stroke_c, bar_c, text_c) = if is_dark {
+                (
+                    egui::Color32::from_rgba_unmultiplied(255, 215, 0, 32),
+                    egui::Color32::from_rgba_unmultiplied(255, 215, 0, 100),
+                    egui::Color32::from_rgb(255, 215, 0),
+                    egui::Color32::from_rgb(255, 220, 80),
+                )
+            } else {
+                (
+                    egui::Color32::from_rgba_unmultiplied(254, 243, 199, 220),
+                    egui::Color32::from_rgba_unmultiplied(217, 119, 6, 180),
+                    egui::Color32::from_rgb(217, 119, 6),
+                    egui::Color32::from_rgb(180, 83, 9),
+                )
+            };
+            p.rect_filled(rc, 6.0, fill_c);
             p.rect_stroke(
                 rc,
                 6.0,
-                egui::Stroke::new(1.0, egui::Color32::from_rgba_unmultiplied(255, 215, 0, 100)),
+                egui::Stroke::new(1.0, stroke_c),
                 egui::StrokeKind::Inside,
             );
             // Gold vertical indicator line on left edge
             p.rect_filled(
                 Rect::from_min_size(pos2(rc.left() + 2.0, rc.top() + 6.0), vec2(3.0, rc.height() - 12.0)),
                 1.5,
-                egui::Color32::from_rgb(255, 215, 0),
+                bar_c,
             );
             // RAZ gradient colored icon
             icon.image(true).paint_at(
@@ -4124,14 +4144,15 @@ fn tabs(ui: &mut Ui, o: Pos2, page: usize) -> Option<usize> {
                 ),
             );
             let shown = winui::ellipsize(&p, &winui::tahoma_bold(), full, room);
-            text(&p, text_x, text_y, &shown, egui::Color32::from_rgb(255, 220, 80));
+            text(&p, text_x, text_y, &shown, text_c);
             winui::show_focus(ui, &resp, rc.shrink(1.0));
         } else if resp.hovered() {
-            p.rect_filled(
-                rc,
-                6.0,
-                egui::Color32::from_rgba_unmultiplied(255, 255, 255, 14),
-            );
+            let hover_c = if is_dark {
+                egui::Color32::from_rgba_unmultiplied(255, 255, 255, 14)
+            } else {
+                egui::Color32::from_rgba_unmultiplied(0, 0, 0, 14)
+            };
+            p.rect_filled(rc, 6.0, hover_c);
             icon.image(true).paint_at(
                 ui,
                 Rect::from_min_size(
@@ -4140,7 +4161,12 @@ fn tabs(ui: &mut Ui, o: Pos2, page: usize) -> Option<usize> {
                 ),
             );
             let shown = winui::ellipsize(&p, &winui::tahoma(), full, room);
-            text(&p, text_x, text_y, &shown, winui::TEXT());
+            let hover_text_c = if is_dark {
+                winui::TEXT()
+            } else {
+                egui::Color32::from_rgb(15, 23, 42)
+            };
+            text(&p, text_x, text_y, &shown, hover_text_c);
         } else {
             icon.image(false).paint_at(
                 ui,
@@ -4150,7 +4176,12 @@ fn tabs(ui: &mut Ui, o: Pos2, page: usize) -> Option<usize> {
                 ),
             );
             let shown = winui::ellipsize(&p, &winui::tahoma(), full, room);
-            text(&p, text_x, text_y, &shown, winui::MUTED());
+            let unsel_text_c = if is_dark {
+                winui::MUTED()
+            } else {
+                egui::Color32::from_rgb(71, 85, 105)
+            };
+            text(&p, text_x, text_y, &shown, unsel_text_c);
         }
     }
 

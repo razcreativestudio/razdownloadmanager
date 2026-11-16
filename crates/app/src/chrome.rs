@@ -1,3 +1,11 @@
+// ==============================================================================
+// RAZ Studio — Chrome & Main Window UI Renderer
+// Terakhir Diperbarui: 2026-11-16
+// Deskripsi: Render chrome jendela utama (menu bar, toolbar, panel kategori sidebar,
+//            shell icons). Dilengkapi dukungan dynamic light/dark contrast mode
+//            sesuai standar enterprise RAZ Studio.
+// ==============================================================================
+
 //! The main window's chrome painted to IDM 6.42's pixels (notes/ui-spec/main-window.md,
 //! notes/ui-spec/menus.md): menu bar, popup menus, toolbar, Categories tree, shell icons.
 //!
@@ -1753,6 +1761,7 @@ pub fn categories(
     let tp = p.with_clip_rect(winui::rect(view_area));
     let rows_ui = ui.new_child(egui::UiBuilder::new());
     let mut selected_at: Option<(usize, Pos2)> = None;
+    let is_dark = crate::theme::dark();
 
     for (k, r) in rows.iter().enumerate() {
         let top = view_area.top() + row_tops[k] - vpos;
@@ -1767,13 +1776,18 @@ pub fn categories(
             let text_y = top + 14.0;
             let font = egui::FontId::proportional(10.0);
             let header_text = crate::i18n::t(&r.label);
+            let header_color = if is_dark {
+                Color32::from_rgb(115, 122, 135)
+            } else {
+                Color32::from_rgb(71, 85, 105)
+            };
             text_font(
                 &tp,
                 font,
                 text_x,
                 text_y,
                 header_text,
-                Color32::from_rgb(115, 122, 135),
+                header_color,
             );
             continue;
         }
@@ -1789,25 +1803,33 @@ pub fn categories(
         );
 
         if r.selected {
-            // Selected rounded pill: subtle luxury obsidian / gold pill
-            tp.rect_filled(
-                rc,
-                5.0,
-                Color32::from_rgba_unmultiplied(255, 255, 255, 20),
-            );
+            // Selected rounded pill: dynamic dark luxury obsidian/gold pill vs light warm amber-gold pill
+            let (fill_c, stroke_c) = if is_dark {
+                (
+                    Color32::from_rgba_unmultiplied(255, 255, 255, 20),
+                    Color32::from_rgba_unmultiplied(255, 215, 0, 70),
+                )
+            } else {
+                (
+                    Color32::from_rgba_unmultiplied(254, 243, 199, 210),
+                    Color32::from_rgba_unmultiplied(217, 119, 6, 180),
+                )
+            };
+            tp.rect_filled(rc, 5.0, fill_c);
             tp.rect_stroke(
                 rc,
                 5.0,
-                Stroke::new(1.0, Color32::from_rgba_unmultiplied(255, 215, 0, 70)),
+                Stroke::new(1.0, stroke_c),
                 egui::StrokeKind::Inside,
             );
             selected_at = Some((k, rc.left_bottom()));
         } else if resp.hovered() {
-            tp.rect_filled(
-                rc,
-                5.0,
-                Color32::from_rgba_unmultiplied(255, 255, 255, 10),
-            );
+            let hover_c = if is_dark {
+                Color32::from_rgba_unmultiplied(255, 255, 255, 10)
+            } else {
+                Color32::from_rgba_unmultiplied(0, 0, 0, 14)
+            };
+            tp.rect_filled(rc, 5.0, hover_c);
         }
 
         // Draw icon (compact & crisp)
@@ -1829,50 +1851,65 @@ pub fn categories(
                 );
             }
             RowIconKind::Incomplete => {
+                let stroke_c = if is_dark {
+                    Color32::from_rgb(148, 163, 184)
+                } else {
+                    Color32::from_rgb(100, 116, 139)
+                };
                 tp.circle_stroke(
                     center,
                     6.5,
-                    Stroke::new(1.3, Color32::from_rgb(148, 163, 184)),
+                    Stroke::new(1.3, stroke_c),
                 );
                 tp.line_segment(
                     [center, pos2(center.x, center.y - 3.5)],
-                    Stroke::new(1.3, Color32::from_rgb(148, 163, 184)),
+                    Stroke::new(1.3, stroke_c),
                 );
                 tp.line_segment(
                     [center, pos2(center.x + 3.0, center.y)],
-                    Stroke::new(1.3, Color32::from_rgb(148, 163, 184)),
+                    Stroke::new(1.3, stroke_c),
                 );
             }
             RowIconKind::Completed => {
+                let (circle_c, check_c) = if is_dark {
+                    (Color32::from_rgb(148, 163, 184), Color32::from_rgb(148, 163, 184))
+                } else {
+                    (Color32::from_rgb(34, 197, 94), Color32::from_rgb(22, 163, 74))
+                };
                 tp.circle_stroke(
                     center,
                     6.5,
-                    Stroke::new(1.3, Color32::from_rgb(148, 163, 184)),
+                    Stroke::new(1.3, circle_c),
                 );
                 tp.line_segment(
                     [pos2(center.x - 3.0, center.y), pos2(center.x - 0.8, center.y + 2.0)],
-                    Stroke::new(1.5, Color32::from_rgb(148, 163, 184)),
+                    Stroke::new(1.5, check_c),
                 );
                 tp.line_segment(
                     [pos2(center.x - 0.8, center.y + 2.0), pos2(center.x + 3.5, center.y - 2.0)],
-                    Stroke::new(1.5, Color32::from_rgb(148, 163, 184)),
+                    Stroke::new(1.5, check_c),
                 );
             }
             RowIconKind::Dot(c) => {
                 tp.circle_filled(center, 3.5, c);
             }
             RowIconKind::Queue => {
+                let queue_c = if is_dark {
+                    Color32::from_rgb(255, 215, 0)
+                } else {
+                    Color32::from_rgb(217, 119, 6)
+                };
                 tp.line_segment(
                     [pos2(center.x - 5.0, center.y - 3.0), pos2(center.x + 5.0, center.y - 3.0)],
-                    Stroke::new(1.5, Color32::from_rgb(255, 215, 0)),
+                    Stroke::new(1.5, queue_c),
                 );
                 tp.line_segment(
                     [pos2(center.x - 5.0, center.y), pos2(center.x + 5.0, center.y)],
-                    Stroke::new(1.5, Color32::from_rgb(255, 215, 0)),
+                    Stroke::new(1.5, queue_c),
                 );
                 tp.line_segment(
                     [pos2(center.x - 5.0, center.y + 3.0), pos2(center.x + 5.0, center.y + 3.0)],
-                    Stroke::new(1.5, Color32::from_rgb(255, 215, 0)),
+                    Stroke::new(1.5, queue_c),
                 );
             }
             RowIconKind::None => {}
@@ -1881,12 +1918,20 @@ pub fn categories(
         // Draw label (modern clean Segoe UI font)
         let text_x = rc.left() + 27.0;
         let text_y = rc.center().y + 4.0;
-        let text_color = if r.selected {
-            Color32::WHITE
-        } else if resp.hovered() {
-            Color32::WHITE
+        let text_color = if is_dark {
+            if r.selected || resp.hovered() {
+                Color32::WHITE
+            } else {
+                Color32::from_rgb(210, 215, 225)
+            }
         } else {
-            Color32::from_rgb(210, 215, 225)
+            if r.selected {
+                Color32::from_rgb(15, 23, 42)
+            } else if resp.hovered() {
+                Color32::from_rgb(15, 23, 42)
+            } else {
+                Color32::from_rgb(51, 65, 85)
+            }
         };
         let font = egui::FontId::proportional(12.0);
         let label_text = crate::i18n::t(&r.label);
@@ -1899,13 +1944,20 @@ pub fn categories(
             let count_str = crate::i18n::integer(n as u64);
             let count_font = egui::FontId::proportional(11.5);
             let cw = text_width_font(&tp, count_font.clone(), &count_str);
+            let count_color = if is_dark {
+                Color32::from_rgb(148, 163, 184)
+            } else if r.selected {
+                Color32::from_rgb(180, 83, 9)
+            } else {
+                Color32::from_rgb(100, 116, 139)
+            };
             text_font(
                 &tp,
                 count_font,
                 rc.right() - 8.0 - cw,
                 text_y,
                 &count_str,
-                Color32::from_rgb(148, 163, 184),
+                count_color,
             );
         }
 

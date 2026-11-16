@@ -1,9 +1,9 @@
 # ==============================================================================
 # RAZ Studio — RAZ Creative Studio Signature Theme
-# Terakhir Diperbarui: 2026-11-11
+# Terakhir Diperbarui: 2026-11-16
 # Deskripsi: Tema default resmi RAZ Download Manager dengan palet warna khas
 #            RAZ Creative Studio: Obsidian Black, Luxury Gold (#FFD700),
-#            dan aksen modern presisi.
+#            dan optimasi kontras presisi Light Mode enterprise.
 # ==============================================================================
 
 name = "RAZ Studio"
@@ -53,6 +53,7 @@ success = "#28a745"
 [dark]
 window = "#12151b"
 list = "#15181f"
+"list.frame" = "#242a37"
 "list.grid" = "#1d222b"
 field = "#191d24"
 "field.border" = "#2c3340"
@@ -124,7 +125,8 @@ tab = "#14171e"
 [light]
 window = "#f6f8fa"
 list = "#ffffff"
-"list.grid" = "#edf0f4"
+"list.frame" = "#d0d7de"
+"list.grid" = "#e8ebef"
 field = "#ffffff"
 "field.border" = "#d0d7de"
 "field.bottom" = "#c99700cc"
