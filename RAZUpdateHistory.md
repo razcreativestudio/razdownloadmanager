@@ -3,6 +3,22 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-16] — Pembaruan Tangkapan Layar Tampilan Utama (Layar Utama Dark & Light Mode Terbaru) di Website dan README.md
+*Waktu: 16 November 2026 16:10 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Pembaruan Tangkapan Layar Layar Utama di `README.md`**:
+   - Memperbarui gambar layar utama ke versi paling mutakhir dengan daftar unduhan live dan dukungan torrent:
+     - `docs/images/main-raz.png` &rarr; Layar Utama Mode Gelap (Obsidian Black & Gold) versi terbaru.
+     - `docs/images/main-raz-light.png` &rarr; Layar Utama Mode Terang (Light Mode) dengan perbaikan kontras sidebar dan pill amber yang tajam.
+   - Mengatur tata letak tabel antarmuka `README.md` berpasangan simetris untuk Dark & Light mode.
+
+2. **Pembaruan Aset Layar Utama Website (`website/assets/screens/`)**:
+   - Memperbarui `main-dark.webp` dan `main-light.webp` dengan tangkapan layar 1024px terbaru berkualitas tinggi.
+   - Menambahkan tab preview tur interaktif di `website/index.html` untuk **Layar Utama (Mode Gelap)** dan **Layar Utama (Mode Terang)** beserta string bilingual di `RAZMainLang.js`.
+
+---
+
 ## [2026-11-16] — Penambahan Tangkapan Layar Dialog Tambah Torrent & Proses Donlot Potongan (Dark & Light Mode)
 *Waktu: 16 November 2026 15:58 WIB*
 

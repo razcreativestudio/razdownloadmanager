@@ -112,25 +112,30 @@ Tampilan akrab yang udah biasa lo pake di IDM, tapi performanya jauh lebih ngaci
 
 Berikut tampilan antarmuka resmi RAZ Download Manager v1.0.0 dengan sentuhan tema obsidian elegan khas RAZ Creative Studio:
 
-| 🖥️ Tampilan Layar Utama | ⚡ Proses & Segmen Donlot Multi-Thread |
+| 🖥️ Layar Utama (Mode Gelap) | ☀️ Layar Utama (Mode Terang) |
 | :---: | :---: |
-| <img src="docs/images/main-raz.png" alt="Layar Utama RAZ Download Manager" width="460"> | <img src="docs/images/downloading.png" alt="Dialog Proses Donlot Multi-Thread" width="460"> |
-| *Daftar donlotan, toolbar emas, dan sidepanel rapi* | *Pemantauan segmen byte live, kecepatan, dan sisa waktu* |
-
-| ✅ Dialog Donlotan Selesai | ⚙️ Konfigurasi & Pengaturan Lengkap |
-| :---: | :---: |
-| <img src="docs/images/completed.png" alt="Dialog Donlotan Selesai" width="460"> | <img src="docs/images/settings.png" alt="Konfigurasi RAZ Download Manager" width="460"> |
-| *Aksi cepat buka file, buka folder, dan setel aplikasi* | *Pengaturan integrasi peramban, koneksi, dan proksi* |
+| <img src="docs/images/main-raz.png" alt="Layar Utama RAZ Download Manager Mode Gelap" width="460"> | <img src="docs/images/main-raz-light.png" alt="Layar Utama RAZ Download Manager Mode Terang" width="460"> |
+| *Tema Obsidian Black, toolbar emas, dan sidepanel rapi* | *Tema Light Windows dengan kontras presisi tinggi & teks tajam* |
 
 | 🧲 Tambah Torrent (Mode Gelap) | 🧲 Tambah Torrent (Mode Terang) |
 | :---: | :---: |
 | <img src="docs/images/torrent-dark.png" alt="Dialog Tambah Torrent Mode Gelap" width="460"> | <img src="docs/images/torrent-light.png" alt="Dialog Tambah Torrent Mode Terang" width="460"> |
-| *Deteksi otomatis magnet link & pemilihan file selektif (Dark)* | *Dukungan penuh tema terang Windows dengan kontras presisi (Light)* |
+| *Deteksi otomatis magnet link & pemilihan file selektif (Dark)* | *Dukungan penuh tema terang Windows dengan tombol amber (Light)* |
 
 | 🔄 Proses Donlot Torrent (Mode Gelap) | 🔄 Proses Donlot Torrent (Mode Terang) |
 | :---: | :---: |
 | <img src="docs/images/torrent-progress-dark.png" alt="Visualisasi Potongan Torrent Mode Gelap" width="460"> | <img src="docs/images/torrent-progress-light.png" alt="Visualisasi Potongan Torrent Mode Terang" width="460"> |
 | *Visualisasi blok potongan file (pieces) real-time & laju transfer (Dark)* | *Visualisasi potongan torrent tema terang dengan kontras tajam (Light)* |
+
+| ⚡ Proses & Segmen Donlot Multi-Thread | ✅ Dialog Donlotan Selesai |
+| :---: | :---: |
+| <img src="docs/images/downloading.png" alt="Dialog Proses Donlot Multi-Thread" width="460"> | <img src="docs/images/completed.png" alt="Dialog Donlotan Selesai" width="460"> |
+| *Pemantauan segmen byte live, kecepatan, dan sisa waktu* | *Aksi cepat buka file, buka folder, dan setel aplikasi* |
+
+| ⚙️ Konfigurasi & Pengaturan Lengkap | |
+| :---: | :---: |
+| <img src="docs/images/settings.png" alt="Konfigurasi RAZ Download Manager" width="460"> | |
+| *Pengaturan integrasi peramban, koneksi, dan proksi* | |
 
 ---
 
