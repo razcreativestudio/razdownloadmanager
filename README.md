@@ -103,7 +103,8 @@ Tampilan akrab yang udah biasa lo pake di IDM, tapi performanya jauh lebih ngaci
 - 🧲 **Dukungan BitTorrent & Magnet Link**: Gak perlu buka software torrent terpisah. Klik magnet link, pilih file yang mau diambil, dan biarkan RAZ DM ngurus sisanya.
 - 📦 **Ekstraksi Arsip Otomatis**: File `.zip`, `.rar`, atau `.7z` yang selesai terdonlot bisa langsung diekstrak otomatis ke folder tujuan.
 - 🚀 **Integrasi Akun Debrid**: Dukungan langsung buat akun Real-Debrid, AllDebrid, dan Premiumize buat ngebut donlot link premium file-hoster.
-- ⏰ **Penjadwal Donlotan Malam**: Antre donlotan lo dan set waktu jalan otomatis saat jam malam biar gak ganggu kuota harian.
+- ⏰ **Penjadwal Donlotan Malam**: Antre donlotan lo dan set waktu jalan otomatis saat jam malam biar gak ganggu kuota harian, lengkap dengan fitur auto-shutdown saat selesai:
+  <br><img src="docs/images/scheduler-dark.png" alt="Penjadwal Donlotan Malam" width="460"><br>
 - 🛡️ **Koneksi VPN Khusus**: Batasi aktivitas ngedonlot hanya lewat interface VPN tertentu dengan fitur kill-switch pengaman.
 - 🤖 **Support AI Agent (MCP Server)**: Dilengkapi native Model Context Protocol server. AI favorit lo (seperti Claude, Cursor, atau VS Code) bisa ngecek, nambahin, jeda, atau ngatur antrean donlotan lo via percakapan.
 - 🎨 **Tampilan Obsidian Dark Mode Presisi**: Tampilan dark obsidian elegan khas RAZ Creative Studio dengan sidepanel kategori yang ringkas dan bebas lag.
@@ -143,6 +144,11 @@ Berikut tampilan antarmuka resmi RAZ Download Manager v1.0.0 dengan sentuhan tem
 | :---: | :---: |
 | <img src="docs/images/settings.png" alt="Konfigurasi RAZ Download Manager Mode Gelap" width="460"> | <img src="docs/images/settings-light.png" alt="Konfigurasi RAZ Download Manager Mode Terang" width="460"> |
 | *Pengaturan integrasi peramban, koneksi, dan proksi (Dark)* | *Pengaturan tema terang dengan navigasi tab amber presisi (Light)* |
+
+| ⏰ Penjadwal Donlotan (Mode Gelap) | ⏰ Penjadwal Donlotan (Mode Terang) |
+| :---: | :---: |
+| <img src="docs/images/scheduler-dark.png" alt="Penjadwal Donlotan Mode Gelap" width="460"> | <img src="docs/images/scheduler-light.png" alt="Penjadwal Donlotan Mode Terang" width="460"> |
+| *Otomasi donlotan malam hari, penjadwalan antrean, dan auto-shutdown (Dark)* | *Dukungan penuh tema terang Windows dengan tombol aksi amber presisi (Light)* |
 
 | 🎬 Donlot Video dari Halaman (Mode Gelap) | 🎬 Donlot Video dari Halaman (Mode Terang) |
 | :---: | :---: |

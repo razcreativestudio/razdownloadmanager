@@ -3,6 +3,29 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-16] — Pembaruan Tangkapan Layar Jendela Penjadwal (Dark & Light Mode) di Website dan README.md
+*Waktu: 16 November 2026 20:47 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Pembaruan Tangkapan Layar Jendela Penjadwal (Night Scheduler & Queues)**:
+   - Memproses tangkapan layar jendela Penjadwal versi terbaru untuk kedua tema (Dark & Light):
+     - `docs/images/scheduler-dark.png` & `docs/images/scheduler.png` &rarr; Jendela Penjadwal tema Obsidian Dark untuk `README.md`.
+     - `docs/images/scheduler-light.png` &rarr; Jendela Penjadwal tema Windows Light untuk `README.md`.
+     - `website/assets/screens/scheduler-dark.webp` & `scheduler-dark.png` &rarr; Aset resolusi tinggi di website.
+     - `website/assets/screens/scheduler-light.webp` & `scheduler-light.png` &rarr; Aset resolusi tinggi di website.
+     - `website/assets/help/scheduler-dark.webp` & `scheduler.webp` &rarr; Aset Pusat Bantuan website & dokumentasi offline.
+
+2. **Pembaruan Tabel & Poin Fitur `README.md`**:
+   - Menambahkan tangkapan layar langsung pada poin fitur `⏰ Penjadwal Donlotan Malam`.
+   - Menambahkan baris perbandingan simetris pada tabel antarmuka: `⏰ Penjadwal Donlotan (Mode Gelap)` vs `⏰ Penjadwal Donlotan (Mode Terang)`.
+
+3. **Pembaruan Website & Pusat Bantuan (`website/help.html`, `website/index.html`, `website/js/RAZMainLang.js`)**:
+   - `website/help.html`: Menambahkan pratinjau responsif berdampingan untuk jendela Penjadwal pada Langkah 5 tutorial.
+   - `website/index.html`: Menyediakan tab tur interaktif `Penjadwal (Mode Gelap)` dan `Penjadwal (Mode Terang)`.
+   - `website/js/RAZMainLang.js`: Dukungan lokalisasi bilingual (Indonesia & Inggris).
+
+---
+
 ## [2026-11-16] — Pembaruan Tangkapan Layar Dialog Donlotan Selesai (Dark & Light Mode) di Website dan README.md
 *Waktu: 16 November 2026 20:38 WIB*
 
