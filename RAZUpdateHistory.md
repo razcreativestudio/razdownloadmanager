@@ -3,6 +3,31 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-16] — Fix Layout Komparasi Tabel, 3-Kolom Grid Fitur, Card Donlot CRX & Cache-Busting CSS
+*Waktu: 16 November 2026 11:45 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Perbaikan Tabel Komparasi (`.compare-table`)**:
+   - Memperbaiki bug di mana selector `.status-yes` dan `.status-no` memiliki `display: inline-flex;` yang merusak model rendering `display: table-cell` pada tag `<td>`, menyebabkan sel-sel kolom IDM dan RAZ menumpuk di kolom yang sama.
+   - Mengembalikan `display: table-cell !important;` pada seluruh elemen `th` dan `td`, serta mengatur ikon indikator dengan `margin-right: 8px; vertical-align: middle;` sehingga tabel komparasi 4 kolom tampil presisi dan rapi.
+
+2. **Perbaikan Grid Fitur Unggulan 3x3 (`.features-grid`)**:
+   - Memperbaiki styling `.features-grid` dengan `display: grid !important; grid-template-columns: repeat(3, 1fr) !important;` baik di `RAZDM.css` maupun `style.css` agar 9 kartu fitur tampil dalam formasi 3 baris x 3 kolom yang seimbang di layar desktop dan tidak menumpuk vertikal menjadi 1 kolom lebar.
+
+3. **Penambahan Kartu Donlot Ekstensi Chromium `.crx` Resmi**:
+   - Mem-package berkas biner ekstensi resmi Chromium `razdm-extension-chrome.crx` (~198 KB) dengan SHA-256 `938bfe673f6954f557b609eb348d948f86b69bd60480639c3b2f0093197eb079` langsung ke `website/assets/extension/`.
+   - Menambahkan kartu donlot `.crx` langsung di halaman `download.html`, sehingga kini tersedia 3 opsi ekstensi:
+     1. **Chromium (.crx)**: Donlot file `.crx` langsung untuk drag-and-drop di Chrome/Edge/Brave/Opera.
+     2. **Chromium (.zip)**: Metode *Load unpacked* resmi yang bebas dari blokir keamanan Chrome.
+     3. **Firefox (.xpi)**: File `.xpi` untuk Mozilla Firefox, Zen, dan Librewolf.
+   - Ketiga kartu ekstensi disusun dalam grid 3 kolom (`.download-grid.three-col`) dengan tombol donlot yang sejajar sempurna di bagian bawah.
+   - Menambahkan hash `razdm-extension-chrome.crx` ke daftar checksum SHA-256.
+
+4. **Cache-Busting Aset CSS (`?v=1.0.2`)**:
+   - Menambahkan parameter versi `?v=1.0.2` pada seluruh tag `<link rel="stylesheet">` di `index.html`, `download.html`, `benchmark.html`, `idm-alternative.html`, dan `404.html` untuk memastikan browser pengguna selalu memuat CSS terbaru tanpa tertahan cache lawas.
+
+---
+
 ## [2026-11-16] — Pembersihan Berkas Usang, Perbaikan Layout & Responsivitas Website (Header, Grid, Kartu, Ekstensi & Footer)
 *Waktu: 16 November 2026 11:20 WIB*
 

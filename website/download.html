@@ -27,12 +27,12 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/RAZHero.css">
-    <link rel="stylesheet" href="css/RAZMainAnimations.css">
-    <link rel="stylesheet" href="css/RAZMainTheme.css">
-    <link rel="stylesheet" href="css/RAZModal.css">
-    <link rel="stylesheet" href="css/RAZDM.css">
+    <link rel="stylesheet" href="css/style.css?v=1.0.2">
+    <link rel="stylesheet" href="css/RAZHero.css?v=1.0.2">
+    <link rel="stylesheet" href="css/RAZMainAnimations.css?v=1.0.2">
+    <link rel="stylesheet" href="css/RAZMainTheme.css?v=1.0.2">
+    <link rel="stylesheet" href="css/RAZModal.css?v=1.0.2">
+    <link rel="stylesheet" href="css/RAZDM.css?v=1.0.2">
 </head>
 
 <body>
@@ -203,32 +203,65 @@
                     Donlot dan pasang ekstensi RAZ Download Manager secara langsung tanpa bergantung pada Chrome Web Store atau Add-ons Store. 100% aman, open-source, dan langsung terhubung dengan aplikasi desktop.
                 </p>
 
-                <div class="download-grid two-col">
-                    <!-- Chromium Extension -->
+                <div class="download-grid three-col">
+                    <!-- Chromium Extension (.crx Direct) -->
                     <div class="dl-card featured">
-                        <span class="dl-badge-featured">Chrome / Edge / Brave / Opera</span>
+                        <span class="dl-badge-featured">File .CRX Langsung</span>
                         <div class="dl-icon"><i class="fab fa-chrome"></i></div>
-                        <h3 class="dl-title">Chromium Extension</h3>
+                        <h3 class="dl-title">Chromium (.crx)</h3>
                         <p class="dl-meta">
-                            File: <code>razdm-extension-chrome.zip</code> (~190 KB)<br>
-                            Mendukung Google Chrome, Microsoft Edge, Brave Browser, Opera, Vivaldi, dan seluruh browser berbasis Chromium.
+                            File: <code>razdm-extension-chrome.crx</code> (~198 KB)<br>
+                            Paket biner CRX resmi untuk Chrome, Edge, Brave, Opera, Vivaldi.
                         </p>
                         <div style="background:rgba(255,255,255,0.03);padding:14px;border-radius:var(--radius-sm);margin-bottom:20px;font-size:0.85rem;color:var(--color-light-secondary);text-align:left;line-height:1.6;">
-                            <strong style="color:var(--color-gold-accent);"><i class="fas fa-info-circle"></i> Cara Pasang di Chrome/Edge:</strong>
+                            <strong style="color:var(--color-gold-accent);"><i class="fas fa-info-circle"></i> Cara Pasang (.crx):</strong>
+                            <ol style="margin:6px 0 10px 18px;padding:0;">
+                                <li>Donlot file <code>.crx</code> di bawah.</li>
+                                <li>Buka <code>chrome://extensions</code> (atau <code>edge://extensions</code>).</li>
+                                <li>Aktifkan toggle <b>Developer mode</b> di kanan atas.</li>
+                                <li>Tarik (*drag & drop*) file <code>.crx</code> ke halaman ekstensi, lalu klik <b>Add extension</b>.</li>
+                            </ol>
+                            <p style="font-size:0.78rem;color:var(--color-light-secondary);margin:0;border-top:1px solid rgba(255,255,255,0.08);padding-top:8px;">
+                                <i class="fas fa-exclamation-triangle" style="color:#f59e0b;"></i> <em>Jika Chrome memblokir drag-and-drop offline, gunakan opsi (.zip) di sebelah.</em>
+                            </p>
+                        </div>
+                        <div class="dl-actions">
+                            <a href="assets/extension/razdm-extension-chrome.crx" download="razdm-extension-chrome.crx"
+                                class="cta-primary" style="justify-content:center;">
+                                <i class="fas fa-download"></i> Donlot File (.crx)
+                            </a>
+                            <button class="btn-checksum checksum-copy-btn"
+                                data-hash="938bfe673f6954f557b609eb348d948f86b69bd60480639c3b2f0093197eb079">
+                                <i class="fas fa-copy"></i> Salin SHA-256 Checksum
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Chromium Extension (.zip Load Unpacked) -->
+                    <div class="dl-card">
+                        <span class="dl-badge-featured" style="background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff;">Metode Bebas Blokir</span>
+                        <div class="dl-icon"><i class="fas fa-file-archive"></i></div>
+                        <h3 class="dl-title">Chromium (.zip)</h3>
+                        <p class="dl-meta">
+                            File: <code>razdm-extension-chrome.zip</code> (~190 KB)<br>
+                            Metode <b>Load unpacked</b> resmi & 100% aman tanpa batas kebijakan Google.
+                        </p>
+                        <div style="background:rgba(255,255,255,0.03);padding:14px;border-radius:var(--radius-sm);margin-bottom:20px;font-size:0.85rem;color:var(--color-light-secondary);text-align:left;line-height:1.6;">
+                            <strong style="color:var(--color-gold-accent);"><i class="fas fa-info-circle"></i> Cara Pasang (.zip):</strong>
                             <ol style="margin:6px 0 10px 18px;padding:0;">
                                 <li>Ekstrak file <code>razdm-extension-chrome.zip</code> ke folder pilihan lo.</li>
                                 <li>Buka <code>chrome://extensions</code> (atau <code>edge://extensions</code>).</li>
-                                <li>Aktifkan toggle <b>Developer mode</b> (Mode Pengembang) di kanan atas.</li>
+                                <li>Aktifkan toggle <b>Developer mode</b> di kanan atas.</li>
                                 <li>Klik tombol <b>Load unpacked</b> lalu pilih folder hasil ekstrak tadi. Selesai!</li>
                             </ol>
-                            <p style="font-size:0.8rem;color:#d4af37;margin:0;border-top:1px solid rgba(255,255,255,0.08);padding-top:8px;">
-                                <i class="fas fa-shield-alt"></i> <em>Kenapa pakai .zip? Chrome versi baru memblokir drag-and-drop file .crx offline tanpa sertifikat Web Store (error CRX_REQUIRED_PROOF_MISSING). Opsi "Load unpacked" adalah metode resmi & paling aman dari Google untuk ekstensi open-source.</em>
+                            <p style="font-size:0.78rem;color:#22c55e;margin:0;border-top:1px solid rgba(255,255,255,0.08);padding-top:8px;">
+                                <i class="fas fa-shield-alt"></i> <em>Direkomendasikan Google untuk ekstensi open-source pihak ketiga.</em>
                             </p>
                         </div>
                         <div class="dl-actions">
                             <a href="assets/extension/razdm-extension-chrome.zip" download="razdm-extension-chrome.zip"
-                                class="cta-primary" style="justify-content:center;">
-                                <i class="fas fa-download"></i> Donlot Ekstensi Chrome (.zip)
+                                class="cta-secondary" style="justify-content:center;">
+                                <i class="fas fa-download"></i> Donlot File (.zip)
                             </a>
                             <button class="btn-checksum checksum-copy-btn"
                                 data-hash="06ff0092bf7e512b6280ee82a28e1520d061bc11c77a3670221ba304763acde2">
@@ -237,13 +270,13 @@
                         </div>
                     </div>
 
-                    <!-- Firefox Extension -->
+                    <!-- Firefox Extension (.xpi) -->
                     <div class="dl-card">
                         <div class="dl-icon"><i class="fab fa-firefox-browser"></i></div>
-                        <h3 class="dl-title">Firefox Extension</h3>
+                        <h3 class="dl-title">Firefox (.xpi)</h3>
                         <p class="dl-meta">
                             File: <code>razdm-extension-firefox.xpi</code> (~192 KB)<br>
-                            Mendukung Mozilla Firefox, Firefox Developer Edition, Nightly, Zen Browser, Librewolf, dan Waterfox.
+                            Mendukung Mozilla Firefox, Firefox Dev Edition, Zen, Librewolf, Waterfox.
                         </p>
                         <div style="background:rgba(255,255,255,0.03);padding:14px;border-radius:var(--radius-sm);margin-bottom:20px;font-size:0.85rem;color:var(--color-light-secondary);text-align:left;line-height:1.6;">
                             <strong style="color:var(--color-gold-accent);"><i class="fas fa-info-circle"></i> Cara Pasang di Firefox:</strong>
@@ -253,14 +286,14 @@
                                 <li>Klik ikon gerigi di kanan atas, pilih <b>Install Add-on From File...</b></li>
                                 <li>Pilih file <code>.xpi</code> yang sudah didonlot lalu klik <b>Add</b>. Selesai!</li>
                             </ol>
-                            <p style="font-size:0.8rem;color:var(--color-light-secondary);margin:0;border-top:1px solid rgba(255,255,255,0.08);padding-top:8px;">
-                                <i class="fas fa-check-circle" style="color:#22c55e;"></i> <em>Format .xpi didukung langsung oleh browser keluarga Firefox untuk instalasi lokal instan.</em>
+                            <p style="font-size:0.78rem;color:var(--color-light-secondary);margin:0;border-top:1px solid rgba(255,255,255,0.08);padding-top:8px;">
+                                <i class="fas fa-check-circle" style="color:#22c55e;"></i> <em>Format .xpi didukung langsung oleh browser keluarga Firefox.</em>
                             </p>
                         </div>
                         <div class="dl-actions">
                             <a href="assets/extension/razdm-extension-firefox.xpi" download="razdm-extension-firefox.xpi"
                                 class="cta-secondary" style="justify-content:center;">
-                                <i class="fas fa-download"></i> Donlot Ekstensi Firefox (.xpi)
+                                <i class="fas fa-download"></i> Donlot File (.xpi)
                             </a>
                             <button class="btn-checksum checksum-copy-btn"
                                 data-hash="19b9807fca408f1798faccbcf44f543cafa70de6b17694188fcdd621496a655a">
@@ -287,6 +320,10 @@
                 <div class="checksum-box">
                     <span>RAZDownloadManager-1.0.0-x64.zip : 1f2d1446dce56d719e99026df98998e0b0f360c3f1eca53c0ca7f7602d2499cb</span>
                     <button class="checksum-copy-btn" data-hash="1f2d1446dce56d719e99026df98998e0b0f360c3f1eca53c0ca7f7602d2499cb">Salin</button>
+                </div>
+                <div class="checksum-box">
+                    <span>razdm-extension-chrome.crx : 938bfe673f6954f557b609eb348d948f86b69bd60480639c3b2f0093197eb079</span>
+                    <button class="checksum-copy-btn" data-hash="938bfe673f6954f557b609eb348d948f86b69bd60480639c3b2f0093197eb079">Salin</button>
                 </div>
                 <div class="checksum-box">
                     <span>razdm-extension-chrome.zip : 06ff0092bf7e512b6280ee82a28e1520d061bc11c77a3670221ba304763acde2</span>

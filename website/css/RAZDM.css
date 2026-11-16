@@ -339,15 +339,15 @@
 
 /* Grid fitur 3x3 (9 kartu unggulan) - presisi di desktop & responsif di mobile */
 .features-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 24px !important;
     margin-top: 36px;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
     .features-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr) !important;
     }
     .features-grid .dl-card:last-child {
         grid-column: span 2;
@@ -356,7 +356,7 @@
 
 @media (max-width: 640px) {
     .features-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
     }
     .features-grid .dl-card:last-child {
         grid-column: span 1;
@@ -646,6 +646,8 @@
 .compare-table td {
     padding: 18px 22px;
     border-bottom: 1px solid var(--color-border);
+    display: table-cell !important; /* Mutlak table-cell agar posisi kolom tabel komparasi tidak bertumpuk */
+    vertical-align: middle;
 }
 
 .compare-table thead th {
@@ -671,17 +673,17 @@
 
 .status-yes {
     color: #4ade80;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
     font-weight: 600;
 }
 
 .status-no {
     color: #f87171;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
+}
+
+.compare-table td i {
+    margin-right: 8px;
+    font-size: 0.95rem;
+    vertical-align: middle;
 }
 
 /* ==========================================================================
