@@ -58,6 +58,19 @@
 
 ---
 
+## 💡 Dari Mister Download Manager Menuju RAZ Download Manager
+
+**RAZ Download Manager** merupakan proyek evolusi dan pengembangan lanjutan (*evolutionary fork*) dari **Mister Download Manager (MDM)**, sebuah proyek pengelola unduhan sumber terbuka berbasis bahasa Rust yang awalnya dirintis oleh **Ahmed Nefzaoui** bersama komunitas pengembang sumber terbuka dunia.
+
+Mister Download Manager membuktikan bahwa pengelola unduhan modern berkinerja tinggi dapat dibangun di atas arsitektur bersih tanpa bergantung pada kode tertutup atau lisensi berbayar. **RAZ Creative Studio** kemudian mengambil tongkat estafet pengembangan ini untuk menyempurnakan dan memodernisasinya ke tingkat yang lebih tinggi:
+
+- 🎨 **Antarmuka Obsidian Dark Modern**: Menghadirkan desain tema gelap obsidian yang presisi khas RAZ Creative Studio dengan sidepanel kategori yang ramping, proporsional, dan bersih tanpa scrollbar vertikal yang mengganggu.
+- 🚀 **Identitas & Branding Eksklusif**: Pembaruan penuh logo resmi, ikon multi-resolusi, dan penyempurnaan UI tombol media extension.
+- 🇮🇩 **Dukungan Penuh Bahasa Indo Oke**: Penyesuaian ratusan frasa ke bahasa gaul modern yang santai, luwes, dan ramah pengguna (*Donlot, Ngedonlot, Donlotan, Terdonlot, Mendonlot, Aplot, Aplotan*).
+- ⚡ **Peningkatan Stabilitas & Ekosistem**: Pembaruan installer Inno Setup mandiri, direktori instalasi independen, dukungan ekstensi peramban terkini, dan optimasi performa engine.
+
+---
+
 ## ⚡ Kenapa Mesti Pindah dari IDM ke RAZ DM?
 
 Tampilan akrab yang udah biasa lo pake di IDM, tapi performanya jauh lebih ngacir, modern, dan **gak bakal nodong duit lisensi**.
@@ -194,9 +207,68 @@ Struktur modular Cargo workspace (Rust 2024 edition):
 
 ---
 
-## 📜 Lisensi & Hak Cipta
+## 🤝 Penghormatan & Terima Kasih Kepada Para Kontributor Mister Download Manager
 
-- Dikembangkan dan dipelihara oleh **RAZ Creative Studio** (Arsitektur Asli oleh Ahmed Nefzaoui).
-- RAZ Download Manager dilisensikan di bawah lisensi terbuka **[GNU General Public License v3.0 (GPL-3.0)](LICENSE)**.
-- Seluruh aset logo dan ikon utama dirancang khusus untuk RAZ Creative Studio.
-- Rincian atribusi lisensi pustaka pihak ketiga dapat dilihat di berkas [ATTRIBUTION.md](ATTRIBUTION.md).
+Terwujudnya **RAZ Download Manager** hari ini berdiri tegak di atas dedikasi, waktu, dan kerja keras luar biasa dari para kreator, pengembang, dan kontributor awal proyek **Mister Download Manager (MDM)**.
+
+Fondasi engine multi-thread yang tangguh, arsitektur *clean-room* yang cerdas, sistem penangkap tautan peramban, serta puluhan lokalisasi bahasa dunia adalah karya berharga yang dibangun bersama oleh komunitas sumber terbuka. Kami di **RAZ Creative Studio** menyampaikan rasa hormat dan terima kasih tak terhingga kepada:
+
+- **Ahmed Nefzaoui** ([@anefzaoui](https://github.com/anefzaoui)) — Arsitek dan pencetus awal proyek Mister Download Manager.
+- Segenap kontributor komunitas yang telah mendedikasikan pull request, pengujian fitur, laporan bug, dan penerjemahan:
+
+<p>
+  <a href="https://github.com/AzureKnigh7" title="AzureKnigh7"><img src="art/contributors/azureknigh7.png" width="46" height="46" alt="AzureKnigh7"></a>
+  <a href="https://github.com/specailm5" title="specailm5"><img src="art/contributors/specailm5.png" width="46" height="46" alt="specailm5"></a>
+  <a href="https://github.com/osunday" title="osunday"><img src="art/contributors/osunday.png" width="46" height="46" alt="osunday"></a>
+  <a href="https://github.com/SwiftyPop" title="SwiftyPop"><img src="art/contributors/swiftypop.png" width="46" height="46" alt="SwiftyPop"></a>
+  <a href="https://github.com/mfat" title="mfat"><img src="art/contributors/mfat.png" width="46" height="46" alt="mfat"></a>
+  <a href="https://github.com/praveenkumar2K06" title="praveenkumar2K06"><img src="art/contributors/praveenkumar2k06.png" width="46" height="46" alt="praveenkumar2K06"></a>
+  <a href="https://github.com/shreeramncity" title="shreeramncity"><img src="art/contributors/shreeramncity.png" width="46" height="46" alt="shreeramncity"></a>
+  <a href="https://github.com/AwesomeIronman" title="AwesomeIronman"><img src="art/contributors/awesomeironman.png" width="46" height="46" alt="AwesomeIronman"></a>
+  <a href="https://github.com/Maldo-0750" title="Maldo-0750"><img src="art/contributors/maldo-0750.png" width="46" height="46" alt="Maldo-0750"></a>
+  <a href="https://github.com/Twig6943" title="Twig6943"><img src="art/contributors/twig6943.png" width="46" height="46" alt="Twig6943"></a>
+  <a href="https://github.com/ADIxxDEV" title="ADIxxDEV"><img src="art/contributors/adixxdev.png" width="46" height="46" alt="ADIxxDEV"></a>
+  <a href="https://github.com/crse" title="crse"><img src="art/contributors/crse.png" width="46" height="46" alt="crse"></a>
+  <a href="https://github.com/dhrubo11" title="dhrubo11"><img src="art/contributors/dhrubo11.png" width="46" height="46" alt="dhrubo11"></a>
+  <a href="https://github.com/Drigva" title="Drigva"><img src="art/contributors/drigva.png" width="46" height="46" alt="Drigva"></a>
+  <a href="https://github.com/EnderDobra" title="EnderDobra"><img src="art/contributors/enderdobra.png" width="46" height="46" alt="EnderDobra"></a>
+  <a href="https://github.com/farjanatech" title="farjanatech"><img src="art/contributors/farjanatech.png" width="46" height="46" alt="farjanatech"></a>
+  <a href="https://github.com/gowzee" title="gowzee"><img src="art/contributors/gowzee.png" width="46" height="46" alt="gowzee"></a>
+  <a href="https://github.com/husnainahmedrana" title="husnainahmedrana"><img src="art/contributors/husnainahmedrana.png" width="46" height="46" alt="husnainahmedrana"></a>
+  <a href="https://github.com/justnxhom" title="justnxhom"><img src="art/contributors/justnxhom.png" width="46" height="46" alt="justnxhom"></a>
+  <a href="https://github.com/mayankmohan1992" title="mayankmohan1992"><img src="art/contributors/mayankmohan1992.png" width="46" height="46" alt="mayankmohan1992"></a>
+  <a href="https://github.com/Mpsp4321" title="Mpsp4321"><img src="art/contributors/mpsp4321.png" width="46" height="46" alt="Mpsp4321"></a>
+  <a href="https://github.com/sadatdaniel" title="sadatdaniel"><img src="art/contributors/sadatdaniel.png" width="46" height="46" alt="sadatdaniel"></a>
+  <a href="https://github.com/SHURmanizer" title="SHURmanizer"><img src="art/contributors/shurmanizer.png" width="46" height="46" alt="SHURmanizer"></a>
+  <a href="https://github.com/Uyaii" title="Uyaii"><img src="art/contributors/uyaii.png" width="46" height="46" alt="Uyaii"></a>
+  <a href="https://github.com/Volcanify" title="Volcanify"><img src="art/contributors/volcanify.png" width="46" height="46" alt="Volcanify"></a>
+  <a href="https://github.com/Zekidt" title="Zekidt"><img src="art/contributors/zekidt.png" width="46" height="46" alt="Zekidt"></a>
+  <a href="https://github.com/Stark-0505" title="Stark-0505"><img src="art/contributors/stark-0505.png" width="46" height="46" alt="Stark-0505"></a>
+  <a href="https://github.com/dr-strange15" title="dr-strange15"><img src="art/contributors/dr-strange15.png" width="46" height="46" alt="dr-strange15"></a>
+</p>
+
+---
+
+## 📜 Lisensi, Hak Cipta & Ketentuan Hukum
+
+Perangkat lunak ini adalah perangkat lunak bebas (*Free & Open Source Software*) yang didistribusikan di bawah ketentuan lisensi **[GNU General Public License v3.0 (GPL-3.0)](LICENSE)** atau versi yang lebih baru atas pilihan pengguna.
+
+### Pemberitahuan Hak Cipta (Copyright Notice):
+- **Basis Kode Asli (Original Codebase & Initial Architecture):**  
+  Copyright © 2026 Ahmed Nefzaoui dan para kontributor Mister Download Manager.
+- **Pengembangan Lanjutan, Modernisasi Desain & Pemeliharaan:**  
+  Copyright © 2026 RAZ Creative Studio ([https://it-raz.com](https://it-raz.com)).
+
+### Hak dan Ketentuan di Bawah GPL-3.0:
+1. **Kebebasan Penuh Pengguna**: Pengguna berhak menjalankan perangkat lunak ini untuk tujuan apa pun, mempelajari cara kerjanya, serta memodifikasi kode sumber sesuai kebutuhan.
+2. **Kewajiban Berbagi Serupa (Copyleft)**: Segala bentuk distribusi ulang baik dalam bentuk biner maupun kode sumber modifikasi wajib tetap menyertakan kode sumber lengkap di bawah lisensi terbuka GNU GPL-3.0 yang sama.
+3. **Tanpa Jaminan (Disclaimer of Warranty)**: Perangkat lunak ini didistribusikan dengan harapan dapat bermanfaat bagi masyarakat luas, namun TANPA JAMINAN APA PUN; bahkan tanpa jaminan tersirat atas KELAYAKAN JUAL atau KESESUAIAN UNTUK TUJUAN TERTENTU.
+
+### Pustaka & Komponen Pihak Ketiga:
+RAZ Download Manager memanfaatkan pustaka-pustaka terbuka berkualitas:
+- Framework UI: [egui](https://github.com/emilk/egui) melalui fork storytold & [storytold/craft-libs](https://github.com/storytold/craft-libs) (MIT / Apache-2.0).
+- BitTorrent Core: [librqbit](https://github.com/ikatson/rqbit) (Apache-2.0).
+- Penanganan Kompresi: [zip](https://github.com/zip-rs/zip2) (MIT) dan utilitas 7-Zip.
+- Video & Galeri Helper: [yt-dlp](https://github.com/yt-dlp/yt-dlp) (Unlicense) dan [gallery-dl](https://github.com/mikf/gallery-dl) (GPL-2.0+).
+- Ikon Bendera: [flag-icons](https://github.com/lipis/flag-icons) (MIT).
+- Rincian atribusi lisensi lengkap seluruh pustaka dapat dilihat di [ATTRIBUTION.md](ATTRIBUTION.md).

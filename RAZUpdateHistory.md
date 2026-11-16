@@ -3,6 +3,35 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-16] — Transparansi Asal-Usul Proyek, Apresiasi Kontributor MDM, Penegasan Lisensi & Pembersihan File Usang
+*Waktu: 16 November 2026 09:55 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Transparansi Asal-Usul & Hubungan dengan Mister Download Manager**:
+   - Menambahkan seksi khusus di `README.md` (*Dari Mister Download Manager Menuju RAZ Download Manager*) dan memperbarui `docs/README.md`.
+   - Menjelaskan secara gamblang bahwa RAZ Download Manager adalah proyek evolusi dan pengembangan lanjutan (*evolutionary fork*) dari **Mister Download Manager (MDM)** yang dirintis oleh Ahmed Nefzaoui bersama komunitas open source.
+   - Merinci penyempurnaan yang dibawa oleh **RAZ Creative Studio**: UI Obsidian Dark modern, sidepanel minimalis tanpa scrollbar vertikal, identitas logo baru, dukungan Bahasa Indo Oke 100%, serta ekosistem installer dan ekstensi mandiri.
+
+2. **Penghormatan & Ucapan Terima Kasih Mendalam kepada Kontributor MDM**:
+   - Menambahkan seksi penghormatan khusus (*Penghormatan & Terima Kasih Kepada Para Kontributor Mister Download Manager*).
+   - Menampilkan deretan foto/avatar kontributor asli Mister Download Manager lengkap dengan tautan profil GitHub mereka sebagai bentuk apresiasi atas pondasi engine, arsitektur, dan terjemahan awal yang mereka bangun.
+
+3. **Penegasan Ketentuan Hak Cipta & Lisensi GPL-3.0**:
+   - Menyampaikan ketentuan hak cipta ganda secara transparan:
+     - *Original Codebase:* Copyright © 2026 Ahmed Nefzaoui & Mister Download Manager contributors.
+     - *Extended Development & UI Modernization:* Copyright © 2026 RAZ Creative Studio.
+   - Menjelaskan kebebasan lisensi **GNU General Public License v3.0 (GPL-3.0)**: kebebasan menjalankan, mengkaji, memodifikasi, dan mendistribusikan ulang (dengan kewajiban copyleft kode sumber terbuka).
+
+4. **Pembersihan Menyeluruh Berkas & Folder Usang (Clean Workspace)**:
+   - Menghapus banner lama `art/Mister Download Manager.png` (~1 MB).
+   - Menghapus berkas ikon lama `crates/app/assets/icons/app/mdm-*` (yang sudah digantikan oleh `razdm-*`).
+   - Menghapus dokumen usang di root: `CLAUDE.md`, `PRODUCT.md`, `DESIGN.md`, `ROADMAP.md`.
+   - Menghapus direktori alat bantu lama: `.claude/` dan `.impeccable/`.
+   - Menghapus puluhan tangkapan layar antarmuka lama (.webp dan .svg) di `docs/images/` yang tidak lagi sesuai dengan tampilan baru aplikasi.
+   - Memperbarui tautan gambar di `docs/README.md` agar menggunakan tangkapan layar antarmuka terbaru `images/main-raz.png`.
+
+---
+
 ## [2026-11-16] — Revamp Total README.md: Gaya RAZ Creative Studio, Bahasa Indo Oke & Aset Baru
 *Waktu: 16 November 2026 09:45 WIB*
 

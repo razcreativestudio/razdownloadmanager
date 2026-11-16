@@ -1,15 +1,13 @@
-﻿# RAZ Download Manager — documentation
+﻿# RAZ Download Manager — Dokumentasi Resmi
 
-RAZ Download Manager (MDM) is a free download manager for Windows and Linux (and, still experimental, macOS). It is laid out the way Internet Download Manager users expect: a toolbar, categories on the left, one list of downloads and a browser extension that hands downloads to it.
+**RAZ Download Manager** adalah aplikasi pengelola donlotan gratis berkecepatan tinggi untuk Windows, Linux, dan macOS. Aplikasi ini merupakan pengembangan lanjutan (*evolutionary fork*) dari **Mister Download Manager (MDM)** yang dirancang dengan tata letak akrab yang disukai para pengguna pengelola unduhan: bilah alat cepat (*toolbar*), panel kategori sisi samping yang ringkas, daftar donlotan utama, dan ekstensi peramban otomatis.
 
-These pages explain each part of the program. The tutorials walk through the things people do most, one task each.
+![Tampilan Utama RAZ Download Manager](images/main-raz.png)
 
-![The main window](images/main-light.webp)
+## Mulai dari Sini
 
-## Start here
-
-- **[Getting started](getting-started.md)** — install MDM (setup, portable or zip on Windows; the packages on Linux; the .dmg on a Mac), choose a language and find your way around the main window.
-- **[Your first download](guide-first-download.md)** — a two-minute walk-through from copied link to opened file.
+- **[Panduan Memulai](getting-started.md)** — Pasang RAZ Download Manager (paket installer, portable, atau zip di Windows; paket rilis di Linux; berkas .dmg di Mac), pilih bahasa tampilan, dan kenali antarmuka aplikasi.
+- **[Donlotan Pertama Lo](guide-first-download.md)** — Panduan kilat dua menit dari menyalin tautan hingga berkas selesai terdonlot.
 
 ## Downloading
 
