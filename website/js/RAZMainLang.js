@@ -4,8 +4,8 @@
  * File: website/js/RAZMainLang.js
  * Deskripsi: Modul lokalisasi bilingual (Indonesia & Inggris) untuk situs resmi
  *            RAZ Download Manager (dm.it-raz.com).
- * Terakhir Diupdate: 2026-11-16 21:15 WIB
- * Versi: 1.0.0 (RAZ DM Modern Tech Release - Added Updates Dialog Screens)
+ * Terakhir Diupdate: 2026-11-16 21:30 WIB
+ * Versi: 1.0.0 (RAZ DM Modern Tech Release - Added Browser Integration Screens)
  * Standar: RAZ Enterprise Language Protocol (Gaya Santai, Presisi, Ramah Awam)
  * ============================================================================
  */
@@ -120,6 +120,10 @@ const RAZMainLang = {
             'tour-tab-updates-desc': 'Verifikasi otomatis rilis terbaru dan opsi pengecekan update saat startup (Obsidian Dark).',
             'tour-tab-updates-light-title': 'Cek Pembaruan (Mode Terang)',
             'tour-tab-updates-light-desc': 'Tampilan dialog cek pembaruan tema terang Windows dengan tombol amber presisi.',
+            'tour-tab-integration-title': 'Uji Integrasi Browser (Mode Gelap)',
+            'tour-tab-integration-desc': 'Pengujian koneksi ekstensi browser, native messaging host, dan tangkapan link otomatis (Obsidian Dark).',
+            'tour-tab-integration-light-title': 'Uji Integrasi Browser (Mode Terang)',
+            'tour-tab-integration-light-desc': 'Tampilan panel integrasi peramban tema terang Windows dengan tombol uji dan opsi tombol pintas.',
 
             // Core Features
             'feat-label': 'Fitur Unggulan',
@@ -340,6 +344,10 @@ const RAZMainLang = {
             'tour-tab-updates-desc': 'Automatic version verification and check-on-startup settings (Obsidian Dark).',
             'tour-tab-updates-light-title': 'Check for Updates (Light Mode)',
             'tour-tab-updates-light-desc': 'Windows light mode update check dialog with crisp contrast and warm amber button.',
+            'tour-tab-integration-title': 'Browser Integration Test (Dark Mode)',
+            'tour-tab-integration-desc': 'Extension connection testing, native messaging host check, and auto-download capture (Obsidian Dark).',
+            'tour-tab-integration-light-title': 'Browser Integration Test (Light Mode)',
+            'tour-tab-integration-light-desc': 'Windows light mode browser integration settings with connection test button and hotkey config.',
 
             // Core Features
             'feat-label': 'Core Features',

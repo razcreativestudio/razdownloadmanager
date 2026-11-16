@@ -3,6 +3,28 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-16] — Pembaruan Tangkapan Layar Uji Integrasi Ekstensi Browser (Dark & Light Mode) di Website dan README.md
+*Waktu: 16 November 2026 21:30 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Pembaruan Tangkapan Layar Jendela "Uji Integrasi Ekstensi Browser" (Browser Extension Integration & Test)**:
+   - Memproses tangkapan layar panel integrasi browser versi terbaru untuk tema Obsidian Dark dan Windows Light dengan rincian opsi integrasi tingkat lanjut, daftar peramban aktif (Chrome, Brave, Floorp, Safari), tombol "Uji integrasi browser...", dan kustomisasi tombol pintasan:
+     - `docs/images/test-integration-dark.png` & `docs/images/test-integration.png` &rarr; Panel Uji Integrasi tema Obsidian Dark untuk `README.md`.
+     - `docs/images/test-integration-light.png` &rarr; Panel Uji Integrasi tema Windows Light untuk `README.md`.
+     - `website/assets/screens/test-integration-dark.webp` & `test-integration-dark.png` &rarr; Aset resolusi tinggi di website.
+     - `website/assets/screens/test-integration-light.webp` & `test-integration-light.png` &rarr; Aset resolusi tinggi di website.
+     - `website/assets/help/test-integration-dark.webp` & `test-integration.webp` &rarr; Aset Pusat Bantuan website & dokumentasi offline.
+
+2. **Pembaruan Tabel Antarmuka `README.md`**:
+   - Menambahkan baris perbandingan simetris pada tabel pratinjau: `🧩 Uji Integrasi Ekstensi Browser (Mode Gelap)` vs `🧩 Uji Integrasi Ekstensi Browser (Mode Terang)`.
+
+3. **Pembaruan Website & Pusat Bantuan (`website/help.html`, `website/index.html`, `website/js/RAZMainLang.js`)**:
+   - `website/help.html`: Menambahkan visualisasi ganda responsive grid (Dark & Light) pada Bagian 2 (Langkah 2) untuk panduan pemasangan dan uji koneksi ekstensi browser.
+   - `website/index.html`: Menyediakan tab tur interaktif `Uji Integrasi Browser (Mode Gelap)` dan `Uji Integrasi Browser (Mode Terang)`.
+   - `website/js/RAZMainLang.js`: Menambahkan dukungan lokalisasi bilingual (Indonesia & Inggris) untuk tab tur integrasi browser.
+
+---
+
 ## [2026-11-16] — Pembaruan Tangkapan Layar Jendela Cek Pembaruan (Dark & Light Mode) di Website dan README.md
 *Waktu: 16 November 2026 21:15 WIB*
 
