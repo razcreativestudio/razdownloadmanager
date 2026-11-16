@@ -4,8 +4,8 @@
  * File: website/js/RAZMainLang.js
  * Deskripsi: Modul lokalisasi bilingual (Indonesia & Inggris) untuk situs resmi
  *            RAZ Download Manager (dm.it-raz.com).
- * Terakhir Diupdate: 2026-11-16 21:38 WIB
- * Versi: 1.0.0 (RAZ DM Modern Tech Release - Added Save To Settings Screens)
+ * Terakhir Diupdate: 2026-11-16 22:40 WIB
+ * Versi: 1.0.0 (RAZ DM Modern Tech Release - Added Tour Masonry Gallery Keys)
  * Standar: RAZ Enterprise Language Protocol (Gaya Santai, Presisi, Ramah Awam)
  * ============================================================================
  */
@@ -72,6 +72,19 @@ const RAZMainLang = {
             'tour-title-1': 'Desain Klasik yang Lo Kenal,',
             'tour-title-2': 'Engine Modern yang Jauh Lebih Kencang',
             'tour-desc': 'Layout praktis dan familiar seperti download manager yang lo pake selama bertahun-tahun, tapi dengan teknologi modern dan fitur yang belum pernah ada sebelumnya.',
+            'tour-filter-all': 'Semua Tampilan',
+            'tour-filter-dark': 'Mode Gelap',
+            'tour-filter-light': 'Mode Terang',
+            'tour-filter-main': 'Jendela Utama',
+            'tour-filter-download': 'Proses Unduhan',
+            'tour-filter-settings': 'Konfigurasi & Folder',
+            'tour-filter-media': 'Media & Torrent',
+            'tour-filter-tools': 'Alat & Bantuan',
+            'tour-toggle-all': 'Buka Semua Detail',
+            'tour-toggle-all-collapse': 'Tutup Semua Detail',
+            'tour-show-all-btn': 'Tampilkan Semua 28 Antarmuka',
+            'tour-hide-btn': 'Ciutkan Tampilan Antarmuka',
+            'tour-btn-view': 'Lihat Penuh',
             'tour-tab-main-title': 'Layar Utama (Mode Gelap)',
             'tour-tab-main-desc': 'Daftar donlotan bersih, kategorisasi otomatis (Dokumen, Video, Program, Musik), dan toolbar emas responsif.',
             'tour-tab-main-light-title': 'Layar Utama (Mode Terang)',
@@ -300,6 +313,19 @@ const RAZMainLang = {
             'tour-title-1': 'The Classic Layout You Know,',
             'tour-title-2': 'A Modern Engine That Flies',
             'tour-desc': 'The familiar layout you have trusted for years, rebuilt with cutting-edge engineering and modern capabilities.',
+            'tour-filter-all': 'All Views',
+            'tour-filter-dark': 'Dark Mode',
+            'tour-filter-light': 'Light Mode',
+            'tour-filter-main': 'Main Window',
+            'tour-filter-download': 'Download Flow',
+            'tour-filter-settings': 'Settings & Folders',
+            'tour-filter-media': 'Media & Torrent',
+            'tour-filter-tools': 'Tools & Help',
+            'tour-toggle-all': 'Expand All Details',
+            'tour-toggle-all-collapse': 'Collapse All Details',
+            'tour-show-all-btn': 'Show All 28 Interfaces',
+            'tour-hide-btn': 'Collapse Screenshots',
+            'tour-btn-view': 'Full Preview',
             'tour-tab-main-title': 'Main Window (Dark Mode)',
             'tour-tab-main-desc': 'Clean download manager list with automatic categorization (Documents, Videos, Programs, Music) and responsive toolbar.',
             'tour-tab-main-light-title': 'Main Window (Light Mode)',

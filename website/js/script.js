@@ -4,9 +4,10 @@
  * File: website/js/script.js
  * Deskripsi: Skrip interaktif mencakup Splash Screen, Theme Switcher,
  *            Interactive Canvas Particle Network, Live Speed Benchmark Simulator,
- *            App Tour Tab Switcher, FAQ Accordion, dan Custom Modals.
- * Terakhir Diupdate: 2026-11-16 22:25 WIB
- * Versi: 1.0.1 (RAZ DM Accordion Multi-Group Fix)
+ *            App Tour Masonry Accordion Grid & Fullscreen Lightbox Modal,
+ *            FAQ Accordion, dan Custom Modals.
+ * Terakhir Diupdate: 2026-11-16 23:05 WIB
+ * Versi: 1.1.0 (RAZ DM Masonry Cards & Lightbox Modal Release)
  * Standar: RAZ Enterprise Architecture Standard
  * ============================================================================
  */
@@ -312,28 +313,231 @@
     }
 
     /**
-     * Inisialisasi App Tour / Screenshot Showcase Switcher
+     * Inisialisasi App Tour / Screenshot Showcase (Masonry Accordion Grid & Fullscreen Lightbox)
      */
     function initAppTour() {
-        const tourItems = document.querySelectorAll('.tour-tab-item');
-        const tourImage = document.getElementById('tour-preview-img');
-        if (!tourItems.length || !tourImage) return;
+        const grid = document.getElementById('tour-masonry-grid');
+        if (!grid) return;
 
-        tourItems.forEach(item => {
-            item.addEventListener('click', () => {
-                tourItems.forEach(i => i.classList.remove('active'));
-                item.classList.add('active');
+        const cards = Array.from(grid.querySelectorAll('.tour-masonry-card'));
+        const filterBtns = document.querySelectorAll('.tour-filter-btn');
+        const moreBtn = document.getElementById('tour-more-btn');
+        const moreContainer = document.getElementById('tour-more-container');
+        const toggleAllBtn = document.getElementById('tour-toggle-all-cards');
 
-                const newSrc = item.getAttribute('data-img');
-                if (newSrc) {
-                    tourImage.style.opacity = '0';
-                    setTimeout(() => {
-                        tourImage.src = newSrc;
-                        tourImage.style.opacity = '1';
-                    }, 200);
+        // Lightbox Elements
+        const lightbox = document.getElementById('tour-lightbox-modal');
+        const lightboxImg = document.getElementById('tour-lightbox-img');
+        const lightboxTitle = document.getElementById('tour-lightbox-title');
+        const lightboxDesc = document.getElementById('tour-lightbox-desc');
+        const lightboxClose = document.getElementById('tour-lightbox-close');
+        const lightboxPrev = document.getElementById('tour-lightbox-prev');
+        const lightboxNext = document.getElementById('tour-lightbox-next');
+
+        let currentFilter = 'all';
+        let isExpandedAll = false;
+        let currentLightboxIndex = 0;
+        let visibleCards = [];
+
+        // Refresh kartu aktif berdasarkan filter dan mode progressive disclosure
+        function refreshVisibleCards() {
+            cards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                const theme = card.getAttribute('data-theme');
+                let matches = false;
+
+                if (currentFilter === 'all') {
+                    matches = true;
+                } else if (currentFilter === 'theme-dark' || currentFilter === 'theme-light') {
+                    matches = (theme === currentFilter);
+                } else if (currentFilter.startsWith('cat-')) {
+                    matches = (category === currentFilter);
+                }
+
+                if (matches) {
+                    card.classList.remove('hidden-by-filter');
+                } else {
+                    card.classList.add('hidden-by-filter');
                 }
             });
+
+            const matchingCards = cards.filter(c => !c.classList.contains('hidden-by-filter'));
+
+            if (currentFilter === 'all') {
+                if (moreContainer) moreContainer.style.display = 'block';
+                matchingCards.forEach((card, idx) => {
+                    if (!isExpandedAll && idx >= 6) {
+                        card.classList.add('hidden');
+                    } else {
+                        card.classList.remove('hidden');
+                    }
+                });
+            } else {
+                if (moreContainer) moreContainer.style.display = 'none';
+                matchingCards.forEach(card => card.classList.remove('hidden'));
+            }
+
+            visibleCards = cards.filter(c => !c.classList.contains('hidden') && !c.classList.contains('hidden-by-filter'));
+        }
+
+        // Event listener untuk tombol filter tema & kategori
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentFilter = btn.getAttribute('data-filter') || 'all';
+                refreshVisibleCards();
+            });
         });
+
+        // Event listener untuk tombol progressive disclosure (Lihat Semua / Ciutkan)
+        if (moreBtn) {
+            moreBtn.addEventListener('click', () => {
+                isExpandedAll = !isExpandedAll;
+                const textSpan = moreBtn.querySelector('.tour-more-btn-text');
+                const icon = moreBtn.querySelector('i');
+                const currentLang = typeof RAZMainLang !== 'undefined' ? RAZMainLang.getCurrentLang() : 'id';
+
+                if (isExpandedAll) {
+                    if (textSpan) {
+                        textSpan.textContent = currentLang === 'id' ? 'Ciutkan Tampilan Antarmuka' : 'Collapse Interface View';
+                        textSpan.setAttribute('data-lang-key', 'tour-hide-btn');
+                    }
+                    if (icon) icon.className = 'fas fa-chevron-up';
+                } else {
+                    if (textSpan) {
+                        textSpan.textContent = currentLang === 'id' ? 'Tampilkan Semua 28 Antarmuka' : 'Show All 28 Interfaces';
+                        textSpan.setAttribute('data-lang-key', 'tour-show-all-btn');
+                    }
+                    if (icon) icon.className = 'fas fa-chevron-down';
+
+                    const tourSection = document.getElementById('tour');
+                    if (tourSection) {
+                        tourSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+                refreshVisibleCards();
+            });
+        }
+
+        // Accordion per-kartu dan trigger modal Lightbox
+        cards.forEach(card => {
+            const header = card.querySelector('.tour-card-header');
+            const toggleBtn = card.querySelector('.tour-card-toggle');
+
+            const toggleCard = (e) => {
+                e.stopPropagation();
+                card.classList.toggle('expanded');
+            };
+
+            if (header) header.addEventListener('click', toggleCard);
+            if (toggleBtn) toggleBtn.addEventListener('click', toggleCard);
+
+            const preview = card.querySelector('.tour-card-preview');
+            const viewBtn = card.querySelector('.tour-view-btn');
+
+            const openFromCard = (e) => {
+                e.stopPropagation();
+                const idx = visibleCards.indexOf(card);
+                if (idx !== -1) {
+                    openLightbox(idx);
+                }
+            };
+
+            if (preview) preview.addEventListener('click', openFromCard);
+            if (viewBtn) viewBtn.addEventListener('click', openFromCard);
+        });
+
+        // Buka / Tutup semua keterangan detail sekaligus
+        if (toggleAllBtn) {
+            toggleAllBtn.addEventListener('click', () => {
+                const areAnyCollapsed = visibleCards.some(c => !c.classList.contains('expanded'));
+                visibleCards.forEach(c => {
+                    if (areAnyCollapsed) {
+                        c.classList.add('expanded');
+                    } else {
+                        c.classList.remove('expanded');
+                    }
+                });
+
+                const textSpan = toggleAllBtn.querySelector('span');
+                const icon = toggleAllBtn.querySelector('i');
+                const currentLang = typeof RAZMainLang !== 'undefined' ? RAZMainLang.getCurrentLang() : 'id';
+
+                if (areAnyCollapsed) {
+                    if (textSpan) {
+                        textSpan.textContent = currentLang === 'id' ? 'Tutup Semua Detail' : 'Collapse All Details';
+                        textSpan.setAttribute('data-lang-key', 'tour-toggle-all-collapse');
+                    }
+                    if (icon) icon.className = 'fas fa-angle-double-up';
+                } else {
+                    if (textSpan) {
+                        textSpan.textContent = currentLang === 'id' ? 'Buka Semua Detail' : 'Expand All Details';
+                        textSpan.setAttribute('data-lang-key', 'tour-toggle-all');
+                    }
+                    if (icon) icon.className = 'fas fa-angle-double-down';
+                }
+            });
+        }
+
+        // Lightbox Functions
+        function openLightbox(index) {
+            if (!lightbox || !visibleCards.length) return;
+            currentLightboxIndex = (index + visibleCards.length) % visibleCards.length;
+            const targetCard = visibleCards[currentLightboxIndex];
+            if (!targetCard) return;
+
+            const preview = targetCard.querySelector('.tour-card-preview');
+            const imgSrc = preview ? preview.getAttribute('data-img') : '';
+            const titleEl = targetCard.querySelector('.tour-card-header h4');
+            const descEl = targetCard.querySelector('.tour-card-body p');
+
+            if (lightboxImg && imgSrc) {
+                lightboxImg.style.opacity = '0';
+                lightboxImg.src = imgSrc;
+                lightboxImg.onload = () => { lightboxImg.style.opacity = '1'; };
+            }
+            if (lightboxTitle && titleEl) lightboxTitle.textContent = titleEl.textContent;
+            if (lightboxDesc && descEl) lightboxDesc.textContent = descEl.textContent;
+
+            lightbox.classList.add('active');
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            if (!lightbox) return;
+            lightbox.classList.remove('active');
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        function navLightbox(direction) {
+            if (!visibleCards.length) return;
+            currentLightboxIndex = (currentLightboxIndex + direction + visibleCards.length) % visibleCards.length;
+            openLightbox(currentLightboxIndex);
+        }
+
+        if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+        if (lightboxPrev) lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); navLightbox(-1); });
+        if (lightboxNext) lightboxNext.addEventListener('click', (e) => { e.stopPropagation(); navLightbox(1); });
+
+        if (lightbox) {
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+        }
+
+        // Keyboard Shortcut untuk Lightbox
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox || !lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            else if (e.key === 'ArrowLeft') navLightbox(-1);
+            else if (e.key === 'ArrowRight') navLightbox(1);
+        });
+
+        // Inisialisasi awal
+        refreshVisibleCards();
     }
 
     /**

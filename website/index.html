@@ -310,126 +310,722 @@
                 teknologi modern dan fitur yang belum pernah ada sebelumnya.
             </p>
 
-            <div class="app-tour-grid">
-                <div class="tour-tab-list">
-                    <div class="tour-tab-item active" data-img="assets/screens/main-dark.webp">
-                        <h4 data-lang-key="tour-tab-main-title">Layar Utama (Mode Gelap)</h4>
+            <!-- Filter & View Controls Bar -->
+            <div class="tour-controls-bar">
+                <div class="tour-filters" id="tour-filters">
+                    <button class="tour-filter-btn active" data-filter="all">
+                        <i class="fas fa-border-all"></i> <span data-lang-key="tour-filter-all">Semua Tampilan</span> <span class="tour-filter-count">(28)</span>
+                    </button>
+                    <button class="tour-filter-btn" data-filter="theme-dark">
+                        <i class="fas fa-moon"></i> <span data-lang-key="tour-filter-dark">Mode Gelap</span> <span class="tour-filter-count">(15)</span>
+                    </button>
+                    <button class="tour-filter-btn" data-filter="theme-light">
+                        <i class="fas fa-sun"></i> <span data-lang-key="tour-filter-light">Mode Terang</span> <span class="tour-filter-count">(13)</span>
+                    </button>
+                    <button class="tour-filter-btn" data-filter="cat-main">
+                        <i class="fas fa-desktop"></i> <span data-lang-key="tour-filter-main">Jendela Utama</span>
+                    </button>
+                    <button class="tour-filter-btn" data-filter="cat-download">
+                        <i class="fas fa-download"></i> <span data-lang-key="tour-filter-download">Proses Unduhan</span>
+                    </button>
+                    <button class="tour-filter-btn" data-filter="cat-settings">
+                        <i class="fas fa-sliders-h"></i> <span data-lang-key="tour-filter-settings">Konfigurasi & Folder</span>
+                    </button>
+                    <button class="tour-filter-btn" data-filter="cat-media">
+                        <i class="fas fa-film"></i> <span data-lang-key="tour-filter-media">Media & Torrent</span>
+                    </button>
+                    <button class="tour-filter-btn" data-filter="cat-tools">
+                        <i class="fas fa-tools"></i> <span data-lang-key="tour-filter-tools">Alat & Bantuan</span>
+                    </button>
+                </div>
+                <div class="tour-actions">
+                    <button id="tour-toggle-all-cards" class="tour-action-btn" title="Buka/Tutup Semua Detail">
+                        <i class="fas fa-angle-double-down"></i> <span data-lang-key="tour-toggle-all">Buka Semua Detail</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Masonry Cards Grid -->
+            <div class="tour-masonry-grid" id="tour-masonry-grid">
+                <!-- 1. Layar Utama (Dark) -->
+                <div class="tour-masonry-card" data-category="cat-main" data-theme="theme-dark">
+                    <div class="tour-card-preview" data-img="assets/screens/main-dark.webp" data-title-key="tour-tab-main-title" data-desc-key="tour-tab-main-desc">
+                        <img src="assets/screens/main-dark.webp" alt="Layar Utama Mode Gelap" loading="lazy">
+                        <span class="tour-card-theme-badge theme-dark"><i class="fas fa-moon"></i> Gelap</span>
+                        <div class="tour-card-overlay">
+                            <span class="tour-overlay-zoom"><i class="fas fa-search-plus"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></span>
+                        </div>
+                    </div>
+                    <div class="tour-card-header">
+                        <div class="tour-card-title-group">
+                            <i class="fas fa-desktop tour-card-icon"></i>
+                            <h4 data-lang-key="tour-tab-main-title">Layar Utama (Mode Gelap)</h4>
+                        </div>
+                        <button class="tour-card-toggle" aria-label="Toggle Details"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="tour-card-body">
                         <p data-lang-key="tour-tab-main-desc">Daftar donlotan bersih, kategorisasi otomatis (Dokumen, Video, Program, Musik), dan toolbar emas responsif.</p>
-                    </div>
-                    <div class="tour-tab-item" data-img="assets/screens/main-light.webp">
-                        <h4 data-lang-key="tour-tab-main-light-title">Layar Utama (Mode Terang)</h4>
-                        <p data-lang-key="tour-tab-main-light-desc">Tampilan antarmuka mode terang Windows dengan kontras presisi tinggi, pill hangat, dan teks tajam.</p>
-                    </div>
-                    <div class="tour-tab-item" data-img="assets/screens/catch-dark.webp">
-                        <h4 data-lang-key="tour-tab-catch-title">Konfirmasi Donlotan (Mode Gelap)</h4>
-                        <p data-lang-key="tour-tab-catch-desc">Pop-up otomatis dari browser untuk memilih folder simpan, kategori, dan mulai donlotan (Obsidian Dark).</p>
-                    </div>
-                    <div class="tour-tab-item" data-img="assets/screens/catch-light.webp">
-                        <h4 data-lang-key="tour-tab-catch-light-title">Konfirmasi Donlotan (Mode Terang)</h4>
-                        <p data-lang-key="tour-tab-catch-light-desc">Tampilan pop-up tangkapan link bertema terang Windows dengan tombol amber dan pemilih kategori.</p>
-                    </div>
-                    <div class="tour-tab-item" data-img="assets/screens/progress-dark.webp">
-                        <h4 data-lang-key="tour-tab-progress-title">Proses Donlot (Mode Gelap)</h4>
-                        <p data-lang-key="tour-tab-progress-desc">Pantau kecepatan, bendera server, dan segmen multi-thread secara real-time (Tema Obsidian Gelap).</p>
-                    </div>
-                    <div class="tour-tab-item" data-img="assets/screens/progress-light.webp">
-                        <h4 data-lang-key="tour-tab-progress-light-title">Proses Donlot (Mode Terang)</h4>
-                        <p data-lang-key="tour-tab-progress-light-desc">Tampilan dialog progres tema terang Windows dengan kontras tajam dan pemantauan thread live.</p>
-                    </div>
-                    <div class="tour-tab-item" data-img="assets/screens/completed-dark.webp">
-                        <h4 data-lang-key="tour-tab-completed-title">Donlotan Selesai (Mode Gelap)</h4>
-                        <p data-lang-key="tour-tab-completed-desc">Notifikasi instan dengan opsi langsung buka file, buka folder tujuan, atau buka dengan aplikasi (Obsidian Dark).</p>
-                    </div>
-                    <div class="tour-tab-item" data-img="assets/screens/completed-light.webp">
-                        <h4 data-lang-key="tour-tab-completed-light-title">Donlotan Selesai (Mode Terang)</h4>
-                        <p data-lang-key="tour-tab-completed-light-desc">Tampilan dialog donlotan selesai tema terang Windows dengan tombol aksi amber presisi.</p>
-                    </div>
-                    <div class="tour-tab-item" data-img="assets/screens/options-dark.webp">
-                        <h4 data-lang-key="tour-tab-options-title">Konfigurasi (Mode Gelap)</h4>
-                        <p data-lang-key="tour-tab-options-desc">Integrasi peramban otomatis, manajemen koneksi, proxy, hingga opsi perilaku sistem semau lo.</p>
-                    </div>
-                    <div class="tour-tab-item" data-img="assets/screens/options-light.webp">
-                        <h4 data-lang-key="tour-tab-options-light-title">Konfigurasi (Mode Terang)</h4>
-                        <p data-lang-key="tour-tab-options-light-desc">Tampilan panel pengaturan tema terang dengan tombol aksen dan navigasi tab yang bersih.</p>
-                    </div>
-                    <div class="tour-tab-item" data-img="assets/screens/scheduler-dark.webp">
-                        <h4 data-lang-key="tour-tab-scheduler-title">Penjadwal (Mode Gelap)</h4>
-                        <p data-lang-key="tour-tab-scheduler-desc">Otomasi download malam hari, manajemen antrean tugas, dan auto-shutdown PC (Obsidian Dark).</p>
-                    </div>
-                    <div class="tour-tab-item" data-img="assets/screens/scheduler-light.webp">
-                        <h4 data-lang-key="tour-tab-scheduler-light-title">Penjadwal (Mode Terang)</h4>
-                        <p data-lang-key="tour-tab-scheduler-light-desc">Tampilan jendela jadwal download tema terang Windows dengan kontrol waktu dan tombol amber.</p>
-                    </div>
-                    <div class="tour-tab-item" data-img="assets/screens/language-dark.webp">
-                        <h4 data-lang-key="tour-tab-language-title">Pilihan Bahasa (Mode Gelap)</h4>
-                        <p data-lang-key="tour-tab-language-desc">Dukungan 86+ bahasa dunia termasuk Bahasa Indo Oke yang santai dan ramah pengguna (Obsidian Dark).</p>
-                    </div>
-                    <div class="tour-tab-item" data-img="assets/screens/language-light.webp">
-                        <h4 data-lang-key="tour-tab-language-light-title">Pilihan Bahasa (Mode Terang)</h4>
-                        <p data-lang-key="tour-tab-language-light-desc">Tampilan pemilihan bahasa tema terang Windows dengan pencarian cepat dan tombol amber.</p>
-                    </div>
-                    <div class="tour-tab-item" data-img="assets/screens/add-torrent-dark.webp">
-                        <h4 data-lang-key="tour-tab-torrents-title">BitTorrent (Mode Gelap)</h4>
-                        <p data-lang-key="tour-tab-torrents-desc">Buka magnet link dan file .torrent langsung di daftar download tanpa butuh software torrent terpisah (Obsidian Gold).</p>
-                    </div>
-                    <div class="tour-tab-item" data-img="assets/screens/add-torrent-light.webp">
-                        <h4 data-lang-key="tour-tab-torrents-light-title">BitTorrent (Mode Terang)</h4>
-                        <p data-lang-key="tour-tab-torrents-light-desc">Dukungan penuh tema terang Windows dengan kontras tajam, tombol aksen amber, dan visualisasi file yang bersih.</p>
-                    </div>
-                    <div class="tour-tab-item" data-img="assets/screens/torrent-progress-dark.webp">
-                        <h4 data-lang-key="tour-tab-torrent-pieces-title">Visualisasi Potongan Torrent</h4>
-                        <p data-lang-key="tour-tab-torrent-pieces-desc">Pantau blok file yang sedang diunduh secara grafis real-time, peer aktif, dan sisa waktu.</p>
-                    </div>
-                    <div class="tour-tab-item" data-img="assets/screens/video-button.webp">
-                        <h4 data-lang-key="tour-tab-video-button-title">Tombol Unduh Video Browser</h4>
-                        <p data-lang-key="tour-tab-video-button-desc">Tombol melayang 1-klik dengan logo resmi RAZ yang muncul otomatis di pojok video player browser.</p>
-                    </div>
-                    <div class="tour-tab-item" data-img="assets/screens/video-dark.webp">
-                        <h4 data-lang-key="tour-tab-video-title">Donlot Video Web (Mode Gelap)</h4>
-                        <p data-lang-key="tour-tab-video-desc">Download video sampai 4K dan ekstrak audio MP3 dari YouTube, TikTok, dll (Tema Obsidian Gelap).</p>
-                    </div>
-                    <div class="tour-tab-item" data-img="assets/screens/video-light.webp">
-                        <h4 data-lang-key="tour-tab-video-light-title">Donlot Video Web (Mode Terang)</h4>
-                        <p data-lang-key="tour-tab-video-light-desc">Dukungan penuh tema terang Windows dengan kontras tajam, tombol aksen amber, dan pemilih resolusi.</p>
-                    </div>
-                    <div class="tour-tab-item" data-img="assets/screens/about-dark.webp">
-                        <h4 data-lang-key="tour-tab-about-title">Tentang RAZ DM (Mode Gelap)</h4>
-                        <p data-lang-key="tour-tab-about-desc">Informasi lisensi GPL-3, versi biner, dan atribusi komponen open-source (Obsidian Dark).</p>
-                    </div>
-                    <div class="tour-tab-item" data-img="assets/screens/about-light.webp">
-                        <h4 data-lang-key="tour-tab-about-light-title">Tentang RAZ DM (Mode Terang)</h4>
-                        <p data-lang-key="tour-tab-about-light-desc">Tampilan jendela tentang aplikasi tema terang Windows dengan kontras tajam dan tombol amber.</p>
-                    </div>
-                    <div class="tour-tab-item" data-img="assets/screens/updates-dark.webp">
-                        <h4 data-lang-key="tour-tab-updates-title">Cek Pembaruan (Mode Gelap)</h4>
-                        <p data-lang-key="tour-tab-updates-desc">Verifikasi otomatis rilis terbaru dan opsi pengecekan update saat startup (Obsidian Dark).</p>
-                    </div>
-                    <div class="tour-tab-item" data-img="assets/screens/updates-light.webp">
-                        <h4 data-lang-key="tour-tab-updates-light-title">Cek Pembaruan (Mode Terang)</h4>
-                        <p data-lang-key="tour-tab-updates-light-desc">Tampilan dialog cek pembaruan tema terang Windows dengan tombol amber presisi.</p>
-                    </div>
-                    <div class="tour-tab-item" data-img="assets/screens/test-integration-dark.webp">
-                        <h4 data-lang-key="tour-tab-integration-title">Uji Integrasi Browser (Mode Gelap)</h4>
-                        <p data-lang-key="tour-tab-integration-desc">Pengujian koneksi ekstensi browser, native messaging host, dan tangkapan link otomatis (Obsidian Dark).</p>
-                    </div>
-                    <div class="tour-tab-item" data-img="assets/screens/test-integration-light.webp">
-                        <h4 data-lang-key="tour-tab-integration-light-title">Uji Integrasi Browser (Mode Terang)</h4>
-                        <p data-lang-key="tour-tab-integration-light-desc">Tampilan panel integrasi peramban tema terang Windows dengan tombol uji dan opsi tombol pintas.</p>
-                    </div>
-                    <div class="tour-tab-item" data-img="assets/screens/save-to-dark.webp">
-                        <h4 data-lang-key="tour-tab-saveto-title">Folder Simpan Ke (Mode Gelap)</h4>
-                        <p data-lang-key="tour-tab-saveto-desc">Kategorisasi otomatis per tipe file, direktori unduhan per kategori, dan arsitektur tanpa direktori sementara (Obsidian Dark).</p>
-                    </div>
-                    <div class="tour-tab-item" data-img="assets/screens/save-to-light.webp">
-                        <h4 data-lang-key="tour-tab-saveto-light-title">Folder Simpan Ke (Mode Terang)</h4>
-                        <p data-lang-key="tour-tab-saveto-light-desc">Tampilan panel pengaturan folder tema terang Windows dengan kontrol jalur folder dan tombol aksi amber presisi.</p>
+                        <div class="tour-card-footer">
+                            <button class="tour-view-btn"><i class="fas fa-expand-arrows-alt"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></button>
+                        </div>
                     </div>
                 </div>
 
-                <div class="tour-viewport">
-                    <img id="tour-preview-img" src="assets/screens/main-dark.webp" alt="Tampilan Antarmuka RAZ Download Manager"
-                        loading="lazy">
+                <!-- 2. Layar Utama (Light) -->
+                <div class="tour-masonry-card" data-category="cat-main" data-theme="theme-light">
+                    <div class="tour-card-preview" data-img="assets/screens/main-light.webp" data-title-key="tour-tab-main-light-title" data-desc-key="tour-tab-main-light-desc">
+                        <img src="assets/screens/main-light.webp" alt="Layar Utama Mode Terang" loading="lazy">
+                        <span class="tour-card-theme-badge theme-light"><i class="fas fa-sun"></i> Terang</span>
+                        <div class="tour-card-overlay">
+                            <span class="tour-overlay-zoom"><i class="fas fa-search-plus"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></span>
+                        </div>
+                    </div>
+                    <div class="tour-card-header">
+                        <div class="tour-card-title-group">
+                            <i class="fas fa-desktop tour-card-icon"></i>
+                            <h4 data-lang-key="tour-tab-main-light-title">Layar Utama (Mode Terang)</h4>
+                        </div>
+                        <button class="tour-card-toggle" aria-label="Toggle Details"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="tour-card-body">
+                        <p data-lang-key="tour-tab-main-light-desc">Tampilan antarmuka mode terang Windows dengan kontras presisi tinggi, pill hangat, dan teks tajam.</p>
+                        <div class="tour-card-footer">
+                            <button class="tour-view-btn"><i class="fas fa-expand-arrows-alt"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></button>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- 3. Konfirmasi Donlotan (Dark) -->
+                <div class="tour-masonry-card" data-category="cat-download" data-theme="theme-dark">
+                    <div class="tour-card-preview" data-img="assets/screens/catch-dark.webp" data-title-key="tour-tab-catch-title" data-desc-key="tour-tab-catch-desc">
+                        <img src="assets/screens/catch-dark.webp" alt="Konfirmasi Donlotan Mode Gelap" loading="lazy">
+                        <span class="tour-card-theme-badge theme-dark"><i class="fas fa-moon"></i> Gelap</span>
+                        <div class="tour-card-overlay">
+                            <span class="tour-overlay-zoom"><i class="fas fa-search-plus"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></span>
+                        </div>
+                    </div>
+                    <div class="tour-card-header">
+                        <div class="tour-card-title-group">
+                            <i class="fas fa-arrow-circle-down tour-card-icon"></i>
+                            <h4 data-lang-key="tour-tab-catch-title">Konfirmasi Donlotan (Mode Gelap)</h4>
+                        </div>
+                        <button class="tour-card-toggle" aria-label="Toggle Details"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="tour-card-body">
+                        <p data-lang-key="tour-tab-catch-desc">Pop-up otomatis dari browser untuk memilih folder simpan, kategori, dan mulai donlotan (Obsidian Dark).</p>
+                        <div class="tour-card-footer">
+                            <button class="tour-view-btn"><i class="fas fa-expand-arrows-alt"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Konfirmasi Donlotan (Light) -->
+                <div class="tour-masonry-card" data-category="cat-download" data-theme="theme-light">
+                    <div class="tour-card-preview" data-img="assets/screens/catch-light.webp" data-title-key="tour-tab-catch-light-title" data-desc-key="tour-tab-catch-light-desc">
+                        <img src="assets/screens/catch-light.webp" alt="Konfirmasi Donlotan Mode Terang" loading="lazy">
+                        <span class="tour-card-theme-badge theme-light"><i class="fas fa-sun"></i> Terang</span>
+                        <div class="tour-card-overlay">
+                            <span class="tour-overlay-zoom"><i class="fas fa-search-plus"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></span>
+                        </div>
+                    </div>
+                    <div class="tour-card-header">
+                        <div class="tour-card-title-group">
+                            <i class="fas fa-arrow-circle-down tour-card-icon"></i>
+                            <h4 data-lang-key="tour-tab-catch-light-title">Konfirmasi Donlotan (Mode Terang)</h4>
+                        </div>
+                        <button class="tour-card-toggle" aria-label="Toggle Details"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="tour-card-body">
+                        <p data-lang-key="tour-tab-catch-light-desc">Tampilan pop-up tangkapan link bertema terang Windows dengan tombol amber dan pemilih kategori.</p>
+                        <div class="tour-card-footer">
+                            <button class="tour-view-btn"><i class="fas fa-expand-arrows-alt"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Proses Donlot (Dark) -->
+                <div class="tour-masonry-card" data-category="cat-download" data-theme="theme-dark">
+                    <div class="tour-card-preview" data-img="assets/screens/progress-dark.webp" data-title-key="tour-tab-progress-title" data-desc-key="tour-tab-progress-desc">
+                        <img src="assets/screens/progress-dark.webp" alt="Proses Donlot Mode Gelap" loading="lazy">
+                        <span class="tour-card-theme-badge theme-dark"><i class="fas fa-moon"></i> Gelap</span>
+                        <div class="tour-card-overlay">
+                            <span class="tour-overlay-zoom"><i class="fas fa-search-plus"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></span>
+                        </div>
+                    </div>
+                    <div class="tour-card-header">
+                        <div class="tour-card-title-group">
+                            <i class="fas fa-tasks tour-card-icon"></i>
+                            <h4 data-lang-key="tour-tab-progress-title">Proses Donlot (Mode Gelap)</h4>
+                        </div>
+                        <button class="tour-card-toggle" aria-label="Toggle Details"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="tour-card-body">
+                        <p data-lang-key="tour-tab-progress-desc">Pantau kecepatan, bendera server, dan segmen multi-thread secara real-time (Tema Obsidian Gelap).</p>
+                        <div class="tour-card-footer">
+                            <button class="tour-view-btn"><i class="fas fa-expand-arrows-alt"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Proses Donlot (Light) -->
+                <div class="tour-masonry-card" data-category="cat-download" data-theme="theme-light">
+                    <div class="tour-card-preview" data-img="assets/screens/progress-light.webp" data-title-key="tour-tab-progress-light-title" data-desc-key="tour-tab-progress-light-desc">
+                        <img src="assets/screens/progress-light.webp" alt="Proses Donlot Mode Terang" loading="lazy">
+                        <span class="tour-card-theme-badge theme-light"><i class="fas fa-sun"></i> Terang</span>
+                        <div class="tour-card-overlay">
+                            <span class="tour-overlay-zoom"><i class="fas fa-search-plus"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></span>
+                        </div>
+                    </div>
+                    <div class="tour-card-header">
+                        <div class="tour-card-title-group">
+                            <i class="fas fa-tasks tour-card-icon"></i>
+                            <h4 data-lang-key="tour-tab-progress-light-title">Proses Donlot (Mode Terang)</h4>
+                        </div>
+                        <button class="tour-card-toggle" aria-label="Toggle Details"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="tour-card-body">
+                        <p data-lang-key="tour-tab-progress-light-desc">Tampilan dialog progres tema terang Windows dengan kontras tajam dan pemantauan thread live.</p>
+                        <div class="tour-card-footer">
+                            <button class="tour-view-btn"><i class="fas fa-expand-arrows-alt"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Donlotan Selesai (Dark) -->
+                <div class="tour-masonry-card" data-category="cat-download" data-theme="theme-dark">
+                    <div class="tour-card-preview" data-img="assets/screens/completed-dark.webp" data-title-key="tour-tab-completed-title" data-desc-key="tour-tab-completed-desc">
+                        <img src="assets/screens/completed-dark.webp" alt="Donlotan Selesai Mode Gelap" loading="lazy">
+                        <span class="tour-card-theme-badge theme-dark"><i class="fas fa-moon"></i> Gelap</span>
+                        <div class="tour-card-overlay">
+                            <span class="tour-overlay-zoom"><i class="fas fa-search-plus"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></span>
+                        </div>
+                    </div>
+                    <div class="tour-card-header">
+                        <div class="tour-card-title-group">
+                            <i class="fas fa-check-circle tour-card-icon"></i>
+                            <h4 data-lang-key="tour-tab-completed-title">Donlotan Selesai (Mode Gelap)</h4>
+                        </div>
+                        <button class="tour-card-toggle" aria-label="Toggle Details"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="tour-card-body">
+                        <p data-lang-key="tour-tab-completed-desc">Notifikasi instan dengan opsi langsung buka file, buka folder tujuan, atau buka dengan aplikasi (Obsidian Dark).</p>
+                        <div class="tour-card-footer">
+                            <button class="tour-view-btn"><i class="fas fa-expand-arrows-alt"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. Donlotan Selesai (Light) -->
+                <div class="tour-masonry-card" data-category="cat-download" data-theme="theme-light">
+                    <div class="tour-card-preview" data-img="assets/screens/completed-light.webp" data-title-key="tour-tab-completed-light-title" data-desc-key="tour-tab-completed-light-desc">
+                        <img src="assets/screens/completed-light.webp" alt="Donlotan Selesai Mode Terang" loading="lazy">
+                        <span class="tour-card-theme-badge theme-light"><i class="fas fa-sun"></i> Terang</span>
+                        <div class="tour-card-overlay">
+                            <span class="tour-overlay-zoom"><i class="fas fa-search-plus"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></span>
+                        </div>
+                    </div>
+                    <div class="tour-card-header">
+                        <div class="tour-card-title-group">
+                            <i class="fas fa-check-circle tour-card-icon"></i>
+                            <h4 data-lang-key="tour-tab-completed-light-title">Donlotan Selesai (Mode Terang)</h4>
+                        </div>
+                        <button class="tour-card-toggle" aria-label="Toggle Details"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="tour-card-body">
+                        <p data-lang-key="tour-tab-completed-light-desc">Tampilan dialog donlotan selesai tema terang Windows dengan tombol aksi amber presisi.</p>
+                        <div class="tour-card-footer">
+                            <button class="tour-view-btn"><i class="fas fa-expand-arrows-alt"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9. Konfigurasi (Dark) -->
+                <div class="tour-masonry-card" data-category="cat-settings" data-theme="theme-dark">
+                    <div class="tour-card-preview" data-img="assets/screens/options-dark.webp" data-title-key="tour-tab-options-title" data-desc-key="tour-tab-options-desc">
+                        <img src="assets/screens/options-dark.webp" alt="Konfigurasi Mode Gelap" loading="lazy">
+                        <span class="tour-card-theme-badge theme-dark"><i class="fas fa-moon"></i> Gelap</span>
+                        <div class="tour-card-overlay">
+                            <span class="tour-overlay-zoom"><i class="fas fa-search-plus"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></span>
+                        </div>
+                    </div>
+                    <div class="tour-card-header">
+                        <div class="tour-card-title-group">
+                            <i class="fas fa-sliders-h tour-card-icon"></i>
+                            <h4 data-lang-key="tour-tab-options-title">Konfigurasi (Mode Gelap)</h4>
+                        </div>
+                        <button class="tour-card-toggle" aria-label="Toggle Details"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="tour-card-body">
+                        <p data-lang-key="tour-tab-options-desc">Integrasi peramban otomatis, manajemen koneksi, proxy, hingga opsi perilaku sistem semau lo.</p>
+                        <div class="tour-card-footer">
+                            <button class="tour-view-btn"><i class="fas fa-expand-arrows-alt"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10. Konfigurasi (Light) -->
+                <div class="tour-masonry-card" data-category="cat-settings" data-theme="theme-light">
+                    <div class="tour-card-preview" data-img="assets/screens/options-light.webp" data-title-key="tour-tab-options-light-title" data-desc-key="tour-tab-options-light-desc">
+                        <img src="assets/screens/options-light.webp" alt="Konfigurasi Mode Terang" loading="lazy">
+                        <span class="tour-card-theme-badge theme-light"><i class="fas fa-sun"></i> Terang</span>
+                        <div class="tour-card-overlay">
+                            <span class="tour-overlay-zoom"><i class="fas fa-search-plus"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></span>
+                        </div>
+                    </div>
+                    <div class="tour-card-header">
+                        <div class="tour-card-title-group">
+                            <i class="fas fa-sliders-h tour-card-icon"></i>
+                            <h4 data-lang-key="tour-tab-options-light-title">Konfigurasi (Mode Terang)</h4>
+                        </div>
+                        <button class="tour-card-toggle" aria-label="Toggle Details"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="tour-card-body">
+                        <p data-lang-key="tour-tab-options-light-desc">Tampilan panel pengaturan tema terang dengan tombol aksen dan navigasi tab yang bersih.</p>
+                        <div class="tour-card-footer">
+                            <button class="tour-view-btn"><i class="fas fa-expand-arrows-alt"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 11. Folder Simpan Ke (Dark) -->
+                <div class="tour-masonry-card" data-category="cat-settings" data-theme="theme-dark">
+                    <div class="tour-card-preview" data-img="assets/screens/save-to-dark.webp" data-title-key="tour-tab-saveto-title" data-desc-key="tour-tab-saveto-desc">
+                        <img src="assets/screens/save-to-dark.webp" alt="Folder Simpan Ke Mode Gelap" loading="lazy">
+                        <span class="tour-card-theme-badge theme-dark"><i class="fas fa-moon"></i> Gelap</span>
+                        <div class="tour-card-overlay">
+                            <span class="tour-overlay-zoom"><i class="fas fa-search-plus"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></span>
+                        </div>
+                    </div>
+                    <div class="tour-card-header">
+                        <div class="tour-card-title-group">
+                            <i class="fas fa-folder-open tour-card-icon"></i>
+                            <h4 data-lang-key="tour-tab-saveto-title">Folder Simpan Ke (Mode Gelap)</h4>
+                        </div>
+                        <button class="tour-card-toggle" aria-label="Toggle Details"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="tour-card-body">
+                        <p data-lang-key="tour-tab-saveto-desc">Kategorisasi otomatis per tipe file, direktori unduhan per kategori, dan arsitektur tanpa direktori sementara (Obsidian Dark).</p>
+                        <div class="tour-card-footer">
+                            <button class="tour-view-btn"><i class="fas fa-expand-arrows-alt"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 12. Folder Simpan Ke (Light) -->
+                <div class="tour-masonry-card" data-category="cat-settings" data-theme="theme-light">
+                    <div class="tour-card-preview" data-img="assets/screens/save-to-light.webp" data-title-key="tour-tab-saveto-light-title" data-desc-key="tour-tab-saveto-light-desc">
+                        <img src="assets/screens/save-to-light.webp" alt="Folder Simpan Ke Mode Terang" loading="lazy">
+                        <span class="tour-card-theme-badge theme-light"><i class="fas fa-sun"></i> Terang</span>
+                        <div class="tour-card-overlay">
+                            <span class="tour-overlay-zoom"><i class="fas fa-search-plus"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></span>
+                        </div>
+                    </div>
+                    <div class="tour-card-header">
+                        <div class="tour-card-title-group">
+                            <i class="fas fa-folder-open tour-card-icon"></i>
+                            <h4 data-lang-key="tour-tab-saveto-light-title">Folder Simpan Ke (Mode Terang)</h4>
+                        </div>
+                        <button class="tour-card-toggle" aria-label="Toggle Details"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="tour-card-body">
+                        <p data-lang-key="tour-tab-saveto-light-desc">Tampilan panel pengaturan folder tema terang Windows dengan kontrol jalur folder dan tombol aksi amber presisi.</p>
+                        <div class="tour-card-footer">
+                            <button class="tour-view-btn"><i class="fas fa-expand-arrows-alt"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 13. Uji Integrasi Browser (Dark) -->
+                <div class="tour-masonry-card" data-category="cat-settings" data-theme="theme-dark">
+                    <div class="tour-card-preview" data-img="assets/screens/test-integration-dark.webp" data-title-key="tour-tab-integration-title" data-desc-key="tour-tab-integration-desc">
+                        <img src="assets/screens/test-integration-dark.webp" alt="Uji Integrasi Browser Mode Gelap" loading="lazy">
+                        <span class="tour-card-theme-badge theme-dark"><i class="fas fa-moon"></i> Gelap</span>
+                        <div class="tour-card-overlay">
+                            <span class="tour-overlay-zoom"><i class="fas fa-search-plus"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></span>
+                        </div>
+                    </div>
+                    <div class="tour-card-header">
+                        <div class="tour-card-title-group">
+                            <i class="fas fa-plug tour-card-icon"></i>
+                            <h4 data-lang-key="tour-tab-integration-title">Uji Integrasi Browser (Mode Gelap)</h4>
+                        </div>
+                        <button class="tour-card-toggle" aria-label="Toggle Details"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="tour-card-body">
+                        <p data-lang-key="tour-tab-integration-desc">Pengujian koneksi ekstensi browser, native messaging host, dan tangkapan link otomatis (Obsidian Dark).</p>
+                        <div class="tour-card-footer">
+                            <button class="tour-view-btn"><i class="fas fa-expand-arrows-alt"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 14. Uji Integrasi Browser (Light) -->
+                <div class="tour-masonry-card" data-category="cat-settings" data-theme="theme-light">
+                    <div class="tour-card-preview" data-img="assets/screens/test-integration-light.webp" data-title-key="tour-tab-integration-light-title" data-desc-key="tour-tab-integration-light-desc">
+                        <img src="assets/screens/test-integration-light.webp" alt="Uji Integrasi Browser Mode Terang" loading="lazy">
+                        <span class="tour-card-theme-badge theme-light"><i class="fas fa-sun"></i> Terang</span>
+                        <div class="tour-card-overlay">
+                            <span class="tour-overlay-zoom"><i class="fas fa-search-plus"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></span>
+                        </div>
+                    </div>
+                    <div class="tour-card-header">
+                        <div class="tour-card-title-group">
+                            <i class="fas fa-plug tour-card-icon"></i>
+                            <h4 data-lang-key="tour-tab-integration-light-title">Uji Integrasi Browser (Mode Terang)</h4>
+                        </div>
+                        <button class="tour-card-toggle" aria-label="Toggle Details"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="tour-card-body">
+                        <p data-lang-key="tour-tab-integration-light-desc">Tampilan panel integrasi peramban tema terang Windows dengan tombol uji dan opsi tombol pintas.</p>
+                        <div class="tour-card-footer">
+                            <button class="tour-view-btn"><i class="fas fa-expand-arrows-alt"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 15. Penjadwal (Dark) -->
+                <div class="tour-masonry-card" data-category="cat-tools" data-theme="theme-dark">
+                    <div class="tour-card-preview" data-img="assets/screens/scheduler-dark.webp" data-title-key="tour-tab-scheduler-title" data-desc-key="tour-tab-scheduler-desc">
+                        <img src="assets/screens/scheduler-dark.webp" alt="Penjadwal Mode Gelap" loading="lazy">
+                        <span class="tour-card-theme-badge theme-dark"><i class="fas fa-moon"></i> Gelap</span>
+                        <div class="tour-card-overlay">
+                            <span class="tour-overlay-zoom"><i class="fas fa-search-plus"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></span>
+                        </div>
+                    </div>
+                    <div class="tour-card-header">
+                        <div class="tour-card-title-group">
+                            <i class="fas fa-clock tour-card-icon"></i>
+                            <h4 data-lang-key="tour-tab-scheduler-title">Penjadwal (Mode Gelap)</h4>
+                        </div>
+                        <button class="tour-card-toggle" aria-label="Toggle Details"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="tour-card-body">
+                        <p data-lang-key="tour-tab-scheduler-desc">Otomasi download malam hari, manajemen antrean tugas, dan auto-shutdown PC (Obsidian Dark).</p>
+                        <div class="tour-card-footer">
+                            <button class="tour-view-btn"><i class="fas fa-expand-arrows-alt"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 16. Penjadwal (Light) -->
+                <div class="tour-masonry-card" data-category="cat-tools" data-theme="theme-light">
+                    <div class="tour-card-preview" data-img="assets/screens/scheduler-light.webp" data-title-key="tour-tab-scheduler-light-title" data-desc-key="tour-tab-scheduler-light-desc">
+                        <img src="assets/screens/scheduler-light.webp" alt="Penjadwal Mode Terang" loading="lazy">
+                        <span class="tour-card-theme-badge theme-light"><i class="fas fa-sun"></i> Terang</span>
+                        <div class="tour-card-overlay">
+                            <span class="tour-overlay-zoom"><i class="fas fa-search-plus"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></span>
+                        </div>
+                    </div>
+                    <div class="tour-card-header">
+                        <div class="tour-card-title-group">
+                            <i class="fas fa-clock tour-card-icon"></i>
+                            <h4 data-lang-key="tour-tab-scheduler-light-title">Penjadwal (Mode Terang)</h4>
+                        </div>
+                        <button class="tour-card-toggle" aria-label="Toggle Details"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="tour-card-body">
+                        <p data-lang-key="tour-tab-scheduler-light-desc">Tampilan jendela jadwal download tema terang Windows dengan kontrol waktu dan tombol amber.</p>
+                        <div class="tour-card-footer">
+                            <button class="tour-view-btn"><i class="fas fa-expand-arrows-alt"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 17. Pilihan Bahasa (Dark) -->
+                <div class="tour-masonry-card" data-category="cat-tools" data-theme="theme-dark">
+                    <div class="tour-card-preview" data-img="assets/screens/language-dark.webp" data-title-key="tour-tab-language-title" data-desc-key="tour-tab-language-desc">
+                        <img src="assets/screens/language-dark.webp" alt="Pilihan Bahasa Mode Gelap" loading="lazy">
+                        <span class="tour-card-theme-badge theme-dark"><i class="fas fa-moon"></i> Gelap</span>
+                        <div class="tour-card-overlay">
+                            <span class="tour-overlay-zoom"><i class="fas fa-search-plus"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></span>
+                        </div>
+                    </div>
+                    <div class="tour-card-header">
+                        <div class="tour-card-title-group">
+                            <i class="fas fa-language tour-card-icon"></i>
+                            <h4 data-lang-key="tour-tab-language-title">Pilihan Bahasa (Mode Gelap)</h4>
+                        </div>
+                        <button class="tour-card-toggle" aria-label="Toggle Details"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="tour-card-body">
+                        <p data-lang-key="tour-tab-language-desc">Dukungan 86+ bahasa dunia termasuk Bahasa Indo Oke yang santai dan ramah pengguna (Obsidian Dark).</p>
+                        <div class="tour-card-footer">
+                            <button class="tour-view-btn"><i class="fas fa-expand-arrows-alt"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 18. Pilihan Bahasa (Light) -->
+                <div class="tour-masonry-card" data-category="cat-tools" data-theme="theme-light">
+                    <div class="tour-card-preview" data-img="assets/screens/language-light.webp" data-title-key="tour-tab-language-light-title" data-desc-key="tour-tab-language-light-desc">
+                        <img src="assets/screens/language-light.webp" alt="Pilihan Bahasa Mode Terang" loading="lazy">
+                        <span class="tour-card-theme-badge theme-light"><i class="fas fa-sun"></i> Terang</span>
+                        <div class="tour-card-overlay">
+                            <span class="tour-overlay-zoom"><i class="fas fa-search-plus"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></span>
+                        </div>
+                    </div>
+                    <div class="tour-card-header">
+                        <div class="tour-card-title-group">
+                            <i class="fas fa-language tour-card-icon"></i>
+                            <h4 data-lang-key="tour-tab-language-light-title">Pilihan Bahasa (Mode Terang)</h4>
+                        </div>
+                        <button class="tour-card-toggle" aria-label="Toggle Details"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="tour-card-body">
+                        <p data-lang-key="tour-tab-language-light-desc">Tampilan pemilihan bahasa tema terang Windows dengan pencarian cepat dan tombol amber.</p>
+                        <div class="tour-card-footer">
+                            <button class="tour-view-btn"><i class="fas fa-expand-arrows-alt"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 19. BitTorrent (Dark) -->
+                <div class="tour-masonry-card" data-category="cat-media" data-theme="theme-dark">
+                    <div class="tour-card-preview" data-img="assets/screens/add-torrent-dark.webp" data-title-key="tour-tab-torrents-title" data-desc-key="tour-tab-torrents-desc">
+                        <img src="assets/screens/add-torrent-dark.webp" alt="BitTorrent Mode Gelap" loading="lazy">
+                        <span class="tour-card-theme-badge theme-dark"><i class="fas fa-moon"></i> Gelap</span>
+                        <div class="tour-card-overlay">
+                            <span class="tour-overlay-zoom"><i class="fas fa-search-plus"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></span>
+                        </div>
+                    </div>
+                    <div class="tour-card-header">
+                        <div class="tour-card-title-group">
+                            <i class="fas fa-magnet tour-card-icon"></i>
+                            <h4 data-lang-key="tour-tab-torrents-title">BitTorrent (Mode Gelap)</h4>
+                        </div>
+                        <button class="tour-card-toggle" aria-label="Toggle Details"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="tour-card-body">
+                        <p data-lang-key="tour-tab-torrents-desc">Buka magnet link dan file .torrent langsung di daftar download tanpa software terpisah (Obsidian Gold).</p>
+                        <div class="tour-card-footer">
+                            <button class="tour-view-btn"><i class="fas fa-expand-arrows-alt"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 20. BitTorrent (Light) -->
+                <div class="tour-masonry-card" data-category="cat-media" data-theme="theme-light">
+                    <div class="tour-card-preview" data-img="assets/screens/add-torrent-light.webp" data-title-key="tour-tab-torrents-light-title" data-desc-key="tour-tab-torrents-light-desc">
+                        <img src="assets/screens/add-torrent-light.webp" alt="BitTorrent Mode Terang" loading="lazy">
+                        <span class="tour-card-theme-badge theme-light"><i class="fas fa-sun"></i> Terang</span>
+                        <div class="tour-card-overlay">
+                            <span class="tour-overlay-zoom"><i class="fas fa-search-plus"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></span>
+                        </div>
+                    </div>
+                    <div class="tour-card-header">
+                        <div class="tour-card-title-group">
+                            <i class="fas fa-magnet tour-card-icon"></i>
+                            <h4 data-lang-key="tour-tab-torrents-light-title">BitTorrent (Mode Terang)</h4>
+                        </div>
+                        <button class="tour-card-toggle" aria-label="Toggle Details"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="tour-card-body">
+                        <p data-lang-key="tour-tab-torrents-light-desc">Dukungan penuh tema terang Windows dengan kontras tajam, tombol aksen amber, dan visualisasi file yang bersih.</p>
+                        <div class="tour-card-footer">
+                            <button class="tour-view-btn"><i class="fas fa-expand-arrows-alt"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 21. Visualisasi Potongan Torrent -->
+                <div class="tour-masonry-card" data-category="cat-media" data-theme="theme-dark">
+                    <div class="tour-card-preview" data-img="assets/screens/torrent-progress-dark.webp" data-title-key="tour-tab-torrent-pieces-title" data-desc-key="tour-tab-torrent-pieces-desc">
+                        <img src="assets/screens/torrent-progress-dark.webp" alt="Visualisasi Potongan Torrent" loading="lazy">
+                        <span class="tour-card-theme-badge theme-dark"><i class="fas fa-moon"></i> Gelap</span>
+                        <div class="tour-card-overlay">
+                            <span class="tour-overlay-zoom"><i class="fas fa-search-plus"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></span>
+                        </div>
+                    </div>
+                    <div class="tour-card-header">
+                        <div class="tour-card-title-group">
+                            <i class="fas fa-th-large tour-card-icon"></i>
+                            <h4 data-lang-key="tour-tab-torrent-pieces-title">Visualisasi Potongan Torrent</h4>
+                        </div>
+                        <button class="tour-card-toggle" aria-label="Toggle Details"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="tour-card-body">
+                        <p data-lang-key="tour-tab-torrent-pieces-desc">Pantau blok file yang sedang diunduh secara grafis real-time, peer aktif, dan laju transfer.</p>
+                        <div class="tour-card-footer">
+                            <button class="tour-view-btn"><i class="fas fa-expand-arrows-alt"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 22. Tombol Unduh Video Browser -->
+                <div class="tour-masonry-card" data-category="cat-media" data-theme="theme-dark">
+                    <div class="tour-card-preview" data-img="assets/screens/video-button.webp" data-title-key="tour-tab-video-button-title" data-desc-key="tour-tab-video-button-desc">
+                        <img src="assets/screens/video-button.webp" alt="Tombol Unduh Video Browser" loading="lazy">
+                        <span class="tour-card-theme-badge theme-dark"><i class="fas fa-moon"></i> Gelap</span>
+                        <div class="tour-card-overlay">
+                            <span class="tour-overlay-zoom"><i class="fas fa-search-plus"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></span>
+                        </div>
+                    </div>
+                    <div class="tour-card-header">
+                        <div class="tour-card-title-group">
+                            <i class="fas fa-play-circle tour-card-icon"></i>
+                            <h4 data-lang-key="tour-tab-video-button-title">Tombol Unduh Video Browser</h4>
+                        </div>
+                        <button class="tour-card-toggle" aria-label="Toggle Details"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="tour-card-body">
+                        <p data-lang-key="tour-tab-video-button-desc">Tombol melayang 1-klik dengan logo resmi RAZ yang muncul otomatis di pojok video player browser.</p>
+                        <div class="tour-card-footer">
+                            <button class="tour-view-btn"><i class="fas fa-expand-arrows-alt"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 23. Donlot Video Web (Dark) -->
+                <div class="tour-masonry-card" data-category="cat-media" data-theme="theme-dark">
+                    <div class="tour-card-preview" data-img="assets/screens/video-dark.webp" data-title-key="tour-tab-video-title" data-desc-key="tour-tab-video-desc">
+                        <img src="assets/screens/video-dark.webp" alt="Donlot Video Web Mode Gelap" loading="lazy">
+                        <span class="tour-card-theme-badge theme-dark"><i class="fas fa-moon"></i> Gelap</span>
+                        <div class="tour-card-overlay">
+                            <span class="tour-overlay-zoom"><i class="fas fa-search-plus"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></span>
+                        </div>
+                    </div>
+                    <div class="tour-card-header">
+                        <div class="tour-card-title-group">
+                            <i class="fas fa-video tour-card-icon"></i>
+                            <h4 data-lang-key="tour-tab-video-title">Donlot Video Web (Mode Gelap)</h4>
+                        </div>
+                        <button class="tour-card-toggle" aria-label="Toggle Details"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="tour-card-body">
+                        <p data-lang-key="tour-tab-video-desc">Download video sampai 4K dan ekstrak audio MP3 dari YouTube, TikTok, dll (Tema Obsidian Gelap).</p>
+                        <div class="tour-card-footer">
+                            <button class="tour-view-btn"><i class="fas fa-expand-arrows-alt"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 24. Donlot Video Web (Light) -->
+                <div class="tour-masonry-card" data-category="cat-media" data-theme="theme-light">
+                    <div class="tour-card-preview" data-img="assets/screens/video-light.webp" data-title-key="tour-tab-video-light-title" data-desc-key="tour-tab-video-light-desc">
+                        <img src="assets/screens/video-light.webp" alt="Donlot Video Web Mode Terang" loading="lazy">
+                        <span class="tour-card-theme-badge theme-light"><i class="fas fa-sun"></i> Terang</span>
+                        <div class="tour-card-overlay">
+                            <span class="tour-overlay-zoom"><i class="fas fa-search-plus"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></span>
+                        </div>
+                    </div>
+                    <div class="tour-card-header">
+                        <div class="tour-card-title-group">
+                            <i class="fas fa-video tour-card-icon"></i>
+                            <h4 data-lang-key="tour-tab-video-light-title">Donlot Video Web (Mode Terang)</h4>
+                        </div>
+                        <button class="tour-card-toggle" aria-label="Toggle Details"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="tour-card-body">
+                        <p data-lang-key="tour-tab-video-light-desc">Dukungan penuh tema terang Windows dengan kontras tajam, tombol aksen amber, dan pemilih resolusi.</p>
+                        <div class="tour-card-footer">
+                            <button class="tour-view-btn"><i class="fas fa-expand-arrows-alt"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 25. Tentang RAZ DM (Dark) -->
+                <div class="tour-masonry-card" data-category="cat-tools" data-theme="theme-dark">
+                    <div class="tour-card-preview" data-img="assets/screens/about-dark.webp" data-title-key="tour-tab-about-title" data-desc-key="tour-tab-about-desc">
+                        <img src="assets/screens/about-dark.webp" alt="Tentang RAZ DM Mode Gelap" loading="lazy">
+                        <span class="tour-card-theme-badge theme-dark"><i class="fas fa-moon"></i> Gelap</span>
+                        <div class="tour-card-overlay">
+                            <span class="tour-overlay-zoom"><i class="fas fa-search-plus"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></span>
+                        </div>
+                    </div>
+                    <div class="tour-card-header">
+                        <div class="tour-card-title-group">
+                            <i class="fas fa-info-circle tour-card-icon"></i>
+                            <h4 data-lang-key="tour-tab-about-title">Tentang RAZ DM (Mode Gelap)</h4>
+                        </div>
+                        <button class="tour-card-toggle" aria-label="Toggle Details"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="tour-card-body">
+                        <p data-lang-key="tour-tab-about-desc">Informasi lisensi GPL-3, versi biner, dan atribusi komponen open-source (Obsidian Dark).</p>
+                        <div class="tour-card-footer">
+                            <button class="tour-view-btn"><i class="fas fa-expand-arrows-alt"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 26. Tentang RAZ DM (Light) -->
+                <div class="tour-masonry-card" data-category="cat-tools" data-theme="theme-light">
+                    <div class="tour-card-preview" data-img="assets/screens/about-light.webp" data-title-key="tour-tab-about-light-title" data-desc-key="tour-tab-about-light-desc">
+                        <img src="assets/screens/about-light.webp" alt="Tentang RAZ DM Mode Terang" loading="lazy">
+                        <span class="tour-card-theme-badge theme-light"><i class="fas fa-sun"></i> Terang</span>
+                        <div class="tour-card-overlay">
+                            <span class="tour-overlay-zoom"><i class="fas fa-search-plus"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></span>
+                        </div>
+                    </div>
+                    <div class="tour-card-header">
+                        <div class="tour-card-title-group">
+                            <i class="fas fa-info-circle tour-card-icon"></i>
+                            <h4 data-lang-key="tour-tab-about-light-title">Tentang RAZ DM (Mode Terang)</h4>
+                        </div>
+                        <button class="tour-card-toggle" aria-label="Toggle Details"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="tour-card-body">
+                        <p data-lang-key="tour-tab-about-light-desc">Tampilan jendela tentang aplikasi tema terang Windows dengan kontras tajam dan tombol amber.</p>
+                        <div class="tour-card-footer">
+                            <button class="tour-view-btn"><i class="fas fa-expand-arrows-alt"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 27. Cek Pembaruan (Dark) -->
+                <div class="tour-masonry-card" data-category="cat-tools" data-theme="theme-dark">
+                    <div class="tour-card-preview" data-img="assets/screens/updates-dark.webp" data-title-key="tour-tab-updates-title" data-desc-key="tour-tab-updates-desc">
+                        <img src="assets/screens/updates-dark.webp" alt="Cek Pembaruan Mode Gelap" loading="lazy">
+                        <span class="tour-card-theme-badge theme-dark"><i class="fas fa-moon"></i> Gelap</span>
+                        <div class="tour-card-overlay">
+                            <span class="tour-overlay-zoom"><i class="fas fa-search-plus"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></span>
+                        </div>
+                    </div>
+                    <div class="tour-card-header">
+                        <div class="tour-card-title-group">
+                            <i class="fas fa-sync-alt tour-card-icon"></i>
+                            <h4 data-lang-key="tour-tab-updates-title">Cek Pembaruan (Mode Gelap)</h4>
+                        </div>
+                        <button class="tour-card-toggle" aria-label="Toggle Details"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="tour-card-body">
+                        <p data-lang-key="tour-tab-updates-desc">Verifikasi otomatis rilis terbaru dan opsi pengecekan update saat startup (Obsidian Dark).</p>
+                        <div class="tour-card-footer">
+                            <button class="tour-view-btn"><i class="fas fa-expand-arrows-alt"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 28. Cek Pembaruan (Light) -->
+                <div class="tour-masonry-card" data-category="cat-tools" data-theme="theme-light">
+                    <div class="tour-card-preview" data-img="assets/screens/updates-light.webp" data-title-key="tour-tab-updates-light-title" data-desc-key="tour-tab-updates-light-desc">
+                        <img src="assets/screens/updates-light.webp" alt="Cek Pembaruan Mode Terang" loading="lazy">
+                        <span class="tour-card-theme-badge theme-light"><i class="fas fa-sun"></i> Terang</span>
+                        <div class="tour-card-overlay">
+                            <span class="tour-overlay-zoom"><i class="fas fa-search-plus"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></span>
+                        </div>
+                    </div>
+                    <div class="tour-card-header">
+                        <div class="tour-card-title-group">
+                            <i class="fas fa-sync-alt tour-card-icon"></i>
+                            <h4 data-lang-key="tour-tab-updates-light-title">Cek Pembaruan (Mode Terang)</h4>
+                        </div>
+                        <button class="tour-card-toggle" aria-label="Toggle Details"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="tour-card-body">
+                        <p data-lang-key="tour-tab-updates-light-desc">Tampilan dialog cek pembaruan tema terang Windows dengan tombol amber presisi.</p>
+                        <div class="tour-card-footer">
+                            <button class="tour-view-btn"><i class="fas fa-expand-arrows-alt"></i> <span data-lang-key="tour-btn-view">Lihat Penuh</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progressive Disclosure Button -->
+            <div class="tour-more-container" id="tour-more-container">
+                <button id="tour-more-btn" class="tour-more-btn">
+                    <span class="tour-more-btn-text" data-lang-key="tour-show-all-btn">Tampilkan Semua 28 Antarmuka</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
             </div>
         </div>
     </section>
@@ -892,6 +1488,24 @@
             </div>
         </div>
     </footer>
+
+    <!-- App Tour Fullscreen Lightbox Modal -->
+    <div id="tour-lightbox-modal" class="tour-lightbox-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="tour-lightbox-content">
+            <button class="tour-lightbox-close" id="tour-lightbox-close" aria-label="Tutup"><i class="fas fa-times"></i></button>
+            <div class="tour-lightbox-header">
+                <h3 id="tour-lightbox-title">Judul Screenshot</h3>
+            </div>
+            <div class="tour-lightbox-img-wrap">
+                <button class="tour-lightbox-nav prev" id="tour-lightbox-prev" aria-label="Sebelumnya"><i class="fas fa-chevron-left"></i></button>
+                <img id="tour-lightbox-img" src="" alt="Pratinjau Antarmuka RAZ DM">
+                <button class="tour-lightbox-nav next" id="tour-lightbox-next" aria-label="Selanjutnya"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="tour-lightbox-desc" id="tour-lightbox-desc">
+                Deskripsi screenshot
+            </div>
+        </div>
+    </div>
 
     <!-- RAZ Core Scripts -->
     <script src="js/RAZModal.js"></script>

@@ -3,6 +3,46 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-16] — Transformasi App Tour Menjadi Responsive Masonry Accordion Grid & Fullscreen Lightbox di Website
+*Waktu: 16 November 2026 23:25 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Redesain Total Section App Tour (`#tour`) di `website/index.html`**:
+   - Menghilangkan struktur 1 kolom vertikal lama (`.tour-tab-list`) yang menyebabkan halaman memanjang ~3.500px dan menyisakan area kosong hitam (*black void*) di sebelah kanan.
+   - Mengubah layout menjadi **Responsive Masonry Accordion Grid** 3 kolom seimbang (Row per row) yang menampilkan kartu visual antarmuka elegan, proporsional, dan ringkas.
+   - Menambahkan **Filter Controls Bar** multi-kategori dan tema:
+     - `Semua Tampilan (28)`
+     - `Mode Gelap (15)`
+     - `Mode Terang (13)`
+     - `Jendela Utama`, `Proses Unduhan`, `Konfigurasi & Folder`, `Media & Torrent`, `Alat & Bantuan`
+   - Menambahkan tombol aksi global `Buka Semua Detail` / `Tutup Semua Detail` (`#tour-toggle-all-cards`) untuk mengontrol seluruh kartu sekaligus.
+   - Menerapkan fitur **Progressive Disclosure** (`#tour-more-btn`): secara default menampilkan 6 antarmuka unggulan pertama dan menyediakan tombol "Tampilkan Semua 28 Antarmuka" / "Ciutkan Tampilan Antarmuka" dengan smooth scroll kembali ke atas.
+
+2. **Pengembangan Komponen Kartu Accordion & Fullscreen Lightbox Modal**:
+   - Setiap kartu antarmuka (`.tour-masonry-card`) dilengkapi:
+     - Preview thumbnail dengan efek hover zoom, badge tema (`🌙 Gelap` / `☀️ Terang`), dan overlay aksi *Lihat Penuh*.
+     - Header kartu interaktif dengan ikon fitur dan tombol chevron untuk buka/tutup keterangan teks deskripsi (accordion).
+     - Tombol aksi sekunder *Lihat Penuh* di dalam body kartu.
+   - Membangun komponen **Fullscreen Glassmorphic Lightbox Modal** (`#tour-lightbox-modal`):
+     - Menampilkan gambar resolusi penuh dengan backdrop blur gelap (`rgba(0,0,0,0.88)`).
+     - Tombol navigasi slide Sebelumnya (`#tour-lightbox-prev`) dan Selanjutnya (`#tour-lightbox-next`) yang berputar di antara kartu yang sedang aktif/tersaring.
+     - Dukungan keyboard shortcut: `Escape` untuk keluar, panah kiri (`ArrowLeft`) dan panah kanan (`ArrowRight`) untuk navigasi slide.
+     - Scroll lock pada body saat modal aktif untuk menjaga kenyamanan interaksi pengguna.
+
+3. **CSS Architecture & Desain Responsif (`website/css/RAZDM.css`)**:
+   - Menambahkan styles `.tour-controls-bar`, `.tour-filter-btn`, `.tour-masonry-grid`, `.tour-masonry-card`, `.tour-card-preview`, `.tour-card-theme-badge`, `.tour-card-header`, `.tour-card-body`, `.tour-more-btn`, dan `.tour-lightbox-overlay`.
+   - Grid adaptif: 3 kolom di desktop (&ge;1200px), 2 kolom responsif di tablet, dan 1 kolom di mobile (&le;680px).
+   - Dukungan tema gelap obsidian dan tema terang Windows (`[data-theme="light"]`) dengan styling amber hangat.
+
+4. **Lokalisasi Bilingual (`website/js/RAZMainLang.js`) & Skrip Interaktif (`website/js/script.js`)**:
+   - Menambahkan kamus bahasa ID dan EN untuk seluruh tombol filter, tombol toggle detail, tombol ekspansi kartu, dan aksi lihat penuh.
+   - Memutakhirkan `initAppTour()` di `website/js/script.js` versi 1.1.0 dengan penanganan filter, progressive disclosure, accordion toggle, dan fullscreen lightbox modal.
+
+5. **Verifikasi Visual Web**:
+   - Diuji langsung pada live server dengan subagent browser webview: layout 3 kolom rapi, accordion lancar, lightbox interaktif, filter tema/kategori akurat, dan ekspansi 28 kartu bekerja 100% mulus.
+
+---
+
 ## [2026-11-16] — Perbaikan Tampilan FAQ Accordion (Reset Button & Multi-Group Support) di Website
 *Waktu: 16 November 2026 22:30 WIB*
 
