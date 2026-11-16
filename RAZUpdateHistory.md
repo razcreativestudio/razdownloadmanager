@@ -3,6 +3,25 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-16] — Penambahan Tangkapan Layar Dialog Tambah Torrent (Mode Gelap & Mode Terang) di Website dan README.md
+*Waktu: 16 November 2026 15:50 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Penambahan Tangkapan Layar BitTorrent di `README.md`**:
+   - Menambahkan baris perbandingan visual khusus untuk fitur BitTorrent & Magnet Link di tabel antarmuka `README.md`:
+     - `docs/images/torrent-dark.png` &rarr; Dialog Tambah Torrent dalam Mode Gelap (Obsidian Gold).
+     - `docs/images/torrent-light.png` &rarr; Dialog Tambah Torrent dalam Mode Terang (Light Mode presisi tinggi).
+   - Memperlihatkan fitur pemilihan folder target, penguraian magnet URI otomatis, dan seleksi centang file individual di dalam berkas torrent.
+
+2. **Integrasi Tangkapan Layar BitTorrent di Beranda Website (`website/index.html` & `website/js/RAZMainLang.js`)**:
+   - Menambahkan tab preview interaktif untuk **BitTorrent (Mode Gelap)** (`assets/screens/add-torrent-dark.webp`) dan **BitTorrent (Mode Terang)** (`assets/screens/add-torrent-light.webp`).
+   - Melengkapi string multibahasa Indonesia dan Inggris di `RAZMainLang.js`.
+
+3. **Penyempurnaan Halaman Panduan BitTorrent (`website/help.html`)**:
+   - Memperbarui seksi Panduan BitTorrent & Magnet Link agar menyajikan perbandingan visual dual-mode (Dark & Light) dalam layout grid responsif yang rapi.
+
+---
+
 ## [2026-11-16] — Perbaikan dan Peningkatan Presisi Kontras Tampilan Mode Terang (Light Theme) pada Sidebar & Tabel Utama
 *Waktu: 16 November 2026 14:20 WIB*
 
