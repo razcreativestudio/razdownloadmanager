@@ -1,0 +1,597 @@
+/**
+ * ============================================================================
+ * RAZ Download Manager - Help & Documentation Stylesheet
+ * File: website/css/RAZHelp.css
+ * Deskripsi: Komponen styling untuk Pusat Bantuan (Help Center), Tutorial
+ *            Langkah demi Langkah, FAQ Komprehensif, Panduan Shortcut,
+ *            dan Halaman Legal/Dokumentasi Terstruktur.
+ * Terakhir Diupdate: 2026-11-16
+ * Versi: 1.0.0 (RAZ DM Help & Docs Standard)
+ * Standar: RAZ Enterprise UI/UX Standard
+ * ============================================================================
+ */
+
+/* ==========================================================================
+   1. HERO BANTUAN & PENCARIAN DOKUMENTASI
+   ========================================================================== */
+.help-hero {
+    padding: 130px 0 40px;
+    text-align: center;
+    position: relative;
+    background: radial-gradient(circle at 50% 20%, rgba(255, 215, 0, 0.08) 0%, transparent 60%);
+}
+
+.help-search-container {
+    max-width: 680px;
+    margin: 32px auto 0;
+    position: relative;
+}
+
+.help-search-input {
+    width: 100%;
+    padding: 16px 20px 16px 52px;
+    background: var(--glass-bg, rgba(20, 20, 20, 0.75));
+    border: 1px solid var(--glass-border, rgba(255, 215, 0, 0.25));
+    border-radius: 50px;
+    color: var(--color-light, #ffffff);
+    font-size: 1.05rem;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+.help-search-input:focus {
+    border-color: var(--color-gold-accent, #FFD700);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3), 0 8px 32px rgba(0, 0, 0, 0.5);
+    background: rgba(26, 26, 26, 0.9);
+}
+
+.help-search-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-gold-accent, #FFD700);
+    font-size: 1.2rem;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   2. KATEGORI FILTER CHIPS
+   ========================================================================== */
+.help-nav-chips {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+}
+
+.help-chip {
+    padding: 10px 20px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--color-light-secondary, #b8b8b8);
+    font-size: 0.92rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.help-chip i {
+    color: var(--color-gold-accent, #FFD700);
+}
+
+.help-chip:hover,
+.help-chip.active {
+    background: rgba(255, 215, 0, 0.15);
+    border-color: var(--color-gold-accent, #FFD700);
+    color: var(--color-gold-accent, #FFD700);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   3. GRID TUTORIAL & KARTU PANDUAN PRAKTIS
+   ========================================================================== */
+.tutorial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 28px;
+    margin-top: 36px;
+}
+
+.tutorial-card {
+    background: var(--glass-bg, rgba(20, 20, 20, 0.7));
+    border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.08));
+    border-radius: 16px;
+    padding: 28px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.tutorial-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--color-gold-accent, #FFD700);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tutorial-card:hover {
+    border-color: rgba(255, 215, 0, 0.35);
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.tutorial-card:hover::before {
+    opacity: 1;
+}
+
+.tutorial-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: rgba(255, 215, 0, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-gold-accent, #FFD700);
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+.tutorial-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-light, #ffffff);
+    margin-bottom: 12px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.tutorial-card p {
+    font-size: 0.94rem;
+    color: var(--color-light-secondary, #b8b8b8);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.tutorial-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-gold-accent, #FFD700);
+    font-weight: 600;
+    font-size: 0.92rem;
+    text-decoration: none;
+    transition: gap 0.2s ease;
+}
+
+.tutorial-link:hover {
+    gap: 12px;
+}
+
+/* ==========================================================================
+   4. DETAIL TUTORIAL LANGKAH DEMI LANGKAH (STEP-BY-STEP)
+   ========================================================================== */
+.step-container {
+    max-width: 900px;
+    margin: 40px auto 0;
+}
+
+.step-card {
+    background: var(--glass-bg, rgba(20, 20, 20, 0.75));
+    border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.08));
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 32px;
+    position: relative;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.step-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--color-gold-accent, #FFD700);
+    color: #0c0c0c;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.step-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-light, #ffffff);
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.step-desc {
+    font-size: 0.98rem;
+    color: var(--color-light-secondary, #b8b8b8);
+    line-height: 1.7;
+    margin-bottom: 22px;
+}
+
+.step-image-wrap {
+    background: rgba(10, 10, 10, 0.8);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: 12px;
+    padding: 12px;
+    margin: 20px 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+.step-image-wrap img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.step-caption {
+    font-size: 0.85rem;
+    color: #888888;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* ==========================================================================
+   5. BOX ALERT / TIPS / SUMMARY
+   ========================================================================== */
+.tip-box {
+    background: rgba(255, 215, 0, 0.08);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-left: 4px solid var(--color-gold-accent, #FFD700);
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin: 22px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.tip-box i {
+    color: var(--color-gold-accent, #FFD700);
+    font-size: 1.3rem;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.tip-box-content {
+    font-size: 0.93rem;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+.tip-box-content strong {
+    color: var(--color-gold-accent, #FFD700);
+}
+
+.summary-box {
+    background: rgba(255, 215, 0, 0.06);
+    border: 1px solid rgba(255, 215, 0, 0.25);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 32px;
+}
+
+.summary-box h3 {
+    color: var(--color-gold-accent, #FFD700);
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.summary-box ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.summary-box ul li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 10px;
+    color: #e0e0e0;
+    font-size: 0.93rem;
+    line-height: 1.5;
+}
+
+.summary-box ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-gold-accent, #FFD700);
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   6. SHORTCUT KEYBOARD STYLES & TABLE
+   ========================================================================== */
+kbd {
+    background: #222222;
+    border: 1px solid #444444;
+    border-bottom: 2px solid #555555;
+    border-radius: 5px;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+    color: var(--color-gold-accent, #FFD700);
+    display: inline-block;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    white-space: nowrap;
+}
+
+.shortcut-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 24px 0;
+    background: var(--glass-bg, rgba(20, 20, 20, 0.6));
+    border-radius: 12px;
+    border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.08));
+    overflow: hidden;
+}
+
+.shortcut-table th,
+.shortcut-table td {
+    padding: 14px 20px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 0.93rem;
+}
+
+.shortcut-table th {
+    background: rgba(255, 215, 0, 0.08);
+    color: var(--color-gold-accent, #FFD700);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.82rem;
+    letter-spacing: 0.5px;
+}
+
+.shortcut-table tr:last-child td {
+    border-bottom: none;
+}
+
+.shortcut-table tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* ==========================================================================
+   7. DOKUMENTASI LAYOUT & SIDEBAR TOC
+   ========================================================================== */
+.doc-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+    align-items: start;
+    margin-top: 30px;
+}
+
+.doc-sidebar {
+    position: sticky;
+    top: 100px;
+    background: var(--glass-bg, rgba(20, 20, 20, 0.7));
+    border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.08));
+    border-radius: 14px;
+    padding: 24px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.doc-sidebar h4 {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    color: var(--color-gold-accent, #FFD700);
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+}
+
+.doc-toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.doc-toc-list li {
+    margin-bottom: 8px;
+}
+
+.doc-toc-list a {
+    color: var(--color-light-secondary, #b8b8b8);
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: block;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.doc-toc-list a:hover,
+.doc-toc-list a.active {
+    background: rgba(255, 215, 0, 0.1);
+    color: var(--color-gold-accent, #FFD700);
+    padding-left: 16px;
+}
+
+.doc-body {
+    background: var(--glass-bg, rgba(20, 20, 20, 0.6));
+    border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.08));
+    border-radius: 16px;
+    padding: 36px 40px;
+    line-height: 1.8;
+}
+
+.doc-body h2 {
+    font-size: 1.6rem;
+    color: var(--color-light, #ffffff);
+    margin-top: 40px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-family: 'Poppins', sans-serif;
+}
+
+.doc-body h2:first-child {
+    margin-top: 0;
+}
+
+.doc-body h3 {
+    font-size: 1.25rem;
+    color: var(--color-gold-accent, #FFD700);
+    margin-top: 28px;
+    margin-bottom: 12px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.doc-body p {
+    color: #cccccc;
+    margin-bottom: 18px;
+}
+
+.doc-body ul,
+.doc-body ol {
+    color: #cccccc;
+    margin-bottom: 20px;
+    padding-left: 24px;
+}
+
+.doc-body li {
+    margin-bottom: 8px;
+}
+
+/* ==========================================================================
+   8. RESPONSIVE DESIGN (TABLET & MOBILE)
+   ========================================================================== */
+@media (max-width: 992px) {
+    .doc-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .doc-sidebar {
+        position: static;
+        margin-bottom: 24px;
+    }
+
+    .tutorial-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .step-card {
+        padding: 20px 16px;
+    }
+
+    .step-header {
+        gap: 12px;
+    }
+
+    .step-number {
+        width: 32px;
+        height: 32px;
+        font-size: 0.95rem;
+    }
+
+    .step-title {
+        font-size: 1.1rem;
+    }
+
+    .doc-body {
+        padding: 24px 18px;
+    }
+}
+
+/* ==========================================================================
+   9. LIGHT THEME OVERRIDES FOR HELP COMPONENTS
+   ========================================================================== */
+[data-theme="light"] .help-search-input {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.15);
+    color: #1a1a1a;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .help-chip {
+    background: #f0ebe3;
+    border-color: rgba(0, 0, 0, 0.1);
+    color: #444444;
+}
+
+[data-theme="light"] .tutorial-card,
+[data-theme="light"] .step-card,
+[data-theme="light"] .doc-sidebar,
+[data-theme="light"] .doc-body {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .tutorial-card h3,
+[data-theme="light"] .step-title,
+[data-theme="light"] .doc-body h2 {
+    color: #1a1a1a;
+}
+
+[data-theme="light"] .tutorial-card p,
+[data-theme="light"] .step-desc,
+[data-theme="light"] .doc-body p,
+[data-theme="light"] .doc-body li {
+    color: #555555;
+}
+
+[data-theme="light"] kbd {
+    background: #f0ebe3;
+    border-color: #cccccc;
+    color: #1a1a1a;
+}
+
+[data-theme="light"] .shortcut-table {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .shortcut-table td {
+    color: #333333;
+    border-bottom-color: rgba(0, 0, 0, 0.06);
+}

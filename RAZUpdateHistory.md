@@ -3,6 +3,47 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-16] — Pembuatan Ekosistem Halaman Lengkap Website (Help Hub, Tutorials, FAQ, Privacy, Terms, Security & License) Bergaya RAZ Enterprise
+*Waktu: 16 November 2026 13:12 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Pusat Bantuan & Tutorial Lengkap (`website/help.html` & `website/help/index.html`)**:
+   - Membangun halaman Pusat Bantuan interaktif menggunakan tema Obsidian Dark Glassmorphism dengan aksen emas (`#FFD700`).
+   - Menyertakan bilah pencarian instan (Live Client-Side Search) dan tombol filter kategori chip (Memulai, Ekstensi Browser, Video & Audio, Torrent, Penjadwal, Shortcut, Troubleshooting).
+   - Menyajikan 7 panduan langkah demi langkah bergambar dengan ilustrasi tangkapan layar beresolusi tinggi di `website/assets/help/`:
+     - Panduan donlot file pertama & penangkapan otomatis.
+     - Cara pemasangan ekstensi browser (Chrome, Edge, Firefox, Brave, Opera, Vivaldi) via `.crx` dan `.xpi`.
+     - Download video web & audio resolusi hingga 4K UHD via panel melayang (yt-dlp & FFmpeg).
+     - BitTorrent & magnet link langsung tanpa software eksternal.
+     - Penjadwal donlot malam hari (Night Scheduler) & auto-shutdown.
+     - Melanjutkan donlotan putus (Resume) & pembaruan alamat tautan kadaluarsa (Refresh address).
+     - Mode portabel mandiri di flashdisk USB.
+   - Tabel pintasan tombol keyboard lengkap (`<kbd>` shortcuts) dan panduan troubleshooting (SmartScreen, ekstensi tidak tersambung, integrasi AI MCP).
+
+2. **Halaman FAQ Dedikasi (`website/faq.html` & `website/faq/index.html`)**:
+   - Menghadirkan halaman Tanya Jawab Komprehensif dengan akordeon interaktif dan bilah pencarian real-time.
+   - Mengelompokkan seluruh 24+ pertanyaan penting ke dalam 5 kategori terstruktur:
+     1. Fondasi & Legalitas (100% gratis GPL-3.0, bukan crack IDM, komparasi fitur, zero telemetry).
+     2. Sistem & Instalasi (Windows 10/11, Linux, macOS, alasan tidak support Win 7/8, portable mode, impor data dari IDM).
+     3. Integrasi Peramban (dukungan browser Chromium & Gecko, cara instalasi ekstensi, deteksi clipboard).
+     4. Kecepatan & Mesin Donlot (akselerasi 64 multi-thread, dynamic re-splitting, resume, speed limiter, kepatuhan non-DRM).
+     5. Otomasi & AI Assistant (Model Context Protocol MCP Server, CLI, pelaporan bug GitHub).
+
+3. **Halaman Legal & Keamanan (`privacy.html`, `terms.html`, `security.html`, `license.html`)**:
+   - **`privacy.html`**: Kebijakan privasi tegas dengan prinsip Zero-Telemetry, penyimpanan lokal (Credential Manager/Keychain), dan transparansi koneksi jaringan.
+   - **`terms.html`**: Ketentuan penggunaan software bebas di bawah lisensi GNU GPL v3.0, tanggung jawab file unduhan, dan batasan garansi.
+   - **`security.html`**: Standar keamanan rilis otomatis via GitHub Actions, verifikasi hash SHA-256 via PowerShell, sanitasi path traversal, dan formulir pelaporan celah keamanan privat di GitHub Security Advisories.
+   - **`license.html`**: Pernyataan resmi lisensi GNU GPL-3.0 dan tabel atribusi lengkap komponen pihak ketiga (Lucide icons, Tango, yt-dlp, FFmpeg, Apache ECharts, Inter & Poppins fonts).
+
+4. **Komponen CSS Khusus `website/css/RAZHelp.css`**:
+   - Membuat modular stylesheet khusus (`RAZHelp.css`) untuk mengatur kartu tutorial, step numbers, step image wrappers, summary alert boxes, shortcut tables, kbd tags, doc layouts, dan dukungan tema terang/gelap (`data-theme`).
+
+5. **Sinkronisasi Navigasi Header & Footer Seluruh Halaman**:
+   - Memperbarui menu header navigasi dan kolom "Bantuan & Dokumentasi" pada footer di seluruh halaman (`index.html`, `download.html`, `benchmark.html`, `idm-alternative.html`, `404.html`) agar seluruh link internal saling terhubung secara mulus tanpa broken links atau dead-ends.
+   - Memperbarui berkas `website/llms.txt` dengan sitemap URL resmi `dm.it-raz.com`.
+
+---
+
 ## [2026-11-16] — Penghapusan Blok Atribusi Silsilah Proyek pada Footer Website
 *Waktu: 16 November 2026 12:46 WIB*
 

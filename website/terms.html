@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+
+<head>
+    <!-- ==============================================
+         RAZ Download Manager - Ketentuan Penggunaan (Terms of Use)
+         Deskripsi: Ketentuan dan syarat penggunaan resmi RAZ Download Manager & dm.it-raz.com
+         Terakhir diupdate: 2026-11-16
+         Versi: 1.0.0 (RAZ DM Legal Release)
+         Standar: RAZ Enterprise UI/UX Standard
+    ============================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Ketentuan Penggunaan RAZ Download Manager. Perangkat lunak bebas di bawah lisensi GNU General Public License v3.0, digunakan secara bertanggung jawab untuk file yang sah.">
+    <link rel="canonical" href="https://dm.it-raz.com/terms.html">
+    <title>Ketentuan Penggunaan — RAZ Download Manager</title>
+
+    <!-- Favicon & Touch Icons -->
+    <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48 64x64">
+    <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- RAZ Stylesheets -->
+    <link rel="stylesheet" href="css/style.css?v=1.0.2">
+    <link rel="stylesheet" href="css/RAZHero.css?v=1.0.2">
+    <link rel="stylesheet" href="css/RAZMainAnimations.css?v=1.0.2">
+    <link rel="stylesheet" href="css/RAZMainTheme.css?v=1.0.2">
+    <link rel="stylesheet" href="css/RAZModal.css?v=1.0.2">
+    <link rel="stylesheet" href="css/RAZDM.css?v=1.0.2">
+    <link rel="stylesheet" href="css/RAZHelp.css?v=1.0.0">
+</head>
+
+<body>
+    <!-- Splash Screen -->
+    <div class="raz-splash-screen" id="raz-splash">
+        <img src="img/raz-logo11.svg" alt="RAZ Download Manager Logo" class="raz-splash-logo" width="110" height="110">
+        <div class="raz-splash-spinner"></div>
+        <div class="raz-splash-text">Memuat Ketentuan Layanan...</div>
+    </div>
+
+    <!-- Floating Particles -->
+    <div class="raz-particle"></div>
+    <div class="raz-particle"></div>
+    <div class="raz-particle"></div>
+    <div class="raz-particle"></div>
+    <div class="raz-particle"></div>
+
+    <!-- Controls -->
+    <div class="raz-controls" id="raz-controls">
+        <button class="raz-control-btn raz-lang-btn" id="raz-lang-toggle" aria-label="Switch Language">EN</button>
+        <button class="raz-control-btn raz-theme-btn" id="raz-theme-toggle" aria-label="Toggle Theme"><i
+                class="fas fa-moon"></i></button>
+    </div>
+
+    <!-- Header / Navigasi -->
+    <header class="header" id="main-header">
+        <div class="container">
+            <h1 class="logo">
+                <a href="index.html" style="display:flex;align-items:center;gap:12px;">
+                    <img src="img/raz-logo.svg" alt="RAZ Download Manager" class="logo-image" style="height:44px;width:auto;">
+                </a>
+            </h1>
+            <nav class="nav-menu">
+                <button class="nav-toggle" id="nav-toggle-btn" aria-label="Toggle navigation">
+                    <span class="gold-line"></span>
+                    <span class="gold-line"></span>
+                    <span class="gold-line"></span>
+                </button>
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="index.html" class="nav-link">Beranda</a></li>
+                    <li><a href="index.html#features" class="nav-link">Fitur</a></li>
+                    <li><a href="benchmark.html" class="nav-link">Benchmark vs IDM</a></li>
+                    <li><a href="idm-alternative.html" class="nav-link">Perbandingan</a></li>
+                    <li><a href="help.html" class="nav-link">Panduan</a></li>
+                    <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                    <li><a href="https://github.com/razcreativestudio/razdownloadmanager" target="_blank"
+                            class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a href="download.html" class="nav-link cta-button">Donlot Gratis</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="help-hero">
+        <div class="container">
+            <span class="section-label">Syarat & Ketentuan Lisensi</span>
+            <h2 class="section-title">Ketentuan <span class="gold">Penggunaan (Terms)</span></h2>
+            <p class="section-subtitle">
+                RAZ Download Manager adalah perangkat lunak bebas di bawah lisensi GNU General Public License v3.0 (GPL-3.0).
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content Doc Layout -->
+    <main class="section" style="padding-top:20px;">
+        <div class="container">
+            <div class="doc-layout">
+                <!-- Sidebar TOC -->
+                <aside class="doc-sidebar">
+                    <h4>Daftar Isi</h4>
+                    <ul class="doc-toc-list">
+                        <li><a href="#summary">Ringkasan Ketentuan</a></li>
+                        <li><a href="#license">Lisensi Perangkat Lunak</a></li>
+                        <li><a href="#usage">Penggunaan yang Bertanggung Jawab</a></li>
+                        <li><a href="#third-party">Komponen Pihak Ketiga</a></li>
+                        <li><a href="#warranty">Batasan Garansi</a></li>
+                        <li><a href="#trademarks">Merek Dagang & Nama</a></li>
+                    </ul>
+                </aside>
+
+                <!-- Document Body -->
+                <article class="doc-body">
+                    <div id="summary" class="summary-box">
+                        <h3><i class="fas fa-file-contract"></i> Ringkasan Penting:</h3>
+                        <ul>
+                            <li>Lo berhak menggunakan, menyalin, memodifikasi, dan membagikan RAZ Download Manager secara bebas di bawah <strong>GNU GPL v3.0</strong>.</li>
+                            <li>Perangkat lunak disediakan <strong>tanpa garansi (as-is)</strong>: lo menggunakannya atas risiko lo sendiri.</li>
+                            <li><strong>Donlotlah konten yang sah dan menjadi hak lo.</strong> Lo bertanggung jawab penuh atas setiap file yang lo donlot dan bagikan.</li>
+                            <li>RAZ Download Manager <strong>tidak berafiliasi</strong> dengan Tonec Inc. atau Internet Download Manager.</li>
+                        </ul>
+                    </div>
+
+                    <h2 id="license">1. Lisensi Perangkat Lunak</h2>
+                    <p>
+                        RAZ Download Manager didistribusikan di bawah lisensi <strong>GNU General Public License, versi 3 (GPL-3.0)</strong>. Lisensi ini menjamin kebebasan lo untuk menjalankan, mempelajari kode sumber, mengubah kode, dan mendistribusikan kembali perangkat lunak ini secara gratis.
+                    </p>
+                    <p>
+                        Perangkat lunak ini sepenuhnya bebas biaya. Siapa pun yang mencoba menjual software ini kepada lo atau meminta uang registrasi untuk "membuka fitur" adalah pihak tidak resmi.
+                    </p>
+
+                    <h2 id="usage">2. Penggunaan yang Bertanggung Jawab</h2>
+                    <p>
+                        RAZ Download Manager adalah alat bantu akselerasi unduhan, sama halnya seperti peramban web (browser). Lo menyetujui untuk menggunakan software ini secara bertanggung jawab dan mematuhi hukum yang berlaku:
+                    </p>
+                    <ul>
+                        <li>Hanya mengunduh file atau konten yang lo memiliki hak izin atau hak cipta untuk mengunduhnya.</li>
+                        <li>Tidak menggunakan software ini untuk merusak atau membobol sistem Digital Rights Management (DRM). RAZ Download Manager secara teknis tidak mendukung bypass DRM.</li>
+                        <li>Saat mengunduh torrent, hormati hak pihak lain atas materi yang diunduh dan dibagikan secara peer-to-peer.</li>
+                        <li>Tidak menggunakan software ini untuk menyerang, melakukan serangan DoS, atau melebihi kuota wajar server pihak lain tanpa izin.</li>
+                    </ul>
+
+                    <h2 id="third-party">3. Komponen Pihak Ketiga</h2>
+                    <p>
+                        Aplikasi dapat mengunduh alat bantu pihak ketiga resmi atas permintaan lo: <strong>yt-dlp</strong> (untuk menganalisis link video) dan <strong>FFmpeg</strong> (untuk menggabungkan audio dan video). Masing-masing dikelola di bawah lisensinya sendiri (yt-dlp: Unlicense; FFmpeg: LGPL/GPL).
+                    </p>
+
+                    <h2 id="warranty">4. Batasan Garansi & Tanggung Jawab</h2>
+                    <p>
+                        Sesuai pasal 15 dan 16 lisensi GNU GPL, perangkat lunak ini disediakan <strong>"SEBAGAIMANA ADANYA" (AS-IS) TANPA JAMINAN APA PUN</strong>, baik tersurat maupun tersirat. Kami tidak bertanggung jawab atas segala bentuk kerugian, kehilangan data, atau kerusakan perangkat keras yang mungkin timbul dari penggunaan software ini.
+                    </p>
+
+                    <h2 id="trademarks">5. Merek Dagang & Nama</h2>
+                    <p>
+                        "RAZ Download Manager", logo RAZ, dan identitas visual ekosistem RAZ adalah identitas dari proyek ini.
+                    </p>
+                    <p>
+                        Nama "Internet Download Manager" dan "IDM" adalah merek dagang terdaftar milik pemiliknya masing-masing (Tonec Inc.). Penyebutan nama-nama tersebut di situs ini murni bertujuan untuk tujuan deskriptif dan komparasi teknis yang diperbolehkan hukum. RAZ Download Manager sama sekali tidak berafiliasi, tidak disponsori, dan tidak menggunakan aset milik Tonec Inc.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <!-- ======================== PREMIUM FOOTER ======================== -->
+    <hr class="section-separator">
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Kolom 1: About & Identity -->
+                <div class="footer-col footer-about">
+                    <img src="img/raz-logo.svg" alt="RAZ Download Manager" class="logo-image"
+                        style="max-width:180px;height:auto;margin-bottom:16px;" loading="lazy">
+                    <p>
+                        RAZ Download Manager adalah proyek download manager modern open-source berkecepatan tinggi dari
+                        ekosistem RAZ Creative Studio.
+                    </p>
+                </div>
+
+                <!-- Kolom 2: Quick Links -->
+                <div class="footer-col">
+                    <h4>Navigasi Cepat</h4>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="index.html#features">Fitur</a></li>
+                        <li><a href="benchmark.html">Benchmark vs IDM</a></li>
+                        <li><a href="idm-alternative.html">Perbandingan</a></li>
+                        <li><a href="download.html">Pusat Donlotan</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kolom 3: Resource & Guide -->
+                <div class="footer-col">
+                    <h4>Bantuan & Dokumentasi</h4>
+                    <ul>
+                        <li><a href="help.html">Panduan Pengguna</a></li>
+                        <li><a href="help.html#tutorials">Tutorial Lengkap</a></li>
+                        <li><a href="privacy.html">Kebijakan Privasi</a></li>
+                        <li><a href="terms.html">Ketentuan Penggunaan</a></li>
+                        <li><a href="security.html">Keamanan</a></li>
+                        <li><a href="license.html">Lisensi</a></li>
+                        <li><a href="https://github.com/razcreativestudio/razdownloadmanager/issues" target="_blank">Laporkan Masalah (Bug)</a></li>
+                        <li><a href="https://github.com/razcreativestudio/razdownloadmanager" target="_blank">Source Code GitHub</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kolom 4: Ekosistem RAZ -->
+                <div class="footer-col">
+                    <h4>Ekosistem RAZ</h4>
+                    <ul>
+                        <li><a href="https://raz.web.id/" target="_blank">RAZ Creative Studio</a></li>
+                        <li><a href="https://office.it-raz.com" target="_blank">RAZ Office</a></li>
+                        <li><a href="https://simaju.raz.web.id/" target="_blank">SIMAJURAZ POS</a></li>
+                        <li><a href="https://dm.it-raz.com" target="_blank">RAZ Download Manager</a></li>
+                        <li><a href="https://raz.web.id/tools.html" target="_blank">Tools Online Gratis</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer bottom -->
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2026</span> RAZ Creative Studio & Kontributor Open Source. Hak Cipta Dilindungi.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/raz_studio.id/" aria-label="Instagram" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@razcreativestudio" aria-label="YouTube" target="_blank"><i
+                            class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@razcreativestudio" aria-label="TikTok" target="_blank"><i
+                            class="fab fa-tiktok"></i></a>
+                    <a href="https://github.com/razcreativestudio/razdownloadmanager" aria-label="GitHub"
+                        target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- RAZ Core Scripts -->
+    <script src="js/RAZModal.js"></script>
+    <script src="js/RAZMainLang.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
