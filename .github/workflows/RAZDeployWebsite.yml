@@ -48,8 +48,8 @@ jobs:
           password: ${{ secrets.IDWEBHOST_FTP_PASSWORD }}
           # Folder sumber lokal di dalam repo yang akan diunggah
           local-dir: ./website/
-          # Folder tujuan di hosting (default: public_html/ atau subfolder subdomain seperti public_html/dm/)
-          server-dir: ${{ secrets.IDWEBHOST_REMOTE_DIR || 'public_html/' }}
+          # Folder tujuan di hosting (default: ./ langsung di root folder FTP akun)
+          server-dir: ${{ secrets.IDWEBHOST_REMOTE_DIR || './' }}
           # Protokol koneksi (default: ftps untuk koneksi terenkripsi SSL/TLS)
           protocol: ftps
           # Port FTP (default standar 21)

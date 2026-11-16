@@ -3,6 +3,17 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-16] — Fix Jalur Direktori FTP Auto-Deploy: Ubah Default Target ke Root `./`
+*Waktu: 16 November 2026 10:20 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Perbaikan Parameter `server-dir` di `.github/workflows/RAZDeployWebsite.yml`**:
+   - Mengubah default `server-dir` dari `public_html/` menjadi `./`.
+   - Hal ini menyelesaikan issue di mana akun FTP subdomain IDwebhost (`dm.it-raz.com`) sudah otomatis mengarah ke root foldernya sendiri saat login, sehingga penambahan `public_html/` sebelumnya menyebabkan berkas terunggah ke subfolder `dm.it-raz.com/public_html/` dan memunculkan *directory index* di root.
+   - Dengan nilai `./`, seluruh berkas website langsung mendarat di root utama subdomain `https://dm.it-raz.com/`.
+
+---
+
 ## [2026-11-16] — Pembuatan Workflow GitHub Actions Auto-Deploy Website ke IDwebhost
 *Waktu: 16 November 2026 10:00 WIB*
 
