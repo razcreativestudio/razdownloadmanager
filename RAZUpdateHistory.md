@@ -3,6 +3,28 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-16] — Pembaruan Tangkapan Layar Pengaturan Folder Donlotan "Simpan ke" (Dark & Light Mode) di Website dan README.md
+*Waktu: 16 November 2026 21:40 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Pembaruan Tangkapan Layar Panel "Simpan ke" (Save To & Category Folder Configuration)**:
+   - Memproses tangkapan layar jendela pengaturan folder unduhan ("Simpan ke") versi terbaru untuk tema Obsidian Dark dan Windows Light dengan rincian pemilihan kategori, direktori unduhan default, opsi tanggal pembuatan server, dan arsitektur tanpa folder temporary:
+     - `docs/images/save-to-dark.png` & `docs/images/save-to.png` &rarr; Jendela Simpan Ke tema Obsidian Dark untuk `README.md`.
+     - `docs/images/save-to-light.png` &rarr; Jendela Simpan Ke tema Windows Light untuk `README.md`.
+     - `website/assets/screens/save-to-dark.webp` & `save-to-dark.png` &rarr; Aset resolusi tinggi di website.
+     - `website/assets/screens/save-to-light.webp` & `save-to-light.png` &rarr; Aset resolusi tinggi di website.
+     - `website/assets/help/options-save-to-dark.webp` & `options-save-to.webp` &rarr; Aset Pusat Bantuan website & dokumentasi offline.
+
+2. **Pembaruan Tabel Antarmuka `README.md`**:
+   - Menambahkan baris perbandingan simetris pada tabel pratinjau: `📁 Pengaturan Folder Simpan Ke (Mode Gelap)` vs `📁 Pengaturan Folder Simpan Ke (Mode Terang)`.
+
+3. **Pembaruan Website & Pusat Bantuan (`website/help.html`, `website/index.html`, `website/js/RAZMainLang.js`)**:
+   - `website/help.html`: Menambahkan kartu langkah tutorial baru "Mengatur Folder Penyimpanan & Kategori Donlotan" dengan visualisasi responsive grid ganda (Dark & Light) pada Bagian 1.
+   - `website/index.html`: Menyediakan tab tur interaktif `Folder Simpan Ke (Mode Gelap)` dan `Folder Simpan Ke (Mode Terang)`.
+   - `website/js/RAZMainLang.js`: Menambahkan dukungan lokalisasi bilingual (Indonesia & Inggris) untuk tab tur folder simpan ke.
+
+---
+
 ## [2026-11-16] — Pembaruan Tangkapan Layar Uji Integrasi Ekstensi Browser (Dark & Light Mode) di Website dan README.md
 *Waktu: 16 November 2026 21:30 WIB*
 

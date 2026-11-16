@@ -180,6 +180,11 @@ Berikut tampilan antarmuka resmi RAZ Download Manager v1.0.0 dengan sentuhan tem
 | <img src="docs/images/test-integration-dark.png" alt="Uji Integrasi Browser RAZ DM Mode Gelap" width="460"> | <img src="docs/images/test-integration-light.png" alt="Uji Integrasi Browser RAZ DM Mode Terang" width="460"> |
 | *Verifikasi koneksi native messaging host dan daftar peramban aktif (Dark)* | *Dukungan penuh tema terang Windows dengan tombol uji dan pengaturan pintasan (Light)* |
 
+| 📁 Pengaturan Folder Simpan Ke (Mode Gelap) | 📁 Pengaturan Folder Simpan Ke (Mode Terang) |
+| :---: | :---: |
+| <img src="docs/images/save-to-dark.png" alt="Pengaturan Folder Simpan Ke RAZ DM Mode Gelap" width="460"> | <img src="docs/images/save-to-light.png" alt="Pengaturan Folder Simpan Ke RAZ DM Mode Terang" width="460"> |
+| *Kategorisasi otomatis per tipe file, direktori unduhan per kategori, dan arsitektur tanpa direktori sementara (Dark)* | *Dukungan penuh tema terang Windows dengan kontrol jalur folder dan tombol aksi amber presisi (Light)* |
+
 | 🎬 Tombol Unduh Video di Browser (Video Sniffer) |
 | :---: |
 | <img src="docs/images/video-button.png" alt="Tombol Unduh Video RAZ di Browser" width="340"> |

@@ -4,8 +4,8 @@
  * File: website/js/RAZMainLang.js
  * Deskripsi: Modul lokalisasi bilingual (Indonesia & Inggris) untuk situs resmi
  *            RAZ Download Manager (dm.it-raz.com).
- * Terakhir Diupdate: 2026-11-16 21:30 WIB
- * Versi: 1.0.0 (RAZ DM Modern Tech Release - Added Browser Integration Screens)
+ * Terakhir Diupdate: 2026-11-16 21:38 WIB
+ * Versi: 1.0.0 (RAZ DM Modern Tech Release - Added Save To Settings Screens)
  * Standar: RAZ Enterprise Language Protocol (Gaya Santai, Presisi, Ramah Awam)
  * ============================================================================
  */
@@ -124,6 +124,10 @@ const RAZMainLang = {
             'tour-tab-integration-desc': 'Pengujian koneksi ekstensi browser, native messaging host, dan tangkapan link otomatis (Obsidian Dark).',
             'tour-tab-integration-light-title': 'Uji Integrasi Browser (Mode Terang)',
             'tour-tab-integration-light-desc': 'Tampilan panel integrasi peramban tema terang Windows dengan tombol uji dan opsi tombol pintas.',
+            'tour-tab-saveto-title': 'Folder Simpan Ke (Mode Gelap)',
+            'tour-tab-saveto-desc': 'Kategorisasi otomatis per tipe file, direktori unduhan per kategori, dan arsitektur tanpa direktori sementara (Obsidian Dark).',
+            'tour-tab-saveto-light-title': 'Folder Simpan Ke (Mode Terang)',
+            'tour-tab-saveto-light-desc': 'Tampilan panel pengaturan folder tema terang Windows dengan kontrol jalur folder dan tombol aksi amber presisi.',
 
             // Core Features
             'feat-label': 'Fitur Unggulan',
@@ -348,6 +352,10 @@ const RAZMainLang = {
             'tour-tab-integration-desc': 'Extension connection testing, native messaging host check, and auto-download capture (Obsidian Dark).',
             'tour-tab-integration-light-title': 'Browser Integration Test (Light Mode)',
             'tour-tab-integration-light-desc': 'Windows light mode browser integration settings with connection test button and hotkey config.',
+            'tour-tab-saveto-title': 'Save To Directory (Dark Mode)',
+            'tour-tab-saveto-desc': 'Automatic categorization by file type, per-category destination folders, and direct-to-disk writing (Obsidian Dark).',
+            'tour-tab-saveto-light-title': 'Save To Directory (Light Mode)',
+            'tour-tab-saveto-light-desc': 'Windows light mode download folder configuration with browse controls and warm amber actions.',
 
             // Core Features
             'feat-label': 'Core Features',
