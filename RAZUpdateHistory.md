@@ -3,6 +3,32 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-16] — Penyesuaian & Sinkronisasi Seluruh Tautan Menu Bantuan Desktop & Routing Website
+*Waktu: 16 November 2026 13:42 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Penyelarasan Menu Bantuan Aplikasi Desktop (`crates/app/src/help.rs`)**:
+   - Menghilangkan kode bahasa `"id"` dari `SITE_LANGS` agar URL bantuan tidak lagi men-generate folder prefix `/id/` yang tidak perlu, melainkan langsung mengarah ke root domain resmi `https://dm.it-raz.com/help/`.
+   - Memastikan seluruh pemanggilan menu bantuan dari aplikasi desktop (`Isi bantuan`, `Tutorial`, `Penjadwal dan antrean`, `Donlotan video`, `Beranda`, `Laporkan masalah`, dan `Dukung RAZ DM`) merujuk ke URL aktif yang tepat.
+
+2. **Dukungan Kompatibilitas Biner v1.0.0 (Backward Compatibility)**:
+   - Membuat file stub pengalihan (instant redirect) di direktori `website/id/` dan `website/id/help/`:
+     - `website/id/index.html` &rarr; mengalihkan langsung ke `/index.html`.
+     - `website/id/help/index.html` &rarr; mengalihkan langsung ke `/help.html`.
+     - `website/id/help/queues-and-scheduler.html` &rarr; mengalihkan langsung ke `/help.html#scheduler`.
+     - `website/id/help/video.html` &rarr; mengalihkan langsung ke `/help.html#media`.
+     - `website/help/queues-and-scheduler.html` &rarr; mengalihkan langsung ke `/help.html#scheduler`.
+     - `website/help/video.html` &rarr; mengalihkan langsung ke `/help.html#media`.
+   - Dengan stub ini, aplikasi v1.0.0 yang sudah terpasang dan sedang berjalan di komputer pengguna dapat langsung membuka semua link menu Bantuan tanpa kendala error 404.
+
+3. **Konfigurasi Routing LiteSpeed Server (`website/.htaccess`)**:
+   - Menambahkan berkas `.htaccess` dengan aturan rewrite Apache/LiteSpeed untuk meneruskan URL `/id/help/*`, `/help/*`, dan `/faq/*` secara elegan dan mempertahankan anchor target `#hash`.
+
+4. **Navigasi Tab Otomatis Berbasis Hash di `website/help.html`**:
+   - Menambahkan event listener `hashchange` dan routing hash otomatis di `help.html` sehingga saat link dengan anchor dibuka (misal: `#scheduler` atau `#media` atau `#tutorials`), tab filter chip kategori langsung aktif dan halaman melakukan *smooth scroll* ke seksi terkait.
+
+---
+
 ## [2026-11-16] — Pembuatan Ekosistem Halaman Lengkap Website (Help Hub, Tutorials, FAQ, Privacy, Terms, Security & License) Bergaya RAZ Enterprise
 *Waktu: 16 November 2026 13:12 WIB*
 

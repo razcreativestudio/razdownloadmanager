@@ -1,0 +1,35 @@
+# ==============================================================================
+# RAZ Download Manager — LiteSpeed / Apache Server Configuration
+# File: website/.htaccess
+# Deskripsi: Routing aturan rewrite untuk URL ramah pengguna, redirect menu bantuan,
+#            dan kompresi aset web.
+# Terakhir Diupdate: 2026-11-16
+# ==============================================================================
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # 1. Routing Bahasa Legacy (/id/) ke Root
+    RewriteRule ^id/help/queues-and-scheduler\.html$ /help.html#scheduler [R=301,NE,L]
+    RewriteRule ^id/help/video\.html$ /help.html#media [R=301,NE,L]
+    RewriteRule ^id/help/?$ /help.html [R=301,L]
+    RewriteRule ^id/?$ /index.html [R=301,L]
+
+    # 2. Routing Menu Bantuan Aplikasi
+    RewriteRule ^help/queues-and-scheduler\.html$ /help.html#scheduler [R=301,NE,L]
+    RewriteRule ^help/video\.html$ /help.html#media [R=301,NE,L]
+    RewriteRule ^help/?$ /help.html [R=301,L]
+    RewriteRule ^faq/?$ /faq.html [R=301,L]
+
+    # 3. Clean URLs (menghilangkan ekstensi .html jika ada)
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}\.html -f
+    RewriteRule ^(.*)$ $1.html [L]
+</IfModule>
+
+# Security Headers & MIME Types
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+</IfModule>

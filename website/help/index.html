@@ -128,7 +128,8 @@
             <!-- ==============================================
                  BAGIAN 1: PANDUAN MEMULAI (GETTING STARTED)
                  ============================================== -->
-            <div class="help-section-group" data-category="getting-started">
+            <div class="help-section-group" data-category="getting-started" id="getting-started">
+                <span id="tutorials"></span>
                 <span class="section-label">Langkah Pertama</span>
                 <h2 class="section-title" style="margin-bottom:20px;">Memulai dengan <span class="gold">RAZ Download Manager</span></h2>
 
@@ -168,7 +169,7 @@
             <!-- ==============================================
                  BAGIAN 2: INTEGRASI EKSTENSI BROWSER
                  ============================================== -->
-            <div class="help-section-group" data-category="browser">
+            <div class="help-section-group" data-category="browser" id="browser">
                 <span class="section-label">Integrasi Peramban</span>
                 <h2 class="section-title" style="margin-bottom:20px;">Integrasi Ekstensi <span class="gold">Browser Lengkap</span></h2>
 
@@ -207,7 +208,8 @@
             <!-- ==============================================
                  BAGIAN 3: VIDEO & AUDIO WEB SNIFFER
                  ============================================== -->
-            <div class="help-section-group" data-category="media">
+            <div class="help-section-group" data-category="media" id="media">
+                <span id="video"></span>
                 <span class="section-label">Media & Video Sniffer</span>
                 <h2 class="section-title" style="margin-bottom:20px;">Ngedonlot Video & Audio <span class="gold">dari Web</span></h2>
 
@@ -242,7 +244,8 @@
             <!-- ==============================================
                  BAGIAN 4: TORRENT & MAGNET CLIENT
                  ============================================== -->
-            <div class="help-section-group" data-category="torrent">
+            <div class="help-section-group" data-category="torrent" id="torrent">
+                <span id="torrents"></span>
                 <span class="section-label">BitTorrent Terintegrasi</span>
                 <h2 class="section-title" style="margin-bottom:20px;">Donlot File <span class="gold">Torrent & Magnet Langsung</span></h2>
 
@@ -277,7 +280,8 @@
             <!-- ==============================================
                  BAGIAN 5: PENJADWAL & PENGATUR KECEPATAN
                  ============================================== -->
-            <div class="help-section-group" data-category="scheduler">
+            <div class="help-section-group" data-category="scheduler" id="scheduler">
+                <span id="queues-and-scheduler"></span>
                 <span class="section-label">Otomasi & Efisiensi</span>
                 <h2 class="section-title" style="margin-bottom:20px;">Jadwal Donlot Malam & <span class="gold">Speed Limiter</span></h2>
 
@@ -338,7 +342,8 @@
             <!-- ==============================================
                  BAGIAN 6: PINTASAN KEYBOARD (SHORTCUTS)
                  ============================================== -->
-            <div class="help-section-group" data-category="shortcuts">
+            <div class="help-section-group" data-category="shortcuts" id="shortcuts">
+                <span id="keyboard-shortcuts"></span>
                 <span class="section-label">Efisiensi Tinggi</span>
                 <h2 class="section-title" style="margin-bottom:20px;">Daftar Pintasan <span class="gold">Keyboard (Shortcuts)</span></h2>
                 <p class="section-subtitle">Kendalikan seluruh operasi download dengan tombol keyboard cepat layaknya power user.</p>
@@ -404,7 +409,7 @@
             <!-- ==============================================
                  BAGIAN 7: TROUBLESHOOTING & SOLUSI KENDALA
                  ============================================== -->
-            <div class="help-section-group" data-category="troubleshooting">
+            <div class="help-section-group" data-category="troubleshooting" id="troubleshooting">
                 <span class="section-label">Solusi Masalah</span>
                 <h2 class="section-title" style="margin-bottom:20px;">Troubleshooting & <span class="gold">Kendala Umum</span></h2>
 
@@ -601,6 +606,34 @@
                     });
                 });
             }
+
+            // Handle Hash / Anchor on Load or Hashchange
+            const handleHashRouting = () => {
+                const rawHash = (window.location.hash || '').toLowerCase().replace('#', '');
+                if (!rawHash) return;
+
+                let category = 'all';
+                if (rawHash === 'tutorials' || rawHash === 'getting-started') category = 'getting-started';
+                else if (rawHash === 'browser' || rawHash === 'browser-integration') category = 'browser';
+                else if (rawHash === 'media' || rawHash === 'video') category = 'media';
+                else if (rawHash === 'torrent' || rawHash === 'torrents') category = 'torrent';
+                else if (rawHash === 'scheduler' || rawHash === 'queues-and-scheduler') category = 'scheduler';
+                else if (rawHash === 'shortcuts' || rawHash === 'keyboard-shortcuts') category = 'shortcuts';
+                else if (rawHash === 'troubleshooting') category = 'troubleshooting';
+
+                const targetChip = document.querySelector(`.help-chip[data-filter="${category}"]`);
+                if (targetChip) targetChip.click();
+
+                setTimeout(() => {
+                    const targetEl = document.getElementById(rawHash) || document.getElementById(category);
+                    if (targetEl) {
+                        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 200);
+            };
+
+            window.addEventListener('hashchange', handleHashRouting);
+            handleHashRouting();
         });
     </script>
 </body>
