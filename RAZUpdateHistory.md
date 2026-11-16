@@ -3,6 +3,29 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-16] — Pembaruan Tangkapan Layar Jendela Pilihan Bahasa (Dark & Light Mode) di Website dan README.md
+*Waktu: 16 November 2026 20:57 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Pembaruan Tangkapan Layar Jendela Pilihan Bahasa (Language Selection Dialog)**:
+   - Memproses tangkapan layar dialog pemilihan bahasa versi terbaru untuk kedua tema (Dark & Light) dengan sorotan pada *Bahasa Indo Oke*:
+     - `docs/images/language-dark.png` & `docs/images/language.png` &rarr; Jendela Bahasa tema Obsidian Dark untuk `README.md`.
+     - `docs/images/language-light.png` &rarr; Jendela Bahasa tema Windows Light untuk `README.md`.
+     - `website/assets/screens/language-dark.webp` & `language-dark.png` &rarr; Aset resolusi tinggi di website.
+     - `website/assets/screens/language-light.webp` & `language-light.png` &rarr; Aset resolusi tinggi di website.
+     - `website/assets/help/first-language-dark.webp`, `first-language.webp`, `website/assets/win/language-picker.webp` &rarr; Aset Pusat Bantuan website & dokumentasi offline.
+
+2. **Pembaruan Tabel & Bagian Khusus `README.md`**:
+   - Menambahkan baris perbandingan simetris pada tabel pratinjau: `🌐 Pilihan Bahasa (Mode Gelap)` vs `🌐 Pilihan Bahasa (Mode Terang)`.
+   - Menambahkan tabel pratinjau berdampingan langsung pada bagian `## 🌐 Pilihan Bahasa Lengkap (Termasuk Bahasa Indo Oke)`.
+
+3. **Pembaruan Website & Pusat Bantuan (`website/help.html`, `website/index.html`, `website/js/RAZMainLang.js`)**:
+   - `website/help.html`: Menambahkan kartu panduan mengganti bahasa antarmuka dalam grid responsif dual-mode berdampingan pada Langkah 1 tutorial.
+   - `website/index.html`: Menyediakan tab tur interaktif `Pilihan Bahasa (Mode Gelap)` dan `Pilihan Bahasa (Mode Terang)`.
+   - `website/js/RAZMainLang.js`: Dukungan lokalisasi bilingual (Indonesia & Inggris).
+
+---
+
 ## [2026-11-16] — Pembaruan Tangkapan Layar Jendela Penjadwal (Dark & Light Mode) di Website dan README.md
 *Waktu: 16 November 2026 20:47 WIB*
 

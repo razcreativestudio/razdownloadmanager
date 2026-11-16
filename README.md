@@ -150,6 +150,11 @@ Berikut tampilan antarmuka resmi RAZ Download Manager v1.0.0 dengan sentuhan tem
 | <img src="docs/images/scheduler-dark.png" alt="Penjadwal Donlotan Mode Gelap" width="460"> | <img src="docs/images/scheduler-light.png" alt="Penjadwal Donlotan Mode Terang" width="460"> |
 | *Otomasi donlotan malam hari, penjadwalan antrean, dan auto-shutdown (Dark)* | *Dukungan penuh tema terang Windows dengan tombol aksi amber presisi (Light)* |
 
+| 🌐 Pilihan Bahasa (Mode Gelap) | 🌐 Pilihan Bahasa (Mode Terang) |
+| :---: | :---: |
+| <img src="docs/images/language-dark.png" alt="Pilihan Bahasa Mode Gelap" width="460"> | <img src="docs/images/language-light.png" alt="Pilihan Bahasa Mode Terang" width="460"> |
+| *Dukungan 86+ bahasa dunia dengan opsi Bahasa Indo Oke (Obsidian Dark)* | *Dukungan penuh mode terang Windows dengan tombol aksi amber presisi (Light)* |
+
 | 🎬 Donlot Video dari Halaman (Mode Gelap) | 🎬 Donlot Video dari Halaman (Mode Terang) |
 | :---: | :---: |
 | <img src="docs/images/video-dark.png" alt="Dialog Donlot Video dari Halaman Mode Gelap" width="460"> | <img src="docs/images/video-light.png" alt="Dialog Donlot Video dari Halaman Mode Terang" width="460"> |
@@ -204,6 +209,11 @@ Buka berkas `.dmg` dan seret RAZ DM ke folder Applications. Saat pertama kali bu
 ## 🌐 Pilihan Bahasa Lengkap (Termasuk Bahasa Indo Oke)
 
 RAZ DM mendukung lebih dari **86 bahasa dunia**. Lo bisa ganti kapan aja lewat menu **Lihat → Bahasa**.
+
+| 🌐 Pilihan Bahasa (Mode Gelap) | 🌐 Pilihan Bahasa (Mode Terang) |
+| :---: | :---: |
+| <img src="docs/images/language-dark.png" alt="Pilihan Bahasa Mode Gelap" width="460"> | <img src="docs/images/language-light.png" alt="Pilihan Bahasa Mode Terang" width="460"> |
+| *Tampilan dialog pilihan bahasa bertema Obsidian Gelap* | *Tampilan dialog pilihan bahasa bertema Windows Terang* |
 
 > [!TIP]
 > Pilih **Bahasa Indo Oke** buat ngerasain sensasi interaksi santai dan luwes khas developer masa kini—tanpa gaya kaku birokratis!
