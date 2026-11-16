@@ -259,10 +259,13 @@
    RESPONSIVE - Mobile
 ============================================== */
 @media (max-width: 768px) {
-    .hero { min-height: 90vh; }
-    .hero-badge { font-size: 0.75rem; padding: 6px 14px; }
-    .hero-title { font-size: 2rem; }
-    .hero-subtitle { font-size: 0.95rem; }
-    .hero-keywords .keyword { font-size: 0.6rem; }
-    .scroll-indicator { bottom: 20px; }
+    .hero { min-height: 90vh; padding: 110px 0 50px; }
+    .hero-content { width: 100%; max-width: 100%; padding: 20px 16px; box-sizing: border-box; }
+    .hero-badge { font-size: 0.75rem; padding: 6px 14px; margin-bottom: 20px; }
+    .hero-title { font-size: clamp(1.8rem, 6vw, 2.4rem); margin-bottom: 16px; }
+    .hero-subtitle { font-size: 0.95rem; margin-bottom: 28px; }
+    .hero-keywords { display: none; } /* Sembunyikan kata kunci melayang di layar ponsel agar tidak memicu overflow */
+    .hero-cta-group { flex-direction: column; width: 100%; max-width: 320px; margin: 0 auto; gap: 12px; }
+    .hero-cta-group a { width: 100%; justify-content: center; text-align: center; }
+    .scroll-indicator { bottom: 20px; display: none; }
 }

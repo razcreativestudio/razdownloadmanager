@@ -3,6 +3,41 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-16] — Pembersihan Berkas Usang, Perbaikan Layout & Responsivitas Website (Header, Grid, Kartu, Ekstensi & Footer)
+*Waktu: 16 November 2026 11:20 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Perbaikan Breakpoint Navigasi Header & Pencegahan Teks Patah**:
+   - Menambahkan breakpoint responsif `@media (max-width: 1060px)` di `website/css/style.css` untuk transisi menu hamburger desktop ke tablet/layar sempit.
+   - Menambahkan aturan `white-space: nowrap;` pada `.nav-link` dan `.cta-button` agar item navigasi tidak terlipat menjadi dua baris dan tidak merusak layout header.
+   - Menyelaraskan ukuran box model `.cta-primary` dengan menambahkan `border: 2px solid transparent; box-sizing: border-box; justify-content: center;` sehingga tingginya presisi 57px, identik dengan `.cta-secondary`.
+
+2. **Perataan Grid Kartu & Pencegahan Kartu Yatim (Orphan Card)**:
+   - Memperbaiki `.metric-grid` di `website/css/RAZDM.css` dari `auto-fit` tak tentu menjadi grid 4 kolom di desktop, 2x2 kolom di tablet (<=992px), dan 1 kolom di ponsel (<=520px) sehingga tidak ada kartu kecepatan yang terasing sendirian di baris kedua.
+   - Menambahkan kelas khusus `.features-grid` (3x3 kolom) untuk 9 kartu fitur unggulan di `index.html` dengan proteksi rentang penuh di tablet dan stack rapi di ponsel.
+   - Menambahkan kelas khusus `.download-grid.three-col` untuk kartu donlot Windows (Installer, Portable, Binaries) dan `.download-grid.two-col` untuk ekstensi peramban.
+   - Menambahkan kelas `.steps-grid` pada panduan instalasi 3 langkah di `download.html`.
+   - Mengatur `.dl-card { height: 100%; display: flex; flex-direction: column; }` dan `.dl-actions { margin-top: auto; }` sehingga seluruh tombol aksi dan salin checksum di baris yang sama berada di ketinggian horizontal yang presisi.
+
+3. **Perbaikan Kontainer Tabel Komparasi & Kotak Checksum Mobile**:
+   - Memperbaiki `.table-responsive` dengan `width: 100%; max-width: 100%; -webkit-overflow-scrolling: touch;` dan `.compare-table { min-width: 680px; }` agar tidak meledakkan lebar body halaman pada layar ponsel (375px).
+   - Memperbaiki `.checksum-box` dengan ellipsis overflow di desktop dan tata letak vertikal fleksibel di mobile sehingga hash SHA-256 sepanjang 64 karakter tidak terpotong atau merusak padding.
+
+4. **Penyempurnaan Penjelasan Panduan Ekstensi Browser**:
+   - Menjelaskan secara transparan alasan mengapa Google Chrome/Chromium memblokir drag-and-drop langsung berkas `.crx` offline (kebijakan keamanan Web Store / `CRX_REQUIRED_PROOF_MISSING`).
+   - Menyediakan panduan resmi, aman, dan jelas untuk metode **Load unpacked** menggunakan berkas `.zip` di Chromium (Chrome, Edge, Brave, Opera) dan instalasi langsung berkas `.xpi` di Firefox.
+   - Memastikan tombol donlot kedua ekstensi berada di bagian bawah kartu secara simetris dan sejajar.
+
+5. **Penerapan Istilah Bahasa Indo Oke & Atribusi Silsilah MDM di Seluruh Halaman**:
+   - Mengganti seluruh sisa kata *unduh* / *unggah* yang tersisa di `website/` menjadi istilah santai kekinian: *Donlot, Ngedonlot, Donlotan, Terdonlot, Mendonlot, Aplot, Aplotan*.
+   - Menambahkan blok apresiasi resmi dan atribusi silsilah (*Lineage & Open Source Attribution*) pada footer seluruh halaman (`index.html`, `download.html`, `benchmark.html`, `idm-alternative.html`) yang mengakui fondasi awal dari proyek **Mister Download Manager**, menyampaikan rasa terima kasih kepada para kontributor MDM, serta menegaskan lisensi open source GPL-3.0.
+
+6. **Pembersihan Berkas Usang / Dead Code (Clean Workspace)**:
+   - Menghapus berkas usang yang tidak terpakai dari website lama: `website/styles.css` (99 KB), `website/main.js` (33 KB), `website/bench.js`, dan `website/bench/results.json`.
+   - Seluruh berkas cadangan disimpan dengan aman di folder `backup/`.
+
+---
+
 ## [2026-11-16] — Fix Jalur Direktori FTP Auto-Deploy: Ubah Default Target ke Root `./`
 *Waktu: 16 November 2026 10:20 WIB*
 

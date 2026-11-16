@@ -24,3 +24,6 @@ node_modules/
 /.claude/worktrees/
 # Keys (API keys, signing keys): never committed.
 /k/
+
+# RAZ Centralized Backup Directory
+/backup/
