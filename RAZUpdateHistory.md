@@ -3,6 +3,44 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-16] — Pembaruan Kamus Bahasa Indo Oke: Slang Modern "Donlot", "Ngedonlot", "Aplot"
+*Waktu: 16 November 2026 09:28 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Pembaruan Menyeluruh Glosarium Istilah di `i18n/id-oke.tsv`**:
+   - Menyesuaikan 228 baris teks terjemahan Bahasa Indo Oke dengan istilah gaul/slang santai modern sesuai permintaan:
+     - `Unduh` → `Donlot` / `unduh` → `donlot`
+     - `Ngunduh` → `Ngedonlot` / `ngunduh` → `ngedonlot`
+     - `Unduhan` → `Donlotan` / `unduhan` → `donlotan`
+     - `Unduhannya` → `Donlotannya` / `unduhannya` → `donlotannya`
+     - `Terunduh` → `Terdonlot` / `terunduh` → `terdonlot`
+     - `Mengunduh` → `Mendonlot` / `mengunduh` → `mendonlot`
+     - `Mengunduhnya` → `Mendonlotnya` / `mengunduhnya` → `mendonlotnya`
+     - `Diunduh` → `Didonlot` / `diunduh` → `didonlot`
+     - `Pengunduh` → `Pendonlot` / `pengunduh` → `pendonlot`
+     - `Pengunduhan` → `Pendonlotan` / `pengunduhan` → `pendonlotan`
+     - `Unggah` → `Aplot` / `unggah` → `aplot`
+     - `Unggahan` → `Aplotan` / `unggahan` → `aplotan`
+     - `Mengunggah` → `Mengaplot` / `mengunggah` → `mengaplot`
+     - `Pengunggah` → `Pengaplot` / `pengunggah` → `pengaplot`
+     - Menyesuaikan juga akselerator pintasan menu seperti `&Unduh` → `&Donlot`, `&Unduhan` → `&Donlotan`.
+
+2. **Sinkronisasi File Terjemahan Installer Inno Setup (`tools/installer/languages/id-oke.isl`)**:
+   - Memperbarui `LanguageName=Bahasa Indo Oke`.
+   - Mengubah seluruh label dialog instalasi (`Mengunduh file...` → `Mendonlot file...`, `&Hentikan unduhan` → `&Hentikan donlotan`, `Unduhan gagal` → `Donlotan gagal`, dll.).
+
+3. **Kompilasi Biner & Build Ulang Paket Rilis**:
+   - Mengompilasi biner rilis `razdm-app` dengan katalog terjemahan baru yang di-pack otomatis melalui brotli (`crates/app/build.rs`).
+   - Membangun kembali seluruh paket installer di `target/dist/`:
+     - `RAZDownloadManager-1.0.0-setup.exe` (15,9 MB)
+     - `RAZDownloadManager-1.0.0-portable.zip` (18,6 MB)
+     - `RAZDownloadManager-1.0.0-x64.zip` (18,6 MB)
+     - `RAZDownloadManager-1.0.0-extension-chrome.zip` (0,2 MB)
+     - `RAZDownloadManager-1.0.0-extension-firefox.xpi` (0,2 MB)
+   - Sinkronisasi checksum SHA256 di `target/dist/SHA256SUMS.txt`.
+
+---
+
 ## [2026-11-14] — Penggantian Total Logo Tombol Unduh Video Browser Extension & Ekosistem Icon RAZ
 *Waktu: 14 November 2026 13:22 WIB*
 

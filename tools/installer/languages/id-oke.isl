@@ -2,7 +2,7 @@
 ; (machine-translated; a native speaker may correct any line).
 
 [LangOptions]
-LanguageName=Bahasa Indonesia
+LanguageName=Bahasa Indo Oke
 LanguageID=$0421
 LanguageCodePage=0
 
@@ -149,11 +149,11 @@ ReadyMemoType=Jenis penyiapan:
 ReadyMemoComponents=Komponen yang dipilih:
 ReadyMemoGroup=Folder Menu Mulai:
 ReadyMemoTasks=Tugas tambahan:
-DownloadingLabel2=Mengunduh file...
-ButtonStopDownload=&Hentikan unduhan
-StopDownload=Apakah Anda yakin ingin menghentikan unduhan?
-ErrorDownloadAborted=Unduhan dibatalkan
-ErrorDownloadFailed=Unduhan gagal: %1 %2
+DownloadingLabel2=Mendonlot file...
+ButtonStopDownload=&Hentikan donlotan
+StopDownload=Apakah Anda yakin ingin menghentikan donlotan?
+ErrorDownloadAborted=Donlotan dibatalkan
+ErrorDownloadFailed=Donlotan gagal: %1 %2
 ErrorDownloadSizeFailed=Mendapatkan ukuran gagal: %1 %2
 ErrorProgress=Kemajuan tidak valid: %1 dari %2
 ErrorFileSize=Ukuran file tidak valid: diharapkan %1, ditemukan %2
@@ -204,7 +204,7 @@ RetryCancelCancel=Batal
 StatusClosingApplications=Menutup aplikasi...
 StatusCreateDirs=Membuat direktori...
 StatusExtractFiles=Mengekstrak file...
-StatusDownloadFiles=Mengunduh file...
+StatusDownloadFiles=Mendonlot file...
 StatusCreateIcons=Membuat pintasan...
 StatusCreateIniEntries=Membuat entri INI...
 StatusCreateRegistryEntries=Membuat entri registri...
@@ -252,7 +252,7 @@ ErrorChangingAttr=Terjadi kesalahan saat mencoba mengubah atribut file yang ada:
 ErrorCreatingTemp=Terjadi kesalahan saat mencoba membuat file di direktori tujuan:
 ErrorReadingSource=Terjadi kesalahan saat mencoba membaca file sumber:
 ErrorCopying=Terjadi kesalahan saat mencoba menyalin file:
-ErrorDownloading=Terjadi kesalahan saat mencoba mengunduh file:
+ErrorDownloading=Terjadi kesalahan saat mencoba mendonlot file:
 ErrorExtracting=Terjadi kesalahan saat mencoba mengekstrak arsip:
 ErrorReplacingExistingFile=Terjadi kesalahan saat mencoba mengganti file yang ada:
 ErrorRestartReplace=RestartReplace gagal:
@@ -295,4 +295,4 @@ TaskTorrents=Buka file .&torrent dan tautan magnet dengan RAZ Download Manager
 TaskStartup=Mulai RAZ Download Manager saat &Windows dimulai
 TaskGroupOther=Lainnya:
 Launch=Mulai RAZ Download Manager
-KeepData=Hapus juga daftar unduhan dan pengaturan Anda?%n%nFile yang Anda unduh tidak akan tersentuh.
+KeepData=Hapus juga daftar donlotan dan pengaturan Anda?%n%nFile yang Anda donlot tidak akan tersentuh.

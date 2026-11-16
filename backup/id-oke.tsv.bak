@@ -6606,3 +6606,9 @@ unit	{n} MB	{n} MB
 #. {n} = a number (keep the braces as they are)
 #, machine
 unit	{n} MB/sec	{n} MB/dtk
+	LIBRARY	PUSTAKA
+	Incomplete	Belum Selesai
+	Completed	Udah Selesai
+	FILE TYPES	TIPE FILE
+	All Types	Semua Tipe
+	QUEUES	ANTREAN
