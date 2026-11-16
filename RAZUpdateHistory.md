@@ -3,6 +3,32 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-16] — Integrasi Tangkapan Layar Resmi v1.0.0 ke Website Tour & README.md
+*Waktu: 16 November 2026 12:30 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Konversi & Integrasi Tangkapan Layar Resmi v1.0.0**:
+   - Memproses dan mengoptimasi 4 screenshot asli RAZ Download Manager v1.0.0 ke format PNG beresolusi tinggi dan WebP terkompresi:
+     - **Tampilan Utama**: `docs/images/main-raz.png` & `website/assets/screens/main-dark.webp`
+     - **Proses Donlot Live (Multi-Thread Segment)**: `docs/images/downloading.png` & `website/assets/screens/progress-dark.webp`
+     - **Dialog Donlotan Selesai**: `docs/images/completed.png` & `website/assets/screens/completed-dark.webp`
+     - **Konfigurasi & Pengaturan Lengkap**: `docs/images/settings.png` & `website/assets/screens/options-dark.webp`
+
+2. **Pembaruan Galeri Pratinjau di `README.md`**:
+   - Menambahkan seksi khusus `## 📸 Tangkapan Layar & Antarmuka (Preview)` di `README.md` dengan tabel galeri 2x2 yang menampilkan keempat tangkapan layar utama secara rapi dan profesional.
+   - Memperbarui tabel paket donlot di `README.md` dengan menyertakan opsi paket ekstensi `razdm-extension-chrome.crx`.
+
+3. **Pembaruan Tur Antarmuka di `website/index.html`**:
+   - Menghubungkan 4 tab pratinjau antarmuka di bagian Product Tour secara langsung ke tangkapan layar baru:
+     - Tab 1: **Layar Utama Modern** (default active)
+     - Tab 2: **Setiap Koneksi Terpantau Live** (proses donlot segmen)
+     - Tab 3: **Dialog Donlotan Selesai** (dialog aksi selesai)
+     - Tab 4: **Konfigurasi & Opsi Lengkap** (dialog pengaturan sistem)
+     - Tab 5 & 6: **BitTorrent & Sniffer Video Web**
+   - Menambahkan dukungan lokalisasi teks tab tur di `website/js/RAZMainLang.js` (Bahasa Indo Oke & English).
+
+---
+
 ## [2026-11-16] — Fix Layout Komparasi Tabel, 3-Kolom Grid Fitur, Card Donlot CRX & Cache-Busting CSS
 *Waktu: 16 November 2026 11:45 WIB*
 

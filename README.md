@@ -108,6 +108,22 @@ Tampilan akrab yang udah biasa lo pake di IDM, tapi performanya jauh lebih ngaci
 
 ---
 
+## 📸 Tangkapan Layar & Antarmuka (Preview)
+
+Berikut tampilan antarmuka resmi RAZ Download Manager v1.0.0 dengan sentuhan tema obsidian elegan khas RAZ Creative Studio:
+
+| 🖥️ Tampilan Layar Utama | ⚡ Proses & Segmen Donlot Multi-Thread |
+| :---: | :---: |
+| <img src="docs/images/main-raz.png" alt="Layar Utama RAZ Download Manager" width="460"> | <img src="docs/images/downloading.png" alt="Dialog Proses Donlot Multi-Thread" width="460"> |
+| *Daftar donlotan, toolbar emas, dan sidepanel rapi* | *Pemantauan segmen byte live, kecepatan, dan sisa waktu* |
+
+| ✅ Dialog Donlotan Selesai | ⚙️ Konfigurasi & Pengaturan Lengkap |
+| :---: | :---: |
+| <img src="docs/images/completed.png" alt="Dialog Donlotan Selesai" width="460"> | <img src="docs/images/settings.png" alt="Konfigurasi RAZ Download Manager" width="460"> |
+| *Aksi cepat buka file, buka folder, dan setel aplikasi* | *Pengaturan integrasi peramban, koneksi, dan proksi* |
+
+---
+
 ## 📥 Pilihan Donlot & Instalasi
 
 Kunjungi halaman [Donlot Resmi](https://dm.it-raz.com/download.html) atau ambil langsung di [GitHub Releases](https://github.com/razcreativestudio/razdownloadmanager/releases/latest):
@@ -117,7 +133,8 @@ Kunjungi halaman [Donlot Resmi](https://dm.it-raz.com/download.html) atau ambil 
 | **`RAZDownloadManager-...-setup.exe`** | **Paling Direkomendasikan!** Sekali klik buat instal RAZ DM di Windows, langsung daftarin ekstensi browser, dan setel bahasa. |
 | **`RAZDownloadManager-...-portable.zip`** | Versi tanpa instalasi. Cocok ditaruh di flashdisk USB, ekstrak dan langsung jalan. Data kesimpan rapi di foldernya. |
 | **`RAZDownloadManager-...-x64.zip`** | Berkas biner mandiri buat yang mau integrasi manual tanpa installer. |
-| **`razdm-extension-chrome.zip`** | Berkas ekstensi langsung buat browser Chromium (Chrome, Edge, Brave, Opera). |
+| **`razdm-extension-chrome.crx`** | Berkas biner ekstensi `.crx` resmi buat browser Chromium (drag-and-drop di developer mode). |
+| **`razdm-extension-chrome.zip`** | Berkas ekstensi source `.zip` buat browser Chromium (metode *Load unpacked* resmi). |
 | **`razdm-extension-firefox.xpi`** | Berkas ekstensi resmi langsung buat browser Firefox dan turunannya. |
 
 > [!NOTE]
