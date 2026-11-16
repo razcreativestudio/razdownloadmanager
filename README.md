@@ -132,10 +132,10 @@ Berikut tampilan antarmuka resmi RAZ Download Manager v1.0.0 dengan sentuhan tem
 | <img src="docs/images/downloading.png" alt="Dialog Proses Donlot Multi-Thread" width="460"> | <img src="docs/images/completed.png" alt="Dialog Donlotan Selesai" width="460"> |
 | *Pemantauan segmen byte live, kecepatan, dan sisa waktu* | *Aksi cepat buka file, buka folder, dan setel aplikasi* |
 
-| ⚙️ Konfigurasi & Pengaturan Lengkap | |
+| ⚙️ Konfigurasi (Mode Gelap) | ⚙️ Konfigurasi (Mode Terang) |
 | :---: | :---: |
-| <img src="docs/images/settings.png" alt="Konfigurasi RAZ Download Manager" width="460"> | |
-| *Pengaturan integrasi peramban, koneksi, dan proksi* | |
+| <img src="docs/images/settings.png" alt="Konfigurasi RAZ Download Manager Mode Gelap" width="460"> | <img src="docs/images/settings-light.png" alt="Konfigurasi RAZ Download Manager Mode Terang" width="460"> |
+| *Pengaturan integrasi peramban, koneksi, dan proksi (Dark)* | *Pengaturan tema terang dengan navigasi tab amber presisi (Light)* |
 
 ---
 

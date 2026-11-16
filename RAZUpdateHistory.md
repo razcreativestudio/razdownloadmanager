@@ -3,6 +3,22 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-16] — Pembaruan Tangkapan Layar Dialog Konfigurasi / Opsi (Dark & Light Mode) di Website dan README.md
+*Waktu: 16 November 2026 16:18 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Pembaruan Tangkapan Layar Dialog Konfigurasi di `README.md`**:
+   - Memperbarui gambar pengaturan antarmuka ke versi paling mutakhir dengan navigasi samping modern:
+     - `docs/images/settings.png` &rarr; Dialog Konfigurasi Mode Gelap (Obsidian Gold).
+     - `docs/images/settings-light.png` &rarr; Dialog Konfigurasi Mode Terang (Light Mode) dengan tab amber presisi.
+   - Mengatur baris tabel antarmuka `README.md` berpasangan simetris untuk Dark & Light mode.
+
+2. **Pembaruan Aset Dialog Opsi Website (`website/assets/screens/`)**:
+   - Memperbarui `options-dark.webp` dan `options-light.webp` dengan tangkapan layar beresolusi tajam.
+   - Menambahkan tab preview tur interaktif di `website/index.html` untuk **Konfigurasi (Mode Gelap)** dan **Konfigurasi (Mode Terang)** serta string bilingual di `RAZMainLang.js`.
+
+---
+
 ## [2026-11-16] — Pembaruan Tangkapan Layar Tampilan Utama (Layar Utama Dark & Light Mode Terbaru) di Website dan README.md
 *Waktu: 16 November 2026 16:10 WIB*
 
