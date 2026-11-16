@@ -5,8 +5,8 @@
  * Deskripsi: Skrip interaktif mencakup Splash Screen, Theme Switcher,
  *            Interactive Canvas Particle Network, Live Speed Benchmark Simulator,
  *            App Tour Tab Switcher, FAQ Accordion, dan Custom Modals.
- * Terakhir Diupdate: 2026-11-11
- * Versi: 1.0.0 (RAZ DM Enterprise Release)
+ * Terakhir Diupdate: 2026-11-16 22:25 WIB
+ * Versi: 1.0.1 (RAZ DM Accordion Multi-Group Fix)
  * Standar: RAZ Enterprise Architecture Standard
  * ============================================================================
  */
@@ -345,9 +345,22 @@
             const question = item.querySelector('.faq-question');
             if (!question) return;
 
-            question.addEventListener('click', () => {
+            // Cegah double event binding
+            if (question.dataset.faqBound) return;
+            question.dataset.faqBound = 'true';
+
+            question.addEventListener('click', (e) => {
+                e.preventDefault();
                 const isActive = item.classList.contains('active');
-                faqItems.forEach(i => i.classList.remove('active'));
+
+                // Tutup item lain hanya dalam kelompok/group list yang sama
+                const groupParent = item.closest('.faq-list, .faq-accordion-list') || item.parentElement;
+                if (groupParent) {
+                    groupParent.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                } else {
+                    faqItems.forEach(i => i.classList.remove('active'));
+                }
+
                 if (!isActive) {
                     item.classList.add('active');
                 }

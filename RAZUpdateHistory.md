@@ -3,6 +3,27 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-16] — Perbaikan Tampilan FAQ Accordion (Reset Button & Multi-Group Support) di Website
+*Waktu: 16 November 2026 22:30 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Perbaikan Tampilan Kotak Putih (White Rectangle Bug) pada FAQ Accordion**:
+   - Memperbaiki komponen `.faq-question` di `website/css/RAZDM.css` dengan menambahkan CSS reset eksplisit untuk elemen `<button>` (`width: 100%`, `background: transparent`, `border: none`, `outline: none`, `font-family: inherit`, `text-align: left`).
+   - Menghilangkan render default browser `ButtonFace` (latar putih solid) yang sebelumnya menutupi kontainer kartu dan membuat teks pertanyaan menjadi putih di atas latar putih.
+   - Menambahkan dukungan tata letak `.faq-accordion-list` dengan `flex-direction: column` dan `gap: 16px`.
+   - Menambahkan state hover transparan halus, indikator fokus keyboard berstandar aksesibilitas (`focus-visible`), serta transisi rotasi ikon chevron emas (`.faq-icon`).
+   - Menyediakan dukungan penuh tema terang (`[data-theme="light"]`) dengan tipografi gelap berpresisi tinggi.
+
+2. **Perbaikan Logika JavaScript Accordion (`website/js/script.js` & `website/faq.html`)**:
+   - Memperbarui fungsi `initFAQAccordion()` di `website/js/script.js` agar menutup item lain secara selektif hanya di dalam grup/kategori yang sama (`closest('.faq-list, .faq-accordion-list')`).
+   - Menambahkan pencegahan *double event binding* (`data-faq-bound`) dan menghapus duplikasi event listener accordion di `website/faq.html`.
+   - Menambahkan atribut eksplisit `type="button"` pada seluruh 20 elemen button pertanyaan di `website/faq.html`.
+
+3. **Verifikasi Visual Browser**:
+   - Dilakukan verifikasi visual otomatis menggunakan Browser Webview (`http://localhost:8008/faq.html`) yang membuktikan tampilan FAQ Dark Theme telah kembali elegan, responsif, dan animasi ekspansi/kolaps berjalan presisi tanpa cacat.
+
+---
+
 ## [2026-11-16] — Pembaruan Tangkapan Layar Pengaturan Folder Donlotan "Simpan ke" (Dark & Light Mode) di Website dan README.md
 *Waktu: 16 November 2026 21:40 WIB*
 

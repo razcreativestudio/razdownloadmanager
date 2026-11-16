@@ -5,8 +5,8 @@
  * Deskripsi: Komponen khusus RAZ Download Manager mencakup Hero Banner,
  *            Speed Benchmark Race, Download Center, Comparison Matrix,
  *            Interactive App Tour, dan Integrasi Ekosistem RAZ.
- * Terakhir Diupdate: 2026-11-11
- * Versi: 1.0.0 (RAZ DM Enterprise Theme Release)
+ * Terakhir Diupdate: 2026-11-16 22:25 WIB
+ * Versi: 1.0.1 (RAZ DM FAQ Button Reset & Accordion Styling Fix)
  * Standar: RAZ Enterprise UI/UX Standard
  * ============================================================================
  */
@@ -689,12 +689,17 @@
 /* ==========================================================================
    8. FAQ ACCORDION
    ========================================================================== */
-.faq-list {
-    max-width: 860px;
-    margin: 40px auto 0;
+.faq-list,
+.faq-accordion-list {
+    max-width: 100%;
+    margin: 20px auto 0;
     display: flex;
     flex-direction: column;
     gap: 16px;
+}
+
+.faq-group-block {
+    margin-bottom: 48px;
 }
 
 .faq-item {
@@ -702,7 +707,7 @@
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     overflow: hidden;
-    transition: var(--transition);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .faq-item:hover {
@@ -715,43 +720,87 @@
 }
 
 .faq-question {
-    padding: 22px 28px;
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 20px 26px;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: inherit;
     font-weight: 700;
     font-size: 1.05rem;
     color: var(--color-light-text);
+    text-align: left;
     user-select: none;
+    transition: color 0.25s ease, background-color 0.25s ease;
+}
+
+.faq-question:hover {
+    background-color: rgba(255, 215, 0, 0.03);
+}
+
+.faq-question:focus-visible {
+    outline: 2px solid var(--color-gold-accent);
+    outline-offset: -2px;
 }
 
 .faq-item.active .faq-question {
     color: var(--color-gold-accent);
 }
 
-.faq-question i {
+.faq-question i,
+.faq-question .faq-icon {
     transition: transform 0.3s ease;
     color: var(--color-gold-accent);
+    font-size: 0.95rem;
+    flex-shrink: 0;
+    margin-left: 16px;
 }
 
-.faq-item.active .faq-question i {
+.faq-item.active .faq-question i,
+.faq-item.active .faq-question .faq-icon {
     transform: rotate(180deg);
 }
 
 .faq-answer {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.35s ease, padding 0.35s ease;
-    padding: 0 28px;
+    transition: max-height 0.4s ease, padding 0.35s ease;
+    padding: 0 26px;
     color: var(--color-light-secondary);
     font-size: 0.95rem;
     line-height: 1.7;
 }
 
 .faq-item.active .faq-answer {
-    max-height: 500px;
-    padding: 0 28px 24px 28px;
+    max-height: 1200px;
+    padding: 0 26px 24px 26px;
+}
+
+.faq-answer p {
+    margin-bottom: 12px;
+}
+
+.faq-answer p:last-child {
+    margin-bottom: 0;
+}
+
+.faq-answer ul,
+.faq-answer ol {
+    margin: 10px 0 14px 20px;
+    padding-left: 8px;
+}
+
+.faq-answer li {
+    margin-bottom: 6px;
+    line-height: 1.6;
+}
+
+.faq-answer strong {
+    color: var(--color-light-text);
 }
 
 /* ==========================================================================
@@ -832,6 +881,27 @@
     background: #ffffff;
     border-color: rgba(0, 0, 0, 0.08);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .faq-question {
+    color: #1a1a1a;
+    background: transparent;
+}
+
+[data-theme="light"] .faq-question:hover {
+    background-color: rgba(184, 134, 11, 0.04);
+}
+
+[data-theme="light"] .faq-item.active .faq-question {
+    color: #b8860b;
+}
+
+[data-theme="light"] .faq-answer {
+    color: #555555;
+}
+
+[data-theme="light"] .faq-answer strong {
+    color: #111111;
 }
 
 [data-theme="light"] .race-lane {
