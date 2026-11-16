@@ -3,6 +3,16 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-16] — Penghapusan Blok Atribusi Silsilah Proyek pada Footer Website
+*Waktu: 16 November 2026 12:46 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Penghapusan Elemen Footer Attribution di Website**:
+   - Menghapus blok keterangan "Apresiasi & Silsilah Proyek" (`.footer-attribution`) dari seluruh halaman website (`index.html`, `download.html`, `benchmark.html`, dan `idm-alternative.html`) agar tampilan footer tetap bersih, rapi, dan berfokus penuh pada identitas produk RAZ Download Manager.
+   - Dokumentasi silsilah proyek dan apresiasi kontributor tetap tersimpan rapi pada `README.md` repositori GitHub sebagai pusat dokumentasi resmi open-source.
+
+---
+
 ## [2026-11-16] — Integrasi Tangkapan Layar Resmi v1.0.0 ke Website Tour & README.md
 *Waktu: 16 November 2026 12:30 WIB*
 
