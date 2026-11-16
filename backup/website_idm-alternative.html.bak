@@ -1,0 +1,293 @@
+﻿<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+
+<head>
+    <!-- ==============================================
+         RAZ Download Manager - Halaman Alternatif IDM
+         Deskripsi: Panduan lengkap alternatif Internet Download Manager (IDM) gratis & open-source
+         Terakhir diupdate: 2026-11-11
+         Versi: 1.0.0
+         Standar: RAZ Enterprise UI/UX Standard
+    ============================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Cari alternatif IDM gratis terbaik? RAZ Download Manager adalah pengganti IDM open-source berbasis Rust. Lebih kencang 5.4×, tanpa pop-up serial palsu, terintegrasi torrent, video sniffer, dan AI.">
+    <link rel="canonical" href="https://dm.it-raz.com/idm-alternative.html">
+    <title>Alternatif IDM Gratis & Terbaik 2026 — RAZ Download Manager</title>
+
+    <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48 64x64">
+    <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/RAZHero.css">
+    <link rel="stylesheet" href="css/RAZMainAnimations.css">
+    <link rel="stylesheet" href="css/RAZMainTheme.css">
+    <link rel="stylesheet" href="css/RAZModal.css">
+    <link rel="stylesheet" href="css/RAZDM.css">
+</head>
+
+<body>
+    <!-- Splash Screen -->
+    <div class="raz-splash-screen" id="raz-splash">
+        <img src="img/raz-logo11.svg" alt="RAZ Download Manager Logo" class="raz-splash-logo" width="110" height="110">
+        <div class="raz-splash-spinner"></div>
+        <div class="raz-splash-text">Memuat Komparasi IDM...</div>
+    </div>
+
+    <!-- Floating Particles -->
+    <div class="raz-particle"></div>
+    <div class="raz-particle"></div>
+    <div class="raz-particle"></div>
+    <div class="raz-particle"></div>
+    <div class="raz-particle"></div>
+
+    <!-- Controls -->
+    <div class="raz-controls" id="raz-controls">
+        <button class="raz-control-btn raz-lang-btn" id="raz-lang-toggle" aria-label="Switch Language">EN</button>
+        <button class="raz-control-btn raz-theme-btn" id="raz-theme-toggle" aria-label="Toggle Theme"><i
+                class="fas fa-moon"></i></button>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="main-header">
+        <div class="container">
+            <h1 class="logo">
+                <a href="index.html" style="display:flex;align-items:center;gap:12px;">
+                    <img src="img/raz-logo.svg" alt="RAZ Download Manager" class="logo-image" style="height:44px;width:auto;">
+                </a>
+            </h1>
+            <nav class="nav-menu">
+                <button class="nav-toggle" id="nav-toggle-btn" aria-label="Toggle navigation">
+                    <span class="gold-line"></span>
+                    <span class="gold-line"></span>
+                    <span class="gold-line"></span>
+                </button>
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="index.html" class="nav-link">Beranda</a></li>
+                    <li><a href="index.html#features" class="nav-link">Fitur</a></li>
+                    <li><a href="benchmark.html" class="nav-link">Benchmark vs IDM</a></li>
+                    <li><a href="idm-alternative.html" class="nav-link active" style="color:var(--color-gold-accent);">Perbandingan</a></li>
+                    <li><a href="https://github.com/razcreativestudio/razdownloadmanager" target="_blank"
+                            class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a href="download.html" class="nav-link cta-button">Download v1.0.0</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="section" style="padding-top:140px;padding-bottom:40px;">
+        <div class="container">
+            <span class="section-label">Panduan Beralih</span>
+            <h2 class="section-title">Kenapa Harus Pindah dari <span class="gold">IDM ke RAZ DM?</span></h2>
+            <p class="section-subtitle">
+                Internet Download Manager adalah software legendaris yang kita kenal sejak era 2000-an. Namun di era
+                modern sekarang, ada solusi yang jauh lebih kencang, aman, gratis, dan bebas dari jebakan lisensi.
+            </p>
+        </div>
+    </section>
+
+    <!-- 4 Alasan Utama Beralih -->
+    <section class="section" style="padding-top:0;">
+        <div class="container">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:28px;text-align:left;">
+                <div style="background:var(--color-dark-secondary);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:32px;">
+                    <div style="font-size:2.2rem;color:var(--color-gold-accent);margin-bottom:14px;"><i class="fas fa-ban"></i></div>
+                    <h3 style="font-size:1.25rem;color:var(--color-light-text);margin-bottom:10px;">Selamat Tinggal Pop-up Palsu</h3>
+                    <p style="font-size:0.92rem;color:var(--color-light-secondary);line-height:1.6;">
+                        Capek diganggu pop-up <i>"IDM has been registered with a fake Serial Number"</i> atau masa trial 30 hari habis? Di RAZ Download Manager, hal itu 100% TIDAK ADA. Aplikasi ini gratis selamanya di bawah lisensi GPL-3.0.
+                    </p>
+                </div>
+
+                <div style="background:var(--color-dark-secondary);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:32px;">
+                    <div style="font-size:2.2rem;color:var(--color-gold-accent);margin-bottom:14px;"><i class="fas fa-shield-virus"></i></div>
+                    <h3 style="font-size:1.25rem;color:var(--color-light-text);margin-bottom:10px;">Bebas Risiko Patch & Crack</h3>
+                    <p style="font-size:0.92rem;color:var(--color-light-secondary);line-height:1.6;">
+                        Mendownload patch atau crack IDM dari internet berisiko tinggi menyusupkan Trojan, Keylogger, dan Ransomware ke PC lo. RAZ DM 100% open-source dan dikompilasi resmi via GitHub Actions.
+                    </p>
+                </div>
+
+                <div style="background:var(--color-dark-secondary);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:32px;">
+                    <div style="font-size:2.2rem;color:var(--color-gold-accent);margin-bottom:14px;"><i class="fas fa-rocket"></i></div>
+                    <h3 style="font-size:1.25rem;color:var(--color-light-text);margin-bottom:10px;">Performa Rust 5.4× Lebih Kencang</h3>
+                    <p style="font-size:0.92rem;color:var(--color-light-secondary);line-height:1.6;">
+                        Arsitektur Rust modern memungkinkan RAZ DM membuka hingga 64 koneksi paralel simultan seketika, mengunduh file 1 GiB hanya dalam 1.01 detik dibandingkan 5.46 detik pada IDM 6.42.
+                    </p>
+                </div>
+
+                <div style="background:var(--color-dark-secondary);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:32px;">
+                    <div style="font-size:2.2rem;color:var(--color-gold-accent);margin-bottom:14px;"><i class="fas fa-magnet"></i></div>
+                    <h3 style="font-size:1.25rem;color:var(--color-light-text);margin-bottom:10px;">BitTorrent & AI Terintegrasi</h3>
+                    <p style="font-size:0.92rem;color:var(--color-light-secondary);line-height:1.6;">
+                        IDM tidak bisa mendownload file Torrent. Di RAZ DM, magnet links dan file .torrent ditangani langsung di satu jendela yang sama, plus integrasi MCP server untuk asisten AI (Claude/ChatGPT).
+                    </p>
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <div style="margin-top:60px;">
+                <h3 class="section-title">Matriks Perbandingan Lengkap</h3>
+                <div class="table-responsive">
+                    <table class="compare-table">
+                        <thead>
+                            <tr>
+                                <th>Kriteria / Fitur</th>
+                                <th class="col-raz">RAZ Download Manager</th>
+                                <th>Internet Download Manager (IDM)</th>
+                                <th>Free Download Manager (FDM)</th>
+                                <th>JDownloader 2</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Lisensi & Biaya</th>
+                                <td class="col-raz status-yes"><i class="fas fa-check"></i> 100% Free & Open Source</td>
+                                <td>Berbayar ($24.95 lisensi)</td>
+                                <td>Gratis (Closed Source)</td>
+                                <td>Gratis (Java Based)</td>
+                            </tr>
+                            <tr>
+                                <th>Kecepatan Download 1 GiB</th>
+                                <td class="col-raz status-yes"><i class="fas fa-bolt"></i> 1.01 detik</td>
+                                <td>5.46 detik</td>
+                                <td>3.80 detik</td>
+                                <td>4.20 detik</td>
+                            </tr>
+                            <tr>
+                                <th>Konsumsi Memori (RAM)</th>
+                                <td class="col-raz status-yes"><i class="fas fa-check"></i> Sangat Ringan (~30 MB)</td>
+                                <td>Ringan (~40 MB)</td>
+                                <td>Sedang (~120 MB)</td>
+                                <td>Berat (Java ~400+ MB)</td>
+                            </tr>
+                            <tr>
+                                <th>BitTorrent & Magnet Links</th>
+                                <td class="col-raz status-yes"><i class="fas fa-check"></i> Ya (Librqbit)</td>
+                                <td class="status-no"><i class="fas fa-times"></i> Tidak Ada</td>
+                                <td class="status-yes"><i class="fas fa-check"></i> Ya</td>
+                                <td class="status-no"><i class="fas fa-times"></i> Terbatas</td>
+                            </tr>
+                            <tr>
+                                <th>Video & Audio Sniffer</th>
+                                <td class="col-raz status-yes"><i class="fas fa-check"></i> Ya (yt-dlp + FFmpeg)</td>
+                                <td class="status-yes"><i class="fas fa-check"></i> Ya</td>
+                                <td class="status-yes"><i class="fas fa-check"></i> Ya</td>
+                                <td class="status-yes"><i class="fas fa-check"></i> Ya</td>
+                            </tr>
+                            <tr>
+                                <th>Dukungan Akun Debrid</th>
+                                <td class="col-raz status-yes"><i class="fas fa-check"></i> Ya (Real-Debrid, dll)</td>
+                                <td class="status-no"><i class="fas fa-times"></i> Manual generate</td>
+                                <td class="status-no"><i class="fas fa-times"></i> Tidak Ada</td>
+                                <td class="status-yes"><i class="fas fa-check"></i> Ya</td>
+                            </tr>
+                            <tr>
+                                <th>AI Assistant MCP Integration</th>
+                                <td class="col-raz status-yes"><i class="fas fa-check"></i> Ya (Claude, Gemini, GPT)</td>
+                                <td class="status-no"><i class="fas fa-times"></i> Tidak Ada</td>
+                                <td class="status-no"><i class="fas fa-times"></i> Tidak Ada</td>
+                                <td class="status-no"><i class="fas fa-times"></i> Tidak Ada</td>
+                            </tr>
+                            <tr>
+                                <th>Bebas Iklan & Telemetri</th>
+                                <td class="col-raz status-yes"><i class="fas fa-check"></i> 100% Nol Telemetri</td>
+                                <td>Lisensi komersial</td>
+                                <td>Ada promosi bawaan</td>
+                                <td>Ada installer bawaan adware</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Cara Migrasi dari IDM ke RAZ DM -->
+            <div style="background:var(--color-dark-secondary);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:40px;margin-top:50px;text-align:left;">
+                <h3 style="font-size:1.4rem;font-weight:700;color:var(--color-gold-accent);margin-bottom:16px;">
+                    <i class="fas fa-exchange-alt"></i> Cara Mudah Pindahkan Daftar Download dari IDM
+                </h3>
+                <p style="font-size:0.95rem;color:var(--color-light-secondary);line-height:1.7;margin-bottom:16px;">
+                    Lo gak perlu download ulang dari awal jika punya daftar antrean di IDM:
+                </p>
+                <ol style="margin-left:24px;font-size:0.92rem;color:var(--color-light-text);line-height:1.8;">
+                    <li>Buka <b>Internet Download Manager</b> lo yang lama.</li>
+                    <li>Pilih menu <b>Tasks → Export → To IDM export file</b> lalu simpan file <code>.ef2</code> atau <code>.txt</code>.</li>
+                    <li>Buka <b>RAZ Download Manager</b>, pilih menu <b>Tasks → Import → From IDM export file</b>.</li>
+                    <li>Selesai! Seluruh link dan status antrean lo akan langsung berpindah otomatis.</li>
+                </ol>
+            </div>
+
+            <!-- CTA Download -->
+            <div style="text-align:center;margin-top:60px;">
+                <h3 style="font-size:1.8rem;color:var(--color-light-text);margin-bottom:16px;">
+                    Siap Merasakan Download yang Beneran Ngebut?
+                </h3>
+                <a href="download.html" class="cta-primary" style="font-size:1.05rem;padding:16px 36px;">
+                    <i class="fas fa-download"></i> Unduh RAZ Download Manager Sekarang (Gratis)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <hr class="section-separator">
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <img src="img/raz-logo.svg" alt="RAZ Logo" class="logo-image"
+                        style="max-width:180px;height:auto;margin-bottom:16px;">
+                    <p>RAZ Download Manager — Download manager open-source berkecepatan tinggi dari RAZ Creative Studio.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="index.html#features">Fitur</a></li>
+                        <li><a href="benchmark.html">Benchmark</a></li>
+                        <li><a href="download.html">Unduh Installer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Bantuan</h4>
+                    <ul>
+                        <li><a href="https://dm.it-raz.com/help/" target="_blank">Panduan Pengguna</a></li>
+                        <li><a href="https://github.com/razcreativestudio/razdownloadmanager/issues" target="_blank">Laporkan Masalah</a></li>
+                        <li><a href="https://github.com/razcreativestudio/razdownloadmanager" target="_blank">Source Code GitHub</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Ekosistem RAZ</h4>
+                    <ul>
+                        <li><a href="https://raz.web.id/" target="_blank">RAZ Creative Studio</a></li>
+                        <li><a href="https://office.it-raz.com" target="_blank">RAZ Office</a></li>
+                        <li><a href="https://simaju.raz.web.id/" target="_blank">SIMAJURAZ POS</a></li>
+                        <li><a href="https://dm.it-raz.com" target="_blank">RAZ Download Manager</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 RAZ Creative Studio. Hak Cipta Dilindungi.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/raz_studio.id/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@razcreativestudio" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://github.com/razcreativestudio/razdownloadmanager" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/RAZModal.js"></script>
+    <script src="js/RAZMainLang.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

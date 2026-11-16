@@ -3,6 +3,28 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-16] — Penerapan Glosarium Bahasa Indo Oke ke Seluruh Laman Website Resmi
+*Waktu: 16 November 2026 09:35 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Pembaruan Modul Bahasa Website (`website/js/RAZMainLang.js`)**:
+   - Menyesuaikan seluruh string bahasa Indonesia pada objek lokalisasi `translations.id`:
+     - Tombol navigasi dan hero: *Donlot Installer*, *Donlot Installer (v1.0.0)*.
+     - Pusat rilis: *Pusat Donlotan*, *Donlot RAZ Download Manager*.
+     - Kartu download & tombol aksi: *Donlot Installer (setup.exe)*, *Donlot Portable (portable.zip)*, *Donlot Binaries (x64.zip)*.
+     - Deskripsi fitur & FAQ: *Atur koneksi per donlotan...*, *...didonlot 1-klik*, *...mengelola donlotan via prompt AI*, dll.
+
+2. **Sinkronisasi Teks HTML Statis (`website/`)**:
+   - `website/index.html`: Judul tombol, navigasi, dan card preview diubah menjadi istilah gaul modern (*Donlot*, *Donlotan*).
+   - `website/download.html`: Header (*Pusat Donlotan*), tombol unduhan installer, portable, binary, instruksi direct download ekstensi browser (*Donlot Ekstensi Chrome/Firefox*).
+   - `website/benchmark.html`: Penjelasan pengujian (*mendonlot dari server pengujian*, *saat donlotan dimulai*).
+   - `website/idm-alternative.html`: Komparasi kecepatan (*mendonlot file 1 GiB*, tombol CTA *Donlot RAZ Download Manager Sekarang*).
+
+3. **Sinkronisasi Segmen Terjemahan Web (`i18n/site/id.json`)**:
+   - Memperbarui segmen terjemahan situs web agar konsisten dengan glosarium *Donlot / Ngedonlot / Mendonlot / Donlotan / Terdonlot / Aplot / Aplotan*.
+
+---
+
 ## [2026-11-16] — Pembaruan Kamus Bahasa Indo Oke: Slang Modern "Donlot", "Ngedonlot", "Aplot"
 *Waktu: 16 November 2026 09:28 WIB*
 
