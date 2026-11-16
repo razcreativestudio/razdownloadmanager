@@ -3,6 +3,27 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-16] — Pembuatan Workflow GitHub Actions Auto-Deploy Website ke IDwebhost
+*Waktu: 16 November 2026 10:00 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Pembuatan Workflow `.github/workflows/RAZDeployWebsite.yml`**:
+   - Menambahkan alur kerja CI/CD otomatis (*GitHub Actions*) untuk menyinkronkan/mengunggah berkas di folder `website/` langsung ke server hosting IDwebhost setiap kali ada perubahan berkas (`push` ke branch `main`) atau via trigger manual (`workflow_dispatch`).
+   - Menggunakan aksi standar industri `SamKirkland/FTP-Deploy-Action@v4.3.5` dengan protokol aman FTPS (FTP over TLS/SSL).
+   - Menggunakan konfigurasi kredensial terenkripsi via **GitHub Repository Secrets**:
+     - `IDWEBHOST_FTP_SERVER`: Alamat server FTP host IDwebhost (contoh: `ftp.domain.com` atau IP cPanel).
+     - `IDWEBHOST_FTP_USERNAME`: Nama pengguna akun FTP cPanel.
+     - `IDWEBHOST_FTP_PASSWORD`: Kata sandi akun FTP cPanel.
+     - `IDWEBHOST_REMOTE_DIR`: Direktori target tujuan di server (opsional, default: `public_html/` atau `public_html/dm/`).
+     - `IDWEBHOST_FTP_PORT`: Port koneksi FTP (opsional, default: `21`).
+   - Mengaktifkan fitur *concurrency group* untuk mencegah bentrok upload jika terdapat beberapa push berurutan.
+
+2. **Sinkronisasi Dokumen Arsitektur Proyek**:
+   - Memperbarui `RAZProjectStructure.md` dengan menyertakan struktur `.github/workflows/` beserta file workflow baru.
+   - Mengamankan salinan cadangan di `backup/`.
+
+---
+
 ## [2026-11-16] — Transparansi Asal-Usul Proyek, Apresiasi Kontributor MDM, Penegasan Lisensi & Pembersihan File Usang
 *Waktu: 16 November 2026 09:55 WIB*
 

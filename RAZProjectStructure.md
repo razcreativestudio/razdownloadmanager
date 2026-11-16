@@ -9,6 +9,12 @@ Proyek ini menggunakan arsitektur Rust Workspace modular yang terbagi menjadi be
 
 ```
 RAZ Download Manager/
+├── .github/                 # Konfigurasi otomasi CI/CD & GitHub Actions
+│   └── workflows/
+│       ├── RAZDeployWebsite.yml # Otomasi auto-deploy folder website ke hosting IDwebhost
+│       ├── ci.yml               # Automated test & build check
+│       ├── pages.yml            # Build situs docs GitHub Pages
+│       └── release.yml          # Otomasi build installer & rilis aset GitHub
 ├── backup/                  # Direktori backup terpusat (WAJIB sebelum edit)
 ├── crates/                  # Modul-modul backend & desktop Rust
 │   ├── app/                 # Aplikasi GUI Desktop utama (egui / eframe) -> razdownloadmanager
