@@ -23,7 +23,9 @@ fn item(id: u64, name: &str, status: &str, downloaded: u64, dir: &Path) -> serde
 }
 
 fn log(data: &Path) -> String {
-    std::fs::read_to_string(data.join("logs").join("mdm.log")).unwrap_or_default()
+    std::fs::read_to_string(data.join("logs").join("razdm.log"))
+        .or_else(|_| std::fs::read_to_string(data.join("logs").join("mdm.log")))
+        .unwrap_or_default()
 }
 
 fn second_launch(data: &Path, downloads: &Path, what: &str) {

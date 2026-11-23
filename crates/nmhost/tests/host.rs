@@ -194,7 +194,8 @@ fn what_is_left_to_the_browser_is_logged() {
     let dir = data_dir("logged", serde_json::json!({ "auto_types": "ZIP" }));
     let app = fake_app(&dir, "ok");
     std::fs::create_dir_all(dir.join("logs")).unwrap();
-    std::fs::write(dir.join("logs").join("mdm.log"), "an earlier line\n").unwrap();
+    let log_path = dir.join("logs").join("razdm.log");
+    std::fs::write(&log_path, "an earlier line\n").unwrap();
     let (replies, ok) = run(
         &dir,
         CALLER,
@@ -221,7 +222,9 @@ fn what_is_left_to_the_browser_is_logged() {
         app.recv_timeout(Duration::from_millis(500)).is_err(),
         "nothing reached the app"
     );
-    let log = std::fs::read_to_string(dir.join("logs").join("mdm.log")).unwrap();
+    let log = std::fs::read_to_string(&log_path)
+        .or_else(|_| std::fs::read_to_string(dir.join("logs").join("mdm.log")))
+        .unwrap();
     let lines: Vec<&str> = log.lines().collect();
     assert_eq!(lines.len(), 5, "{log}");
     assert_eq!(lines[0], "an earlier line");
