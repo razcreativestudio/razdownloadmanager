@@ -29,8 +29,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Langkah 1: Ambil kode sumber dari repositori GitHub
-      - name: 🚚 Checkout Kode Sumber
+      # Langkah 1: Ambil source code dari repositori GitHub
+      - name: 🚚 Checkout Source Code
         uses: actions/checkout@v4
         with:
           # Ambil minimal 2 riwayat commit agar aksi dapat membandingkan perubahan berkas (incremental sync)

@@ -60,14 +60,14 @@
 
 ## 💡 Dari Mister Download Manager Menuju RAZ Download Manager
 
-**RAZ Download Manager** merupakan proyek evolusi dan pengembangan lanjutan (*evolutionary fork*) dari **Mister Download Manager (MDM)**, sebuah proyek pengelola unduhan sumber terbuka berbasis bahasa Rust yang awalnya dirintis oleh **Ahmed Nefzaoui** bersama komunitas pengembang sumber terbuka dunia.
-
+**RAZ Download Manager** merupakan proyek evolusi dan pengembangan lanjutan (*evolutionary fork*) dari **Mister Download Manager (MDM)**, sebuah proyek pengelola unduhan Open Source berbasis bahasa Rust yang awalnya dirintis oleh **Ahmed Nefzaoui** bersama komunitas pengembang Open Source dunia.
+ 
 Mister Download Manager membuktikan bahwa pengelola unduhan modern berkinerja tinggi dapat dibangun di atas arsitektur bersih tanpa bergantung pada kode tertutup atau lisensi berbayar. **RAZ Creative Studio** kemudian mengambil tongkat estafet pengembangan ini untuk menyempurnakan dan memodernisasinya ke tingkat yang lebih tinggi:
 
 - 🎨 **Antarmuka Obsidian Dark Modern**: Menghadirkan desain tema gelap obsidian yang presisi khas RAZ Creative Studio dengan sidepanel kategori yang ramping, proporsional, dan bersih tanpa scrollbar vertikal yang mengganggu.
 - 🚀 **Identitas & Branding Eksklusif**: Pembaruan penuh logo resmi, ikon multi-resolusi, dan penyempurnaan UI tombol media extension.
 - 🇮🇩 **Dukungan Penuh Bahasa Indo Oke**: Penyesuaian ratusan frasa ke bahasa gaul modern yang santai, luwes, dan ramah pengguna (*Donlot, Ngedonlot, Donlotan, Terdonlot, Mendonlot, Aplot, Aplotan*).
-- ⚡ **Peningkatan Stabilitas & Ekosistem**: Pembaruan installer Inno Setup mandiri, direktori instalasi independen, dukungan ekstensi peramban terkini, dan optimasi performa engine.
+- ⚡ **Peningkatan Stabilitas & Ekosistem**: Pembaruan installer Inno Setup mandiri, direktori instalasi independen, dukungan ekstensi browser terkini, dan optimasi performa engine.
 
 ---
 
@@ -85,7 +85,7 @@ Tampilan akrab yang udah biasa lo pake di IDM, tapi performanya jauh lebih ngaci
 | **Iklan, Notifikasi Palsu & Serial** | **Nol / Bersih Total** | Wajib aktivasi / pop-up serial |
 | **Dukungan BitTorrent & Magnet** | **Built-in Native (librqbit)** | Butuh aplikasi tambahan lain |
 | **Integrasi AI Agent (MCP)** | **Native MCP Server (Claude/Cursor)** | Gak ada |
-| **Kode Sumber** | **Open Source (GPL-3.0)** | Closed source / proprietary |
+| **Source Code** | **Open Source (GPL-3.0)** | Closed source / proprietary |
 
 > [!TIP]
 > Semua tombol dan menu ditaruh di tempat yang lo familiar: daftar donlotan, kategori, panel progres, dan tombol ngedonlot video di browser. Jadi lo gak perlu adaptasi dari nol!
@@ -96,7 +96,7 @@ Tampilan akrab yang udah biasa lo pake di IDM, tapi performanya jauh lebih ngaci
 
 - ⚡ **Multi-Thread Engine Super Kencang**: Memecah satu file donlotan hingga 64 koneksi paralel secara simultan dan otomatis menyeimbangkan beban byte sampai selesai.
 - 🔄 **Smart Resume & Auto-Reconnect**: Koneksi putus atau PC mati mendadak? Santai, tinggal lanjutin donlotan tanpa perlu ngulang dari nol.
-- 🧩 **Penangkap Tautan Browser Otomatis**: Menangkap semua donlotan dari Chrome, Edge, Firefox, Brave, Opera, Vivaldi, dan Zen Browser lewat ekstensi resmi dengan jendela konfirmasi instan:
+- 🧩 **Penangkap Link Browser Otomatis**: Menangkap semua donlotan dari Chrome, Edge, Firefox, Brave, Opera, Vivaldi, dan Zen Browser lewat ekstensi resmi dengan jendela konfirmasi instan:
   <br><img src="docs/images/catch-dark.png" alt="Dialog Info File Donlotan" width="460"><br>
 - 🎬 **Video Sniffer & Grabber**: Tombol melayang "Unduh video" dengan logo resmi RAZ otomatis muncul di pojok video streaming (YouTube, TikTok, Vimeo, dll) lengkap dengan deteksi resolusi cepat hingga 4K dan opsi ekstrak audio MP3/M4A:
   <br><img src="docs/images/video-button.png" alt="Tombol Unduh Video RAZ di Browser" width="280"><br>
@@ -143,7 +143,7 @@ Berikut tampilan antarmuka resmi RAZ Download Manager v1.0.0 dengan sentuhan tem
 | ⚙️ Konfigurasi (Mode Gelap) | ⚙️ Konfigurasi (Mode Terang) |
 | :---: | :---: |
 | <img src="docs/images/settings.png" alt="Konfigurasi RAZ Download Manager Mode Gelap" width="460"> | <img src="docs/images/settings-light.png" alt="Konfigurasi RAZ Download Manager Mode Terang" width="460"> |
-| *Pengaturan integrasi peramban, koneksi, dan proksi (Dark)* | *Pengaturan tema terang dengan navigasi tab amber presisi (Light)* |
+| *Pengaturan integrasi browser, koneksi, dan proksi (Dark)* | *Pengaturan tema terang dengan navigasi tab amber presisi (Light)* |
 
 | ⏰ Penjadwal Donlotan (Mode Gelap) | ⏰ Penjadwal Donlotan (Mode Terang) |
 | :---: | :---: |
@@ -168,7 +168,7 @@ Berikut tampilan antarmuka resmi RAZ Download Manager v1.0.0 dengan sentuhan tem
 | ℹ️ Tentang RAZ DM (Mode Gelap) | ℹ️ Tentang RAZ DM (Mode Terang) |
 | :---: | :---: |
 | <img src="docs/images/about-dark.png" alt="Tentang RAZ Download Manager Mode Gelap" width="460"> | <img src="docs/images/about-light.png" alt="Tentang RAZ Download Manager Mode Terang" width="460"> |
-| *Informasi lisensi GPL-3, versi biner, dan tautan repositori (Dark)* | *Dukungan penuh tema terang Windows dengan tombol aksi amber presisi (Light)* |
+| *Informasi lisensi GPL-3, versi biner, dan link repositori (Dark)* | *Dukungan penuh tema terang Windows dengan tombol aksi amber presisi (Light)* |
 
 | 🔄 Cek Pembaruan (Mode Gelap) | 🔄 Cek Pembaruan (Mode Terang) |
 | :---: | :---: |
@@ -178,7 +178,7 @@ Berikut tampilan antarmuka resmi RAZ Download Manager v1.0.0 dengan sentuhan tem
 | 🧩 Uji Integrasi Ekstensi Browser (Mode Gelap) | 🧩 Uji Integrasi Ekstensi Browser (Mode Terang) |
 | :---: | :---: |
 | <img src="docs/images/test-integration-dark.png" alt="Uji Integrasi Browser RAZ DM Mode Gelap" width="460"> | <img src="docs/images/test-integration-light.png" alt="Uji Integrasi Browser RAZ DM Mode Terang" width="460"> |
-| *Verifikasi koneksi native messaging host dan daftar peramban aktif (Dark)* | *Dukungan penuh tema terang Windows dengan tombol uji dan pengaturan pintasan (Light)* |
+| *Verifikasi koneksi native messaging host dan daftar browser aktif (Dark)* | *Dukungan penuh tema terang Windows dengan tombol uji dan pengaturan pintasan (Light)* |
 
 | 📁 Pengaturan Folder Simpan Ke (Mode Gelap) | 📁 Pengaturan Folder Simpan Ke (Mode Terang) |
 | :---: | :---: |
@@ -242,7 +242,7 @@ RAZ DM mendukung lebih dari **86 bahasa dunia**. Lo bisa ganti kapan aja lewat m
 
 ## 🛠️ Panduan Build dari Source Code (Buat Developer)
 
-Kalau lo mau ngoprek atau nge-build sendiri langsung dari kode sumber:
+Kalau lo mau ngoprek atau nge-build sendiri langsung dari source code:
 
 ### Syarat Perangkat Lunak
 - **Rust stable 1.95** atau versi yang lebih baru (MSVC toolchain untuk Windows).
@@ -301,7 +301,7 @@ Struktur modular Cargo workspace (Rust 2024 edition):
 
 Terwujudnya **RAZ Download Manager** hari ini berdiri tegak di atas dedikasi, waktu, dan kerja keras luar biasa dari para kreator, pengembang, dan kontributor awal proyek **Mister Download Manager (MDM)**.
 
-Fondasi engine multi-thread yang tangguh, arsitektur *clean-room* yang cerdas, sistem penangkap tautan peramban, serta puluhan lokalisasi bahasa dunia adalah karya berharga yang dibangun bersama oleh komunitas sumber terbuka. Kami di **RAZ Creative Studio** menyampaikan rasa hormat dan terima kasih tak terhingga kepada:
+Fondasi engine multi-thread yang tangguh, arsitektur *clean-room* yang cerdas, sistem penangkap link browser, serta puluhan lokalisasi bahasa dunia adalah karya berharga yang dibangun bersama oleh komunitas Open Source. Kami di **RAZ Creative Studio** menyampaikan rasa hormat dan terima kasih tak terhingga kepada:
 
 - **Ahmed Nefzaoui** ([@anefzaoui](https://github.com/anefzaoui)) — Arsitek dan pencetus awal proyek Mister Download Manager.
 - Segenap kontributor komunitas yang telah mendedikasikan pull request, pengujian fitur, laporan bug, dan penerjemahan:
@@ -350,8 +350,8 @@ Perangkat lunak ini adalah perangkat lunak bebas (*Free & Open Source Software*)
   Copyright © 2026 RAZ Creative Studio ([https://it-raz.com](https://it-raz.com)).
 
 ### Hak dan Ketentuan di Bawah GPL-3.0:
-1. **Kebebasan Penuh Pengguna**: Pengguna berhak menjalankan perangkat lunak ini untuk tujuan apa pun, mempelajari cara kerjanya, serta memodifikasi kode sumber sesuai kebutuhan.
-2. **Kewajiban Berbagi Serupa (Copyleft)**: Segala bentuk distribusi ulang baik dalam bentuk biner maupun kode sumber modifikasi wajib tetap menyertakan kode sumber lengkap di bawah lisensi terbuka GNU GPL-3.0 yang sama.
+1. **Kebebasan Penuh Pengguna**: Pengguna berhak menjalankan perangkat lunak ini untuk tujuan apa pun, mempelajari cara kerjanya, serta memodifikasi source code sesuai kebutuhan.
+2. **Kewajiban Berbagi Serupa (Copyleft)**: Segala bentuk distribusi ulang baik dalam bentuk biner maupun source code modifikasi wajib tetap menyertakan source code lengkap di bawah lisensi terbuka GNU GPL-3.0 yang sama.
 3. **Tanpa Jaminan (Disclaimer of Warranty)**: Perangkat lunak ini didistribusikan dengan harapan dapat bermanfaat bagi masyarakat luas, namun TANPA JAMINAN APA PUN; bahkan tanpa jaminan tersirat atas KELAYAKAN JUAL atau KESESUAIAN UNTUK TUJUAN TERTENTU.
 
 ### Pustaka & Komponen Pihak Ketiga:

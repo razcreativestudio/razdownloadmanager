@@ -291,7 +291,7 @@ ShutdownBlockReasonUninstallingApp=Menghapus instalasi %1.
 
 [CustomMessages]
 TaskBrowser=Siapkan integrasi &browser (Chrome, Edge, Brave, Firefox)
-TaskTorrents=Buka file .&torrent dan tautan magnet dengan RAZ Download Manager
+TaskTorrents=Buka file .&torrent dan link magnet dengan RAZ Download Manager
 TaskStartup=Mulai RAZ Download Manager saat &Windows dimulai
 TaskGroupOther=Lainnya:
 Launch=Mulai RAZ Download Manager

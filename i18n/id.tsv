@@ -1,4 +1,4 @@
-﻿# RAZ Download Manager in Indonesian (Bahasa Indonesia): tools/i18n/translate.py
+# RAZ Download Manager in Indonesian (Bahasa Indonesia): tools/i18n/translate.py
 # writes the rows marked '#, machine'; a native speaker deletes that line after checking.
 # context	source	translation (craft-i18n format, rows as in en.tsv)
 @id	language.name	Bahasa Indonesia
@@ -69,7 +69,7 @@
 #. in a download's log, after extracting: entries of the archive not written (links, names that would leave the folder)
 #. {n} = a number (keep the braces as they are)
 #, machine
-@plural	{n} entry was left out (a link, or a name leading outside the folder)|{n} entries were left out (links, or names leading outside the folder)	{n} entri tidak disertakan (tautan atau nama yang mengarah ke luar folder)
+@plural	{n} entry was left out (a link, or a name leading outside the folder)|{n} entries were left out (links, or names leading outside the folder)	{n} entri tidak disertakan (link atau nama yang mengarah ke luar folder)
 #. count in the Batch download window; count in the Link grabber window; count in the Add torrent window; count in torrentfiles.rs
 #. how many files the pattern gives in all
 #. Link grabber: a package's row: {n} is its number of links
@@ -186,7 +186,7 @@
 #. text in the Options window
 #. Options → Accounts: what these accounts are, and the services' rule against sharing
 #, machine
-	A debrid service downloads a file host's link with your own paid account and gives MDM a direct link. Use only your own account: sharing an account or its links breaks the services' terms and can get it suspended. Downloads the browser already started stay as they are.	Layanan debrid mengunduh file dari tautan host file menggunakan akun berbayar Anda sendiri, lalu memberikan tautan langsung kepada MDM. Gunakan hanya akun Anda sendiri: berbagi akun atau tautannya melanggar ketentuan layanan dan dapat menyebabkan akun ditangguhkan. Unduhan yang sudah dimulai oleh browser tetap berjalan seperti biasa.
+	A debrid service downloads a file host's link with your own paid account and gives MDM a direct link. Use only your own account: sharing an account or its links breaks the services' terms and can get it suspended. Downloads the browser already started stay as they are.	Layanan debrid mengunduh file dari link host file menggunakan akun berbayar Anda sendiri, lalu memberikan link langsung kepada MDM. Gunakan hanya akun Anda sendiri: berbagi akun atau link-nya melanggar ketentuan layanan dan dapat menyebabkan akun ditangguhkan. Unduhan yang sudah dimulai oleh browser tetap berjalan seperti biasa.
 #. text in errors.rs
 #. a torrent through a debrid service: one of its files has a name that would be written outside its folder; nothing was written. {name} the file's name as the service gave it
 #. {name} = a file name (keep the braces as they are)
@@ -357,7 +357,7 @@
 #. text in remote.rs
 #. remote control page (on a phone): label of the box where a download's address or a magnet link is typed
 #, machine
-	Address or magnet link	Alamat atau tautan magnet
+	Address or magnet link	Alamat atau link magnet
 #. text in the Options window; text in a download's Properties window
 #. Options → DNS over HTTPS: label before the server's https:// address
 #, machine
@@ -509,7 +509,7 @@
 #. text in the Options window
 #. Options page title: extracting downloaded archives, and Link grabber
 #, machine
-	Archives and Link grabber	Arsip dan Pengambil Tautan
+	Archives and Link grabber	Arsip dan Pengambil Link
 #. text in a dialog box
 #. {name} = a file name (keep the braces as they are)
 #, machine
@@ -652,7 +652,7 @@
 	Bosnia and Herzegovina	Bosnia dan Herzegovina
 #. text in helpers.rs
 #, machine
-	Both are open source. MDM gets them from their official releases with its own downloader and checks each file's signature before it runs. About 100 MB, once.	Keduanya adalah sumber terbuka. MDM mendapatkannya dari rilis resmi mereka dengan pengunduh sendiri dan memeriksa tanda tangan setiap file sebelum dijalankan. Sekitar 100 MB, sekali.
+	Both are open source. MDM gets them from their official releases with its own downloader and checks each file's signature before it runs. About 100 MB, once.	Keduanya adalah Open Source. MDM mendapatkannya dari rilis resmi mereka dengan pengunduh sendiri dan memeriksa tanda tangan setiap file sebelum dijalankan. Sekitar 100 MB, sekali.
 #. text in countries.rs
 #. a country's name (where a download's server is)
 #, machine
@@ -685,7 +685,7 @@
 	Browser integration isn't set up on this computer, so no browser can reach RAZ Download Manager yet.	Integrasi browser belum diatur di komputer ini, jadi belum ada browser yang dapat menjangkau RAZ Download Manager.
 #. page title in the Options window
 #, machine
-	Browser/System Integration	Integrasi Peramban/Sistem
+	Browser/System Integration	Integrasi Browser/Sistem
 #. text in countries.rs
 #. a country's name (where a download's server is)
 #, machine
@@ -751,7 +751,7 @@
 	cannot resume: {detail}	tidak dapat melanjutkan: {detail}
 #. group box title in the Options window; text in the Options window
 #, machine
-	Capture downloads from the following browsers:	Ambil unduhan dari peramban berikut:
+	Capture downloads from the following browsers:	Ambil unduhan dari browser berikut:
 #. text in extension.rs
 #. the headline of the window that offers the browser extension
 #, machine
@@ -1041,10 +1041,10 @@
 	Customize keys to prevent or force downloading with RAZ DM	Sesuaikan tombol untuk mencegah atau memaksa pengunduhan dengan RAZ DM
 #. text in the Options window
 #, machine
-	Customize RAZ DM Download panels in browsers	Sesuaikan panel Unduhan RAZ DM di peramban
+	Customize RAZ DM Download panels in browsers	Sesuaikan panel Unduhan RAZ DM di browser
 #. text in the Options window
 #, machine
-	Customize RAZ DM menu items in context menu of browsers	Sesuaikan item menu RAZ DM di menu konteks peramban
+	Customize RAZ DM menu items in context menu of browsers	Sesuaikan item menu RAZ DM di menu konteks browser
 #. text in countries.rs
 #. a country's name (where a download's server is)
 #, machine
@@ -1275,7 +1275,7 @@
 #. checkbox in the Options window
 #. Options → Accounts: checkbox: links of the file hosts these services support are downloaded through the accounts
 #, machine
-	Download supported file-host links through these accounts	Unduh tautan host file yang didukung melalui akun ini
+	Download supported file-host links through these accounts	Unduh link host file yang didukung melalui akun ini
 #. text in a dialog box
 #. Download File Info: a check box, ticked when the download goes through the user's debrid account; {service} the service and the account, "Real-Debrid (labuser)". Unticked: downloaded directly
 #, machine
@@ -1358,7 +1358,7 @@
 	Drag .torrent files or lists of addresses here	Seret file .torrent atau daftar alamat di sini
 #. text in droptarget.rs
 #, machine
-	Drag links here to download them	Seret tautan ke sini untuk mengunduhnya
+	Drag links here to download them	Seret link ke sini untuk mengunduhnya
 #. text in a dialog box
 #. tooltip of the handle in Download complete: drag it to drop the downloaded file somewhere
 #, machine
@@ -1366,10 +1366,10 @@
 #. message or event log entry in the main window
 #. in Import, where the addresses came from: dragged onto the window
 #, machine
-	Dropped links	Tautan yang dijatuhkan
+	Dropped links	Link yang dijatuhkan
 #. window title in a dialog box
 #, machine
-	Duplicate download link	Tautan unduhan duplikat
+	Duplicate download link	Link unduhan duplikat
 #. text in the Options window
 #. Options → Network adapter: what "Any" means
 #, machine
@@ -1422,7 +1422,7 @@
 	End and restart MDM	Akhiri dan mulai ulang MDM
 #. text in the Add torrent window
 #, machine
-	Enter a magnet link or choose a .torrent file	Masukkan tautan magnet atau pilih file .torrent
+	Enter a magnet link or choose a .torrent file	Masukkan link magnet atau pilih file .torrent
 #. text in the Scheduler window
 #, machine
 	Enter a name for the new queue that will be	Masukkan nama untuk antrean baru yang akan dibuat
@@ -1457,12 +1457,12 @@
 #. a download's status (state it is in, not a command)
 #. a download's status (state it is in, not a command): it failed
 #, machine
-	Error	Galat
+	Error	Gagal
 #. text in a download's progress window
 #. a download's status: it failed, with the reason
 #. {error} = an error message (keep the braces as they are)
 #, machine
-	Error: {error}	Galat: {error}
+	Error: {error}	Gagal: {error}
 #. text in countries.rs
 #. a country's name (where a download's server is)
 #, machine
@@ -1716,7 +1716,7 @@
 #. text in debrid.rs
 #. Options → Accounts: a debrid account without premium (it can't unlock links)
 #, machine
-	free account: links need premium	akun gratis: tautan memerlukan akun premium
+	free account: links need premium	akun gratis: link memerlukan akun premium
 #. text in helpers.rs
 #. a promise in the helpers window: the helpers are free, official and checked
 #, machine
@@ -1742,7 +1742,7 @@
 	from a gallery (gallery-dl)	dari galeri (gallery-dl)
 #. message or event log entry in the main window
 #, machine
-	from a magnet link	dari tautan magnet
+	from a magnet link	dari link magnet
 #. message or event log entry in the main window
 #, machine
 	from a page (yt-dlp)	dari halaman (yt-dlp)
@@ -1938,7 +1938,7 @@
 	Hide web pages	Sembunyikan halaman web
 #. text in the Options window
 #, machine
-	Hold Alt while clicking a link to let the browser download it instead of RAZ Download Manager.	Tahan Alt saat mengeklik tautan agar browser mengunduhnya, bukan RAZ Download Manager.
+	Hold Alt while clicking a link to let the browser download it instead of RAZ Download Manager.	Tahan Alt saat mengeklik link agar browser mengunduhnya, bukan RAZ Download Manager.
 #. link (opens a web page) in the Help menu's windows (About, updates, shortcuts, Tell a friend)
 #, machine
 	Home page	Beranda
@@ -1981,7 +1981,7 @@
 	Iceland	Islandia
 #. text in the Options window
 #, machine
-	If a duplicate download link is added:	Jika tautan unduhan duplikat ditambahkan:
+	If a duplicate download link is added:	Jika link unduhan duplikat ditambahkan:
 #. text in the Options window
 #, machine
 	If existing file is complete, show download complete dialog; otherwise resume it.	Jika file yang ada sudah lengkap, tampilkan dialog unduhan selesai; jika tidak, lanjutkan.
@@ -2299,12 +2299,12 @@
 #. text in the Link grabber window
 #. what a screen reader calls Link grabber's list
 #, machine
-	Links	Tautan
+	Links	Link
 #. message or event log entry in the main window; text in the Link grabber window
 #. in Import, where the addresses came from: a page in the browser
 #. in Link grabber, where the addresses came from: a page in the browser
 #, machine
-	Links from the browser	Tautan dari browser
+	Links from the browser	Link dari browser
 #. text in playlistdlg.rs
 #. button in Download video: go on listing a playlist from where it stopped
 #, machine
@@ -2352,7 +2352,7 @@
 #. checkbox in the Options window
 #. Options → Archives → Link grabber check box (IDM's Download all links looks every link up)
 #, machine
-	Look links up when they arrive (name, size, online)	Periksa tautan saat diterima (nama, ukuran, online)
+	Look links up when they arrive (name, size, online)	Periksa link saat diterima (nama, ukuran, online)
 #. text in the Add torrent window; button in the Download video window
 #, machine
 	Look up	Cari
@@ -2965,7 +2965,7 @@
 	Note: These settings don't relate to queue processing	Catatan: Pengaturan ini tidak terkait dengan pemrosesan antrean
 #. message or event log entry in the main window
 #, machine
-	Nothing to download in {item}: drop links, a .torrent file, or a list of addresses (.txt, .ef2).	Tidak ada yang dapat diunduh di {item}: jatuhkan tautan, file .torrent, atau daftar alamat (.txt, .ef2).
+	Nothing to download in {item}: drop links, a .torrent file, or a list of addresses (.txt, .ef2).	Tidak ada yang dapat diunduh di {item}: jatuhkan link, file .torrent, atau daftar alamat (.txt, .ef2).
 #. text in the Scheduler window
 #, machine
 	November	November
@@ -2994,7 +2994,7 @@
 	Off: nothing on the network can reach MDM.	Nonaktif: tidak ada di jaringan yang dapat menjangkau MDM.
 #. text in the Options window
 #, machine
-	Offer to download links copied to the clipboard	Tawarkan untuk mengunduh tautan yang disalin ke papan klip
+	Offer to download links copied to the clipboard	Tawarkan untuk mengunduh link yang disalin ke papan klip
 #. text in the Link grabber window
 #. Link grabber, a link's status: the server hasn't the file; {status} is the HTTP code (404)
 #, machine
@@ -3089,7 +3089,7 @@
 	Open folder	Buka folder
 #. checkbox in the Add torrent window
 #, machine
-	Open magnet links and .torrent files with RAZ Download Manager	Buka tautan magnet dan file .torrent dengan RAZ Download Manager
+	Open magnet links and .torrent files with RAZ Download Manager	Buka link magnet dan file .torrent dengan RAZ Download Manager
 #. text in the tray icon's menu
 #, machine
 	Open RAZ Download Manager	Buka RAZ Download Manager
@@ -3205,11 +3205,11 @@
 	Password:	Kata Sandi:
 #. text in the Add torrent window
 #, machine
-	Paste a magnet link or choose a .torrent file, then Look up.	Tempel tautan magnet atau pilih file .torrent, lalu Cari.
+	Paste a magnet link or choose a .torrent file, then Look up.	Tempel link magnet atau pilih file .torrent, lalu Cari.
 #. text in the Link grabber window
 #. Link grabber, while it is empty
 #, machine
-	Paste links here (Ctrl+V), or send a page's links from the browser.	Tempel tautan di sini (Ctrl+V), atau kirim tautan halaman dari browser.
+	Paste links here (Ctrl+V), or send a page's links from the browser.	Tempel link di sini (Ctrl+V), atau kirim link halaman dari browser.
 #. text in the Checksum window
 #. why Verify / OK is greyed in Verify checksum
 #, machine
@@ -3674,7 +3674,7 @@
 #. text in the Options window
 #. Options → Accounts: checkbox: magnet links and .torrent files go to the first account's service, which downloads them; MDM then downloads the files from it (no connections to peers)
 #, machine
-	Send torrents and magnet links to the first account instead of to peers	Kirim torrent dan tautan magnet ke akun pertama, bukan ke rekan
+	Send torrents and magnet links to the first account instead of to peers	Kirim torrent dan link magnet ke akun pertama, bukan ke rekan
 #. text in countries.rs
 #. a country's name (where a download's server is)
 #, machine
@@ -3851,7 +3851,7 @@
 	Sint Maarten	Sint Maarten
 #. checkbox in the Find window
 #, machine
-	Site name/Download link/Parent web page/Referer	Nama situs/Tautan unduhan/Halaman web induk/Perujuk
+	Site name/Download link/Parent web page/Referer	Nama situs/Link unduhan/Halaman web induk/Perujuk
 #. text in the Options window
 #. column title: the site (and path) a login is for
 #, machine
@@ -3925,7 +3925,7 @@
 	Sounds	Suara
 #. link (opens a web page) in the Help menu's windows (About, updates, shortcuts, Tell a friend)
 #, machine
-	Source code	Kode sumber
+	Source code	Source code
 #. text in the Link grabber window
 #. Link grabber: {source} is where the links came from ("Links from the browser", a file's name, "Pasted")
 #. {source} = how the download was added, e.g. "from the browser" (keep the braces as they are)
@@ -4165,7 +4165,7 @@
 #. text in the Options window
 #. \\n starts a new line: break lines where they fit the translation
 #, machine
-	Tasks → Link grabber, or the browser's "Download all links": a split\narchive's volumes are one package, the other links of a page another.	Tugas → Pengambil tautan, atau “Unduh semua tautan” di browser: volume arsip\nterpisah merupakan satu paket, sedangkan tautan lain dari halaman merupakan paket lain.
+	Tasks → Link grabber, or the browser's "Download all links": a split\narchive's volumes are one package, the other links of a page another.	Tugas → Pengambil link, atau “Unduh semua link” di browser: volume arsip\nterpisah merupakan satu paket, sedangkan link lain dari halaman merupakan paket lain.
 #. window title in the Help menu's windows (About, updates, shortcuts, Tell a friend)
 #, machine
 	Tell a friend	Beri tahu teman
@@ -4296,14 +4296,14 @@
 	The download limit ({mb} MBytes every {hours} hours) has been reached.	Batas unduhan ({mb} MB setiap {hours} jam) telah tercapai.
 #. text in errors.rs
 #, machine
-	the download link has expired (refresh the download address)	tautan unduhan telah kedaluwarsa (segarkan alamat unduhan)
+	the download link has expired (refresh the download address)	link unduhan telah kedaluwarsa (segarkan alamat unduhan)
 #. message or event log entry in the main window
 #. {error} = an error message (keep the braces as they are)
 #, machine
 	The download list could not be saved: {error}. Changes are kept while MDM runs.	Daftar unduhan tidak dapat disimpan: {error}. Perubahan tetap tersimpan selama MDM berjalan.
 #. text in the Help menu's windows (About, updates, shortcuts, Tell a friend)
 #, machine
-	The download manager you already know, rebuilt to be faster. Free and open source under the GNU GPL, version 3 or later. Videos are found by yt-dlp; torrents run on librqbit.	Manajer unduhan yang sudah Anda kenal, dibuat ulang agar lebih cepat. Gratis dan sumber terbuka di bawah GNU GPL, versi 3 atau yang lebih baru. Video ditemukan oleh yt-dlp; torrent berjalan di librqbit.
+	The download manager you already know, rebuilt to be faster. Free and open source under the GNU GPL, version 3 or later. Videos are found by yt-dlp; torrents run on librqbit.	Manajer unduhan yang sudah Anda kenal, dibuat ulang agar lebih cepat. Gratis dan Open Source di bawah GNU GPL, versi 3 atau yang lebih baru. Video ditemukan oleh yt-dlp; torrent berjalan di librqbit.
 #. text in a dialog box
 #, machine
 	The download queue is done.	Antrean unduhan selesai.
@@ -4444,7 +4444,7 @@
 	the server is busy ({status}); try again later	server sibuk ({status}); coba lagi nanti
 #. text in errors.rs
 #, machine
-	the server sent a web page instead of the file (sign-in needed or the link expired?)	server mengirim halaman web alih-alih file (perlu masuk atau tautan kedaluwarsa?)
+	the server sent a web page instead of the file (sign-in needed or the link expired?)	server mengirim halaman web alih-alih file (perlu masuk atau link kedaluwarsa?)
 #. text in errors.rs
 #, machine
 	the server sent an unexpected part of the file ({detail})	server mengirim bagian file yang tidak terduga ({detail})
@@ -4579,7 +4579,7 @@
 	this is a Google Drive folder, not a file	ini adalah folder Google Drive, bukan file
 #. text in errors.rs
 #, machine
-	this is not a magnet link or a .torrent file	ini bukan tautan magnet atau file .torrent
+	this is not a magnet link or a .torrent file	ini bukan link magnet atau file .torrent
 #. text in remote.rs
 #. remote control page (on a phone): the file chosen isn't a .torrent file
 #, machine
@@ -4595,7 +4595,7 @@
 #. text in the Add torrent window
 #. a magnet link's lookup, after 30 seconds: it can't find any peer at all
 #, machine
-	This magnet link names no trackers and the DHT is off, so no peer can be found.	Tautan magnet ini tidak menyebutkan pelacak dan DHT mati, jadi tidak ada rekan yang dapat ditemukan.
+	This magnet link names no trackers and the DHT is off, so no peer can be found.	Link magnet ini tidak menyebutkan pelacak dan DHT mati, jadi tidak ada rekan yang dapat ditemukan.
 #. tooltip (why a control is greyed) in the Download video window
 #. why "Put them into the video" is greyed: ffmpeg (a helper program) is not installed
 #, machine
@@ -4616,7 +4616,7 @@
 #. text in errors.rs
 #. why a download failed: the site's bot check (Cloudflare) lets browsers through, not programs. Alt+click: the link clicked with the Alt key held, which leaves the download to the browser
 #, machine
-	this site lets only browsers through; Alt+click the link	situs ini hanya mengizinkan browser; tekan Alt saat mengeklik tautan
+	this site lets only browsers through; Alt+click the link	situs ini hanya mengizinkan browser; tekan Alt saat mengeklik link
 #. text in a download's progress window
 #, machine
 	This system has no dial-up connections to hang up	Sistem ini tidak memiliki koneksi dial-up untuk diputus
@@ -4701,7 +4701,7 @@
 	Torrent	Torrent
 #. text in the download list (sizes, speeds, status)
 #, machine
-	Torrent downloads (magnet links and .torrent files)	Unduhan torrent (tautan magnet dan file .torrent)
+	Torrent downloads (magnet links and .torrent files)	Unduhan torrent (link magnet dan file .torrent)
 #. message or event log entry in the main window; text in the Add torrent window; window title in torrentfiles.rs
 #. the kind of file the Open dialog lists
 #. title of the separate window listing a torrent's files
@@ -5451,7 +5451,7 @@
 	{service} asks you to allow this computer first: see its email	{service} meminta Anda untuk mengizinkan komputer ini terlebih dahulu: lihat emailnya
 #. text in errors.rs
 #, machine
-	{service} can't get this torrent: nobody shares it, or its link can't be read	{service} tidak dapat mengambil torrent ini: tidak ada yang membagikannya, atau tautannya tidak dapat dibaca
+	{service} can't get this torrent: nobody shares it, or its link can't be read	{service} tidak dapat mengambil torrent ini: tidak ada yang membagikannya, atau link-nya tidak dapat dibaca
 #. text in errors.rs
 #, machine
 	{service} can't reach this file host right now; MDM will try again later	{service} tidak dapat menjangkau host file ini sekarang; MDM akan mencoba lagi nanti
@@ -5622,11 +5622,11 @@ extension	Download	Unduh
 #. text in the browser extension
 #. command in the browser's right-click menu on a page: download the links of the whole page; keep the name RAZ Download Manager as it is
 #, machine
-extension	Download all links with RAZ Download Manager	Unduh semua tautan dengan RAZ Download Manager
+extension	Download all links with RAZ Download Manager	Unduh semua link dengan RAZ Download Manager
 #. text in the browser extension
 #. command in the browser's right-click menu on selected text: download the links in the selection; keep the name RAZ Download Manager as it is
 #, machine
-extension	Download selected links with RAZ Download Manager	Unduh tautan yang dipilih dengan RAZ Download Manager
+extension	Download selected links with RAZ Download Manager	Unduh link yang dipilih dengan RAZ Download Manager
 #. text in the browser extension
 #. the button over a video on a web page that downloads it; verb; short (it sits on the video)
 #, machine
@@ -5667,7 +5667,7 @@ extension	Hide on this video	Sembunyikan di video ini
 #. text in the browser extension
 #. hint in the toolbar button's popup; Alt is the keyboard key
 #, machine
-extension	Hold Alt while clicking a link to let the browser download it.	Tahan Alt saat mengeklik tautan agar browser mengunduhnya.
+extension	Hold Alt while clicking a link to let the browser download it.	Tahan Alt saat mengeklik link agar browser mengunduhnya.
 #. text in the browser extension
 #. link under a connection problem in the toolbar button's popup, to the help page's section for it
 #, machine
@@ -6029,7 +6029,7 @@ menu	&Language...	&Bahasa...
 #. & marks the keyboard shortcut letter: keep one & before a letter of the translation
 #. the trailing ... means it opens a window: keep it
 #, machine
-menu	&Link grabber...	Pengambil &Tautan...
+menu	&Link grabber...	Pengambil &Link...
 #. menu command in the main window
 #. & marks the keyboard shortcut letter: keep one & before a letter of the translation
 #, machine
@@ -6103,7 +6103,7 @@ menu	Add &batch download	Tambah unduhan &batch
 #. & marks the keyboard shortcut letter: keep one & before a letter of the translation
 #. the trailing ... means it opens a window: keep it
 #, machine
-menu	Add &magnet link...	Tambah tautan &magnet...
+menu	Add &magnet link...	Tambah link &magnet...
 #. menu command in the main window
 #. View → Theme: picks a theme file or a Base16 or pywal colour scheme, copies it into the themes folder and uses it
 #, machine
@@ -6214,7 +6214,7 @@ menu	Classic	Klasik
 menu	Clear all &filters	Hapus semua &filter
 #. menu command in the main window
 #, machine
-menu	Copy magnet link	Salin tautan magnet
+menu	Copy magnet link	Salin link magnet
 #. menu command in the main window
 #, machine
 menu	Create new queue	Buat antrean baru

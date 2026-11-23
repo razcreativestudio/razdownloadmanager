@@ -190,3 +190,29 @@ Dokumen ini mencatat setiap detail perubahan kode, refactoring, dan langkah impl
       - `RAZDownloadManager-1.0.0-x64.zip` (18,6 MB) — SHA-256: `f38e9bff564118c3c66953525350fbeae0f1ad1c0b3563dc63a03e0d63b2ecdc`
     - Checksum pada `website/download.html` disinkronkan.
 
+---
+
+## Tahap 12: Standardisasi & Harmonisasi Glosarium Bahasa Indonesia & Bahasa Indo Oke
+* **Status**: Selesai
+* **Waktu**: 2026-11-23 15:45 WIB
+* **Target & Perubahan**:
+  - **Sistem Backup**:
+    - Seluruh file yang dimodifikasi diamankan di folder `backup/translation_update_20261123/`.
+  - **Pembaruan Kamus Terjemahan Aplikasi Utama (`i18n/`)**:
+    - `i18n/id.tsv` & `i18n/id-oke.tsv`: menyelaraskan 46 entri terjemahan (kolom ke-3) sesuai standar istilah modern:
+      - `galat` &rarr; `gagal`
+      - `peramban` &rarr; `browser`
+      - `sumber terbuka` &rarr; `Open Source`
+      - `kode sumber` &rarr; `source code`
+      - `tautan` &rarr; `link`
+    - Verifikasi kompilasi biner via `cargo check -p razdm-app` berhasil 100%.
+  - **Pembaruan Web Portal & Web i18n (`website/` & `i18n/site/`)**:
+    - Menyelaraskan 452 baris terjemahan di `i18n/site/id.json`.
+    - Memperbarui teks statis di `website/index.html`, `website/faq.html`, `website/faq/index.html`, `website/help.html`, `website/help/index.html`, `website/download.html`, `website/privacy.html`, `website/terms.html`, `website/license.html`, dan `website/404.html`.
+    - Memperbarui kamus bahasa JavaScript di `website/js/RAZMainLang.js`.
+  - **Ekstensi Browser & Installer Windows**:
+    - `extension/_locales/id/messages.json`: sinkronisasi teks context menu & petunjuk pintasan link.
+    - `tools/installer/languages/id.isl` & `id-oke.isl`: pembaruan string TaskTorrents menjadi `link magnet`.
+  - **Dokumentasi & Workflow**:
+    - `README.md`, `docs/README.md`, `.github/workflows/RAZDeployWebsite.yml`, dan `RAZUpdateHistory.md`.
+

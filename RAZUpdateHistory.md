@@ -3,6 +3,38 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-23] — Standardisasi & Harmonisasi Glosarium Bahasa Indonesia & Bahasa Indo Oke
+*Waktu: 23 November 2026 15:45 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Pembaruan Glosarium Terjemahan Sesuai Standar RAZ Enterprise**:
+   - Menyelaraskan seluruh padanan kata kunci bahasa Indonesia agar lebih modern, lazim di ekosistem software terkini, dan ramah pengguna:
+     - `galat` &rarr; `gagal` (Status pesan error, dialog penanganan kegagalan)
+     - `peramban` &rarr; `browser` (Integrasi peramban menjadi integrasi browser)
+     - `sumber terbuka` &rarr; `Open Source` (Atribusi lisensi dan deskripsi ekosistem FOSS)
+     - `kode sumber` &rarr; `source code` (Instruksi kompilasi, audit keamanan, dan repositori)
+     - `tautan` &rarr; `link` (Penangkap link, link magnet, link download, dan navigasi)
+
+2. **Aplikasi Desktop Utama (`i18n/`)**:
+   - Memperbarui file kamus terjemahan aplikasi utama `i18n/id.tsv` (Bahasa Indonesia Baku) dan `i18n/id-oke.tsv` (Bahasa Indo Oke).
+   - Memastikan hanya kolom teks terjemahan (kolom ke-3) yang diubah tanpa merusak string kunci sumber (source english) maupun placeholder kontekstual `{error}`, `{n}`, `{item}`.
+   - Verifikasi kompilasi biner aplikasi dengan `cargo check -p razdm-app` &mdash; selesai 100% tanpa error.
+
+3. **Portal Website & Halaman Dokumentasi Web (`website/` & `i18n/site/`)**:
+   - Menyelaraskan 452 segmen terjemahan katalog situs di `i18n/site/id.json`.
+   - Memutakhirkan seluruh teks antarmuka di `website/index.html`, `website/faq.html`, `website/faq/index.html`, `website/help.html`, `website/help/index.html`, `website/download.html`, `website/privacy.html`, `website/terms.html`, `website/license.html`, dan `website/404.html`.
+   - Memutakhirkan kamus terjemahan JavaScript di `website/js/RAZMainLang.js`.
+
+4. **Ekstensi Browser & Installer Windows**:
+   - Memperbarui pesan ekstensi resmi di `extension/_locales/id/messages.json` (menu tangkap link dan petunjuk shortcut Alt+klik).
+   - Memperbarui skrip lokalisasi installer Inno Setup di `tools/installer/languages/id.isl` dan `tools/installer/languages/id-oke.isl`.
+
+5. **Dokumentasi Proyek & CI/CD**:
+   - Menyelaraskan seluruh penyebutan istilah di `README.md`, `docs/README.md`, dan `.github/workflows/RAZDeployWebsite.yml`.
+   - Mengamankan seluruh file cadangan di direktori terpusat `backup/translation_update_20261123/`.
+
+---
+
 ## [2026-11-16] — Transformasi App Tour Menjadi Responsive Masonry Accordion Grid & Fullscreen Lightbox di Website
 *Waktu: 16 November 2026 23:25 WIB*
 
@@ -91,7 +123,7 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ### Aktivitas & Pembaruan:
 1. **Pembaruan Tangkapan Layar Jendela "Uji Integrasi Ekstensi Browser" (Browser Extension Integration & Test)**:
-   - Memproses tangkapan layar panel integrasi browser versi terbaru untuk tema Obsidian Dark dan Windows Light dengan rincian opsi integrasi tingkat lanjut, daftar peramban aktif (Chrome, Brave, Floorp, Safari), tombol "Uji integrasi browser...", dan kustomisasi tombol pintasan:
+   - Memproses tangkapan layar panel integrasi browser versi terbaru untuk tema Obsidian Dark dan Windows Light dengan rincian opsi integrasi tingkat lanjut, daftar browser aktif (Chrome, Brave, Floorp, Safari), tombol "Uji integrasi browser...", dan kustomisasi tombol pintasan:
      - `docs/images/test-integration-dark.png` & `docs/images/test-integration.png` &rarr; Panel Uji Integrasi tema Obsidian Dark untuk `README.md`.
      - `docs/images/test-integration-light.png` &rarr; Panel Uji Integrasi tema Windows Light untuk `README.md`.
      - `website/assets/screens/test-integration-dark.webp` & `test-integration-dark.png` &rarr; Aset resolusi tinggi di website.
@@ -226,7 +258,7 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ### Aktivitas & Pembaruan:
 1. **Pembaruan Tangkapan Layar Pop-Up "Info file donlotan" (Browser Catch Pop-Up)**:
-   - Memproses tangkapan layar dialog konfirmasi tangkapan tautan peramban versi terbaru untuk kedua tema (Dark & Light):
+   - Memproses tangkapan layar dialog konfirmasi tangkapan link browser versi terbaru untuk kedua tema (Dark & Light):
      - `docs/images/catch-dark.png` & `docs/images/catch.png` &rarr; Dialog info donlotan tema Obsidian Dark untuk `README.md`.
      - `docs/images/catch-light.png` &rarr; Dialog info donlotan tema Windows Light untuk `README.md`.
      - `website/assets/screens/catch-dark.webp` & `catch-dark.png` &rarr; Aset resolusi tinggi di website.
@@ -234,7 +266,7 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
      - `website/assets/help/catch-file-info-dark.webp`, `catch-file-info.webp`, `download-file-info-dark.webp`, `download-file-info.webp`, `first-file-info-dark.webp`, `first-file-info.webp` &rarr; Aset Pusat Bantuan website & dokumentasi offline.
 
 2. **Pembaruan Tabel & Poin Fitur `README.md`**:
-   - Menambahkan tangkapan layar langsung pada poin fitur `🧩 Penangkap Tautan Browser Otomatis`.
+   - Menambahkan tangkapan layar langsung pada poin fitur `🧩 Penangkap Link Browser Otomatis`.
    - Menambahkan baris perbandingan simetris pada tabel pratinjau: `🧩 Konfirmasi Tangkapan Browser (Mode Gelap)` vs `🧩 Konfirmasi Tangkapan Browser (Mode Terang)`.
 
 3. **Pembaruan Website & Pusat Bantuan (`website/help.html`, `website/index.html`, `website/js/RAZMainLang.js`)**:
@@ -299,7 +331,7 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
      - `docs/images/video-button.png` &rarr; Berkas PNG resolusi tajam untuk dokumentasi `README.md`.
      - `docs/images/help/video-button.webp` &rarr; Berkas WebP terkompresi optimal untuk dokumentasi offline.
      - `website/assets/help/video-button.webp` &rarr; Menggantikan gambar panduan video sniffer di pusat bantuan website (`website/help.html`).
-     - `website/assets/screens/video-button.webp` & `video-button.png` &rarr; Menambah aset pratinjau tur interaktif peramban di portal web.
+     - `website/assets/screens/video-button.webp` & `video-button.png` &rarr; Menambah aset pratinjau tur interaktif browser di portal web.
 
 2. **Pembaruan Dokumentasi `README.md`**:
    - Menambahkan tangkapan layar langsung tombol unduh video di bawah poin fitur `🎬 Video Sniffer & Grabber`.
@@ -390,7 +422,7 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
-## [2026-11-16] — Penyesuaian & Sinkronisasi Seluruh Tautan Menu Bantuan Desktop & Routing Website
+## [2026-11-16] — Penyesuaian & Sinkronisasi Seluruh Link Menu Bantuan Desktop & Routing Website
 *Waktu: 16 November 2026 13:42 WIB*
 
 ### Aktivitas & Pembaruan:
@@ -429,7 +461,7 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
      - Download video web & audio resolusi hingga 4K UHD via panel melayang (yt-dlp & FFmpeg).
      - BitTorrent & magnet link langsung tanpa software eksternal.
      - Penjadwal donlot malam hari (Night Scheduler) & auto-shutdown.
-     - Melanjutkan donlotan putus (Resume) & pembaruan alamat tautan kadaluarsa (Refresh address).
+     - Melanjutkan donlotan putus (Resume) & pembaruan alamat link kadaluarsa (Refresh address).
      - Mode portabel mandiri di flashdisk USB.
    - Tabel pintasan tombol keyboard lengkap (`<kbd>` shortcuts) dan panduan troubleshooting (SmartScreen, ekstensi tidak tersambung, integrasi AI MCP).
 
@@ -438,7 +470,7 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
    - Mengelompokkan seluruh 24+ pertanyaan penting ke dalam 5 kategori terstruktur:
      1. Fondasi & Legalitas (100% gratis GPL-3.0, bukan crack IDM, komparasi fitur, zero telemetry).
      2. Sistem & Instalasi (Windows 10/11, Linux, macOS, alasan tidak support Win 7/8, portable mode, impor data dari IDM).
-     3. Integrasi Peramban (dukungan browser Chromium & Gecko, cara instalasi ekstensi, deteksi clipboard).
+     3. Integrasi Browser (dukungan browser Chromium & Gecko, cara instalasi ekstensi, deteksi clipboard).
      4. Kecepatan & Mesin Donlot (akselerasi 64 multi-thread, dynamic re-splitting, resume, speed limiter, kepatuhan non-DRM).
      5. Otomasi & AI Assistant (Model Context Protocol MCP Server, CLI, pelaporan bug GitHub).
 
@@ -530,7 +562,7 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 2. **Perataan Grid Kartu & Pencegahan Kartu Yatim (Orphan Card)**:
    - Memperbaiki `.metric-grid` di `website/css/RAZDM.css` dari `auto-fit` tak tentu menjadi grid 4 kolom di desktop, 2x2 kolom di tablet (<=992px), dan 1 kolom di ponsel (<=520px) sehingga tidak ada kartu kecepatan yang terasing sendirian di baris kedua.
    - Menambahkan kelas khusus `.features-grid` (3x3 kolom) untuk 9 kartu fitur unggulan di `index.html` dengan proteksi rentang penuh di tablet dan stack rapi di ponsel.
-   - Menambahkan kelas khusus `.download-grid.three-col` untuk kartu donlot Windows (Installer, Portable, Binaries) dan `.download-grid.two-col` untuk ekstensi peramban.
+   - Menambahkan kelas khusus `.download-grid.three-col` untuk kartu donlot Windows (Installer, Portable, Binaries) dan `.download-grid.two-col` untuk ekstensi browser.
    - Menambahkan kelas `.steps-grid` pada panduan instalasi 3 langkah di `download.html`.
    - Mengatur `.dl-card { height: 100%; display: flex; flex-direction: column; }` dan `.dl-actions { margin-top: auto; }` sehingga seluruh tombol aksi dan salin checksum di baris yang sama berada di ketinggian horizontal yang presisi.
 
@@ -596,13 +628,13 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 2. **Penghormatan & Ucapan Terima Kasih Mendalam kepada Kontributor MDM**:
    - Menambahkan seksi penghormatan khusus (*Penghormatan & Terima Kasih Kepada Para Kontributor Mister Download Manager*).
-   - Menampilkan deretan foto/avatar kontributor asli Mister Download Manager lengkap dengan tautan profil GitHub mereka sebagai bentuk apresiasi atas pondasi engine, arsitektur, dan terjemahan awal yang mereka bangun.
+   - Menampilkan deretan foto/avatar kontributor asli Mister Download Manager lengkap dengan link profil GitHub mereka sebagai bentuk apresiasi atas pondasi engine, arsitektur, dan terjemahan awal yang mereka bangun.
 
 3. **Penegasan Ketentuan Hak Cipta & Lisensi GPL-3.0**:
    - Menyampaikan ketentuan hak cipta ganda secara transparan:
      - *Original Codebase:* Copyright © 2026 Ahmed Nefzaoui & Mister Download Manager contributors.
      - *Extended Development & UI Modernization:* Copyright © 2026 RAZ Creative Studio.
-   - Menjelaskan kebebasan lisensi **GNU General Public License v3.0 (GPL-3.0)**: kebebasan menjalankan, mengkaji, memodifikasi, dan mendistribusikan ulang (dengan kewajiban copyleft kode sumber terbuka).
+   - Menjelaskan kebebasan lisensi **GNU General Public License v3.0 (GPL-3.0)**: kebebasan menjalankan, mengkaji, memodifikasi, dan mendistribusikan ulang (dengan kewajiban copyleft source code terbuka).
 
 4. **Pembersihan Menyeluruh Berkas & Folder Usang (Clean Workspace)**:
    - Menghapus banner lama `art/Mister Download Manager.png` (~1 MB).
@@ -610,7 +642,7 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
    - Menghapus dokumen usang di root: `CLAUDE.md`, `PRODUCT.md`, `DESIGN.md`, `ROADMAP.md`.
    - Menghapus direktori alat bantu lama: `.claude/` dan `.impeccable/`.
    - Menghapus puluhan tangkapan layar antarmuka lama (.webp dan .svg) di `docs/images/` yang tidak lagi sesuai dengan tampilan baru aplikasi.
-   - Memperbarui tautan gambar di `docs/README.md` agar menggunakan tangkapan layar antarmuka terbaru `images/main-raz.png`.
+   - Memperbarui link gambar di `docs/README.md` agar menggunakan tangkapan layar antarmuka terbaru `images/main-raz.png`.
 
 ---
 
@@ -927,7 +959,7 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
      - `razdm-extension-chrome.zip` (~190 KB): Paket ekstensi Chromium untuk Google Chrome, Microsoft Edge, Brave Browser, Opera, dan Vivaldi (Manifest V3 dengan public key terdaftar).
      - `razdm-extension-firefox.xpi` (~192 KB): Paket ekstensi Gecko untuk Mozilla Firefox, Librewolf, Waterfox, Zen Browser (ID `integration@razdownloadmanager.com`).
 2. **Pembaruan Logika In-App Extension (`crates/ipc/src/extension.rs`)**:
-   - Mengarahkan tautan instalasi ekstensi dari Chrome Web Store dan Mozilla Add-ons langsung menuju halaman unduhan web resmi (`https://dm.it-raz.com/download.html#extension`).
+   - Mengarahkan link instalasi ekstensi dari Chrome Web Store dan Mozilla Add-ons langsung menuju halaman unduhan web resmi (`https://dm.it-raz.com/download.html#extension`).
    - Memastikan native messaging host (`razdm-nmhost`) tetap sinkron mengenali ID ekstensi lokal/unpacked (`oogbclbbninliongijffeeggalppliok`) dan Firefox ID.
    - Sinkronisasi dan update skema otomatis (`docs/automation-api.schema.json`).
    - Seluruh 41 unit test pada crate `razdm-ipc` lulus 100%.
@@ -936,7 +968,7 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
    - Menyediakan panduan instalasi langkah demi langkah (*step-by-step*) yang jelas dan ramah pemula:
      - Chromium: Ekstrak $\rightarrow$ `chrome://extensions` $\rightarrow$ Aktifkan *Developer mode* $\rightarrow$ Klik *Load unpacked*.
      - Firefox: Unduh $\rightarrow$ `about:addons` $\rightarrow$ Klik ikon gerigi $\rightarrow$ *Install Add-on From File...*
-   - Memperbarui pill bar navigasi peramban di `website/index.html` agar langsung mengarah ke `download.html#extension`.
+   - Memperbarui pill bar navigasi browser di `website/index.html` agar langsung mengarah ke `download.html#extension`.
    - Memperbarui bagian FAQ (Q5 & A5) di HTML dan terjemahan multilingual (`website/js/RAZMainLang.js`).
 4. **Verifikasi Integritas & Checksum SHA-256**:
    - `razdm-extension-chrome.zip`: `f7997dd118be24a857ea87ecd1f30f0b2bb91f2ccab97e5c728005e4e0b8f164`
@@ -1167,7 +1199,7 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ### Aktivitas & Pembaruan:
 1. **Repository Setup & Workspace Sync**:
-   - Melakukan sinkronisasi kode sumber ke workspace lokal `RAZ Download Manager`.
+   - Melakukan sinkronisasi source code ke workspace lokal `RAZ Download Manager`.
    - Mengonfigurasi remote Git origin dan branch tracking `main`.
 2. **Setup Standar RAZ Enterprise**:
    - Membuat direktori backup terpusat di `backup/` sesuai protokol mutlak sistem (seluruh file yang diedit telah dicadangkan).

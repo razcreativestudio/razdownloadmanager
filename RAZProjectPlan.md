@@ -76,3 +76,11 @@ Mentransformasikan seluruh ekosistem *Mister Download Manager* (MDM) menjadi **R
 - [x] Integrasi modul JS `RAZModal.js` (Anti-Native Alert), `RAZMainLang.js` (Bilingual ID/EN), dan `script.js` (Live Benchmark Race Simulator & App Tour).
 - [x] Pembuatan landing page `website/index.html`, `download.html`, `benchmark.html`, `idm-alternative.html`, dan `404.html`.
 
+### Fase 11: Standardisasi & Harmonisasi Glosarium Bahasa Indonesia (Aplikasi, Web, Ekstensi & Docs)
+- [x] Standarisasi padanan istilah: `galat` &rarr; `gagal`, `peramban` &rarr; `browser`, `sumber terbuka` &rarr; `Open Source`, `kode sumber` &rarr; `source code`, `tautan` &rarr; `link`.
+- [x] Pembaruan kamus aplikasi desktop `i18n/id.tsv` dan `i18n/id-oke.tsv`.
+- [x] Pembaruan katalog web `i18n/site/id.json` (452 segmen) dan modul bahasa `website/js/RAZMainLang.js`.
+- [x] Pembaruan seluruh halaman statis website (`website/*.html`).
+- [x] Pembaruan ekstensi browser `extension/_locales/id/messages.json` dan installer `tools/installer/languages/id*.isl`.
+- [x] Harmonisasi dokumentasi `README.md`, `docs/README.md`, dan GitHub Actions workflow.
+

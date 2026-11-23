@@ -39,10 +39,10 @@
     "message": "Seret untuk memindahkannya di sepanjang tepi video"
   },
   "menu_selected": {
-    "message": "Unduh tautan yang dipilih dengan RAZ Download Manager"
+    "message": "Unduh link yang dipilih dengan RAZ Download Manager"
   },
   "menu_all": {
-    "message": "Unduh semua tautan dengan RAZ Download Manager"
+    "message": "Unduh semua link dengan RAZ Download Manager"
   },
   "status_connected": {
     "message": "Terhubung ke RAZ Download Manager"
@@ -156,7 +156,7 @@
     "message": "Ekstensi tidak diizinkan untuk membaca situs ini (akses situs browser)."
   },
   "popup_alt": {
-    "message": "Tahan Alt saat mengeklik tautan agar browser mengunduhnya."
+    "message": "Tahan Alt saat mengeklik link agar browser mengunduhnya."
   },
   "popup_media": {
     "message": "Media di halaman ini"

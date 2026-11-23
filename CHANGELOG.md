@@ -5,6 +5,18 @@ Each release's notes on GitHub come from its section here (`## [X.Y.Z]`, see
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-11-23
+
+### Changed
+
+- Standardized and harmonized Indonesian (`id`) and Indonesian Oke (`id-oke`) language translations across desktop application, web portal, browser extension, Windows installer, and documentation.
+- Terminology updates:
+  - `galat` -> `gagal`
+  - `peramban` -> `browser`
+  - `sumber terbuka` -> `Open Source`
+  - `kode sumber` -> `source code`
+  - `tautan` -> `link`
+
 ### Added
 
 - Linux and macOS: a yt-dlp installed by the system (a package manager, Homebrew) is found and used when MDM has none of its own; **Helpers** can still switch to MDM's own copy, kept up to date ([#452](https://github.com/anefzaoui/razdownloadmanager/issues/452)).

@@ -1,5 +1,5 @@
 # RAZ Download Manager — Panduan Penggunaan & Setup (Guide)
-**Tanggal**: 10 November 2026  
+**Terakhir Diperbarui**: 23 November 2026  
 **Versi**: 1.0.0 (RAZ Edition)
 
 ---
