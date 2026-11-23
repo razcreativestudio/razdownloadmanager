@@ -351,8 +351,8 @@ Connection: close
 
     #[tokio::test]
     async fn a_release_file_is_taken_only_from_a_list_signed_by_mdm() {
-        let zip = "RAZDownloadManager-9.9.9-x64.zip";
-        let setup = "RAZDownloadManager-9.9.9-setup.exe";
+        let zip = "MisterDownloadManager-9.9.9-x64.zip";
+        let setup = "MisterDownloadManager-9.9.9-setup.exe";
         let assets = |base: &str| -> Vec<(String, String)> {
             ["SHA256SUMS.txt", "SHA256SUMS.txt.sig", zip, setup]
                 .iter()
@@ -378,10 +378,12 @@ Connection: close
         assert_eq!(progress.fraction(), Some(1.0));
         let out = dir.path().join("out");
         unzip(&file, &out).unwrap();
-        assert_eq!(
-            std::fs::read(single_folder(&out).join("RAZDownloadManager.exe")).unwrap(),
-            b"new program"
-        );
+        let exe = if single_folder(&out).join("RAZDownloadManager.exe").exists() {
+            single_folder(&out).join("RAZDownloadManager.exe")
+        } else {
+            single_folder(&out).join("misterdownloadmanager.exe")
+        };
+        assert_eq!(std::fs::read(exe).unwrap(), b"new program");
         // A file that isn't the one the signed list names is refused, and not kept.
         let err = fetch(
             &assets(&base),

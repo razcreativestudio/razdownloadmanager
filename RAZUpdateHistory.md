@@ -22,6 +22,7 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
    - Memperbaiki pengujian integrasi end-to-end `crates/crash/tests/e2e.rs` dan workflow CI `release.yml` dengan resolusi multi-path cerdas (`CARGO_MANIFEST_DIR`, upward walking, dan fallback) untuk menemukan binary example `crashy`.
    - Menyelaraskan ekspektasi file part download pada pengujian checksum `crates/engine/tests/e2e.rs` dengan format ekstensi baru `.razdm.part`.
    - Menyelaraskan ekspektasi nama file log `razdm.log` pada pengujian `crates/nmhost/tests/host.rs` dan `crates/app/tests/move_many.rs`.
+   - Menyelaraskan ekspektasi nama file fixture GPG-signed `MisterDownloadManager-9.9.9-x64.zip` pada unit test verifikasi rilis update `crates/tools/src/update.rs`.
    - Seluruh test suite (unit tests & integration tests) pada seluruh crate di workspace terverifikasi lulus 100%.
 
 4. **Perbaikan Unit Test & Kontras Aksesibilitas WCAG Tema RAZ**:
