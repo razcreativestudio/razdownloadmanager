@@ -19,8 +19,9 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 3. **Perbaikan Crash Report Signature & Crate Frame Resolution (`crates/crash/src/report.rs`, `crates/crash/tests/e2e.rs`)**:
    - Menyelaraskan fungsi `first_own_frame` agar mengenali signature crash frame baik untuk namespace lama (`misterdownloadmanager`, `mdm_*`) maupun namespace baru (`razdownloadmanager`, `razdm_*`).
-   - Memperbaiki pengujian integrasi end-to-end `crates/crash/tests/e2e.rs` dan workflow CI `release.yml` agar memastikan binary example `crashy` terkompilasi sebelum pengujian dijalankan.
-   - Seluruh 19 unit test dan 3 e2e test pada `razdm-crash` terverifikasi lulus 100%.
+   - Memperbaiki pengujian integrasi end-to-end `crates/crash/tests/e2e.rs` dan workflow CI `release.yml` dengan resolusi multi-path cerdas (`CARGO_MANIFEST_DIR`, upward walking, dan fallback) untuk menemukan binary example `crashy`.
+   - Menyelaraskan ekspektasi file part download pada pengujian checksum `crates/engine/tests/e2e.rs` dengan format ekstensi baru `.razdm.part`.
+   - Seluruh 19 unit test dan 3 e2e test pada `razdm-crash` serta 53 e2e test pada `razdm-engine` terverifikasi lulus 100%.
 
 4. **Perbaikan Unit Test & Kontras Aksesibilitas WCAG Tema RAZ**:
    - Menyelaraskan kontras tautan (`link = "#855a00"`, 5.7:1), fokus keyboard (`focus.ring = "#7a5200bf"`, 3.7:1), dan teks tombol aksen (`button.accent.text = "#0d0f12"`, 7.2:1) pada tema light `crates/app/assets/themes/raz.toml` agar memenuhi standar WCAG 2.1 AA (4.5:1 untuk teks dan 3:1 untuk kontrol).

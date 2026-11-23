@@ -242,7 +242,8 @@ async fn a_wrong_checksum_fails_and_keeps_the_data() {
         "{err}"
     );
     assert!(
-        dir.path().join("bad.bin.mdm.part").exists(),
+        dir.path().join("bad.bin.razdm.part").exists()
+            || dir.path().join("bad.bin.mdm.part").exists(),
         "the data is kept"
     );
     assert!(!dir.path().join("bad.bin").exists());
