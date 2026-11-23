@@ -354,4 +354,4 @@ jobs:
           }
           # The website links to the latest published release: rebuild it now that the files are
           # there (a release made with this token starts no workflow by itself).
-          gh workflow run pages.yml --ref main
+          try { gh workflow run pages.yml --ref main } catch { Write-Warning "Pages workflow trigger skipped: $_" }
