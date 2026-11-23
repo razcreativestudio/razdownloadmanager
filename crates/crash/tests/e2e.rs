@@ -7,22 +7,37 @@ use std::process::Command;
 use std::time::{Duration, Instant};
 
 fn crashy() -> PathBuf {
-    // target/<profile>/deps/e2e-… → target/<profile>/examples/crashy
+    let exe_name = if cfg!(windows) {
+        "crashy.exe"
+    } else {
+        "crashy"
+    };
+    // 1. Check relative to CARGO_MANIFEST_DIR (workspace/crates/crash -> workspace/target/debug/examples/crashy)
+    let manifest_dir = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
+    if let Some(workspace_dir) = manifest_dir.parent().and_then(|p| p.parent()) {
+        let candidate = workspace_dir.join("target").join("debug").join("examples").join(exe_name);
+        if candidate.exists() {
+            return candidate;
+        }
+    }
+    // 2. Search upwards from current_exe
+    let mut curr = std::env::current_exe().unwrap();
+    while curr.pop() {
+        let candidate = curr.join("examples").join(exe_name);
+        if candidate.exists() {
+            return candidate;
+        }
+        let candidate_target = curr.join("target").join("debug").join("examples").join(exe_name);
+        if candidate_target.exists() {
+            return candidate_target;
+        }
+    }
+    // 3. Fallback: target/<profile>/deps/e2e-… → target/<profile>/examples/crashy
     let mut p = std::env::current_exe().unwrap();
     p.pop();
     p.pop();
     p.push("examples");
-    p.push(if cfg!(windows) {
-        "crashy.exe"
-    } else {
-        "crashy"
-    });
-    if !p.exists() {
-        let cargo = std::env::var_os("CARGO").unwrap_or_else(|| "cargo".into());
-        let _ = Command::new(cargo)
-            .args(["build", "-p", "razdm-crash", "--example", "crashy"])
-            .status();
-    }
+    p.push(exe_name);
     p
 }
 
