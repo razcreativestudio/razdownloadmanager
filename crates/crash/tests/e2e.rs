@@ -17,6 +17,12 @@ fn crashy() -> PathBuf {
     } else {
         "crashy"
     });
+    if !p.exists() {
+        let cargo = std::env::var_os("CARGO").unwrap_or_else(|| "cargo".into());
+        let _ = Command::new(cargo)
+            .args(["build", "-p", "razdm-crash", "--example", "crashy"])
+            .status();
+    }
     p
 }
 

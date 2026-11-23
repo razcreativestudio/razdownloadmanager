@@ -17,8 +17,9 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
    - Memperbaiki konversi tipe chunk buffer `c.as_ref()` pada `crates/labserver/tests/http.rs`.
    - Seluruh test suite dan `cargo check --tests --workspace` terverifikasi lolos 100% tanpa error.
 
-3. **Perbaikan Crash Report Signature & Crate Frame Resolution (`crates/crash/src/report.rs`)**:
+3. **Perbaikan Crash Report Signature & Crate Frame Resolution (`crates/crash/src/report.rs`, `crates/crash/tests/e2e.rs`)**:
    - Menyelaraskan fungsi `first_own_frame` agar mengenali signature crash frame baik untuk namespace lama (`misterdownloadmanager`, `mdm_*`) maupun namespace baru (`razdownloadmanager`, `razdm_*`).
+   - Memperbaiki pengujian integrasi end-to-end `crates/crash/tests/e2e.rs` dan workflow CI `release.yml` agar memastikan binary example `crashy` terkompilasi sebelum pengujian dijalankan.
    - Seluruh 19 unit test dan 3 e2e test pada `razdm-crash` terverifikasi lulus 100%.
 
 4. **Perbaikan Unit Test & Kontras Aksesibilitas WCAG Tema RAZ**:
