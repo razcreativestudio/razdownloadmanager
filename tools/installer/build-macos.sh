@@ -26,7 +26,7 @@ if [ "${1:-}" != "--no-build" ]; then
     rustup target add "$t"
     # The build machine's paths out of the programs (#25), as build-linux.sh does.
     CARGO_ENCODED_RUSTFLAGS="--remap-path-prefix=${CARGO_HOME:-$HOME/.cargo}=cargo"$'\x1f'"--remap-path-prefix=$root=mdm" \
-      cargo build --release --target "$t" -p mdm-app -p mdm-nmhost -p mdm-cli -p mdm-mcp
+      cargo build --release --target "$t" -p razdm-app -p razdm-nmhost -p razdm-cli -p razdm-mcp
   done
 fi
 pwsh -NoProfile -File "$root/tools/extension/pack.ps1"

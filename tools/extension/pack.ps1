@@ -55,7 +55,10 @@ foreach ($pair in @(
     @("firefox", "razdm-firefox.xpi"),
     @("chrome-store", "razdm-chrome-store.zip"),
     @("chromium", "razdm-extension-chrome.zip"),
-    @("firefox", "razdm-extension-firefox.xpi")
+    @("firefox", "razdm-extension-firefox.xpi"),
+    @("chromium", "mdm-chromium.zip"),
+    @("firefox", "mdm-firefox.xpi"),
+    @("chrome-store", "mdm-chrome-store.zip")
 )) {
   $dir = (Resolve-Path (Join-Path $out $pair[0])).Path
   $zip = Join-Path $out $pair[1]

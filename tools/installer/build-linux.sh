@@ -25,7 +25,7 @@ if [ "${1:-}" != "--no-build" ]; then
   # "cargo/..." for cargo's folder and "mdm/..." for this checkout. Encoded flags (unit separators),
   # as those paths may hold spaces.
   CARGO_ENCODED_RUSTFLAGS="--remap-path-prefix=${CARGO_HOME:-$HOME/.cargo}=cargo"$'\x1f'"--remap-path-prefix=$root=mdm" \
-    cargo build --release -p mdm-app -p mdm-nmhost -p mdm-cli -p mdm-mcp
+    cargo build --release -p razdm-app -p razdm-nmhost -p razdm-cli -p razdm-mcp
 fi
 pwsh -NoProfile -File "$root/tools/extension/pack.ps1"
 
