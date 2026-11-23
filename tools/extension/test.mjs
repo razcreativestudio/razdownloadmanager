@@ -425,7 +425,7 @@ const ok = (what) => {
   await settle();
   assert.ok(calls.some((c) => c[0] === "openTab" && c[1].endsWith("#not-installed")));
   const items = calls.filter((c) => c[0] === "menu-item").map((c) => c[1].id);
-  assert.deepEqual(items, ["mdm-link", "mdm-selected", "mdm-all"]);
+  assert.deepEqual(items, ["razdm-link", "razdm-selected", "razdm-all"]);
   ok("installed without the app: the help page, the menus");
 }
 
@@ -557,16 +557,16 @@ const ok = (what) => {
 {
   const { api, calls, listeners } = fakeApi({ firefox: false });
   load(api, false);
-  await listeners.menu({ menuItemId: "mdm-link", linkUrl: "https://x/page.html", pageUrl: "https://x/" }, { incognito: false });
+  await listeners.menu({ menuItemId: "razdm-link", linkUrl: "https://x/page.html", pageUrl: "https://x/" }, { incognito: false });
   await settle();
   const [m] = natives(calls);
   assert.deepEqual([m.url, m.explicit, m.referrer], ["https://x/page.html", true, "https://x/"]);
-  await listeners.menu({ menuItemId: "mdm-all", pageUrl: "https://x/" }, { id: 1, incognito: false });
+  await listeners.menu({ menuItemId: "razdm-all", pageUrl: "https://x/" }, { id: 1, incognito: false });
   await settle();
   assert.deepEqual(natives(calls)[1].links, ["https://x/1.zip", "https://x/2.zip"]);
   const failing = fakeApi({ firefox: false, reply: { ok: false, why: "not-running" } });
   load(failing.api, false);
-  await failing.listeners.menu({ menuItemId: "mdm-link", linkUrl: "https://x/a.zip", pageUrl: "https://x/" }, {});
+  await failing.listeners.menu({ menuItemId: "razdm-link", linkUrl: "https://x/a.zip", pageUrl: "https://x/" }, {});
   await settle();
   assert.ok(failing.calls.some((c) => c[0] === "openTab" && c[1].endsWith("#not-running")));
   ok("context menus: explicit links, a page's links, failures explained");
@@ -645,7 +645,7 @@ const ok = (what) => {
   listeners.responseStarted({ tabId: 7, frameId: 2, url: "https://cdn.test/s/master.m3u8", responseHeaders: [] });
   listeners.responseStarted({ tabId: 7, frameId: 0, url: "https://other.test/x/main.mpd", responseHeaders: [] });
   await listeners.menu(
-    { menuItemId: "mdm-link", srcUrl: "blob:https://player.test/1", frameId: 2, frameUrl: "https://player.test/embed", pageUrl: "https://blog.test/post" },
+    { menuItemId: "razdm-link", srcUrl: "blob:https://player.test/1", frameId: 2, frameUrl: "https://player.test/embed", pageUrl: "https://blog.test/post" },
     { id: 7, incognito: false },
   );
   await settle();
@@ -656,16 +656,16 @@ const ok = (what) => {
     "the frame's stream, not the page alone",
   );
   assert.ok(calls.some((c) => c[0] === "cookies" && c[1].url === "https://cdn.test/s/master.m3u8"), "the stream's cookies");
-  await listeners.menu({ menuItemId: "mdm-link", linkUrl: "https://cdn.test/s/other.m3u8", pageUrl: "https://blog.test/post" }, { id: 7, incognito: false });
+  await listeners.menu({ menuItemId: "razdm-link", linkUrl: "https://cdn.test/s/other.m3u8", pageUrl: "https://blog.test/post" }, { id: 7, incognito: false });
   await settle();
   assert.equal(natives(calls).filter((x) => x.video)[1].src, "https://cdn.test/s/other.m3u8");
   assert.ok(calls.some((c) => c[0] === "cookies" && c[1].url === "https://cdn.test/s/other.m3u8"), "the manifest's cookies");
   // Firefox names no address for a player fed by a MediaSource: the same stream goes.
-  await listeners.menu({ menuItemId: "mdm-link", mediaType: "video", frameId: 2, frameUrl: "https://player.test/embed", pageUrl: "https://blog.test/post" }, { id: 7, incognito: false });
+  await listeners.menu({ menuItemId: "razdm-link", mediaType: "video", frameId: 2, frameUrl: "https://player.test/embed", pageUrl: "https://blog.test/post" }, { id: 7, incognito: false });
   await settle();
   assert.equal(natives(calls).filter((x) => x.video).pop().src, "https://cdn.test/s/master.m3u8", "Firefox: no srcUrl");
   // Nothing loaded in that tab: the page, as before (a page yt-dlp may know).
-  await listeners.menu({ menuItemId: "mdm-link", srcUrl: "blob:https://tube.test/2", frameId: 0, pageUrl: "https://tube.test/watch" }, { id: 9, incognito: false });
+  await listeners.menu({ menuItemId: "razdm-link", srcUrl: "blob:https://tube.test/2", frameId: 0, pageUrl: "https://tube.test/watch" }, { id: 9, incognito: false });
   await settle();
   const page = natives(calls).filter((x) => x.video).pop();
   assert.deepEqual([page.url, page.src], ["https://tube.test/watch", undefined]);
@@ -1066,7 +1066,7 @@ const MPD = (protect) => `<?xml version="1.0"?>
   await settle();
   fetched.length = 0;
   await listeners.menu(
-    { menuItemId: "mdm-link", srcUrl: "blob:https://emb.test/1", frameId: 2, frameUrl: "https://emb.test/player", pageUrl: "https://blog.test/post" },
+    { menuItemId: "razdm-link", srcUrl: "blob:https://emb.test/1", frameId: 2, frameUrl: "https://emb.test/player", pageUrl: "https://blog.test/post" },
     { id: 7, incognito: false },
   );
   await settle();

@@ -3,6 +3,25 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-23] — Perbaikan CI/CD Workspace & Rilis Otomatis v1.0.1
+*Waktu: 23 November 2026 18:15 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Perbaikan CI Test Extension (`tools/extension/test.mjs`)**:
+   - Memutakhirkan ekspektasi ID context menu dari `mdm-*` menjadi `razdm-*` (`razdm-link`, `razdm-selected`, `razdm-all`) menyelaraskan dengan rebrand ekstensi browser.
+   - Seluruh 69 automated unit tests ekstensi terverifikasi lulus 100%.
+
+2. **Perbaikan Crate Resolution Workspace (`Cargo.toml`)**:
+   - Menambahkan konfigurasi `[lib] name = "mdm_*"` pada seluruh internal library crate (`crates/labserver`, `crates/geo`, `crates/crash`, `crates/torrent`, `crates/tools`, `crates/remote`, `crates/debrid`, `crates/engine`, `crates/extract`, `crates/ipc`, `crates/cli`, `crates/mcp`).
+   - Menyelesaikan konflik referensi nama crate pada unit test, integration test, dan examples antar crate tanpa merusak package naming `razdm-*`.
+   - Memperbaiki konversi tipe chunk buffer `c.as_ref()` pada `crates/labserver/tests/http.rs`.
+   - Seluruh test suite dan `cargo check --tests --workspace` terverifikasi lolos 100% tanpa error.
+
+3. **Sinkronisasi Tag & Release GitHub Actions**:
+   - Memperbarui tag release `v1.0.1` pada repositori remote agar memicu ulang workflow GitHub Release secara otomatis dan menerbitkan release asset ke GitHub Releases.
+
+---
+
 ## [2026-11-23] — Standardisasi & Harmonisasi Glosarium Bahasa Indonesia & Bahasa Indo Oke
 *Waktu: 23 November 2026 15:45 WIB*
 

@@ -8,6 +8,10 @@ license.workspace = true
 authors.workspace = true
 publish.workspace = true
 
+[lib]
+name = "mdm_ipc"
+path = "src/lib.rs"
+
 [dependencies]
 craft-atomic.workspace = true
 dirs.workspace = true

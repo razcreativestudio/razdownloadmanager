@@ -8,6 +8,10 @@ license.workspace = true
 authors.workspace = true
 publish.workspace = true
 
+[lib]
+name = "mdm_crash"
+path = "src/lib.rs"
+
 [dependencies]
 # Out-of-process minidumps (Embark Studios, as Firefox and Sentry do it): the crashed process only
 # asks; a monitor process writes the dump of every thread.

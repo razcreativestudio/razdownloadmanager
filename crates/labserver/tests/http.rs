@@ -794,7 +794,7 @@ async fn a_stall_holds_a_byte_back_until_lifted() {
     assert_eq!(tail, expected(5, 128 * 1024, 128 * 1024));
     s.set_faults(Faults::default());
     while let Some(c) = r.chunk().await.unwrap() {
-        got.extend_from_slice(&c);
+        got.extend_from_slice(c.as_ref());
     }
     assert_eq!(got, expected(5, 0, 256 * 1024));
     tokio::time::timeout(Duration::from_secs(20), s.settled())

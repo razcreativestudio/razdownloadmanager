@@ -8,6 +8,10 @@ license.workspace = true
 authors.workspace = true
 publish.workspace = true
 
+[lib]
+name = "mdm_extract"
+path = "src/lib.rs"
+
 [dependencies]
 # zip's Deflate is already in the shipped app (mdm-crash, mdm-tools); Deflate64 (Explorer's zips
 # over 2 GB) and WinZip AES are small additions.

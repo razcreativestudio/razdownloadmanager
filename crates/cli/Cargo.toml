@@ -16,6 +16,7 @@ publish.workspace = true
 
 # The commands, which the app's program runs (mdm-app depends on this library).
 [lib]
+name = "mdm_cli"
 path = "src/lib.rs"
 
 # The launcher: starts the app's program for them (std only, but for Ctrl+C on Windows).

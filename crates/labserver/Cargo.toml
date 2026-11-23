@@ -12,6 +12,10 @@ publish.workspace = true
 name = "labserver"
 path = "src/main.rs"
 
+[lib]
+name = "mdm_labserver"
+path = "src/lib.rs"
+
 [dependencies]
 anyhow.workspace = true
 axum.workspace = true
