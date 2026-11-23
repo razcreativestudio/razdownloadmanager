@@ -4,7 +4,7 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 ---
 
 ## [2026-11-23] — Perbaikan CI/CD Workspace & Rilis Otomatis v1.0.1
-*Waktu: 23 November 2026 18:15 WIB*
+*Waktu: 23 November 2026 19:25 WIB*
 
 ### Aktivitas & Pembaruan:
 1. **Perbaikan CI Test Extension (`tools/extension/test.mjs`)**:
@@ -16,6 +16,10 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
    - Menyelesaikan konflik referensi nama crate pada unit test, integration test, dan examples antar crate tanpa merusak package naming `razdm-*`.
    - Memperbaiki konversi tipe chunk buffer `c.as_ref()` pada `crates/labserver/tests/http.rs`.
    - Seluruh test suite dan `cargo check --tests --workspace` terverifikasi lolos 100% tanpa error.
+
+3. **Perbaikan Crash Report Signature & Crate Frame Resolution (`crates/crash/src/report.rs`)**:
+   - Menyelaraskan fungsi `first_own_frame` agar mengenali signature crash frame baik untuk namespace lama (`misterdownloadmanager`, `mdm_*`) maupun namespace baru (`razdownloadmanager`, `razdm_*`).
+   - Seluruh 19 unit test dan 3 e2e test pada `razdm-crash` terverifikasi lulus 100%.
 
 4. **Perbaikan Unit Test & Kontras Aksesibilitas WCAG Tema RAZ**:
    - Menyelaraskan kontras tautan (`link = "#855a00"`, 5.7:1), fokus keyboard (`focus.ring = "#7a5200bf"`, 3.7:1), dan teks tombol aksen (`button.accent.text = "#0d0f12"`, 7.2:1) pada tema light `crates/app/assets/themes/raz.toml` agar memenuhi standar WCAG 2.1 AA (4.5:1 untuk teks dan 3:1 untuk kontrol).

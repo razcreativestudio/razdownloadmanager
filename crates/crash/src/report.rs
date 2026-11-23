@@ -543,7 +543,11 @@ fn first_own_frame(frames: &[Frame], main_module: Option<&str>) -> Option<String
         .iter()
         .find(|p| {
             let c = crate_of(p);
-            c == own_crate || (c.starts_with("mdm_") && c != "mdm_crash")
+            c == own_crate
+                || c == "misterdownloadmanager"
+                || c == "razdownloadmanager"
+                || (c.starts_with("mdm_") && c != "mdm_crash")
+                || (c.starts_with("razdm_") && c != "razdm_crash")
         })
         .or_else(|| paths.first())
         .cloned()
