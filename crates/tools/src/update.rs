@@ -1,6 +1,6 @@
 ﻿//! RAZ Download Manager updating itself: how this copy was installed, the release file that
 //! replaces it, and that file fetched and checked against the release's SHA256SUMS.txt, whose
-//! signature by MDM's release key ([`crate::signed_by_mdm`]) is checked first. Putting the file
+//! signature by RAZ DM's release key ([`crate::signed_by_mdm`]) is checked first. Putting the file
 //! in place is the app's (`crates/app/src/update.rs`): it has to close itself to do it.
 
 use std::path::{Path, PathBuf};
@@ -8,7 +8,7 @@ use std::sync::atomic::{AtomicU64, Ordering};
 
 use crate::{Error, signed_by_mdm, sum_for};
 
-/// How this copy of MDM was installed: what an update replaces, and how.
+/// How this copy of RAZ Download Manager was installed: what an update replaces, and how.
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Install {
     /// Windows, the setup program.
@@ -25,7 +25,7 @@ pub enum Install {
     /// Linux, the plain programs.
     TarGz,
     /// Linux, a package of another package manager (pacman, …): that package manager updates
-    /// it, never MDM.
+    /// it, never RAZ Download Manager.
     System,
     /// Built here: never updated from a release.
     Source,
@@ -138,8 +138,8 @@ impl Install {
 
 /// Linux: which package manager's package `exe` is, asking each whether it owns the file
 /// (`owns(program, arguments)`: it ran and said yes). The .deb's (dpkg), the .rpm's (rpm), or
-/// another's (pacman; a program in /usr/bin none of them owns): those MDM leaves to the system's
-/// updates. Else the plain programs (.tar.gz), which MDM replaces itself. A path that isn't
+/// another's (pacman; a program in /usr/bin none of them owns): those RAZ Download Manager leaves to the system's
+/// updates. Else the plain programs (.tar.gz), which RAZ Download Manager replaces itself. A path that isn't
 /// UTF-8 is never one of the packages'.
 fn linux_package(exe: &Path, owns: &dyn Fn(&str, &[&str]) -> bool) -> Install {
     let Some(path) = exe.to_str() else {
@@ -180,8 +180,8 @@ impl Progress {
     }
 }
 
-/// Fetch release file `name` from `assets` (name, download address) into `dir` with MDM's own
-/// engine (`net`), after checking the release's SHA256SUMS.txt is signed by MDM's key, and check
+/// Fetch release file `name` from `assets` (name, download address) into `dir` with RAZ Download Manager's own
+/// engine (`net`), after checking the release's SHA256SUMS.txt is signed by RAZ Download Manager's key, and check
 /// the file against it. Returns the file.
 pub async fn fetch(
     assets: &[(String, String)],

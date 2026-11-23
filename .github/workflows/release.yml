@@ -97,6 +97,7 @@ jobs:
       - name: Installer and portable zip
         shell: pwsh
         env:
+          RAZDM_SIGN_COMMAND: ${{ steps.cert.outputs.command }}
           MDM_SIGN_COMMAND: ${{ steps.cert.outputs.command }}
         run: ./tools/installer/build.ps1
 
@@ -144,12 +145,15 @@ jobs:
           node tools/extension/check-pack.mjs
           $v = [regex]::Match((Get-Content Cargo.toml -Raw), '(?m)^version\s*=\s*"([^"]+)"').Groups[1].Value
           New-Item -ItemType Directory -Force target/dist | Out-Null
-          Copy-Item target/extension/mdm-chromium.zip "target/dist/RAZDownloadManager-$v-extension-chromium.zip"
-          Copy-Item target/extension/mdm-firefox.xpi "target/dist/RAZDownloadManager-$v-extension-firefox.xpi"
+          $chr = if (Test-Path target/extension/razdm-chromium.zip) { "target/extension/razdm-chromium.zip" } else { "target/extension/mdm-chromium.zip" }
+          $ff = if (Test-Path target/extension/razdm-firefox.xpi) { "target/extension/razdm-firefox.xpi" } else { "target/extension/mdm-firefox.xpi" }
+          $cws = if (Test-Path target/extension/razdm-chrome-store.zip) { "target/extension/razdm-chrome-store.zip" } else { "target/extension/mdm-chrome-store.zip" }
+          Copy-Item $chr "target/dist/RAZDownloadManager-$v-extension-chromium.zip"
+          Copy-Item $ff "target/dist/RAZDownloadManager-$v-extension-firefox.xpi"
           # For the Chrome Web Store (the next step, or its dashboard by hand): kept with the
           # build, not the release.
           New-Item -ItemType Directory -Force target/store | Out-Null
-          Copy-Item target/extension/mdm-chrome-store.zip "target/store/RAZDownloadManager-$v-chrome-web-store.zip"
+          Copy-Item $cws "target/store/RAZDownloadManager-$v-chrome-web-store.zip"
 
       # The Firefox add-on is listed on addons.mozilla.org: each release's version is sent there
       # for review (not waited for); Firefox installs and updates it from its listing. The .xpi
@@ -185,7 +189,10 @@ jobs:
           REFRESH_TOKEN: ${{ secrets.CWS_REFRESH_TOKEN }}
           PUBLISHER_ID: ${{ secrets.CWS_PUBLISHER_ID }}
           EXTENSION_ID: ejoleppdfgjdndddcjoehopknmlglojp
-        run: npx --yes chrome-webstore-upload-cli@4 --source target/extension/mdm-chrome-store.zip
+        shell: pwsh
+        run: |
+          $cws = if (Test-Path target/extension/razdm-chrome-store.zip) { "target/extension/razdm-chrome-store.zip" } else { "target/extension/mdm-chrome-store.zip" }
+          npx --yes chrome-webstore-upload-cli@4 --source $cws
 
       - uses: actions/upload-artifact@v4
         with:
@@ -292,7 +299,8 @@ jobs:
       - name: Publish release
         env:
           GH_TOKEN: ${{ github.token }}
-          MDM_RELEASE_KEY: ${{ secrets.MDM_RELEASE_KEY }}
+          RAZDM_RELEASE_KEY: ${{ secrets.RAZDM_RELEASE_KEY || secrets.MDM_RELEASE_KEY }}
+          MDM_RELEASE_KEY: ${{ secrets.RAZDM_RELEASE_KEY || secrets.MDM_RELEASE_KEY }}
         shell: pwsh
         run: |
           # One SHA256SUMS.txt for every file (each build wrote its own).
@@ -300,12 +308,13 @@ jobs:
           $files = Get-ChildItem dist -File | Sort-Object Name
           $sums = $files | ForEach-Object { "$((Get-FileHash $_.FullName -Algorithm SHA256).Hash.ToLower())  $($_.Name)" }
           Set-Content -Encoding ascii dist/SHA256SUMS.txt $sums
-          # Signed with MDM's release key (fingerprint 5826D399249DE856EA087D802E293C28E8A69D74):
-          # MDM updates itself only from a list it signed
+          # Signed with RAZ Download Manager's release key (fingerprint 5826D399249DE856EA087D802E293C28E8A69D74):
+          # RAZ DM updates itself only from a list it signed
           # (crates/tools/src/update.rs; the public key is crates/tools/keys/mdm-release.asc).
-          if ($env:MDM_RELEASE_KEY) {
-            $key = Join-Path $env:RUNNER_TEMP "mdm-release.asc"
-            Set-Content -Encoding ascii $key $env:MDM_RELEASE_KEY
+          $key_content = if ($env:RAZDM_RELEASE_KEY) { $env:RAZDM_RELEASE_KEY } else { $env:MDM_RELEASE_KEY }
+          if ($key_content) {
+            $key = Join-Path $env:RUNNER_TEMP "razdm-release.asc"
+            Set-Content -Encoding ascii $key $key_content
             gpg --batch --quiet --import $key
             Remove-Item $key
             gpg --batch --yes --detach-sign --local-user 5826D399249DE856EA087D802E293C28E8A69D74 `
@@ -314,7 +323,7 @@ jobs:
             gpg --batch --verify dist/SHA256SUMS.txt.sig dist/SHA256SUMS.txt
             if ($LASTEXITCODE) { throw "the signature of SHA256SUMS.txt doesn't verify" }
           } else {
-            Write-Warning "MDM_RELEASE_KEY isn't set: this release is unsigned, and MDM won't update to it by itself."
+            Write-Warning "RAZDM_RELEASE_KEY / MDM_RELEASE_KEY isn't set: this release is unsigned, and RAZ DM won't update to it by itself."
           }
           # Notes: the version's section of CHANGELOG.md ("## [X.Y.Z]" up to the next "## "),
           # else GitHub's list of changes since the last tag; first, the invitation to try the

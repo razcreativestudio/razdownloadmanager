@@ -3,6 +3,27 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-23] — Standardisasi Komentar Kode (Doc Comments), Workflow CI/CD Release, dan Rebrand RAZ Download Manager
+*Waktu: 23 November 2026 22:45 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Pembersihan dan Pemutakhiran Komentar Kode (`///`, `//!`, `//`)**:
+   - Menyelaraskan seluruh deskripsi dokumentasi kode di berbagai modul utama (`crates/crash/src/report.rs`, `crates/crash/tests/e2e.rs`, `crates/app/src/update.rs`, `crates/app/src/help.rs`, `crates/app/src/app.rs`, `crates/app/src/crash.rs`, `crates/app/src/settings.rs`, `crates/app/src/win32.rs`, `crates/nmhost/src/main.rs`, `crates/tools/src/update.rs`) dari sebutan legacy `MDM` menjadi `RAZ Download Manager`, `RAZ DM`, atau `RAZDM`.
+   - Menjaga integritas backwards-compatibility untuk environment variables pengujian (`RAZDM_UPDATE_FEED` / `MDM_UPDATE_FEED`, `RAZDM_CRASH_TEST` / `MDM_CRASH_TEST`, `RAZDM_COMMIT` / `MDM_COMMIT`, `RAZDM_OFFSCREEN` / `MDM_OFFSCREEN`).
+
+2. **Penyempurnaan Workflow GitHub Actions (`.github/workflows/release.yml`)**:
+   - Menyelaraskan dukungan nama secret penandatanganan rilis ganda (`RAZDM_RELEASE_KEY` fallback ke `MDM_RELEASE_KEY` serta `RAZDM_SIGN_COMMAND` / `MDM_SIGN_COMMAND`).
+   - Mendukung artefak ekstensi browser baik berkas `razdm-*.zip` maupun fallback `mdm-*.zip` untuk pembuatan rilis dan pengunggahan Chrome Web Store.
+   - Memastikan build Windows, Linux, macOS, dan ekstensi terisolasi dengan penanganan dependensi yang rapi.
+
+3. **Verifikasi Kualitas dan Pengujian Otomatis**:
+   - `cargo test -p razdm-crash`: 19 unit tests dan 3 e2e tests lulus 100%.
+   - `cargo test -p razdm-tools`: 91 unit tests dan 3 integration tests lulus 100%.
+   - `cargo test -p razdm-app --bin RAZDownloadManager`: seluruh 315 unit tests lulus 100%.
+   - `node tools/extension/test.mjs`: seluruh 69 checks ekstensi browser lulus 100%.
+
+---
+
 ## [2026-11-23] — Perbaikan CI/CD Workspace & Rilis Otomatis v1.0.1
 *Waktu: 23 November 2026 19:25 WIB*
 

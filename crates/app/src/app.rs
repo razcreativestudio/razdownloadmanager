@@ -368,10 +368,10 @@ fn next_trim(done: u32) -> Duration {
 }
 
 /// Started with the session (#226), the window waits hidden until the notification area is
-/// known: MDM's own tray icon created and a tray there to show it. A desktop's tray can come
-/// after MDM (GNOME's AppIndicator extension at sign-in answered 11.5 s after MDM's icon, on
-/// the lab's VM), and MDM's icon after its own first look: this long they are waited for,
-/// counted from MDM's icon (from the start while it has none), the window still hidden,
+/// known: RAZ DM's own tray icon created and a tray there to show it. A desktop's tray can come
+/// after RAZ DM (GNOME's AppIndicator extension at sign-in answered 11.5 s after RAZ DM's icon, on
+/// the lab's VM), and RAZ DM's icon after its own first look: this long they are waited for,
+/// counted from RAZ DM's icon (from the start while it has none), the window still hidden,
 /// before it shows minimized.
 const TRAY_GRACE: Duration = Duration::from_secs(30);
 
@@ -380,15 +380,15 @@ const TRAY_GRACE: Duration = Duration::from_secs(30);
 enum AtLogin {
     /// Not known yet: hidden, looked at again in a second.
     Wait,
-    /// MDM's icon is in a notification area: the window stays hidden there.
+    /// RAZ DM's icon is in a notification area: the window stays hidden there.
     Tray,
     /// No notification area within [`TRAY_GRACE`]: shown, minimized.
     Minimize,
 }
 
-/// `since` the start, and since MDM's tray `icon` was created (None: not yet): whether a tray
+/// `since` the start, and since RAZ DM's tray `icon` was created (None: not yet): whether a tray
 /// `host` shows it (Windows, macOS: always one; Linux: a StatusNotifierWatcher, #59). The
-/// grace counts from the icon, so a slow start of MDM's own doesn't eat the desktop's time.
+/// grace counts from the icon, so a slow start of RAZ DM's own doesn't eat the desktop's time.
 fn at_login(since: Duration, icon: Option<Duration>, host: bool) -> AtLogin {
     if icon.is_some() && host {
         AtLogin::Tray
@@ -472,7 +472,7 @@ pub struct App {
     /// Options was asked for from outside (the extension's Button settings..., `/show`): it comes
     /// to the front once shown, or it would open behind the browser (#77).
     raise_options: bool,
-    /// When MDM started (the update check waits a few seconds after it).
+    /// When RAZ DM started (the update check waits a few seconds after it).
     started: Instant,
     /// When this run last checked for updates by itself (seconds since the epoch).
     update_checked_this_run: Option<i64>,
@@ -596,7 +596,7 @@ pub struct App {
     trim_when_hidden: Option<Instant>,
     trims_since_hidden: u32,
     /// Started with the session, the window hidden until the notification area is known
-    /// (#226, [`at_login`]): when, when MDM's tray icon was first seen, and when it was last
+    /// (#226, [`at_login`]): when, when RAZ DM's tray icon was first seen, and when it was last
     /// looked at.
     at_login: Option<Instant>,
     at_login_icon: Option<Instant>,
@@ -1728,7 +1728,7 @@ impl App {
     /// everything running stops (its connections were held to the route before, or to none;
     /// sockets that are bound can't leak, this is so they don't wait for a timeout) and the
     /// torrent session with it; what was stopped so starts again once the route lets it.
-    /// Each frame (#44): the debrid accounts set up again when they, or MDM's network settings
+    /// Each frame (#44): the debrid accounts set up again when they, or RAZ DM's network settings
     /// (the API calls take the same proxy, DNS and adapter), changed; then the services' host
     /// lists read, off the window's thread. No account: no request at all.
     fn debrid_tick(&mut self) {
@@ -4009,7 +4009,7 @@ impl App {
         }
     }
 
-    /// Fetch feed `id` in the background (once at a time), with MDM's own connection settings.
+    /// Fetch feed `id` in the background (once at a time), with RAZ DM's own connection settings.
     fn rss_fetch(&mut self, id: u64) {
         let Some(feed) = self.rss.feeds.iter().find(|f| f.id == id) else {
             return;
@@ -7898,7 +7898,7 @@ impl App {
 
     /// IDM looks for a new version once a week; so do we (off: the switch in Check for updates). Found: the
     /// update window says so; otherwise nothing shows.
-    /// The automatic update check: a few seconds after every start, then once a day while MDM
+    /// The automatic update check: a few seconds after every start, then once a day while RAZ DM
     /// runs (it was at most once a week). A new version's window comes to the front, as apps
     /// announce theirs. Not in off-screen test runs (their windows stay as asked).
     fn auto_update_check(&mut self, ctx: &egui::Context) {

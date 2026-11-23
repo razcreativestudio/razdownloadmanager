@@ -51,7 +51,7 @@ fn now_ms() -> u64 {
 }
 
 /// Start the monitor and catch crashes, panics and freezes. Called on the window thread, after
-/// this process became MDM's instance.
+/// this process became RAZ Download Manager's instance.
 pub fn start(data: &Path, session: Session) {
     let _ = EPOCH.set(Instant::now());
     #[cfg(windows)]
@@ -198,7 +198,7 @@ pub fn window(id: &str) {
     });
 }
 
-/// What MDM has open and running, for the report (sent when it changes).
+/// What RAZ Download Manager has open and running, for the report (sent when it changes).
 pub fn state(downloads: usize, running: usize, queues: usize, scale: f32) {
     let Some(r) = REPORTER.get() else { return };
     let windows = WINDOWS.with(|w| w.borrow().1.iter().cloned().collect());
@@ -211,16 +211,16 @@ pub fn state(downloads: usize, running: usize, queues: usize, scale: f32) {
     });
 }
 
-/// MDM has started closing normally: what panics on the runtime's own threads now (a task's
+/// RAZ Download Manager has started closing normally: what panics on the runtime's own threads now (a task's
 /// timer once the runtime is shutting down, #422) is the runtime going away, not a problem.
 static CLOSING: AtomicBool = AtomicBool::new(false);
 
-/// Is this panic worth a report? Not one on a runtime worker while MDM is closing (#422).
+/// Is this panic worth a report? Not one on a runtime worker while RAZ Download Manager is closing (#422).
 fn panic_reported(closing: bool, thread: &str) -> bool {
     !(closing && thread.starts_with("tokio"))
 }
 
-/// MDM is closing normally: the monitor leaves without a report.
+/// RAZ Download Manager is closing normally: the monitor leaves without a report.
 pub fn clean_exit() {
     CLOSING.store(true, Ordering::Release);
     if let Some(r) = REPORTER.get() {
@@ -361,11 +361,14 @@ pub fn session(language: &str, dark: bool) -> Session {
     }
 }
 
-/// MDM_CRASH_TEST=1 lets `/show crash-test:<what>` crash MDM on purpose (the crash reports'
+/// RAZDM_CRASH_TEST=1 or MDM_CRASH_TEST=1 lets `/show crash-test:<what>` crash RAZ DM on purpose (the crash reports'
 /// own end-to-end check): panic, crash (an access violation / SIGSEGV), freeze (a deadlock on
 /// the window thread), spin (the window thread busy for 12 s, then it answers again), abort.
 pub fn test(what: &str) {
-    if std::env::var_os("MDM_CRASH_TEST").is_none_or(|v| v != "1") {
+    if std::env::var_os("RAZDM_CRASH_TEST")
+        .or_else(|| std::env::var_os("MDM_CRASH_TEST"))
+        .is_none_or(|v| v != "1")
+    {
         return;
     }
     tracing::warn!("crash test: {what}");
@@ -404,7 +407,7 @@ fn crash_test_freeze() {
 
 #[cfg(test)]
 mod closing_tests {
-    /// #422: a Tokio task panicking while MDM closes is no crash; the window thread's would be.
+    /// #422: a Tokio task panicking while RAZ Download Manager closes is no crash; the window thread's would be.
     #[test]
     fn a_runtime_panic_while_closing_is_not_reported() {
         use super::panic_reported;

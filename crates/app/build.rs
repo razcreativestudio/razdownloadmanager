@@ -140,7 +140,7 @@ fn languages(root: &std::path::Path) {
     std::fs::write(out, format!("&[\n{}\n]\n", rows.join("\n"))).unwrap();
 }
 
-/// The commit this is built from (`MDM_COMMIT`, "unknown" outside a git checkout), for Help →
+/// The commit this is built from (`RAZDM_COMMIT`, "unknown" outside a git checkout), for Help →
 /// About and problem reports.
 fn commit() {
     println!("cargo:rerun-if-changed=../../.git/HEAD");
@@ -153,5 +153,6 @@ fn commit() {
         .map(|o| String::from_utf8_lossy(&o.stdout).trim().to_owned())
         .filter(|h| !h.is_empty())
         .unwrap_or_else(|| "unknown".into());
+    println!("cargo:rustc-env=RAZDM_COMMIT={hash}");
     println!("cargo:rustc-env=MDM_COMMIT={hash}");
 }

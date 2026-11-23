@@ -24,7 +24,10 @@ pub const REPO: &str = "https://github.com/razcreativestudio/razdownloadmanager"
 pub const SPONSORS: &str = "https://github.com/razcreativestudio";
 const LATEST: &str = "https://api.github.com/repos/razcreativestudio/razdownloadmanager/releases/latest";
 pub const VERSION: &str = env!("CARGO_PKG_VERSION");
-pub const COMMIT: &str = env!("MDM_COMMIT");
+pub const COMMIT: &str = match option_env!("RAZDM_COMMIT") {
+    Some(c) => c,
+    None => env!("MDM_COMMIT"),
+};
 /// While RAZ DM runs, the automatic check comes again this often (it also checks at every start).
 pub const CHECK_EVERY: i64 = 24 * 3600;
 /// The check at start waits this long (the window, the list and the downloads first).
@@ -74,7 +77,7 @@ pub fn page_url(doc: &str, lang: &str) -> String {
 
 /// Open a page of the user guide on the website, in the interface language when the site has
 /// it (`doc` as page_url takes it: `"video.md"`, `"README.md#tutorials"`, `""` the home page).
-/// Never in an off-screen test run (MDM_OFFSCREEN), whose clicks come from scripts, not from a
+/// Never in an off-screen test run (RAZDM_OFFSCREEN / MDM_OFFSCREEN), whose clicks come from scripts, not from a
 /// person at the browser.
 pub fn open_page(doc: &str) {
     if !crate::offscreen() {
@@ -83,7 +86,7 @@ pub fn open_page(doc: &str) {
 }
 
 /// Help → Support RAZ DM and About's link: the Sponsors page in the browser. Asked for only: RAZ DM
-/// never brings it up by itself, and never in an off-screen test run (MDM_OFFSCREEN), whose
+/// never brings it up by itself, and never in an off-screen test run (RAZDM_OFFSCREEN / MDM_OFFSCREEN), whose
 /// clicks come from scripts, not from a person at the browser.
 pub fn support() {
     if !crate::offscreen() {
@@ -92,7 +95,7 @@ pub fn support() {
 }
 
 /// A new GitHub issue on the Bug report form (.github/ISSUE_TEMPLATE/bug.yml), filled with
-/// what MDM knows: its version, the system and its version, how it was installed, the
+/// what RAZ Download Manager knows: its version, the system and its version, how it was installed, the
 /// language. The parameters are the form's field ids (all text fields: GitHub's page drops a
 /// dropdown's value from the address).
 pub fn report_problem() {
@@ -111,7 +114,7 @@ pub fn report_problem() {
         });
 }
 
-/// The Bug report form's fields MDM fills in: (field id, value).
+/// The Bug report form's fields RAZ Download Manager fills in: (field id, value).
 fn report_fields() -> Vec<(&'static str, String)> {
     #[cfg(windows)]
     let os_version = crate::win32::windows_version();
@@ -183,14 +186,16 @@ pub fn check(rt: &tokio::runtime::Handle, ctx: &egui::Context) -> Slot {
 }
 
 async fn latest() -> Result<Found, String> {
-    // MDM_UPDATE_FEED: another address for the latest release (tests of Update now, as
-    // MDM_DATA_DIR is for a separate list).
-    let feed = std::env::var("MDM_UPDATE_FEED").unwrap_or_else(|_| LATEST.to_owned());
+    // RAZDM_UPDATE_FEED / MDM_UPDATE_FEED: another address for the latest release (tests of Update now, as
+    // RAZDM_DATA_DIR / MDM_DATA_DIR is for a separate list).
+    let feed = std::env::var("RAZDM_UPDATE_FEED")
+        .or_else(|_| std::env::var("MDM_UPDATE_FEED"))
+        .unwrap_or_else(|_| LATEST.to_owned());
     let net = crate::settings::own_net();
     // The chosen DNS and network adapter, as downloads have them (#36, #35).
     let client = mdm_engine::net::client_builder(&net.dns, &net.route, &feed)
         .map_err(|e| e.to_string())?
-        .user_agent(concat!("MisterDownloadManager/", env!("CARGO_PKG_VERSION")))
+        .user_agent(concat!("RAZDownloadManager/", env!("CARGO_PKG_VERSION")))
         .timeout(Duration::from_secs(20))
         .build()
         .map_err(|e| e.to_string())?;
@@ -272,7 +277,7 @@ pub struct Updates {
     result: Option<Result<Found, String>>,
     /// Update now: the release file on its way (crate::update).
     job: Option<crate::update::Job>,
-    /// What Update now came to, when it didn't close MDM.
+    /// What Update now came to, when it didn't close RAZ Download Manager.
     status: Option<UpdateStatus>,
     /// Update now pressed by a test (`/show update-now`, feature `test-update`).
     press: bool,
@@ -314,7 +319,7 @@ impl Updates {
     }
 
     /// `weekly`: the automatic check (its switch is here, under the answer). `Done(true)`:
-    /// the update is going in place, MDM closes for it (and starts again).
+    /// the update is going in place, RAZ Download Manager closes for it (and starts again).
     pub fn show(
         &mut self,
         ctx: &egui::Context,
@@ -326,7 +331,7 @@ impl Updates {
             self.slot = None;
         }
         let install = mdm_tools::update::Install::detect();
-        // The release file arrived (checked) and is in place (on the job's thread): MDM closes
+        // The release file arrived (checked) and is in place (on the job's thread): RAZ Download Manager closes
         // once the new copy (or the installer) has started.
         if let Some(res) = self.job.as_ref().and_then(crate::update::Job::result) {
             self.job = None;
@@ -414,7 +419,7 @@ impl Updates {
                         // A package of another package manager (pacman, …): that one updates it.
                         let have = if install == mdm_tools::update::Install::System {
                             crate::i18n::fmt(
-                                // i18n: Check for updates, under the new version's line, when MDM was installed by the Linux system's package manager (pacman, ...), which MDM can't update itself
+                                // i18n: Check for updates, under the new version's line, when RAZ Download Manager was installed by the Linux system's package manager (pacman, ...), which RAZ Download Manager can't update itself
                                 crate::i18n::t(
                                     "You have version {version}, from your system's package manager: update it there.",
                                 ),
@@ -568,7 +573,7 @@ impl Updates {
                         ui,
                         o + vec2(11.0, bottom + 4.0),
                         weekly,
-                        // i18n: check box in the update window: look for a new version every time MDM starts
+                        // i18n: check box in the update window: look for a new version every time RAZ Download Manager starts
                         "Check for updates at every start",
                         true,
                         Some(o.x + status_right),
@@ -1354,14 +1359,18 @@ mod tests {
         }
     }
 
-    /// The same pages on a built website: `python tools/website/build.py` (MDM_SITE_PREVIEW=1
-    /// is enough, English), then `MDM_SITE_DIR=target/site cargo test -p mdm-app --
+    /// The same pages on a built website: `python tools/website/build.py` (RAZDM_SITE_PREVIEW=1
+    /// or MDM_SITE_PREVIEW=1 is enough, English), then `RAZDM_SITE_DIR=target/site cargo test -p razdm-app --
     /// --ignored linked_help_pages_are_on_the_built_site`: each page is a file there, with its
     /// section's id.
     #[test]
-    #[ignore = "needs the website built, in MDM_SITE_DIR"]
+    #[ignore = "needs the website built, in RAZDM_SITE_DIR or MDM_SITE_DIR"]
     fn linked_help_pages_are_on_the_built_site() {
-        let out = std::path::PathBuf::from(std::env::var("MDM_SITE_DIR").expect("MDM_SITE_DIR"));
+        let out = std::path::PathBuf::from(
+            std::env::var("RAZDM_SITE_DIR")
+                .or_else(|_| std::env::var("MDM_SITE_DIR"))
+                .expect("RAZDM_SITE_DIR / MDM_SITE_DIR"),
+        );
         for doc in linked_docs() {
             let url = page_url(&doc, "en");
             let path = url.strip_prefix(SITE).unwrap();

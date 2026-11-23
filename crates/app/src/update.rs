@@ -1,7 +1,7 @@
 //! Updating in place (Help → Check for updates → Update now): this copy's release file, fetched
 //! and checked in the background (`mdm_tools::update`: the release's signed checksum list), then
 //! put where this copy is, on a thread of its own too (unpacking, `tar`, `hdiutil`, `ditto`: the
-//! window's thread waits for none of them, #222). MDM closes for it; the new copy starts with
+//! window's thread waits for none of them, #222). RAZ Download Manager closes for it; the new copy starts with
 //! `/updated`, waits for the old one to be gone, and removes what the update set aside.
 
 use std::path::{Path, PathBuf};
@@ -18,11 +18,11 @@ pub const UPDATED: &str = "/updated";
 /// What follows once the file is in place.
 #[derive(Debug)]
 pub enum Next {
-    /// MDM closes once this has started: the new copy (or the installer, which starts it).
+    /// RAZ Download Manager closes once this has started: the new copy (or the installer, which starts it).
     /// Started by the window when it takes the result, so an update cancelled meanwhile starts
     /// nothing.
     Restart(Command),
-    /// Handed to the system's package installer (a .deb or .rpm): MDM stays open.
+    /// Handed to the system's package installer (a .deb or .rpm): RAZ Download Manager stays open.
     Opened,
 }
 
@@ -123,7 +123,8 @@ impl Job {
 fn apply(install: Install, file: &Path) -> Result<Next, String> {
     // Tests only (feature `test-update`): "Installing the update..." held this many seconds.
     #[cfg(feature = "test-update")]
-    if let Some(secs) = std::env::var("MDM_TEST_UPDATE_HOLD")
+    if let Some(secs) = std::env::var("RAZDM_TEST_UPDATE_HOLD")
+        .or_else(|_| std::env::var("MDM_TEST_UPDATE_HOLD"))
         .ok()
         .and_then(|s| s.parse::<u64>().ok())
     {
@@ -143,8 +144,8 @@ fn apply(install: Install, file: &Path) -> Result<Next, String> {
         Ok(Next::Restart(cmd))
     };
     match install {
-        // The installer closes MDM itself (/exit), installs where it was (the same install
-        // mode), and starts it again (/relaunch, tools/installer/mdm.iss).
+        // The installer closes RAZ Download Manager itself (/exit), installs where it was (the same install
+        // mode), and starts it again (/relaunch, tools/installer/razdm.iss).
         Install::Installer => {
             let mut cmd = Command::new(file);
             cmd.args([

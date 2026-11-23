@@ -100,13 +100,13 @@ pub struct Settings {
     /// View → Dark Mode support (IDM 6.37): follow Windows' dark app mode; off = always light.
     pub dark_mode_support: bool,
     /// View → Always dark (#60): dark whatever the system says (a desktop that reports no
-    /// preference, or a dark MDM on a light desktop).
+    /// preference, or a dark RAZ DM on a light desktop).
     pub always_dark: bool,
     /// The look (#45): a built-in theme's id ("raz", the default) or a theme file's name in
     /// the data folder's `themes` folder (crate::themefile).
     pub theme: String,
     /// View → Draw with (#89): OpenGL or Direct3D (Windows only), used from the next start.
-    /// None: MDM's default (`renderer::DEFAULT`), which may change.
+    /// None: RAZ DM's default (`renderer::DEFAULT`), which may change.
     pub renderer: Option<crate::renderer::Api>,
     /// View → Interface size (#262), percent: 100, 125, 150, 175 or 200 (crate::scale). Every
     /// window drawn that much larger than the display's own scale makes it.
@@ -138,11 +138,11 @@ pub struct Settings {
     pub clipboard_autostart: bool,
     /// General: Minimize hides the main window, and a download's progress window, to the
     /// notification area, as closing the main window does (#63). On by default (the
-    /// maintainer's choice), for existing lists too. Only where a tray shows MDM's icon.
+    /// maintainer's choice), for existing lists too. Only where a tray shows RAZ DM's icon.
     pub minimize_to_tray: bool,
-    /// General: closing the main window keeps MDM running, hidden in the notification area (else
+    /// General: closing the main window keeps RAZ DM running, hidden in the notification area (else
     /// closing quits). On by default, for existing lists too, in every copy. Only where a tray
-    /// shows MDM's icon.
+    /// shows RAZ DM's icon.
     pub close_to_tray: bool,
     pub mv2_extensions: bool,
     pub advanced_integration: bool,
@@ -248,7 +248,7 @@ pub struct Settings {
     /// Torrents keep sharing after they finish (D-018: off; a finished torrent stops, like any
     /// download).
     pub torrent_keep_sharing: bool,
-    /// Windows opens magnet links and .torrent files with MDM (D-018: opt-in, current user).
+    /// Windows opens magnet links and .torrent files with RAZ DM (D-018: opt-in, current user).
     pub torrent_associations: bool,
     /// Torrent settings → Network (#40, `torrent_config`): accept incoming connections, map
     /// the port with the router's UPnP, a fixed port (0: any, picked at each start), the DHT,
@@ -693,11 +693,11 @@ impl Settings {
     }
 
     /// Why a download from the browser can't start (#42): its proxy asks for a login that the
-    /// VPN or proxy extension gives, which MDM can't have. Going around it would show the
+    /// VPN or proxy extension gives, which RAZ DM can't have. Going around it would show the
     /// user's own address, so the download stops and says so.
     pub fn browser_proxy_refused(&self, context: &mdm_ipc::Command) -> Option<String> {
         (self.proxy_from_browser && context.proxy_login).then(|| {
-            // i18n: an error: the browser's VPN or proxy extension logs in to its proxy itself, and MDM can't; Options → Proxy / Socks → Network adapter is where an adapter can be chosen
+            // i18n: an error: the browser's VPN or proxy extension logs in to its proxy itself, and RAZ DM can't; Options → Proxy / Socks → Network adapter is where an adapter can be chosen
             crate::i18n::t(
                 "the browser's proxy (a VPN or proxy extension) asks for a login only that extension has: use the VPN's own app, or choose its network adapter in Options → Proxy / Socks",
             )
@@ -942,7 +942,7 @@ pub fn dns_choice(
     })
 }
 
-/// The proxy MDM's own downloads go through (its helpers, its updates, a crash report's
+/// The proxy RAZ DM's own downloads go through (its helpers, its updates, a crash report's
 /// symbols): Options → Proxy / Socks, kept in step by the app ([`share_proxy`]); Windows' own
 /// settings in a process without them (the crash monitor).
 static OWN_PROXY: std::sync::RwLock<Option<mdm_engine::Proxy>> = std::sync::RwLock::new(None);
@@ -993,12 +993,12 @@ pub fn share_video_cookies(s: &Settings) {
     mdm_tools::proc::set_browser_cookies(s.video_cookies());
 }
 
-/// The network adapter MDM's connections go through now (#35).
+/// The network adapter RAZ DM's connections go through now (#35).
 pub fn own_route() -> mdm_engine::Route {
     OWN_ROUTE.read().unwrap().clone()
 }
 
-/// How MDM downloads its own files: its engine, as itself, through the user's proxy, DNS and
+/// How RAZ DM downloads its own files: its engine, as itself, through the user's proxy, DNS and
 /// network adapter.
 pub fn own_net() -> mdm_engine::Options {
     let proxy = OWN_PROXY

@@ -376,11 +376,11 @@ fn log_left(browser: &str, site: &str, name: &str, reason: impl AsRef<str>, priv
     log_line(&left_line(browser, site, name, reason.as_ref(), private));
 }
 
-/// A line in MDM's log (`<data>/logs/mdm.log`, crates/crash/src/logs.rs), dated as the app's
+/// A line in RAZ DM's log (`<data>/logs/razdm.log`, crates/crash/src/logs.rs), dated as the app's
 /// own lines: the host runs apart from the app, which may not be running at all. Appended
 /// whole, so it never splits a line the app writes at the same time.
 fn log_line(message: &str) {
-    // Unit tests run without a data folder of their own: never into the real MDM's log
+    // Unit tests run without a data folder of their own: never into the real RAZ DM's log
     // (tests/host.rs runs the program with its own and reads what it wrote).
     if cfg!(test) {
         return;
