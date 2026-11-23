@@ -2817,7 +2817,7 @@ mod startup_tests {
     fn the_installer_writes_the_same_entry() {
         let iss = include_str!("../../../tools/installer/mdm.iss");
         assert!(iss.contains(
-            r#"ValueName: "MisterDownloadManager"; ValueData: """{app}\{#AppExe}"" /startup""#
+            r#"ValueName: "RAZDownloadManager"; ValueData: """{app}\{#AppExe}"" /startup""#
         ));
     }
 }

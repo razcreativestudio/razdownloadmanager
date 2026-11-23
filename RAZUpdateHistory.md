@@ -17,7 +17,13 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
    - Memperbaiki konversi tipe chunk buffer `c.as_ref()` pada `crates/labserver/tests/http.rs`.
    - Seluruh test suite dan `cargo check --tests --workspace` terverifikasi lolos 100% tanpa error.
 
-3. **Sinkronisasi Tag & Release GitHub Actions**:
+4. **Perbaikan Unit Test & Kontras Aksesibilitas WCAG Tema RAZ**:
+   - Menyelaraskan kontras tautan (`link = "#855a00"`, 5.7:1), fokus keyboard (`focus.ring = "#7a5200bf"`, 3.7:1), dan teks tombol aksen (`button.accent.text = "#0d0f12"`, 7.2:1) pada tema light `crates/app/assets/themes/raz.toml` agar memenuhi standar WCAG 2.1 AA (4.5:1 untuk teks dan 3:1 untuk kontrol).
+   - Menambahkan kode bahasa `"id"` ke dalam `SITE_LANGS` di `crates/app/src/help.rs`.
+   - Menyesuaikan penamaan biner update pada `crates/app/src/update.rs` dan startup entry installer pada `crates/app/src/win32.rs` dari `MisterDownloadManager` menjadi `RAZDownloadManager`.
+   - Seluruh 315 unit test pada `razdm-app` berhasil lulus 100%.
+
+5. **Sinkronisasi Tag & Release GitHub Actions**:
    - Memperbarui tag release `v1.0.1` pada repositori remote agar memicu ulang workflow GitHub Release secara otomatis dan menerbitkan release asset ke GitHub Releases.
 
 ---
