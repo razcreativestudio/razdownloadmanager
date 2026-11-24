@@ -1,4 +1,4 @@
-﻿# RAZ Download Manager: every English text of the interface (tools/i18n/extract.py).
+# RAZ Download Manager: every English text of the interface (tools/i18n/extract.py).
 # context	source	translation; a catalog for another language has the same rows.
 # A '#.' line is the translator note for the row under it.
 @id	language.name	English
@@ -192,7 +192,6 @@
 #. column title: the account's name at the service
 	Account	Account
 #. text in the Options window
-#. tab title: the user's debrid service accounts (Real-Debrid…)
 	Accounts	Accounts
 #. text in remote.rs
 #. remote control page (on a phone): button: add the download
@@ -219,12 +218,12 @@
 #. text in playlistdlg.rs
 #. title of the question asked before a playlist adds many downloads
 	Add many downloads	Add many downloads
-#. window title in extension.rs
-#. title of the window that offers the browser extension
-	Add RAZ Download Manager to your browser	Add RAZ Download Manager to your browser
 #. message or event log entry in the main window; text in the tray icon's menu
 #. link in the empty download list: opens Add URL
 	Add new download	Add new download
+#. window title in extension.rs
+#. title of the window that offers the browser extension
+	Add RAZ Download Manager to your browser	Add RAZ Download Manager to your browser
 #. text in the Options window
 	Add the duplicate and overwrite the existing file	Add the duplicate and overwrite the existing file
 #. text in the Options window
@@ -309,7 +308,7 @@
 #. text in remote.rs
 #. remote control page (on a phone): tab: every download
 	All	All
-#. item in the Categories tree in the main window
+#. tab in the main window
 	All Downloads	All Downloads
 #. message or event log entry in the main window
 	All files	All files
@@ -318,6 +317,8 @@
 #. text in the Download video window
 #. in the Subtitles list of Download video: every language the video's uploader gave
 	All the uploader's	All the uploader's
+#. tab in the main window
+	All Types	All Types
 #. text in the Options window
 #. checkbox under the number of connections per download; {n} is 32
 #. {n} = a number (keep the braces as they are)
@@ -387,7 +388,6 @@
 	Archive password	Archive password
 #. group box title in the Options window; text in the Options window
 #. Options → Archives: group box title
-#. tab title: extracting downloaded archives, and Link grabber
 	Archives	Archives
 #. text in the Options window
 #. Options page title: extracting downloaded archives, and Link grabber
@@ -573,9 +573,6 @@
 #. text in extension.rs
 #. the headline of the window that offers the browser extension
 	Catch downloads from your browser	Catch downloads from your browser
-#. text in the main window (menus, toolbar, Categories pane)
-#. title of the side pane that lists the categories
-	Categories	Categories
 #. page title in the Options window
 	Categories, file types, folders	Categories, file types, folders
 #. text in a dialog box; text in the Options window; text in remote.rs
@@ -616,7 +613,7 @@
 #. window title in the Help menu's windows (About, updates, shortcuts, Tell a friend)
 	Check for updates	Check for updates
 #. checkbox in the Help menu's windows (About, updates, shortcuts, Tell a friend)
-#. check box in the update window: look for a new version every time MDM starts
+#. check box in the update window: look for a new version every time RAZ Download Manager starts
 	Check for updates at every start	Check for updates at every start
 #. text in helpers.rs
 	Check your connection, then try again, or get them later from the video window.	Check your connection, then try again, or get them later from the video window.
@@ -685,9 +682,8 @@
 	Client	Client
 #. text in the Options window
 	Clock:	Clock:
-#. text in the Checksum window; text in the main window (menus, toolbar, Categories pane); button in crashui.rs; button in a dialog box; button in extension.rs; button in the Help menu's windows (About, updates, shortcuts, Tell a friend); button in helpers.rs; button in the download list; button in the Options window; button in rssdlg.rs; button in torrentfiles.rs; text in standard windows
+#. text in the Checksum window; button in crashui.rs; button in a dialog box; button in extension.rs; button in the Help menu's windows (About, updates, shortcuts, Tell a friend); button in helpers.rs; button in the download list; button in the Options window; button in rssdlg.rs; button in torrentfiles.rs; text in standard windows
 #. both verbs: Verify = check the file now; Close = close the window
-#. tooltip of the × that closes the Categories pane
 #. verb: closes this window
 #. verb: closes the filter box
 #. button that closes the torrent file list window
@@ -714,6 +710,8 @@
 #. a download's status (state it is in, not a command)
 #. a download's status (state it is in, not a command): finished
 	Complete	Complete
+#. tab in the main window
+	Completed	Completed
 #. text in the download list (sizes, speeds, status)
 #. category name: compressed archives (zip, rar, 7z)
 	Compressed	Compressed
@@ -736,7 +734,6 @@
 #. the trailing ... means it is still going on: keep it
 	Connecting...	Connecting...
 #. text in the Options window
-#. tab title: connection settings
 	Connection	Connection
 #. page title in the Options window
 	Connections and Limits	Connections and Limits
@@ -1005,7 +1002,6 @@
 #. {name} = a file name; {n} = a number (keep the braces as they are)
 	Downloading {name} ({n} of {total})... {percent}	Downloading {name} ({n} of {total})... {percent}
 #. text in the download list; text in the Options window
-#. tab title: download settings
 	Downloads	Downloads
 #. text in the tray icon's menu
 #. tray menu: a submenu of the downloads now running; choosing one shows its progress window
@@ -1204,7 +1200,6 @@
 #. text in a download's progress window
 	File size	File size
 #. text in the Options window
-#. tab title
 	File types	File types
 #. text in categories.rs
 	File types:	File types:
@@ -1245,8 +1240,7 @@
 	Find the next match	Find the next match
 #. text in the Find window
 	Find:	Find:
-#. item in the Categories tree in the main window; text in remote.rs
-#. adjective: the downloads that are complete
+#. text in remote.rs
 #. remote control page (on a phone): tab: downloads finished
 	Finished	Finished
 #. text in countries.rs
@@ -1350,7 +1344,6 @@
 	Gambia	Gambia
 #. text in the download list (sizes, speeds, status); text in the Options window; text in a download's progress window
 #. category name: files of no particular kind
-#. tab title: general settings
 #. tab title: general information
 	General	General
 #. text in countries.rs
@@ -1500,6 +1493,8 @@
 #. text in the Options window
 #. Options → Accounts: the account's sign-in is in the system's keyring (Linux), which is locked now; MDM never unlocks it
 	in the locked keyring	in the locked keyring
+#. tab in the main window
+	Incomplete	Incomplete
 #. text in standard windows
 #. a spin box's arrow, for screen readers: one more
 	Increase	Increase
@@ -1850,9 +1845,6 @@
 #. text in countries.rs
 #. a country's name (where a download's server is)
 	Mayotte	Mayotte
-#. text in the Options window
-#. Options → Remote → Pair a device: the remote control isn't listening (no network, port taken): the Remote page says why
-	MDM can't be reached on the network now: Options → Remote says why.	MDM can't be reached on the network now: Options → Remote says why.
 #. text in remote.rs
 #. remote control page (on a phone): the address typed isn't one MDM downloads (not http, https, ftp or magnet)
 	MDM cannot download this address.	MDM cannot download this address.
@@ -1894,43 +1886,6 @@
 #. text in a download's progress window
 #. legend: pieces not downloaded yet
 	Missing	Missing
-#. message or event log entry in the main window; window title in a dialog box; text in the Help menu's windows (About, updates, shortcuts, Tell a friend)
-	RAZ Download Manager	RAZ Download Manager
-#. text in unix.rs
-#. Linux, at start, on the terminal and in a message box: a library the window needs isn't installed; {libraries} = its file names (libxkbcommon-x11.so.0…), left as they are
-	RAZ Download Manager can't open its window: this system lacks {libraries}.	RAZ Download Manager can't open its window: this system lacks {libraries}.
-#. text in crashui.rs
-#. crash report window heading: MDM crashed and is gone
-	RAZ Download Manager closed unexpectedly	RAZ Download Manager closed unexpectedly
-#. window title in the Options window
-	RAZ Download Manager Configuration	RAZ Download Manager Configuration
-#. text in crashui.rs
-	RAZ Download Manager crash report	RAZ Download Manager crash report
-#. text in crashui.rs
-#. crash report window heading: an internal error, MDM still running
-	RAZ Download Manager hit an internal error	RAZ Download Manager hit an internal error
-#. text in wake.rs
-#. why the computer isn't going to sleep, in the system's list of programs that keep it awake; {queue} = the queue's name
-#. {queue} = a queue name such as "Main queue" (keep the braces as they are)
-	RAZ Download Manager is running the queue "{queue}"	RAZ Download Manager is running the queue "{queue}"
-#. text in crashui.rs
-#. crash report window heading: MDM's window doesn't answer (frozen)
-	RAZ Download Manager stopped responding	RAZ Download Manager stopped responding
-#. text in crashui.rs
-	RAZ Download Manager stopped responding for a while	RAZ Download Manager stopped responding for a while
-#. text in the Options window
-#. \\n starts a new line: break lines where they fit the translation
-	RAZ Download Manager writes every connection straight into the final\nfile (a sparse part file next to it), so no temporary directory and no\nassembling step are needed.	RAZ Download Manager writes every connection straight into the final\nfile (a sparse part file next to it), so no temporary directory and no\nassembling step are needed.
-#. text in the Help menu's windows (About, updates, shortcuts, Tell a friend)
-#. {version} = a version number (keep the braces as they are)
-	RAZ Download Manager {version} is available (released {date}).	RAZ Download Manager {version} is available (released {date}).
-#. text in helpers.rs
-#. Video helpers: {version} = the version of MDM's own copy
-#. {version} = a version number (keep the braces as they are)
-	RAZ Download Manager's own copy, version {version}	RAZ Download Manager's own copy, version {version}
-#. text in unix.rs
-#. Linux, at start, on the terminal: the libraries an X11 window needs aren't installed, so the window opens through Wayland instead, where menus can't be placed under what was clicked; {libraries} = their file names, left as they are
-	RAZ Download Manager's X11 window needs {libraries}, which this system lacks: it opens on Wayland instead, where its menus may open away from their titles.	RAZ Download Manager's X11 window needs {libraries}, which this system lacks: it opens on Wayland instead, where its menus may open away from their titles.
 #. text in the Scheduler window
 #. Monday, as short as a calendar's column head (two letters in English)
 	Mo	Mo
@@ -2226,7 +2181,7 @@
 	Off: a finished torrent stops, like any download.	Off: a finished torrent stops, like any download.
 #. text in the Options window
 #. Options → Remote → Status: the remote control is off
-	Off: nothing on the network can reach MDM.	Off: nothing on the network can reach MDM.
+	Off: nothing on the network can reach RAZ DM.	Off: nothing on the network can reach RAZ DM.
 #. text in the Options window
 	Offer to download links copied to the clipboard	Offer to download links copied to the clipboard
 #. text in the Link grabber window
@@ -2281,7 +2236,7 @@
 	Only MP4 and MKV videos can hold subtitles	Only MP4 and MKV videos can hold subtitles
 #. text in the Options window
 #. Options → Remote, at the bottom of the page
-	Only paired devices see or change anything. The first time, the phone's browser warns about MDM's own certificate: its fingerprint is the one above.	Only paired devices see or change anything. The first time, the phone's browser warns about MDM's own certificate: its fingerprint is the one above.
+	Only paired devices see or change anything. The first time, the phone's browser warns about RAZ DM's own certificate: its fingerprint is the one above.	Only paired devices see or change anything. The first time, the phone's browser warns about RAZ DM's own certificate: its fingerprint is the one above.
 #. text in playlistdlg.rs
 #. in Download video, a list longer than MDM lists: only its first {n} videos are shown
 #. {n} = a number (keep the braces as they are)
@@ -2473,7 +2428,6 @@
 #. text in a download's progress window
 	Property	Property
 #. text in the Options window
-#. tab title
 	Proxy / Socks	Proxy / Socks
 #. page title in the Options window
 	Proxy / socks configuration	Proxy / socks configuration
@@ -2509,9 +2463,48 @@
 #. text in remote.rs
 #. remote control page (on a phone): a download's state: added, waiting to start
 	Queued	Queued
-#. item in the Categories tree in the main window; text in the Scheduler window
-#. plural noun: the download queues
+#. text in the Scheduler window
 	Queues	Queues
+#. text in the Options window
+#. Options → Remote → Pair a device: the remote control isn't listening (no network, port taken): the Remote page says why
+	RAZ DM can't be reached on the network now: Options → Remote says why.	RAZ DM can't be reached on the network now: Options → Remote says why.
+#. message or event log entry in the main window; window title in a dialog box; text in the Help menu's windows (About, updates, shortcuts, Tell a friend)
+	RAZ Download Manager	RAZ Download Manager
+#. text in unix.rs
+#. Linux, at start, on the terminal and in a message box: a library the window needs isn't installed; {libraries} = its file names (libxkbcommon-x11.so.0…), left as they are
+	RAZ Download Manager can't open its window: this system lacks {libraries}.	RAZ Download Manager can't open its window: this system lacks {libraries}.
+#. text in crashui.rs
+#. crash report window heading: MDM crashed and is gone
+	RAZ Download Manager closed unexpectedly	RAZ Download Manager closed unexpectedly
+#. window title in the Options window
+	RAZ Download Manager Configuration	RAZ Download Manager Configuration
+#. text in crashui.rs
+	RAZ Download Manager crash report	RAZ Download Manager crash report
+#. text in crashui.rs
+#. crash report window heading: an internal error, MDM still running
+	RAZ Download Manager hit an internal error	RAZ Download Manager hit an internal error
+#. text in wake.rs
+#. why the computer isn't going to sleep, in the system's list of programs that keep it awake; {queue} = the queue's name
+#. {queue} = a queue name such as "Main queue" (keep the braces as they are)
+	RAZ Download Manager is running the queue "{queue}"	RAZ Download Manager is running the queue "{queue}"
+#. text in crashui.rs
+#. crash report window heading: MDM's window doesn't answer (frozen)
+	RAZ Download Manager stopped responding	RAZ Download Manager stopped responding
+#. text in crashui.rs
+	RAZ Download Manager stopped responding for a while	RAZ Download Manager stopped responding for a while
+#. text in the Options window
+#. \\n starts a new line: break lines where they fit the translation
+	RAZ Download Manager writes every connection straight into the final\nfile (a sparse part file next to it), so no temporary directory and no\nassembling step are needed.	RAZ Download Manager writes every connection straight into the final\nfile (a sparse part file next to it), so no temporary directory and no\nassembling step are needed.
+#. text in the Help menu's windows (About, updates, shortcuts, Tell a friend)
+#. {version} = a version number (keep the braces as they are)
+	RAZ Download Manager {version} is available (released {date}).	RAZ Download Manager {version} is available (released {date}).
+#. text in helpers.rs
+#. Video helpers: {version} = the version of MDM's own copy
+#. {version} = a version number (keep the braces as they are)
+	RAZ Download Manager's own copy, version {version}	RAZ Download Manager's own copy, version {version}
+#. text in unix.rs
+#. Linux, at start, on the terminal: the libraries an X11 window needs aren't installed, so the window opens through Wayland instead, where menus can't be placed under what was clicked; {libraries} = their file names, left as they are
+	RAZ Download Manager's X11 window needs {libraries}, which this system lacks: it opens on Wayland instead, where its menus may open away from their titles.	RAZ Download Manager's X11 window needs {libraries}, which this system lacks: it opens on Wayland instead, where its menus may open away from their titles.
 #. text in the Options window
 #. Options → Sites Logins → Cookies for video sites: a note under the choices
 	Read on this computer only, and sent only to the video's site.	Read on this computer only, and sent only to the video's site.
@@ -2552,7 +2545,6 @@
 #. RSS feeds window: fetch the selected feed again now
 	Refresh	Refresh
 #. text in the Options window
-#. tab title: how dates and times are written (date order, 12- or 24-hour clock)
 	Regional	Regional
 #. text in rssdlg.rs
 #. RSS feeds window, Download rules: the two boxes above hold regular expressions
@@ -2563,7 +2555,6 @@
 #. {category} = a category name such as "Music" (keep the braces as they are)
 	Remember this path for "{category}" category	Remember this path for "{category}" category
 #. text in the Options window
-#. tab title: control MDM from a phone or another computer on the local network
 	Remote	Remote
 #. text in the Options window
 #. Options page title: control MDM from a phone or another computer on the local network
@@ -2670,7 +2661,6 @@
 #. text in a dialog box
 	Save As	Save As
 #. text in gallerydlg.rs; text in the Options window; text in the Add torrent window; text in the Download video window
-#. tab title: where downloads are saved
 	Save to	Save to
 #. group box title in the Options window
 #. the trailing ... means it is still going on: keep it
@@ -2868,7 +2858,6 @@
 #. text in the Options window
 	Site/path:	Site/path:
 #. text in the Options window
-#. tab title: user names and passwords for sites
 	Sites Logins	Sites Logins
 #. text in helpers.rs
 	Sites send their best quality as separate video and audio, and ffmpeg joins them. On this system MDM uses yours: install ffmpeg with your package manager.	Sites send their best quality as separate video and audio, and ffmpeg joins them. On this system MDM uses yours: install ffmpeg with your package manager.
@@ -2912,7 +2901,6 @@
 	Sound settings	Sound settings
 #. text in the Options window
 #. the kind of file the Open dialog lists (sound files)
-#. tab title: sound settings
 	Sounds	Sounds
 #. link (opens a web page) in the Help menu's windows (About, updates, shortcuts, Tell a friend)
 	Source code	Source code
@@ -3137,7 +3125,7 @@
 #. in Download video, on macOS and Linux (no button: the system installs it)
 	The best qualities, MP3, Opus and FLAC need ffmpeg: install it with your system's package manager (or Homebrew).	The best qualities, MP3, Opus and FLAC need ffmpeg: install it with your system's package manager (or Homebrew).
 #. text in the settings
-#. an error: the browser's VPN or proxy extension logs in to its proxy itself, and MDM can't; Options → Proxy / Socks → Network adapter is where an adapter can be chosen
+#. an error: the browser's VPN or proxy extension logs in to its proxy itself, and RAZ DM can't; Options → Proxy / Socks → Network adapter is where an adapter can be chosen
 	the browser's proxy (a VPN or proxy extension) asks for a login only that extension has: use the VPN's own app, or choose its network adapter in Options → Proxy / Socks	the browser's proxy (a VPN or proxy extension) asks for a login only that extension has: use the VPN's own app, or choose its network adapter in Options → Proxy / Socks
 #. text in extension.rs
 #. a check of Test browser integration: the browsers find MDM's helper program
@@ -3247,7 +3235,7 @@
 #. {code} is the FTP server's reply number (such as 550), {reply} the words it sent with it (left as sent)
 	the FTP server answered {code} {reply}	the FTP server answered {code} {reply}
 #. text in extension.rs
-#. a check of Test browser integration: the browsers are set up, but the small helper program they start (razdownloadmanager-nmhost) is gone
+#. a check of Test browser integration: the browsers are set up, but the small helper program they start (misterdownloadmanager-nmhost) is gone
 	The helper program the browsers start is missing	The helper program the browsers start is missing
 #. message or event log entry in the main window; text in the Options window
 #. {error} = an error message (keep the braces as they are)
@@ -3623,8 +3611,7 @@
 #. text in the Link grabber window
 #. Link grabber button (IDM's): untick every link
 	Uncheck all	Uncheck all
-#. item in the Categories tree in the main window; text in remote.rs
-#. adjective: the downloads that are not complete yet
+#. text in remote.rs
 #. remote control page (on a phone): tab: downloads not finished yet
 	Unfinished	Unfinished
 #. text in countries.rs
@@ -3853,8 +3840,6 @@
 #. in Archive password: {name} is the archive's file name
 #. {name} = a file name (keep the braces as they are)
 	Wrong password for {name}. Type it again:	Wrong password for {name}. Type it again:
-#. text in the main window (menus, toolbar, Categories pane)
-	x	x
 #. text in the Options window
 #. a date's order: year first (2026-10-30)
 	Year, month, day	Year, month, day
@@ -3870,7 +3855,7 @@
 #. {version} = a version number (keep the braces as they are)
 	You have the latest version of RAZ Download Manager ({version}).	You have the latest version of RAZ Download Manager ({version}).
 #. text in the Help menu's windows (About, updates, shortcuts, Tell a friend)
-#. Check for updates, under the new version's line, when MDM was installed by the Linux system's package manager (pacman, ...), which MDM can't update itself
+#. Check for updates, under the new version's line, when RAZ Download Manager was installed by the Linux system's package manager (pacman, ...), which RAZ Download Manager can't update itself
 #. {version} = a version number (keep the braces as they are)
 	You have version {version}, from your system's package manager: update it there.	You have version {version}, from your system's package manager: update it there.
 #. text in the Help menu's windows (About, updates, shortcuts, Tell a friend)
@@ -3960,7 +3945,7 @@
 	{count}, {speed}	{count}, {speed}
 #. text in the Options window
 #. Options → Remote → Pair a device: done; {device} = the name it was given
-	{device} is paired. It can control MDM now.	{device} is paired. It can control MDM now.
+	{device} is paired. It can control RAZ DM now.	{device} is paired. It can control RAZ DM now.
 #. text in remote.rs
 #. remote control page (on a phone): progress; {done} and {size} are sizes ("1.2 MB of 7.5 MB")
 #. {size} = a file size such as "4.2 MB" (keep the braces as they are)
@@ -4252,27 +4237,6 @@ extension	Live	Live
 #. heading in the toolbar button's popup over the list of the videos, sounds and streams the current web page has loaded
 extension	Media on this page	Media on this page
 #. text in the browser extension
-#. the extension's name in the browser's list of extensions and on its toolbar button; keep the name RAZ Download Manager as it is
-extension	RAZ Download Manager	RAZ Download Manager
-#. text in the browser extension
-#. status when the app was started for a download but didn't answer in time; keep the name RAZ Download Manager as it is
-extension	RAZ Download Manager didn't start in time	RAZ Download Manager didn't start in time
-#. text in the browser extension
-#. status when the app refuses this copy of the extension (another copy is installed, or it came from another store); keep the name RAZ Download Manager as it is
-extension	RAZ Download Manager doesn't accept this copy of the extension	RAZ Download Manager doesn't accept this copy of the extension
-#. text in the browser extension
-#. shown briefly on the download button when the app could not be reached; keep the name RAZ Download Manager as it is
-extension	RAZ Download Manager isn't installed or didn't start	RAZ Download Manager isn't installed or didn't start
-#. text in the browser extension
-#. status when the browser can't find the app's connection; keep the name RAZ Download Manager as it is
-extension	RAZ Download Manager isn't installed, or its browser integration isn't set up	RAZ Download Manager isn't installed, or its browser integration isn't set up
-#. text in the browser extension
-#. tooltip of the switch Send downloads through this browser's proxy or VPN extension; keep the name RAZ Download Manager as it is
-extension	RAZ Download Manager then downloads through the same proxy as this browser. The browser asks you once to allow it; turning this off takes that back.	RAZ Download Manager then downloads through the same proxy as this browser. The browser asks you once to allow it; turning this off takes that back.
-#. text in the browser extension
-#. tooltip of the switch Send downloads through this browser's proxy or VPN extension in Chrome, Edge and the other Chromium browsers (they ask for no permission at the switch); keep the name RAZ Download Manager as it is
-extension	RAZ Download Manager then downloads through the same proxy as this browser. While this is off, the extension doesn't read the browser's proxy.	RAZ Download Manager then downloads through the same proxy as this browser. While this is off, the extension doesn't read the browser's proxy.
-#. text in the browser extension
 #. the small arrow next to the Download video button that opens its menu (read aloud by screen readers)
 extension	More options	More options
 #. text in the browser extension
@@ -4320,6 +4284,27 @@ extension	Protected	Protected
 #. text in the browser extension
 #. shown briefly on the download button when the video is copy-protected (DRM) and no tool can download it
 extension	Protected video: it can't be saved	Protected video: it can't be saved
+#. text in the browser extension
+#. the extension's name in the browser's list of extensions and on its toolbar button; keep the name RAZ Download Manager as it is
+extension	RAZ Download Manager	RAZ Download Manager
+#. text in the browser extension
+#. status when the app was started for a download but didn't answer in time; keep the name RAZ Download Manager as it is
+extension	RAZ Download Manager didn't start in time	RAZ Download Manager didn't start in time
+#. text in the browser extension
+#. status when the app refuses this copy of the extension (another copy is installed, or it came from another store); keep the name RAZ Download Manager as it is
+extension	RAZ Download Manager doesn't accept this copy of the extension	RAZ Download Manager doesn't accept this copy of the extension
+#. text in the browser extension
+#. shown briefly on the download button when the app could not be reached; keep the name RAZ Download Manager as it is
+extension	RAZ Download Manager isn't installed or didn't start	RAZ Download Manager isn't installed or didn't start
+#. text in the browser extension
+#. status when the browser can't find the app's connection; keep the name RAZ Download Manager as it is
+extension	RAZ Download Manager isn't installed, or its browser integration isn't set up	RAZ Download Manager isn't installed, or its browser integration isn't set up
+#. text in the browser extension
+#. tooltip of the switch Send downloads through this browser's proxy or VPN extension; keep the name RAZ Download Manager as it is
+extension	RAZ Download Manager then downloads through the same proxy as this browser. The browser asks you once to allow it; turning this off takes that back.	RAZ Download Manager then downloads through the same proxy as this browser. The browser asks you once to allow it; turning this off takes that back.
+#. text in the browser extension
+#. tooltip of the switch Send downloads through this browser's proxy or VPN extension in Chrome, Edge and the other Chromium browsers (they ask for no permission at the switch); keep the name RAZ Download Manager as it is
+extension	RAZ Download Manager then downloads through the same proxy as this browser. While this is off, the extension doesn't read the browser's proxy.	RAZ Download Manager then downloads through the same proxy as this browser. While this is off, the extension doesn't read the browser's proxy.
 #. text in the browser extension
 #. switch in the toolbar button's popup: on, the app downloads through the same proxy the browser uses (one a VPN or proxy extension sets); the browser then asks once to allow reading it
 extension	Send downloads through this browser's proxy or VPN extension	Send downloads through this browser's proxy or VPN extension
@@ -4724,9 +4709,6 @@ menu	Metal didn't start here: OpenGL draws	Metal didn't start here: OpenGL draws
 #. View → Theme: a style theme's name (Windows 8's flat look); keep "Metro" unless your language writes it otherwise
 menu	Metro	Metro
 #. menu command in the main window
-#. & marks the keyboard shortcut letter: keep one & before a letter of the translation
-menu	RAZ Download Manager &Home Page	RAZ Download Manager &Home Page
-#. menu command in the main window
 menu	Move/Rename (Ctrl-M)	Move/Rename (Ctrl-M)
 #. menu command in the main window
 #. View → Theme: the system's own colours (its accent colour, its high contrast)
@@ -4767,6 +4749,12 @@ menu	pywal	pywal
 #. verb: download the file again from the start
 #. & marks the keyboard shortcut letter: keep one & before a letter of the translation
 menu	R&edownload	R&edownload
+#. menu command in the main window
+#. & marks the keyboard shortcut letter: keep one & before a letter of the translation
+menu	RAZ Download Manager &Home Page	RAZ Download Manager &Home Page
+#. menu command in the main window
+#. View → Theme: RAZ Creative Studio official signature look (default)
+menu	RAZ Studio	RAZ Studio
 #. menu command in the main window
 #. right-click → Torrent: ask the torrent's trackers for peers again now
 menu	Reannounce	Reannounce
@@ -4926,9 +4914,3 @@ unit	{n} MB	{n} MB
 #. unit after a number in the download list (sizes, speeds, status)
 #. {n} = a number (keep the braces as they are)
 unit	{n} MB/sec	{n} MB/sec
-	LIBRARY	LIBRARY
-	Incomplete	Incomplete
-	Completed	Completed
-	FILE TYPES	FILE TYPES
-	All Types	All Types
-	QUEUES	QUEUES
