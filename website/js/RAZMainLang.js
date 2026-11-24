@@ -36,7 +36,7 @@ const RAZMainLang = {
             'hero-title-1': 'Download Ngebut Tanpa Batas,',
             'hero-title-2': 'Bebas Lisensi & Nol Iklan',
             'hero-subtitle': 'Download manager modern berbasis Rust dengan arsitektur multi-thread hingga 64 jalur simultan. Gak ada lagi drama pop-up lisensi bajakan atau trial expired. Terintegrasi BitTorrent, video sniffer, dan AI Assistant.',
-            'hero-btn-download': 'Donlot Installer (v1.0.0)',
+            'hero-btn-download': 'Donlot Installer (v1.0.1)',
             'hero-btn-benchmark': 'Lihat Benchmark vs IDM',
             'hero-meta': 'Windows 10/11 (64-bit) • 100% Open Source • Terverifikasi Bebas Virus/Malware',
 
@@ -211,7 +211,7 @@ const RAZMainLang = {
             // Download Center
             'dl-label': 'Pusat Donlotan',
             'dl-title-1': 'Donlot RAZ Download Manager',
-            'dl-title-2': 'Versi 1.0.0 Resmi',
+            'dl-title-2': 'Versi 1.0.1 Resmi',
             'dl-desc': 'Gratis selamanya buat siapa aja. Tanpa registrasi akun, tanpa iklan, dan tanpa installer titipan.',
             'dl-win-installer-title': 'Windows Installer (.exe)',
             'dl-win-installer-meta': 'Rekomendasi untuk Windows 10 & 11 (64-bit). Integrasi otomatis ke browser dan shortcut Start Menu.',
@@ -277,7 +277,7 @@ const RAZMainLang = {
             'hero-title-1': 'Blazing Fast Downloads,',
             'hero-title-2': 'No License Keys & Zero Ads',
             'hero-subtitle': 'A modern open-source download manager built from scratch in Rust with up to 64 parallel threads. No more fake serial key pop-ups or expired trials. Built-in BitTorrent, video sniffer, and AI Assistant.',
-            'hero-btn-download': 'Download Installer (v1.0.0)',
+            'hero-btn-download': 'Download Installer (v1.0.1)',
             'hero-btn-benchmark': 'View Benchmark vs IDM',
             'hero-meta': 'Windows 10/11 (64-bit) • 100% Open Source • Verified Virus & Malware Free',
 
@@ -452,7 +452,7 @@ const RAZMainLang = {
             // Download Center
             'dl-label': 'Download Center',
             'dl-title-1': 'Download RAZ Download Manager',
-            'dl-title-2': 'Official Version 1.0.0',
+            'dl-title-2': 'Official Version 1.0.1',
             'dl-desc': 'Free forever for everyone. No sign-up required, no ads, nothing bundled.',
             'dl-win-installer-title': 'Windows Installer (.exe)',
             'dl-win-installer-meta': 'Recommended for Windows 10 & 11 (64-bit). Connects your browsers and creates Start menu shortcuts.',

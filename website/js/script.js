@@ -6,8 +6,8 @@
  *            Interactive Canvas Particle Network, Live Speed Benchmark Simulator,
  *            App Tour Masonry Accordion Grid & Fullscreen Lightbox Modal,
  *            FAQ Accordion, dan Custom Modals.
- * Terakhir Diupdate: 2026-11-16 23:05 WIB
- * Versi: 1.1.0 (RAZ DM Masonry Cards & Lightbox Modal Release)
+ * Terakhir Diupdate: 2026-11-24 08:55 WIB
+ * Versi: 1.1.1 (RAZ DM Live Release Auto-Sync)
  * Standar: RAZ Enterprise Architecture Standard
  * ============================================================================
  */
@@ -33,6 +33,7 @@
         initFAQAccordion();
         initChecksumClipboard();
         initStickyHeader();
+        initLatestReleaseSync();
     });
 
     /**
@@ -600,6 +601,106 @@
                     }
                 }
             });
+        });
+    }
+
+    /**
+     * Inisialisasi Sinkronisasi Rilis Otomatis dari GitHub Releases
+     * Menjamin pengguna yang mengunjungi website selalu mendapatkan dan melihat
+     * file rilis versi paling baru secara instan, bahkan jika website belum di-redeploy secara manual.
+     */
+    function initLatestReleaseSync() {
+        const REPO = 'razcreativestudio/razdownloadmanager';
+        const CACHE_KEY = 'razdm_latest_release_cache';
+        const CACHE_TTL = 15 * 60 * 1000; // 15 menit cache di sessionStorage
+
+        const applyReleaseData = (data) => {
+            if (!data || !data.tag_name) return;
+            const tag = data.tag_name; // contoh: "v1.0.1"
+            const version = tag.replace(/^v/, ''); // contoh: "1.0.1"
+
+            // 1. Update teks elemen versi pada tombol dan judul
+            document.querySelectorAll('[data-lang-key="hero-btn-download"]').forEach(el => {
+                const currentLang = localStorage.getItem('raz_site_lang') || 'id';
+                el.textContent = currentLang === 'en'
+                    ? `Download Installer (v${version})`
+                    : `Donlot Installer (v${version})`;
+            });
+
+            document.querySelectorAll('[data-lang-key="dl-title-2"]').forEach(el => {
+                const currentLang = localStorage.getItem('raz_site_lang') || 'id';
+                el.textContent = currentLang === 'en'
+                    ? `Official Version ${version}`
+                    : `Versi ${version} Resmi`;
+            });
+
+            document.querySelectorAll('.section-subtitle').forEach(el => {
+                if (el.textContent.includes('Versi 1.')) {
+                    el.textContent = el.textContent.replace(/Versi 1\.\d+\.\d+/, `Versi ${version}`);
+                }
+            });
+
+            // 2. Update tautan unduhan langsung ke aset rilis terbaru
+            const assets = data.assets || [];
+            const setupAsset = assets.find(a => a.name && a.name.endsWith('-setup.exe'));
+            const portableAsset = assets.find(a => a.name && a.name.endsWith('-portable.zip'));
+            const zipAsset = assets.find(a => a.name && a.name.endsWith('-x64.zip'));
+
+            document.querySelectorAll('a[href*="/releases/download/"]').forEach(a => {
+                const href = a.getAttribute('href') || '';
+                if (href.includes('-setup.exe')) {
+                    a.href = setupAsset ? setupAsset.browser_download_url : `https://github.com/${REPO}/releases/download/${tag}/RAZDownloadManager-${version}-setup.exe`;
+                } else if (href.includes('-portable.zip')) {
+                    a.href = portableAsset ? portableAsset.browser_download_url : `https://github.com/${REPO}/releases/download/${tag}/RAZDownloadManager-${version}-portable.zip`;
+                } else if (href.includes('-x64.zip')) {
+                    a.href = zipAsset ? zipAsset.browser_download_url : `https://github.com/${REPO}/releases/download/${tag}/RAZDownloadManager-${version}-x64.zip`;
+                }
+            });
+
+            // 3. Update nama file di label card
+            document.querySelectorAll('code').forEach(c => {
+                if (/RAZDownloadManager-1\.\d+\.\d+-setup\.exe/.test(c.textContent)) {
+                    c.textContent = `RAZDownloadManager-${version}-setup.exe`;
+                } else if (/RAZDownloadManager-1\.\d+\.\d+-portable\.zip/.test(c.textContent)) {
+                    c.textContent = `RAZDownloadManager-${version}-portable.zip`;
+                } else if (/RAZDownloadManager-1\.\d+\.\d+-x64\.zip/.test(c.textContent)) {
+                    c.textContent = `RAZDownloadManager-${version}-x64.zip`;
+                }
+            });
+        };
+
+        // Cek apakah data rilis tersimpan dalam cache yang masih segar
+        try {
+            const cached = sessionStorage.getItem(CACHE_KEY);
+            if (cached) {
+                const parsed = JSON.parse(cached);
+                if (Date.now() - parsed.timestamp < CACHE_TTL) {
+                    applyReleaseData(parsed.data);
+                    return;
+                }
+            }
+        } catch (e) {}
+
+        // Ambil data rilis terbaru secara asinkron dari GitHub API
+        fetch(`https://api.github.com/repos/${REPO}/releases/latest`, {
+            headers: { 'Accept': 'application/vnd.github.v3+json' }
+        })
+        .then(res => {
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            return res.json();
+        })
+        .then(data => {
+            applyReleaseData(data);
+            try {
+                sessionStorage.setItem(CACHE_KEY, JSON.stringify({
+                    timestamp: Date.now(),
+                    data: data
+                }));
+            } catch (e) {}
+        })
+        .catch(err => {
+            // Jika offline atau kena rate-limit GitHub, fallback ke link statis yang sudah ada
+            console.debug('Info: Menggunakan link rilis statis bawaan website:', err.message);
         });
     }
 

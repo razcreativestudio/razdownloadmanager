@@ -303,6 +303,12 @@ jobs:
           MDM_RELEASE_KEY: ${{ secrets.RAZDM_RELEASE_KEY || secrets.MDM_RELEASE_KEY }}
         shell: pwsh
         run: |
+          $v = "${{ github.ref_name }}".TrimStart("v")
+          # Salin file binary tanpa nomor versi agar tautan rilis langsung /releases/latest/download/ selalu valid
+          Copy-Item "dist/RAZDownloadManager-$v-setup.exe" "dist/RAZDownloadManager-setup.exe" -ErrorAction SilentlyContinue
+          Copy-Item "dist/RAZDownloadManager-$v-portable.zip" "dist/RAZDownloadManager-portable.zip" -ErrorAction SilentlyContinue
+          Copy-Item "dist/RAZDownloadManager-$v-x64.zip" "dist/RAZDownloadManager-x64.zip" -ErrorAction SilentlyContinue
+
           # One SHA256SUMS.txt for every file (each build wrote its own).
           Remove-Item dist/SHA256SUMS*.txt -ErrorAction SilentlyContinue
           $files = Get-ChildItem dist -File | Sort-Object Name
@@ -363,4 +369,18 @@ jobs:
           }
           # The website links to the latest published release: rebuild it now that the files are
           # there (a release made with this token starts no workflow by itself).
+          try {
+            python3 tools/website/sync_release.py $v
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add website/
+            $st = git status --porcelain website/
+            if ($st) {
+              git commit -m "chore(website): sync release v$v download links and checksums [skip ci]"
+              git push origin HEAD:main
+            }
+          } catch {
+            Write-Warning "Website sync skipped: $_"
+          }
+          try { gh workflow run RAZDeployWebsite.yml --ref main } catch { Write-Warning "RAZDeployWebsite trigger skipped: $_" }
           try { gh workflow run pages.yml --ref main } catch { Write-Warning "Pages workflow trigger skipped: $_" }

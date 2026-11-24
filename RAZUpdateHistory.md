@@ -3,6 +3,30 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-24] — Otomatisasi Sinkronisasi Rilis Website & Dynamic Live Release Fetcher
+*Waktu: 24 November 2026 09:00 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Dynamic Live Release Fetcher di Frontend Website (`website/js/script.js`)**:
+   - Menambahkan fungsi `initLatestReleaseSync()` yang berjalan otomatis saat halaman dibuka di browser.
+   - Fungsi ini memanggil GitHub Releases API (`/repos/razcreativestudio/razdownloadmanager/releases/latest`) secara asinkron dengan caching di `sessionStorage` (15 menit).
+   - Secara realtime memutakhirkan label versi pada tombol unduh (*"Donlot Installer (vX.Y.Z)"*), heading versi, tautan unduhan langsung ke aset rilis terbaru, dan nama berkas installer/portable.
+   - Menjamin pengguna yang mendownload dari website selalu mendapatkan versi paling mutakhir secara otomatis tanpa jeda.
+
+2. **Skrip Sinkronisasi Website Otomatis (`tools/website/sync_release.py`)**:
+   - Membuat utilitas Python mandiri untuk menyelaraskan nomor versi, tautan download GitHub, dan nilai checksum SHA-256 pada seluruh berkas HTML dan JS website (`download.html`, `index.html`, `RAZMainLang.js`, `benchmark.html`, `idm-alternative.html`, `faq.html`, `security.html`, `help.html`).
+   - Mampu mengekstrak hash secara otomatis dari berkas `SHA256SUMS.txt`.
+
+3. **Otomatisasi Build & Deploy di CI/CD Workflow (`.github/workflows/release.yml`)**:
+   - Menambahkan salinan biner generik (`RAZDownloadManager-setup.exe`, `portable.zip`, `x64.zip`) ke `dist/` sebelum publikasi rilis, sehingga tautan rilis langsung `/releases/latest/download/RAZDownloadManager-setup.exe` selalu valid secara permanen.
+   - Mengintegrasikan eksekusi `tools/website/sync_release.py` dan commit otomatis ke `main` setiap kali tag rilis dipublish.
+   - Mengotomatiskan pemicuan workflow `RAZDeployWebsite.yml` sehingga pembaruan website langsung disinkronkan ke server IDwebhost (`dm.it-raz.com`).
+
+4. **Harmonisasi Berkas Website ke Versi 1.0.1**:
+   - Memutakhirkan seluruh sisa label `1.0.0` di `website/index.html`, `website/js/RAZMainLang.js`, `website/benchmark.html`, `website/idm-alternative.html`, `website/faq.html`, `website/security.html`, dan `website/help.html` menjadi `1.0.1`.
+
+---
+
 ## [2026-11-23] — Standardisasi Komentar Kode (Doc Comments), Workflow CI/CD Release, dan Rebrand RAZ Download Manager
 *Waktu: 23 November 2026 22:45 WIB*
 
