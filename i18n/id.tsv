@@ -1457,12 +1457,12 @@
 #. a download's status (state it is in, not a command)
 #. a download's status (state it is in, not a command): it failed
 #, machine
-	Error	Gagal
+	Error	Error
 #. text in a download's progress window
 #. a download's status: it failed, with the reason
 #. {error} = an error message (keep the braces as they are)
 #, machine
-	Error: {error}	Gagal: {error}
+	Error: {error}	Error: {error}
 #. text in countries.rs
 #. a country's name (where a download's server is)
 #, machine

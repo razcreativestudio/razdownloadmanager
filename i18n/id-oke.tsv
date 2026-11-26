@@ -812,11 +812,11 @@
 	Check feeds every	Cek umpan setiap
 #. window title in the Help menu's windows (About, updates, shortcuts, Tell a friend)
 #, machine
-	Check for updates	Cek pembaruan
+	Check for updates	Cek update
 #. checkbox in the Help menu's windows (About, updates, shortcuts, Tell a friend)
 #. check box in the update window: look for a new version every time MDM starts
 #, machine
-	Check for updates at every start	Cek pembaruan setiap kali dimulai
+	Check for updates at every start	Cek update setiap kali mulai
 #. text in helpers.rs
 #, machine
 	Check your connection, then try again, or get them later from the video window.	Cek koneksi Lo, lalu coba lagi, atau dapatkan nanti dari jendela video.
@@ -835,7 +835,7 @@
 #. text in the Help menu's windows (About, updates, shortcuts, Tell a friend)
 #. the trailing ... means it is still going on: keep it
 #, machine
-	Checking for updates...	Ngecek pembaruan...
+	Checking for updates...	Ngecek update...
 #. text in gallerydlg.rs
 #. in Download a gallery, while gallery-dl checks the address (offline)
 #. the trailing ... means it is still going on: keep it
@@ -1330,7 +1330,7 @@
 #. text in the Help menu's windows (About, updates, shortcuts, Tell a friend)
 #. Check for updates, while Update now downloads; {percent} like "42%"
 #, machine
-	Downloading the update... {percent}	Ngedonlot pembaruan... {percent}
+	Downloading the update... {percent}	Ngedonlot update... {percent}
 #. text in helpers.rs
 #. {name} = yt-dlp or ffmpeg; {n} of {total} = which helper of how many; {percent} = how far, e.g. 45%
 #. {name} = a file name; {n} = a number (keep the braces as they are)
@@ -1457,12 +1457,12 @@
 #. a download's status (state it is in, not a command)
 #. a download's status (state it is in, not a command): it failed
 #, machine
-	Error	Gagal
+	Error	Error
 #. text in a download's progress window
 #. a download's status: it failed, with the reason
 #. {error} = an error message (keep the braces as they are)
 #, machine
-	Error: {error}	Gagal: {error}
+	Error: {error}	Error: {error}
 #. text in countries.rs
 #. a country's name (where a download's server is)
 #, machine
@@ -2053,7 +2053,7 @@
 #. Check for updates, after Update now downloaded it: unpacking and putting the new version in place
 #. the trailing ... means it is still going on: keep it
 #, machine
-	Installing the update...	Menginstal pembaruan...
+	Installing the update...	Lagi nginstal update...
 #. text in the Options window
 #. Options → Archives: where extracted files go
 #, machine
@@ -5203,16 +5203,16 @@
 #. text in the Help menu's windows (About, updates, shortcuts, Tell a friend)
 #. {version} = a version number (keep the braces as they are)
 #, machine
-	You have the latest version of RAZ Download Manager ({version}).	Lo memiliki RAZ Download Manager versi terbaru ({version}).
+	You have the latest version of RAZ Download Manager ({version}).	Lo udah pake RAZ Download Manager versi paling baru ({version}).
 #. text in the Help menu's windows (About, updates, shortcuts, Tell a friend)
 #. Check for updates, under the new version's line, when MDM was installed by the Linux system's package manager (pacman, ...), which MDM can't update itself
 #. {version} = a version number (keep the braces as they are)
 #, machine
-	You have version {version}, from your system's package manager: update it there.	Lo memiliki versi {version}, dari manajer paket sistem Lo: perbarui di sana.
+	You have version {version}, from your system's package manager: update it there.	Lo punya versi {version}, dari package manager sistem Lo: update langsung di sana ya.
 #. text in the Help menu's windows (About, updates, shortcuts, Tell a friend)
 #. {version} = a version number (keep the braces as they are)
 #, machine
-	You have version {version}.	Lo memiliki versi {version}.
+	You have version {version}.	Lo lagi pake versi {version}.
 #. text in extension.rs
 #. a row of the browser extension's window when no browser was found by name
 #, machine
@@ -6203,7 +6203,7 @@ menu	C&ustomize URL List...	K&ustomisasi Daftar URL...
 #. & marks the keyboard shortcut letter: keep one & before a letter of the translation
 #. the trailing ... means it opens a window: keep it
 #, machine
-menu	Check for &updates...	Cek &pembaruan...
+menu	Check for &updates...	Cek &update...
 #. menu command in the main window
 #. View → Theme: MDM's own look, the default (IDM's layout, Windows 11's controls)
 #, machine

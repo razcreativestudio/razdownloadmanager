@@ -11,7 +11,7 @@ Each release's notes on GitHub come from its section here (`## [X.Y.Z]`, see
 
 - Standardized and harmonized Indonesian (`id`) and Indonesian Oke (`id-oke`) language translations across desktop application, web portal, browser extension, Windows installer, and documentation.
 - Terminology updates:
-  - `galat` -> `gagal`
+  - `galat` -> `error`
   - `peramban` -> `browser`
   - `sumber terbuka` -> `Open Source`
   - `kode sumber` -> `source code`

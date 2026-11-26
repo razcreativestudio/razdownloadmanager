@@ -98,8 +98,8 @@ Tampilan akrab yang udah biasa lo pake di IDM, tapi performanya jauh lebih ngaci
 - 🔄 **Smart Resume & Auto-Reconnect**: Koneksi putus atau PC mati mendadak? Santai, tinggal lanjutin donlotan tanpa perlu ngulang dari nol.
 - 🧩 **Penangkap Link Browser Otomatis**: Menangkap semua donlotan dari Chrome, Edge, Firefox, Brave, Opera, Vivaldi, dan Zen Browser lewat ekstensi resmi dengan jendela konfirmasi instan:
   <br><img src="docs/images/catch-dark.png" alt="Dialog Info File Donlotan" width="460"><br>
-- 🎬 **Video Sniffer & Grabber**: Tombol melayang "Unduh video" dengan logo resmi RAZ otomatis muncul di pojok video streaming (YouTube, TikTok, Vimeo, dll) lengkap dengan deteksi resolusi cepat hingga 4K dan opsi ekstrak audio MP3/M4A:
-  <br><img src="docs/images/video-button.png" alt="Tombol Unduh Video RAZ di Browser" width="280"><br>
+- 🎬 **Video Sniffer & Grabber**: Tombol melayang "Download video" dengan logo resmi RAZ otomatis muncul di pojok video streaming (YouTube, TikTok, Vimeo, dll) lengkap dengan deteksi resolusi cepat hingga 4K dan opsi ekstrak audio MP3/M4A:
+  <br><img src="docs/images/video-button.png" alt="Tombol Download Video RAZ di Browser" width="280"><br>
 - 🧲 **Dukungan BitTorrent & Magnet Link**: Gak perlu buka software torrent terpisah. Klik magnet link, pilih file yang mau diambil, dan biarkan RAZ DM ngurus sisanya.
 - 📦 **Ekstraksi Arsip Otomatis**: File `.zip`, `.rar`, atau `.7z` yang selesai terdonlot bisa langsung diekstrak otomatis ke folder tujuan.
 - 🚀 **Integrasi Akun Debrid**: Dukungan langsung buat akun Real-Debrid, AllDebrid, dan Premiumize buat ngebut donlot link premium file-hoster.
@@ -113,7 +113,7 @@ Tampilan akrab yang udah biasa lo pake di IDM, tapi performanya jauh lebih ngaci
 
 ## 📸 Tangkapan Layar & Antarmuka (Preview)
 
-Berikut tampilan antarmuka resmi RAZ Download Manager v1.0.0 dengan sentuhan tema obsidian elegan khas RAZ Creative Studio:
+Berikut tampilan antarmuka resmi RAZ Download Manager v1.0.1 dengan sentuhan tema obsidian elegan khas RAZ Creative Studio:
 
 | 🖥️ Layar Utama (Mode Gelap) | ☀️ Layar Utama (Mode Terang) |
 | :---: | :---: |
@@ -170,10 +170,10 @@ Berikut tampilan antarmuka resmi RAZ Download Manager v1.0.0 dengan sentuhan tem
 | <img src="docs/images/about-dark.png" alt="Tentang RAZ Download Manager Mode Gelap" width="460"> | <img src="docs/images/about-light.png" alt="Tentang RAZ Download Manager Mode Terang" width="460"> |
 | *Informasi lisensi GPL-3, versi biner, dan link repositori (Dark)* | *Dukungan penuh tema terang Windows dengan tombol aksi amber presisi (Light)* |
 
-| 🔄 Cek Pembaruan (Mode Gelap) | 🔄 Cek Pembaruan (Mode Terang) |
+| 🔄 Cek Update (Mode Gelap) | 🔄 Cek Update (Mode Terang) |
 | :---: | :---: |
-| <img src="docs/images/updates-dark.png" alt="Cek Pembaruan RAZ DM Mode Gelap" width="460"> | <img src="docs/images/updates-light.png" alt="Cek Pembaruan RAZ DM Mode Terang" width="460"> |
-| *Notifikasi versi biner mutakhir 1.0.0 dan opsi cek otomatis (Dark)* | *Dukungan penuh tema terang Windows dengan tombol aksi amber presisi (Light)* |
+| <img src="docs/images/updates-dark.png" alt="Cek Update RAZ DM Mode Gelap" width="460"> | <img src="docs/images/updates-light.png" alt="Cek Update RAZ DM Mode Terang" width="460"> |
+| *Notifikasi versi biner mutakhir 1.0.1 dan opsi cek otomatis (Dark)* | *Dukungan penuh tema terang Windows dengan tombol aksi amber presisi (Light)* |
 
 | 🧩 Uji Integrasi Ekstensi Browser (Mode Gelap) | 🧩 Uji Integrasi Ekstensi Browser (Mode Terang) |
 | :---: | :---: |
@@ -183,11 +183,11 @@ Berikut tampilan antarmuka resmi RAZ Download Manager v1.0.0 dengan sentuhan tem
 | 📁 Pengaturan Folder Simpan Ke (Mode Gelap) | 📁 Pengaturan Folder Simpan Ke (Mode Terang) |
 | :---: | :---: |
 | <img src="docs/images/save-to-dark.png" alt="Pengaturan Folder Simpan Ke RAZ DM Mode Gelap" width="460"> | <img src="docs/images/save-to-light.png" alt="Pengaturan Folder Simpan Ke RAZ DM Mode Terang" width="460"> |
-| *Kategorisasi otomatis per tipe file, direktori unduhan per kategori, dan arsitektur tanpa direktori sementara (Dark)* | *Dukungan penuh tema terang Windows dengan kontrol jalur folder dan tombol aksi amber presisi (Light)* |
+| *Kategorisasi otomatis per tipe file, direktori donlotan per kategori, dan arsitektur tanpa direktori sementara (Dark)* | *Dukungan penuh tema terang Windows dengan kontrol jalur folder dan tombol aksi amber presisi (Light)* |
 
-| 🎬 Tombol Unduh Video di Browser (Video Sniffer) |
+| 🎬 Tombol Download Video di Browser (Video Sniffer) |
 | :---: |
-| <img src="docs/images/video-button.png" alt="Tombol Unduh Video RAZ di Browser" width="340"> |
+| <img src="docs/images/video-button.png" alt="Tombol Download Video RAZ di Browser" width="340"> |
 | *Tombol melayang otomatis di atas pemutar video browser (YouTube, TikTok, dll) dengan logo resmi RAZ* |
 
 ---

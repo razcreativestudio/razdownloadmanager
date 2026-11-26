@@ -224,7 +224,7 @@
   },
   "0364c0cf3df3d7e2": {
    "source": "Select the download and click <g1>Resume</g1>. Many errors are a server or connection having a bad moment.",
-   "text": "Pilih donlotan dan klik <g1>Lanjutkan</g1>. Banyak gagal terjadi karena server atau koneksi sedang mengalami masalah sesaat."
+   "text": "Pilih donlotan dan klik <g1>Lanjutkan</g1>. Banyak error terjadi karena server atau koneksi sedang mengalami masalah sesaat."
   },
   "0365af09cac812e4": {
    "source": "Windows, for everyone",
@@ -2580,7 +2580,7 @@
   },
   "27cc3e16602bb3b6": {
    "source": "<g1>Source</g1>, <g2>Q</g2> and <g3>Status</g3> offer a few values to tick, such as only <g4>Error</g4> under <g5>Status</g5>, or only <g6>Not in a queue</g6> under <g7>Q</g7>.",
-   "text": "<g1>Sumber</g1>, <g2>Q</g2>, dan <g3>Status</g3> menawarkan beberapa nilai untuk dicentang, misalnya hanya <g4>Gagal</g4> di bawah <g5>Status</g5>, atau hanya <g6>Tidak dalam antrean</g6> di bawah <g7>Q</g7>."
+   "text": "<g1>Sumber</g1>, <g2>Q</g2>, dan <g3>Status</g3> menawarkan beberapa nilai untuk dicentang, misalnya hanya <g4>Error</g4> di bawah <g5>Status</g5>, atau hanya <g6>Tidak dalam antrean</g6> di bawah <g7>Q</g7>."
   },
   "27ef2e9a5560ba52": {
    "source": "<g1>AI assistants</g1><g2>RAZ Download Manager</g2>",
@@ -2668,7 +2668,7 @@
   },
   "296bb6abbc747f28": {
    "source": "If it gives up and shows <g1>Error</g1>:",
-   "text": "Jika MDM berhenti mencoba dan menampilkan <g1>Gagal</g1>:"
+   "text": "Jika MDM berhenti mencoba dan menampilkan <g1>Error</g1>:"
   },
   "29746f1ff804cccd": {
    "source": "<g1>AppImage tools support:</g1> the AppImage can update through them, downloading only what changed.",
@@ -3072,7 +3072,7 @@
   },
   "2f468526a5312f65": {
    "source": "Every download keeps a log of its recent events: retries, redirects, the server's answers and errors.",
-   "text": "Setiap donlotan menyimpan log peristiwa terbarunya: percobaan ulang, pengalihan, jawaban dan gagal dari server."
+   "text": "Setiap donlotan menyimpan log peristiwa terbarunya: percobaan ulang, pengalihan, jawaban dan error dari server."
   },
   "2f489d0fa18fe440": {
    "source": "Tasks → RSS feeds...",
@@ -8604,7 +8604,7 @@
   },
   "85702e7b72e0aeff": {
    "source": "Error text",
-   "text": "Teks gagal"
+   "text": "Teks error"
   },
   "857d20a8332785f5": {
    "source": "<g1>More browsers supported:</g1> it now works in Zen, Helium, LibreWolf, Floorp and Waterfox too.",
@@ -9132,7 +9132,7 @@
   },
   "8e4248e1df3e5489": {
    "source": "A download says Error",
-   "text": "Donlotan menunjukkan Gagal"
+   "text": "Donlotan menunjukkan Error"
   },
   "8e4c4a984da7391d": {
    "source": "Check that the Speed Limiter is off: <g1>Downloads → Speed Limiter → Turn off</g1>. Also look at <g2>Downloads → Speed Limiter → Settings... → Limit all downloads together to</g2>, which applies even with the limiter off.",
@@ -9296,7 +9296,7 @@
   },
   "9189b83bf9497166": {
    "source": "On <g1>Status</g1>, tick only <g2>Error</g2> to see the downloads that failed.",
-   "text": "Pada <g1>Status</g1>, centang hanya <g2>Gagal</g2> untuk melihat donlotan yang gagal."
+   "text": "Pada <g1>Status</g1>, centang hanya <g2>Error</g2> untuk melihat donlotan yang error."
   },
   "918e0b87ff6e78b7": {
    "source": "(blue)",
@@ -12504,7 +12504,7 @@
   },
   "c337f01f6c9f7565": {
    "source": "Lists your downloads, newest first: file, address, folder, status, size, how much is done, speed. It can list only one status (Queued, Downloading, Stopped, Complete, Error) or only names and addresses that contain some text.",
-   "text": "Mencantumkan donlotan Anda, dari yang terbaru: file, alamat, folder, status, ukuran, progres, dan kecepatan. Asisten dapat mencantumkan donlotan dengan satu status saja (Dalam antrean, Sedang didonlot, Dihentikan, Selesai, Gagal), atau hanya nama dan alamat yang berisi teks tertentu."
+   "text": "Mencantumkan donlotan Anda, dari yang terbaru: file, alamat, folder, status, ukuran, progres, dan kecepatan. Asisten dapat mencantumkan donlotan dengan satu status saja (Dalam antrean, Sedang didonlot, Dihentikan, Selesai, Error), atau hanya nama dan alamat yang berisi teks tertentu."
   },
   "c33f1c969a0ffcb0": {
    "source": "The page on a phone",
@@ -14908,7 +14908,7 @@
   },
   "ea31cb1a2b06654d": {
    "source": "How far it is, or <g1>Complete</g1>, <g2>Error</g2> and so on.",
-   "text": "Seberapa jauh prosesnya, atau <g1>Selesai</g1>, <g2>Gagal</g2> dan seterusnya."
+   "text": "Seberapa jauh prosesnya, atau <g1>Selesai</g1>, <g2>Error</g2> dan seterusnya."
   },
   "ea3ad8a0f6db59b2": {
    "source": "<g1>Zen, Helium, Brave Origin or another browser built on Firefox or Chromium, as your only browser on Linux or macOS?</g1> Older versions of MDM set browser integration up only for the browsers they knew; the current one also knows Brave Origin and the Beta, Dev and Nightly versions of Brave, Chrome and Edge. Update MDM and start it once.",

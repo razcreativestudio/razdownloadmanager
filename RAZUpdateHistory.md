@@ -3,6 +3,39 @@ Dokumentasi riwayat pembaruan dan perubahan harian proyek RAZ Download Manager.
 
 ---
 
+## [2026-11-26] — Pemurnian Glosarium Bahasa Indo Oke (id-oke), Standardisasi Status Error, dan Penyelarasan UI/Website/Docs
+*Waktu: 26 November 2026 11:00 WIB*
+
+### Aktivitas & Pembaruan:
+1. **Standardisasi Status & Notifikasi: `galat` / `gagal` &rarr; `error` / `Error`**:
+   - Memperbaiki padanan istilah status download yang gagal menjadi `Error` (huruf kapital) dan `error` (huruf kecil dalam kalimat), bukan `gagal` ataupun istilah lama `galat`.
+   - Menyelaraskan teks di `i18n/id-oke.tsv` (baris 1460, 1465), `i18n/id.tsv`, dan katalog website `i18n/site/id.json`.
+
+2. **Pemurnian Frasa Bahasa Indo Oke (`i18n/id-oke.tsv`) Khas RAZ Creative Studio**:
+   - Menghilangkan sisa istilah birokratis/kaku pada dialog update aplikasi:
+     - `Check for updates` &rarr; `Cek update` (sebelumnya `Cek pembaruan`).
+     - `Check for updates at every start` &rarr; `Cek update setiap kali mulai` (sebelumnya `Cek pembaruan setiap kali dimulai`).
+     - `Checking for updates...` &rarr; `Ngecek update...` (sebelumnya `Ngecek pembaruan...`).
+     - `Downloading the update...` &rarr; `Ngedonlot update...` (sebelumnya `Ngedonlot pembaruan...`).
+     - `Installing the update...` &rarr; `Lagi nginstal update...` (sebelumnya `Menginstal pembaruan...`).
+     - `Check for &updates...` &rarr; `Cek &update...`.
+     - `You have the latest version of RAZ Download Manager ({version}).` &rarr; `Lo udah pake RAZ Download Manager versi paling baru ({version}).` (sebelumnya `Lo memiliki...`).
+     - `You have version {version}... update it there.` &rarr; `Lo punya versi {version}, dari package manager sistem Lo: update langsung di sana ya.`.
+     - `You have version {version}.` &rarr; `Lo lagi pake versi {version}.`.
+
+3. **Penyelarasan Seluruh Halaman Website & Skrip**:
+   - Memutakhirkan `website/index.html`: label tour dan caption preview `"Cek Pembaruan"` &rarr; `"Cek Update"`, `"Pembaruan sistem otomatis"` &rarr; `"Update sistem otomatis"`.
+   - Memutakhirkan `website/js/RAZMainLang.js`: kunci selector tour `"Cek Update (Mode Gelap)"` & `"Cek Update (Mode Terang)"`.
+   - Memutakhirkan `website/faq.html`, `website/faq/index.html`, `website/help.html`, `website/privacy.html`: menyelaraskan menu navigasi panduan menjadi `Bantuan → Cek update`.
+
+4. **Pembaruan `README.md` & Dokumentasi Resmi**:
+   - Mengubah referensi antarmuka: `"Tombol melayang 'Unduh video'"` &rarr; `"Tombol melayang 'Download video'"`.
+   - Mengubah preview antarmuka resmi dari label `v1.0.0` &rarr; `v1.0.1`.
+   - Menyelaraskan tabel preview screenshot: `"Cek Pembaruan"` &rarr; `"Cek Update"` (Mode Gelap & Mode Terang), `"direktori unduhan"` &rarr; `"direktori donlotan"`, `"Tombol Unduh Video di Browser"` &rarr; `"Tombol Download Video di Browser"`.
+   - Menyelaraskan catatan glosarium di `CHANGELOG.md`, `RAZImplementation.md`, dan `RAZProjectPlan.md`.
+
+---
+
 ## [2026-11-24] — Otomatisasi Sinkronisasi Rilis Website & Dynamic Live Release Fetcher
 *Waktu: 24 November 2026 09:00 WIB*
 

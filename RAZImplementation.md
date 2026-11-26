@@ -200,7 +200,7 @@ Dokumen ini mencatat setiap detail perubahan kode, refactoring, dan langkah impl
     - Seluruh file yang dimodifikasi diamankan di folder `backup/translation_update_20261123/`.
   - **Pembaruan Kamus Terjemahan Aplikasi Utama (`i18n/`)**:
     - `i18n/id.tsv` & `i18n/id-oke.tsv`: menyelaraskan 46 entri terjemahan (kolom ke-3) sesuai standar istilah modern:
-      - `galat` &rarr; `gagal`
+      - `galat` &rarr; `error`
       - `peramban` &rarr; `browser`
       - `sumber terbuka` &rarr; `Open Source`
       - `kode sumber` &rarr; `source code`
